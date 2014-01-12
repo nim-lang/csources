@@ -12,201 +12,205 @@ if NOT EXIST %BIN_DIR%\nul mkdir %BIN_DIR%
 
 REM call the compiler:
 
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\nimrod.c -o src\1_1\nimrod.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\nimrod.c -o src\1_1\nimrod.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\system.c -o src\1_1\system.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\system.c -o src\1_1\system.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\commands.c -o src\1_1\commands.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\commands.c -o src\1_1\commands.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\os.c -o src\1_1\os.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\os.c -o src\1_1\os.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\strutils.c -o src\1_1\strutils.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\strutils.c -o src\1_1\strutils.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\parseutils.c -o src\1_1\parseutils.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\parseutils.c -o src\1_1\parseutils.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\times.c -o src\1_1\times.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\times.c -o src\1_1\times.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\winlean.c -o src\1_1\winlean.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\winlean.c -o src\1_1\winlean.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\msgs.c -o src\1_1\msgs.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\msgs.c -o src\1_1\msgs.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\options.c -o src\1_1\options.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\options.c -o src\1_1\options.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\lists.c -o src\1_1\lists.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\lists.c -o src\1_1\lists.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\strtabs.c -o src\1_1\strtabs.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\strtabs.c -o src\1_1\strtabs.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\hashes.c -o src\1_1\hashes.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\hashes.c -o src\1_1\hashes.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\tables.c -o src\1_1\tables.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\tables.c -o src\1_1\tables.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\math.c -o src\1_1\math.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\math.c -o src\1_1\math.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\sockets.c -o src\1_1\sockets.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\sockets.c -o src\1_1\sockets.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\ropes.c -o src\1_1\ropes.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\ropes.c -o src\1_1\ropes.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\platform.c -o src\1_1\platform.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\platform.c -o src\1_1\platform.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\crc.c -o src\1_1\crc.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\crc.c -o src\1_1\crc.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\nversion.c -o src\1_1\nversion.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\nversion.c -o src\1_1\nversion.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\condsyms.c -o src\1_1\condsyms.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\condsyms.c -o src\1_1\condsyms.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\idents.c -o src\1_1\idents.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\idents.c -o src\1_1\idents.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\extccomp.c -o src\1_1\extccomp.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\extccomp.c -o src\1_1\extccomp.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\osproc.c -o src\1_1\osproc.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\osproc.c -o src\1_1\osproc.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\streams.c -o src\1_1\streams.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\streams.c -o src\1_1\streams.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\wordrecg.c -o src\1_1\wordrecg.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\wordrecg.c -o src\1_1\wordrecg.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\babelcmd.c -o src\1_1\babelcmd.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\babelcmd.c -o src\1_1\babelcmd.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\lexer.c -o src\1_1\lexer.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\lexer.c -o src\1_1\lexer.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\nimlexbase.c -o src\1_1\nimlexbase.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\nimlexbase.c -o src\1_1\nimlexbase.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\llstream.c -o src\1_1\llstream.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\llstream.c -o src\1_1\llstream.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\nimconf.c -o src\1_1\nimconf.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\nimconf.c -o src\1_1\nimconf.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\main.c -o src\1_1\main.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\main.c -o src\1_1\main.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\ast.c -o src\1_1\ast.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\ast.c -o src\1_1\ast.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\intsets.c -o src\1_1\intsets.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\intsets.c -o src\1_1\intsets.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\idgen.c -o src\1_1\idgen.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\idgen.c -o src\1_1\idgen.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\astalgo.c -o src\1_1\astalgo.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\astalgo.c -o src\1_1\astalgo.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\rodutils.c -o src\1_1\rodutils.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\rodutils.c -o src\1_1\rodutils.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\syntaxes.c -o src\1_1\syntaxes.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\syntaxes.c -o src\1_1\syntaxes.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\parser.c -o src\1_1\parser.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\parser.c -o src\1_1\parser.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\pbraces.c -o src\1_1\pbraces.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\pbraces.c -o src\1_1\pbraces.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\filters.c -o src\1_1\filters.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\filters.c -o src\1_1\filters.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\renderer.c -o src\1_1\renderer.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\renderer.c -o src\1_1\renderer.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\filter_tmpl.c -o src\1_1\filter_tmpl.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\filter_tmpl.c -o src\1_1\filter_tmpl.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\rodread.c -o src\1_1\rodread.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\rodread.c -o src\1_1\rodread.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\types.c -o src\1_1\types.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\types.c -o src\1_1\types.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\trees.c -o src\1_1\trees.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\trees.c -o src\1_1\trees.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\memfiles.c -o src\1_1\memfiles.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\memfiles.c -o src\1_1\memfiles.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\rodwrite.c -o src\1_1\rodwrite.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\rodwrite.c -o src\1_1\rodwrite.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\passes.c -o src\1_1\passes.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\passes.c -o src\1_1\passes.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\magicsys.c -o src\1_1\magicsys.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\magicsys.c -o src\1_1\magicsys.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\nimsets.c -o src\1_1\nimsets.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\nimsets.c -o src\1_1\nimsets.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\bitsets.c -o src\1_1\bitsets.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\bitsets.c -o src\1_1\bitsets.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\semthreads.c -o src\1_1\semthreads.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\semthreads.c -o src\1_1\semthreads.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\importer.c -o src\1_1\importer.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\importer.c -o src\1_1\importer.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\lookups.c -o src\1_1\lookups.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\lookups.c -o src\1_1\lookups.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\semdata.c -o src\1_1\semdata.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\semdata.c -o src\1_1\semdata.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\treetab.c -o src\1_1\treetab.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\treetab.c -o src\1_1\treetab.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\evals.c -o src\1_1\evals.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\evals.c -o src\1_1\evals.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\semfold.c -o src\1_1\semfold.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\semfold.c -o src\1_1\semfold.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\saturate.c -o src\1_1\saturate.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\saturate.c -o src\1_1\saturate.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\transf.c -o src\1_1\transf.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\transf.c -o src\1_1\transf.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\cgmeth.c -o src\1_1\cgmeth.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\cgmeth.c -o src\1_1\cgmeth.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\sempass2.c -o src\1_1\sempass2.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\sempass2.c -o src\1_1\sempass2.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\guards.c -o src\1_1\guards.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\guards.c -o src\1_1\guards.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\lambdalifting.c -o src\1_1\lambdalifting.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\lambdalifting.c -o src\1_1\lambdalifting.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\evaltempl.c -o src\1_1\evaltempl.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\evaltempl.c -o src\1_1\evaltempl.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\sem.c -o src\1_1\sem.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\sem.c -o src\1_1\sem.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\procfind.c -o src\1_1\procfind.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\procfind.c -o src\1_1\procfind.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\pragmas.c -o src\1_1\pragmas.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\pragmas.c -o src\1_1\pragmas.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\semtypinst.c -o src\1_1\semtypinst.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\semtypinst.c -o src\1_1\semtypinst.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\sigmatch.c -o src\1_1\sigmatch.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\sigmatch.c -o src\1_1\sigmatch.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\parampatterns.c -o src\1_1\parampatterns.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\parampatterns.c -o src\1_1\parampatterns.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\docgen.c -o src\1_1\docgen.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\docgen.c -o src\1_1\docgen.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\rstast.c -o src\1_1\rstast.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\rstast.c -o src\1_1\rstast.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\rst.c -o src\1_1\rst.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\rst.c -o src\1_1\rst.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\rstgen.c -o src\1_1\rstgen.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\rstgen.c -o src\1_1\rstgen.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\highlite.c -o src\1_1\highlite.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\highlite.c -o src\1_1\highlite.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\algorithm.c -o src\1_1\algorithm.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\algorithm.c -o src\1_1\algorithm.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\sequtils.c -o src\1_1\sequtils.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\sequtils.c -o src\1_1\sequtils.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\aliases.c -o src\1_1\aliases.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\aliases.c -o src\1_1\aliases.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\patterns.c -o src\1_1\patterns.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\patterns.c -o src\1_1\patterns.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\cgen.c -o src\1_1\cgen.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\cgen.c -o src\1_1\cgen.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\ccgutils.c -o src\1_1\ccgutils.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\ccgutils.c -o src\1_1\ccgutils.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\cgendata.c -o src\1_1\cgendata.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\cgendata.c -o src\1_1\cgendata.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\ccgmerge.c -o src\1_1\ccgmerge.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\ccgmerge.c -o src\1_1\ccgmerge.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\jsgen.c -o src\1_1\jsgen.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\jsgen.c -o src\1_1\jsgen.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\json.c -o src\1_1\json.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\json.c -o src\1_1\json.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\lexbase.c -o src\1_1\lexbase.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\lexbase.c -o src\1_1\lexbase.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\unicode.c -o src\1_1\unicode.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\unicode.c -o src\1_1\unicode.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\passaux.c -o src\1_1\passaux.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\passaux.c -o src\1_1\passaux.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\depends.c -o src\1_1\depends.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\depends.c -o src\1_1\depends.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\docgen2.c -o src\1_1\docgen2.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\docgen2.c -o src\1_1\docgen2.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\service.c -o src\1_1\service.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\service.c -o src\1_1\service.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\parseopt.c -o src\1_1\parseopt.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\parseopt.c -o src\1_1\parseopt.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\modules.c -o src\1_1\modules.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\modules.c -o src\1_1\modules.o
-ECHO %CC% %COMP_FLAGS% -Isrc -c src\1_1\pretty.c -o src\1_1\pretty.o
-%CC% %COMP_FLAGS% -Isrc -c src\1_1\pretty.c -o src\1_1\pretty.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_nimrod.c -o nimcache\1_1\compiler_nimrod.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_nimrod.c -o nimcache\1_1\compiler_nimrod.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\Nimrod_system.c -o nimcache\1_1\Nimrod_system.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\Nimrod_system.c -o nimcache\1_1\Nimrod_system.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_testability.c -o nimcache\1_1\compiler_testability.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_testability.c -o nimcache\1_1\compiler_testability.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_commands.c -o nimcache\1_1\compiler_commands.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_commands.c -o nimcache\1_1\compiler_commands.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\pure_os.c -o nimcache\1_1\pure_os.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\pure_os.c -o nimcache\1_1\pure_os.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\pure_strutils.c -o nimcache\1_1\pure_strutils.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\pure_strutils.c -o nimcache\1_1\pure_strutils.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\pure_parseutils.c -o nimcache\1_1\pure_parseutils.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\pure_parseutils.c -o nimcache\1_1\pure_parseutils.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\pure_times.c -o nimcache\1_1\pure_times.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\pure_times.c -o nimcache\1_1\pure_times.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\windows_winlean.c -o nimcache\1_1\windows_winlean.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\windows_winlean.c -o nimcache\1_1\windows_winlean.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_msgs.c -o nimcache\1_1\compiler_msgs.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_msgs.c -o nimcache\1_1\compiler_msgs.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_options.c -o nimcache\1_1\compiler_options.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_options.c -o nimcache\1_1\compiler_options.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_lists.c -o nimcache\1_1\compiler_lists.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_lists.c -o nimcache\1_1\compiler_lists.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\pure_strtabs.c -o nimcache\1_1\pure_strtabs.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\pure_strtabs.c -o nimcache\1_1\pure_strtabs.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\pure_hashes.c -o nimcache\1_1\pure_hashes.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\pure_hashes.c -o nimcache\1_1\pure_hashes.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\collections_tables.c -o nimcache\1_1\collections_tables.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\collections_tables.c -o nimcache\1_1\collections_tables.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\pure_math.c -o nimcache\1_1\pure_math.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\pure_math.c -o nimcache\1_1\pure_math.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_ropes.c -o nimcache\1_1\compiler_ropes.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_ropes.c -o nimcache\1_1\compiler_ropes.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_platform.c -o nimcache\1_1\compiler_platform.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_platform.c -o nimcache\1_1\compiler_platform.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_crc.c -o nimcache\1_1\compiler_crc.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_crc.c -o nimcache\1_1\compiler_crc.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\pure_sockets.c -o nimcache\1_1\pure_sockets.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\pure_sockets.c -o nimcache\1_1\pure_sockets.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\core_unsigned.c -o nimcache\1_1\core_unsigned.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\core_unsigned.c -o nimcache\1_1\core_unsigned.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_nversion.c -o nimcache\1_1\compiler_nversion.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_nversion.c -o nimcache\1_1\compiler_nversion.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_condsyms.c -o nimcache\1_1\compiler_condsyms.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_condsyms.c -o nimcache\1_1\compiler_condsyms.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_idents.c -o nimcache\1_1\compiler_idents.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_idents.c -o nimcache\1_1\compiler_idents.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_extccomp.c -o nimcache\1_1\compiler_extccomp.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_extccomp.c -o nimcache\1_1\compiler_extccomp.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\pure_osproc.c -o nimcache\1_1\pure_osproc.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\pure_osproc.c -o nimcache\1_1\pure_osproc.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\pure_streams.c -o nimcache\1_1\pure_streams.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\pure_streams.c -o nimcache\1_1\pure_streams.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_wordrecg.c -o nimcache\1_1\compiler_wordrecg.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_wordrecg.c -o nimcache\1_1\compiler_wordrecg.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_babelcmd.c -o nimcache\1_1\compiler_babelcmd.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_babelcmd.c -o nimcache\1_1\compiler_babelcmd.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_lexer.c -o nimcache\1_1\compiler_lexer.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_lexer.c -o nimcache\1_1\compiler_lexer.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_nimlexbase.c -o nimcache\1_1\compiler_nimlexbase.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_nimlexbase.c -o nimcache\1_1\compiler_nimlexbase.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_llstream.c -o nimcache\1_1\compiler_llstream.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_llstream.c -o nimcache\1_1\compiler_llstream.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_nimconf.c -o nimcache\1_1\compiler_nimconf.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_nimconf.c -o nimcache\1_1\compiler_nimconf.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_main.c -o nimcache\1_1\compiler_main.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_main.c -o nimcache\1_1\compiler_main.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_ast.c -o nimcache\1_1\compiler_ast.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_ast.c -o nimcache\1_1\compiler_ast.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\collections_intsets.c -o nimcache\1_1\collections_intsets.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\collections_intsets.c -o nimcache\1_1\collections_intsets.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_idgen.c -o nimcache\1_1\compiler_idgen.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_idgen.c -o nimcache\1_1\compiler_idgen.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_astalgo.c -o nimcache\1_1\compiler_astalgo.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_astalgo.c -o nimcache\1_1\compiler_astalgo.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_rodutils.c -o nimcache\1_1\compiler_rodutils.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_rodutils.c -o nimcache\1_1\compiler_rodutils.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_syntaxes.c -o nimcache\1_1\compiler_syntaxes.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_syntaxes.c -o nimcache\1_1\compiler_syntaxes.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_parser.c -o nimcache\1_1\compiler_parser.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_parser.c -o nimcache\1_1\compiler_parser.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_pbraces.c -o nimcache\1_1\compiler_pbraces.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_pbraces.c -o nimcache\1_1\compiler_pbraces.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_filters.c -o nimcache\1_1\compiler_filters.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_filters.c -o nimcache\1_1\compiler_filters.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_renderer.c -o nimcache\1_1\compiler_renderer.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_renderer.c -o nimcache\1_1\compiler_renderer.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_filter_tmpl.c -o nimcache\1_1\compiler_filter_tmpl.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_filter_tmpl.c -o nimcache\1_1\compiler_filter_tmpl.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_rodread.c -o nimcache\1_1\compiler_rodread.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_rodread.c -o nimcache\1_1\compiler_rodread.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_types.c -o nimcache\1_1\compiler_types.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_types.c -o nimcache\1_1\compiler_types.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_trees.c -o nimcache\1_1\compiler_trees.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_trees.c -o nimcache\1_1\compiler_trees.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\pure_memfiles.c -o nimcache\1_1\pure_memfiles.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\pure_memfiles.c -o nimcache\1_1\pure_memfiles.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_rodwrite.c -o nimcache\1_1\compiler_rodwrite.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_rodwrite.c -o nimcache\1_1\compiler_rodwrite.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_passes.c -o nimcache\1_1\compiler_passes.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_passes.c -o nimcache\1_1\compiler_passes.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_magicsys.c -o nimcache\1_1\compiler_magicsys.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_magicsys.c -o nimcache\1_1\compiler_magicsys.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_nimsets.c -o nimcache\1_1\compiler_nimsets.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_nimsets.c -o nimcache\1_1\compiler_nimsets.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_bitsets.c -o nimcache\1_1\compiler_bitsets.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_bitsets.c -o nimcache\1_1\compiler_bitsets.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_semthreads.c -o nimcache\1_1\compiler_semthreads.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_semthreads.c -o nimcache\1_1\compiler_semthreads.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_importer.c -o nimcache\1_1\compiler_importer.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_importer.c -o nimcache\1_1\compiler_importer.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_lookups.c -o nimcache\1_1\compiler_lookups.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_lookups.c -o nimcache\1_1\compiler_lookups.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_semdata.c -o nimcache\1_1\compiler_semdata.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_semdata.c -o nimcache\1_1\compiler_semdata.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_treetab.c -o nimcache\1_1\compiler_treetab.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_treetab.c -o nimcache\1_1\compiler_treetab.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_evals.c -o nimcache\1_1\compiler_evals.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_evals.c -o nimcache\1_1\compiler_evals.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_semfold.c -o nimcache\1_1\compiler_semfold.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_semfold.c -o nimcache\1_1\compiler_semfold.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_saturate.c -o nimcache\1_1\compiler_saturate.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_saturate.c -o nimcache\1_1\compiler_saturate.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_transf.c -o nimcache\1_1\compiler_transf.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_transf.c -o nimcache\1_1\compiler_transf.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_cgmeth.c -o nimcache\1_1\compiler_cgmeth.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_cgmeth.c -o nimcache\1_1\compiler_cgmeth.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_sempass2.c -o nimcache\1_1\compiler_sempass2.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_sempass2.c -o nimcache\1_1\compiler_sempass2.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_guards.c -o nimcache\1_1\compiler_guards.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_guards.c -o nimcache\1_1\compiler_guards.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_lambdalifting.c -o nimcache\1_1\compiler_lambdalifting.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_lambdalifting.c -o nimcache\1_1\compiler_lambdalifting.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_evaltempl.c -o nimcache\1_1\compiler_evaltempl.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_evaltempl.c -o nimcache\1_1\compiler_evaltempl.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_sem.c -o nimcache\1_1\compiler_sem.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_sem.c -o nimcache\1_1\compiler_sem.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_procfind.c -o nimcache\1_1\compiler_procfind.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_procfind.c -o nimcache\1_1\compiler_procfind.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_pragmas.c -o nimcache\1_1\compiler_pragmas.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_pragmas.c -o nimcache\1_1\compiler_pragmas.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_semtypinst.c -o nimcache\1_1\compiler_semtypinst.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_semtypinst.c -o nimcache\1_1\compiler_semtypinst.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_sigmatch.c -o nimcache\1_1\compiler_sigmatch.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_sigmatch.c -o nimcache\1_1\compiler_sigmatch.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_parampatterns.c -o nimcache\1_1\compiler_parampatterns.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_parampatterns.c -o nimcache\1_1\compiler_parampatterns.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_docgen.c -o nimcache\1_1\compiler_docgen.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_docgen.c -o nimcache\1_1\compiler_docgen.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\docutils_rstast.c -o nimcache\1_1\docutils_rstast.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\docutils_rstast.c -o nimcache\1_1\docutils_rstast.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\docutils_rst.c -o nimcache\1_1\docutils_rst.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\docutils_rst.c -o nimcache\1_1\docutils_rst.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\docutils_rstgen.c -o nimcache\1_1\docutils_rstgen.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\docutils_rstgen.c -o nimcache\1_1\docutils_rstgen.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\docutils_highlite.c -o nimcache\1_1\docutils_highlite.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\docutils_highlite.c -o nimcache\1_1\docutils_highlite.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\pure_json.c -o nimcache\1_1\pure_json.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\pure_json.c -o nimcache\1_1\pure_json.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\pure_lexbase.c -o nimcache\1_1\pure_lexbase.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\pure_lexbase.c -o nimcache\1_1\pure_lexbase.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\pure_unicode.c -o nimcache\1_1\pure_unicode.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\pure_unicode.c -o nimcache\1_1\pure_unicode.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\pure_algorithm.c -o nimcache\1_1\pure_algorithm.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\pure_algorithm.c -o nimcache\1_1\pure_algorithm.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\collections_sequtils.c -o nimcache\1_1\collections_sequtils.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\collections_sequtils.c -o nimcache\1_1\collections_sequtils.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_aliases.c -o nimcache\1_1\compiler_aliases.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_aliases.c -o nimcache\1_1\compiler_aliases.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_patterns.c -o nimcache\1_1\compiler_patterns.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_patterns.c -o nimcache\1_1\compiler_patterns.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_cgen.c -o nimcache\1_1\compiler_cgen.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_cgen.c -o nimcache\1_1\compiler_cgen.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_ccgutils.c -o nimcache\1_1\compiler_ccgutils.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_ccgutils.c -o nimcache\1_1\compiler_ccgutils.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_cgendata.c -o nimcache\1_1\compiler_cgendata.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_cgendata.c -o nimcache\1_1\compiler_cgendata.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_ccgmerge.c -o nimcache\1_1\compiler_ccgmerge.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_ccgmerge.c -o nimcache\1_1\compiler_ccgmerge.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_jsgen.c -o nimcache\1_1\compiler_jsgen.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_jsgen.c -o nimcache\1_1\compiler_jsgen.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_passaux.c -o nimcache\1_1\compiler_passaux.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_passaux.c -o nimcache\1_1\compiler_passaux.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_depends.c -o nimcache\1_1\compiler_depends.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_depends.c -o nimcache\1_1\compiler_depends.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_docgen2.c -o nimcache\1_1\compiler_docgen2.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_docgen2.c -o nimcache\1_1\compiler_docgen2.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_service.c -o nimcache\1_1\compiler_service.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_service.c -o nimcache\1_1\compiler_service.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\pure_parseopt.c -o nimcache\1_1\pure_parseopt.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\pure_parseopt.c -o nimcache\1_1\pure_parseopt.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_modules.c -o nimcache\1_1\compiler_modules.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_modules.c -o nimcache\1_1\compiler_modules.o
+ECHO %CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_pretty.c -o nimcache\1_1\compiler_pretty.o
+%CC% %COMP_FLAGS% -Inimcache -c nimcache\1_1\compiler_pretty.c -o nimcache\1_1\compiler_pretty.o
 
-ECHO %LINKER% -o %BIN_DIR%\nimrod.exe  src\1_1\nimrod.o src\1_1\system.o src\1_1\commands.o src\1_1\os.o src\1_1\strutils.o src\1_1\parseutils.o src\1_1\times.o src\1_1\winlean.o src\1_1\msgs.o src\1_1\options.o src\1_1\lists.o src\1_1\strtabs.o src\1_1\hashes.o src\1_1\tables.o src\1_1\math.o src\1_1\sockets.o src\1_1\ropes.o src\1_1\platform.o src\1_1\crc.o src\1_1\nversion.o src\1_1\condsyms.o src\1_1\idents.o src\1_1\extccomp.o src\1_1\osproc.o src\1_1\streams.o src\1_1\wordrecg.o src\1_1\babelcmd.o src\1_1\lexer.o src\1_1\nimlexbase.o src\1_1\llstream.o src\1_1\nimconf.o src\1_1\main.o src\1_1\ast.o src\1_1\intsets.o src\1_1\idgen.o src\1_1\astalgo.o src\1_1\rodutils.o src\1_1\syntaxes.o src\1_1\parser.o src\1_1\pbraces.o src\1_1\filters.o src\1_1\renderer.o src\1_1\filter_tmpl.o src\1_1\rodread.o src\1_1\types.o src\1_1\trees.o src\1_1\memfiles.o src\1_1\rodwrite.o src\1_1\passes.o src\1_1\magicsys.o src\1_1\nimsets.o src\1_1\bitsets.o src\1_1\semthreads.o src\1_1\importer.o src\1_1\lookups.o src\1_1\semdata.o src\1_1\treetab.o src\1_1\evals.o src\1_1\semfold.o src\1_1\saturate.o src\1_1\transf.o src\1_1\cgmeth.o src\1_1\sempass2.o src\1_1\guards.o src\1_1\lambdalifting.o src\1_1\evaltempl.o src\1_1\sem.o src\1_1\procfind.o src\1_1\pragmas.o src\1_1\semtypinst.o src\1_1\sigmatch.o src\1_1\parampatterns.o src\1_1\docgen.o src\1_1\rstast.o src\1_1\rst.o src\1_1\rstgen.o src\1_1\highlite.o src\1_1\algorithm.o src\1_1\sequtils.o src\1_1\aliases.o src\1_1\patterns.o src\1_1\cgen.o src\1_1\ccgutils.o src\1_1\cgendata.o src\1_1\ccgmerge.o src\1_1\jsgen.o src\1_1\json.o src\1_1\lexbase.o src\1_1\unicode.o src\1_1\passaux.o src\1_1\depends.o src\1_1\docgen2.o src\1_1\service.o src\1_1\parseopt.o src\1_1\modules.o src\1_1\pretty.o %LINK_FLAGS%
-%LINKER% -o %BIN_DIR%\nimrod.exe  src\1_1\nimrod.o src\1_1\system.o src\1_1\commands.o src\1_1\os.o src\1_1\strutils.o src\1_1\parseutils.o src\1_1\times.o src\1_1\winlean.o src\1_1\msgs.o src\1_1\options.o src\1_1\lists.o src\1_1\strtabs.o src\1_1\hashes.o src\1_1\tables.o src\1_1\math.o src\1_1\sockets.o src\1_1\ropes.o src\1_1\platform.o src\1_1\crc.o src\1_1\nversion.o src\1_1\condsyms.o src\1_1\idents.o src\1_1\extccomp.o src\1_1\osproc.o src\1_1\streams.o src\1_1\wordrecg.o src\1_1\babelcmd.o src\1_1\lexer.o src\1_1\nimlexbase.o src\1_1\llstream.o src\1_1\nimconf.o src\1_1\main.o src\1_1\ast.o src\1_1\intsets.o src\1_1\idgen.o src\1_1\astalgo.o src\1_1\rodutils.o src\1_1\syntaxes.o src\1_1\parser.o src\1_1\pbraces.o src\1_1\filters.o src\1_1\renderer.o src\1_1\filter_tmpl.o src\1_1\rodread.o src\1_1\types.o src\1_1\trees.o src\1_1\memfiles.o src\1_1\rodwrite.o src\1_1\passes.o src\1_1\magicsys.o src\1_1\nimsets.o src\1_1\bitsets.o src\1_1\semthreads.o src\1_1\importer.o src\1_1\lookups.o src\1_1\semdata.o src\1_1\treetab.o src\1_1\evals.o src\1_1\semfold.o src\1_1\saturate.o src\1_1\transf.o src\1_1\cgmeth.o src\1_1\sempass2.o src\1_1\guards.o src\1_1\lambdalifting.o src\1_1\evaltempl.o src\1_1\sem.o src\1_1\procfind.o src\1_1\pragmas.o src\1_1\semtypinst.o src\1_1\sigmatch.o src\1_1\parampatterns.o src\1_1\docgen.o src\1_1\rstast.o src\1_1\rst.o src\1_1\rstgen.o src\1_1\highlite.o src\1_1\algorithm.o src\1_1\sequtils.o src\1_1\aliases.o src\1_1\patterns.o src\1_1\cgen.o src\1_1\ccgutils.o src\1_1\cgendata.o src\1_1\ccgmerge.o src\1_1\jsgen.o src\1_1\json.o src\1_1\lexbase.o src\1_1\unicode.o src\1_1\passaux.o src\1_1\depends.o src\1_1\docgen2.o src\1_1\service.o src\1_1\parseopt.o src\1_1\modules.o src\1_1\pretty.o %LINK_FLAGS%
+ECHO %LINKER% -o %BIN_DIR%\nimrod.exe  nimcache\1_1\compiler_nimrod.o nimcache\1_1\Nimrod_system.o nimcache\1_1\compiler_testability.o nimcache\1_1\compiler_commands.o nimcache\1_1\pure_os.o nimcache\1_1\pure_strutils.o nimcache\1_1\pure_parseutils.o nimcache\1_1\pure_times.o nimcache\1_1\windows_winlean.o nimcache\1_1\compiler_msgs.o nimcache\1_1\compiler_options.o nimcache\1_1\compiler_lists.o nimcache\1_1\pure_strtabs.o nimcache\1_1\pure_hashes.o nimcache\1_1\collections_tables.o nimcache\1_1\pure_math.o nimcache\1_1\compiler_ropes.o nimcache\1_1\compiler_platform.o nimcache\1_1\compiler_crc.o nimcache\1_1\pure_sockets.o nimcache\1_1\core_unsigned.o nimcache\1_1\compiler_nversion.o nimcache\1_1\compiler_condsyms.o nimcache\1_1\compiler_idents.o nimcache\1_1\compiler_extccomp.o nimcache\1_1\pure_osproc.o nimcache\1_1\pure_streams.o nimcache\1_1\compiler_wordrecg.o nimcache\1_1\compiler_babelcmd.o nimcache\1_1\compiler_lexer.o nimcache\1_1\compiler_nimlexbase.o nimcache\1_1\compiler_llstream.o nimcache\1_1\compiler_nimconf.o nimcache\1_1\compiler_main.o nimcache\1_1\compiler_ast.o nimcache\1_1\collections_intsets.o nimcache\1_1\compiler_idgen.o nimcache\1_1\compiler_astalgo.o nimcache\1_1\compiler_rodutils.o nimcache\1_1\compiler_syntaxes.o nimcache\1_1\compiler_parser.o nimcache\1_1\compiler_pbraces.o nimcache\1_1\compiler_filters.o nimcache\1_1\compiler_renderer.o nimcache\1_1\compiler_filter_tmpl.o nimcache\1_1\compiler_rodread.o nimcache\1_1\compiler_types.o nimcache\1_1\compiler_trees.o nimcache\1_1\pure_memfiles.o nimcache\1_1\compiler_rodwrite.o nimcache\1_1\compiler_passes.o nimcache\1_1\compiler_magicsys.o nimcache\1_1\compiler_nimsets.o nimcache\1_1\compiler_bitsets.o nimcache\1_1\compiler_semthreads.o nimcache\1_1\compiler_importer.o nimcache\1_1\compiler_lookups.o nimcache\1_1\compiler_semdata.o nimcache\1_1\compiler_treetab.o nimcache\1_1\compiler_evals.o nimcache\1_1\compiler_semfold.o nimcache\1_1\compiler_saturate.o nimcache\1_1\compiler_transf.o nimcache\1_1\compiler_cgmeth.o nimcache\1_1\compiler_sempass2.o nimcache\1_1\compiler_guards.o nimcache\1_1\compiler_lambdalifting.o nimcache\1_1\compiler_evaltempl.o nimcache\1_1\compiler_sem.o nimcache\1_1\compiler_procfind.o nimcache\1_1\compiler_pragmas.o nimcache\1_1\compiler_semtypinst.o nimcache\1_1\compiler_sigmatch.o nimcache\1_1\compiler_parampatterns.o nimcache\1_1\compiler_docgen.o nimcache\1_1\docutils_rstast.o nimcache\1_1\docutils_rst.o nimcache\1_1\docutils_rstgen.o nimcache\1_1\docutils_highlite.o nimcache\1_1\pure_json.o nimcache\1_1\pure_lexbase.o nimcache\1_1\pure_unicode.o nimcache\1_1\pure_algorithm.o nimcache\1_1\collections_sequtils.o nimcache\1_1\compiler_aliases.o nimcache\1_1\compiler_patterns.o nimcache\1_1\compiler_cgen.o nimcache\1_1\compiler_ccgutils.o nimcache\1_1\compiler_cgendata.o nimcache\1_1\compiler_ccgmerge.o nimcache\1_1\compiler_jsgen.o nimcache\1_1\compiler_passaux.o nimcache\1_1\compiler_depends.o nimcache\1_1\compiler_docgen2.o nimcache\1_1\compiler_service.o nimcache\1_1\pure_parseopt.o nimcache\1_1\compiler_modules.o nimcache\1_1\compiler_pretty.o %LINK_FLAGS%
+%LINKER% -o %BIN_DIR%\nimrod.exe  nimcache\1_1\compiler_nimrod.o nimcache\1_1\Nimrod_system.o nimcache\1_1\compiler_testability.o nimcache\1_1\compiler_commands.o nimcache\1_1\pure_os.o nimcache\1_1\pure_strutils.o nimcache\1_1\pure_parseutils.o nimcache\1_1\pure_times.o nimcache\1_1\windows_winlean.o nimcache\1_1\compiler_msgs.o nimcache\1_1\compiler_options.o nimcache\1_1\compiler_lists.o nimcache\1_1\pure_strtabs.o nimcache\1_1\pure_hashes.o nimcache\1_1\collections_tables.o nimcache\1_1\pure_math.o nimcache\1_1\compiler_ropes.o nimcache\1_1\compiler_platform.o nimcache\1_1\compiler_crc.o nimcache\1_1\pure_sockets.o nimcache\1_1\core_unsigned.o nimcache\1_1\compiler_nversion.o nimcache\1_1\compiler_condsyms.o nimcache\1_1\compiler_idents.o nimcache\1_1\compiler_extccomp.o nimcache\1_1\pure_osproc.o nimcache\1_1\pure_streams.o nimcache\1_1\compiler_wordrecg.o nimcache\1_1\compiler_babelcmd.o nimcache\1_1\compiler_lexer.o nimcache\1_1\compiler_nimlexbase.o nimcache\1_1\compiler_llstream.o nimcache\1_1\compiler_nimconf.o nimcache\1_1\compiler_main.o nimcache\1_1\compiler_ast.o nimcache\1_1\collections_intsets.o nimcache\1_1\compiler_idgen.o nimcache\1_1\compiler_astalgo.o nimcache\1_1\compiler_rodutils.o nimcache\1_1\compiler_syntaxes.o nimcache\1_1\compiler_parser.o nimcache\1_1\compiler_pbraces.o nimcache\1_1\compiler_filters.o nimcache\1_1\compiler_renderer.o nimcache\1_1\compiler_filter_tmpl.o nimcache\1_1\compiler_rodread.o nimcache\1_1\compiler_types.o nimcache\1_1\compiler_trees.o nimcache\1_1\pure_memfiles.o nimcache\1_1\compiler_rodwrite.o nimcache\1_1\compiler_passes.o nimcache\1_1\compiler_magicsys.o nimcache\1_1\compiler_nimsets.o nimcache\1_1\compiler_bitsets.o nimcache\1_1\compiler_semthreads.o nimcache\1_1\compiler_importer.o nimcache\1_1\compiler_lookups.o nimcache\1_1\compiler_semdata.o nimcache\1_1\compiler_treetab.o nimcache\1_1\compiler_evals.o nimcache\1_1\compiler_semfold.o nimcache\1_1\compiler_saturate.o nimcache\1_1\compiler_transf.o nimcache\1_1\compiler_cgmeth.o nimcache\1_1\compiler_sempass2.o nimcache\1_1\compiler_guards.o nimcache\1_1\compiler_lambdalifting.o nimcache\1_1\compiler_evaltempl.o nimcache\1_1\compiler_sem.o nimcache\1_1\compiler_procfind.o nimcache\1_1\compiler_pragmas.o nimcache\1_1\compiler_semtypinst.o nimcache\1_1\compiler_sigmatch.o nimcache\1_1\compiler_parampatterns.o nimcache\1_1\compiler_docgen.o nimcache\1_1\docutils_rstast.o nimcache\1_1\docutils_rst.o nimcache\1_1\docutils_rstgen.o nimcache\1_1\docutils_highlite.o nimcache\1_1\pure_json.o nimcache\1_1\pure_lexbase.o nimcache\1_1\pure_unicode.o nimcache\1_1\pure_algorithm.o nimcache\1_1\collections_sequtils.o nimcache\1_1\compiler_aliases.o nimcache\1_1\compiler_patterns.o nimcache\1_1\compiler_cgen.o nimcache\1_1\compiler_ccgutils.o nimcache\1_1\compiler_cgendata.o nimcache\1_1\compiler_ccgmerge.o nimcache\1_1\compiler_jsgen.o nimcache\1_1\compiler_passaux.o nimcache\1_1\compiler_depends.o nimcache\1_1\compiler_docgen2.o nimcache\1_1\compiler_service.o nimcache\1_1\pure_parseopt.o nimcache\1_1\compiler_modules.o nimcache\1_1\compiler_pretty.o %LINK_FLAGS%
 
 
 ECHO SUCCESS
