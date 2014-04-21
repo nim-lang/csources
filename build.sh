@@ -28,7 +28,7 @@ done
 
 CC="gcc"
 LINKER="gcc"
-COMP_FLAGS="-w -O3 -fno-strict-aliasing$extraBuildArgs"
+COMP_FLAGS="-w$extraBuildArgs"
 LINK_FLAGS=""
 # platform detection
 ucpu=`uname -m`
