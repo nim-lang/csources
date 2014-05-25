@@ -1009,6 +1009,10 @@ c_code/1_2/modules.o $LINK_FLAGS
     echo "$LINKER -o $binDir/nimrod  $LINK_FLAGS"
     $LINKER -o $binDir/nimrod  $LINK_FLAGS
     ;;
+  powerpc)
+    echo "$LINKER -o $binDir/nimrod  $LINK_FLAGS"
+    $LINKER -o $binDir/nimrod  $LINK_FLAGS
+    ;;
   *)
     echo "Error: no C code generated for: [$myos: $mycpu]"
     exit 1
@@ -3657,6 +3661,446 @@ c_code/2_6/service.o \
 c_code/2_6/stdlib_parseopt.o \
 c_code/2_6/modules.o $LINK_FLAGS
     ;;
+  powerpc)
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/nimrod.c -o c_code/2_7/nimrod.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/nimrod.c -o c_code/2_7/nimrod.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_system.c -o c_code/2_7/stdlib_system.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_system.c -o c_code/2_7/stdlib_system.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/testability.c -o c_code/2_7/testability.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/testability.c -o c_code/2_7/testability.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/commands.c -o c_code/2_7/commands.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/commands.c -o c_code/2_7/commands.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_os.c -o c_code/2_7/stdlib_os.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_os.c -o c_code/2_7/stdlib_os.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_strutils.c -o c_code/2_7/stdlib_strutils.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_strutils.c -o c_code/2_7/stdlib_strutils.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_parseutils.c -o c_code/2_7/stdlib_parseutils.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_parseutils.c -o c_code/2_7/stdlib_parseutils.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_times.c -o c_code/2_7/stdlib_times.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_times.c -o c_code/2_7/stdlib_times.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_posix.c -o c_code/2_7/stdlib_posix.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_posix.c -o c_code/2_7/stdlib_posix.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/msgs.c -o c_code/2_7/msgs.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/msgs.c -o c_code/2_7/msgs.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/options.c -o c_code/2_7/options.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/options.c -o c_code/2_7/options.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/lists.c -o c_code/2_7/lists.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/lists.c -o c_code/2_7/lists.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_strtabs.c -o c_code/2_7/stdlib_strtabs.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_strtabs.c -o c_code/2_7/stdlib_strtabs.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_hashes.c -o c_code/2_7/stdlib_hashes.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_hashes.c -o c_code/2_7/stdlib_hashes.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_osproc.c -o c_code/2_7/stdlib_osproc.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_osproc.c -o c_code/2_7/stdlib_osproc.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_streams.c -o c_code/2_7/stdlib_streams.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_streams.c -o c_code/2_7/stdlib_streams.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_linux.c -o c_code/2_7/stdlib_linux.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_linux.c -o c_code/2_7/stdlib_linux.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_sets.c -o c_code/2_7/stdlib_sets.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_sets.c -o c_code/2_7/stdlib_sets.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_math.c -o c_code/2_7/stdlib_math.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_math.c -o c_code/2_7/stdlib_math.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_tables.c -o c_code/2_7/stdlib_tables.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_tables.c -o c_code/2_7/stdlib_tables.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/ropes.c -o c_code/2_7/ropes.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/ropes.c -o c_code/2_7/ropes.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/platform.c -o c_code/2_7/platform.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/platform.c -o c_code/2_7/platform.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/crc.c -o c_code/2_7/crc.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/crc.c -o c_code/2_7/crc.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_sockets.c -o c_code/2_7/stdlib_sockets.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_sockets.c -o c_code/2_7/stdlib_sockets.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_unsigned.c -o c_code/2_7/stdlib_unsigned.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_unsigned.c -o c_code/2_7/stdlib_unsigned.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/nversion.c -o c_code/2_7/nversion.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/nversion.c -o c_code/2_7/nversion.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/condsyms.c -o c_code/2_7/condsyms.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/condsyms.c -o c_code/2_7/condsyms.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/idents.c -o c_code/2_7/idents.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/idents.c -o c_code/2_7/idents.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/extccomp.c -o c_code/2_7/extccomp.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/extccomp.c -o c_code/2_7/extccomp.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/wordrecg.c -o c_code/2_7/wordrecg.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/wordrecg.c -o c_code/2_7/wordrecg.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/babelcmd.c -o c_code/2_7/babelcmd.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/babelcmd.c -o c_code/2_7/babelcmd.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/lexer.c -o c_code/2_7/lexer.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/lexer.c -o c_code/2_7/lexer.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/nimlexbase.c -o c_code/2_7/nimlexbase.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/nimlexbase.c -o c_code/2_7/nimlexbase.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/llstream.c -o c_code/2_7/llstream.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/llstream.c -o c_code/2_7/llstream.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/nimconf.c -o c_code/2_7/nimconf.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/nimconf.c -o c_code/2_7/nimconf.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/main.c -o c_code/2_7/main.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/main.c -o c_code/2_7/main.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/ast.c -o c_code/2_7/ast.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/ast.c -o c_code/2_7/ast.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_intsets.c -o c_code/2_7/stdlib_intsets.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_intsets.c -o c_code/2_7/stdlib_intsets.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/idgen.c -o c_code/2_7/idgen.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/idgen.c -o c_code/2_7/idgen.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/astalgo.c -o c_code/2_7/astalgo.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/astalgo.c -o c_code/2_7/astalgo.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/rodutils.c -o c_code/2_7/rodutils.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/rodutils.c -o c_code/2_7/rodutils.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/syntaxes.c -o c_code/2_7/syntaxes.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/syntaxes.c -o c_code/2_7/syntaxes.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/parser.c -o c_code/2_7/parser.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/parser.c -o c_code/2_7/parser.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/pbraces.c -o c_code/2_7/pbraces.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/pbraces.c -o c_code/2_7/pbraces.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/filters.c -o c_code/2_7/filters.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/filters.c -o c_code/2_7/filters.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/renderer.c -o c_code/2_7/renderer.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/renderer.c -o c_code/2_7/renderer.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/filter_tmpl.c -o c_code/2_7/filter_tmpl.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/filter_tmpl.c -o c_code/2_7/filter_tmpl.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/rodread.c -o c_code/2_7/rodread.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/rodread.c -o c_code/2_7/rodread.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/types.c -o c_code/2_7/types.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/types.c -o c_code/2_7/types.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/trees.c -o c_code/2_7/trees.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/trees.c -o c_code/2_7/trees.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_memfiles.c -o c_code/2_7/stdlib_memfiles.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_memfiles.c -o c_code/2_7/stdlib_memfiles.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/rodwrite.c -o c_code/2_7/rodwrite.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/rodwrite.c -o c_code/2_7/rodwrite.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/passes.c -o c_code/2_7/passes.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/passes.c -o c_code/2_7/passes.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/magicsys.c -o c_code/2_7/magicsys.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/magicsys.c -o c_code/2_7/magicsys.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/nimsets.c -o c_code/2_7/nimsets.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/nimsets.c -o c_code/2_7/nimsets.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/bitsets.c -o c_code/2_7/bitsets.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/bitsets.c -o c_code/2_7/bitsets.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/importer.c -o c_code/2_7/importer.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/importer.c -o c_code/2_7/importer.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/lookups.c -o c_code/2_7/lookups.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/lookups.c -o c_code/2_7/lookups.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/semdata.c -o c_code/2_7/semdata.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/semdata.c -o c_code/2_7/semdata.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/treetab.c -o c_code/2_7/treetab.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/treetab.c -o c_code/2_7/treetab.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/vmdef.c -o c_code/2_7/vmdef.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/vmdef.c -o c_code/2_7/vmdef.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/sem.c -o c_code/2_7/sem.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/sem.c -o c_code/2_7/sem.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/semfold.c -o c_code/2_7/semfold.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/semfold.c -o c_code/2_7/semfold.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/saturate.c -o c_code/2_7/saturate.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/saturate.c -o c_code/2_7/saturate.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/procfind.c -o c_code/2_7/procfind.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/procfind.c -o c_code/2_7/procfind.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/pragmas.c -o c_code/2_7/pragmas.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/pragmas.c -o c_code/2_7/pragmas.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/semtypinst.c -o c_code/2_7/semtypinst.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/semtypinst.c -o c_code/2_7/semtypinst.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/sigmatch.c -o c_code/2_7/sigmatch.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/sigmatch.c -o c_code/2_7/sigmatch.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/parampatterns.c -o c_code/2_7/parampatterns.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/parampatterns.c -o c_code/2_7/parampatterns.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/docgen.c -o c_code/2_7/docgen.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/docgen.c -o c_code/2_7/docgen.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/docutils_rstast.c -o c_code/2_7/docutils_rstast.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/docutils_rstast.c -o c_code/2_7/docutils_rstast.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_json.c -o c_code/2_7/stdlib_json.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_json.c -o c_code/2_7/stdlib_json.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_lexbase.c -o c_code/2_7/stdlib_lexbase.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_lexbase.c -o c_code/2_7/stdlib_lexbase.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_unicode.c -o c_code/2_7/stdlib_unicode.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_unicode.c -o c_code/2_7/stdlib_unicode.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/docutils_rst.c -o c_code/2_7/docutils_rst.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/docutils_rst.c -o c_code/2_7/docutils_rst.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/docutils_rstgen.c -o c_code/2_7/docutils_rstgen.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/docutils_rstgen.c -o c_code/2_7/docutils_rstgen.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/docutils_highlite.c -o c_code/2_7/docutils_highlite.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/docutils_highlite.c -o c_code/2_7/docutils_highlite.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/sempass2.c -o c_code/2_7/sempass2.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/sempass2.c -o c_code/2_7/sempass2.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/guards.c -o c_code/2_7/guards.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/guards.c -o c_code/2_7/guards.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_xmltree.c -o c_code/2_7/stdlib_xmltree.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_xmltree.c -o c_code/2_7/stdlib_xmltree.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_macros.c -o c_code/2_7/stdlib_macros.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_macros.c -o c_code/2_7/stdlib_macros.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_cgi.c -o c_code/2_7/stdlib_cgi.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_cgi.c -o c_code/2_7/stdlib_cgi.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_cookies.c -o c_code/2_7/stdlib_cookies.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_cookies.c -o c_code/2_7/stdlib_cookies.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/typesrenderer.c -o c_code/2_7/typesrenderer.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/typesrenderer.c -o c_code/2_7/typesrenderer.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_algorithm.c -o c_code/2_7/stdlib_algorithm.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_algorithm.c -o c_code/2_7/stdlib_algorithm.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_sequtils.c -o c_code/2_7/stdlib_sequtils.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_sequtils.c -o c_code/2_7/stdlib_sequtils.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/pretty.c -o c_code/2_7/pretty.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/pretty.c -o c_code/2_7/pretty.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/transf.c -o c_code/2_7/transf.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/transf.c -o c_code/2_7/transf.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/cgmeth.c -o c_code/2_7/cgmeth.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/cgmeth.c -o c_code/2_7/cgmeth.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/lambdalifting.c -o c_code/2_7/lambdalifting.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/lambdalifting.c -o c_code/2_7/lambdalifting.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/lowerings.c -o c_code/2_7/lowerings.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/lowerings.c -o c_code/2_7/lowerings.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/vm.c -o c_code/2_7/vm.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/vm.c -o c_code/2_7/vm.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/vmgen.c -o c_code/2_7/vmgen.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/vmgen.c -o c_code/2_7/vmgen.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/vmdeps.c -o c_code/2_7/vmdeps.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/vmdeps.c -o c_code/2_7/vmdeps.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/evaltempl.c -o c_code/2_7/evaltempl.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/evaltempl.c -o c_code/2_7/evaltempl.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/aliases.c -o c_code/2_7/aliases.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/aliases.c -o c_code/2_7/aliases.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/patterns.c -o c_code/2_7/patterns.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/patterns.c -o c_code/2_7/patterns.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/semmacrosanity.c -o c_code/2_7/semmacrosanity.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/semmacrosanity.c -o c_code/2_7/semmacrosanity.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/cgen.c -o c_code/2_7/cgen.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/cgen.c -o c_code/2_7/cgen.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/ccgutils.c -o c_code/2_7/ccgutils.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/ccgutils.c -o c_code/2_7/ccgutils.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/cgendata.c -o c_code/2_7/cgendata.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/cgendata.c -o c_code/2_7/cgendata.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/ccgmerge.c -o c_code/2_7/ccgmerge.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/ccgmerge.c -o c_code/2_7/ccgmerge.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/jsgen.c -o c_code/2_7/jsgen.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/jsgen.c -o c_code/2_7/jsgen.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/passaux.c -o c_code/2_7/passaux.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/passaux.c -o c_code/2_7/passaux.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/depends.c -o c_code/2_7/depends.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/depends.c -o c_code/2_7/depends.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/docgen2.c -o c_code/2_7/docgen2.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/docgen2.c -o c_code/2_7/docgen2.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/service.c -o c_code/2_7/service.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/service.c -o c_code/2_7/service.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_parseopt.c -o c_code/2_7/stdlib_parseopt.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_parseopt.c -o c_code/2_7/stdlib_parseopt.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/modules.c -o c_code/2_7/modules.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/modules.c -o c_code/2_7/modules.o
+    echo "$LINKER -o $binDir/nimrod  \
+c_code/2_7/nimrod.o \
+c_code/2_7/stdlib_system.o \
+c_code/2_7/testability.o \
+c_code/2_7/commands.o \
+c_code/2_7/stdlib_os.o \
+c_code/2_7/stdlib_strutils.o \
+c_code/2_7/stdlib_parseutils.o \
+c_code/2_7/stdlib_times.o \
+c_code/2_7/stdlib_posix.o \
+c_code/2_7/msgs.o \
+c_code/2_7/options.o \
+c_code/2_7/lists.o \
+c_code/2_7/stdlib_strtabs.o \
+c_code/2_7/stdlib_hashes.o \
+c_code/2_7/stdlib_osproc.o \
+c_code/2_7/stdlib_streams.o \
+c_code/2_7/stdlib_linux.o \
+c_code/2_7/stdlib_sets.o \
+c_code/2_7/stdlib_math.o \
+c_code/2_7/stdlib_tables.o \
+c_code/2_7/ropes.o \
+c_code/2_7/platform.o \
+c_code/2_7/crc.o \
+c_code/2_7/stdlib_sockets.o \
+c_code/2_7/stdlib_unsigned.o \
+c_code/2_7/nversion.o \
+c_code/2_7/condsyms.o \
+c_code/2_7/idents.o \
+c_code/2_7/extccomp.o \
+c_code/2_7/wordrecg.o \
+c_code/2_7/babelcmd.o \
+c_code/2_7/lexer.o \
+c_code/2_7/nimlexbase.o \
+c_code/2_7/llstream.o \
+c_code/2_7/nimconf.o \
+c_code/2_7/main.o \
+c_code/2_7/ast.o \
+c_code/2_7/stdlib_intsets.o \
+c_code/2_7/idgen.o \
+c_code/2_7/astalgo.o \
+c_code/2_7/rodutils.o \
+c_code/2_7/syntaxes.o \
+c_code/2_7/parser.o \
+c_code/2_7/pbraces.o \
+c_code/2_7/filters.o \
+c_code/2_7/renderer.o \
+c_code/2_7/filter_tmpl.o \
+c_code/2_7/rodread.o \
+c_code/2_7/types.o \
+c_code/2_7/trees.o \
+c_code/2_7/stdlib_memfiles.o \
+c_code/2_7/rodwrite.o \
+c_code/2_7/passes.o \
+c_code/2_7/magicsys.o \
+c_code/2_7/nimsets.o \
+c_code/2_7/bitsets.o \
+c_code/2_7/importer.o \
+c_code/2_7/lookups.o \
+c_code/2_7/semdata.o \
+c_code/2_7/treetab.o \
+c_code/2_7/vmdef.o \
+c_code/2_7/sem.o \
+c_code/2_7/semfold.o \
+c_code/2_7/saturate.o \
+c_code/2_7/procfind.o \
+c_code/2_7/pragmas.o \
+c_code/2_7/semtypinst.o \
+c_code/2_7/sigmatch.o \
+c_code/2_7/parampatterns.o \
+c_code/2_7/docgen.o \
+c_code/2_7/docutils_rstast.o \
+c_code/2_7/stdlib_json.o \
+c_code/2_7/stdlib_lexbase.o \
+c_code/2_7/stdlib_unicode.o \
+c_code/2_7/docutils_rst.o \
+c_code/2_7/docutils_rstgen.o \
+c_code/2_7/docutils_highlite.o \
+c_code/2_7/sempass2.o \
+c_code/2_7/guards.o \
+c_code/2_7/stdlib_xmltree.o \
+c_code/2_7/stdlib_macros.o \
+c_code/2_7/stdlib_cgi.o \
+c_code/2_7/stdlib_cookies.o \
+c_code/2_7/typesrenderer.o \
+c_code/2_7/stdlib_algorithm.o \
+c_code/2_7/stdlib_sequtils.o \
+c_code/2_7/pretty.o \
+c_code/2_7/transf.o \
+c_code/2_7/cgmeth.o \
+c_code/2_7/lambdalifting.o \
+c_code/2_7/lowerings.o \
+c_code/2_7/vm.o \
+c_code/2_7/vmgen.o \
+c_code/2_7/vmdeps.o \
+c_code/2_7/evaltempl.o \
+c_code/2_7/aliases.o \
+c_code/2_7/patterns.o \
+c_code/2_7/semmacrosanity.o \
+c_code/2_7/cgen.o \
+c_code/2_7/ccgutils.o \
+c_code/2_7/cgendata.o \
+c_code/2_7/ccgmerge.o \
+c_code/2_7/jsgen.o \
+c_code/2_7/passaux.o \
+c_code/2_7/depends.o \
+c_code/2_7/docgen2.o \
+c_code/2_7/service.o \
+c_code/2_7/stdlib_parseopt.o \
+c_code/2_7/modules.o $LINK_FLAGS"
+    $LINKER -o $binDir/nimrod  \
+c_code/2_7/nimrod.o \
+c_code/2_7/stdlib_system.o \
+c_code/2_7/testability.o \
+c_code/2_7/commands.o \
+c_code/2_7/stdlib_os.o \
+c_code/2_7/stdlib_strutils.o \
+c_code/2_7/stdlib_parseutils.o \
+c_code/2_7/stdlib_times.o \
+c_code/2_7/stdlib_posix.o \
+c_code/2_7/msgs.o \
+c_code/2_7/options.o \
+c_code/2_7/lists.o \
+c_code/2_7/stdlib_strtabs.o \
+c_code/2_7/stdlib_hashes.o \
+c_code/2_7/stdlib_osproc.o \
+c_code/2_7/stdlib_streams.o \
+c_code/2_7/stdlib_linux.o \
+c_code/2_7/stdlib_sets.o \
+c_code/2_7/stdlib_math.o \
+c_code/2_7/stdlib_tables.o \
+c_code/2_7/ropes.o \
+c_code/2_7/platform.o \
+c_code/2_7/crc.o \
+c_code/2_7/stdlib_sockets.o \
+c_code/2_7/stdlib_unsigned.o \
+c_code/2_7/nversion.o \
+c_code/2_7/condsyms.o \
+c_code/2_7/idents.o \
+c_code/2_7/extccomp.o \
+c_code/2_7/wordrecg.o \
+c_code/2_7/babelcmd.o \
+c_code/2_7/lexer.o \
+c_code/2_7/nimlexbase.o \
+c_code/2_7/llstream.o \
+c_code/2_7/nimconf.o \
+c_code/2_7/main.o \
+c_code/2_7/ast.o \
+c_code/2_7/stdlib_intsets.o \
+c_code/2_7/idgen.o \
+c_code/2_7/astalgo.o \
+c_code/2_7/rodutils.o \
+c_code/2_7/syntaxes.o \
+c_code/2_7/parser.o \
+c_code/2_7/pbraces.o \
+c_code/2_7/filters.o \
+c_code/2_7/renderer.o \
+c_code/2_7/filter_tmpl.o \
+c_code/2_7/rodread.o \
+c_code/2_7/types.o \
+c_code/2_7/trees.o \
+c_code/2_7/stdlib_memfiles.o \
+c_code/2_7/rodwrite.o \
+c_code/2_7/passes.o \
+c_code/2_7/magicsys.o \
+c_code/2_7/nimsets.o \
+c_code/2_7/bitsets.o \
+c_code/2_7/importer.o \
+c_code/2_7/lookups.o \
+c_code/2_7/semdata.o \
+c_code/2_7/treetab.o \
+c_code/2_7/vmdef.o \
+c_code/2_7/sem.o \
+c_code/2_7/semfold.o \
+c_code/2_7/saturate.o \
+c_code/2_7/procfind.o \
+c_code/2_7/pragmas.o \
+c_code/2_7/semtypinst.o \
+c_code/2_7/sigmatch.o \
+c_code/2_7/parampatterns.o \
+c_code/2_7/docgen.o \
+c_code/2_7/docutils_rstast.o \
+c_code/2_7/stdlib_json.o \
+c_code/2_7/stdlib_lexbase.o \
+c_code/2_7/stdlib_unicode.o \
+c_code/2_7/docutils_rst.o \
+c_code/2_7/docutils_rstgen.o \
+c_code/2_7/docutils_highlite.o \
+c_code/2_7/sempass2.o \
+c_code/2_7/guards.o \
+c_code/2_7/stdlib_xmltree.o \
+c_code/2_7/stdlib_macros.o \
+c_code/2_7/stdlib_cgi.o \
+c_code/2_7/stdlib_cookies.o \
+c_code/2_7/typesrenderer.o \
+c_code/2_7/stdlib_algorithm.o \
+c_code/2_7/stdlib_sequtils.o \
+c_code/2_7/pretty.o \
+c_code/2_7/transf.o \
+c_code/2_7/cgmeth.o \
+c_code/2_7/lambdalifting.o \
+c_code/2_7/lowerings.o \
+c_code/2_7/vm.o \
+c_code/2_7/vmgen.o \
+c_code/2_7/vmdeps.o \
+c_code/2_7/evaltempl.o \
+c_code/2_7/aliases.o \
+c_code/2_7/patterns.o \
+c_code/2_7/semmacrosanity.o \
+c_code/2_7/cgen.o \
+c_code/2_7/ccgutils.o \
+c_code/2_7/cgendata.o \
+c_code/2_7/ccgmerge.o \
+c_code/2_7/jsgen.o \
+c_code/2_7/passaux.o \
+c_code/2_7/depends.o \
+c_code/2_7/docgen2.o \
+c_code/2_7/service.o \
+c_code/2_7/stdlib_parseopt.o \
+c_code/2_7/modules.o $LINK_FLAGS
+    ;;
   *)
     echo "Error: no C code generated for: [$myos: $mycpu]"
     exit 1
@@ -4982,6 +5426,10 @@ c_code/3_3/modules.o $LINK_FLAGS
     $LINKER -o $binDir/nimrod  $LINK_FLAGS
     ;;
   mips)
+    echo "$LINKER -o $binDir/nimrod  $LINK_FLAGS"
+    $LINKER -o $binDir/nimrod  $LINK_FLAGS
+    ;;
+  powerpc)
     echo "$LINKER -o $binDir/nimrod  $LINK_FLAGS"
     $LINKER -o $binDir/nimrod  $LINK_FLAGS
     ;;
@@ -6313,6 +6761,10 @@ c_code/4_5/modules.o $LINK_FLAGS
     echo "$LINKER -o $binDir/nimrod  $LINK_FLAGS"
     $LINKER -o $binDir/nimrod  $LINK_FLAGS
     ;;
+  powerpc)
+    echo "$LINKER -o $binDir/nimrod  $LINK_FLAGS"
+    $LINKER -o $binDir/nimrod  $LINK_FLAGS
+    ;;
   *)
     echo "Error: no C code generated for: [$myos: $mycpu]"
     exit 1
@@ -7206,6 +7658,10 @@ c_code/5_2/modules.o $LINK_FLAGS
     $LINKER -o $binDir/nimrod  $LINK_FLAGS
     ;;
   mips)
+    echo "$LINKER -o $binDir/nimrod  $LINK_FLAGS"
+    $LINKER -o $binDir/nimrod  $LINK_FLAGS
+    ;;
+  powerpc)
     echo "$LINKER -o $binDir/nimrod  $LINK_FLAGS"
     $LINKER -o $binDir/nimrod  $LINK_FLAGS
     ;;
@@ -8105,6 +8561,10 @@ c_code/6_2/modules.o $LINK_FLAGS
     echo "$LINKER -o $binDir/nimrod  $LINK_FLAGS"
     $LINKER -o $binDir/nimrod  $LINK_FLAGS
     ;;
+  powerpc)
+    echo "$LINKER -o $binDir/nimrod  $LINK_FLAGS"
+    $LINKER -o $binDir/nimrod  $LINK_FLAGS
+    ;;
   *)
     echo "Error: no C code generated for: [$myos: $mycpu]"
     exit 1
@@ -9001,6 +9461,10 @@ c_code/7_2/modules.o $LINK_FLAGS
     echo "$LINKER -o $binDir/nimrod  $LINK_FLAGS"
     $LINKER -o $binDir/nimrod  $LINK_FLAGS
     ;;
+  powerpc)
+    echo "$LINKER -o $binDir/nimrod  $LINK_FLAGS"
+    $LINKER -o $binDir/nimrod  $LINK_FLAGS
+    ;;
   *)
     echo "Error: no C code generated for: [$myos: $mycpu]"
     exit 1
@@ -9894,6 +10358,10 @@ c_code/8_2/modules.o $LINK_FLAGS
     $LINKER -o $binDir/nimrod  $LINK_FLAGS
     ;;
   mips)
+    echo "$LINKER -o $binDir/nimrod  $LINK_FLAGS"
+    $LINKER -o $binDir/nimrod  $LINK_FLAGS
+    ;;
+  powerpc)
     echo "$LINKER -o $binDir/nimrod  $LINK_FLAGS"
     $LINKER -o $binDir/nimrod  $LINK_FLAGS
     ;;
