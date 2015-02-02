@@ -56,6 +56,8 @@ case $uos in
   *freebsd* | *dragonfly* ) 
     myos="freebsd"
     LINK_FLAGS="$LINK_FLAGS -lm"
+     CC="clang"
+    LINKER="clang"
     ;;
   *openbsd* )
     myos="openbsd" 
