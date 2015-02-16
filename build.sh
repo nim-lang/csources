@@ -114,7 +114,7 @@ case $ucpu in
     mycpu="powerpc" ;;
   *mips* ) 
     mycpu="mips" ;;
-  *arm*|*armv6l* )
+  *arm*|*armv6l*|*aarch* )
     mycpu="arm" ;;
   *) 
     echo "Error: unknown processor: $ucpu"
