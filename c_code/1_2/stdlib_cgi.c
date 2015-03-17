@@ -64,36 +64,36 @@ N_NIMCALL(NimStringDesc*, addChar)(NimStringDesc* s, NIM_CHAR c);
 N_NIMCALL(NimStringDesc*, nsuToHex)(NI64 x, NI len);
 static N_INLINE(void, appendString)(NimStringDesc* dest, NimStringDesc* src);
 N_NIMCALL(NimStringDesc*, resizeString)(NimStringDesc* dest, NI addlen);
-stringtableobj134012* gcookies_364172;
+stringtableobj134012* gcookies_353120;
 
 static N_INLINE(void, appendString)(NimStringDesc* dest, NimStringDesc* src) {
-	memcpy(((NCSTRING) ((&(*dest).data[((*dest).Sup.len)- 0]))), ((NCSTRING) ((*src).data)), (NI64)((*src).Sup.len + 1));
+	memcpy(((NCSTRING) ((&(*dest).data[((*dest).Sup.len)- 0]))), ((NCSTRING) ((*src).data)), (NI64)((*src).Sup.len + ((NI) 1)));
 	(*dest).Sup.len += (*src).Sup.len;
 }
 
-N_NIMCALL(NimStringDesc*, encodeurl_363004)(NimStringDesc* s) {
+N_NIMCALL(NimStringDesc*, encodeurl_352004)(NimStringDesc* s) {
 	NimStringDesc* result;
 	result = 0;
-	result = rawNewString((NI64)(s->Sup.len + (NI)((NU64)(s->Sup.len) >> (NU64)(2))));
+	result = rawNewString((NI64)(s->Sup.len + (NI)((NU64)(s->Sup.len) >> (NU64)(((NI) 2)))));
 	{
-		NI i_363018;
-		NI HEX3Atmp_363028;
-		NI res_363031;
-		i_363018 = 0;
-		HEX3Atmp_363028 = 0;
-		HEX3Atmp_363028 = (NI64)(s->Sup.len - 1);
-		res_363031 = 0;
+		NI i_352018;
+		NI HEX3Atmp_352028;
+		NI res_352031;
+		i_352018 = 0;
+		HEX3Atmp_352028 = 0;
+		HEX3Atmp_352028 = (NI64)(s->Sup.len - ((NI) 1));
+		res_352031 = ((NI) 0);
 		{
 			while (1) {
-				if (!(res_363031 <= HEX3Atmp_363028)) goto LA3;
-				i_363018 = res_363031;
-				switch (((NU8)(s->data[i_363018]))) {
+				if (!(res_352031 <= HEX3Atmp_352028)) goto LA3;
+				i_352018 = res_352031;
+				switch (((NU8)(s->data[i_352018]))) {
 				case 97 ... 122:
 				case 65 ... 90:
 				case 48 ... 57:
 				case 95:
 				{
-					result = addChar(result, s->data[i_363018]);
+					result = addChar(result, s->data[i_352018]);
 				}
 				break;
 				case 32:
@@ -106,13 +106,13 @@ N_NIMCALL(NimStringDesc*, encodeurl_363004)(NimStringDesc* s) {
 					NimStringDesc* LOC7;
 					result = addChar(result, 37);
 					LOC7 = 0;
-					LOC7 = nsuToHex(((NI64) (((NU8)(s->data[i_363018])))), 2);
+					LOC7 = nsuToHex(((NI64) (((NU8)(s->data[i_352018])))), ((NI) 2));
 					result = resizeString(result, LOC7->Sup.len + 0);
 appendString(result, LOC7);
 				}
 				break;
 				}
-				res_363031 += 1;
+				res_352031 += ((NI) 1);
 			} LA3: ;
 		}
 	}

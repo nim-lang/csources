@@ -13,17 +13,17 @@ struct  NimStringDesc  {
   TGenericSeq Sup;
 NIM_CHAR data[SEQ_DECL_SIZE];
 };
-N_NIMCALL(NimStringDesc*, findexe_128011)(NimStringDesc* exe);
-STRING_LITERAL(TMP4897, "nodejs", 6);
-STRING_LITERAL(TMP4898, "node", 4);
+N_NIMCALL(NimStringDesc*, findexe_128411)(NimStringDesc* exe);
+STRING_LITERAL(TMP4985, "nodejs", 6);
+STRING_LITERAL(TMP4986, "node", 4);
 
-N_NIMCALL(NimStringDesc*, findnodejs_558009)(void) {
+N_NIMCALL(NimStringDesc*, findnodejs_535009)(void) {
 	NimStringDesc* result;
 	result = 0;
-	result = findexe_128011(((NimStringDesc*) &TMP4897));
+	result = findexe_128411(((NimStringDesc*) &TMP4985));
 	{
 		if (!((result) && (result)->Sup.len == 0)) goto LA3;
-		result = findexe_128011(((NimStringDesc*) &TMP4898));
+		result = findexe_128411(((NimStringDesc*) &TMP4986));
 	}
 	LA3: ;
 	return result;

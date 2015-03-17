@@ -17,12 +17,12 @@
 #include <sys/time.h>
 
 #include <sys/mman.h>
-typedef struct memfile254208 memfile254208;
+typedef struct memfile247208 memfile247208;
 typedef struct TNimType TNimType;
 typedef struct TNimNode TNimNode;
 typedef struct NimStringDesc NimStringDesc;
 typedef struct TGenericSeq TGenericSeq;
-struct  memfile254208  {
+struct  memfile247208  {
 void* Mem;
 NI Size;
 int Handle;
@@ -55,15 +55,15 @@ struct  NimStringDesc  {
   TGenericSeq Sup;
 NIM_CHAR data[SEQ_DECL_SIZE];
 };
-N_NIMCALL(void, raiseoserror_115809)(NI32 errorcode);
-N_NIMCALL(NI32, oslasterror_115841)(void);
-TNimType NTI254208; /* MemFile */
+N_NIMCALL(void, raiseoserror_114809)(NI32 errorcode);
+N_NIMCALL(NI32, oslasterror_114833)(void);
+TNimType NTI247208; /* MemFile */
 extern TNimType NTI153; /* pointer */
 extern TNimType NTI108; /* int */
 extern TNimType NTI5811; /* cint */
 
-N_NIMCALL(memfile254208, open_254807)(NimStringDesc* filename, NU8 mode, NI mappedsize, NI offset, NI newfilesize) {
-	memfile254208 result;
+N_NIMCALL(memfile247208, open_247807)(NimStringDesc* filename, NU8 mode, NI mappedsize, NI offset, NI newfilesize) {
+	memfile247208 result;
 	NIM_BOOL readonly;
 	int flags;
 	int LOC53;
@@ -82,7 +82,7 @@ N_NIMCALL(memfile254208, open_254807)(NimStringDesc* filename, NU8 mode, NI mapp
 	LA1: ;
 	{
 		NI32 permissionsmode;
-		if (!!((newfilesize == -1))) goto LA8;
+		if (!!((newfilesize == ((NI) -1)))) goto LA8;
 		flags = (NI32)((NI32)(flags | O_CREAT) | O_TRUNC);
 		permissionsmode = (NI32)(S_IRUSR | S_IWUSR);
 		result.Handle = open(filename->data, flags, permissionsmode);
@@ -97,7 +97,7 @@ N_NIMCALL(memfile254208, open_254807)(NimStringDesc* filename, NU8 mode, NI mapp
 		NI32 LOC20;
 		if (!(result.Handle == ((NI32) -1))) goto LA13;
 		result.Mem = NIM_NIL;
-		result.Size = 0;
+		result.Size = ((NI) 0);
 		{
 			int LOC19;
 			if (!!((result.Handle == ((NI32) 0)))) goto LA17;
@@ -106,12 +106,12 @@ N_NIMCALL(memfile254208, open_254807)(NimStringDesc* filename, NU8 mode, NI mapp
 		}
 		LA17: ;
 		LOC20 = 0;
-		LOC20 = oslasterror_115841();
-		raiseoserror_115809(LOC20);
+		LOC20 = oslasterror_114833();
+		raiseoserror_114809(LOC20);
 	}
 	LA13: ;
 	{
-		if (!!((newfilesize == -1))) goto LA23;
+		if (!!((newfilesize == ((NI) -1)))) goto LA23;
 		{
 			int LOC27;
 			NI32 LOC35;
@@ -119,7 +119,7 @@ N_NIMCALL(memfile254208, open_254807)(NimStringDesc* filename, NU8 mode, NI mapp
 			LOC27 = ftruncate(result.Handle, ((off_t) (newfilesize)));
 			if (!(LOC27 == ((NI32) -1))) goto LA28;
 			result.Mem = NIM_NIL;
-			result.Size = 0;
+			result.Size = ((NI) 0);
 			{
 				int LOC34;
 				if (!!((result.Handle == ((NI32) 0)))) goto LA32;
@@ -128,14 +128,14 @@ N_NIMCALL(memfile254208, open_254807)(NimStringDesc* filename, NU8 mode, NI mapp
 			}
 			LA32: ;
 			LOC35 = 0;
-			LOC35 = oslasterror_115841();
-			raiseoserror_115809(LOC35);
+			LOC35 = oslasterror_114833();
+			raiseoserror_114809(LOC35);
 		}
 		LA28: ;
 	}
 	LA23: ;
 	{
-		if (!!((mappedsize == -1))) goto LA38;
+		if (!!((mappedsize == ((NI) -1)))) goto LA38;
 		result.Size = mappedsize;
 	}
 	goto LA36;
@@ -155,7 +155,7 @@ N_NIMCALL(memfile254208, open_254807)(NimStringDesc* filename, NU8 mode, NI mapp
 		{
 			NI32 LOC52;
 			result.Mem = NIM_NIL;
-			result.Size = 0;
+			result.Size = ((NI) 0);
 			{
 				int LOC51;
 				if (!!((result.Handle == ((NI32) 0)))) goto LA49;
@@ -164,8 +164,8 @@ N_NIMCALL(memfile254208, open_254807)(NimStringDesc* filename, NU8 mode, NI mapp
 			}
 			LA49: ;
 			LOC52 = 0;
-			LOC52 = oslasterror_115841();
-			raiseoserror_115809(LOC52);
+			LOC52 = oslasterror_114833();
+			raiseoserror_114809(LOC52);
 		}
 		LA41: ;
 	}
@@ -197,7 +197,7 @@ N_NIMCALL(memfile254208, open_254807)(NimStringDesc* filename, NU8 mode, NI mapp
 		NI32 LOC74;
 		if (!(result.Mem == ((void*) (MAP_FAILED)))) goto LA67;
 		result.Mem = NIM_NIL;
-		result.Size = 0;
+		result.Size = ((NI) 0);
 		{
 			int LOC73;
 			if (!!((result.Handle == ((NI32) 0)))) goto LA71;
@@ -206,14 +206,14 @@ N_NIMCALL(memfile254208, open_254807)(NimStringDesc* filename, NU8 mode, NI mapp
 		}
 		LA71: ;
 		LOC74 = 0;
-		LOC74 = oslasterror_115841();
-		raiseoserror_115809(LOC74);
+		LOC74 = oslasterror_114833();
+		raiseoserror_114809(LOC74);
 	}
 	LA67: ;
 	return result;
 }
 
-N_NIMCALL(void, close_255248)(memfile254208* f) {
+N_NIMCALL(void, close_248248)(memfile247208* f) {
 	NIM_BOOL error;
 	NI32 lasterr;
 	error = NIM_FALSE;
@@ -226,7 +226,7 @@ N_NIMCALL(void, close_255248)(memfile254208* f) {
 		LOC5 = 0;
 		LOC5 = munmap((*f).Mem, (*f).Size);
 		error = !((LOC5 == ((NI32) 0)));
-		lasterr = oslasterror_115841();
+		lasterr = oslasterror_114833();
 		LOC6 = 0;
 		LOC7 = 0;
 		LOC7 = close((*f).Handle);
@@ -237,12 +237,12 @@ N_NIMCALL(void, close_255248)(memfile254208* f) {
 		error = LOC6;
 	}
 	LA3: ;
-	(*f).Size = 0;
+	(*f).Size = ((NI) 0);
 	(*f).Mem = NIM_NIL;
 	(*f).Handle = ((int) 0);
 	{
 		if (!error) goto LA11;
-		raiseoserror_115809(lasterr);
+		raiseoserror_114809(lasterr);
 	}
 	LA11: ;
 }
@@ -250,28 +250,28 @@ NIM_EXTERNC N_NOINLINE(void, stdlib_memfilesInit)(void) {
 }
 
 NIM_EXTERNC N_NOINLINE(void, stdlib_memfilesDatInit)(void) {
-static TNimNode* TMP832[3];
-static TNimNode TMP816[4];
-NTI254208.size = sizeof(memfile254208);
-NTI254208.kind = 18;
-NTI254208.base = 0;
-NTI254208.flags = 3;
-TMP832[0] = &TMP816[1];
-TMP816[1].kind = 1;
-TMP816[1].offset = offsetof(memfile254208, Mem);
-TMP816[1].typ = (&NTI153);
-TMP816[1].name = "mem";
-TMP832[1] = &TMP816[2];
-TMP816[2].kind = 1;
-TMP816[2].offset = offsetof(memfile254208, Size);
-TMP816[2].typ = (&NTI108);
-TMP816[2].name = "size";
-TMP832[2] = &TMP816[3];
-TMP816[3].kind = 1;
-TMP816[3].offset = offsetof(memfile254208, Handle);
-TMP816[3].typ = (&NTI5811);
-TMP816[3].name = "handle";
-TMP816[0].len = 3; TMP816[0].kind = 2; TMP816[0].sons = &TMP832[0];
-NTI254208.node = &TMP816[0];
+static TNimNode* TMP833[3];
+static TNimNode TMP817[4];
+NTI247208.size = sizeof(memfile247208);
+NTI247208.kind = 18;
+NTI247208.base = 0;
+NTI247208.flags = 3;
+TMP833[0] = &TMP817[1];
+TMP817[1].kind = 1;
+TMP817[1].offset = offsetof(memfile247208, Mem);
+TMP817[1].typ = (&NTI153);
+TMP817[1].name = "mem";
+TMP833[1] = &TMP817[2];
+TMP817[2].kind = 1;
+TMP817[2].offset = offsetof(memfile247208, Size);
+TMP817[2].typ = (&NTI108);
+TMP817[2].name = "size";
+TMP833[2] = &TMP817[3];
+TMP817[3].kind = 1;
+TMP817[3].offset = offsetof(memfile247208, Handle);
+TMP817[3].typ = (&NTI5811);
+TMP817[3].name = "handle";
+TMP817[0].len = 3; TMP817[0].kind = 2; TMP817[0].sons = &TMP833[0];
+NTI247208.node = &TMP817[0];
 }
 

@@ -4,7 +4,7 @@
 #define NIM_INTBITS 64
 #include "nimbase.h"
 
-N_NIMCALL(NI64, HEX7CHEX2DHEX7C_277034)(NI64 a, NI64 b) {
+N_NIMCALL(NI64, HEX7CHEX2DHEX7C_270030)(NI64 a, NI64 b) {
 	NI64 result;
 {	result = 0;
 	result = (NI64)((NU64)(a) - (NU64)(b));
@@ -33,7 +33,7 @@ N_NIMCALL(NI64, HEX7CHEX2DHEX7C_277034)(NI64 a, NI64 b) {
 	return result;
 }
 
-N_NIMCALL(NI64, HEX7CabsHEX7C_277046)(NI64 a) {
+N_NIMCALL(NI64, HEX7CabsHEX7C_270041)(NI64 a) {
 	NI64 result;
 	result = 0;
 	{
@@ -58,7 +58,7 @@ N_NIMCALL(NI64, HEX7CabsHEX7C_277046)(NI64 a) {
 	return result;
 }
 
-N_NIMCALL(NI64, HEX7CHEX2BHEX7C_277019)(NI64 a, NI64 b) {
+N_NIMCALL(NI64, HEX7CHEX2BHEX7C_270019)(NI64 a, NI64 b) {
 	NI64 result;
 {	result = 0;
 	result = (NI64)((NU64)(a) + (NU64)(b));
@@ -93,7 +93,7 @@ N_NIMCALL(NI64, HEX7CHEX2BHEX7C_277019)(NI64 a, NI64 b) {
 	return result;
 }
 
-N_NIMCALL(NI64, HEX7CHEX2AHEX7C_277078)(NI64 a, NI64 b) {
+N_NIMCALL(NI64, HEX7CHEX2AHEX7C_270073)(NI64 a, NI64 b) {
 	NI64 result;
 	NF resasfloat;
 	NF floatprod;
@@ -128,7 +128,7 @@ N_NIMCALL(NI64, HEX7CHEX2AHEX7C_277078)(NI64 a, NI64 b) {
 	return result;
 }
 
-N_NIMCALL(NI64, HEX7CdivHEX7C_277056)(NI64 a, NI64 b) {
+N_NIMCALL(NI64, HEX7CdivHEX7C_270051)(NI64 a, NI64 b) {
 	NI64 result;
 	result = 0;
 	{

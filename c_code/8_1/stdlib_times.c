@@ -4,16 +4,16 @@
 #define NIM_INTBITS 32
 #include "nimbase.h"
 
+#include <sys/time.h>
+
 #include <sys/select.h>
 
 #include <string.h>
 
-#include <sys/time.h>
-
 #include <time.h>
 typedef struct NimStringDesc NimStringDesc;
 typedef struct TGenericSeq TGenericSeq;
-typedef struct timeinfo102205 timeinfo102205;
+typedef struct timeinfo101408 timeinfo101408;
 typedef struct TNimObject TNimObject;
 typedef struct TNimType TNimType;
 typedef struct TNimNode TNimNode;
@@ -41,7 +41,7 @@ TY3294 deepcopy;
 struct  TNimObject  {
 TNimType* m_type;
 };
-struct  timeinfo102205  {
+struct  timeinfo101408  {
   TNimObject Sup;
 NI Second;
 NI Minute;
@@ -63,28 +63,28 @@ NCSTRING name;
 NI len;
 TNimNode** sons;
 };
-typedef NU8 TY102854[7];
+typedef NU8 TY102054[7];
 struct keyvaluepair131008 {
 NimStringDesc* Field0;
 NimStringDesc* Field1;
 };
-N_NIMCALL(void, getlocaltime_102254)(time_t t, timeinfo102205* Result);
-N_NIMCALL(void, tmtotimeinfo_102848)(struct tm* tm, NIM_BOOL local, timeinfo102205* Result);
-N_NIMCALL(void, gettzname_102349)(keyvaluepair131008* Result);
+N_NIMCALL(void, getlocaltime_101457)(time_t t, timeinfo101408* Result);
+N_NIMCALL(void, tmtotimeinfo_102048)(struct tm* tm, NIM_BOOL local, timeinfo101408* Result);
+N_NIMCALL(void, gettzname_101550)(keyvaluepair131008* Result);
 N_NIMCALL(NimStringDesc*, cstrToNimstr)(NCSTRING str);
 N_NIMCALL(void, unsureAsgnRef)(void** dest, void* src);
 N_NIMCALL(NimStringDesc*, copyString)(NimStringDesc* src);
-N_NIMCALL(NI, gettimezone_102404)(void);
+N_NIMCALL(NI, gettimezone_101604)(void);
 N_NIMCALL(void, genericShallowAssign)(void* dest, void* src, TNimType* mt);
 N_NOINLINE(void, chckNil)(void* p);
 N_NIMCALL(void, genericReset)(void* dest, TNimType* mt);
-N_NIMCALL(time_t, gettime_102249)(void);
+N_NIMCALL(time_t, gettime_101452)(void);
 N_NIMCALL(NimStringDesc*, nimIntToStr)(NI x);
 static N_INLINE(void, appendString)(NimStringDesc* dest, NimStringDesc* src);
 static N_INLINE(void, appendChar)(NimStringDesc* dest, NIM_CHAR c);
 N_NIMCALL(NimStringDesc*, nsuIntToStr)(NI x, NI minchars);
 N_NIMCALL(NimStringDesc*, rawNewString)(NI space);
-NIM_CONST TY102854 weekdays_102853 = {((NU8) 6),
+NIM_CONST TY102054 weekdays_102053 = {((NU8) 6),
 ((NU8) 0),
 ((NU8) 1),
 ((NU8) 2),
@@ -92,18 +92,18 @@ NIM_CONST TY102854 weekdays_102853 = {((NU8) 6),
 ((NU8) 4),
 ((NU8) 5)}
 ;
-STRING_LITERAL(TMP3114, "UTC", 3);
+STRING_LITERAL(TMP3191, "UTC", 3);
 extern TNimType NTI3411; /* RootObj */
-TNimType NTI102205; /* TimeInfo */
+TNimType NTI101408; /* TimeInfo */
 extern TNimType NTI108; /* int */
-TNimType NTI102208; /* range 0..61(int) */
-TNimType NTI102211; /* range 0..59(int) */
-TNimType NTI102213; /* range 0..23(int) */
-TNimType NTI102216; /* range 1..31(int) */
-TNimType NTI102006; /* Month */
-TNimType NTI102219; /* range -10000..10000(int) */
-TNimType NTI102008; /* WeekDay */
-TNimType NTI102225; /* range 0..365(int) */
+TNimType NTI101411; /* range 0..61(int) */
+TNimType NTI101414; /* range 0..59(int) */
+TNimType NTI101416; /* range 0..23(int) */
+TNimType NTI101419; /* range 1..31(int) */
+TNimType NTI101006; /* Month */
+TNimType NTI101422; /* range -10000..10000(int) */
+TNimType NTI101008; /* WeekDay */
+TNimType NTI101428; /* range 0..365(int) */
 extern TNimType NTI138; /* bool */
 extern TNimType NTI149; /* string */
 
@@ -117,14 +117,14 @@ N_NIMCALL(NF, ntepochTime)(void) {
 	return result;
 }
 
-N_NIMCALL(void, gettzname_102349)(keyvaluepair131008* Result) {
-{	unsureAsgnRef((void**) (&(*Result).Field0), cstrToNimstr(tzname[(0)- 0]));
-	unsureAsgnRef((void**) (&(*Result).Field1), cstrToNimstr(tzname[(1)- 0]));
+N_NIMCALL(void, gettzname_101550)(keyvaluepair131008* Result) {
+{	unsureAsgnRef((void**) (&(*Result).Field0), cstrToNimstr(tzname[(((NI) 0))- 0]));
+	unsureAsgnRef((void**) (&(*Result).Field1), cstrToNimstr(tzname[(((NI) 1))- 0]));
 	goto BeforeRet;
 	}BeforeRet: ;
 }
 
-N_NIMCALL(NI, gettimezone_102404)(void) {
+N_NIMCALL(NI, gettimezone_101604)(void) {
 	NI result;
 {	result = 0;
 	result = timezone;
@@ -133,19 +133,19 @@ N_NIMCALL(NI, gettimezone_102404)(void) {
 	return result;
 }
 
-N_NIMCALL(void, tmtotimeinfo_102848)(struct tm* tm, NIM_BOOL local, timeinfo102205* Result) {
-	timeinfo102205 LOC1;
+N_NIMCALL(void, tmtotimeinfo_102048)(struct tm* tm, NIM_BOOL local, timeinfo101408* Result) {
+	timeinfo101408 LOC1;
 	memset((void*)(&LOC1), 0, sizeof(LOC1));
-	LOC1.Sup.m_type = (&NTI102205);
+	LOC1.Sup.m_type = (&NTI101408);
 	memset((void*)(&LOC1), 0, sizeof(LOC1));
-	LOC1.Sup.m_type = (&NTI102205);
+	LOC1.Sup.m_type = (&NTI101408);
 	LOC1.Second = ((NI) (((NI) ((*tm).tm_sec))));
 	LOC1.Minute = ((NI) (((NI) ((*tm).tm_min))));
 	LOC1.Hour = ((NI) (((NI) ((*tm).tm_hour))));
 	LOC1.Monthday = ((NI) (((NI) ((*tm).tm_mday))));
 	LOC1.Month = ((NU8) ((*tm).tm_mon));
 	LOC1.Year = ((NI) ((NI32)((*tm).tm_year + ((NI32) 1900))));
-	LOC1.Weekday = weekdays_102853[(((NI) ((*tm).tm_wday)))- 0];
+	LOC1.Weekday = weekdays_102053[(((NI) ((*tm).tm_wday)))- 0];
 	LOC1.Yearday = ((NI) (((NI) ((*tm).tm_yday))));
 	LOC1.Isdst = (((NI32) 0) < (*tm).tm_isdst);
 	{
@@ -154,7 +154,7 @@ N_NIMCALL(void, tmtotimeinfo_102848)(struct tm* tm, NIM_BOOL local, timeinfo1022
 			keyvaluepair131008 LOC10;
 			if (!(((NI32) 0) < (*tm).tm_isdst)) goto LA8;
 			memset((void*)(&LOC10), 0, sizeof(LOC10));
-			gettzname_102349((&LOC10));
+			gettzname_101550((&LOC10));
 			LOC1.Tzname = copyString(LOC10.Field1);
 		}
 		goto LA6;
@@ -162,7 +162,7 @@ N_NIMCALL(void, tmtotimeinfo_102848)(struct tm* tm, NIM_BOOL local, timeinfo1022
 		{
 			keyvaluepair131008 LOC12;
 			memset((void*)(&LOC12), 0, sizeof(LOC12));
-			gettzname_102349((&LOC12));
+			gettzname_101550((&LOC12));
 			LOC1.Tzname = copyString(LOC12.Field0);
 		}
 		LA6: ;
@@ -170,35 +170,35 @@ N_NIMCALL(void, tmtotimeinfo_102848)(struct tm* tm, NIM_BOOL local, timeinfo1022
 	goto LA2;
 	LA4: ;
 	{
-		LOC1.Tzname = copyString(((NimStringDesc*) &TMP3114));
+		LOC1.Tzname = copyString(((NimStringDesc*) &TMP3191));
 	}
 	LA2: ;
 	{
 		if (!local) goto LA16;
-		LOC1.Timezone = gettimezone_102404();
+		LOC1.Timezone = gettimezone_101604();
 	}
 	goto LA14;
 	LA16: ;
 	{
-		LOC1.Timezone = 0;
+		LOC1.Timezone = ((NI) 0);
 	}
 	LA14: ;
-	genericShallowAssign((void*)Result, (void*)(&LOC1), (&NTI102205));
+	genericShallowAssign((void*)Result, (void*)(&LOC1), (&NTI101408));
 }
 
-N_NIMCALL(void, getlocaltime_102254)(time_t t, timeinfo102205* Result) {
+N_NIMCALL(void, getlocaltime_101457)(time_t t, timeinfo101408* Result) {
 	time_t a;
 	struct tm* LOC1;
 	a = t;
 	LOC1 = 0;
 	LOC1 = localtime((&a));
 	chckNil((void*)Result);
-	genericReset((void*)Result, (&NTI102205));
-	(*Result).Sup.m_type = (&NTI102205);
-	tmtotimeinfo_102848((&(*LOC1)), NIM_TRUE, Result);
+	genericReset((void*)Result, (&NTI101408));
+	(*Result).Sup.m_type = (&NTI101408);
+	tmtotimeinfo_102048((&(*LOC1)), NIM_TRUE, Result);
 }
 
-N_NIMCALL(time_t, gettime_102249)(void) {
+N_NIMCALL(time_t, gettime_101452)(void) {
 	time_t result;
 {	result = 0;
 	result = time(NIM_NIL);
@@ -208,19 +208,19 @@ N_NIMCALL(time_t, gettime_102249)(void) {
 }
 
 static N_INLINE(void, appendString)(NimStringDesc* dest, NimStringDesc* src) {
-	memcpy(((NCSTRING) ((&(*dest).data[((*dest).Sup.len)- 0]))), ((NCSTRING) ((*src).data)), (NI32)((*src).Sup.len + 1));
+	memcpy(((NCSTRING) ((&(*dest).data[((*dest).Sup.len)- 0]))), ((NCSTRING) ((*src).data)), (NI32)((*src).Sup.len + ((NI) 1)));
 	(*dest).Sup.len += (*src).Sup.len;
 }
 
 static N_INLINE(void, appendChar)(NimStringDesc* dest, NIM_CHAR c) {
 	(*dest).data[((*dest).Sup.len)- 0] = c;
-	(*dest).data[((NI32)((*dest).Sup.len + 1))- 0] = 0;
-	(*dest).Sup.len += 1;
+	(*dest).data[((NI32)((*dest).Sup.len + ((NI) 1)))- 0] = 0;
+	(*dest).Sup.len += ((NI) 1);
 }
 
 N_NIMCALL(NimStringDesc*, ntgetDateStr)(void) {
 	NimStringDesc* result;
-	timeinfo102205 ti;
+	timeinfo101408 ti;
 	time_t LOC1;
 	NimStringDesc* LOC2;
 	NimStringDesc* LOC3;
@@ -228,20 +228,20 @@ N_NIMCALL(NimStringDesc*, ntgetDateStr)(void) {
 	NimStringDesc* LOC5;
 	result = 0;
 	memset((void*)(&ti), 0, sizeof(ti));
-	ti.Sup.m_type = (&NTI102205);
+	ti.Sup.m_type = (&NTI101408);
 	LOC1 = 0;
-	LOC1 = gettime_102249();
+	LOC1 = gettime_101452();
 	chckNil((void*)(&ti));
 	memset((void*)(&ti), 0, sizeof(ti));
-	ti.Sup.m_type = (&NTI102205);
-	getlocaltime_102254(LOC1, (&ti));
+	ti.Sup.m_type = (&NTI101408);
+	getlocaltime_101457(LOC1, (&ti));
 	LOC2 = 0;
 	LOC3 = 0;
 	LOC3 = nimIntToStr(((NI) (ti.Year)));
 	LOC4 = 0;
-	LOC4 = nsuIntToStr(((NI) ((NI32)(((NI) (ti.Month)) + 1))), 2);
+	LOC4 = nsuIntToStr(((NI) ((NI32)(((NI) (ti.Month)) + ((NI) 1)))), ((NI) 2));
 	LOC5 = 0;
-	LOC5 = nsuIntToStr(((NI) (ti.Monthday)), 2);
+	LOC5 = nsuIntToStr(((NI) (ti.Monthday)), ((NI) 2));
 	LOC2 = rawNewString(LOC3->Sup.len + LOC4->Sup.len + LOC5->Sup.len + 2);
 appendString(LOC2, LOC3);
 appendChar(LOC2, 45);
@@ -254,7 +254,7 @@ appendString(LOC2, LOC5);
 
 N_NIMCALL(NimStringDesc*, ntgetClockStr)(void) {
 	NimStringDesc* result;
-	timeinfo102205 ti;
+	timeinfo101408 ti;
 	time_t LOC1;
 	NimStringDesc* LOC2;
 	NimStringDesc* LOC3;
@@ -262,20 +262,20 @@ N_NIMCALL(NimStringDesc*, ntgetClockStr)(void) {
 	NimStringDesc* LOC5;
 	result = 0;
 	memset((void*)(&ti), 0, sizeof(ti));
-	ti.Sup.m_type = (&NTI102205);
+	ti.Sup.m_type = (&NTI101408);
 	LOC1 = 0;
-	LOC1 = gettime_102249();
+	LOC1 = gettime_101452();
 	chckNil((void*)(&ti));
 	memset((void*)(&ti), 0, sizeof(ti));
-	ti.Sup.m_type = (&NTI102205);
-	getlocaltime_102254(LOC1, (&ti));
+	ti.Sup.m_type = (&NTI101408);
+	getlocaltime_101457(LOC1, (&ti));
 	LOC2 = 0;
 	LOC3 = 0;
-	LOC3 = nsuIntToStr(((NI) (ti.Hour)), 2);
+	LOC3 = nsuIntToStr(((NI) (ti.Hour)), ((NI) 2));
 	LOC4 = 0;
-	LOC4 = nsuIntToStr(((NI) (ti.Minute)), 2);
+	LOC4 = nsuIntToStr(((NI) (ti.Minute)), ((NI) 2));
 	LOC5 = 0;
-	LOC5 = nsuIntToStr(((NI) (ti.Second)), 2);
+	LOC5 = nsuIntToStr(((NI) (ti.Second)), ((NI) 2));
 	LOC2 = rawNewString(LOC3->Sup.len + LOC4->Sup.len + LOC5->Sup.len + 2);
 appendString(LOC2, LOC3);
 appendChar(LOC2, 58);
@@ -298,13 +298,14 @@ N_NIMCALL(NI64, ntDiffTime)(time_t a, time_t b) {
 	return result;
 }
 NIM_EXTERNC N_NOINLINE(void, stdlib_timesInit)(void) {
+	tzset();
 }
 
 NIM_EXTERNC N_NOINLINE(void, stdlib_timesDatInit)(void) {
-static TNimNode* TMP3107[11];
-static TNimNode* TMP3108[12];
-NI TMP3110;
-static char* NIM_CONST TMP3109[12] = {
+static TNimNode* TMP3184[11];
+static TNimNode* TMP3185[12];
+NI TMP3187;
+static char* NIM_CONST TMP3186[12] = {
 "mJan", 
 "mFeb", 
 "mMar", 
@@ -317,9 +318,9 @@ static char* NIM_CONST TMP3109[12] = {
 "mOct", 
 "mNov", 
 "mDec"};
-static TNimNode* TMP3111[7];
-NI TMP3113;
-static char* NIM_CONST TMP3112[7] = {
+static TNimNode* TMP3188[7];
+NI TMP3190;
+static char* NIM_CONST TMP3189[7] = {
 "dMon", 
 "dTue", 
 "dWed", 
@@ -328,113 +329,113 @@ static char* NIM_CONST TMP3112[7] = {
 "dSat", 
 "dSun"};
 static TNimNode TMP15[33];
-NTI102205.size = sizeof(timeinfo102205);
-NTI102205.kind = 17;
-NTI102205.base = (&NTI3411);
-TMP3107[0] = &TMP15[1];
-NTI102208.size = sizeof(NI);
-NTI102208.kind = 20;
-NTI102208.base = (&NTI108);
-NTI102208.flags = 3;
+NTI101408.size = sizeof(timeinfo101408);
+NTI101408.kind = 17;
+NTI101408.base = (&NTI3411);
+TMP3184[0] = &TMP15[1];
+NTI101411.size = sizeof(NI);
+NTI101411.kind = 20;
+NTI101411.base = (&NTI108);
+NTI101411.flags = 3;
 TMP15[1].kind = 1;
-TMP15[1].offset = offsetof(timeinfo102205, Second);
-TMP15[1].typ = (&NTI102208);
+TMP15[1].offset = offsetof(timeinfo101408, Second);
+TMP15[1].typ = (&NTI101411);
 TMP15[1].name = "second";
-TMP3107[1] = &TMP15[2];
-NTI102211.size = sizeof(NI);
-NTI102211.kind = 20;
-NTI102211.base = (&NTI108);
-NTI102211.flags = 3;
+TMP3184[1] = &TMP15[2];
+NTI101414.size = sizeof(NI);
+NTI101414.kind = 20;
+NTI101414.base = (&NTI108);
+NTI101414.flags = 3;
 TMP15[2].kind = 1;
-TMP15[2].offset = offsetof(timeinfo102205, Minute);
-TMP15[2].typ = (&NTI102211);
+TMP15[2].offset = offsetof(timeinfo101408, Minute);
+TMP15[2].typ = (&NTI101414);
 TMP15[2].name = "minute";
-TMP3107[2] = &TMP15[3];
-NTI102213.size = sizeof(NI);
-NTI102213.kind = 20;
-NTI102213.base = (&NTI108);
-NTI102213.flags = 3;
+TMP3184[2] = &TMP15[3];
+NTI101416.size = sizeof(NI);
+NTI101416.kind = 20;
+NTI101416.base = (&NTI108);
+NTI101416.flags = 3;
 TMP15[3].kind = 1;
-TMP15[3].offset = offsetof(timeinfo102205, Hour);
-TMP15[3].typ = (&NTI102213);
+TMP15[3].offset = offsetof(timeinfo101408, Hour);
+TMP15[3].typ = (&NTI101416);
 TMP15[3].name = "hour";
-TMP3107[3] = &TMP15[4];
-NTI102216.size = sizeof(NI);
-NTI102216.kind = 20;
-NTI102216.base = (&NTI108);
-NTI102216.flags = 3;
+TMP3184[3] = &TMP15[4];
+NTI101419.size = sizeof(NI);
+NTI101419.kind = 20;
+NTI101419.base = (&NTI108);
+NTI101419.flags = 3;
 TMP15[4].kind = 1;
-TMP15[4].offset = offsetof(timeinfo102205, Monthday);
-TMP15[4].typ = (&NTI102216);
+TMP15[4].offset = offsetof(timeinfo101408, Monthday);
+TMP15[4].typ = (&NTI101419);
 TMP15[4].name = "monthday";
-TMP3107[4] = &TMP15[5];
-NTI102006.size = sizeof(NU8);
-NTI102006.kind = 14;
-NTI102006.base = 0;
-NTI102006.flags = 3;
-for (TMP3110 = 0; TMP3110 < 12; TMP3110++) {
-TMP15[TMP3110+6].kind = 1;
-TMP15[TMP3110+6].offset = TMP3110;
-TMP15[TMP3110+6].name = TMP3109[TMP3110];
-TMP3108[TMP3110] = &TMP15[TMP3110+6];
+TMP3184[4] = &TMP15[5];
+NTI101006.size = sizeof(NU8);
+NTI101006.kind = 14;
+NTI101006.base = 0;
+NTI101006.flags = 3;
+for (TMP3187 = 0; TMP3187 < 12; TMP3187++) {
+TMP15[TMP3187+6].kind = 1;
+TMP15[TMP3187+6].offset = TMP3187;
+TMP15[TMP3187+6].name = TMP3186[TMP3187];
+TMP3185[TMP3187] = &TMP15[TMP3187+6];
 }
-TMP15[18].len = 12; TMP15[18].kind = 2; TMP15[18].sons = &TMP3108[0];
-NTI102006.node = &TMP15[18];
+TMP15[18].len = 12; TMP15[18].kind = 2; TMP15[18].sons = &TMP3185[0];
+NTI101006.node = &TMP15[18];
 TMP15[5].kind = 1;
-TMP15[5].offset = offsetof(timeinfo102205, Month);
-TMP15[5].typ = (&NTI102006);
+TMP15[5].offset = offsetof(timeinfo101408, Month);
+TMP15[5].typ = (&NTI101006);
 TMP15[5].name = "month";
-TMP3107[5] = &TMP15[19];
-NTI102219.size = sizeof(NI);
-NTI102219.kind = 20;
-NTI102219.base = (&NTI108);
-NTI102219.flags = 3;
+TMP3184[5] = &TMP15[19];
+NTI101422.size = sizeof(NI);
+NTI101422.kind = 20;
+NTI101422.base = (&NTI108);
+NTI101422.flags = 3;
 TMP15[19].kind = 1;
-TMP15[19].offset = offsetof(timeinfo102205, Year);
-TMP15[19].typ = (&NTI102219);
+TMP15[19].offset = offsetof(timeinfo101408, Year);
+TMP15[19].typ = (&NTI101422);
 TMP15[19].name = "year";
-TMP3107[6] = &TMP15[20];
-NTI102008.size = sizeof(NU8);
-NTI102008.kind = 14;
-NTI102008.base = 0;
-NTI102008.flags = 3;
-for (TMP3113 = 0; TMP3113 < 7; TMP3113++) {
-TMP15[TMP3113+21].kind = 1;
-TMP15[TMP3113+21].offset = TMP3113;
-TMP15[TMP3113+21].name = TMP3112[TMP3113];
-TMP3111[TMP3113] = &TMP15[TMP3113+21];
+TMP3184[6] = &TMP15[20];
+NTI101008.size = sizeof(NU8);
+NTI101008.kind = 14;
+NTI101008.base = 0;
+NTI101008.flags = 3;
+for (TMP3190 = 0; TMP3190 < 7; TMP3190++) {
+TMP15[TMP3190+21].kind = 1;
+TMP15[TMP3190+21].offset = TMP3190;
+TMP15[TMP3190+21].name = TMP3189[TMP3190];
+TMP3188[TMP3190] = &TMP15[TMP3190+21];
 }
-TMP15[28].len = 7; TMP15[28].kind = 2; TMP15[28].sons = &TMP3111[0];
-NTI102008.node = &TMP15[28];
+TMP15[28].len = 7; TMP15[28].kind = 2; TMP15[28].sons = &TMP3188[0];
+NTI101008.node = &TMP15[28];
 TMP15[20].kind = 1;
-TMP15[20].offset = offsetof(timeinfo102205, Weekday);
-TMP15[20].typ = (&NTI102008);
+TMP15[20].offset = offsetof(timeinfo101408, Weekday);
+TMP15[20].typ = (&NTI101008);
 TMP15[20].name = "weekday";
-TMP3107[7] = &TMP15[29];
-NTI102225.size = sizeof(NI);
-NTI102225.kind = 20;
-NTI102225.base = (&NTI108);
-NTI102225.flags = 3;
+TMP3184[7] = &TMP15[29];
+NTI101428.size = sizeof(NI);
+NTI101428.kind = 20;
+NTI101428.base = (&NTI108);
+NTI101428.flags = 3;
 TMP15[29].kind = 1;
-TMP15[29].offset = offsetof(timeinfo102205, Yearday);
-TMP15[29].typ = (&NTI102225);
+TMP15[29].offset = offsetof(timeinfo101408, Yearday);
+TMP15[29].typ = (&NTI101428);
 TMP15[29].name = "yearday";
-TMP3107[8] = &TMP15[30];
+TMP3184[8] = &TMP15[30];
 TMP15[30].kind = 1;
-TMP15[30].offset = offsetof(timeinfo102205, Isdst);
+TMP15[30].offset = offsetof(timeinfo101408, Isdst);
 TMP15[30].typ = (&NTI138);
 TMP15[30].name = "isDST";
-TMP3107[9] = &TMP15[31];
+TMP3184[9] = &TMP15[31];
 TMP15[31].kind = 1;
-TMP15[31].offset = offsetof(timeinfo102205, Tzname);
+TMP15[31].offset = offsetof(timeinfo101408, Tzname);
 TMP15[31].typ = (&NTI149);
 TMP15[31].name = "tzname";
-TMP3107[10] = &TMP15[32];
+TMP3184[10] = &TMP15[32];
 TMP15[32].kind = 1;
-TMP15[32].offset = offsetof(timeinfo102205, Timezone);
+TMP15[32].offset = offsetof(timeinfo101408, Timezone);
 TMP15[32].typ = (&NTI108);
 TMP15[32].name = "timezone";
-TMP15[0].len = 11; TMP15[0].kind = 2; TMP15[0].sons = &TMP3107[0];
-NTI102205.node = &TMP15[0];
+TMP15[0].len = 11; TMP15[0].kind = 2; TMP15[0].sons = &TMP3184[0];
+NTI101408.node = &TMP15[0];
 }
 

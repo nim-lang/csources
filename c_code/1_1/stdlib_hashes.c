@@ -3,18 +3,10 @@
 /* The generated code is subject to the original license. */
 #define NIM_INTBITS 32
 #include "nimbase.h"
-typedef struct NimStringDesc NimStringDesc;
-typedef struct TGenericSeq TGenericSeq;
 typedef struct TNimType TNimType;
 typedef struct TNimNode TNimNode;
-struct  TGenericSeq  {
-NI len;
-NI reserved;
-};
-struct  NimStringDesc  {
-  TGenericSeq Sup;
-NIM_CHAR data[SEQ_DECL_SIZE];
-};
+typedef struct NimStringDesc NimStringDesc;
+typedef struct TGenericSeq TGenericSeq;
 typedef N_NIMCALL_PTR(void, TY3289) (void* p, NI op);
 typedef N_NIMCALL_PTR(void*, TY3294) (void* p);
 struct  TNimType  {
@@ -26,6 +18,14 @@ TNimNode* node;
 void* finalizer;
 TY3289 marker;
 TY3294 deepcopy;
+};
+struct  TGenericSeq  {
+NI len;
+NI reserved;
+};
+struct  NimStringDesc  {
+  TGenericSeq Sup;
+NIM_CHAR data[SEQ_DECL_SIZE];
 };
 struct  TNimNode  {
 NU8 kind;
@@ -43,17 +43,17 @@ static N_INLINE(NI, HEX21HEX26_131025)(NI h, NI val) {
 	NI result;
 	result = 0;
 	result = (NI)((NU32)(h) + (NU32)(val));
-	result = (NI)((NU32)(result) + (NU32)((NI)((NU32)(result) << (NU32)(10))));
-	result = (NI)(result ^ (NI)((NU32)(result) >> (NU32)(6)));
+	result = (NI)((NU32)(result) + (NU32)((NI)((NU32)(result) << (NU32)(((NI) 10)))));
+	result = (NI)(result ^ (NI)((NU32)(result) >> (NU32)(((NI) 6))));
 	return result;
 }
 
 static N_INLINE(NI, HEX21HEX24_131054)(NI h) {
 	NI result;
 	result = 0;
-	result = (NI)((NU32)(h) + (NU32)((NI)((NU32)(h) << (NU32)(3))));
-	result = (NI)(result ^ (NI)((NU32)(result) >> (NU32)(11)));
-	result = (NI)((NU32)(result) + (NU32)((NI)((NU32)(result) << (NU32)(15))));
+	result = (NI)((NU32)(h) + (NU32)((NI)((NU32)(h) << (NU32)(((NI) 3)))));
+	result = (NI)(result ^ (NI)((NU32)(result) >> (NU32)(((NI) 11))));
+	result = (NI)((NU32)(result) + (NU32)((NI)((NU32)(result) << (NU32)(((NI) 15)))));
 	return result;
 }
 
@@ -61,21 +61,21 @@ N_NIMCALL(NI, hash_131839)(NimStringDesc* x) {
 	NI result;
 	NI h;
 	result = 0;
-	h = 0;
+	h = ((NI) 0);
 	{
 		NI i_131854;
 		NI HEX3Atmp_131865;
 		NI res_131868;
 		i_131854 = 0;
 		HEX3Atmp_131865 = 0;
-		HEX3Atmp_131865 = (NI32)(x->Sup.len - 1);
-		res_131868 = 0;
+		HEX3Atmp_131865 = (NI32)(x->Sup.len - ((NI) 1));
+		res_131868 = ((NI) 0);
 		{
 			while (1) {
 				if (!(res_131868 <= HEX3Atmp_131865)) goto LA3;
 				i_131854 = res_131868;
 				h = HEX21HEX26_131025(h, ((NI) (((NU8)(x->data[i_131854])))));
-				res_131868 += 1;
+				res_131868 += ((NI) 1);
 			} LA3: ;
 		}
 	}
@@ -83,26 +83,26 @@ N_NIMCALL(NI, hash_131839)(NimStringDesc* x) {
 	return result;
 }
 
-N_NIMCALL(NI, hashignorestyle_131885)(NimStringDesc* x) {
+N_NIMCALL(NI, hashignorestyle_131887)(NimStringDesc* x) {
 	NI result;
 	NI h;
 	result = 0;
-	h = 0;
+	h = ((NI) 0);
 	{
-		NI i_131900;
-		NI HEX3Atmp_131954;
-		NI res_131957;
-		i_131900 = 0;
-		HEX3Atmp_131954 = 0;
-		HEX3Atmp_131954 = (NI32)(x->Sup.len - 1);
-		res_131957 = 0;
+		NI i_131902;
+		NI HEX3Atmp_131953;
+		NI res_131956;
+		i_131902 = 0;
+		HEX3Atmp_131953 = 0;
+		HEX3Atmp_131953 = (NI32)(x->Sup.len - ((NI) 1));
+		res_131956 = ((NI) 0);
 		{
 			while (1) {
-				if (!(res_131957 <= HEX3Atmp_131954)) goto LA3;
-				i_131900 = res_131957;
+				if (!(res_131956 <= HEX3Atmp_131953)) goto LA3;
+				i_131902 = res_131956;
 				{
 					NIM_CHAR c;
-					c = x->data[i_131900];
+					c = x->data[i_131902];
 					{
 						if (!((NU8)(c) == (NU8)(95))) goto LA7;
 						goto LA4;
@@ -110,12 +110,12 @@ N_NIMCALL(NI, hashignorestyle_131885)(NimStringDesc* x) {
 					LA7: ;
 					{
 						if (!(((NU8)(c)) >= ((NU8)(65)) && ((NU8)(c)) <= ((NU8)(90)))) goto LA11;
-						c = ((NIM_CHAR) (((NI) ((NI32)(((NI) (((NU8)(c)))) + 32)))));
+						c = ((NIM_CHAR) (((NI) ((NI32)(((NI) (((NU8)(c)))) + ((NI) 32))))));
 					}
 					LA11: ;
 					h = HEX21HEX26_131025(h, ((NI) (((NU8)(c)))));
 				} LA4: ;
-				res_131957 += 1;
+				res_131956 += ((NI) 1);
 			} LA3: ;
 		}
 	}
@@ -123,32 +123,32 @@ N_NIMCALL(NI, hashignorestyle_131885)(NimStringDesc* x) {
 	return result;
 }
 
-N_NIMCALL(NI, hashignorecase_131977)(NimStringDesc* x) {
+N_NIMCALL(NI, hashignorecase_131978)(NimStringDesc* x) {
 	NI result;
 	NI h;
 	result = 0;
-	h = 0;
+	h = ((NI) 0);
 	{
-		NI i_131992;
-		NI HEX3Atmp_132045;
-		NI res_132048;
-		i_131992 = 0;
-		HEX3Atmp_132045 = 0;
-		HEX3Atmp_132045 = (NI32)(x->Sup.len - 1);
-		res_132048 = 0;
+		NI i_131993;
+		NI HEX3Atmp_132043;
+		NI res_132046;
+		i_131993 = 0;
+		HEX3Atmp_132043 = 0;
+		HEX3Atmp_132043 = (NI32)(x->Sup.len - ((NI) 1));
+		res_132046 = ((NI) 0);
 		{
 			while (1) {
 				NIM_CHAR c;
-				if (!(res_132048 <= HEX3Atmp_132045)) goto LA3;
-				i_131992 = res_132048;
-				c = x->data[i_131992];
+				if (!(res_132046 <= HEX3Atmp_132043)) goto LA3;
+				i_131993 = res_132046;
+				c = x->data[i_131993];
 				{
 					if (!(((NU8)(c)) >= ((NU8)(65)) && ((NU8)(c)) <= ((NU8)(90)))) goto LA6;
-					c = ((NIM_CHAR) (((NI) ((NI32)(((NI) (((NU8)(c)))) + 32)))));
+					c = ((NIM_CHAR) (((NI) ((NI32)(((NI) (((NU8)(c)))) + ((NI) 32))))));
 				}
 				LA6: ;
 				h = HEX21HEX26_131025(h, ((NI) (((NU8)(c)))));
-				res_132048 += 1;
+				res_132046 += ((NI) 1);
 			} LA3: ;
 		}
 	}

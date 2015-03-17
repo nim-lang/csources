@@ -27,18 +27,18 @@ NCSTRING name;
 NI len;
 TNimNode** sons;
 };
-int mappopulate_107538;
-NI32 msgnosignal_107605;
-TNimType NTI105462; /* TPid */
+int mappopulate_107338;
+NI32 msgnosignal_107405;
+TNimType NTI105285; /* TPid */
 NIM_EXTERNC N_NOINLINE(void, stdlib_posixInit)(void) {
-	mappopulate_107538 = ((int) 0);
-	msgnosignal_107605 = ((NI32) 0);
+	mappopulate_107338 = ((int) 0);
+	msgnosignal_107405 = ((NI32) 0);
 }
 
 NIM_EXTERNC N_NOINLINE(void, stdlib_posixDatInit)(void) {
-NTI105462.size = sizeof(pid_t);
-NTI105462.kind = 31;
-NTI105462.base = 0;
-NTI105462.flags = 3;
+NTI105285.size = sizeof(pid_t);
+NTI105285.kind = 31;
+NTI105285.base = 0;
+NTI105285.flags = 3;
 }
 

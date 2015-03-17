@@ -11,8 +11,8 @@ N_NIMCALL(NI, ncpicountProcessors)(void) {
 	result = 0;
 	result = sysconf(_SC_NPROCESSORS_ONLN);
 	{
-		if (!(result <= 0)) goto LA3;
-		result = 1;
+		if (!(result <= ((NI) 0))) goto LA3;
+		result = ((NI) 1);
 	}
 	LA3: ;
 	return result;

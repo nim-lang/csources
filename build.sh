@@ -1,6 +1,6 @@
 #! /bin/sh
 # Generated from niminst
-# Template is in tools/buildsh.tmpl
+# Template is in tools/niminst/buildsh.tmpl
 # To regenerate run ``niminst csource`` or ``koch csource``
 
 set -e
@@ -61,7 +61,7 @@ case $uos in
     myos="freebsd"
     CC="clang"
     LINKER="clang"
-    LINK_FLAGS="$LINK_FLAGS -ldl -lm"
+    LINK_FLAGS="$LINK_FLAGS -lm"
     ;;
   *openbsd* )
     myos="openbsd" 
@@ -110,7 +110,7 @@ case $ucpu in
       LINK_FLAGS="$LINK_FLAGS -m64"
     fi
     mycpu="powerpc64" ;;
-  *power*|*Power*|*ppc* ) 
+  *power*|*ppc* ) 
     mycpu="powerpc" ;;
   *mips* ) 
     mycpu="mips" ;;

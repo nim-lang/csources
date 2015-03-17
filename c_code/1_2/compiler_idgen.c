@@ -21,7 +21,7 @@ struct  NimStringDesc  {
   TGenericSeq Sup;
 NIM_CHAR data[SEQ_DECL_SIZE];
 };
-typedef NimStringDesc* TY183990[1];
+typedef NimStringDesc* TY183780[1];
 typedef N_NIMCALL_PTR(void, TY3289) (void* p, NI op);
 typedef N_NIMCALL_PTR(void*, TY3294) (void* p);
 struct  TNimType  {
@@ -49,30 +49,30 @@ NCSTRING name;
 NI len;
 TNimNode** sons;
 };
-N_NIMCALL(NIM_BOOL, open_13003)(FILE** f, NimStringDesc* filename, NU8 mode, NI bufsize);
-N_NIMCALL(NimStringDesc*, togid_209467)(NimStringDesc* f);
+N_NIMCALL(NIM_BOOL, open_13203)(FILE** f, NimStringDesc* filename, NU8 mode, NI bufsize);
+N_NIMCALL(NimStringDesc*, togid_208462)(NimStringDesc* f);
 N_NIMCALL(NimStringDesc*, completegeneratedfilepath_172001)(NimStringDesc* f, NIM_BOOL createsubdir);
 N_NIMCALL(NimStringDesc*, rawNewString)(NI space);
 N_NIMCALL(NimStringDesc*, rawNewString)(NI cap);
-N_NIMCALL(NIM_BOOL, readline_13289)(FILE* f, NimStringDesc** line);
+N_NIMCALL(NIM_BOOL, readline_13481)(FILE* f, NimStringDesc** line);
 N_NIMCALL(NI, nsuParseInt)(NimStringDesc* s);
-N_NIMCALL(FILE*, open_13017)(NimStringDesc* filename, NU8 mode, NI bufsize);
-static N_INLINE(void, writeln_172205)(FILE* f_172209, NimStringDesc** x_172213, NI x_172213Len0);
-N_NIMCALL(void, write_13265)(FILE* f, NimStringDesc* s);
+N_NIMCALL(FILE*, open_13217)(NimStringDesc* filename, NU8 mode, NI bufsize);
+static N_INLINE(void, writeln_172205)(FILE* f, NimStringDesc** x, NI xLen0);
+N_NIMCALL(void, write_13457)(FILE* f, NimStringDesc* s);
 N_NIMCALL(NimStringDesc*, nimIntToStr)(NI x);
-STRING_LITERAL(TMP1377, "nimrod.gid", 10);
-STRING_LITERAL(TMP4140, "\015\012", 2);
-NI gfrontendid_209012;
-NI gbackendid_209013;
+STRING_LITERAL(TMP1382, "nimrod.gid", 10);
+STRING_LITERAL(TMP4218, "\015\012", 2);
+NI gfrontendid_208012;
+NI gbackendid_208013;
 
-N_NIMCALL(NimStringDesc*, togid_209467)(NimStringDesc* f) {
+N_NIMCALL(NimStringDesc*, togid_208462)(NimStringDesc* f) {
 	NimStringDesc* result;
 	result = 0;
-	result = completegeneratedfilepath_172001(((NimStringDesc*) &TMP1377), NIM_TRUE);
+	result = completegeneratedfilepath_172001(((NimStringDesc*) &TMP1382), NIM_TRUE);
 	return result;
 }
 
-N_NIMCALL(void, loadmaxids_209519)(NimStringDesc* project) {
+N_NIMCALL(void, loadmaxids_208510)(NimStringDesc* project) {
 	FILE* f;
 	f = 0;
 	{
@@ -80,27 +80,27 @@ N_NIMCALL(void, loadmaxids_209519)(NimStringDesc* project) {
 		NIM_BOOL LOC4;
 		NimStringDesc* line;
 		LOC3 = 0;
-		LOC3 = togid_209467(project);
+		LOC3 = togid_208462(project);
 		LOC4 = 0;
-		LOC4 = open_13003(&f, LOC3, ((NU8) 0), -1);
+		LOC4 = open_13203(&f, LOC3, ((NU8) 0), ((NI) -1));
 		if (!LOC4) goto LA5;
-		line = rawNewString(20);
+		line = rawNewString(((NI) 20));
 		{
 			NIM_BOOL LOC9;
 			NI frontendid;
 			LOC9 = 0;
-			LOC9 = readline_13289(f, (&line));
+			LOC9 = readline_13481(f, (&line));
 			if (!LOC9) goto LA10;
 			frontendid = nsuParseInt(line);
 			{
 				NIM_BOOL LOC14;
 				NI backendid;
 				LOC14 = 0;
-				LOC14 = readline_13289(f, (&line));
+				LOC14 = readline_13481(f, (&line));
 				if (!LOC14) goto LA15;
 				backendid = nsuParseInt(line);
-				gfrontendid_209012 = ((gfrontendid_209012 >= frontendid) ? gfrontendid_209012 : frontendid);
-				gbackendid_209013 = ((gbackendid_209013 >= backendid) ? gbackendid_209013 : backendid);
+				gfrontendid_208012 = ((gfrontendid_208012 >= frontendid) ? gfrontendid_208012 : frontendid);
+				gbackendid_208013 = ((gbackendid_208013 >= backendid) ? gbackendid_208013 : backendid);
 			}
 			LA15: ;
 		}
@@ -110,44 +110,44 @@ N_NIMCALL(void, loadmaxids_209519)(NimStringDesc* project) {
 	LA5: ;
 }
 
-N_NIMCALL(void, registerid_209201)(tidobj186015* id) {
+N_NIMCALL(void, registerid_208201)(tidobj186015* id) {
 }
 
-N_NIMCALL(void, idsynchronizationpoint_209458)(NI idrange) {
-	gfrontendid_209012 = (NI64)((NI64)((NI64)((NI64)(gfrontendid_209012 / idrange) + 1) * idrange) + 1);
+N_NIMCALL(void, idsynchronizationpoint_208453)(NI idrange) {
+	gfrontendid_208012 = (NI64)((NI64)((NI64)((NI64)(gfrontendid_208012 / idrange) + ((NI) 1)) * idrange) + ((NI) 1));
 }
 
-static N_INLINE(void, writeln_172205)(FILE* f_172209, NimStringDesc** x_172213, NI x_172213Len0) {
+static N_INLINE(void, writeln_172205)(FILE* f, NimStringDesc** x, NI xLen0) {
 	{
-		NimStringDesc* i_172226;
-		NI i_172234;
-		i_172226 = 0;
-		i_172234 = 0;
+		NimStringDesc* i_172221;
+		NI i_172229;
+		i_172221 = 0;
+		i_172229 = ((NI) 0);
 		{
 			while (1) {
-				if (!(i_172234 < x_172213Len0)) goto LA3;
-				i_172226 = x_172213[i_172234];
-				write_13265(f_172209, i_172226);
-				i_172234 += 1;
+				if (!(i_172229 < xLen0)) goto LA3;
+				i_172221 = x[i_172229];
+				write_13457(f, i_172221);
+				i_172229 += ((NI) 1);
 			} LA3: ;
 		}
 	}
-	write_13265(f_172209, ((NimStringDesc*) &TMP4140));
+	write_13457(f, ((NimStringDesc*) &TMP4218));
 }
 
-N_NIMCALL(void, savemaxids_209477)(NimStringDesc* project) {
+N_NIMCALL(void, savemaxids_208472)(NimStringDesc* project) {
 	FILE* f;
 	NimStringDesc* LOC1;
-	TY183990 LOC2;
-	TY183990 LOC3;
+	TY183780 LOC2;
+	TY183780 LOC3;
 	LOC1 = 0;
-	LOC1 = togid_209467(project);
-	f = open_13017(LOC1, ((NU8) 1), -1);
+	LOC1 = togid_208462(project);
+	f = open_13217(LOC1, ((NU8) 1), ((NI) -1));
 	memset((void*)LOC2, 0, sizeof(LOC2));
-	LOC2[0] = nimIntToStr(gfrontendid_209012);
+	LOC2[0] = nimIntToStr(gfrontendid_208012);
 	writeln_172205(f, LOC2, 1);
 	memset((void*)LOC3, 0, sizeof(LOC3));
-	LOC3[0] = nimIntToStr(gbackendid_209013);
+	LOC3[0] = nimIntToStr(gbackendid_208013);
 	writeln_172205(f, LOC3, 1);
 	fclose(f);
 }

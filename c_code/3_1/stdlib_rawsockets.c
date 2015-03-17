@@ -25,22 +25,22 @@ typedef struct Exception Exception;
 typedef struct TNimObject TNimObject;
 typedef struct TNimType TNimType;
 typedef struct TNimNode TNimNode;
-typedef struct tcell45548 tcell45548;
-typedef struct tcellseq45564 tcellseq45564;
-typedef struct tgcheap47816 tgcheap47816;
-typedef struct tcellset45560 tcellset45560;
-typedef struct tpagedesc45556 tpagedesc45556;
-typedef struct tmemregion27810 tmemregion27810;
-typedef struct tsmallchunk27040 tsmallchunk27040;
-typedef struct tllchunk27804 tllchunk27804;
-typedef struct tbigchunk27042 tbigchunk27042;
-typedef struct tintset27017 tintset27017;
-typedef struct ttrunk27013 ttrunk27013;
-typedef struct tavlnode27808 tavlnode27808;
-typedef struct tgcstat47814 tgcstat47814;
-typedef struct TY547228 TY547228;
-typedef struct tbasechunk27038 tbasechunk27038;
-typedef struct tfreecell27030 tfreecell27030;
+typedef struct tcell46147 tcell46147;
+typedef struct tcellseq46163 tcellseq46163;
+typedef struct tgcheap48016 tgcheap48016;
+typedef struct tcellset46159 tcellset46159;
+typedef struct tpagedesc46155 tpagedesc46155;
+typedef struct tmemregion28010 tmemregion28010;
+typedef struct tsmallchunk27240 tsmallchunk27240;
+typedef struct tllchunk28004 tllchunk28004;
+typedef struct tbigchunk27242 tbigchunk27242;
+typedef struct tintset27217 tintset27217;
+typedef struct ttrunk27213 ttrunk27213;
+typedef struct tavlnode28008 tavlnode28008;
+typedef struct tgcstat48014 tgcstat48014;
+typedef struct TY523225 TY523225;
+typedef struct tbasechunk27238 tbasechunk27238;
+typedef struct tfreecell27230 tfreecell27230;
 struct  TGenericSeq  {
 NI len;
 NI reserved;
@@ -86,43 +86,43 @@ NCSTRING name;
 NI len;
 TNimNode** sons;
 };
-struct  tcell45548  {
+struct  tcell46147  {
 NI Refcount;
 TNimType* Typ;
 };
-struct  tcellseq45564  {
+struct  tcellseq46163  {
 NI Len;
 NI Cap;
-tcell45548** D;
+tcell46147** D;
 };
-struct  tcellset45560  {
+struct  tcellset46159  {
 NI Counter;
 NI Max;
-tpagedesc45556* Head;
-tpagedesc45556** Data;
+tpagedesc46155* Head;
+tpagedesc46155** Data;
 };
-typedef tsmallchunk27040* TY27822[512];
-typedef ttrunk27013* ttrunkbuckets27015[256];
-struct  tintset27017  {
-ttrunkbuckets27015 Data;
+typedef tsmallchunk27240* TY28022[512];
+typedef ttrunk27213* ttrunkbuckets27215[256];
+struct  tintset27217  {
+ttrunkbuckets27215 Data;
 };
-struct  tmemregion27810  {
+struct  tmemregion28010  {
 NI Minlargeobj;
 NI Maxlargeobj;
-TY27822 Freesmallchunks;
-tllchunk27804* Llmem;
+TY28022 Freesmallchunks;
+tllchunk28004* Llmem;
 NI Currmem;
 NI Maxmem;
 NI Freemem;
 NI Lastsize;
-tbigchunk27042* Freechunkslist;
-tintset27017 Chunkstarts;
-tavlnode27808* Root;
-tavlnode27808* Deleted;
-tavlnode27808* Last;
-tavlnode27808* Freeavlnodes;
+tbigchunk27242* Freechunkslist;
+tintset27217 Chunkstarts;
+tavlnode28008* Root;
+tavlnode28008* Deleted;
+tavlnode28008* Last;
+tavlnode28008* Freeavlnodes;
 };
-struct  tgcstat47814  {
+struct  tgcstat48014  {
 NI Stackscans;
 NI Cyclecollections;
 NI Maxthreshold;
@@ -131,93 +131,93 @@ NI Maxstackcells;
 NI Cycletablesize;
 NI64 Maxpause;
 };
-struct  tgcheap47816  {
+struct  tgcheap48016  {
 void* Stackbottom;
 NI Cyclethreshold;
-tcellseq45564 Zct;
-tcellseq45564 Decstack;
-tcellset45560 Cycleroots;
-tcellseq45564 Tempstack;
+tcellseq46163 Zct;
+tcellseq46163 Decstack;
+tcellset46159 Cycleroots;
+tcellseq46163 Tempstack;
 NI Recgclock;
-tmemregion27810 Region;
-tgcstat47814 Stat;
+tmemregion28010 Region;
+tgcstat48014 Stat;
 };
-typedef NIM_CHAR TY105554[256];
-typedef NI TY27020[16];
-struct  tpagedesc45556  {
-tpagedesc45556* Next;
+typedef NIM_CHAR TY105380[256];
+typedef NI TY27220[16];
+struct  tpagedesc46155  {
+tpagedesc46155* Next;
 NI Key;
-TY27020 Bits;
+TY27220 Bits;
 };
-struct  tbasechunk27038  {
+struct  tbasechunk27238  {
 NI Prevsize;
 NI Size;
 NIM_BOOL Used;
 };
-struct  tsmallchunk27040  {
-  tbasechunk27038 Sup;
-tsmallchunk27040* Next;
-tsmallchunk27040* Prev;
-tfreecell27030* Freelist;
+struct  tsmallchunk27240  {
+  tbasechunk27238 Sup;
+tsmallchunk27240* Next;
+tsmallchunk27240* Prev;
+tfreecell27230* Freelist;
 NI Free;
 NI Acc;
 NF Data;
 };
-struct  tllchunk27804  {
+struct  tllchunk28004  {
 NI Size;
 NI Acc;
-tllchunk27804* Next;
+tllchunk28004* Next;
 };
-struct  tbigchunk27042  {
-  tbasechunk27038 Sup;
-tbigchunk27042* Next;
-tbigchunk27042* Prev;
+struct  tbigchunk27242  {
+  tbasechunk27238 Sup;
+tbigchunk27242* Next;
+tbigchunk27242* Prev;
 NI Align;
 NF Data;
 };
-struct  ttrunk27013  {
-ttrunk27013* Next;
+struct  ttrunk27213  {
+ttrunk27213* Next;
 NI Key;
-TY27020 Bits;
+TY27220 Bits;
 };
-typedef tavlnode27808* TY27814[2];
-struct  tavlnode27808  {
-TY27814 Link;
+typedef tavlnode28008* TY28014[2];
+struct  tavlnode28008  {
+TY28014 Link;
 NI Key;
 NI Upperbound;
 NI Level;
 };
-struct  tfreecell27030  {
-tfreecell27030* Next;
+struct  tfreecell27230  {
+tfreecell27230* Next;
 NI Zerofield;
 };
-struct TY547228 {
+struct TY523225 {
   TGenericSeq Sup;
   int data[SEQ_DECL_SIZE];
 };
-N_NIMCALL(int, toint_539629)(NU8 domain);
-N_NIMCALL(int, toint_539635)(NU8 typ);
-N_NIMCALL(int, toint_539641)(NU8 p);
-N_NIMCALL(NI16, ntohs_540607)(NI16 x);
-N_NIMCALL(NI32, ntohl_540439)(NI32 x);
+N_NIMCALL(int, toint_515629)(NU8 domain);
+N_NIMCALL(int, toint_515635)(NU8 typ);
+N_NIMCALL(int, toint_515641)(NU8 p);
+N_NIMCALL(NI16, ntohs_516607)(NI16 x);
+N_NIMCALL(NI32, ntohl_516431)(NI32 x);
 N_NIMCALL(NimStringDesc*, HEX24_6401)(NU64 x);
 N_NIMCALL(void*, newObj)(TNimType* typ, NI size);
 N_NIMCALL(NimStringDesc*, cstrToNimstr)(NCSTRING str);
 static N_INLINE(void, asgnRefNoCycle)(void** dest, void* src);
-static N_INLINE(tcell45548*, usrtocell_49446)(void* usr);
-static N_INLINE(void, rtladdzct_51004)(tcell45548* c);
-N_NOINLINE(void, addzct_49417)(tcellseq45564* s, tcell45548* c);
+static N_INLINE(tcell46147*, usrtocell_49646)(void* usr);
+static N_INLINE(void, rtladdzct_51204)(tcell46147* c);
+N_NOINLINE(void, addzct_49617)(tcellseq46163* s, tcell46147* c);
 N_NIMCALL(void, raiseException)(Exception* e, NCSTRING ename);
-N_NIMCALL(struct timeval, timevalfrommilliseconds_542428)(NI timeout);
-N_NIMCALL(void, createfdset_542445)(fd_set* fd, TY547228* s, NI* m);
-N_NIMCALL(void, prunesocketset_542645)(TY547228** s, fd_set* fd);
+N_NIMCALL(struct timeval, timevalfrommilliseconds_518428)(NI timeout);
+N_NIMCALL(void, createfdset_518445)(fd_set* fd, TY523225* s, NI* m);
+N_NIMCALL(void, prunesocketset_518646)(TY523225** s, fd_set* fd);
 N_NIMCALL(TGenericSeq*, setLengthSeq)(TGenericSeq* seq, NI elemsize, NI newlen);
-int osinvalidsocket_539460;
-extern TNimType NTI116012; /* ref OSError */
+int osinvalidsocket_515460;
+extern TNimType NTI115012; /* ref OSError */
 extern TNimType NTI3433; /* OSError */
-extern tgcheap47816 gch_47844;
+extern tgcheap48016 gch_48044;
 
-N_NIMCALL(int, toint_539629)(NU8 domain) {
+N_NIMCALL(int, toint_515629)(NU8 domain) {
 	int result;
 	result = 0;
 	switch (domain) {
@@ -244,7 +244,7 @@ N_NIMCALL(int, toint_539629)(NU8 domain) {
 	return result;
 }
 
-N_NIMCALL(int, toint_539635)(NU8 typ) {
+N_NIMCALL(int, toint_515635)(NU8 typ) {
 	int result;
 	result = 0;
 	switch (typ) {
@@ -276,7 +276,7 @@ N_NIMCALL(int, toint_539635)(NU8 typ) {
 	return result;
 }
 
-N_NIMCALL(int, toint_539641)(NU8 p) {
+N_NIMCALL(int, toint_515641)(NU8 p) {
 	int result;
 	result = 0;
 	switch (p) {
@@ -318,84 +318,84 @@ N_NIMCALL(int, toint_539641)(NU8 p) {
 	return result;
 }
 
-N_NIMCALL(int, newrawsocket_539804)(NU8 domain, NU8 typ, NU8 protocol) {
+N_NIMCALL(int, newrawsocket_515804)(NU8 domain, NU8 typ, NU8 protocol) {
 	int result;
 	int LOC1;
 	int LOC2;
 	int LOC3;
 	result = 0;
 	LOC1 = 0;
-	LOC1 = toint_539629(domain);
+	LOC1 = toint_515629(domain);
 	LOC2 = 0;
-	LOC2 = toint_539635(typ);
+	LOC2 = toint_515635(typ);
 	LOC3 = 0;
-	LOC3 = toint_539641(protocol);
+	LOC3 = toint_515641(protocol);
 	result = socket(LOC1, LOC2, LOC3);
 	return result;
 }
 
-N_NIMCALL(NI16, ntohs_540607)(NI16 x) {
+N_NIMCALL(NI16, ntohs_516607)(NI16 x) {
 	NI16 result;
 	result = 0;
 	result = (NI16)((NI16)((NU16)(x) >> (NU16)(((NI16) 8))) | (NI16)((NU16)(x) << (NU16)(((NI16) 8))));
 	return result;
 }
 
-N_NIMCALL(NI16, htons_540817)(NI16 x) {
+N_NIMCALL(NI16, htons_516817)(NI16 x) {
 	NI16 result;
 	result = 0;
-	result = ntohs_540607(x);
+	result = ntohs_516607(x);
 	return result;
 }
 
-N_NIMCALL(NI32, ntohl_540439)(NI32 x) {
+N_NIMCALL(NI32, ntohl_516431)(NI32 x) {
 	NI32 result;
 	result = 0;
 	result = (NI32)((NI32)((NI32)((NI32)((NU32)(x) >> (NU32)(((NI32) 24))) | (NI32)((NI32)((NU32)(x) >> (NU32)(((NI32) 8))) & ((NI32) 65280))) | (NI32)((NI32)((NU32)(x) << (NU32)(((NI32) 8))) & ((NI32) 16711680))) | (NI32)((NU32)(x) << (NU32)(((NI32) 24))));
 	return result;
 }
 
-N_NIMCALL(NI32, htonl_540807)(NI32 x) {
+N_NIMCALL(NI32, htonl_516807)(NI32 x) {
 	NI32 result;
 	result = 0;
-	result = ntohl_540439(x);
+	result = ntohl_516431(x);
 	return result;
 }
 
-N_NIMCALL(int, bindaddr_540014)(int socket, struct sockaddr* name, socklen_t namelen) {
+N_NIMCALL(int, bindaddr_516014)(int socket, struct sockaddr* name, socklen_t namelen) {
 	int result;
 	result = 0;
 	result = bind(socket, name, namelen);
 	return result;
 }
 
-static N_INLINE(tcell45548*, usrtocell_49446)(void* usr) {
-	tcell45548* result;
+static N_INLINE(tcell46147*, usrtocell_49646)(void* usr) {
+	tcell46147* result;
 	result = 0;
-	result = ((tcell45548*) ((NI)((NU32)(((NI) (usr))) - (NU32)(((NI)sizeof(tcell45548))))));
+	result = ((tcell46147*) ((NI)((NU32)(((NI) (usr))) - (NU32)(((NI)sizeof(tcell46147))))));
 	return result;
 }
 
-static N_INLINE(void, rtladdzct_51004)(tcell45548* c) {
-	addzct_49417((&gch_47844.Zct), c);
+static N_INLINE(void, rtladdzct_51204)(tcell46147* c) {
+	addzct_49617((&gch_48044.Zct), c);
 }
 
 static N_INLINE(void, asgnRefNoCycle)(void** dest, void* src) {
 	{
-		tcell45548* c;
+		tcell46147* c;
 		if (!!((src == NIM_NIL))) goto LA3;
-		c = usrtocell_49446(src);
-		(*c).Refcount += 8;
+		c = usrtocell_49646(src);
+		(*c).Refcount += ((NI) 8);
 	}
 	LA3: ;
 	{
-		tcell45548* c;
+		tcell46147* c;
 		if (!!(((*dest) == NIM_NIL))) goto LA7;
-		c = usrtocell_49446((*dest));
+		c = usrtocell_49646((*dest));
 		{
-			(*c).Refcount -= 8;
-			if (!((NU32)((*c).Refcount) < (NU32)(8))) goto LA11;
-			rtladdzct_51004(c);
+			(*c).Refcount -= ((NI) 8);
+			if (!((NU32)((*c).Refcount) < (NU32)(((NI) 8)))) goto LA11;
+			rtladdzct_51204(c);
 		}
 		LA11: ;
 	}
@@ -403,7 +403,7 @@ static N_INLINE(void, asgnRefNoCycle)(void** dest, void* src) {
 	(*dest) = src;
 }
 
-N_NIMCALL(struct addrinfo*, getaddrinfo_540208)(NimStringDesc* address, NU16 port, NU8 af, NU8 typ, NU8 prot) {
+N_NIMCALL(struct addrinfo*, getaddrinfo_516208)(NimStringDesc* address, NU16 port, NU8 af, NU8 typ, NU8 prot) {
 	struct addrinfo* result;
 	struct addrinfo hints;
 	int gairesult;
@@ -411,78 +411,78 @@ N_NIMCALL(struct addrinfo*, getaddrinfo_540208)(NimStringDesc* address, NU16 por
 	result = 0;
 	memset((void*)(&hints), 0, sizeof(hints));
 	result = NIM_NIL;
-	hints.ai_family = toint_539629(af);
-	hints.ai_socktype = toint_539635(typ);
-	hints.ai_protocol = toint_539641(prot);
+	hints.ai_family = toint_515629(af);
+	hints.ai_socktype = toint_515635(typ);
+	hints.ai_protocol = toint_515641(prot);
 	LOC1 = 0;
 	LOC1 = HEX24_6401(port);
 	gairesult = getaddrinfo(address->data, LOC1->data, (&hints), &result);
 	{
-		oserror3433* e_540403;
+		oserror3433* e_516403;
 		NCSTRING LOC6;
 		if (!!((gairesult == ((NI32) 0)))) goto LA4;
-		e_540403 = 0;
-		e_540403 = (oserror3433*) newObj((&NTI116012), sizeof(oserror3433));
-		(*e_540403).Sup.Sup.Sup.m_type = (&NTI3433);
+		e_516403 = 0;
+		e_516403 = (oserror3433*) newObj((&NTI115012), sizeof(oserror3433));
+		(*e_516403).Sup.Sup.Sup.m_type = (&NTI3433);
 		LOC6 = 0;
 		LOC6 = gai_strerror(gairesult);
-		asgnRefNoCycle((void**) (&(*e_540403).Sup.Sup.message), cstrToNimstr(LOC6));
-		raiseException((Exception*)e_540403, "OSError");
+		asgnRefNoCycle((void**) (&(*e_516403).Sup.Sup.message), cstrToNimstr(LOC6));
+		raiseException((Exception*)e_516403, "OSError");
 	}
 	LA4: ;
 	return result;
 }
 
-N_NIMCALL(void, dealloc_540429)(struct addrinfo* ai) {
+N_NIMCALL(void, dealloc_516421)(struct addrinfo* ai) {
 	freeaddrinfo(ai);
 }
 
-N_NIMCALL(int, listen_540027)(int socket, int backlog) {
+N_NIMCALL(int, listen_516027)(int socket, int backlog) {
 	int result;
 	result = 0;
 	result = listen(socket, backlog);
 	return result;
 }
 
-N_NIMCALL(struct timeval, timevalfrommilliseconds_542428)(NI timeout) {
+N_NIMCALL(struct timeval, timevalfrommilliseconds_518428)(NI timeout) {
 	struct timeval result;
 	memset((void*)(&result), 0, sizeof(result));
 	{
 		NI seconds;
-		if (!!((timeout == -1))) goto LA3;
-		seconds = (NI32)(timeout / 1000);
+		if (!!((timeout == ((NI) -1)))) goto LA3;
+		seconds = (NI32)(timeout / ((NI) 1000));
 		result.tv_sec = ((NI) (((NI32) (seconds))));
-		result.tv_usec = ((NI) (((NI32) ((NI32)((NI32)(timeout - (NI32)(seconds * 1000)) * 1000)))));
+		result.tv_usec = ((NI) (((NI32) ((NI32)((NI32)(timeout - (NI32)(seconds * ((NI) 1000))) * ((NI) 1000))))));
 	}
 	LA3: ;
 	return result;
 }
 
-N_NIMCALL(void, createfdset_542445)(fd_set* fd, TY547228* s, NI* m) {
+N_NIMCALL(void, createfdset_518445)(fd_set* fd, TY523225* s, NI* m) {
 	FD_ZERO(fd);
 	{
-		int i_542611;
-		NI i_542627;
-		NI l_542629;
-		i_542611 = 0;
-		i_542627 = 0;
-		l_542629 = s->Sup.len;
+		int i_518611;
+		NI i_518628;
+		NI l_518630;
+		i_518611 = 0;
+		i_518628 = ((NI) 0);
+		l_518630 = s->Sup.len;
 		{
 			while (1) {
-				if (!(i_542627 < l_542629)) goto LA3;
-				i_542611 = s->data[i_542627];
-				(*m) = (((*m) >= ((NI) (i_542611))) ? (*m) : ((NI) (i_542611)));
-				FD_SET(i_542611, fd);
-				i_542627 += 1;
+				if (!(i_518628 < l_518630)) goto LA3;
+				i_518611 = s->data[i_518628];
+				(*m) = (((*m) >= ((NI) (i_518611))) ? (*m) : ((NI) (i_518611)));
+				FD_SET(i_518611, fd);
+				i_518628 += ((NI) 1);
 			} LA3: ;
 		}
 	}
 }
 
-N_NIMCALL(void, prunesocketset_542645)(TY547228** s, fd_set* fd) {
+N_NIMCALL(void, prunesocketset_518646)(TY523225** s, fd_set* fd) {
 	NI i;
 	NI l;
-	i = 0;
+	i = ((NI) 0);
 	l = (*s)->Sup.len;
 	{
 		while (1) {
@@ -492,35 +492,35 @@ N_NIMCALL(void, prunesocketset_542645)(TY547228** s, fd_set* fd) {
 				LOC5 = 0;
 				LOC5 = FD_ISSET((*s)->data[i], fd);
 				if (!(LOC5 == ((NI32) 0))) goto LA6;
-				(*s)->data[i] = (*s)->data[(NI32)(l - 1)];
-				l -= 1;
+				(*s)->data[i] = (*s)->data[(NI32)(l - ((NI) 1))];
+				l -= ((NI) 1);
 			}
 			goto LA3;
 			LA6: ;
 			{
-				i += 1;
+				i += ((NI) 1);
 			}
 			LA3: ;
 		} LA2: ;
 	}
-	(*s) = (TY547228*) setLengthSeq(&((*s))->Sup, sizeof(int), l);
+	(*s) = (TY523225*) setLengthSeq(&((*s))->Sup, sizeof(int), l);
 }
 
-N_NIMCALL(NI, select_542728)(TY547228** readfds, NI timeout) {
+N_NIMCALL(NI, select_518713)(TY523225** readfds, NI timeout) {
 	NI result;
 	struct timeval tv;
 	fd_set rd;
 	NI m;
 	result = 0;
-	tv = timevalfrommilliseconds_542428(timeout);
+	tv = timevalfrommilliseconds_518428(timeout);
 	memset((void*)(&rd), 0, sizeof(rd));
-	m = 0;
-	createfdset_542445((&rd), (*readfds), (&m));
+	m = ((NI) 0);
+	createfdset_518445((&rd), (*readfds), (&m));
 	{
 		int LOC5;
-		if (!!((timeout == -1))) goto LA3;
+		if (!!((timeout == ((NI) -1)))) goto LA3;
 		LOC5 = 0;
-		LOC5 = select(((int) ((NI32)(m + 1))), (&rd), NIM_NIL, NIM_NIL, (&tv));
+		LOC5 = select(((int) ((NI32)(m + ((NI) 1)))), (&rd), NIM_NIL, NIM_NIL, (&tv));
 		result = ((NI) (LOC5));
 	}
 	goto LA1;
@@ -528,21 +528,21 @@ N_NIMCALL(NI, select_542728)(TY547228** readfds, NI timeout) {
 	{
 		int LOC7;
 		LOC7 = 0;
-		LOC7 = select(((int) ((NI32)(m + 1))), (&rd), NIM_NIL, NIM_NIL, NIM_NIL);
+		LOC7 = select(((int) ((NI32)(m + ((NI) 1)))), (&rd), NIM_NIL, NIM_NIL, NIM_NIL);
 		result = ((NI) (LOC7));
 	}
 	LA1: ;
-	prunesocketset_542645(readfds, (&rd));
+	prunesocketset_518646(readfds, (&rd));
 	return result;
 }
 
-N_NIMCALL(void, close_539828)(int socket) {
+N_NIMCALL(void, close_515828)(int socket) {
 	int LOC1;
 	LOC1 = 0;
 	LOC1 = close(socket);
 }
 NIM_EXTERNC N_NOINLINE(void, stdlib_rawsocketsInit)(void) {
-	osinvalidsocket_539460 = ((int) -1);
+	osinvalidsocket_515460 = ((int) -1);
 	signal(SIGPIPE, SIG_IGN);
 }
 
