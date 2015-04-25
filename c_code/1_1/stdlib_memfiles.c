@@ -5,16 +5,16 @@
 #include "nimbase.h"
 
 #include <string.h>
-typedef struct memfile248208 memfile248208;
+typedef struct Memfile232208 Memfile232208;
 typedef struct TNimType TNimType;
 typedef struct TNimNode TNimNode;
 typedef struct NimStringDesc NimStringDesc;
 typedef struct TGenericSeq TGenericSeq;
-struct  memfile248208  {
-void* Mem;
-NI Size;
-NI Fhandle;
-NI Maphandle;
+struct  Memfile232208  {
+void* mem;
+NI size;
+NI fhandle;
+NI maphandle;
 };
 typedef N_NIMCALL_PTR(void, TY3289) (void* p, NI op);
 typedef N_NIMCALL_PTR(void*, TY3294) (void* p);
@@ -44,31 +44,31 @@ struct  NimStringDesc  {
   TGenericSeq Sup;
 NIM_CHAR data[SEQ_DECL_SIZE];
 };
-typedef N_STDCALL_PTR(NI, TY105318) (NI16* lpfilename, NI32 dwdesiredaccess, NI32 dwsharemode, void* lpsecurityattributes, NI32 dwcreationdisposition, NI32 dwflagsandattributes, NI htemplatefile);
-typedef N_STDCALL_PTR(NI32, TY103425) (NI hobject);
-typedef N_STDCALL_PTR(NI32, TY105411) (NI hfile, NI32 ldistancetomove, NI32* lpdistancetomovehigh, NI32 dwmovemethod);
-typedef N_STDCALL_PTR(NI32, TY105405) (NI hfile);
-typedef N_STDCALL_PTR(NI, TY105440) (NI hfile, void* lpfilemappingattributes, NI32 flprotect, NI32 dwmaximumsizehigh, NI32 dwmaximumsizelow, void* lpname);
-typedef N_STDCALL_PTR(void*, TY105429) (NI hfilemappingobject, NI32 dwdesiredaccess, NI32 dwfileoffsethigh, NI32 dwfileoffsetlow, NI32 dwnumberofbytestomap, void* lpbaseaddress);
-typedef N_STDCALL_PTR(NI32, TY105421) (NI hfile, NI32* lpfilesizehigh);
-typedef N_STDCALL_PTR(NI32, TY105602) (void* lpbaseaddress);
-N_NIMCALL(NI16*, newwidecstring_80005)(NimStringDesc* s);
-N_NIMCALL(void, raiseoserror_113430)(NI32 errorcode);
-N_NIMCALL(NI32, oslasterror_113454)(void);
-TNimType NTI248208; /* MemFile */
+typedef N_STDCALL_PTR(NI, TY106318) (NI16* lpfilename, NI32 dwdesiredaccess, NI32 dwsharemode, void* lpsecurityattributes, NI32 dwcreationdisposition, NI32 dwflagsandattributes, NI htemplatefile);
+typedef N_STDCALL_PTR(NI32, TY104425) (NI hobject);
+typedef N_STDCALL_PTR(NI32, TY106411) (NI hfile, NI32 ldistancetomove, NI32* lpdistancetomovehigh, NI32 dwmovemethod);
+typedef N_STDCALL_PTR(NI32, TY106405) (NI hfile);
+typedef N_STDCALL_PTR(NI, TY106440) (NI hfile, void* lpfilemappingattributes, NI32 flprotect, NI32 dwmaximumsizehigh, NI32 dwmaximumsizelow, void* lpname);
+typedef N_STDCALL_PTR(void*, TY106429) (NI hfilemappingobject, NI32 dwdesiredaccess, NI32 dwfileoffsethigh, NI32 dwfileoffsetlow, NI32 dwnumberofbytestomap, void* lpbaseaddress);
+typedef N_STDCALL_PTR(NI32, TY106421) (NI hfile, NI32* lpfilesizehigh);
+typedef N_STDCALL_PTR(NI32, TY106602) (void* lpbaseaddress);
+N_NIMCALL(NI16*, newwidecstring_80605)(NimStringDesc* s);
+N_NIMCALL(void, raiseoserror_114430)(NI32 errorcode);
+N_NIMCALL(NI32, oslasterror_114454)(void);
+TNimType NTI232208; /* MemFile */
 extern TNimType NTI153; /* pointer */
 extern TNimType NTI108; /* int */
-extern TY105318 Dl_105317;
-extern TY103425 Dl_103424;
-extern TY105411 Dl_105410;
-extern TY105405 Dl_105404;
-extern TY105440 Dl_105439;
-extern TY105429 Dl_105428;
-extern TY105421 Dl_105420;
-extern TY105602 Dl_105601;
+extern TY106318 Dl_106317;
+extern TY104425 Dl_104424;
+extern TY106411 Dl_106410;
+extern TY106405 Dl_106404;
+extern TY106440 Dl_106439;
+extern TY106429 Dl_106428;
+extern TY106421 Dl_106420;
+extern TY106602 Dl_106601;
 
-N_NIMCALL(memfile248208, open_248607)(NimStringDesc* filename, NU8 mode, NI mappedsize, NI offset, NI newfilesize) {
-	memfile248208 result;
+N_NIMCALL(Memfile232208, open_232607)(NimStringDesc* filename, NU8 mode, NI mappedsize, NI offset, NI newfilesize) {
+	Memfile232208 result;
 	NIM_BOOL readonly;
 	NI16* LOC1;
 	NI32 LOC2;
@@ -82,7 +82,7 @@ N_NIMCALL(memfile248208, open_248607)(NimStringDesc* filename, NU8 mode, NI mapp
 	memset((void*)(&result), 0, sizeof(result));
 	readonly = (mode == ((NU8) 0));
 	LOC1 = 0;
-	LOC1 = newwidecstring_80005(filename);
+	LOC1 = newwidecstring_80605(filename);
 	LOC2 = 0;
 	{
 		if (!readonly) goto LA5;
@@ -116,29 +116,29 @@ N_NIMCALL(memfile248208, open_248607)(NimStringDesc* filename, NU8 mode, NI mapp
 		LOC14 = ((NI32) 256);
 	}
 	LA15: ;
-	result.Fhandle = Dl_105317(LOC1, LOC2, ((NI32) 1), NIM_NIL, LOC8, LOC14, ((NI) 0));
+	result.fhandle = Dl_106317(LOC1, LOC2, ((NI32) 1), NIM_NIL, LOC8, LOC14, ((NI) 0));
 	{
 		NI32 LOC34;
-		if (!(result.Fhandle == ((NI) -1))) goto LA22;
-		result.Mem = NIM_NIL;
-		result.Size = ((NI) 0);
+		if (!(result.fhandle == ((NI) -1))) goto LA22;
+		result.mem = NIM_NIL;
+		result.size = ((NI) 0);
 		{
 			NI32 LOC28;
-			if (!!((result.Fhandle == ((NI) 0)))) goto LA26;
+			if (!!((result.fhandle == ((NI) 0)))) goto LA26;
 			LOC28 = 0;
-			LOC28 = Dl_103424(result.Fhandle);
+			LOC28 = Dl_104424(result.fhandle);
 		}
 		LA26: ;
 		{
 			NI32 LOC33;
-			if (!!((result.Maphandle == ((NI) 0)))) goto LA31;
+			if (!!((result.maphandle == ((NI) 0)))) goto LA31;
 			LOC33 = 0;
-			LOC33 = Dl_103424(result.Maphandle);
+			LOC33 = Dl_104424(result.maphandle);
 		}
 		LA31: ;
 		LOC34 = 0;
-		LOC34 = oslasterror_113454();
-		raiseoserror_113430(LOC34);
+		LOC34 = oslasterror_114454();
+		raiseoserror_114430(LOC34);
 	}
 	LA22: ;
 	{
@@ -149,8 +149,8 @@ N_NIMCALL(memfile248208, open_248607)(NimStringDesc* filename, NU8 mode, NI mapp
 		if (!!((newfilesize == ((NI) -1)))) goto LA37;
 		sizehigh = ((NI32) ((NI)((NU32)(newfilesize) >> (NU32)(((NI) 32)))));
 		sizelow = ((NI32) ((NI)(((NI64) (newfilesize)) & IL64(4294967295))));
-		status = Dl_105410(result.Fhandle, sizelow, (&sizehigh), ((NI32) 0));
-		lasterr = oslasterror_113454();
+		status = Dl_106410(result.fhandle, sizelow, (&sizehigh), ((NI32) 0));
+		lasterr = oslasterror_114454();
 		{
 			NIM_BOOL LOC41;
 			NIM_BOOL LOC42;
@@ -164,27 +164,27 @@ N_NIMCALL(memfile248208, open_248607)(NimStringDesc* filename, NU8 mode, NI mapp
 			LOC41 = LOC42;
 			if (LOC41) goto LA44;
 			LOC45 = 0;
-			LOC45 = Dl_105404(result.Fhandle);
+			LOC45 = Dl_106404(result.fhandle);
 			LOC41 = (LOC45 == ((NI32) 0));
 			LA44: ;
 			if (!LOC41) goto LA46;
-			result.Mem = NIM_NIL;
-			result.Size = ((NI) 0);
+			result.mem = NIM_NIL;
+			result.size = ((NI) 0);
 			{
 				NI32 LOC52;
-				if (!!((result.Fhandle == ((NI) 0)))) goto LA50;
+				if (!!((result.fhandle == ((NI) 0)))) goto LA50;
 				LOC52 = 0;
-				LOC52 = Dl_103424(result.Fhandle);
+				LOC52 = Dl_104424(result.fhandle);
 			}
 			LA50: ;
 			{
 				NI32 LOC57;
-				if (!!((result.Maphandle == ((NI) 0)))) goto LA55;
+				if (!!((result.maphandle == ((NI) 0)))) goto LA55;
 				LOC57 = 0;
-				LOC57 = Dl_103424(result.Maphandle);
+				LOC57 = Dl_104424(result.maphandle);
 			}
 			LA55: ;
-			raiseoserror_113430(lasterr);
+			raiseoserror_114430(lasterr);
 		}
 		LA46: ;
 	}
@@ -200,29 +200,29 @@ N_NIMCALL(memfile248208, open_248607)(NimStringDesc* filename, NU8 mode, NI mapp
 		LOC58 = ((NI32) 4);
 	}
 	LA59: ;
-	result.Maphandle = Dl_105439(result.Fhandle, NIM_NIL, LOC58, ((NI32) 0), ((NI32) 0), NIM_NIL);
+	result.maphandle = Dl_106439(result.fhandle, NIM_NIL, LOC58, ((NI32) 0), ((NI32) 0), NIM_NIL);
 	{
 		NI32 LOC78;
-		if (!(result.Maphandle == ((NI) 0))) goto LA66;
-		result.Mem = NIM_NIL;
-		result.Size = ((NI) 0);
+		if (!(result.maphandle == ((NI) 0))) goto LA66;
+		result.mem = NIM_NIL;
+		result.size = ((NI) 0);
 		{
 			NI32 LOC72;
-			if (!!((result.Fhandle == ((NI) 0)))) goto LA70;
+			if (!!((result.fhandle == ((NI) 0)))) goto LA70;
 			LOC72 = 0;
-			LOC72 = Dl_103424(result.Fhandle);
+			LOC72 = Dl_104424(result.fhandle);
 		}
 		LA70: ;
 		{
 			NI32 LOC77;
-			if (!!((result.Maphandle == ((NI) 0)))) goto LA75;
+			if (!!((result.maphandle == ((NI) 0)))) goto LA75;
 			LOC77 = 0;
-			LOC77 = Dl_103424(result.Maphandle);
+			LOC77 = Dl_104424(result.maphandle);
 		}
 		LA75: ;
 		LOC78 = 0;
-		LOC78 = oslasterror_113454();
-		raiseoserror_113430(LOC78);
+		LOC78 = oslasterror_114454();
+		raiseoserror_114430(LOC78);
 	}
 	LA66: ;
 	LOC79 = 0;
@@ -247,56 +247,56 @@ N_NIMCALL(memfile248208, open_248607)(NimStringDesc* filename, NU8 mode, NI mapp
 		LOC85 = mappedsize;
 	}
 	LA86: ;
-	result.Mem = Dl_105428(result.Maphandle, LOC79, ((NI32) ((NI)((NU32)(offset) >> (NU32)(((NI) 32))))), ((NI32) ((NI)(((NI64) (offset)) & IL64(4294967295)))), ((NI32) (LOC85)), NIM_NIL);
+	result.mem = Dl_106428(result.maphandle, LOC79, ((NI32) ((NI)((NU32)(offset) >> (NU32)(((NI) 32))))), ((NI32) ((NI)(((NI64) (offset)) & IL64(4294967295)))), ((NI32) (LOC85)), NIM_NIL);
 	{
 		NI32 LOC105;
-		if (!(result.Mem == NIM_NIL)) goto LA93;
-		result.Mem = NIM_NIL;
-		result.Size = ((NI) 0);
+		if (!(result.mem == NIM_NIL)) goto LA93;
+		result.mem = NIM_NIL;
+		result.size = ((NI) 0);
 		{
 			NI32 LOC99;
-			if (!!((result.Fhandle == ((NI) 0)))) goto LA97;
+			if (!!((result.fhandle == ((NI) 0)))) goto LA97;
 			LOC99 = 0;
-			LOC99 = Dl_103424(result.Fhandle);
+			LOC99 = Dl_104424(result.fhandle);
 		}
 		LA97: ;
 		{
 			NI32 LOC104;
-			if (!!((result.Maphandle == ((NI) 0)))) goto LA102;
+			if (!!((result.maphandle == ((NI) 0)))) goto LA102;
 			LOC104 = 0;
-			LOC104 = Dl_103424(result.Maphandle);
+			LOC104 = Dl_104424(result.maphandle);
 		}
 		LA102: ;
 		LOC105 = 0;
-		LOC105 = oslasterror_113454();
-		raiseoserror_113430(LOC105);
+		LOC105 = oslasterror_114454();
+		raiseoserror_114430(LOC105);
 	}
 	LA93: ;
 	hi = 0;
 	low = 0;
-	low = Dl_105420(result.Fhandle, (&hi));
+	low = Dl_106420(result.fhandle, (&hi));
 	{
 		NI32 LOC120;
 		if (!(low == ((NI32) -1))) goto LA108;
-		result.Mem = NIM_NIL;
-		result.Size = ((NI) 0);
+		result.mem = NIM_NIL;
+		result.size = ((NI) 0);
 		{
 			NI32 LOC114;
-			if (!!((result.Fhandle == ((NI) 0)))) goto LA112;
+			if (!!((result.fhandle == ((NI) 0)))) goto LA112;
 			LOC114 = 0;
-			LOC114 = Dl_103424(result.Fhandle);
+			LOC114 = Dl_104424(result.fhandle);
 		}
 		LA112: ;
 		{
 			NI32 LOC119;
-			if (!!((result.Maphandle == ((NI) 0)))) goto LA117;
+			if (!!((result.maphandle == ((NI) 0)))) goto LA117;
 			LOC119 = 0;
-			LOC119 = Dl_103424(result.Maphandle);
+			LOC119 = Dl_104424(result.maphandle);
 		}
 		LA117: ;
 		LOC120 = 0;
-		LOC120 = oslasterror_113454();
-		raiseoserror_113430(LOC120);
+		LOC120 = oslasterror_114454();
+		raiseoserror_114430(LOC120);
 	}
 	goto LA106;
 	LA108: ;
@@ -305,12 +305,12 @@ N_NIMCALL(memfile248208, open_248607)(NimStringDesc* filename, NU8 mode, NI mapp
 		filesize = (NI64)((NI64)((NU64)(((NI64) (hi))) >> (NU64)(IL64(32))) | ((NI64) (low)));
 		{
 			if (!!((mappedsize == ((NI) -1)))) goto LA124;
-			result.Size = ((NI) (((filesize <= ((NI64) (mappedsize))) ? filesize : ((NI64) (mappedsize)))));
+			result.size = ((NI) (((filesize <= ((NI64) (mappedsize))) ? filesize : ((NI64) (mappedsize)))));
 		}
 		goto LA122;
 		LA124: ;
 		{
-			result.Size = ((NI) (filesize));
+			result.size = ((NI) (filesize));
 		}
 		LA122: ;
 	}
@@ -318,7 +318,7 @@ N_NIMCALL(memfile248208, open_248607)(NimStringDesc* filename, NU8 mode, NI mapp
 	return result;
 }
 
-N_NIMCALL(void, close_249227)(memfile248208* f) {
+N_NIMCALL(void, close_233227)(Memfile232208* f) {
 	NIM_BOOL error;
 	NI32 lasterr;
 	error = NIM_FALSE;
@@ -329,14 +329,14 @@ N_NIMCALL(void, close_249227)(memfile248208* f) {
 		NI32 LOC7;
 		NIM_BOOL LOC9;
 		NI32 LOC10;
-		if (!!(((*f).Fhandle == ((NI) -1)))) goto LA3;
+		if (!!(((*f).fhandle == ((NI) -1)))) goto LA3;
 		LOC5 = 0;
-		LOC5 = Dl_105601((*f).Mem);
+		LOC5 = Dl_106601((*f).mem);
 		error = (LOC5 == ((NI32) 0));
-		lasterr = oslasterror_113454();
+		lasterr = oslasterror_114454();
 		LOC6 = 0;
 		LOC7 = 0;
-		LOC7 = Dl_103424((*f).Maphandle);
+		LOC7 = Dl_104424((*f).maphandle);
 		LOC6 = (LOC7 == ((NI32) 0));
 		if (LOC6) goto LA8;
 		LOC6 = error;
@@ -344,7 +344,7 @@ N_NIMCALL(void, close_249227)(memfile248208* f) {
 		error = LOC6;
 		LOC9 = 0;
 		LOC10 = 0;
-		LOC10 = Dl_103424((*f).Fhandle);
+		LOC10 = Dl_104424((*f).fhandle);
 		LOC9 = (LOC10 == ((NI32) 0));
 		if (LOC9) goto LA11;
 		LOC9 = error;
@@ -352,13 +352,13 @@ N_NIMCALL(void, close_249227)(memfile248208* f) {
 		error = LOC9;
 	}
 	LA3: ;
-	(*f).Size = ((NI) 0);
-	(*f).Mem = NIM_NIL;
-	(*f).Fhandle = ((NI) 0);
-	(*f).Maphandle = ((NI) 0);
+	(*f).size = ((NI) 0);
+	(*f).mem = NIM_NIL;
+	(*f).fhandle = ((NI) 0);
+	(*f).maphandle = ((NI) 0);
 	{
 		if (!error) goto LA14;
-		raiseoserror_113430(lasterr);
+		raiseoserror_114430(lasterr);
 	}
 	LA14: ;
 }
@@ -368,31 +368,31 @@ NIM_EXTERNC N_NOINLINE(void, stdlib_memfilesInit)(void) {
 NIM_EXTERNC N_NOINLINE(void, stdlib_memfilesDatInit)(void) {
 static TNimNode* TMP833[4];
 static TNimNode TMP817[5];
-NTI248208.size = sizeof(memfile248208);
-NTI248208.kind = 18;
-NTI248208.base = 0;
-NTI248208.flags = 3;
+NTI232208.size = sizeof(Memfile232208);
+NTI232208.kind = 18;
+NTI232208.base = 0;
+NTI232208.flags = 3;
 TMP833[0] = &TMP817[1];
 TMP817[1].kind = 1;
-TMP817[1].offset = offsetof(memfile248208, Mem);
+TMP817[1].offset = offsetof(Memfile232208, mem);
 TMP817[1].typ = (&NTI153);
 TMP817[1].name = "mem";
 TMP833[1] = &TMP817[2];
 TMP817[2].kind = 1;
-TMP817[2].offset = offsetof(memfile248208, Size);
+TMP817[2].offset = offsetof(Memfile232208, size);
 TMP817[2].typ = (&NTI108);
 TMP817[2].name = "size";
 TMP833[2] = &TMP817[3];
 TMP817[3].kind = 1;
-TMP817[3].offset = offsetof(memfile248208, Fhandle);
+TMP817[3].offset = offsetof(Memfile232208, fhandle);
 TMP817[3].typ = (&NTI108);
 TMP817[3].name = "fHandle";
 TMP833[3] = &TMP817[4];
 TMP817[4].kind = 1;
-TMP817[4].offset = offsetof(memfile248208, Maphandle);
+TMP817[4].offset = offsetof(Memfile232208, maphandle);
 TMP817[4].typ = (&NTI108);
 TMP817[4].name = "mapHandle";
 TMP817[0].len = 4; TMP817[0].kind = 2; TMP817[0].sons = &TMP833[0];
-NTI248208.node = &TMP817[0];
+NTI232208.node = &TMP817[0];
 }
 

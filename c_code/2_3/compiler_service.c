@@ -13,27 +13,27 @@
 #include <sys/socket.h>
 typedef struct NimStringDesc NimStringDesc;
 typedef struct TGenericSeq TGenericSeq;
-typedef struct tcell45946 tcell45946;
+typedef struct Tcell46146 Tcell46146;
 typedef struct TNimType TNimType;
-typedef struct tcellseq45962 tcellseq45962;
-typedef struct tgcheap47816 tgcheap47816;
-typedef struct tcellset45958 tcellset45958;
-typedef struct tpagedesc45954 tpagedesc45954;
-typedef struct tmemregion27810 tmemregion27810;
-typedef struct tsmallchunk27040 tsmallchunk27040;
-typedef struct tllchunk27804 tllchunk27804;
-typedef struct tbigchunk27042 tbigchunk27042;
-typedef struct tintset27017 tintset27017;
-typedef struct ttrunk27013 ttrunk27013;
-typedef struct tavlnode27808 tavlnode27808;
-typedef struct tgcstat47814 tgcstat47814;
-typedef struct optparser192011 optparser192011;
+typedef struct Tcellseq46162 Tcellseq46162;
+typedef struct Tgcheap48016 Tgcheap48016;
+typedef struct Tcellset46158 Tcellset46158;
+typedef struct Tpagedesc46154 Tpagedesc46154;
+typedef struct Tmemregion28010 Tmemregion28010;
+typedef struct Tsmallchunk27240 Tsmallchunk27240;
+typedef struct Tllchunk28004 Tllchunk28004;
+typedef struct Tbigchunk27242 Tbigchunk27242;
+typedef struct Tintset27217 Tintset27217;
+typedef struct Ttrunk27213 Ttrunk27213;
+typedef struct Tavlnode28008 Tavlnode28008;
+typedef struct Tgcstat48014 Tgcstat48014;
+typedef struct Optparser175011 Optparser175011;
 typedef struct TNimObject TNimObject;
 typedef struct TNimNode TNimNode;
-typedef struct TY529428 TY529428;
-typedef struct socketimpl521407 socketimpl521407;
-typedef struct tbasechunk27038 tbasechunk27038;
-typedef struct tfreecell27030 tfreecell27030;
+typedef struct TY522428 TY522428;
+typedef struct Socketimpl514407 Socketimpl514407;
+typedef struct Tbasechunk27238 Tbasechunk27238;
+typedef struct Tfreecell27230 Tfreecell27230;
 struct  TGenericSeq  {
 NI len;
 NI reserved;
@@ -42,61 +42,61 @@ struct  NimStringDesc  {
   TGenericSeq Sup;
 NIM_CHAR data[SEQ_DECL_SIZE];
 };
-struct  tcell45946  {
-NI Refcount;
-TNimType* Typ;
+struct  Tcell46146  {
+NI refcount;
+TNimType* typ;
 };
-struct  tcellseq45962  {
-NI Len;
-NI Cap;
-tcell45946** D;
+struct  Tcellseq46162  {
+NI len;
+NI cap;
+Tcell46146** d;
 };
-struct  tcellset45958  {
-NI Counter;
-NI Max;
-tpagedesc45954* Head;
-tpagedesc45954** Data;
+struct  Tcellset46158  {
+NI counter;
+NI max;
+Tpagedesc46154* head;
+Tpagedesc46154** data;
 };
-typedef tsmallchunk27040* TY27822[512];
-typedef ttrunk27013* ttrunkbuckets27015[256];
-struct  tintset27017  {
-ttrunkbuckets27015 Data;
+typedef Tsmallchunk27240* TY28022[512];
+typedef Ttrunk27213* Ttrunkbuckets27215[256];
+struct  Tintset27217  {
+Ttrunkbuckets27215 data;
 };
-struct  tmemregion27810  {
-NI Minlargeobj;
-NI Maxlargeobj;
-TY27822 Freesmallchunks;
-tllchunk27804* Llmem;
-NI Currmem;
-NI Maxmem;
-NI Freemem;
-NI Lastsize;
-tbigchunk27042* Freechunkslist;
-tintset27017 Chunkstarts;
-tavlnode27808* Root;
-tavlnode27808* Deleted;
-tavlnode27808* Last;
-tavlnode27808* Freeavlnodes;
+struct  Tmemregion28010  {
+NI minlargeobj;
+NI maxlargeobj;
+TY28022 freesmallchunks;
+Tllchunk28004* llmem;
+NI currmem;
+NI maxmem;
+NI freemem;
+NI lastsize;
+Tbigchunk27242* freechunkslist;
+Tintset27217 chunkstarts;
+Tavlnode28008* root;
+Tavlnode28008* deleted;
+Tavlnode28008* last;
+Tavlnode28008* freeavlnodes;
 };
-struct  tgcstat47814  {
-NI Stackscans;
-NI Cyclecollections;
-NI Maxthreshold;
-NI Maxstacksize;
-NI Maxstackcells;
-NI Cycletablesize;
-NI64 Maxpause;
+struct  Tgcstat48014  {
+NI stackscans;
+NI cyclecollections;
+NI maxthreshold;
+NI maxstacksize;
+NI maxstackcells;
+NI cycletablesize;
+NI64 maxpause;
 };
-struct  tgcheap47816  {
-void* Stackbottom;
-NI Cyclethreshold;
-tcellseq45962 Zct;
-tcellseq45962 Decstack;
-tcellset45958 Cycleroots;
-tcellseq45962 Tempstack;
-NI Recgclock;
-tmemregion27810 Region;
-tgcstat47814 Stat;
+struct  Tgcheap48016  {
+void* stackbottom;
+NI cyclethreshold;
+Tcellseq46162 zct;
+Tcellseq46162 decstack;
+Tcellset46158 cycleroots;
+Tcellseq46162 tempstack;
+NI recgclock;
+Tmemregion28010 region;
+Tgcstat48014 stat;
 };
 typedef N_NIMCALL_PTR(void, TY3289) (void* p, NI op);
 typedef N_NIMCALL_PTR(void*, TY3294) (void* p);
@@ -113,14 +113,14 @@ TY3294 deepcopy;
 struct  TNimObject  {
 TNimType* m_type;
 };
-struct  optparser192011  {
+struct  Optparser175011  {
   TNimObject Sup;
-NimStringDesc* Cmd;
-NI Pos;
-NIM_BOOL Inshortstate;
-NU8 Kind;
-NimStringDesc* Key;
-NimStringDesc* Val;
+NimStringDesc* cmd;
+NI pos;
+NIM_BOOL inshortstate;
+NU8 kind;
+NimStringDesc* key;
+NimStringDesc* val;
 };
 struct  TNimNode  {
 NU8 kind;
@@ -130,159 +130,159 @@ NCSTRING name;
 NI len;
 TNimNode** sons;
 };
-typedef NimStringDesc* TY235722[1];
-typedef N_NIMCALL_PTR(void, TY529259) (void);
-struct  TY529428  {
+typedef NimStringDesc* TY219714[1];
+typedef N_NIMCALL_PTR(void, TY522259) (void);
+struct  TY522428  {
 NI HEX3Astate;
-socketimpl521407* Stdoutsocket529408;
+Socketimpl514407* stdoutsocket522408;
 };
 typedef struct {
 N_NIMCALL_PTR(void, ClPrc) (NimStringDesc* output, void* ClEnv);
 void* ClEnv;
-} TY182061;
-typedef NI TY27020[8];
-struct  tpagedesc45954  {
-tpagedesc45954* Next;
-NI Key;
-TY27020 Bits;
+} TY164060;
+typedef NI TY27220[8];
+struct  Tpagedesc46154  {
+Tpagedesc46154* next;
+NI key;
+TY27220 bits;
 };
-struct  tbasechunk27038  {
-NI Prevsize;
-NI Size;
-NIM_BOOL Used;
+struct  Tbasechunk27238  {
+NI prevsize;
+NI size;
+NIM_BOOL used;
 };
-struct  tsmallchunk27040  {
-  tbasechunk27038 Sup;
-tsmallchunk27040* Next;
-tsmallchunk27040* Prev;
-tfreecell27030* Freelist;
-NI Free;
-NI Acc;
-NF Data;
+struct  Tsmallchunk27240  {
+  Tbasechunk27238 Sup;
+Tsmallchunk27240* next;
+Tsmallchunk27240* prev;
+Tfreecell27230* freelist;
+NI free;
+NI acc;
+NF data;
 };
-struct  tllchunk27804  {
-NI Size;
-NI Acc;
-tllchunk27804* Next;
+struct  Tllchunk28004  {
+NI size;
+NI acc;
+Tllchunk28004* next;
 };
-struct  tbigchunk27042  {
-  tbasechunk27038 Sup;
-tbigchunk27042* Next;
-tbigchunk27042* Prev;
-NI Align;
-NF Data;
+struct  Tbigchunk27242  {
+  Tbasechunk27238 Sup;
+Tbigchunk27242* next;
+Tbigchunk27242* prev;
+NI align;
+NF data;
 };
-struct  ttrunk27013  {
-ttrunk27013* Next;
-NI Key;
-TY27020 Bits;
+struct  Ttrunk27213  {
+Ttrunk27213* next;
+NI key;
+TY27220 bits;
 };
-typedef tavlnode27808* TY27814[2];
-struct  tavlnode27808  {
-TY27814 Link;
-NI Key;
-NI Upperbound;
-NI Level;
+typedef Tavlnode28008* TY28014[2];
+struct  Tavlnode28008  {
+TY28014 link;
+NI key;
+NI upperbound;
+NI level;
 };
-typedef NIM_CHAR TY521420[4001];
-struct  socketimpl521407  {
-int Fd;
-NIM_BOOL Isbuffered;
+typedef NIM_CHAR TY514420[4001];
+struct  Socketimpl514407  {
+int fd;
+NIM_BOOL isbuffered;
 union{
-struct {TY521420 Buffer;
-NI Currpos;
-NI Buflen;
+struct {TY514420 buffer;
+NI currpos;
+NI buflen;
 } S1;
 } isbufferedU;
-NI32 Lasterror;
+NI32 lasterror;
 };
-struct  tfreecell27030  {
-tfreecell27030* Next;
-NI Zerofield;
+struct  Tfreecell27230  {
+Tfreecell27230* next;
+NI zerofield;
 };
 N_NIMCALL(NimStringDesc*, copyStringRC1)(NimStringDesc* src);
 static N_INLINE(void, nimGCunrefNoCycle)(void* p);
-static N_INLINE(tcell45946*, usrtocell_49446)(void* usr);
-static N_INLINE(void, rtladdzct_51004)(tcell45946* c);
-N_NOINLINE(void, addzct_49417)(tcellseq45962* s, tcell45946* c);
-N_NIMCALL(void, initoptparser_192030)(NimStringDesc* cmdline, optparser192011* Result);
+static N_INLINE(Tcell46146*, usrtocell_49646)(void* usr);
+static N_INLINE(void, rtladdzct_51204)(Tcell46146* c);
+N_NOINLINE(void, addzct_49617)(Tcellseq46162* s, Tcell46146* c);
+N_NIMCALL(void, initoptparser_175030)(NimStringDesc* cmdline, Optparser175011* Result);
 N_NOINLINE(void, chckNil)(void* p);
-N_NIMCALL(void, nponext)(optparser192011* p);
+N_NIMCALL(void, nponext)(Optparser175011* p);
 static N_INLINE(NIM_BOOL, eqStrings)(NimStringDesc* a, NimStringDesc* b);
 N_NIMCALL(NimStringDesc*, copyString)(NimStringDesc* src);
-N_NIMCALL(NIM_BOOL, processargument_194686)(NU8 pass, optparser192011* p, NI* argscount);
-N_NIMCALL(void, processswitch_194673)(NU8 pass, optparser192011* p);
+N_NIMCALL(NIM_BOOL, processargument_177740)(NU8 pass, Optparser175011* p, NI* argscount);
+N_NIMCALL(void, processswitch_177727)(NU8 pass, Optparser175011* p);
 N_NIMCALL(NimStringDesc*, nsuNormalize)(NimStringDesc* s);
-N_NIMCALL(void, rawmessage_183119)(NU16 msg, NimStringDesc** args, NI argsLen0);
+N_NIMCALL(void, rawmessage_164898)(NU16 msg, NimStringDesc** args, NI argsLen0);
 N_NIMCALL(void, nimGCvisit)(void* d, NI op);
-N_NIMCALL(void, TMP4946)(void* p, NI op);
+N_NIMCALL(void, TMP4989)(void* p, NI op);
 N_NIMCALL(void*, newObj)(TNimType* typ, NI size);
-N_NIMCALL(NimStringDesc*, getconfigvar_170340)(NimStringDesc* key);
+N_NIMCALL(NimStringDesc*, getconfigvar_154340)(NimStringDesc* key);
 N_NIMCALL(NimStringDesc*, readline_13478)(FILE* f);
-N_NIMCALL(void, processcmdline_529209)(NU8 pass, NimStringDesc* cmd);
-N_NIMCALL(socketimpl521407*, newsocket_521830)(NU8 domain, NU8 typ, NU8 protocol, NIM_BOOL buffered);
+N_NIMCALL(void, processcmdline_522209)(NU8 pass, NimStringDesc* cmd);
+N_NIMCALL(Socketimpl514407*, newsocket_514830)(NU8 domain, NU8 typ, NU8 protocol, NIM_BOOL buffered);
 N_NIMCALL(NI, nsuParseInt)(NimStringDesc* s);
-N_NIMCALL(void, bindaddr_522620)(socketimpl521407* socket, NU16 port, NimStringDesc* address);
-N_NIMCALL(void, listen_522610)(socketimpl521407* socket, int backlog);
+N_NIMCALL(void, bindaddr_515620)(Socketimpl514407* socket, NU16 port, NimStringDesc* address);
+N_NIMCALL(void, listen_515610)(Socketimpl514407* socket, int backlog);
 static N_INLINE(void, asgnRefNoCycle)(void** dest, void* src);
-N_CLOSURE(void, HEX3Aanonymous_529409)(NimStringDesc* line, void* ClEnv);
-N_NIMCALL(void, send_526208)(socketimpl521407* socket, NimStringDesc* data, NU8 flags);
+N_CLOSURE(void, HEX3Aanonymous_522409)(NimStringDesc* line, void* ClEnv);
+N_NIMCALL(void, send_519208)(Socketimpl514407* socket, NimStringDesc* data, NU8 flags);
 static N_INLINE(void, appendString)(NimStringDesc* dest, NimStringDesc* src);
 N_NIMCALL(NimStringDesc*, rawNewString)(NI space);
 static N_INLINE(void, asgnRef)(void** dest, void* src);
-static N_INLINE(void, incref_51822)(tcell45946* c);
-static N_INLINE(NIM_BOOL, canbecycleroot_49467)(tcell45946* c);
-static N_INLINE(void, rtladdcycleroot_50223)(tcell45946* c);
-N_NOINLINE(void, incl_46667)(tcellset45958* s, tcell45946* cell);
-static N_INLINE(void, decref_51404)(tcell45946* c);
-N_NIMCALL(void, accept_523401)(socketimpl521407* server, socketimpl521407** client, NU8 flags);
-N_NIMCALL(void, readline_525608)(socketimpl521407* socket, NimStringDesc** line, NI timeout, NU8 flags);
-N_NIMCALL(void, close_523417)(socketimpl521407* socket);
-N_NIMCALL(void, msgquit_182274)(NI8 x);
-STRING_LITERAL(TMP995, "", 0);
-STRING_LITERAL(TMP1586, " ", 1);
-STRING_LITERAL(TMP1587, "-", 1);
-STRING_LITERAL(TMP1914, "run", 3);
-STRING_LITERAL(TMP4947, "server.type", 11);
-STRING_LITERAL(TMP4948, "stdin", 5);
-STRING_LITERAL(TMP4949, "tcp", 3);
-STRING_LITERAL(TMP4951, "quit", 4);
-STRING_LITERAL(TMP4952, "server.port", 11);
-STRING_LITERAL(TMP4953, "server.address", 14);
-STRING_LITERAL(TMP4956, "\015\012", 2);
-STRING_LITERAL(TMP4965, "Invalid server.type:", 20);
-NimStringDesc* curcaascmd_529204;
-extern tgcheap47816 gch_47844;
-NimStringDesc* lastcaascmd_529205;
-extern TNimType NTI192011; /* OptParser */
-extern NU32 gglobaloptions_170128;
-extern NimStringDesc* arguments_194669;
-extern NimStringDesc* command_170239;
-TNimType NTI529428; /* object */
-extern TNimType NTI326033; /* range -1..0(int) */
-extern TNimType NTI521409; /* Socket */
-TNimType NTI529450; /* ref object */
-extern NI gerrorcounter_182015;
-extern TY182061 writelnhook_182064;
+static N_INLINE(void, incref_52022)(Tcell46146* c);
+static N_INLINE(NIM_BOOL, canbecycleroot_49667)(Tcell46146* c);
+static N_INLINE(void, rtladdcycleroot_50423)(Tcell46146* c);
+N_NOINLINE(void, incl_46865)(Tcellset46158* s, Tcell46146* cell);
+static N_INLINE(void, decref_51604)(Tcell46146* c);
+N_NIMCALL(void, accept_516401)(Socketimpl514407* server, Socketimpl514407** client, NU8 flags);
+N_NIMCALL(void, readline_518608)(Socketimpl514407* socket, NimStringDesc** line, NI timeout, NU8 flags);
+N_NIMCALL(void, close_516417)(Socketimpl514407* socket);
+N_NIMCALL(void, msgquit_164112)(NI8 x);
+STRING_LITERAL(TMP1077, "", 0);
+STRING_LITERAL(TMP1542, " ", 1);
+STRING_LITERAL(TMP1543, "-", 1);
+STRING_LITERAL(TMP1870, "run", 3);
+STRING_LITERAL(TMP4990, "server.type", 11);
+STRING_LITERAL(TMP4991, "stdin", 5);
+STRING_LITERAL(TMP4992, "tcp", 3);
+STRING_LITERAL(TMP4994, "quit", 4);
+STRING_LITERAL(TMP4995, "server.port", 11);
+STRING_LITERAL(TMP4996, "server.address", 14);
+STRING_LITERAL(TMP4999, "\015\012", 2);
+STRING_LITERAL(TMP5008, "Invalid server.type:", 20);
+NimStringDesc* curcaascmd_522204;
+extern Tgcheap48016 gch_48044;
+NimStringDesc* lastcaascmd_522205;
+extern TNimType NTI175011; /* OptParser */
+extern NU32 gglobaloptions_154128;
+extern NimStringDesc* arguments_177723;
+extern NimStringDesc* command_154239;
+TNimType NTI522428; /* object */
+extern TNimType NTI310033; /* range -1..0(int) */
+extern TNimType NTI514409; /* Socket */
+TNimType NTI522450; /* ref object */
+extern NI gerrorcounter_164016;
+extern TY164060 writelnhook_164063;
 
-static N_INLINE(tcell45946*, usrtocell_49446)(void* usr) {
-	tcell45946* result;
+static N_INLINE(Tcell46146*, usrtocell_49646)(void* usr) {
+	Tcell46146* result;
 	result = 0;
-	result = ((tcell45946*) ((NI)((NU64)(((NI) (usr))) - (NU64)(((NI)sizeof(tcell45946))))));
+	result = ((Tcell46146*) ((NI)((NU64)(((NI) (usr))) - (NU64)(((NI)sizeof(Tcell46146))))));
 	return result;
 }
 
-static N_INLINE(void, rtladdzct_51004)(tcell45946* c) {
-	addzct_49417((&gch_47844.Zct), c);
+static N_INLINE(void, rtladdzct_51204)(Tcell46146* c) {
+	addzct_49617((&gch_48044.zct), c);
 }
 
 static N_INLINE(void, nimGCunrefNoCycle)(void* p) {
-	tcell45946* c;
-	c = usrtocell_49446(p);
+	Tcell46146* c;
+	c = usrtocell_49646(p);
 	{
-		(*c).Refcount -= ((NI) 8);
-		if (!((NU64)((*c).Refcount) < (NU64)(((NI) 8)))) goto LA3;
-		rtladdzct_51004(c);
+		(*c).refcount -= ((NI) 8);
+		if (!((NU64)((*c).refcount) < (NU64)(((NI) 8)))) goto LA3;
+		rtladdzct_51204(c);
 	}
 	LA3: ;
 }
@@ -323,20 +323,20 @@ static N_INLINE(NIM_BOOL, eqStrings)(NimStringDesc* a, NimStringDesc* b) {
 	return result;
 }
 
-N_NIMCALL(void, processcmdline_529209)(NU8 pass, NimStringDesc* cmd) {
-	optparser192011 p;
+N_NIMCALL(void, processcmdline_522209)(NU8 pass, NimStringDesc* cmd) {
+	Optparser175011 p;
 	NI argscount;
 	memset((void*)(&p), 0, sizeof(p));
-	p.Sup.m_type = (&NTI192011);
+	p.Sup.m_type = (&NTI175011);
 	chckNil((void*)(&p));
 	memset((void*)(&p), 0, sizeof(p));
-	p.Sup.m_type = (&NTI192011);
-	initoptparser_192030(cmd, (&p));
+	p.Sup.m_type = (&NTI175011);
+	initoptparser_175030(cmd, (&p));
 	argscount = ((NI) 0);
 	{
 		while (1) {
 			nponext((&p));
-			switch (p.Kind) {
+			switch (p.kind) {
 			case ((NU8) 0):
 			{
 				goto LA1;
@@ -346,12 +346,12 @@ N_NIMCALL(void, processcmdline_529209)(NU8 pass, NimStringDesc* cmd) {
 			case ((NU8) 3):
 			{
 				{
-					if (!eqStrings(p.Key, ((NimStringDesc*) &TMP1586))) goto LA7;
-					p.Key = copyString(((NimStringDesc*) &TMP1587));
+					if (!eqStrings(p.key, ((NimStringDesc*) &TMP1542))) goto LA7;
+					p.key = copyString(((NimStringDesc*) &TMP1543));
 					{
 						NIM_BOOL LOC11;
 						LOC11 = 0;
-						LOC11 = processargument_194686(pass, (&p), (&argscount));
+						LOC11 = processargument_177740(pass, (&p), (&argscount));
 						if (!LOC11) goto LA12;
 						goto LA1;
 					}
@@ -360,7 +360,7 @@ N_NIMCALL(void, processcmdline_529209)(NU8 pass, NimStringDesc* cmd) {
 				goto LA5;
 				LA7: ;
 				{
-					processswitch_194673(pass, (&p));
+					processswitch_177727(pass, (&p));
 				}
 				LA5: ;
 			}
@@ -370,7 +370,7 @@ N_NIMCALL(void, processcmdline_529209)(NU8 pass, NimStringDesc* cmd) {
 				{
 					NIM_BOOL LOC18;
 					LOC18 = 0;
-					LOC18 = processargument_194686(pass, (&p), (&argscount));
+					LOC18 = processargument_177740(pass, (&p), (&argscount));
 					if (!LOC18) goto LA19;
 					goto LA1;
 				}
@@ -386,49 +386,49 @@ N_NIMCALL(void, processcmdline_529209)(NU8 pass, NimStringDesc* cmd) {
 			NIM_BOOL LOC27;
 			NIM_BOOL LOC28;
 			NimStringDesc* LOC31;
-			TY235722 LOC34;
+			TY219714 LOC34;
 			LOC27 = 0;
 			LOC28 = 0;
-			LOC28 = !(((gglobaloptions_170128 &(1<<((((NU8) 13))&31)))!=0));
+			LOC28 = !(((gglobaloptions_154128 &(1<<((((NU8) 13))&31)))!=0));
 			if (!(LOC28)) goto LA29;
-			LOC28 = !(((arguments_194669) && (arguments_194669)->Sup.len == 0));
+			LOC28 = !(((arguments_177723) && (arguments_177723)->Sup.len == 0));
 			LA29: ;
 			LOC27 = LOC28;
 			if (!(LOC27)) goto LA30;
 			LOC31 = 0;
-			LOC31 = nsuNormalize(command_170239);
-			LOC27 = !(eqStrings(LOC31, ((NimStringDesc*) &TMP1914)));
+			LOC31 = nsuNormalize(command_154239);
+			LOC27 = !(eqStrings(LOC31, ((NimStringDesc*) &TMP1870)));
 			LA30: ;
 			if (!LOC27) goto LA32;
 			memset((void*)LOC34, 0, sizeof(LOC34));
-			rawmessage_183119(((NU16) 57), LOC34, 0);
+			rawmessage_164898(((NU16) 57), LOC34, 0);
 		}
 		LA32: ;
 	}
 	LA23: ;
 }
-N_NIMCALL(void, TMP4946)(void* p, NI op) {
-	TY529428* a;
-	a = (TY529428*)p;
-	nimGCvisit((void*)(*a).Stdoutsocket529408, op);
+N_NIMCALL(void, TMP4989)(void* p, NI op) {
+	TY522428* a;
+	a = (TY522428*)p;
+	nimGCvisit((void*)(*a).stdoutsocket522408, op);
 }
 
 static N_INLINE(void, asgnRefNoCycle)(void** dest, void* src) {
 	{
-		tcell45946* c;
+		Tcell46146* c;
 		if (!!((src == NIM_NIL))) goto LA3;
-		c = usrtocell_49446(src);
-		(*c).Refcount += ((NI) 8);
+		c = usrtocell_49646(src);
+		(*c).refcount += ((NI) 8);
 	}
 	LA3: ;
 	{
-		tcell45946* c;
+		Tcell46146* c;
 		if (!!(((*dest) == NIM_NIL))) goto LA7;
-		c = usrtocell_49446((*dest));
+		c = usrtocell_49646((*dest));
 		{
-			(*c).Refcount -= ((NI) 8);
-			if (!((NU64)((*c).Refcount) < (NU64)(((NI) 8)))) goto LA11;
-			rtladdzct_51004(c);
+			(*c).refcount -= ((NI) 8);
+			if (!((NU64)((*c).refcount) < (NU64)(((NI) 8)))) goto LA11;
+			rtladdzct_51204(c);
 		}
 		LA11: ;
 	}
@@ -437,63 +437,63 @@ static N_INLINE(void, asgnRefNoCycle)(void** dest, void* src) {
 }
 
 static N_INLINE(void, appendString)(NimStringDesc* dest, NimStringDesc* src) {
-	memcpy(((NCSTRING) ((&(*dest).data[((*dest).Sup.len)- 0]))), ((NCSTRING) ((*src).data)), (NI64)((*src).Sup.len + ((NI) 1)));
+	memcpy(((NCSTRING) ((&(*dest).data[((*dest).Sup.len)- 0]))), ((NCSTRING) ((*src).data)), (NI)((*src).Sup.len + ((NI) 1)));
 	(*dest).Sup.len += (*src).Sup.len;
 }
 
-N_CLOSURE(void, HEX3Aanonymous_529409)(NimStringDesc* line, void* ClEnv) {
-	TY529428* HEX3Aenvp_529440;
+N_CLOSURE(void, HEX3Aanonymous_522409)(NimStringDesc* line, void* ClEnv) {
+	TY522428* HEX3Aenvp_522440;
 	NimStringDesc* LOC1;
-	HEX3Aenvp_529440 = (TY529428*) ClEnv;
+	HEX3Aenvp_522440 = (TY522428*) ClEnv;
 	LOC1 = 0;
 	LOC1 = rawNewString(line->Sup.len + 2);
 appendString(LOC1, line);
-appendString(LOC1, ((NimStringDesc*) &TMP4956));
-	send_526208((*HEX3Aenvp_529440).Stdoutsocket529408, LOC1, 2);
+appendString(LOC1, ((NimStringDesc*) &TMP4999));
+	send_519208((*HEX3Aenvp_522440).stdoutsocket522408, LOC1, 2);
 }
 
-static N_INLINE(NIM_BOOL, canbecycleroot_49467)(tcell45946* c) {
+static N_INLINE(NIM_BOOL, canbecycleroot_49667)(Tcell46146* c) {
 	NIM_BOOL result;
 	result = 0;
-	result = !((((*(*c).Typ).flags &(1<<((((NU8) 1))&7)))!=0));
+	result = !((((*(*c).typ).flags &(1<<((((NU8) 1))&7)))!=0));
 	return result;
 }
 
-static N_INLINE(void, rtladdcycleroot_50223)(tcell45946* c) {
+static N_INLINE(void, rtladdcycleroot_50423)(Tcell46146* c) {
 	{
-		if (!!((((NI) ((NI)((*c).Refcount & ((NI) 3)))) == ((NI) 3)))) goto LA3;
-		(*c).Refcount = (NI)((NI)((*c).Refcount & ((NI) -4)) | ((NI) 3));
-		incl_46667((&gch_47844.Cycleroots), c);
+		if (!!((((NI) ((NI)((*c).refcount & ((NI) 3)))) == ((NI) 3)))) goto LA3;
+		(*c).refcount = (NI)((NI)((*c).refcount & ((NI) -4)) | ((NI) 3));
+		incl_46865((&gch_48044.cycleroots), c);
 	}
 	LA3: ;
 }
 
-static N_INLINE(void, incref_51822)(tcell45946* c) {
-	(*c).Refcount = (NI)((NU64)((*c).Refcount) + (NU64)(((NI) 8)));
+static N_INLINE(void, incref_52022)(Tcell46146* c) {
+	(*c).refcount = (NI)((NU64)((*c).refcount) + (NU64)(((NI) 8)));
 	{
 		NIM_BOOL LOC3;
 		LOC3 = 0;
-		LOC3 = canbecycleroot_49467(c);
+		LOC3 = canbecycleroot_49667(c);
 		if (!LOC3) goto LA4;
-		rtladdcycleroot_50223(c);
+		rtladdcycleroot_50423(c);
 	}
 	LA4: ;
 }
 
-static N_INLINE(void, decref_51404)(tcell45946* c) {
+static N_INLINE(void, decref_51604)(Tcell46146* c) {
 	{
-		(*c).Refcount -= ((NI) 8);
-		if (!((NU64)((*c).Refcount) < (NU64)(((NI) 8)))) goto LA3;
-		rtladdzct_51004(c);
+		(*c).refcount -= ((NI) 8);
+		if (!((NU64)((*c).refcount) < (NU64)(((NI) 8)))) goto LA3;
+		rtladdzct_51204(c);
 	}
 	goto LA1;
 	LA3: ;
 	{
 		NIM_BOOL LOC6;
 		LOC6 = 0;
-		LOC6 = canbecycleroot_49467(c);
+		LOC6 = canbecycleroot_49667(c);
 		if (!LOC6) goto LA7;
-		rtladdcycleroot_50223(c);
+		rtladdcycleroot_50423(c);
 	}
 	goto LA1;
 	LA7: ;
@@ -502,33 +502,33 @@ static N_INLINE(void, decref_51404)(tcell45946* c) {
 
 static N_INLINE(void, asgnRef)(void** dest, void* src) {
 	{
-		tcell45946* LOC5;
+		Tcell46146* LOC5;
 		if (!!((src == NIM_NIL))) goto LA3;
 		LOC5 = 0;
-		LOC5 = usrtocell_49446(src);
-		incref_51822(LOC5);
+		LOC5 = usrtocell_49646(src);
+		incref_52022(LOC5);
 	}
 	LA3: ;
 	{
-		tcell45946* LOC10;
+		Tcell46146* LOC10;
 		if (!!(((*dest) == NIM_NIL))) goto LA8;
 		LOC10 = 0;
-		LOC10 = usrtocell_49446((*dest));
-		decref_51404(LOC10);
+		LOC10 = usrtocell_49646((*dest));
+		decref_51604(LOC10);
 	}
 	LA8: ;
 	(*dest) = src;
 }
 
-N_NIMCALL(void, serve_529257)(TY529259 action) {
-	TY529428* HEX3Aenv_529449;
+N_NIMCALL(void, serve_522257)(TY522259 action) {
+	TY522428* HEX3Aenv_522449;
 	NimStringDesc* typ;
-	HEX3Aenv_529449 = 0;
-	HEX3Aenv_529449 = (TY529428*) newObj((&NTI529450), sizeof(TY529428));
-	typ = getconfigvar_170340(((NimStringDesc*) &TMP4947));
-	if (eqStrings(typ, ((NimStringDesc*) &TMP4948))) goto LA1;
-	if (eqStrings(typ, ((NimStringDesc*) &TMP4949))) goto LA2;
-	if (eqStrings(typ, ((NimStringDesc*) &TMP995))) goto LA2;
+	HEX3Aenv_522449 = 0;
+	HEX3Aenv_522449 = (TY522428*) newObj((&NTI522450), sizeof(TY522428));
+	typ = getconfigvar_154340(((NimStringDesc*) &TMP4990));
+	if (eqStrings(typ, ((NimStringDesc*) &TMP4991))) goto LA1;
+	if (eqStrings(typ, ((NimStringDesc*) &TMP4992))) goto LA2;
+	if (eqStrings(typ, ((NimStringDesc*) &TMP1077))) goto LA2;
 	goto LA3;
 	LA1: ;
 	{
@@ -538,17 +538,17 @@ N_NIMCALL(void, serve_529257)(TY529259 action) {
 				NimStringDesc* LOC12;
 				line = readline_13478(stdin);
 				{
-					if (!eqStrings(line, ((NimStringDesc*) &TMP4951))) goto LA10;
+					if (!eqStrings(line, ((NimStringDesc*) &TMP4994))) goto LA10;
 					exit(((NI) 0));
 				}
 				LA10: ;
 				LOC12 = 0;
-				LOC12 = curcaascmd_529204; curcaascmd_529204 = copyStringRC1(line);
+				LOC12 = curcaascmd_522204; curcaascmd_522204 = copyStringRC1(line);
 				if (LOC12) nimGCunrefNoCycle(LOC12);
-				processcmdline_529209(((NU8) 1), line);
+				processcmdline_522209(((NU8) 1), line);
 				action();
-				gerrorcounter_182015 = ((NI) 0);
-				printf("%s\012", ((NimStringDesc*) &TMP995)? (((NimStringDesc*) &TMP995))->data:"nil");
+				gerrorcounter_164016 = ((NI) 0);
+				printf("%s\012", ((NimStringDesc*) &TMP1077)? (((NimStringDesc*) &TMP1077))->data:"nil");
 				fflush(stdout);
 			}
 		}
@@ -556,17 +556,17 @@ N_NIMCALL(void, serve_529257)(TY529259 action) {
 	goto LA4;
 	LA2: ;
 	{
-		socketimpl521407* server;
+		Socketimpl514407* server;
 		NimStringDesc* p;
 		NU16 port;
 		NimStringDesc* LOC20;
 		NimStringDesc* inp;
-		TY182061 LOC21;
-		server = newsocket_521830(((NU8) 2), ((NU8) 1), ((NU8) 6), NIM_TRUE);
-		p = getconfigvar_170340(((NimStringDesc*) &TMP4952));
+		TY164060 LOC21;
+		server = newsocket_514830(((NU8) 2), ((NU8) 1), ((NU8) 6), NIM_TRUE);
+		p = getconfigvar_154340(((NimStringDesc*) &TMP4995));
 		{
 			NI LOC18;
-			if (!(((NI) 0) < p->Sup.len)) goto LA16;
+			if (!(((NI) 0) < (p ? p->Sup.len : 0))) goto LA16;
 			LOC18 = 0;
 			LOC18 = nsuParseInt(p);
 			port = ((NU16) (LOC18));
@@ -578,36 +578,36 @@ N_NIMCALL(void, serve_529257)(TY529259 action) {
 		}
 		LA14: ;
 		LOC20 = 0;
-		LOC20 = getconfigvar_170340(((NimStringDesc*) &TMP4953));
-		bindaddr_522620(server, port, LOC20);
-		inp = copyString(((NimStringDesc*) &TMP995));
-		listen_522610(server, SOMAXCONN);
-		asgnRefNoCycle((void**) (&(*HEX3Aenv_529449).Stdoutsocket529408), newsocket_521830(((NU8) 2), ((NU8) 1), ((NU8) 6), NIM_TRUE));
+		LOC20 = getconfigvar_154340(((NimStringDesc*) &TMP4996));
+		bindaddr_515620(server, port, LOC20);
+		inp = copyString(((NimStringDesc*) &TMP1077));
+		listen_515610(server, SOMAXCONN);
+		asgnRefNoCycle((void**) (&(*HEX3Aenv_522449).stdoutsocket522408), newsocket_514830(((NU8) 2), ((NU8) 1), ((NU8) 6), NIM_TRUE));
 		memset((void*)(&LOC21), 0, sizeof(LOC21));
-		LOC21.ClPrc = HEX3Aanonymous_529409; LOC21.ClEnv = HEX3Aenv_529449;
-		asgnRef((void**) (&writelnhook_182064.ClEnv), LOC21.ClEnv);
-		writelnhook_182064.ClPrc = LOC21.ClPrc;
+		LOC21.ClPrc = HEX3Aanonymous_522409; LOC21.ClEnv = HEX3Aenv_522449;
+		asgnRef((void**) (&writelnhook_164063.ClEnv), LOC21.ClEnv);
+		writelnhook_164063.ClPrc = LOC21.ClPrc;
 		{
 			while (1) {
 				NimStringDesc* LOC24;
-				accept_523401(server, &(*HEX3Aenv_529449).Stdoutsocket529408, 2);
-				readline_525608((*HEX3Aenv_529449).Stdoutsocket529408, (&inp), ((NI) -1), 2);
+				accept_516401(server, &(*HEX3Aenv_522449).stdoutsocket522408, 2);
+				readline_518608((*HEX3Aenv_522449).stdoutsocket522408, (&inp), ((NI) -1), 2);
 				LOC24 = 0;
-				LOC24 = curcaascmd_529204; curcaascmd_529204 = copyStringRC1(inp);
+				LOC24 = curcaascmd_522204; curcaascmd_522204 = copyStringRC1(inp);
 				if (LOC24) nimGCunrefNoCycle(LOC24);
-				processcmdline_529209(((NU8) 1), inp);
+				processcmdline_522209(((NU8) 1), inp);
 				action();
-				gerrorcounter_182015 = ((NI) 0);
-				send_526208((*HEX3Aenv_529449).Stdoutsocket529408, ((NimStringDesc*) &TMP4956), 2);
-				close_523417((*HEX3Aenv_529449).Stdoutsocket529408);
+				gerrorcounter_164016 = ((NI) 0);
+				send_519208((*HEX3Aenv_522449).stdoutsocket522408, ((NimStringDesc*) &TMP4999), 2);
+				close_516417((*HEX3Aenv_522449).stdoutsocket522408);
 			}
 		}
 	}
 	goto LA4;
 	LA3: ;
 	{
-		printf("%s%s\012", ((NimStringDesc*) &TMP4965)? (((NimStringDesc*) &TMP4965))->data:"nil", typ? (typ)->data:"nil");
-		msgquit_182274(((NI8) 1));
+		printf("%s%s\012", ((NimStringDesc*) &TMP5008)? (((NimStringDesc*) &TMP5008))->data:"nil", typ? (typ)->data:"nil");
+		msgquit_164112(((NI8) 1));
 	}
 	LA4: ;
 }
@@ -615,36 +615,36 @@ NIM_EXTERNC N_NOINLINE(void, compiler_serviceInit)(void) {
 	NimStringDesc* LOC1;
 	NimStringDesc* LOC2;
 	LOC1 = 0;
-	LOC1 = curcaascmd_529204; curcaascmd_529204 = copyStringRC1(((NimStringDesc*) &TMP995));
+	LOC1 = curcaascmd_522204; curcaascmd_522204 = copyStringRC1(((NimStringDesc*) &TMP1077));
 	if (LOC1) nimGCunrefNoCycle(LOC1);
 	LOC2 = 0;
-	LOC2 = lastcaascmd_529205; lastcaascmd_529205 = copyStringRC1(((NimStringDesc*) &TMP995));
+	LOC2 = lastcaascmd_522205; lastcaascmd_522205 = copyStringRC1(((NimStringDesc*) &TMP1077));
 	if (LOC2) nimGCunrefNoCycle(LOC2);
 }
 
 NIM_EXTERNC N_NOINLINE(void, compiler_serviceDatInit)(void) {
-static TNimNode* TMP4942[2];
-static TNimNode TMP989[3];
-NTI529428.size = sizeof(TY529428);
-NTI529428.kind = 18;
-NTI529428.base = 0;
-NTI529428.flags = 2;
-TMP4942[0] = &TMP989[1];
-TMP989[1].kind = 1;
-TMP989[1].offset = offsetof(TY529428, HEX3Astate);
-TMP989[1].typ = (&NTI326033);
-TMP989[1].name = ":state";
-TMP4942[1] = &TMP989[2];
-TMP989[2].kind = 1;
-TMP989[2].offset = offsetof(TY529428, Stdoutsocket529408);
-TMP989[2].typ = (&NTI521409);
-TMP989[2].name = "stdoutSocket529408";
-TMP989[0].len = 2; TMP989[0].kind = 2; TMP989[0].sons = &TMP4942[0];
-NTI529428.node = &TMP989[0];
-NTI529450.size = sizeof(TY529428*);
-NTI529450.kind = 22;
-NTI529450.base = (&NTI529428);
-NTI529450.flags = 2;
-NTI529450.marker = TMP4946;
+static TNimNode* TMP4985[2];
+static TNimNode TMP1071[3];
+NTI522428.size = sizeof(TY522428);
+NTI522428.kind = 18;
+NTI522428.base = 0;
+NTI522428.flags = 2;
+TMP4985[0] = &TMP1071[1];
+TMP1071[1].kind = 1;
+TMP1071[1].offset = offsetof(TY522428, HEX3Astate);
+TMP1071[1].typ = (&NTI310033);
+TMP1071[1].name = ":state";
+TMP4985[1] = &TMP1071[2];
+TMP1071[2].kind = 1;
+TMP1071[2].offset = offsetof(TY522428, stdoutsocket522408);
+TMP1071[2].typ = (&NTI514409);
+TMP1071[2].name = "stdoutSocket522408";
+TMP1071[0].len = 2; TMP1071[0].kind = 2; TMP1071[0].sons = &TMP4985[0];
+NTI522428.node = &TMP1071[0];
+NTI522450.size = sizeof(TY522428*);
+NTI522450.kind = 22;
+NTI522450.base = (&NTI522428);
+NTI522450.flags = 2;
+NTI522450.marker = TMP4989;
 }
 

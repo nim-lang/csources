@@ -35,11 +35,11 @@ NCSTRING name;
 NI len;
 TNimNode** sons;
 };
-static N_INLINE(NI, HEX21HEX26_128025)(NI h, NI val);
-static N_INLINE(NI, HEX21HEX24_128054)(NI h);
-TNimType NTI128021; /* THash */
+static N_INLINE(NI, HEX21HEX26_130025)(NI h, NI val);
+static N_INLINE(NI, HEX21HEX24_130054)(NI h);
+TNimType NTI130021; /* THash */
 
-static N_INLINE(NI, HEX21HEX26_128025)(NI h, NI val) {
+static N_INLINE(NI, HEX21HEX26_130025)(NI h, NI val) {
 	NI result;
 	result = 0;
 	result = (NI)((NU64)(h) + (NU64)(val));
@@ -48,7 +48,7 @@ static N_INLINE(NI, HEX21HEX26_128025)(NI h, NI val) {
 	return result;
 }
 
-static N_INLINE(NI, HEX21HEX24_128054)(NI h) {
+static N_INLINE(NI, HEX21HEX24_130054)(NI h) {
 	NI result;
 	result = 0;
 	result = (NI)((NU64)(h) + (NU64)((NI)((NU64)(h) << (NU64)(((NI) 3)))));
@@ -57,52 +57,52 @@ static N_INLINE(NI, HEX21HEX24_128054)(NI h) {
 	return result;
 }
 
-N_NIMCALL(NI, hash_128839)(NimStringDesc* x) {
+N_NIMCALL(NI, hash_130839)(NimStringDesc* x) {
 	NI result;
 	NI h;
 	result = 0;
 	h = ((NI) 0);
 	{
-		NI i_128854;
-		NI HEX3Atmp_128865;
-		NI res_128868;
-		i_128854 = 0;
-		HEX3Atmp_128865 = 0;
-		HEX3Atmp_128865 = (NI64)(x->Sup.len - ((NI) 1));
-		res_128868 = ((NI) 0);
+		NI i_130854;
+		NI HEX3Atmp_130865;
+		NI res_130868;
+		i_130854 = 0;
+		HEX3Atmp_130865 = 0;
+		HEX3Atmp_130865 = (NI)((x ? x->Sup.len : 0) - ((NI) 1));
+		res_130868 = ((NI) 0);
 		{
 			while (1) {
-				if (!(res_128868 <= HEX3Atmp_128865)) goto LA3;
-				i_128854 = res_128868;
-				h = HEX21HEX26_128025(h, ((NI) (((NU8)(x->data[i_128854])))));
-				res_128868 += ((NI) 1);
+				if (!(res_130868 <= HEX3Atmp_130865)) goto LA3;
+				i_130854 = res_130868;
+				h = HEX21HEX26_130025(h, ((NI) (((NU8)(x->data[i_130854])))));
+				res_130868 += ((NI) 1);
 			} LA3: ;
 		}
 	}
-	result = HEX21HEX24_128054(h);
+	result = HEX21HEX24_130054(h);
 	return result;
 }
 
-N_NIMCALL(NI, hashignorestyle_128887)(NimStringDesc* x) {
+N_NIMCALL(NI, hashignorestyle_130887)(NimStringDesc* x) {
 	NI result;
 	NI h;
 	result = 0;
 	h = ((NI) 0);
 	{
-		NI i_128902;
-		NI HEX3Atmp_128953;
-		NI res_128956;
-		i_128902 = 0;
-		HEX3Atmp_128953 = 0;
-		HEX3Atmp_128953 = (NI64)(x->Sup.len - ((NI) 1));
-		res_128956 = ((NI) 0);
+		NI i_130902;
+		NI HEX3Atmp_130953;
+		NI res_130956;
+		i_130902 = 0;
+		HEX3Atmp_130953 = 0;
+		HEX3Atmp_130953 = (NI)((x ? x->Sup.len : 0) - ((NI) 1));
+		res_130956 = ((NI) 0);
 		{
 			while (1) {
-				if (!(res_128956 <= HEX3Atmp_128953)) goto LA3;
-				i_128902 = res_128956;
+				if (!(res_130956 <= HEX3Atmp_130953)) goto LA3;
+				i_130902 = res_130956;
 				{
 					NIM_CHAR c;
-					c = x->data[i_128902];
+					c = x->data[i_130902];
 					{
 						if (!((NU8)(c) == (NU8)(95))) goto LA7;
 						goto LA4;
@@ -110,58 +110,58 @@ N_NIMCALL(NI, hashignorestyle_128887)(NimStringDesc* x) {
 					LA7: ;
 					{
 						if (!(((NU8)(c)) >= ((NU8)(65)) && ((NU8)(c)) <= ((NU8)(90)))) goto LA11;
-						c = ((NIM_CHAR) (((NI) ((NI64)(((NI) (((NU8)(c)))) + ((NI) 32))))));
+						c = ((NIM_CHAR) (((NI) ((NI)(((NI) (((NU8)(c)))) + ((NI) 32))))));
 					}
 					LA11: ;
-					h = HEX21HEX26_128025(h, ((NI) (((NU8)(c)))));
+					h = HEX21HEX26_130025(h, ((NI) (((NU8)(c)))));
 				} LA4: ;
-				res_128956 += ((NI) 1);
+				res_130956 += ((NI) 1);
 			} LA3: ;
 		}
 	}
-	result = HEX21HEX24_128054(h);
+	result = HEX21HEX24_130054(h);
 	return result;
 }
 
-N_NIMCALL(NI, hashignorecase_128978)(NimStringDesc* x) {
+N_NIMCALL(NI, hashignorecase_130978)(NimStringDesc* x) {
 	NI result;
 	NI h;
 	result = 0;
 	h = ((NI) 0);
 	{
-		NI i_128993;
-		NI HEX3Atmp_129043;
-		NI res_129046;
-		i_128993 = 0;
-		HEX3Atmp_129043 = 0;
-		HEX3Atmp_129043 = (NI64)(x->Sup.len - ((NI) 1));
-		res_129046 = ((NI) 0);
+		NI i_130993;
+		NI HEX3Atmp_131043;
+		NI res_131046;
+		i_130993 = 0;
+		HEX3Atmp_131043 = 0;
+		HEX3Atmp_131043 = (NI)((x ? x->Sup.len : 0) - ((NI) 1));
+		res_131046 = ((NI) 0);
 		{
 			while (1) {
 				NIM_CHAR c;
-				if (!(res_129046 <= HEX3Atmp_129043)) goto LA3;
-				i_128993 = res_129046;
-				c = x->data[i_128993];
+				if (!(res_131046 <= HEX3Atmp_131043)) goto LA3;
+				i_130993 = res_131046;
+				c = x->data[i_130993];
 				{
 					if (!(((NU8)(c)) >= ((NU8)(65)) && ((NU8)(c)) <= ((NU8)(90)))) goto LA6;
-					c = ((NIM_CHAR) (((NI) ((NI64)(((NI) (((NU8)(c)))) + ((NI) 32))))));
+					c = ((NIM_CHAR) (((NI) ((NI)(((NI) (((NU8)(c)))) + ((NI) 32))))));
 				}
 				LA6: ;
-				h = HEX21HEX26_128025(h, ((NI) (((NU8)(c)))));
-				res_129046 += ((NI) 1);
+				h = HEX21HEX26_130025(h, ((NI) (((NU8)(c)))));
+				res_131046 += ((NI) 1);
 			} LA3: ;
 		}
 	}
-	result = HEX21HEX24_128054(h);
+	result = HEX21HEX24_130054(h);
 	return result;
 }
 NIM_EXTERNC N_NOINLINE(void, stdlib_hashesInit)(void) {
 }
 
 NIM_EXTERNC N_NOINLINE(void, stdlib_hashesDatInit)(void) {
-NTI128021.size = sizeof(NI);
-NTI128021.kind = 31;
-NTI128021.base = 0;
-NTI128021.flags = 3;
+NTI130021.size = sizeof(NI);
+NTI130021.kind = 31;
+NTI130021.base = 0;
+NTI130021.flags = 3;
 }
 

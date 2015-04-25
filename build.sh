@@ -172,8 +172,6 @@ windows)
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_ropes.c -o c_code/1_1/compiler_ropes.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_platform.c -o c_code/1_1/compiler_platform.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_platform.c -o c_code/1_1/compiler_platform.o
-    echo "$CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_crc.c -o c_code/1_1/compiler_crc.o"
-    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_crc.c -o c_code/1_1/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_nversion.c -o c_code/1_1/compiler_nversion.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_nversion.c -o c_code/1_1/compiler_nversion.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_condsyms.c -o c_code/1_1/compiler_condsyms.o"
@@ -182,6 +180,8 @@ windows)
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_idents.c -o c_code/1_1/compiler_idents.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_extccomp.c -o c_code/1_1/compiler_extccomp.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_extccomp.c -o c_code/1_1/compiler_extccomp.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_crc.c -o c_code/1_1/compiler_crc.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_crc.c -o c_code/1_1/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_wordrecg.c -o c_code/1_1/compiler_wordrecg.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_wordrecg.c -o c_code/1_1/compiler_wordrecg.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_nimblecmd.c -o c_code/1_1/compiler_nimblecmd.o"
@@ -318,6 +318,8 @@ windows)
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/stdlib_unsigned.c -o c_code/1_1/stdlib_unsigned.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_vmdeps.c -o c_code/1_1/compiler_vmdeps.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_vmdeps.c -o c_code/1_1/compiler_vmdeps.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_vmmarshal.c -o c_code/1_1/compiler_vmmarshal.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_vmmarshal.c -o c_code/1_1/compiler_vmmarshal.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_evaltempl.c -o c_code/1_1/compiler_evaltempl.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_evaltempl.c -o c_code/1_1/compiler_evaltempl.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_aliases.c -o c_code/1_1/compiler_aliases.o"
@@ -328,6 +330,12 @@ windows)
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_semmacrosanity.c -o c_code/1_1/compiler_semmacrosanity.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_semparallel.c -o c_code/1_1/compiler_semparallel.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_semparallel.c -o c_code/1_1/compiler_semparallel.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_plugins.c -o c_code/1_1/compiler_plugins.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_plugins.c -o c_code/1_1/compiler_plugins.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_active.c -o c_code/1_1/compiler_active.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_active.c -o c_code/1_1/compiler_active.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_locals.c -o c_code/1_1/compiler_locals.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_locals.c -o c_code/1_1/compiler_locals.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_cgen.c -o c_code/1_1/compiler_cgen.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_cgen.c -o c_code/1_1/compiler_cgen.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_ccgutils.c -o c_code/1_1/compiler_ccgutils.o"
@@ -377,11 +385,11 @@ c_code/1_1/stdlib_math.o \
 c_code/1_1/stdlib_tables.o \
 c_code/1_1/compiler_ropes.o \
 c_code/1_1/compiler_platform.o \
-c_code/1_1/compiler_crc.o \
 c_code/1_1/compiler_nversion.o \
 c_code/1_1/compiler_condsyms.o \
 c_code/1_1/compiler_idents.o \
 c_code/1_1/compiler_extccomp.o \
+c_code/1_1/compiler_crc.o \
 c_code/1_1/compiler_wordrecg.o \
 c_code/1_1/compiler_nimblecmd.o \
 c_code/1_1/stdlib_parseopt.o \
@@ -450,11 +458,15 @@ c_code/1_1/compiler_vm.o \
 c_code/1_1/compiler_vmgen.o \
 c_code/1_1/stdlib_unsigned.o \
 c_code/1_1/compiler_vmdeps.o \
+c_code/1_1/compiler_vmmarshal.o \
 c_code/1_1/compiler_evaltempl.o \
 c_code/1_1/compiler_aliases.o \
 c_code/1_1/compiler_patterns.o \
 c_code/1_1/compiler_semmacrosanity.o \
 c_code/1_1/compiler_semparallel.o \
+c_code/1_1/compiler_plugins.o \
+c_code/1_1/compiler_active.o \
+c_code/1_1/compiler_locals.o \
 c_code/1_1/compiler_cgen.o \
 c_code/1_1/compiler_ccgutils.o \
 c_code/1_1/compiler_cgendata.o \
@@ -491,11 +503,11 @@ c_code/1_1/stdlib_math.o \
 c_code/1_1/stdlib_tables.o \
 c_code/1_1/compiler_ropes.o \
 c_code/1_1/compiler_platform.o \
-c_code/1_1/compiler_crc.o \
 c_code/1_1/compiler_nversion.o \
 c_code/1_1/compiler_condsyms.o \
 c_code/1_1/compiler_idents.o \
 c_code/1_1/compiler_extccomp.o \
+c_code/1_1/compiler_crc.o \
 c_code/1_1/compiler_wordrecg.o \
 c_code/1_1/compiler_nimblecmd.o \
 c_code/1_1/stdlib_parseopt.o \
@@ -564,11 +576,15 @@ c_code/1_1/compiler_vm.o \
 c_code/1_1/compiler_vmgen.o \
 c_code/1_1/stdlib_unsigned.o \
 c_code/1_1/compiler_vmdeps.o \
+c_code/1_1/compiler_vmmarshal.o \
 c_code/1_1/compiler_evaltempl.o \
 c_code/1_1/compiler_aliases.o \
 c_code/1_1/compiler_patterns.o \
 c_code/1_1/compiler_semmacrosanity.o \
 c_code/1_1/compiler_semparallel.o \
+c_code/1_1/compiler_plugins.o \
+c_code/1_1/compiler_active.o \
+c_code/1_1/compiler_locals.o \
 c_code/1_1/compiler_cgen.o \
 c_code/1_1/compiler_ccgutils.o \
 c_code/1_1/compiler_cgendata.o \
@@ -628,8 +644,6 @@ c_code/1_1/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_ropes.c -o c_code/1_2/compiler_ropes.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_platform.c -o c_code/1_2/compiler_platform.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_platform.c -o c_code/1_2/compiler_platform.o
-    echo "$CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_crc.c -o c_code/1_2/compiler_crc.o"
-    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_crc.c -o c_code/1_2/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_nversion.c -o c_code/1_2/compiler_nversion.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_nversion.c -o c_code/1_2/compiler_nversion.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_condsyms.c -o c_code/1_2/compiler_condsyms.o"
@@ -638,6 +652,8 @@ c_code/1_1/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_idents.c -o c_code/1_2/compiler_idents.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_extccomp.c -o c_code/1_2/compiler_extccomp.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_extccomp.c -o c_code/1_2/compiler_extccomp.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_crc.c -o c_code/1_2/compiler_crc.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_crc.c -o c_code/1_2/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_wordrecg.c -o c_code/1_2/compiler_wordrecg.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_wordrecg.c -o c_code/1_2/compiler_wordrecg.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_nimblecmd.c -o c_code/1_2/compiler_nimblecmd.o"
@@ -774,6 +790,8 @@ c_code/1_1/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/stdlib_unsigned.c -o c_code/1_2/stdlib_unsigned.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_vmdeps.c -o c_code/1_2/compiler_vmdeps.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_vmdeps.c -o c_code/1_2/compiler_vmdeps.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_vmmarshal.c -o c_code/1_2/compiler_vmmarshal.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_vmmarshal.c -o c_code/1_2/compiler_vmmarshal.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_evaltempl.c -o c_code/1_2/compiler_evaltempl.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_evaltempl.c -o c_code/1_2/compiler_evaltempl.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_aliases.c -o c_code/1_2/compiler_aliases.o"
@@ -784,6 +802,12 @@ c_code/1_1/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_semmacrosanity.c -o c_code/1_2/compiler_semmacrosanity.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_semparallel.c -o c_code/1_2/compiler_semparallel.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_semparallel.c -o c_code/1_2/compiler_semparallel.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_plugins.c -o c_code/1_2/compiler_plugins.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_plugins.c -o c_code/1_2/compiler_plugins.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_active.c -o c_code/1_2/compiler_active.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_active.c -o c_code/1_2/compiler_active.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_locals.c -o c_code/1_2/compiler_locals.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_locals.c -o c_code/1_2/compiler_locals.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_cgen.c -o c_code/1_2/compiler_cgen.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_cgen.c -o c_code/1_2/compiler_cgen.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_ccgutils.c -o c_code/1_2/compiler_ccgutils.o"
@@ -833,11 +857,11 @@ c_code/1_2/stdlib_math.o \
 c_code/1_2/stdlib_tables.o \
 c_code/1_2/compiler_ropes.o \
 c_code/1_2/compiler_platform.o \
-c_code/1_2/compiler_crc.o \
 c_code/1_2/compiler_nversion.o \
 c_code/1_2/compiler_condsyms.o \
 c_code/1_2/compiler_idents.o \
 c_code/1_2/compiler_extccomp.o \
+c_code/1_2/compiler_crc.o \
 c_code/1_2/compiler_wordrecg.o \
 c_code/1_2/compiler_nimblecmd.o \
 c_code/1_2/stdlib_parseopt.o \
@@ -906,11 +930,15 @@ c_code/1_2/compiler_vm.o \
 c_code/1_2/compiler_vmgen.o \
 c_code/1_2/stdlib_unsigned.o \
 c_code/1_2/compiler_vmdeps.o \
+c_code/1_2/compiler_vmmarshal.o \
 c_code/1_2/compiler_evaltempl.o \
 c_code/1_2/compiler_aliases.o \
 c_code/1_2/compiler_patterns.o \
 c_code/1_2/compiler_semmacrosanity.o \
 c_code/1_2/compiler_semparallel.o \
+c_code/1_2/compiler_plugins.o \
+c_code/1_2/compiler_active.o \
+c_code/1_2/compiler_locals.o \
 c_code/1_2/compiler_cgen.o \
 c_code/1_2/compiler_ccgutils.o \
 c_code/1_2/compiler_cgendata.o \
@@ -947,11 +975,11 @@ c_code/1_2/stdlib_math.o \
 c_code/1_2/stdlib_tables.o \
 c_code/1_2/compiler_ropes.o \
 c_code/1_2/compiler_platform.o \
-c_code/1_2/compiler_crc.o \
 c_code/1_2/compiler_nversion.o \
 c_code/1_2/compiler_condsyms.o \
 c_code/1_2/compiler_idents.o \
 c_code/1_2/compiler_extccomp.o \
+c_code/1_2/compiler_crc.o \
 c_code/1_2/compiler_wordrecg.o \
 c_code/1_2/compiler_nimblecmd.o \
 c_code/1_2/stdlib_parseopt.o \
@@ -1020,11 +1048,15 @@ c_code/1_2/compiler_vm.o \
 c_code/1_2/compiler_vmgen.o \
 c_code/1_2/stdlib_unsigned.o \
 c_code/1_2/compiler_vmdeps.o \
+c_code/1_2/compiler_vmmarshal.o \
 c_code/1_2/compiler_evaltempl.o \
 c_code/1_2/compiler_aliases.o \
 c_code/1_2/compiler_patterns.o \
 c_code/1_2/compiler_semmacrosanity.o \
 c_code/1_2/compiler_semparallel.o \
+c_code/1_2/compiler_plugins.o \
+c_code/1_2/compiler_active.o \
+c_code/1_2/compiler_locals.o \
 c_code/1_2/compiler_cgen.o \
 c_code/1_2/compiler_ccgutils.o \
 c_code/1_2/compiler_cgendata.o \
@@ -1114,8 +1146,6 @@ linux)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ropes.c -o c_code/2_1/compiler_ropes.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_platform.c -o c_code/2_1/compiler_platform.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_platform.c -o c_code/2_1/compiler_platform.o
-    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_crc.c -o c_code/2_1/compiler_crc.o"
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_crc.c -o c_code/2_1/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nversion.c -o c_code/2_1/compiler_nversion.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nversion.c -o c_code/2_1/compiler_nversion.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_condsyms.c -o c_code/2_1/compiler_condsyms.o"
@@ -1124,6 +1154,8 @@ linux)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_idents.c -o c_code/2_1/compiler_idents.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_extccomp.c -o c_code/2_1/compiler_extccomp.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_extccomp.c -o c_code/2_1/compiler_extccomp.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_crc.c -o c_code/2_1/compiler_crc.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_crc.c -o c_code/2_1/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_wordrecg.c -o c_code/2_1/compiler_wordrecg.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_wordrecg.c -o c_code/2_1/compiler_wordrecg.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nimblecmd.c -o c_code/2_1/compiler_nimblecmd.o"
@@ -1260,6 +1292,8 @@ linux)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_unsigned.c -o c_code/2_1/stdlib_unsigned.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmdeps.c -o c_code/2_1/compiler_vmdeps.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmdeps.c -o c_code/2_1/compiler_vmdeps.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmmarshal.c -o c_code/2_1/compiler_vmmarshal.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmmarshal.c -o c_code/2_1/compiler_vmmarshal.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_evaltempl.c -o c_code/2_1/compiler_evaltempl.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_evaltempl.c -o c_code/2_1/compiler_evaltempl.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_aliases.c -o c_code/2_1/compiler_aliases.o"
@@ -1270,6 +1304,12 @@ linux)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semmacrosanity.c -o c_code/2_1/compiler_semmacrosanity.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semparallel.c -o c_code/2_1/compiler_semparallel.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semparallel.c -o c_code/2_1/compiler_semparallel.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_plugins.c -o c_code/2_1/compiler_plugins.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_plugins.c -o c_code/2_1/compiler_plugins.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_active.c -o c_code/2_1/compiler_active.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_active.c -o c_code/2_1/compiler_active.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_locals.c -o c_code/2_1/compiler_locals.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_locals.c -o c_code/2_1/compiler_locals.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_cgen.c -o c_code/2_1/compiler_cgen.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_cgen.c -o c_code/2_1/compiler_cgen.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ccgutils.c -o c_code/2_1/compiler_ccgutils.o"
@@ -1320,11 +1360,11 @@ c_code/2_1/stdlib_math.o \
 c_code/2_1/stdlib_tables.o \
 c_code/2_1/compiler_ropes.o \
 c_code/2_1/compiler_platform.o \
-c_code/2_1/compiler_crc.o \
 c_code/2_1/compiler_nversion.o \
 c_code/2_1/compiler_condsyms.o \
 c_code/2_1/compiler_idents.o \
 c_code/2_1/compiler_extccomp.o \
+c_code/2_1/compiler_crc.o \
 c_code/2_1/compiler_wordrecg.o \
 c_code/2_1/compiler_nimblecmd.o \
 c_code/2_1/stdlib_parseopt.o \
@@ -1393,11 +1433,15 @@ c_code/2_1/compiler_vm.o \
 c_code/2_1/compiler_vmgen.o \
 c_code/2_1/stdlib_unsigned.o \
 c_code/2_1/compiler_vmdeps.o \
+c_code/2_1/compiler_vmmarshal.o \
 c_code/2_1/compiler_evaltempl.o \
 c_code/2_1/compiler_aliases.o \
 c_code/2_1/compiler_patterns.o \
 c_code/2_1/compiler_semmacrosanity.o \
 c_code/2_1/compiler_semparallel.o \
+c_code/2_1/compiler_plugins.o \
+c_code/2_1/compiler_active.o \
+c_code/2_1/compiler_locals.o \
 c_code/2_1/compiler_cgen.o \
 c_code/2_1/compiler_ccgutils.o \
 c_code/2_1/compiler_cgendata.o \
@@ -1435,11 +1479,11 @@ c_code/2_1/stdlib_math.o \
 c_code/2_1/stdlib_tables.o \
 c_code/2_1/compiler_ropes.o \
 c_code/2_1/compiler_platform.o \
-c_code/2_1/compiler_crc.o \
 c_code/2_1/compiler_nversion.o \
 c_code/2_1/compiler_condsyms.o \
 c_code/2_1/compiler_idents.o \
 c_code/2_1/compiler_extccomp.o \
+c_code/2_1/compiler_crc.o \
 c_code/2_1/compiler_wordrecg.o \
 c_code/2_1/compiler_nimblecmd.o \
 c_code/2_1/stdlib_parseopt.o \
@@ -1508,11 +1552,15 @@ c_code/2_1/compiler_vm.o \
 c_code/2_1/compiler_vmgen.o \
 c_code/2_1/stdlib_unsigned.o \
 c_code/2_1/compiler_vmdeps.o \
+c_code/2_1/compiler_vmmarshal.o \
 c_code/2_1/compiler_evaltempl.o \
 c_code/2_1/compiler_aliases.o \
 c_code/2_1/compiler_patterns.o \
 c_code/2_1/compiler_semmacrosanity.o \
 c_code/2_1/compiler_semparallel.o \
+c_code/2_1/compiler_plugins.o \
+c_code/2_1/compiler_active.o \
+c_code/2_1/compiler_locals.o \
 c_code/2_1/compiler_cgen.o \
 c_code/2_1/compiler_ccgutils.o \
 c_code/2_1/compiler_cgendata.o \
@@ -1574,8 +1622,6 @@ c_code/2_1/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ropes.c -o c_code/2_2/compiler_ropes.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_platform.c -o c_code/2_2/compiler_platform.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_platform.c -o c_code/2_2/compiler_platform.o
-    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_crc.c -o c_code/2_2/compiler_crc.o"
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_crc.c -o c_code/2_2/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nversion.c -o c_code/2_2/compiler_nversion.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nversion.c -o c_code/2_2/compiler_nversion.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_condsyms.c -o c_code/2_2/compiler_condsyms.o"
@@ -1584,6 +1630,8 @@ c_code/2_1/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_idents.c -o c_code/2_2/compiler_idents.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_extccomp.c -o c_code/2_2/compiler_extccomp.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_extccomp.c -o c_code/2_2/compiler_extccomp.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_crc.c -o c_code/2_2/compiler_crc.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_crc.c -o c_code/2_2/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_wordrecg.c -o c_code/2_2/compiler_wordrecg.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_wordrecg.c -o c_code/2_2/compiler_wordrecg.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nimblecmd.c -o c_code/2_2/compiler_nimblecmd.o"
@@ -1720,6 +1768,8 @@ c_code/2_1/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_unsigned.c -o c_code/2_2/stdlib_unsigned.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_vmdeps.c -o c_code/2_2/compiler_vmdeps.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_vmdeps.c -o c_code/2_2/compiler_vmdeps.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_vmmarshal.c -o c_code/2_2/compiler_vmmarshal.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_vmmarshal.c -o c_code/2_2/compiler_vmmarshal.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_evaltempl.c -o c_code/2_2/compiler_evaltempl.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_evaltempl.c -o c_code/2_2/compiler_evaltempl.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_aliases.c -o c_code/2_2/compiler_aliases.o"
@@ -1730,6 +1780,12 @@ c_code/2_1/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semmacrosanity.c -o c_code/2_2/compiler_semmacrosanity.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semparallel.c -o c_code/2_2/compiler_semparallel.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semparallel.c -o c_code/2_2/compiler_semparallel.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_plugins.c -o c_code/2_2/compiler_plugins.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_plugins.c -o c_code/2_2/compiler_plugins.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_active.c -o c_code/2_2/compiler_active.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_active.c -o c_code/2_2/compiler_active.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_locals.c -o c_code/2_2/compiler_locals.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_locals.c -o c_code/2_2/compiler_locals.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_cgen.c -o c_code/2_2/compiler_cgen.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_cgen.c -o c_code/2_2/compiler_cgen.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ccgutils.c -o c_code/2_2/compiler_ccgutils.o"
@@ -1780,11 +1836,11 @@ c_code/2_2/stdlib_math.o \
 c_code/2_2/stdlib_tables.o \
 c_code/2_2/compiler_ropes.o \
 c_code/2_2/compiler_platform.o \
-c_code/2_2/compiler_crc.o \
 c_code/2_2/compiler_nversion.o \
 c_code/2_2/compiler_condsyms.o \
 c_code/2_2/compiler_idents.o \
 c_code/2_2/compiler_extccomp.o \
+c_code/2_2/compiler_crc.o \
 c_code/2_2/compiler_wordrecg.o \
 c_code/2_2/compiler_nimblecmd.o \
 c_code/2_2/stdlib_parseopt.o \
@@ -1853,11 +1909,15 @@ c_code/2_2/compiler_vm.o \
 c_code/2_2/compiler_vmgen.o \
 c_code/2_2/stdlib_unsigned.o \
 c_code/2_2/compiler_vmdeps.o \
+c_code/2_2/compiler_vmmarshal.o \
 c_code/2_2/compiler_evaltempl.o \
 c_code/2_2/compiler_aliases.o \
 c_code/2_2/compiler_patterns.o \
 c_code/2_2/compiler_semmacrosanity.o \
 c_code/2_2/compiler_semparallel.o \
+c_code/2_2/compiler_plugins.o \
+c_code/2_2/compiler_active.o \
+c_code/2_2/compiler_locals.o \
 c_code/2_2/compiler_cgen.o \
 c_code/2_2/compiler_ccgutils.o \
 c_code/2_2/compiler_cgendata.o \
@@ -1895,11 +1955,11 @@ c_code/2_2/stdlib_math.o \
 c_code/2_2/stdlib_tables.o \
 c_code/2_2/compiler_ropes.o \
 c_code/2_2/compiler_platform.o \
-c_code/2_2/compiler_crc.o \
 c_code/2_2/compiler_nversion.o \
 c_code/2_2/compiler_condsyms.o \
 c_code/2_2/compiler_idents.o \
 c_code/2_2/compiler_extccomp.o \
+c_code/2_2/compiler_crc.o \
 c_code/2_2/compiler_wordrecg.o \
 c_code/2_2/compiler_nimblecmd.o \
 c_code/2_2/stdlib_parseopt.o \
@@ -1968,11 +2028,15 @@ c_code/2_2/compiler_vm.o \
 c_code/2_2/compiler_vmgen.o \
 c_code/2_2/stdlib_unsigned.o \
 c_code/2_2/compiler_vmdeps.o \
+c_code/2_2/compiler_vmmarshal.o \
 c_code/2_2/compiler_evaltempl.o \
 c_code/2_2/compiler_aliases.o \
 c_code/2_2/compiler_patterns.o \
 c_code/2_2/compiler_semmacrosanity.o \
 c_code/2_2/compiler_semparallel.o \
+c_code/2_2/compiler_plugins.o \
+c_code/2_2/compiler_active.o \
+c_code/2_2/compiler_locals.o \
 c_code/2_2/compiler_cgen.o \
 c_code/2_2/compiler_ccgutils.o \
 c_code/2_2/compiler_cgendata.o \
@@ -2034,8 +2098,6 @@ c_code/2_2/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_ropes.c -o c_code/2_3/compiler_ropes.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_platform.c -o c_code/2_3/compiler_platform.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_platform.c -o c_code/2_3/compiler_platform.o
-    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_crc.c -o c_code/2_3/compiler_crc.o"
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_crc.c -o c_code/2_3/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_nversion.c -o c_code/2_3/compiler_nversion.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_nversion.c -o c_code/2_3/compiler_nversion.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_condsyms.c -o c_code/2_3/compiler_condsyms.o"
@@ -2044,6 +2106,8 @@ c_code/2_2/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_idents.c -o c_code/2_3/compiler_idents.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_extccomp.c -o c_code/2_3/compiler_extccomp.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_extccomp.c -o c_code/2_3/compiler_extccomp.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_crc.c -o c_code/2_3/compiler_crc.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_crc.c -o c_code/2_3/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_wordrecg.c -o c_code/2_3/compiler_wordrecg.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_wordrecg.c -o c_code/2_3/compiler_wordrecg.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_nimblecmd.c -o c_code/2_3/compiler_nimblecmd.o"
@@ -2180,6 +2244,8 @@ c_code/2_2/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_unsigned.c -o c_code/2_3/stdlib_unsigned.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_vmdeps.c -o c_code/2_3/compiler_vmdeps.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_vmdeps.c -o c_code/2_3/compiler_vmdeps.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_vmmarshal.c -o c_code/2_3/compiler_vmmarshal.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_vmmarshal.c -o c_code/2_3/compiler_vmmarshal.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_evaltempl.c -o c_code/2_3/compiler_evaltempl.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_evaltempl.c -o c_code/2_3/compiler_evaltempl.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_aliases.c -o c_code/2_3/compiler_aliases.o"
@@ -2190,6 +2256,12 @@ c_code/2_2/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_semmacrosanity.c -o c_code/2_3/compiler_semmacrosanity.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_semparallel.c -o c_code/2_3/compiler_semparallel.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_semparallel.c -o c_code/2_3/compiler_semparallel.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_plugins.c -o c_code/2_3/compiler_plugins.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_plugins.c -o c_code/2_3/compiler_plugins.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_active.c -o c_code/2_3/compiler_active.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_active.c -o c_code/2_3/compiler_active.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_locals.c -o c_code/2_3/compiler_locals.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_locals.c -o c_code/2_3/compiler_locals.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_cgen.c -o c_code/2_3/compiler_cgen.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_cgen.c -o c_code/2_3/compiler_cgen.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_ccgutils.c -o c_code/2_3/compiler_ccgutils.o"
@@ -2240,11 +2312,11 @@ c_code/2_3/stdlib_math.o \
 c_code/2_3/stdlib_tables.o \
 c_code/2_3/compiler_ropes.o \
 c_code/2_3/compiler_platform.o \
-c_code/2_3/compiler_crc.o \
 c_code/2_3/compiler_nversion.o \
 c_code/2_3/compiler_condsyms.o \
 c_code/2_3/compiler_idents.o \
 c_code/2_3/compiler_extccomp.o \
+c_code/2_3/compiler_crc.o \
 c_code/2_3/compiler_wordrecg.o \
 c_code/2_3/compiler_nimblecmd.o \
 c_code/2_3/stdlib_parseopt.o \
@@ -2313,11 +2385,15 @@ c_code/2_3/compiler_vm.o \
 c_code/2_3/compiler_vmgen.o \
 c_code/2_3/stdlib_unsigned.o \
 c_code/2_3/compiler_vmdeps.o \
+c_code/2_3/compiler_vmmarshal.o \
 c_code/2_3/compiler_evaltempl.o \
 c_code/2_3/compiler_aliases.o \
 c_code/2_3/compiler_patterns.o \
 c_code/2_3/compiler_semmacrosanity.o \
 c_code/2_3/compiler_semparallel.o \
+c_code/2_3/compiler_plugins.o \
+c_code/2_3/compiler_active.o \
+c_code/2_3/compiler_locals.o \
 c_code/2_3/compiler_cgen.o \
 c_code/2_3/compiler_ccgutils.o \
 c_code/2_3/compiler_cgendata.o \
@@ -2355,11 +2431,11 @@ c_code/2_3/stdlib_math.o \
 c_code/2_3/stdlib_tables.o \
 c_code/2_3/compiler_ropes.o \
 c_code/2_3/compiler_platform.o \
-c_code/2_3/compiler_crc.o \
 c_code/2_3/compiler_nversion.o \
 c_code/2_3/compiler_condsyms.o \
 c_code/2_3/compiler_idents.o \
 c_code/2_3/compiler_extccomp.o \
+c_code/2_3/compiler_crc.o \
 c_code/2_3/compiler_wordrecg.o \
 c_code/2_3/compiler_nimblecmd.o \
 c_code/2_3/stdlib_parseopt.o \
@@ -2428,11 +2504,15 @@ c_code/2_3/compiler_vm.o \
 c_code/2_3/compiler_vmgen.o \
 c_code/2_3/stdlib_unsigned.o \
 c_code/2_3/compiler_vmdeps.o \
+c_code/2_3/compiler_vmmarshal.o \
 c_code/2_3/compiler_evaltempl.o \
 c_code/2_3/compiler_aliases.o \
 c_code/2_3/compiler_patterns.o \
 c_code/2_3/compiler_semmacrosanity.o \
 c_code/2_3/compiler_semparallel.o \
+c_code/2_3/compiler_plugins.o \
+c_code/2_3/compiler_active.o \
+c_code/2_3/compiler_locals.o \
 c_code/2_3/compiler_cgen.o \
 c_code/2_3/compiler_ccgutils.o \
 c_code/2_3/compiler_cgendata.o \
@@ -2494,8 +2574,6 @@ c_code/2_3/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_4/compiler_ropes.c -o c_code/2_4/compiler_ropes.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_4/compiler_platform.c -o c_code/2_4/compiler_platform.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_4/compiler_platform.c -o c_code/2_4/compiler_platform.o
-    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_4/compiler_crc.c -o c_code/2_4/compiler_crc.o"
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_4/compiler_crc.c -o c_code/2_4/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_4/compiler_nversion.c -o c_code/2_4/compiler_nversion.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_4/compiler_nversion.c -o c_code/2_4/compiler_nversion.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_4/compiler_condsyms.c -o c_code/2_4/compiler_condsyms.o"
@@ -2504,6 +2582,8 @@ c_code/2_3/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_4/compiler_idents.c -o c_code/2_4/compiler_idents.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_4/compiler_extccomp.c -o c_code/2_4/compiler_extccomp.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_4/compiler_extccomp.c -o c_code/2_4/compiler_extccomp.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_4/compiler_crc.c -o c_code/2_4/compiler_crc.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_4/compiler_crc.c -o c_code/2_4/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_4/compiler_wordrecg.c -o c_code/2_4/compiler_wordrecg.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_4/compiler_wordrecg.c -o c_code/2_4/compiler_wordrecg.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_4/compiler_nimblecmd.c -o c_code/2_4/compiler_nimblecmd.o"
@@ -2640,6 +2720,8 @@ c_code/2_3/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_4/stdlib_unsigned.c -o c_code/2_4/stdlib_unsigned.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_4/compiler_vmdeps.c -o c_code/2_4/compiler_vmdeps.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_4/compiler_vmdeps.c -o c_code/2_4/compiler_vmdeps.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_4/compiler_vmmarshal.c -o c_code/2_4/compiler_vmmarshal.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_4/compiler_vmmarshal.c -o c_code/2_4/compiler_vmmarshal.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_4/compiler_evaltempl.c -o c_code/2_4/compiler_evaltempl.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_4/compiler_evaltempl.c -o c_code/2_4/compiler_evaltempl.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_4/compiler_aliases.c -o c_code/2_4/compiler_aliases.o"
@@ -2650,6 +2732,12 @@ c_code/2_3/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_4/compiler_semmacrosanity.c -o c_code/2_4/compiler_semmacrosanity.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_4/compiler_semparallel.c -o c_code/2_4/compiler_semparallel.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_4/compiler_semparallel.c -o c_code/2_4/compiler_semparallel.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_4/compiler_plugins.c -o c_code/2_4/compiler_plugins.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_4/compiler_plugins.c -o c_code/2_4/compiler_plugins.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_4/compiler_active.c -o c_code/2_4/compiler_active.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_4/compiler_active.c -o c_code/2_4/compiler_active.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_4/compiler_locals.c -o c_code/2_4/compiler_locals.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_4/compiler_locals.c -o c_code/2_4/compiler_locals.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_4/compiler_cgen.c -o c_code/2_4/compiler_cgen.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_4/compiler_cgen.c -o c_code/2_4/compiler_cgen.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_4/compiler_ccgutils.c -o c_code/2_4/compiler_ccgutils.o"
@@ -2700,11 +2788,11 @@ c_code/2_4/stdlib_math.o \
 c_code/2_4/stdlib_tables.o \
 c_code/2_4/compiler_ropes.o \
 c_code/2_4/compiler_platform.o \
-c_code/2_4/compiler_crc.o \
 c_code/2_4/compiler_nversion.o \
 c_code/2_4/compiler_condsyms.o \
 c_code/2_4/compiler_idents.o \
 c_code/2_4/compiler_extccomp.o \
+c_code/2_4/compiler_crc.o \
 c_code/2_4/compiler_wordrecg.o \
 c_code/2_4/compiler_nimblecmd.o \
 c_code/2_4/stdlib_parseopt.o \
@@ -2773,11 +2861,15 @@ c_code/2_4/compiler_vm.o \
 c_code/2_4/compiler_vmgen.o \
 c_code/2_4/stdlib_unsigned.o \
 c_code/2_4/compiler_vmdeps.o \
+c_code/2_4/compiler_vmmarshal.o \
 c_code/2_4/compiler_evaltempl.o \
 c_code/2_4/compiler_aliases.o \
 c_code/2_4/compiler_patterns.o \
 c_code/2_4/compiler_semmacrosanity.o \
 c_code/2_4/compiler_semparallel.o \
+c_code/2_4/compiler_plugins.o \
+c_code/2_4/compiler_active.o \
+c_code/2_4/compiler_locals.o \
 c_code/2_4/compiler_cgen.o \
 c_code/2_4/compiler_ccgutils.o \
 c_code/2_4/compiler_cgendata.o \
@@ -2815,11 +2907,11 @@ c_code/2_4/stdlib_math.o \
 c_code/2_4/stdlib_tables.o \
 c_code/2_4/compiler_ropes.o \
 c_code/2_4/compiler_platform.o \
-c_code/2_4/compiler_crc.o \
 c_code/2_4/compiler_nversion.o \
 c_code/2_4/compiler_condsyms.o \
 c_code/2_4/compiler_idents.o \
 c_code/2_4/compiler_extccomp.o \
+c_code/2_4/compiler_crc.o \
 c_code/2_4/compiler_wordrecg.o \
 c_code/2_4/compiler_nimblecmd.o \
 c_code/2_4/stdlib_parseopt.o \
@@ -2888,11 +2980,15 @@ c_code/2_4/compiler_vm.o \
 c_code/2_4/compiler_vmgen.o \
 c_code/2_4/stdlib_unsigned.o \
 c_code/2_4/compiler_vmdeps.o \
+c_code/2_4/compiler_vmmarshal.o \
 c_code/2_4/compiler_evaltempl.o \
 c_code/2_4/compiler_aliases.o \
 c_code/2_4/compiler_patterns.o \
 c_code/2_4/compiler_semmacrosanity.o \
 c_code/2_4/compiler_semparallel.o \
+c_code/2_4/compiler_plugins.o \
+c_code/2_4/compiler_active.o \
+c_code/2_4/compiler_locals.o \
 c_code/2_4/compiler_cgen.o \
 c_code/2_4/compiler_ccgutils.o \
 c_code/2_4/compiler_cgendata.o \
@@ -2954,8 +3050,6 @@ c_code/2_4/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_5/compiler_ropes.c -o c_code/2_5/compiler_ropes.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_5/compiler_platform.c -o c_code/2_5/compiler_platform.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_5/compiler_platform.c -o c_code/2_5/compiler_platform.o
-    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_5/compiler_crc.c -o c_code/2_5/compiler_crc.o"
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_5/compiler_crc.c -o c_code/2_5/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_5/compiler_nversion.c -o c_code/2_5/compiler_nversion.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_5/compiler_nversion.c -o c_code/2_5/compiler_nversion.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_5/compiler_condsyms.c -o c_code/2_5/compiler_condsyms.o"
@@ -2964,6 +3058,8 @@ c_code/2_4/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_5/compiler_idents.c -o c_code/2_5/compiler_idents.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_5/compiler_extccomp.c -o c_code/2_5/compiler_extccomp.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_5/compiler_extccomp.c -o c_code/2_5/compiler_extccomp.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_5/compiler_crc.c -o c_code/2_5/compiler_crc.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_5/compiler_crc.c -o c_code/2_5/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_5/compiler_wordrecg.c -o c_code/2_5/compiler_wordrecg.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_5/compiler_wordrecg.c -o c_code/2_5/compiler_wordrecg.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_5/compiler_nimblecmd.c -o c_code/2_5/compiler_nimblecmd.o"
@@ -3100,6 +3196,8 @@ c_code/2_4/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_5/stdlib_unsigned.c -o c_code/2_5/stdlib_unsigned.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_5/compiler_vmdeps.c -o c_code/2_5/compiler_vmdeps.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_5/compiler_vmdeps.c -o c_code/2_5/compiler_vmdeps.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_5/compiler_vmmarshal.c -o c_code/2_5/compiler_vmmarshal.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_5/compiler_vmmarshal.c -o c_code/2_5/compiler_vmmarshal.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_5/compiler_evaltempl.c -o c_code/2_5/compiler_evaltempl.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_5/compiler_evaltempl.c -o c_code/2_5/compiler_evaltempl.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_5/compiler_aliases.c -o c_code/2_5/compiler_aliases.o"
@@ -3110,6 +3208,12 @@ c_code/2_4/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_5/compiler_semmacrosanity.c -o c_code/2_5/compiler_semmacrosanity.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_5/compiler_semparallel.c -o c_code/2_5/compiler_semparallel.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_5/compiler_semparallel.c -o c_code/2_5/compiler_semparallel.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_5/compiler_plugins.c -o c_code/2_5/compiler_plugins.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_5/compiler_plugins.c -o c_code/2_5/compiler_plugins.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_5/compiler_active.c -o c_code/2_5/compiler_active.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_5/compiler_active.c -o c_code/2_5/compiler_active.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_5/compiler_locals.c -o c_code/2_5/compiler_locals.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_5/compiler_locals.c -o c_code/2_5/compiler_locals.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_5/compiler_cgen.c -o c_code/2_5/compiler_cgen.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_5/compiler_cgen.c -o c_code/2_5/compiler_cgen.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_5/compiler_ccgutils.c -o c_code/2_5/compiler_ccgutils.o"
@@ -3160,11 +3264,11 @@ c_code/2_5/stdlib_math.o \
 c_code/2_5/stdlib_tables.o \
 c_code/2_5/compiler_ropes.o \
 c_code/2_5/compiler_platform.o \
-c_code/2_5/compiler_crc.o \
 c_code/2_5/compiler_nversion.o \
 c_code/2_5/compiler_condsyms.o \
 c_code/2_5/compiler_idents.o \
 c_code/2_5/compiler_extccomp.o \
+c_code/2_5/compiler_crc.o \
 c_code/2_5/compiler_wordrecg.o \
 c_code/2_5/compiler_nimblecmd.o \
 c_code/2_5/stdlib_parseopt.o \
@@ -3233,11 +3337,15 @@ c_code/2_5/compiler_vm.o \
 c_code/2_5/compiler_vmgen.o \
 c_code/2_5/stdlib_unsigned.o \
 c_code/2_5/compiler_vmdeps.o \
+c_code/2_5/compiler_vmmarshal.o \
 c_code/2_5/compiler_evaltempl.o \
 c_code/2_5/compiler_aliases.o \
 c_code/2_5/compiler_patterns.o \
 c_code/2_5/compiler_semmacrosanity.o \
 c_code/2_5/compiler_semparallel.o \
+c_code/2_5/compiler_plugins.o \
+c_code/2_5/compiler_active.o \
+c_code/2_5/compiler_locals.o \
 c_code/2_5/compiler_cgen.o \
 c_code/2_5/compiler_ccgutils.o \
 c_code/2_5/compiler_cgendata.o \
@@ -3275,11 +3383,11 @@ c_code/2_5/stdlib_math.o \
 c_code/2_5/stdlib_tables.o \
 c_code/2_5/compiler_ropes.o \
 c_code/2_5/compiler_platform.o \
-c_code/2_5/compiler_crc.o \
 c_code/2_5/compiler_nversion.o \
 c_code/2_5/compiler_condsyms.o \
 c_code/2_5/compiler_idents.o \
 c_code/2_5/compiler_extccomp.o \
+c_code/2_5/compiler_crc.o \
 c_code/2_5/compiler_wordrecg.o \
 c_code/2_5/compiler_nimblecmd.o \
 c_code/2_5/stdlib_parseopt.o \
@@ -3348,11 +3456,15 @@ c_code/2_5/compiler_vm.o \
 c_code/2_5/compiler_vmgen.o \
 c_code/2_5/stdlib_unsigned.o \
 c_code/2_5/compiler_vmdeps.o \
+c_code/2_5/compiler_vmmarshal.o \
 c_code/2_5/compiler_evaltempl.o \
 c_code/2_5/compiler_aliases.o \
 c_code/2_5/compiler_patterns.o \
 c_code/2_5/compiler_semmacrosanity.o \
 c_code/2_5/compiler_semparallel.o \
+c_code/2_5/compiler_plugins.o \
+c_code/2_5/compiler_active.o \
+c_code/2_5/compiler_locals.o \
 c_code/2_5/compiler_cgen.o \
 c_code/2_5/compiler_ccgutils.o \
 c_code/2_5/compiler_cgendata.o \
@@ -3414,8 +3526,6 @@ c_code/2_5/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_6/compiler_ropes.c -o c_code/2_6/compiler_ropes.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_6/compiler_platform.c -o c_code/2_6/compiler_platform.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_6/compiler_platform.c -o c_code/2_6/compiler_platform.o
-    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_6/compiler_crc.c -o c_code/2_6/compiler_crc.o"
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_6/compiler_crc.c -o c_code/2_6/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_6/compiler_nversion.c -o c_code/2_6/compiler_nversion.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_6/compiler_nversion.c -o c_code/2_6/compiler_nversion.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_6/compiler_condsyms.c -o c_code/2_6/compiler_condsyms.o"
@@ -3424,6 +3534,8 @@ c_code/2_5/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_6/compiler_idents.c -o c_code/2_6/compiler_idents.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_6/compiler_extccomp.c -o c_code/2_6/compiler_extccomp.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_6/compiler_extccomp.c -o c_code/2_6/compiler_extccomp.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_6/compiler_crc.c -o c_code/2_6/compiler_crc.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_6/compiler_crc.c -o c_code/2_6/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_6/compiler_wordrecg.c -o c_code/2_6/compiler_wordrecg.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_6/compiler_wordrecg.c -o c_code/2_6/compiler_wordrecg.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_6/compiler_nimblecmd.c -o c_code/2_6/compiler_nimblecmd.o"
@@ -3560,6 +3672,8 @@ c_code/2_5/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_6/stdlib_unsigned.c -o c_code/2_6/stdlib_unsigned.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_6/compiler_vmdeps.c -o c_code/2_6/compiler_vmdeps.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_6/compiler_vmdeps.c -o c_code/2_6/compiler_vmdeps.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_6/compiler_vmmarshal.c -o c_code/2_6/compiler_vmmarshal.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_6/compiler_vmmarshal.c -o c_code/2_6/compiler_vmmarshal.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_6/compiler_evaltempl.c -o c_code/2_6/compiler_evaltempl.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_6/compiler_evaltempl.c -o c_code/2_6/compiler_evaltempl.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_6/compiler_aliases.c -o c_code/2_6/compiler_aliases.o"
@@ -3570,6 +3684,12 @@ c_code/2_5/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_6/compiler_semmacrosanity.c -o c_code/2_6/compiler_semmacrosanity.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_6/compiler_semparallel.c -o c_code/2_6/compiler_semparallel.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_6/compiler_semparallel.c -o c_code/2_6/compiler_semparallel.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_6/compiler_plugins.c -o c_code/2_6/compiler_plugins.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_6/compiler_plugins.c -o c_code/2_6/compiler_plugins.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_6/compiler_active.c -o c_code/2_6/compiler_active.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_6/compiler_active.c -o c_code/2_6/compiler_active.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_6/compiler_locals.c -o c_code/2_6/compiler_locals.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_6/compiler_locals.c -o c_code/2_6/compiler_locals.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_6/compiler_cgen.c -o c_code/2_6/compiler_cgen.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_6/compiler_cgen.c -o c_code/2_6/compiler_cgen.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_6/compiler_ccgutils.c -o c_code/2_6/compiler_ccgutils.o"
@@ -3620,11 +3740,11 @@ c_code/2_6/stdlib_math.o \
 c_code/2_6/stdlib_tables.o \
 c_code/2_6/compiler_ropes.o \
 c_code/2_6/compiler_platform.o \
-c_code/2_6/compiler_crc.o \
 c_code/2_6/compiler_nversion.o \
 c_code/2_6/compiler_condsyms.o \
 c_code/2_6/compiler_idents.o \
 c_code/2_6/compiler_extccomp.o \
+c_code/2_6/compiler_crc.o \
 c_code/2_6/compiler_wordrecg.o \
 c_code/2_6/compiler_nimblecmd.o \
 c_code/2_6/stdlib_parseopt.o \
@@ -3693,11 +3813,15 @@ c_code/2_6/compiler_vm.o \
 c_code/2_6/compiler_vmgen.o \
 c_code/2_6/stdlib_unsigned.o \
 c_code/2_6/compiler_vmdeps.o \
+c_code/2_6/compiler_vmmarshal.o \
 c_code/2_6/compiler_evaltempl.o \
 c_code/2_6/compiler_aliases.o \
 c_code/2_6/compiler_patterns.o \
 c_code/2_6/compiler_semmacrosanity.o \
 c_code/2_6/compiler_semparallel.o \
+c_code/2_6/compiler_plugins.o \
+c_code/2_6/compiler_active.o \
+c_code/2_6/compiler_locals.o \
 c_code/2_6/compiler_cgen.o \
 c_code/2_6/compiler_ccgutils.o \
 c_code/2_6/compiler_cgendata.o \
@@ -3735,11 +3859,11 @@ c_code/2_6/stdlib_math.o \
 c_code/2_6/stdlib_tables.o \
 c_code/2_6/compiler_ropes.o \
 c_code/2_6/compiler_platform.o \
-c_code/2_6/compiler_crc.o \
 c_code/2_6/compiler_nversion.o \
 c_code/2_6/compiler_condsyms.o \
 c_code/2_6/compiler_idents.o \
 c_code/2_6/compiler_extccomp.o \
+c_code/2_6/compiler_crc.o \
 c_code/2_6/compiler_wordrecg.o \
 c_code/2_6/compiler_nimblecmd.o \
 c_code/2_6/stdlib_parseopt.o \
@@ -3808,11 +3932,15 @@ c_code/2_6/compiler_vm.o \
 c_code/2_6/compiler_vmgen.o \
 c_code/2_6/stdlib_unsigned.o \
 c_code/2_6/compiler_vmdeps.o \
+c_code/2_6/compiler_vmmarshal.o \
 c_code/2_6/compiler_evaltempl.o \
 c_code/2_6/compiler_aliases.o \
 c_code/2_6/compiler_patterns.o \
 c_code/2_6/compiler_semmacrosanity.o \
 c_code/2_6/compiler_semparallel.o \
+c_code/2_6/compiler_plugins.o \
+c_code/2_6/compiler_active.o \
+c_code/2_6/compiler_locals.o \
 c_code/2_6/compiler_cgen.o \
 c_code/2_6/compiler_ccgutils.o \
 c_code/2_6/compiler_cgendata.o \
@@ -3874,8 +4002,6 @@ c_code/2_6/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_7/compiler_ropes.c -o c_code/2_7/compiler_ropes.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/compiler_platform.c -o c_code/2_7/compiler_platform.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_7/compiler_platform.c -o c_code/2_7/compiler_platform.o
-    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/compiler_crc.c -o c_code/2_7/compiler_crc.o"
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/compiler_crc.c -o c_code/2_7/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/compiler_nversion.c -o c_code/2_7/compiler_nversion.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_7/compiler_nversion.c -o c_code/2_7/compiler_nversion.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/compiler_condsyms.c -o c_code/2_7/compiler_condsyms.o"
@@ -3884,6 +4010,8 @@ c_code/2_6/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_7/compiler_idents.c -o c_code/2_7/compiler_idents.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/compiler_extccomp.c -o c_code/2_7/compiler_extccomp.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_7/compiler_extccomp.c -o c_code/2_7/compiler_extccomp.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/compiler_crc.c -o c_code/2_7/compiler_crc.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/compiler_crc.c -o c_code/2_7/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/compiler_wordrecg.c -o c_code/2_7/compiler_wordrecg.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_7/compiler_wordrecg.c -o c_code/2_7/compiler_wordrecg.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/compiler_nimblecmd.c -o c_code/2_7/compiler_nimblecmd.o"
@@ -4020,6 +4148,8 @@ c_code/2_6/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_7/stdlib_unsigned.c -o c_code/2_7/stdlib_unsigned.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/compiler_vmdeps.c -o c_code/2_7/compiler_vmdeps.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_7/compiler_vmdeps.c -o c_code/2_7/compiler_vmdeps.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/compiler_vmmarshal.c -o c_code/2_7/compiler_vmmarshal.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/compiler_vmmarshal.c -o c_code/2_7/compiler_vmmarshal.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/compiler_evaltempl.c -o c_code/2_7/compiler_evaltempl.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_7/compiler_evaltempl.c -o c_code/2_7/compiler_evaltempl.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/compiler_aliases.c -o c_code/2_7/compiler_aliases.o"
@@ -4030,6 +4160,12 @@ c_code/2_6/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_7/compiler_semmacrosanity.c -o c_code/2_7/compiler_semmacrosanity.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/compiler_semparallel.c -o c_code/2_7/compiler_semparallel.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_7/compiler_semparallel.c -o c_code/2_7/compiler_semparallel.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/compiler_plugins.c -o c_code/2_7/compiler_plugins.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/compiler_plugins.c -o c_code/2_7/compiler_plugins.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/compiler_active.c -o c_code/2_7/compiler_active.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/compiler_active.c -o c_code/2_7/compiler_active.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/compiler_locals.c -o c_code/2_7/compiler_locals.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_7/compiler_locals.c -o c_code/2_7/compiler_locals.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/compiler_cgen.c -o c_code/2_7/compiler_cgen.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/2_7/compiler_cgen.c -o c_code/2_7/compiler_cgen.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/2_7/compiler_ccgutils.c -o c_code/2_7/compiler_ccgutils.o"
@@ -4080,11 +4216,11 @@ c_code/2_7/stdlib_math.o \
 c_code/2_7/stdlib_tables.o \
 c_code/2_7/compiler_ropes.o \
 c_code/2_7/compiler_platform.o \
-c_code/2_7/compiler_crc.o \
 c_code/2_7/compiler_nversion.o \
 c_code/2_7/compiler_condsyms.o \
 c_code/2_7/compiler_idents.o \
 c_code/2_7/compiler_extccomp.o \
+c_code/2_7/compiler_crc.o \
 c_code/2_7/compiler_wordrecg.o \
 c_code/2_7/compiler_nimblecmd.o \
 c_code/2_7/stdlib_parseopt.o \
@@ -4153,11 +4289,15 @@ c_code/2_7/compiler_vm.o \
 c_code/2_7/compiler_vmgen.o \
 c_code/2_7/stdlib_unsigned.o \
 c_code/2_7/compiler_vmdeps.o \
+c_code/2_7/compiler_vmmarshal.o \
 c_code/2_7/compiler_evaltempl.o \
 c_code/2_7/compiler_aliases.o \
 c_code/2_7/compiler_patterns.o \
 c_code/2_7/compiler_semmacrosanity.o \
 c_code/2_7/compiler_semparallel.o \
+c_code/2_7/compiler_plugins.o \
+c_code/2_7/compiler_active.o \
+c_code/2_7/compiler_locals.o \
 c_code/2_7/compiler_cgen.o \
 c_code/2_7/compiler_ccgutils.o \
 c_code/2_7/compiler_cgendata.o \
@@ -4195,11 +4335,11 @@ c_code/2_7/stdlib_math.o \
 c_code/2_7/stdlib_tables.o \
 c_code/2_7/compiler_ropes.o \
 c_code/2_7/compiler_platform.o \
-c_code/2_7/compiler_crc.o \
 c_code/2_7/compiler_nversion.o \
 c_code/2_7/compiler_condsyms.o \
 c_code/2_7/compiler_idents.o \
 c_code/2_7/compiler_extccomp.o \
+c_code/2_7/compiler_crc.o \
 c_code/2_7/compiler_wordrecg.o \
 c_code/2_7/compiler_nimblecmd.o \
 c_code/2_7/stdlib_parseopt.o \
@@ -4268,11 +4408,15 @@ c_code/2_7/compiler_vm.o \
 c_code/2_7/compiler_vmgen.o \
 c_code/2_7/stdlib_unsigned.o \
 c_code/2_7/compiler_vmdeps.o \
+c_code/2_7/compiler_vmmarshal.o \
 c_code/2_7/compiler_evaltempl.o \
 c_code/2_7/compiler_aliases.o \
 c_code/2_7/compiler_patterns.o \
 c_code/2_7/compiler_semmacrosanity.o \
 c_code/2_7/compiler_semparallel.o \
+c_code/2_7/compiler_plugins.o \
+c_code/2_7/compiler_active.o \
+c_code/2_7/compiler_locals.o \
 c_code/2_7/compiler_cgen.o \
 c_code/2_7/compiler_ccgutils.o \
 c_code/2_7/compiler_cgendata.o \
@@ -4340,8 +4484,6 @@ macosx)
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_ropes.c -o c_code/3_1/compiler_ropes.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_platform.c -o c_code/3_1/compiler_platform.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_platform.c -o c_code/3_1/compiler_platform.o
-    echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_crc.c -o c_code/3_1/compiler_crc.o"
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_crc.c -o c_code/3_1/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_nversion.c -o c_code/3_1/compiler_nversion.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_nversion.c -o c_code/3_1/compiler_nversion.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_condsyms.c -o c_code/3_1/compiler_condsyms.o"
@@ -4350,6 +4492,8 @@ macosx)
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_idents.c -o c_code/3_1/compiler_idents.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_extccomp.c -o c_code/3_1/compiler_extccomp.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_extccomp.c -o c_code/3_1/compiler_extccomp.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_crc.c -o c_code/3_1/compiler_crc.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_crc.c -o c_code/3_1/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_wordrecg.c -o c_code/3_1/compiler_wordrecg.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_wordrecg.c -o c_code/3_1/compiler_wordrecg.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_nimblecmd.c -o c_code/3_1/compiler_nimblecmd.o"
@@ -4486,6 +4630,8 @@ macosx)
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/stdlib_unsigned.c -o c_code/3_1/stdlib_unsigned.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_vmdeps.c -o c_code/3_1/compiler_vmdeps.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_vmdeps.c -o c_code/3_1/compiler_vmdeps.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_vmmarshal.c -o c_code/3_1/compiler_vmmarshal.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_vmmarshal.c -o c_code/3_1/compiler_vmmarshal.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_evaltempl.c -o c_code/3_1/compiler_evaltempl.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_evaltempl.c -o c_code/3_1/compiler_evaltempl.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_aliases.c -o c_code/3_1/compiler_aliases.o"
@@ -4496,6 +4642,12 @@ macosx)
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_semmacrosanity.c -o c_code/3_1/compiler_semmacrosanity.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_semparallel.c -o c_code/3_1/compiler_semparallel.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_semparallel.c -o c_code/3_1/compiler_semparallel.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_plugins.c -o c_code/3_1/compiler_plugins.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_plugins.c -o c_code/3_1/compiler_plugins.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_active.c -o c_code/3_1/compiler_active.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_active.c -o c_code/3_1/compiler_active.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_locals.c -o c_code/3_1/compiler_locals.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_locals.c -o c_code/3_1/compiler_locals.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_cgen.c -o c_code/3_1/compiler_cgen.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_cgen.c -o c_code/3_1/compiler_cgen.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_ccgutils.c -o c_code/3_1/compiler_ccgutils.o"
@@ -4545,11 +4697,11 @@ c_code/3_1/stdlib_math.o \
 c_code/3_1/stdlib_tables.o \
 c_code/3_1/compiler_ropes.o \
 c_code/3_1/compiler_platform.o \
-c_code/3_1/compiler_crc.o \
 c_code/3_1/compiler_nversion.o \
 c_code/3_1/compiler_condsyms.o \
 c_code/3_1/compiler_idents.o \
 c_code/3_1/compiler_extccomp.o \
+c_code/3_1/compiler_crc.o \
 c_code/3_1/compiler_wordrecg.o \
 c_code/3_1/compiler_nimblecmd.o \
 c_code/3_1/stdlib_parseopt.o \
@@ -4618,11 +4770,15 @@ c_code/3_1/compiler_vm.o \
 c_code/3_1/compiler_vmgen.o \
 c_code/3_1/stdlib_unsigned.o \
 c_code/3_1/compiler_vmdeps.o \
+c_code/3_1/compiler_vmmarshal.o \
 c_code/3_1/compiler_evaltempl.o \
 c_code/3_1/compiler_aliases.o \
 c_code/3_1/compiler_patterns.o \
 c_code/3_1/compiler_semmacrosanity.o \
 c_code/3_1/compiler_semparallel.o \
+c_code/3_1/compiler_plugins.o \
+c_code/3_1/compiler_active.o \
+c_code/3_1/compiler_locals.o \
 c_code/3_1/compiler_cgen.o \
 c_code/3_1/compiler_ccgutils.o \
 c_code/3_1/compiler_cgendata.o \
@@ -4659,11 +4815,11 @@ c_code/3_1/stdlib_math.o \
 c_code/3_1/stdlib_tables.o \
 c_code/3_1/compiler_ropes.o \
 c_code/3_1/compiler_platform.o \
-c_code/3_1/compiler_crc.o \
 c_code/3_1/compiler_nversion.o \
 c_code/3_1/compiler_condsyms.o \
 c_code/3_1/compiler_idents.o \
 c_code/3_1/compiler_extccomp.o \
+c_code/3_1/compiler_crc.o \
 c_code/3_1/compiler_wordrecg.o \
 c_code/3_1/compiler_nimblecmd.o \
 c_code/3_1/stdlib_parseopt.o \
@@ -4732,11 +4888,15 @@ c_code/3_1/compiler_vm.o \
 c_code/3_1/compiler_vmgen.o \
 c_code/3_1/stdlib_unsigned.o \
 c_code/3_1/compiler_vmdeps.o \
+c_code/3_1/compiler_vmmarshal.o \
 c_code/3_1/compiler_evaltempl.o \
 c_code/3_1/compiler_aliases.o \
 c_code/3_1/compiler_patterns.o \
 c_code/3_1/compiler_semmacrosanity.o \
 c_code/3_1/compiler_semparallel.o \
+c_code/3_1/compiler_plugins.o \
+c_code/3_1/compiler_active.o \
+c_code/3_1/compiler_locals.o \
 c_code/3_1/compiler_cgen.o \
 c_code/3_1/compiler_ccgutils.o \
 c_code/3_1/compiler_cgendata.o \
@@ -4796,8 +4956,6 @@ c_code/3_1/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_ropes.c -o c_code/3_2/compiler_ropes.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_platform.c -o c_code/3_2/compiler_platform.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_platform.c -o c_code/3_2/compiler_platform.o
-    echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_crc.c -o c_code/3_2/compiler_crc.o"
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_crc.c -o c_code/3_2/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_nversion.c -o c_code/3_2/compiler_nversion.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_nversion.c -o c_code/3_2/compiler_nversion.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_condsyms.c -o c_code/3_2/compiler_condsyms.o"
@@ -4806,6 +4964,8 @@ c_code/3_1/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_idents.c -o c_code/3_2/compiler_idents.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_extccomp.c -o c_code/3_2/compiler_extccomp.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_extccomp.c -o c_code/3_2/compiler_extccomp.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_crc.c -o c_code/3_2/compiler_crc.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_crc.c -o c_code/3_2/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_wordrecg.c -o c_code/3_2/compiler_wordrecg.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_wordrecg.c -o c_code/3_2/compiler_wordrecg.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_nimblecmd.c -o c_code/3_2/compiler_nimblecmd.o"
@@ -4942,6 +5102,8 @@ c_code/3_1/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_unsigned.c -o c_code/3_2/stdlib_unsigned.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_vmdeps.c -o c_code/3_2/compiler_vmdeps.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_vmdeps.c -o c_code/3_2/compiler_vmdeps.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_vmmarshal.c -o c_code/3_2/compiler_vmmarshal.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_vmmarshal.c -o c_code/3_2/compiler_vmmarshal.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_evaltempl.c -o c_code/3_2/compiler_evaltempl.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_evaltempl.c -o c_code/3_2/compiler_evaltempl.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_aliases.c -o c_code/3_2/compiler_aliases.o"
@@ -4952,6 +5114,12 @@ c_code/3_1/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_semmacrosanity.c -o c_code/3_2/compiler_semmacrosanity.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_semparallel.c -o c_code/3_2/compiler_semparallel.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_semparallel.c -o c_code/3_2/compiler_semparallel.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_plugins.c -o c_code/3_2/compiler_plugins.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_plugins.c -o c_code/3_2/compiler_plugins.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_active.c -o c_code/3_2/compiler_active.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_active.c -o c_code/3_2/compiler_active.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_locals.c -o c_code/3_2/compiler_locals.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_locals.c -o c_code/3_2/compiler_locals.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_cgen.c -o c_code/3_2/compiler_cgen.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_cgen.c -o c_code/3_2/compiler_cgen.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_ccgutils.c -o c_code/3_2/compiler_ccgutils.o"
@@ -5001,11 +5169,11 @@ c_code/3_2/stdlib_math.o \
 c_code/3_2/stdlib_tables.o \
 c_code/3_2/compiler_ropes.o \
 c_code/3_2/compiler_platform.o \
-c_code/3_2/compiler_crc.o \
 c_code/3_2/compiler_nversion.o \
 c_code/3_2/compiler_condsyms.o \
 c_code/3_2/compiler_idents.o \
 c_code/3_2/compiler_extccomp.o \
+c_code/3_2/compiler_crc.o \
 c_code/3_2/compiler_wordrecg.o \
 c_code/3_2/compiler_nimblecmd.o \
 c_code/3_2/stdlib_parseopt.o \
@@ -5074,11 +5242,15 @@ c_code/3_2/compiler_vm.o \
 c_code/3_2/compiler_vmgen.o \
 c_code/3_2/stdlib_unsigned.o \
 c_code/3_2/compiler_vmdeps.o \
+c_code/3_2/compiler_vmmarshal.o \
 c_code/3_2/compiler_evaltempl.o \
 c_code/3_2/compiler_aliases.o \
 c_code/3_2/compiler_patterns.o \
 c_code/3_2/compiler_semmacrosanity.o \
 c_code/3_2/compiler_semparallel.o \
+c_code/3_2/compiler_plugins.o \
+c_code/3_2/compiler_active.o \
+c_code/3_2/compiler_locals.o \
 c_code/3_2/compiler_cgen.o \
 c_code/3_2/compiler_ccgutils.o \
 c_code/3_2/compiler_cgendata.o \
@@ -5115,11 +5287,11 @@ c_code/3_2/stdlib_math.o \
 c_code/3_2/stdlib_tables.o \
 c_code/3_2/compiler_ropes.o \
 c_code/3_2/compiler_platform.o \
-c_code/3_2/compiler_crc.o \
 c_code/3_2/compiler_nversion.o \
 c_code/3_2/compiler_condsyms.o \
 c_code/3_2/compiler_idents.o \
 c_code/3_2/compiler_extccomp.o \
+c_code/3_2/compiler_crc.o \
 c_code/3_2/compiler_wordrecg.o \
 c_code/3_2/compiler_nimblecmd.o \
 c_code/3_2/stdlib_parseopt.o \
@@ -5188,11 +5360,15 @@ c_code/3_2/compiler_vm.o \
 c_code/3_2/compiler_vmgen.o \
 c_code/3_2/stdlib_unsigned.o \
 c_code/3_2/compiler_vmdeps.o \
+c_code/3_2/compiler_vmmarshal.o \
 c_code/3_2/compiler_evaltempl.o \
 c_code/3_2/compiler_aliases.o \
 c_code/3_2/compiler_patterns.o \
 c_code/3_2/compiler_semmacrosanity.o \
 c_code/3_2/compiler_semparallel.o \
+c_code/3_2/compiler_plugins.o \
+c_code/3_2/compiler_active.o \
+c_code/3_2/compiler_locals.o \
 c_code/3_2/compiler_cgen.o \
 c_code/3_2/compiler_ccgutils.o \
 c_code/3_2/compiler_cgendata.o \
@@ -5252,8 +5428,6 @@ c_code/3_2/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/3_3/compiler_ropes.c -o c_code/3_3/compiler_ropes.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_3/compiler_platform.c -o c_code/3_3/compiler_platform.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/3_3/compiler_platform.c -o c_code/3_3/compiler_platform.o
-    echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_3/compiler_crc.c -o c_code/3_3/compiler_crc.o"
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_3/compiler_crc.c -o c_code/3_3/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_3/compiler_nversion.c -o c_code/3_3/compiler_nversion.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/3_3/compiler_nversion.c -o c_code/3_3/compiler_nversion.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_3/compiler_condsyms.c -o c_code/3_3/compiler_condsyms.o"
@@ -5262,6 +5436,8 @@ c_code/3_2/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/3_3/compiler_idents.c -o c_code/3_3/compiler_idents.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_3/compiler_extccomp.c -o c_code/3_3/compiler_extccomp.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/3_3/compiler_extccomp.c -o c_code/3_3/compiler_extccomp.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_3/compiler_crc.c -o c_code/3_3/compiler_crc.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_3/compiler_crc.c -o c_code/3_3/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_3/compiler_wordrecg.c -o c_code/3_3/compiler_wordrecg.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/3_3/compiler_wordrecg.c -o c_code/3_3/compiler_wordrecg.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_3/compiler_nimblecmd.c -o c_code/3_3/compiler_nimblecmd.o"
@@ -5398,6 +5574,8 @@ c_code/3_2/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/3_3/stdlib_unsigned.c -o c_code/3_3/stdlib_unsigned.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_3/compiler_vmdeps.c -o c_code/3_3/compiler_vmdeps.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/3_3/compiler_vmdeps.c -o c_code/3_3/compiler_vmdeps.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_3/compiler_vmmarshal.c -o c_code/3_3/compiler_vmmarshal.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_3/compiler_vmmarshal.c -o c_code/3_3/compiler_vmmarshal.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_3/compiler_evaltempl.c -o c_code/3_3/compiler_evaltempl.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/3_3/compiler_evaltempl.c -o c_code/3_3/compiler_evaltempl.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_3/compiler_aliases.c -o c_code/3_3/compiler_aliases.o"
@@ -5408,6 +5586,12 @@ c_code/3_2/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/3_3/compiler_semmacrosanity.c -o c_code/3_3/compiler_semmacrosanity.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_3/compiler_semparallel.c -o c_code/3_3/compiler_semparallel.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/3_3/compiler_semparallel.c -o c_code/3_3/compiler_semparallel.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_3/compiler_plugins.c -o c_code/3_3/compiler_plugins.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_3/compiler_plugins.c -o c_code/3_3/compiler_plugins.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_3/compiler_active.c -o c_code/3_3/compiler_active.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_3/compiler_active.c -o c_code/3_3/compiler_active.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_3/compiler_locals.c -o c_code/3_3/compiler_locals.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_3/compiler_locals.c -o c_code/3_3/compiler_locals.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_3/compiler_cgen.c -o c_code/3_3/compiler_cgen.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/3_3/compiler_cgen.c -o c_code/3_3/compiler_cgen.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/3_3/compiler_ccgutils.c -o c_code/3_3/compiler_ccgutils.o"
@@ -5457,11 +5641,11 @@ c_code/3_3/stdlib_math.o \
 c_code/3_3/stdlib_tables.o \
 c_code/3_3/compiler_ropes.o \
 c_code/3_3/compiler_platform.o \
-c_code/3_3/compiler_crc.o \
 c_code/3_3/compiler_nversion.o \
 c_code/3_3/compiler_condsyms.o \
 c_code/3_3/compiler_idents.o \
 c_code/3_3/compiler_extccomp.o \
+c_code/3_3/compiler_crc.o \
 c_code/3_3/compiler_wordrecg.o \
 c_code/3_3/compiler_nimblecmd.o \
 c_code/3_3/stdlib_parseopt.o \
@@ -5530,11 +5714,15 @@ c_code/3_3/compiler_vm.o \
 c_code/3_3/compiler_vmgen.o \
 c_code/3_3/stdlib_unsigned.o \
 c_code/3_3/compiler_vmdeps.o \
+c_code/3_3/compiler_vmmarshal.o \
 c_code/3_3/compiler_evaltempl.o \
 c_code/3_3/compiler_aliases.o \
 c_code/3_3/compiler_patterns.o \
 c_code/3_3/compiler_semmacrosanity.o \
 c_code/3_3/compiler_semparallel.o \
+c_code/3_3/compiler_plugins.o \
+c_code/3_3/compiler_active.o \
+c_code/3_3/compiler_locals.o \
 c_code/3_3/compiler_cgen.o \
 c_code/3_3/compiler_ccgutils.o \
 c_code/3_3/compiler_cgendata.o \
@@ -5571,11 +5759,11 @@ c_code/3_3/stdlib_math.o \
 c_code/3_3/stdlib_tables.o \
 c_code/3_3/compiler_ropes.o \
 c_code/3_3/compiler_platform.o \
-c_code/3_3/compiler_crc.o \
 c_code/3_3/compiler_nversion.o \
 c_code/3_3/compiler_condsyms.o \
 c_code/3_3/compiler_idents.o \
 c_code/3_3/compiler_extccomp.o \
+c_code/3_3/compiler_crc.o \
 c_code/3_3/compiler_wordrecg.o \
 c_code/3_3/compiler_nimblecmd.o \
 c_code/3_3/stdlib_parseopt.o \
@@ -5644,11 +5832,15 @@ c_code/3_3/compiler_vm.o \
 c_code/3_3/compiler_vmgen.o \
 c_code/3_3/stdlib_unsigned.o \
 c_code/3_3/compiler_vmdeps.o \
+c_code/3_3/compiler_vmmarshal.o \
 c_code/3_3/compiler_evaltempl.o \
 c_code/3_3/compiler_aliases.o \
 c_code/3_3/compiler_patterns.o \
 c_code/3_3/compiler_semmacrosanity.o \
 c_code/3_3/compiler_semparallel.o \
+c_code/3_3/compiler_plugins.o \
+c_code/3_3/compiler_active.o \
+c_code/3_3/compiler_locals.o \
 c_code/3_3/compiler_cgen.o \
 c_code/3_3/compiler_ccgutils.o \
 c_code/3_3/compiler_cgendata.o \
@@ -5732,8 +5924,6 @@ solaris)
     $CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_ropes.c -o c_code/4_1/compiler_ropes.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_platform.c -o c_code/4_1/compiler_platform.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_platform.c -o c_code/4_1/compiler_platform.o
-    echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_crc.c -o c_code/4_1/compiler_crc.o"
-    $CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_crc.c -o c_code/4_1/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_nversion.c -o c_code/4_1/compiler_nversion.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_nversion.c -o c_code/4_1/compiler_nversion.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_condsyms.c -o c_code/4_1/compiler_condsyms.o"
@@ -5742,6 +5932,8 @@ solaris)
     $CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_idents.c -o c_code/4_1/compiler_idents.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_extccomp.c -o c_code/4_1/compiler_extccomp.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_extccomp.c -o c_code/4_1/compiler_extccomp.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_crc.c -o c_code/4_1/compiler_crc.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_crc.c -o c_code/4_1/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_wordrecg.c -o c_code/4_1/compiler_wordrecg.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_wordrecg.c -o c_code/4_1/compiler_wordrecg.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_nimblecmd.c -o c_code/4_1/compiler_nimblecmd.o"
@@ -5878,6 +6070,8 @@ solaris)
     $CC $COMP_FLAGS -Ic_code -c c_code/4_1/stdlib_unsigned.c -o c_code/4_1/stdlib_unsigned.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_vmdeps.c -o c_code/4_1/compiler_vmdeps.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_vmdeps.c -o c_code/4_1/compiler_vmdeps.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_vmmarshal.c -o c_code/4_1/compiler_vmmarshal.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_vmmarshal.c -o c_code/4_1/compiler_vmmarshal.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_evaltempl.c -o c_code/4_1/compiler_evaltempl.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_evaltempl.c -o c_code/4_1/compiler_evaltempl.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_aliases.c -o c_code/4_1/compiler_aliases.o"
@@ -5888,6 +6082,12 @@ solaris)
     $CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_semmacrosanity.c -o c_code/4_1/compiler_semmacrosanity.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_semparallel.c -o c_code/4_1/compiler_semparallel.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_semparallel.c -o c_code/4_1/compiler_semparallel.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_plugins.c -o c_code/4_1/compiler_plugins.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_plugins.c -o c_code/4_1/compiler_plugins.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_active.c -o c_code/4_1/compiler_active.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_active.c -o c_code/4_1/compiler_active.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_locals.c -o c_code/4_1/compiler_locals.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_locals.c -o c_code/4_1/compiler_locals.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_cgen.c -o c_code/4_1/compiler_cgen.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_cgen.c -o c_code/4_1/compiler_cgen.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_ccgutils.c -o c_code/4_1/compiler_ccgutils.o"
@@ -5937,11 +6137,11 @@ c_code/4_1/stdlib_math.o \
 c_code/4_1/stdlib_tables.o \
 c_code/4_1/compiler_ropes.o \
 c_code/4_1/compiler_platform.o \
-c_code/4_1/compiler_crc.o \
 c_code/4_1/compiler_nversion.o \
 c_code/4_1/compiler_condsyms.o \
 c_code/4_1/compiler_idents.o \
 c_code/4_1/compiler_extccomp.o \
+c_code/4_1/compiler_crc.o \
 c_code/4_1/compiler_wordrecg.o \
 c_code/4_1/compiler_nimblecmd.o \
 c_code/4_1/stdlib_parseopt.o \
@@ -6010,11 +6210,15 @@ c_code/4_1/compiler_vm.o \
 c_code/4_1/compiler_vmgen.o \
 c_code/4_1/stdlib_unsigned.o \
 c_code/4_1/compiler_vmdeps.o \
+c_code/4_1/compiler_vmmarshal.o \
 c_code/4_1/compiler_evaltempl.o \
 c_code/4_1/compiler_aliases.o \
 c_code/4_1/compiler_patterns.o \
 c_code/4_1/compiler_semmacrosanity.o \
 c_code/4_1/compiler_semparallel.o \
+c_code/4_1/compiler_plugins.o \
+c_code/4_1/compiler_active.o \
+c_code/4_1/compiler_locals.o \
 c_code/4_1/compiler_cgen.o \
 c_code/4_1/compiler_ccgutils.o \
 c_code/4_1/compiler_cgendata.o \
@@ -6051,11 +6255,11 @@ c_code/4_1/stdlib_math.o \
 c_code/4_1/stdlib_tables.o \
 c_code/4_1/compiler_ropes.o \
 c_code/4_1/compiler_platform.o \
-c_code/4_1/compiler_crc.o \
 c_code/4_1/compiler_nversion.o \
 c_code/4_1/compiler_condsyms.o \
 c_code/4_1/compiler_idents.o \
 c_code/4_1/compiler_extccomp.o \
+c_code/4_1/compiler_crc.o \
 c_code/4_1/compiler_wordrecg.o \
 c_code/4_1/compiler_nimblecmd.o \
 c_code/4_1/stdlib_parseopt.o \
@@ -6124,11 +6328,15 @@ c_code/4_1/compiler_vm.o \
 c_code/4_1/compiler_vmgen.o \
 c_code/4_1/stdlib_unsigned.o \
 c_code/4_1/compiler_vmdeps.o \
+c_code/4_1/compiler_vmmarshal.o \
 c_code/4_1/compiler_evaltempl.o \
 c_code/4_1/compiler_aliases.o \
 c_code/4_1/compiler_patterns.o \
 c_code/4_1/compiler_semmacrosanity.o \
 c_code/4_1/compiler_semparallel.o \
+c_code/4_1/compiler_plugins.o \
+c_code/4_1/compiler_active.o \
+c_code/4_1/compiler_locals.o \
 c_code/4_1/compiler_cgen.o \
 c_code/4_1/compiler_ccgutils.o \
 c_code/4_1/compiler_cgendata.o \
@@ -6188,8 +6396,6 @@ c_code/4_1/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_ropes.c -o c_code/4_2/compiler_ropes.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_platform.c -o c_code/4_2/compiler_platform.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_platform.c -o c_code/4_2/compiler_platform.o
-    echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_crc.c -o c_code/4_2/compiler_crc.o"
-    $CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_crc.c -o c_code/4_2/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_nversion.c -o c_code/4_2/compiler_nversion.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_nversion.c -o c_code/4_2/compiler_nversion.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_condsyms.c -o c_code/4_2/compiler_condsyms.o"
@@ -6198,6 +6404,8 @@ c_code/4_1/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_idents.c -o c_code/4_2/compiler_idents.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_extccomp.c -o c_code/4_2/compiler_extccomp.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_extccomp.c -o c_code/4_2/compiler_extccomp.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_crc.c -o c_code/4_2/compiler_crc.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_crc.c -o c_code/4_2/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_wordrecg.c -o c_code/4_2/compiler_wordrecg.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_wordrecg.c -o c_code/4_2/compiler_wordrecg.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_nimblecmd.c -o c_code/4_2/compiler_nimblecmd.o"
@@ -6334,6 +6542,8 @@ c_code/4_1/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/4_2/stdlib_unsigned.c -o c_code/4_2/stdlib_unsigned.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_vmdeps.c -o c_code/4_2/compiler_vmdeps.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_vmdeps.c -o c_code/4_2/compiler_vmdeps.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_vmmarshal.c -o c_code/4_2/compiler_vmmarshal.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_vmmarshal.c -o c_code/4_2/compiler_vmmarshal.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_evaltempl.c -o c_code/4_2/compiler_evaltempl.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_evaltempl.c -o c_code/4_2/compiler_evaltempl.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_aliases.c -o c_code/4_2/compiler_aliases.o"
@@ -6344,6 +6554,12 @@ c_code/4_1/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_semmacrosanity.c -o c_code/4_2/compiler_semmacrosanity.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_semparallel.c -o c_code/4_2/compiler_semparallel.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_semparallel.c -o c_code/4_2/compiler_semparallel.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_plugins.c -o c_code/4_2/compiler_plugins.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_plugins.c -o c_code/4_2/compiler_plugins.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_active.c -o c_code/4_2/compiler_active.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_active.c -o c_code/4_2/compiler_active.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_locals.c -o c_code/4_2/compiler_locals.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_locals.c -o c_code/4_2/compiler_locals.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_cgen.c -o c_code/4_2/compiler_cgen.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_cgen.c -o c_code/4_2/compiler_cgen.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_ccgutils.c -o c_code/4_2/compiler_ccgutils.o"
@@ -6393,11 +6609,11 @@ c_code/4_2/stdlib_math.o \
 c_code/4_2/stdlib_tables.o \
 c_code/4_2/compiler_ropes.o \
 c_code/4_2/compiler_platform.o \
-c_code/4_2/compiler_crc.o \
 c_code/4_2/compiler_nversion.o \
 c_code/4_2/compiler_condsyms.o \
 c_code/4_2/compiler_idents.o \
 c_code/4_2/compiler_extccomp.o \
+c_code/4_2/compiler_crc.o \
 c_code/4_2/compiler_wordrecg.o \
 c_code/4_2/compiler_nimblecmd.o \
 c_code/4_2/stdlib_parseopt.o \
@@ -6466,11 +6682,15 @@ c_code/4_2/compiler_vm.o \
 c_code/4_2/compiler_vmgen.o \
 c_code/4_2/stdlib_unsigned.o \
 c_code/4_2/compiler_vmdeps.o \
+c_code/4_2/compiler_vmmarshal.o \
 c_code/4_2/compiler_evaltempl.o \
 c_code/4_2/compiler_aliases.o \
 c_code/4_2/compiler_patterns.o \
 c_code/4_2/compiler_semmacrosanity.o \
 c_code/4_2/compiler_semparallel.o \
+c_code/4_2/compiler_plugins.o \
+c_code/4_2/compiler_active.o \
+c_code/4_2/compiler_locals.o \
 c_code/4_2/compiler_cgen.o \
 c_code/4_2/compiler_ccgutils.o \
 c_code/4_2/compiler_cgendata.o \
@@ -6507,11 +6727,11 @@ c_code/4_2/stdlib_math.o \
 c_code/4_2/stdlib_tables.o \
 c_code/4_2/compiler_ropes.o \
 c_code/4_2/compiler_platform.o \
-c_code/4_2/compiler_crc.o \
 c_code/4_2/compiler_nversion.o \
 c_code/4_2/compiler_condsyms.o \
 c_code/4_2/compiler_idents.o \
 c_code/4_2/compiler_extccomp.o \
+c_code/4_2/compiler_crc.o \
 c_code/4_2/compiler_wordrecg.o \
 c_code/4_2/compiler_nimblecmd.o \
 c_code/4_2/stdlib_parseopt.o \
@@ -6580,11 +6800,15 @@ c_code/4_2/compiler_vm.o \
 c_code/4_2/compiler_vmgen.o \
 c_code/4_2/stdlib_unsigned.o \
 c_code/4_2/compiler_vmdeps.o \
+c_code/4_2/compiler_vmmarshal.o \
 c_code/4_2/compiler_evaltempl.o \
 c_code/4_2/compiler_aliases.o \
 c_code/4_2/compiler_patterns.o \
 c_code/4_2/compiler_semmacrosanity.o \
 c_code/4_2/compiler_semparallel.o \
+c_code/4_2/compiler_plugins.o \
+c_code/4_2/compiler_active.o \
+c_code/4_2/compiler_locals.o \
 c_code/4_2/compiler_cgen.o \
 c_code/4_2/compiler_ccgutils.o \
 c_code/4_2/compiler_cgendata.o \
@@ -6652,8 +6876,6 @@ c_code/4_2/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/4_5/compiler_ropes.c -o c_code/4_5/compiler_ropes.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_5/compiler_platform.c -o c_code/4_5/compiler_platform.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/4_5/compiler_platform.c -o c_code/4_5/compiler_platform.o
-    echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_5/compiler_crc.c -o c_code/4_5/compiler_crc.o"
-    $CC $COMP_FLAGS -Ic_code -c c_code/4_5/compiler_crc.c -o c_code/4_5/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_5/compiler_nversion.c -o c_code/4_5/compiler_nversion.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/4_5/compiler_nversion.c -o c_code/4_5/compiler_nversion.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_5/compiler_condsyms.c -o c_code/4_5/compiler_condsyms.o"
@@ -6662,6 +6884,8 @@ c_code/4_2/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/4_5/compiler_idents.c -o c_code/4_5/compiler_idents.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_5/compiler_extccomp.c -o c_code/4_5/compiler_extccomp.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/4_5/compiler_extccomp.c -o c_code/4_5/compiler_extccomp.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_5/compiler_crc.c -o c_code/4_5/compiler_crc.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/4_5/compiler_crc.c -o c_code/4_5/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_5/compiler_wordrecg.c -o c_code/4_5/compiler_wordrecg.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/4_5/compiler_wordrecg.c -o c_code/4_5/compiler_wordrecg.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_5/compiler_nimblecmd.c -o c_code/4_5/compiler_nimblecmd.o"
@@ -6798,6 +7022,8 @@ c_code/4_2/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/4_5/stdlib_unsigned.c -o c_code/4_5/stdlib_unsigned.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_5/compiler_vmdeps.c -o c_code/4_5/compiler_vmdeps.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/4_5/compiler_vmdeps.c -o c_code/4_5/compiler_vmdeps.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_5/compiler_vmmarshal.c -o c_code/4_5/compiler_vmmarshal.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/4_5/compiler_vmmarshal.c -o c_code/4_5/compiler_vmmarshal.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_5/compiler_evaltempl.c -o c_code/4_5/compiler_evaltempl.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/4_5/compiler_evaltempl.c -o c_code/4_5/compiler_evaltempl.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_5/compiler_aliases.c -o c_code/4_5/compiler_aliases.o"
@@ -6808,6 +7034,12 @@ c_code/4_2/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/4_5/compiler_semmacrosanity.c -o c_code/4_5/compiler_semmacrosanity.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_5/compiler_semparallel.c -o c_code/4_5/compiler_semparallel.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/4_5/compiler_semparallel.c -o c_code/4_5/compiler_semparallel.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_5/compiler_plugins.c -o c_code/4_5/compiler_plugins.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/4_5/compiler_plugins.c -o c_code/4_5/compiler_plugins.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_5/compiler_active.c -o c_code/4_5/compiler_active.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/4_5/compiler_active.c -o c_code/4_5/compiler_active.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_5/compiler_locals.c -o c_code/4_5/compiler_locals.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/4_5/compiler_locals.c -o c_code/4_5/compiler_locals.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_5/compiler_cgen.c -o c_code/4_5/compiler_cgen.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/4_5/compiler_cgen.c -o c_code/4_5/compiler_cgen.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/4_5/compiler_ccgutils.c -o c_code/4_5/compiler_ccgutils.o"
@@ -6857,11 +7089,11 @@ c_code/4_5/stdlib_math.o \
 c_code/4_5/stdlib_tables.o \
 c_code/4_5/compiler_ropes.o \
 c_code/4_5/compiler_platform.o \
-c_code/4_5/compiler_crc.o \
 c_code/4_5/compiler_nversion.o \
 c_code/4_5/compiler_condsyms.o \
 c_code/4_5/compiler_idents.o \
 c_code/4_5/compiler_extccomp.o \
+c_code/4_5/compiler_crc.o \
 c_code/4_5/compiler_wordrecg.o \
 c_code/4_5/compiler_nimblecmd.o \
 c_code/4_5/stdlib_parseopt.o \
@@ -6930,11 +7162,15 @@ c_code/4_5/compiler_vm.o \
 c_code/4_5/compiler_vmgen.o \
 c_code/4_5/stdlib_unsigned.o \
 c_code/4_5/compiler_vmdeps.o \
+c_code/4_5/compiler_vmmarshal.o \
 c_code/4_5/compiler_evaltempl.o \
 c_code/4_5/compiler_aliases.o \
 c_code/4_5/compiler_patterns.o \
 c_code/4_5/compiler_semmacrosanity.o \
 c_code/4_5/compiler_semparallel.o \
+c_code/4_5/compiler_plugins.o \
+c_code/4_5/compiler_active.o \
+c_code/4_5/compiler_locals.o \
 c_code/4_5/compiler_cgen.o \
 c_code/4_5/compiler_ccgutils.o \
 c_code/4_5/compiler_cgendata.o \
@@ -6971,11 +7207,11 @@ c_code/4_5/stdlib_math.o \
 c_code/4_5/stdlib_tables.o \
 c_code/4_5/compiler_ropes.o \
 c_code/4_5/compiler_platform.o \
-c_code/4_5/compiler_crc.o \
 c_code/4_5/compiler_nversion.o \
 c_code/4_5/compiler_condsyms.o \
 c_code/4_5/compiler_idents.o \
 c_code/4_5/compiler_extccomp.o \
+c_code/4_5/compiler_crc.o \
 c_code/4_5/compiler_wordrecg.o \
 c_code/4_5/compiler_nimblecmd.o \
 c_code/4_5/stdlib_parseopt.o \
@@ -7044,11 +7280,15 @@ c_code/4_5/compiler_vm.o \
 c_code/4_5/compiler_vmgen.o \
 c_code/4_5/stdlib_unsigned.o \
 c_code/4_5/compiler_vmdeps.o \
+c_code/4_5/compiler_vmmarshal.o \
 c_code/4_5/compiler_evaltempl.o \
 c_code/4_5/compiler_aliases.o \
 c_code/4_5/compiler_patterns.o \
 c_code/4_5/compiler_semmacrosanity.o \
 c_code/4_5/compiler_semparallel.o \
+c_code/4_5/compiler_plugins.o \
+c_code/4_5/compiler_active.o \
+c_code/4_5/compiler_locals.o \
 c_code/4_5/compiler_cgen.o \
 c_code/4_5/compiler_ccgutils.o \
 c_code/4_5/compiler_cgendata.o \
@@ -7124,8 +7364,6 @@ freebsd)
     $CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_ropes.c -o c_code/5_1/compiler_ropes.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_platform.c -o c_code/5_1/compiler_platform.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_platform.c -o c_code/5_1/compiler_platform.o
-    echo "$CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_crc.c -o c_code/5_1/compiler_crc.o"
-    $CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_crc.c -o c_code/5_1/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_nversion.c -o c_code/5_1/compiler_nversion.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_nversion.c -o c_code/5_1/compiler_nversion.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_condsyms.c -o c_code/5_1/compiler_condsyms.o"
@@ -7134,6 +7372,8 @@ freebsd)
     $CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_idents.c -o c_code/5_1/compiler_idents.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_extccomp.c -o c_code/5_1/compiler_extccomp.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_extccomp.c -o c_code/5_1/compiler_extccomp.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_crc.c -o c_code/5_1/compiler_crc.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_crc.c -o c_code/5_1/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_wordrecg.c -o c_code/5_1/compiler_wordrecg.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_wordrecg.c -o c_code/5_1/compiler_wordrecg.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_nimblecmd.c -o c_code/5_1/compiler_nimblecmd.o"
@@ -7270,6 +7510,8 @@ freebsd)
     $CC $COMP_FLAGS -Ic_code -c c_code/5_1/stdlib_unsigned.c -o c_code/5_1/stdlib_unsigned.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_vmdeps.c -o c_code/5_1/compiler_vmdeps.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_vmdeps.c -o c_code/5_1/compiler_vmdeps.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_vmmarshal.c -o c_code/5_1/compiler_vmmarshal.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_vmmarshal.c -o c_code/5_1/compiler_vmmarshal.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_evaltempl.c -o c_code/5_1/compiler_evaltempl.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_evaltempl.c -o c_code/5_1/compiler_evaltempl.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_aliases.c -o c_code/5_1/compiler_aliases.o"
@@ -7280,6 +7522,12 @@ freebsd)
     $CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_semmacrosanity.c -o c_code/5_1/compiler_semmacrosanity.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_semparallel.c -o c_code/5_1/compiler_semparallel.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_semparallel.c -o c_code/5_1/compiler_semparallel.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_plugins.c -o c_code/5_1/compiler_plugins.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_plugins.c -o c_code/5_1/compiler_plugins.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_active.c -o c_code/5_1/compiler_active.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_active.c -o c_code/5_1/compiler_active.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_locals.c -o c_code/5_1/compiler_locals.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_locals.c -o c_code/5_1/compiler_locals.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_cgen.c -o c_code/5_1/compiler_cgen.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_cgen.c -o c_code/5_1/compiler_cgen.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_ccgutils.c -o c_code/5_1/compiler_ccgutils.o"
@@ -7329,11 +7577,11 @@ c_code/5_1/stdlib_math.o \
 c_code/5_1/stdlib_tables.o \
 c_code/5_1/compiler_ropes.o \
 c_code/5_1/compiler_platform.o \
-c_code/5_1/compiler_crc.o \
 c_code/5_1/compiler_nversion.o \
 c_code/5_1/compiler_condsyms.o \
 c_code/5_1/compiler_idents.o \
 c_code/5_1/compiler_extccomp.o \
+c_code/5_1/compiler_crc.o \
 c_code/5_1/compiler_wordrecg.o \
 c_code/5_1/compiler_nimblecmd.o \
 c_code/5_1/stdlib_parseopt.o \
@@ -7402,11 +7650,15 @@ c_code/5_1/compiler_vm.o \
 c_code/5_1/compiler_vmgen.o \
 c_code/5_1/stdlib_unsigned.o \
 c_code/5_1/compiler_vmdeps.o \
+c_code/5_1/compiler_vmmarshal.o \
 c_code/5_1/compiler_evaltempl.o \
 c_code/5_1/compiler_aliases.o \
 c_code/5_1/compiler_patterns.o \
 c_code/5_1/compiler_semmacrosanity.o \
 c_code/5_1/compiler_semparallel.o \
+c_code/5_1/compiler_plugins.o \
+c_code/5_1/compiler_active.o \
+c_code/5_1/compiler_locals.o \
 c_code/5_1/compiler_cgen.o \
 c_code/5_1/compiler_ccgutils.o \
 c_code/5_1/compiler_cgendata.o \
@@ -7443,11 +7695,11 @@ c_code/5_1/stdlib_math.o \
 c_code/5_1/stdlib_tables.o \
 c_code/5_1/compiler_ropes.o \
 c_code/5_1/compiler_platform.o \
-c_code/5_1/compiler_crc.o \
 c_code/5_1/compiler_nversion.o \
 c_code/5_1/compiler_condsyms.o \
 c_code/5_1/compiler_idents.o \
 c_code/5_1/compiler_extccomp.o \
+c_code/5_1/compiler_crc.o \
 c_code/5_1/compiler_wordrecg.o \
 c_code/5_1/compiler_nimblecmd.o \
 c_code/5_1/stdlib_parseopt.o \
@@ -7516,11 +7768,15 @@ c_code/5_1/compiler_vm.o \
 c_code/5_1/compiler_vmgen.o \
 c_code/5_1/stdlib_unsigned.o \
 c_code/5_1/compiler_vmdeps.o \
+c_code/5_1/compiler_vmmarshal.o \
 c_code/5_1/compiler_evaltempl.o \
 c_code/5_1/compiler_aliases.o \
 c_code/5_1/compiler_patterns.o \
 c_code/5_1/compiler_semmacrosanity.o \
 c_code/5_1/compiler_semparallel.o \
+c_code/5_1/compiler_plugins.o \
+c_code/5_1/compiler_active.o \
+c_code/5_1/compiler_locals.o \
 c_code/5_1/compiler_cgen.o \
 c_code/5_1/compiler_ccgutils.o \
 c_code/5_1/compiler_cgendata.o \
@@ -7580,8 +7836,6 @@ c_code/5_1/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_ropes.c -o c_code/5_2/compiler_ropes.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_platform.c -o c_code/5_2/compiler_platform.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_platform.c -o c_code/5_2/compiler_platform.o
-    echo "$CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_crc.c -o c_code/5_2/compiler_crc.o"
-    $CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_crc.c -o c_code/5_2/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_nversion.c -o c_code/5_2/compiler_nversion.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_nversion.c -o c_code/5_2/compiler_nversion.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_condsyms.c -o c_code/5_2/compiler_condsyms.o"
@@ -7590,6 +7844,8 @@ c_code/5_1/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_idents.c -o c_code/5_2/compiler_idents.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_extccomp.c -o c_code/5_2/compiler_extccomp.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_extccomp.c -o c_code/5_2/compiler_extccomp.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_crc.c -o c_code/5_2/compiler_crc.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_crc.c -o c_code/5_2/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_wordrecg.c -o c_code/5_2/compiler_wordrecg.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_wordrecg.c -o c_code/5_2/compiler_wordrecg.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_nimblecmd.c -o c_code/5_2/compiler_nimblecmd.o"
@@ -7726,6 +7982,8 @@ c_code/5_1/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/5_2/stdlib_unsigned.c -o c_code/5_2/stdlib_unsigned.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_vmdeps.c -o c_code/5_2/compiler_vmdeps.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_vmdeps.c -o c_code/5_2/compiler_vmdeps.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_vmmarshal.c -o c_code/5_2/compiler_vmmarshal.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_vmmarshal.c -o c_code/5_2/compiler_vmmarshal.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_evaltempl.c -o c_code/5_2/compiler_evaltempl.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_evaltempl.c -o c_code/5_2/compiler_evaltempl.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_aliases.c -o c_code/5_2/compiler_aliases.o"
@@ -7736,6 +7994,12 @@ c_code/5_1/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_semmacrosanity.c -o c_code/5_2/compiler_semmacrosanity.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_semparallel.c -o c_code/5_2/compiler_semparallel.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_semparallel.c -o c_code/5_2/compiler_semparallel.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_plugins.c -o c_code/5_2/compiler_plugins.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_plugins.c -o c_code/5_2/compiler_plugins.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_active.c -o c_code/5_2/compiler_active.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_active.c -o c_code/5_2/compiler_active.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_locals.c -o c_code/5_2/compiler_locals.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_locals.c -o c_code/5_2/compiler_locals.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_cgen.c -o c_code/5_2/compiler_cgen.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_cgen.c -o c_code/5_2/compiler_cgen.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_ccgutils.c -o c_code/5_2/compiler_ccgutils.o"
@@ -7785,11 +8049,11 @@ c_code/5_2/stdlib_math.o \
 c_code/5_2/stdlib_tables.o \
 c_code/5_2/compiler_ropes.o \
 c_code/5_2/compiler_platform.o \
-c_code/5_2/compiler_crc.o \
 c_code/5_2/compiler_nversion.o \
 c_code/5_2/compiler_condsyms.o \
 c_code/5_2/compiler_idents.o \
 c_code/5_2/compiler_extccomp.o \
+c_code/5_2/compiler_crc.o \
 c_code/5_2/compiler_wordrecg.o \
 c_code/5_2/compiler_nimblecmd.o \
 c_code/5_2/stdlib_parseopt.o \
@@ -7858,11 +8122,15 @@ c_code/5_2/compiler_vm.o \
 c_code/5_2/compiler_vmgen.o \
 c_code/5_2/stdlib_unsigned.o \
 c_code/5_2/compiler_vmdeps.o \
+c_code/5_2/compiler_vmmarshal.o \
 c_code/5_2/compiler_evaltempl.o \
 c_code/5_2/compiler_aliases.o \
 c_code/5_2/compiler_patterns.o \
 c_code/5_2/compiler_semmacrosanity.o \
 c_code/5_2/compiler_semparallel.o \
+c_code/5_2/compiler_plugins.o \
+c_code/5_2/compiler_active.o \
+c_code/5_2/compiler_locals.o \
 c_code/5_2/compiler_cgen.o \
 c_code/5_2/compiler_ccgutils.o \
 c_code/5_2/compiler_cgendata.o \
@@ -7899,11 +8167,11 @@ c_code/5_2/stdlib_math.o \
 c_code/5_2/stdlib_tables.o \
 c_code/5_2/compiler_ropes.o \
 c_code/5_2/compiler_platform.o \
-c_code/5_2/compiler_crc.o \
 c_code/5_2/compiler_nversion.o \
 c_code/5_2/compiler_condsyms.o \
 c_code/5_2/compiler_idents.o \
 c_code/5_2/compiler_extccomp.o \
+c_code/5_2/compiler_crc.o \
 c_code/5_2/compiler_wordrecg.o \
 c_code/5_2/compiler_nimblecmd.o \
 c_code/5_2/stdlib_parseopt.o \
@@ -7972,11 +8240,15 @@ c_code/5_2/compiler_vm.o \
 c_code/5_2/compiler_vmgen.o \
 c_code/5_2/stdlib_unsigned.o \
 c_code/5_2/compiler_vmdeps.o \
+c_code/5_2/compiler_vmmarshal.o \
 c_code/5_2/compiler_evaltempl.o \
 c_code/5_2/compiler_aliases.o \
 c_code/5_2/compiler_patterns.o \
 c_code/5_2/compiler_semmacrosanity.o \
 c_code/5_2/compiler_semparallel.o \
+c_code/5_2/compiler_plugins.o \
+c_code/5_2/compiler_active.o \
+c_code/5_2/compiler_locals.o \
 c_code/5_2/compiler_cgen.o \
 c_code/5_2/compiler_ccgutils.o \
 c_code/5_2/compiler_cgendata.o \
@@ -8064,8 +8336,6 @@ netbsd)
     $CC $COMP_FLAGS -Ic_code -c c_code/6_1/compiler_ropes.c -o c_code/6_1/compiler_ropes.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/6_1/compiler_platform.c -o c_code/6_1/compiler_platform.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/6_1/compiler_platform.c -o c_code/6_1/compiler_platform.o
-    echo "$CC $COMP_FLAGS -Ic_code -c c_code/6_1/compiler_crc.c -o c_code/6_1/compiler_crc.o"
-    $CC $COMP_FLAGS -Ic_code -c c_code/6_1/compiler_crc.c -o c_code/6_1/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/6_1/compiler_nversion.c -o c_code/6_1/compiler_nversion.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/6_1/compiler_nversion.c -o c_code/6_1/compiler_nversion.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/6_1/compiler_condsyms.c -o c_code/6_1/compiler_condsyms.o"
@@ -8074,6 +8344,8 @@ netbsd)
     $CC $COMP_FLAGS -Ic_code -c c_code/6_1/compiler_idents.c -o c_code/6_1/compiler_idents.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/6_1/compiler_extccomp.c -o c_code/6_1/compiler_extccomp.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/6_1/compiler_extccomp.c -o c_code/6_1/compiler_extccomp.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/6_1/compiler_crc.c -o c_code/6_1/compiler_crc.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/6_1/compiler_crc.c -o c_code/6_1/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/6_1/compiler_wordrecg.c -o c_code/6_1/compiler_wordrecg.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/6_1/compiler_wordrecg.c -o c_code/6_1/compiler_wordrecg.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/6_1/compiler_nimblecmd.c -o c_code/6_1/compiler_nimblecmd.o"
@@ -8210,6 +8482,8 @@ netbsd)
     $CC $COMP_FLAGS -Ic_code -c c_code/6_1/stdlib_unsigned.c -o c_code/6_1/stdlib_unsigned.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/6_1/compiler_vmdeps.c -o c_code/6_1/compiler_vmdeps.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/6_1/compiler_vmdeps.c -o c_code/6_1/compiler_vmdeps.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/6_1/compiler_vmmarshal.c -o c_code/6_1/compiler_vmmarshal.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/6_1/compiler_vmmarshal.c -o c_code/6_1/compiler_vmmarshal.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/6_1/compiler_evaltempl.c -o c_code/6_1/compiler_evaltempl.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/6_1/compiler_evaltempl.c -o c_code/6_1/compiler_evaltempl.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/6_1/compiler_aliases.c -o c_code/6_1/compiler_aliases.o"
@@ -8220,6 +8494,12 @@ netbsd)
     $CC $COMP_FLAGS -Ic_code -c c_code/6_1/compiler_semmacrosanity.c -o c_code/6_1/compiler_semmacrosanity.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/6_1/compiler_semparallel.c -o c_code/6_1/compiler_semparallel.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/6_1/compiler_semparallel.c -o c_code/6_1/compiler_semparallel.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/6_1/compiler_plugins.c -o c_code/6_1/compiler_plugins.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/6_1/compiler_plugins.c -o c_code/6_1/compiler_plugins.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/6_1/compiler_active.c -o c_code/6_1/compiler_active.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/6_1/compiler_active.c -o c_code/6_1/compiler_active.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/6_1/compiler_locals.c -o c_code/6_1/compiler_locals.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/6_1/compiler_locals.c -o c_code/6_1/compiler_locals.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/6_1/compiler_cgen.c -o c_code/6_1/compiler_cgen.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/6_1/compiler_cgen.c -o c_code/6_1/compiler_cgen.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/6_1/compiler_ccgutils.c -o c_code/6_1/compiler_ccgutils.o"
@@ -8269,11 +8549,11 @@ c_code/6_1/stdlib_math.o \
 c_code/6_1/stdlib_tables.o \
 c_code/6_1/compiler_ropes.o \
 c_code/6_1/compiler_platform.o \
-c_code/6_1/compiler_crc.o \
 c_code/6_1/compiler_nversion.o \
 c_code/6_1/compiler_condsyms.o \
 c_code/6_1/compiler_idents.o \
 c_code/6_1/compiler_extccomp.o \
+c_code/6_1/compiler_crc.o \
 c_code/6_1/compiler_wordrecg.o \
 c_code/6_1/compiler_nimblecmd.o \
 c_code/6_1/stdlib_parseopt.o \
@@ -8342,11 +8622,15 @@ c_code/6_1/compiler_vm.o \
 c_code/6_1/compiler_vmgen.o \
 c_code/6_1/stdlib_unsigned.o \
 c_code/6_1/compiler_vmdeps.o \
+c_code/6_1/compiler_vmmarshal.o \
 c_code/6_1/compiler_evaltempl.o \
 c_code/6_1/compiler_aliases.o \
 c_code/6_1/compiler_patterns.o \
 c_code/6_1/compiler_semmacrosanity.o \
 c_code/6_1/compiler_semparallel.o \
+c_code/6_1/compiler_plugins.o \
+c_code/6_1/compiler_active.o \
+c_code/6_1/compiler_locals.o \
 c_code/6_1/compiler_cgen.o \
 c_code/6_1/compiler_ccgutils.o \
 c_code/6_1/compiler_cgendata.o \
@@ -8383,11 +8667,11 @@ c_code/6_1/stdlib_math.o \
 c_code/6_1/stdlib_tables.o \
 c_code/6_1/compiler_ropes.o \
 c_code/6_1/compiler_platform.o \
-c_code/6_1/compiler_crc.o \
 c_code/6_1/compiler_nversion.o \
 c_code/6_1/compiler_condsyms.o \
 c_code/6_1/compiler_idents.o \
 c_code/6_1/compiler_extccomp.o \
+c_code/6_1/compiler_crc.o \
 c_code/6_1/compiler_wordrecg.o \
 c_code/6_1/compiler_nimblecmd.o \
 c_code/6_1/stdlib_parseopt.o \
@@ -8456,11 +8740,15 @@ c_code/6_1/compiler_vm.o \
 c_code/6_1/compiler_vmgen.o \
 c_code/6_1/stdlib_unsigned.o \
 c_code/6_1/compiler_vmdeps.o \
+c_code/6_1/compiler_vmmarshal.o \
 c_code/6_1/compiler_evaltempl.o \
 c_code/6_1/compiler_aliases.o \
 c_code/6_1/compiler_patterns.o \
 c_code/6_1/compiler_semmacrosanity.o \
 c_code/6_1/compiler_semparallel.o \
+c_code/6_1/compiler_plugins.o \
+c_code/6_1/compiler_active.o \
+c_code/6_1/compiler_locals.o \
 c_code/6_1/compiler_cgen.o \
 c_code/6_1/compiler_ccgutils.o \
 c_code/6_1/compiler_cgendata.o \
@@ -8520,8 +8808,6 @@ c_code/6_1/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/6_2/compiler_ropes.c -o c_code/6_2/compiler_ropes.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/6_2/compiler_platform.c -o c_code/6_2/compiler_platform.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/6_2/compiler_platform.c -o c_code/6_2/compiler_platform.o
-    echo "$CC $COMP_FLAGS -Ic_code -c c_code/6_2/compiler_crc.c -o c_code/6_2/compiler_crc.o"
-    $CC $COMP_FLAGS -Ic_code -c c_code/6_2/compiler_crc.c -o c_code/6_2/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/6_2/compiler_nversion.c -o c_code/6_2/compiler_nversion.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/6_2/compiler_nversion.c -o c_code/6_2/compiler_nversion.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/6_2/compiler_condsyms.c -o c_code/6_2/compiler_condsyms.o"
@@ -8530,6 +8816,8 @@ c_code/6_1/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/6_2/compiler_idents.c -o c_code/6_2/compiler_idents.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/6_2/compiler_extccomp.c -o c_code/6_2/compiler_extccomp.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/6_2/compiler_extccomp.c -o c_code/6_2/compiler_extccomp.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/6_2/compiler_crc.c -o c_code/6_2/compiler_crc.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/6_2/compiler_crc.c -o c_code/6_2/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/6_2/compiler_wordrecg.c -o c_code/6_2/compiler_wordrecg.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/6_2/compiler_wordrecg.c -o c_code/6_2/compiler_wordrecg.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/6_2/compiler_nimblecmd.c -o c_code/6_2/compiler_nimblecmd.o"
@@ -8666,6 +8954,8 @@ c_code/6_1/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/6_2/stdlib_unsigned.c -o c_code/6_2/stdlib_unsigned.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/6_2/compiler_vmdeps.c -o c_code/6_2/compiler_vmdeps.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/6_2/compiler_vmdeps.c -o c_code/6_2/compiler_vmdeps.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/6_2/compiler_vmmarshal.c -o c_code/6_2/compiler_vmmarshal.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/6_2/compiler_vmmarshal.c -o c_code/6_2/compiler_vmmarshal.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/6_2/compiler_evaltempl.c -o c_code/6_2/compiler_evaltempl.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/6_2/compiler_evaltempl.c -o c_code/6_2/compiler_evaltempl.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/6_2/compiler_aliases.c -o c_code/6_2/compiler_aliases.o"
@@ -8676,6 +8966,12 @@ c_code/6_1/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/6_2/compiler_semmacrosanity.c -o c_code/6_2/compiler_semmacrosanity.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/6_2/compiler_semparallel.c -o c_code/6_2/compiler_semparallel.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/6_2/compiler_semparallel.c -o c_code/6_2/compiler_semparallel.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/6_2/compiler_plugins.c -o c_code/6_2/compiler_plugins.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/6_2/compiler_plugins.c -o c_code/6_2/compiler_plugins.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/6_2/compiler_active.c -o c_code/6_2/compiler_active.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/6_2/compiler_active.c -o c_code/6_2/compiler_active.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/6_2/compiler_locals.c -o c_code/6_2/compiler_locals.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/6_2/compiler_locals.c -o c_code/6_2/compiler_locals.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/6_2/compiler_cgen.c -o c_code/6_2/compiler_cgen.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/6_2/compiler_cgen.c -o c_code/6_2/compiler_cgen.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/6_2/compiler_ccgutils.c -o c_code/6_2/compiler_ccgutils.o"
@@ -8725,11 +9021,11 @@ c_code/6_2/stdlib_math.o \
 c_code/6_2/stdlib_tables.o \
 c_code/6_2/compiler_ropes.o \
 c_code/6_2/compiler_platform.o \
-c_code/6_2/compiler_crc.o \
 c_code/6_2/compiler_nversion.o \
 c_code/6_2/compiler_condsyms.o \
 c_code/6_2/compiler_idents.o \
 c_code/6_2/compiler_extccomp.o \
+c_code/6_2/compiler_crc.o \
 c_code/6_2/compiler_wordrecg.o \
 c_code/6_2/compiler_nimblecmd.o \
 c_code/6_2/stdlib_parseopt.o \
@@ -8798,11 +9094,15 @@ c_code/6_2/compiler_vm.o \
 c_code/6_2/compiler_vmgen.o \
 c_code/6_2/stdlib_unsigned.o \
 c_code/6_2/compiler_vmdeps.o \
+c_code/6_2/compiler_vmmarshal.o \
 c_code/6_2/compiler_evaltempl.o \
 c_code/6_2/compiler_aliases.o \
 c_code/6_2/compiler_patterns.o \
 c_code/6_2/compiler_semmacrosanity.o \
 c_code/6_2/compiler_semparallel.o \
+c_code/6_2/compiler_plugins.o \
+c_code/6_2/compiler_active.o \
+c_code/6_2/compiler_locals.o \
 c_code/6_2/compiler_cgen.o \
 c_code/6_2/compiler_ccgutils.o \
 c_code/6_2/compiler_cgendata.o \
@@ -8839,11 +9139,11 @@ c_code/6_2/stdlib_math.o \
 c_code/6_2/stdlib_tables.o \
 c_code/6_2/compiler_ropes.o \
 c_code/6_2/compiler_platform.o \
-c_code/6_2/compiler_crc.o \
 c_code/6_2/compiler_nversion.o \
 c_code/6_2/compiler_condsyms.o \
 c_code/6_2/compiler_idents.o \
 c_code/6_2/compiler_extccomp.o \
+c_code/6_2/compiler_crc.o \
 c_code/6_2/compiler_wordrecg.o \
 c_code/6_2/compiler_nimblecmd.o \
 c_code/6_2/stdlib_parseopt.o \
@@ -8912,11 +9212,15 @@ c_code/6_2/compiler_vm.o \
 c_code/6_2/compiler_vmgen.o \
 c_code/6_2/stdlib_unsigned.o \
 c_code/6_2/compiler_vmdeps.o \
+c_code/6_2/compiler_vmmarshal.o \
 c_code/6_2/compiler_evaltempl.o \
 c_code/6_2/compiler_aliases.o \
 c_code/6_2/compiler_patterns.o \
 c_code/6_2/compiler_semmacrosanity.o \
 c_code/6_2/compiler_semparallel.o \
+c_code/6_2/compiler_plugins.o \
+c_code/6_2/compiler_active.o \
+c_code/6_2/compiler_locals.o \
 c_code/6_2/compiler_cgen.o \
 c_code/6_2/compiler_ccgutils.o \
 c_code/6_2/compiler_cgendata.o \
@@ -9004,8 +9308,6 @@ openbsd)
     $CC $COMP_FLAGS -Ic_code -c c_code/7_1/compiler_ropes.c -o c_code/7_1/compiler_ropes.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/7_1/compiler_platform.c -o c_code/7_1/compiler_platform.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/7_1/compiler_platform.c -o c_code/7_1/compiler_platform.o
-    echo "$CC $COMP_FLAGS -Ic_code -c c_code/7_1/compiler_crc.c -o c_code/7_1/compiler_crc.o"
-    $CC $COMP_FLAGS -Ic_code -c c_code/7_1/compiler_crc.c -o c_code/7_1/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/7_1/compiler_nversion.c -o c_code/7_1/compiler_nversion.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/7_1/compiler_nversion.c -o c_code/7_1/compiler_nversion.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/7_1/compiler_condsyms.c -o c_code/7_1/compiler_condsyms.o"
@@ -9014,6 +9316,8 @@ openbsd)
     $CC $COMP_FLAGS -Ic_code -c c_code/7_1/compiler_idents.c -o c_code/7_1/compiler_idents.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/7_1/compiler_extccomp.c -o c_code/7_1/compiler_extccomp.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/7_1/compiler_extccomp.c -o c_code/7_1/compiler_extccomp.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/7_1/compiler_crc.c -o c_code/7_1/compiler_crc.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/7_1/compiler_crc.c -o c_code/7_1/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/7_1/compiler_wordrecg.c -o c_code/7_1/compiler_wordrecg.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/7_1/compiler_wordrecg.c -o c_code/7_1/compiler_wordrecg.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/7_1/compiler_nimblecmd.c -o c_code/7_1/compiler_nimblecmd.o"
@@ -9150,6 +9454,8 @@ openbsd)
     $CC $COMP_FLAGS -Ic_code -c c_code/7_1/stdlib_unsigned.c -o c_code/7_1/stdlib_unsigned.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/7_1/compiler_vmdeps.c -o c_code/7_1/compiler_vmdeps.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/7_1/compiler_vmdeps.c -o c_code/7_1/compiler_vmdeps.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/7_1/compiler_vmmarshal.c -o c_code/7_1/compiler_vmmarshal.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/7_1/compiler_vmmarshal.c -o c_code/7_1/compiler_vmmarshal.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/7_1/compiler_evaltempl.c -o c_code/7_1/compiler_evaltempl.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/7_1/compiler_evaltempl.c -o c_code/7_1/compiler_evaltempl.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/7_1/compiler_aliases.c -o c_code/7_1/compiler_aliases.o"
@@ -9160,6 +9466,12 @@ openbsd)
     $CC $COMP_FLAGS -Ic_code -c c_code/7_1/compiler_semmacrosanity.c -o c_code/7_1/compiler_semmacrosanity.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/7_1/compiler_semparallel.c -o c_code/7_1/compiler_semparallel.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/7_1/compiler_semparallel.c -o c_code/7_1/compiler_semparallel.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/7_1/compiler_plugins.c -o c_code/7_1/compiler_plugins.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/7_1/compiler_plugins.c -o c_code/7_1/compiler_plugins.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/7_1/compiler_active.c -o c_code/7_1/compiler_active.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/7_1/compiler_active.c -o c_code/7_1/compiler_active.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/7_1/compiler_locals.c -o c_code/7_1/compiler_locals.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/7_1/compiler_locals.c -o c_code/7_1/compiler_locals.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/7_1/compiler_cgen.c -o c_code/7_1/compiler_cgen.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/7_1/compiler_cgen.c -o c_code/7_1/compiler_cgen.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/7_1/compiler_ccgutils.c -o c_code/7_1/compiler_ccgutils.o"
@@ -9209,11 +9521,11 @@ c_code/7_1/stdlib_math.o \
 c_code/7_1/stdlib_tables.o \
 c_code/7_1/compiler_ropes.o \
 c_code/7_1/compiler_platform.o \
-c_code/7_1/compiler_crc.o \
 c_code/7_1/compiler_nversion.o \
 c_code/7_1/compiler_condsyms.o \
 c_code/7_1/compiler_idents.o \
 c_code/7_1/compiler_extccomp.o \
+c_code/7_1/compiler_crc.o \
 c_code/7_1/compiler_wordrecg.o \
 c_code/7_1/compiler_nimblecmd.o \
 c_code/7_1/stdlib_parseopt.o \
@@ -9282,11 +9594,15 @@ c_code/7_1/compiler_vm.o \
 c_code/7_1/compiler_vmgen.o \
 c_code/7_1/stdlib_unsigned.o \
 c_code/7_1/compiler_vmdeps.o \
+c_code/7_1/compiler_vmmarshal.o \
 c_code/7_1/compiler_evaltempl.o \
 c_code/7_1/compiler_aliases.o \
 c_code/7_1/compiler_patterns.o \
 c_code/7_1/compiler_semmacrosanity.o \
 c_code/7_1/compiler_semparallel.o \
+c_code/7_1/compiler_plugins.o \
+c_code/7_1/compiler_active.o \
+c_code/7_1/compiler_locals.o \
 c_code/7_1/compiler_cgen.o \
 c_code/7_1/compiler_ccgutils.o \
 c_code/7_1/compiler_cgendata.o \
@@ -9323,11 +9639,11 @@ c_code/7_1/stdlib_math.o \
 c_code/7_1/stdlib_tables.o \
 c_code/7_1/compiler_ropes.o \
 c_code/7_1/compiler_platform.o \
-c_code/7_1/compiler_crc.o \
 c_code/7_1/compiler_nversion.o \
 c_code/7_1/compiler_condsyms.o \
 c_code/7_1/compiler_idents.o \
 c_code/7_1/compiler_extccomp.o \
+c_code/7_1/compiler_crc.o \
 c_code/7_1/compiler_wordrecg.o \
 c_code/7_1/compiler_nimblecmd.o \
 c_code/7_1/stdlib_parseopt.o \
@@ -9396,11 +9712,15 @@ c_code/7_1/compiler_vm.o \
 c_code/7_1/compiler_vmgen.o \
 c_code/7_1/stdlib_unsigned.o \
 c_code/7_1/compiler_vmdeps.o \
+c_code/7_1/compiler_vmmarshal.o \
 c_code/7_1/compiler_evaltempl.o \
 c_code/7_1/compiler_aliases.o \
 c_code/7_1/compiler_patterns.o \
 c_code/7_1/compiler_semmacrosanity.o \
 c_code/7_1/compiler_semparallel.o \
+c_code/7_1/compiler_plugins.o \
+c_code/7_1/compiler_active.o \
+c_code/7_1/compiler_locals.o \
 c_code/7_1/compiler_cgen.o \
 c_code/7_1/compiler_ccgutils.o \
 c_code/7_1/compiler_cgendata.o \
@@ -9460,8 +9780,6 @@ c_code/7_1/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/7_2/compiler_ropes.c -o c_code/7_2/compiler_ropes.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/7_2/compiler_platform.c -o c_code/7_2/compiler_platform.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/7_2/compiler_platform.c -o c_code/7_2/compiler_platform.o
-    echo "$CC $COMP_FLAGS -Ic_code -c c_code/7_2/compiler_crc.c -o c_code/7_2/compiler_crc.o"
-    $CC $COMP_FLAGS -Ic_code -c c_code/7_2/compiler_crc.c -o c_code/7_2/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/7_2/compiler_nversion.c -o c_code/7_2/compiler_nversion.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/7_2/compiler_nversion.c -o c_code/7_2/compiler_nversion.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/7_2/compiler_condsyms.c -o c_code/7_2/compiler_condsyms.o"
@@ -9470,6 +9788,8 @@ c_code/7_1/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/7_2/compiler_idents.c -o c_code/7_2/compiler_idents.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/7_2/compiler_extccomp.c -o c_code/7_2/compiler_extccomp.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/7_2/compiler_extccomp.c -o c_code/7_2/compiler_extccomp.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/7_2/compiler_crc.c -o c_code/7_2/compiler_crc.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/7_2/compiler_crc.c -o c_code/7_2/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/7_2/compiler_wordrecg.c -o c_code/7_2/compiler_wordrecg.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/7_2/compiler_wordrecg.c -o c_code/7_2/compiler_wordrecg.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/7_2/compiler_nimblecmd.c -o c_code/7_2/compiler_nimblecmd.o"
@@ -9606,6 +9926,8 @@ c_code/7_1/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/7_2/stdlib_unsigned.c -o c_code/7_2/stdlib_unsigned.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/7_2/compiler_vmdeps.c -o c_code/7_2/compiler_vmdeps.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/7_2/compiler_vmdeps.c -o c_code/7_2/compiler_vmdeps.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/7_2/compiler_vmmarshal.c -o c_code/7_2/compiler_vmmarshal.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/7_2/compiler_vmmarshal.c -o c_code/7_2/compiler_vmmarshal.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/7_2/compiler_evaltempl.c -o c_code/7_2/compiler_evaltempl.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/7_2/compiler_evaltempl.c -o c_code/7_2/compiler_evaltempl.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/7_2/compiler_aliases.c -o c_code/7_2/compiler_aliases.o"
@@ -9616,6 +9938,12 @@ c_code/7_1/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/7_2/compiler_semmacrosanity.c -o c_code/7_2/compiler_semmacrosanity.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/7_2/compiler_semparallel.c -o c_code/7_2/compiler_semparallel.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/7_2/compiler_semparallel.c -o c_code/7_2/compiler_semparallel.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/7_2/compiler_plugins.c -o c_code/7_2/compiler_plugins.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/7_2/compiler_plugins.c -o c_code/7_2/compiler_plugins.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/7_2/compiler_active.c -o c_code/7_2/compiler_active.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/7_2/compiler_active.c -o c_code/7_2/compiler_active.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/7_2/compiler_locals.c -o c_code/7_2/compiler_locals.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/7_2/compiler_locals.c -o c_code/7_2/compiler_locals.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/7_2/compiler_cgen.c -o c_code/7_2/compiler_cgen.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/7_2/compiler_cgen.c -o c_code/7_2/compiler_cgen.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/7_2/compiler_ccgutils.c -o c_code/7_2/compiler_ccgutils.o"
@@ -9665,11 +9993,11 @@ c_code/7_2/stdlib_math.o \
 c_code/7_2/stdlib_tables.o \
 c_code/7_2/compiler_ropes.o \
 c_code/7_2/compiler_platform.o \
-c_code/7_2/compiler_crc.o \
 c_code/7_2/compiler_nversion.o \
 c_code/7_2/compiler_condsyms.o \
 c_code/7_2/compiler_idents.o \
 c_code/7_2/compiler_extccomp.o \
+c_code/7_2/compiler_crc.o \
 c_code/7_2/compiler_wordrecg.o \
 c_code/7_2/compiler_nimblecmd.o \
 c_code/7_2/stdlib_parseopt.o \
@@ -9738,11 +10066,15 @@ c_code/7_2/compiler_vm.o \
 c_code/7_2/compiler_vmgen.o \
 c_code/7_2/stdlib_unsigned.o \
 c_code/7_2/compiler_vmdeps.o \
+c_code/7_2/compiler_vmmarshal.o \
 c_code/7_2/compiler_evaltempl.o \
 c_code/7_2/compiler_aliases.o \
 c_code/7_2/compiler_patterns.o \
 c_code/7_2/compiler_semmacrosanity.o \
 c_code/7_2/compiler_semparallel.o \
+c_code/7_2/compiler_plugins.o \
+c_code/7_2/compiler_active.o \
+c_code/7_2/compiler_locals.o \
 c_code/7_2/compiler_cgen.o \
 c_code/7_2/compiler_ccgutils.o \
 c_code/7_2/compiler_cgendata.o \
@@ -9779,11 +10111,11 @@ c_code/7_2/stdlib_math.o \
 c_code/7_2/stdlib_tables.o \
 c_code/7_2/compiler_ropes.o \
 c_code/7_2/compiler_platform.o \
-c_code/7_2/compiler_crc.o \
 c_code/7_2/compiler_nversion.o \
 c_code/7_2/compiler_condsyms.o \
 c_code/7_2/compiler_idents.o \
 c_code/7_2/compiler_extccomp.o \
+c_code/7_2/compiler_crc.o \
 c_code/7_2/compiler_wordrecg.o \
 c_code/7_2/compiler_nimblecmd.o \
 c_code/7_2/stdlib_parseopt.o \
@@ -9852,11 +10184,15 @@ c_code/7_2/compiler_vm.o \
 c_code/7_2/compiler_vmgen.o \
 c_code/7_2/stdlib_unsigned.o \
 c_code/7_2/compiler_vmdeps.o \
+c_code/7_2/compiler_vmmarshal.o \
 c_code/7_2/compiler_evaltempl.o \
 c_code/7_2/compiler_aliases.o \
 c_code/7_2/compiler_patterns.o \
 c_code/7_2/compiler_semmacrosanity.o \
 c_code/7_2/compiler_semparallel.o \
+c_code/7_2/compiler_plugins.o \
+c_code/7_2/compiler_active.o \
+c_code/7_2/compiler_locals.o \
 c_code/7_2/compiler_cgen.o \
 c_code/7_2/compiler_ccgutils.o \
 c_code/7_2/compiler_cgendata.o \
@@ -9944,8 +10280,6 @@ haiku)
     $CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_ropes.c -o c_code/8_1/compiler_ropes.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_platform.c -o c_code/8_1/compiler_platform.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_platform.c -o c_code/8_1/compiler_platform.o
-    echo "$CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_crc.c -o c_code/8_1/compiler_crc.o"
-    $CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_crc.c -o c_code/8_1/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_nversion.c -o c_code/8_1/compiler_nversion.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_nversion.c -o c_code/8_1/compiler_nversion.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_condsyms.c -o c_code/8_1/compiler_condsyms.o"
@@ -9954,6 +10288,8 @@ haiku)
     $CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_idents.c -o c_code/8_1/compiler_idents.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_extccomp.c -o c_code/8_1/compiler_extccomp.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_extccomp.c -o c_code/8_1/compiler_extccomp.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_crc.c -o c_code/8_1/compiler_crc.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_crc.c -o c_code/8_1/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_wordrecg.c -o c_code/8_1/compiler_wordrecg.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_wordrecg.c -o c_code/8_1/compiler_wordrecg.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_nimblecmd.c -o c_code/8_1/compiler_nimblecmd.o"
@@ -10090,6 +10426,8 @@ haiku)
     $CC $COMP_FLAGS -Ic_code -c c_code/8_1/stdlib_unsigned.c -o c_code/8_1/stdlib_unsigned.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_vmdeps.c -o c_code/8_1/compiler_vmdeps.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_vmdeps.c -o c_code/8_1/compiler_vmdeps.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_vmmarshal.c -o c_code/8_1/compiler_vmmarshal.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_vmmarshal.c -o c_code/8_1/compiler_vmmarshal.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_evaltempl.c -o c_code/8_1/compiler_evaltempl.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_evaltempl.c -o c_code/8_1/compiler_evaltempl.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_aliases.c -o c_code/8_1/compiler_aliases.o"
@@ -10100,6 +10438,12 @@ haiku)
     $CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_semmacrosanity.c -o c_code/8_1/compiler_semmacrosanity.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_semparallel.c -o c_code/8_1/compiler_semparallel.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_semparallel.c -o c_code/8_1/compiler_semparallel.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_plugins.c -o c_code/8_1/compiler_plugins.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_plugins.c -o c_code/8_1/compiler_plugins.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_active.c -o c_code/8_1/compiler_active.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_active.c -o c_code/8_1/compiler_active.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_locals.c -o c_code/8_1/compiler_locals.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_locals.c -o c_code/8_1/compiler_locals.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_cgen.c -o c_code/8_1/compiler_cgen.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_cgen.c -o c_code/8_1/compiler_cgen.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_ccgutils.c -o c_code/8_1/compiler_ccgutils.o"
@@ -10149,11 +10493,11 @@ c_code/8_1/stdlib_math.o \
 c_code/8_1/stdlib_tables.o \
 c_code/8_1/compiler_ropes.o \
 c_code/8_1/compiler_platform.o \
-c_code/8_1/compiler_crc.o \
 c_code/8_1/compiler_nversion.o \
 c_code/8_1/compiler_condsyms.o \
 c_code/8_1/compiler_idents.o \
 c_code/8_1/compiler_extccomp.o \
+c_code/8_1/compiler_crc.o \
 c_code/8_1/compiler_wordrecg.o \
 c_code/8_1/compiler_nimblecmd.o \
 c_code/8_1/stdlib_parseopt.o \
@@ -10222,11 +10566,15 @@ c_code/8_1/compiler_vm.o \
 c_code/8_1/compiler_vmgen.o \
 c_code/8_1/stdlib_unsigned.o \
 c_code/8_1/compiler_vmdeps.o \
+c_code/8_1/compiler_vmmarshal.o \
 c_code/8_1/compiler_evaltempl.o \
 c_code/8_1/compiler_aliases.o \
 c_code/8_1/compiler_patterns.o \
 c_code/8_1/compiler_semmacrosanity.o \
 c_code/8_1/compiler_semparallel.o \
+c_code/8_1/compiler_plugins.o \
+c_code/8_1/compiler_active.o \
+c_code/8_1/compiler_locals.o \
 c_code/8_1/compiler_cgen.o \
 c_code/8_1/compiler_ccgutils.o \
 c_code/8_1/compiler_cgendata.o \
@@ -10263,11 +10611,11 @@ c_code/8_1/stdlib_math.o \
 c_code/8_1/stdlib_tables.o \
 c_code/8_1/compiler_ropes.o \
 c_code/8_1/compiler_platform.o \
-c_code/8_1/compiler_crc.o \
 c_code/8_1/compiler_nversion.o \
 c_code/8_1/compiler_condsyms.o \
 c_code/8_1/compiler_idents.o \
 c_code/8_1/compiler_extccomp.o \
+c_code/8_1/compiler_crc.o \
 c_code/8_1/compiler_wordrecg.o \
 c_code/8_1/compiler_nimblecmd.o \
 c_code/8_1/stdlib_parseopt.o \
@@ -10336,11 +10684,15 @@ c_code/8_1/compiler_vm.o \
 c_code/8_1/compiler_vmgen.o \
 c_code/8_1/stdlib_unsigned.o \
 c_code/8_1/compiler_vmdeps.o \
+c_code/8_1/compiler_vmmarshal.o \
 c_code/8_1/compiler_evaltempl.o \
 c_code/8_1/compiler_aliases.o \
 c_code/8_1/compiler_patterns.o \
 c_code/8_1/compiler_semmacrosanity.o \
 c_code/8_1/compiler_semparallel.o \
+c_code/8_1/compiler_plugins.o \
+c_code/8_1/compiler_active.o \
+c_code/8_1/compiler_locals.o \
 c_code/8_1/compiler_cgen.o \
 c_code/8_1/compiler_ccgutils.o \
 c_code/8_1/compiler_cgendata.o \
@@ -10400,8 +10752,6 @@ c_code/8_1/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_ropes.c -o c_code/8_2/compiler_ropes.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_platform.c -o c_code/8_2/compiler_platform.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_platform.c -o c_code/8_2/compiler_platform.o
-    echo "$CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_crc.c -o c_code/8_2/compiler_crc.o"
-    $CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_crc.c -o c_code/8_2/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_nversion.c -o c_code/8_2/compiler_nversion.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_nversion.c -o c_code/8_2/compiler_nversion.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_condsyms.c -o c_code/8_2/compiler_condsyms.o"
@@ -10410,6 +10760,8 @@ c_code/8_1/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_idents.c -o c_code/8_2/compiler_idents.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_extccomp.c -o c_code/8_2/compiler_extccomp.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_extccomp.c -o c_code/8_2/compiler_extccomp.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_crc.c -o c_code/8_2/compiler_crc.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_crc.c -o c_code/8_2/compiler_crc.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_wordrecg.c -o c_code/8_2/compiler_wordrecg.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_wordrecg.c -o c_code/8_2/compiler_wordrecg.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_nimblecmd.c -o c_code/8_2/compiler_nimblecmd.o"
@@ -10546,6 +10898,8 @@ c_code/8_1/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/8_2/stdlib_unsigned.c -o c_code/8_2/stdlib_unsigned.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_vmdeps.c -o c_code/8_2/compiler_vmdeps.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_vmdeps.c -o c_code/8_2/compiler_vmdeps.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_vmmarshal.c -o c_code/8_2/compiler_vmmarshal.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_vmmarshal.c -o c_code/8_2/compiler_vmmarshal.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_evaltempl.c -o c_code/8_2/compiler_evaltempl.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_evaltempl.c -o c_code/8_2/compiler_evaltempl.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_aliases.c -o c_code/8_2/compiler_aliases.o"
@@ -10556,6 +10910,12 @@ c_code/8_1/compiler_nodejs.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_semmacrosanity.c -o c_code/8_2/compiler_semmacrosanity.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_semparallel.c -o c_code/8_2/compiler_semparallel.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_semparallel.c -o c_code/8_2/compiler_semparallel.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_plugins.c -o c_code/8_2/compiler_plugins.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_plugins.c -o c_code/8_2/compiler_plugins.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_active.c -o c_code/8_2/compiler_active.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_active.c -o c_code/8_2/compiler_active.o
+    echo "$CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_locals.c -o c_code/8_2/compiler_locals.o"
+    $CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_locals.c -o c_code/8_2/compiler_locals.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_cgen.c -o c_code/8_2/compiler_cgen.o"
     $CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_cgen.c -o c_code/8_2/compiler_cgen.o
     echo "$CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_ccgutils.c -o c_code/8_2/compiler_ccgutils.o"
@@ -10605,11 +10965,11 @@ c_code/8_2/stdlib_math.o \
 c_code/8_2/stdlib_tables.o \
 c_code/8_2/compiler_ropes.o \
 c_code/8_2/compiler_platform.o \
-c_code/8_2/compiler_crc.o \
 c_code/8_2/compiler_nversion.o \
 c_code/8_2/compiler_condsyms.o \
 c_code/8_2/compiler_idents.o \
 c_code/8_2/compiler_extccomp.o \
+c_code/8_2/compiler_crc.o \
 c_code/8_2/compiler_wordrecg.o \
 c_code/8_2/compiler_nimblecmd.o \
 c_code/8_2/stdlib_parseopt.o \
@@ -10678,11 +11038,15 @@ c_code/8_2/compiler_vm.o \
 c_code/8_2/compiler_vmgen.o \
 c_code/8_2/stdlib_unsigned.o \
 c_code/8_2/compiler_vmdeps.o \
+c_code/8_2/compiler_vmmarshal.o \
 c_code/8_2/compiler_evaltempl.o \
 c_code/8_2/compiler_aliases.o \
 c_code/8_2/compiler_patterns.o \
 c_code/8_2/compiler_semmacrosanity.o \
 c_code/8_2/compiler_semparallel.o \
+c_code/8_2/compiler_plugins.o \
+c_code/8_2/compiler_active.o \
+c_code/8_2/compiler_locals.o \
 c_code/8_2/compiler_cgen.o \
 c_code/8_2/compiler_ccgutils.o \
 c_code/8_2/compiler_cgendata.o \
@@ -10719,11 +11083,11 @@ c_code/8_2/stdlib_math.o \
 c_code/8_2/stdlib_tables.o \
 c_code/8_2/compiler_ropes.o \
 c_code/8_2/compiler_platform.o \
-c_code/8_2/compiler_crc.o \
 c_code/8_2/compiler_nversion.o \
 c_code/8_2/compiler_condsyms.o \
 c_code/8_2/compiler_idents.o \
 c_code/8_2/compiler_extccomp.o \
+c_code/8_2/compiler_crc.o \
 c_code/8_2/compiler_wordrecg.o \
 c_code/8_2/compiler_nimblecmd.o \
 c_code/8_2/stdlib_parseopt.o \
@@ -10792,11 +11156,15 @@ c_code/8_2/compiler_vm.o \
 c_code/8_2/compiler_vmgen.o \
 c_code/8_2/stdlib_unsigned.o \
 c_code/8_2/compiler_vmdeps.o \
+c_code/8_2/compiler_vmmarshal.o \
 c_code/8_2/compiler_evaltempl.o \
 c_code/8_2/compiler_aliases.o \
 c_code/8_2/compiler_patterns.o \
 c_code/8_2/compiler_semmacrosanity.o \
 c_code/8_2/compiler_semparallel.o \
+c_code/8_2/compiler_plugins.o \
+c_code/8_2/compiler_active.o \
+c_code/8_2/compiler_locals.o \
 c_code/8_2/compiler_cgen.o \
 c_code/8_2/compiler_ccgutils.o \
 c_code/8_2/compiler_cgendata.o \

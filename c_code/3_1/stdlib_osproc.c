@@ -23,35 +23,35 @@
 #include <stdlib.h>
 typedef struct NimStringDesc NimStringDesc;
 typedef struct TGenericSeq TGenericSeq;
-typedef struct processobj140402 processobj140402;
-typedef struct stringtableobj131012 stringtableobj131012;
+typedef struct Processobj143402 Processobj143402;
+typedef struct Stringtableobj134012 Stringtableobj134012;
 typedef struct TNimObject TNimObject;
 typedef struct TNimType TNimType;
 typedef struct TNimNode TNimNode;
-typedef struct streamobj135027 streamobj135027;
-typedef struct TY120208 TY120208;
-typedef struct tcell46147 tcell46147;
-typedef struct tcellseq46163 tcellseq46163;
-typedef struct tgcheap48016 tgcheap48016;
-typedef struct tcellset46159 tcellset46159;
-typedef struct tpagedesc46155 tpagedesc46155;
-typedef struct tmemregion28010 tmemregion28010;
-typedef struct tsmallchunk27240 tsmallchunk27240;
-typedef struct tllchunk28004 tllchunk28004;
-typedef struct tbigchunk27242 tbigchunk27242;
-typedef struct tintset27217 tintset27217;
-typedef struct ttrunk27213 ttrunk27213;
-typedef struct tavlnode28008 tavlnode28008;
-typedef struct tgcstat48014 tgcstat48014;
+typedef struct Streamobj138027 Streamobj138027;
+typedef struct TY122208 TY122208;
+typedef struct Tcell46347 Tcell46347;
+typedef struct Tcellseq46363 Tcellseq46363;
+typedef struct Tgcheap48216 Tgcheap48216;
+typedef struct Tcellset46359 Tcellset46359;
+typedef struct Tpagedesc46355 Tpagedesc46355;
+typedef struct Tmemregion28210 Tmemregion28210;
+typedef struct Tsmallchunk27440 Tsmallchunk27440;
+typedef struct Tllchunk28204 Tllchunk28204;
+typedef struct Tbigchunk27442 Tbigchunk27442;
+typedef struct Tintset27417 Tintset27417;
+typedef struct Ttrunk27413 Ttrunk27413;
+typedef struct Tavlnode28208 Tavlnode28208;
+typedef struct Tgcstat48214 Tgcstat48214;
 typedef struct Exception Exception;
 typedef struct TSafePoint TSafePoint;
-typedef struct keyvaluepairseq131010 keyvaluepairseq131010;
-typedef struct keyvaluepair131008 keyvaluepair131008;
-typedef struct tstartprocessdata141948 tstartprocessdata141948;
-typedef struct filestreamobj135692 filestreamobj135692;
-typedef struct TY141201 TY141201;
-typedef struct tbasechunk27238 tbasechunk27238;
-typedef struct tfreecell27230 tfreecell27230;
+typedef struct Keyvaluepairseq134010 Keyvaluepairseq134010;
+typedef struct Keyvaluepair134008 Keyvaluepair134008;
+typedef struct Tstartprocessdata144948 Tstartprocessdata144948;
+typedef struct Filestreamobj138692 Filestreamobj138692;
+typedef struct TY144201 TY144201;
+typedef struct Tbasechunk27438 Tbasechunk27438;
+typedef struct Tfreecell27430 Tfreecell27430;
 struct  TGenericSeq  {
 NI len;
 NI reserved;
@@ -60,8 +60,8 @@ struct  NimStringDesc  {
   TGenericSeq Sup;
 NIM_CHAR data[SEQ_DECL_SIZE];
 };
-typedef NU8 TY194407[32];
-typedef int TY142025[2];
+typedef NU8 TY178407[32];
+typedef int TY145025[2];
 typedef N_NIMCALL_PTR(void, TY3289) (void* p, NI op);
 typedef N_NIMCALL_PTR(void*, TY3294) (void* p);
 struct  TNimType  {
@@ -77,16 +77,16 @@ TY3294 deepcopy;
 struct  TNimObject  {
 TNimType* m_type;
 };
-struct  processobj140402  {
+struct  Processobj143402  {
   TNimObject Sup;
-int Inhandle;
-int Outhandle;
-int Errhandle;
-streamobj135027* Instream;
-streamobj135027* Outstream;
-streamobj135027* Errstream;
-pid_t Id;
-int Exitcode;
+int inhandle;
+int outhandle;
+int errhandle;
+Streamobj138027* instream;
+Streamobj138027* outstream;
+Streamobj138027* errstream;
+pid_t id;
+int exitcode;
 };
 struct  TNimNode  {
 NU8 kind;
@@ -96,64 +96,64 @@ NCSTRING name;
 NI len;
 TNimNode** sons;
 };
-typedef NimStringDesc* TY192063[3];
-struct  tcell46147  {
-NI Refcount;
-TNimType* Typ;
+typedef NimStringDesc* TY176063[3];
+struct  Tcell46347  {
+NI refcount;
+TNimType* typ;
 };
-struct  tcellseq46163  {
-NI Len;
-NI Cap;
-tcell46147** D;
+struct  Tcellseq46363  {
+NI len;
+NI cap;
+Tcell46347** d;
 };
-struct  tcellset46159  {
-NI Counter;
-NI Max;
-tpagedesc46155* Head;
-tpagedesc46155** Data;
+struct  Tcellset46359  {
+NI counter;
+NI max;
+Tpagedesc46355* head;
+Tpagedesc46355** data;
 };
-typedef tsmallchunk27240* TY28022[512];
-typedef ttrunk27213* ttrunkbuckets27215[256];
-struct  tintset27217  {
-ttrunkbuckets27215 Data;
+typedef Tsmallchunk27440* TY28222[512];
+typedef Ttrunk27413* Ttrunkbuckets27415[256];
+struct  Tintset27417  {
+Ttrunkbuckets27415 data;
 };
-struct  tmemregion28010  {
-NI Minlargeobj;
-NI Maxlargeobj;
-TY28022 Freesmallchunks;
-tllchunk28004* Llmem;
-NI Currmem;
-NI Maxmem;
-NI Freemem;
-NI Lastsize;
-tbigchunk27242* Freechunkslist;
-tintset27217 Chunkstarts;
-tavlnode28008* Root;
-tavlnode28008* Deleted;
-tavlnode28008* Last;
-tavlnode28008* Freeavlnodes;
+struct  Tmemregion28210  {
+NI minlargeobj;
+NI maxlargeobj;
+TY28222 freesmallchunks;
+Tllchunk28204* llmem;
+NI currmem;
+NI maxmem;
+NI freemem;
+NI lastsize;
+Tbigchunk27442* freechunkslist;
+Tintset27417 chunkstarts;
+Tavlnode28208* root;
+Tavlnode28208* deleted;
+Tavlnode28208* last;
+Tavlnode28208* freeavlnodes;
 };
-struct  tgcstat48014  {
-NI Stackscans;
-NI Cyclecollections;
-NI Maxthreshold;
-NI Maxstacksize;
-NI Maxstackcells;
-NI Cycletablesize;
-NI64 Maxpause;
+struct  Tgcstat48214  {
+NI stackscans;
+NI cyclecollections;
+NI maxthreshold;
+NI maxstacksize;
+NI maxstackcells;
+NI cycletablesize;
+NI64 maxpause;
 };
-struct  tgcheap48016  {
-void* Stackbottom;
-NI Cyclethreshold;
-tcellseq46163 Zct;
-tcellseq46163 Decstack;
-tcellset46159 Cycleroots;
-tcellseq46163 Tempstack;
-NI Recgclock;
-tmemregion28010 Region;
-tgcstat48014 Stat;
+struct  Tgcheap48216  {
+void* stackbottom;
+NI cyclethreshold;
+Tcellseq46363 zct;
+Tcellseq46363 decstack;
+Tcellset46359 cycleroots;
+Tcellseq46363 tempstack;
+NI recgclock;
+Tmemregion28210 region;
+Tgcstat48214 stat;
 };
-typedef NimStringDesc* TY181780[1];
+typedef NimStringDesc* TY164580[1];
 struct  Exception  {
   TNimObject Sup;
 Exception* parent;
@@ -164,213 +164,213 @@ NimStringDesc* trace;
 typedef struct {
 N_NIMCALL_PTR(NIM_BOOL, ClPrc) (Exception* e, void* ClEnv);
 void* ClEnv;
-} TY15609;
+} TY15809;
 struct  TSafePoint  {
 TSafePoint* prev;
 NI status;
 jmp_buf context;
 NIM_BOOL hasRaiseAction;
-TY15609 raiseAction;
+TY15809 raiseAction;
 };
-struct keyvaluepair131008 {
+struct  Stringtableobj134012  {
+  TNimObject Sup;
+NI counter;
+Keyvaluepairseq134010* data;
+NU8 mode;
+};
+struct Keyvaluepair134008 {
 NimStringDesc* Field0;
 NimStringDesc* Field1;
 };
-struct  stringtableobj131012  {
-  TNimObject Sup;
-NI Counter;
-keyvaluepairseq131010* Data;
-NU8 Mode;
-};
-struct  tstartprocessdata141948  {
-NCSTRING Syscommand;
-NCSTRING* Sysargs;
-NCSTRING* Sysenv;
-NCSTRING Workingdir;
-TY142025 Pstdin;
-TY142025 Pstdout;
-TY142025 Pstderr;
-TY142025 Perrorpipe;
-NIM_BOOL Optionpousepath;
-NIM_BOOL Optionpoparentstreams;
-NIM_BOOL Optionpostderrtostdout;
+struct  Tstartprocessdata144948  {
+NCSTRING syscommand;
+NCSTRING* sysargs;
+NCSTRING* sysenv;
+NCSTRING workingdir;
+TY145025 pstdin;
+TY145025 pstdout;
+TY145025 pstderr;
+TY145025 perrorpipe;
+NIM_BOOL optionpousepath;
+NIM_BOOL optionpoparentstreams;
+NIM_BOOL optionpostderrtostdout;
 };
 typedef struct {
 N_NIMCALL_PTR(void, ClPrc) (NI idx, void* ClEnv);
 void* ClEnv;
-} TY187622;
-typedef N_CLOSURE_PTR(void, TMP4290) (NI idx);
-typedef NimStringDesc* TY234722[1];
-typedef N_CLOSURE_PTR(void, TMP4292) (NI idx);
-typedef N_CLOSURE_PTR(void, TMP4293) (NI idx);
-typedef N_NIMCALL_PTR(void, TY135028) (streamobj135027* s);
-typedef N_NIMCALL_PTR(NIM_BOOL, TY135032) (streamobj135027* s);
-typedef N_NIMCALL_PTR(void, TY135036) (streamobj135027* s, NI pos);
-typedef N_NIMCALL_PTR(NI, TY135041) (streamobj135027* s);
-typedef N_NIMCALL_PTR(NI, TY135045) (streamobj135027* s, void* buffer, NI buflen);
-typedef N_NIMCALL_PTR(void, TY135051) (streamobj135027* s, void* buffer, NI buflen);
-typedef N_NIMCALL_PTR(void, TY135057) (streamobj135027* s);
-struct  streamobj135027  {
+} TY171656;
+typedef N_CLOSURE_PTR(void, TMP4337) (NI idx);
+typedef NimStringDesc* TY219714[1];
+typedef N_CLOSURE_PTR(void, TMP4339) (NI idx);
+typedef N_CLOSURE_PTR(void, TMP4340) (NI idx);
+typedef N_NIMCALL_PTR(void, TY138028) (Streamobj138027* s);
+typedef N_NIMCALL_PTR(NIM_BOOL, TY138032) (Streamobj138027* s);
+typedef N_NIMCALL_PTR(void, TY138036) (Streamobj138027* s, NI pos);
+typedef N_NIMCALL_PTR(NI, TY138041) (Streamobj138027* s);
+typedef N_NIMCALL_PTR(NI, TY138045) (Streamobj138027* s, void* buffer, NI buflen);
+typedef N_NIMCALL_PTR(void, TY138051) (Streamobj138027* s, void* buffer, NI buflen);
+typedef N_NIMCALL_PTR(void, TY138057) (Streamobj138027* s);
+struct  Streamobj138027  {
   TNimObject Sup;
-TY135028 Closeimpl;
-TY135032 Atendimpl;
-TY135036 Setpositionimpl;
-TY135041 Getpositionimpl;
-TY135045 Readdataimpl;
-TY135051 Writedataimpl;
-TY135057 Flushimpl;
+TY138028 closeimpl;
+TY138032 atendimpl;
+TY138036 setpositionimpl;
+TY138041 getpositionimpl;
+TY138045 readdataimpl;
+TY138051 writedataimpl;
+TY138057 flushimpl;
 };
-typedef NI TY27220[16];
-struct  tpagedesc46155  {
-tpagedesc46155* Next;
-NI Key;
-TY27220 Bits;
+typedef NI TY27420[16];
+struct  Tpagedesc46355  {
+Tpagedesc46355* next;
+NI key;
+TY27420 bits;
 };
-struct  tbasechunk27238  {
-NI Prevsize;
-NI Size;
-NIM_BOOL Used;
+struct  Tbasechunk27438  {
+NI prevsize;
+NI size;
+NIM_BOOL used;
 };
-struct  tsmallchunk27240  {
-  tbasechunk27238 Sup;
-tsmallchunk27240* Next;
-tsmallchunk27240* Prev;
-tfreecell27230* Freelist;
-NI Free;
-NI Acc;
-NF Data;
+struct  Tsmallchunk27440  {
+  Tbasechunk27438 Sup;
+Tsmallchunk27440* next;
+Tsmallchunk27440* prev;
+Tfreecell27430* freelist;
+NI free;
+NI acc;
+NF data;
 };
-struct  tllchunk28004  {
-NI Size;
-NI Acc;
-tllchunk28004* Next;
+struct  Tllchunk28204  {
+NI size;
+NI acc;
+Tllchunk28204* next;
 };
-struct  tbigchunk27242  {
-  tbasechunk27238 Sup;
-tbigchunk27242* Next;
-tbigchunk27242* Prev;
-NI Align;
-NF Data;
+struct  Tbigchunk27442  {
+  Tbasechunk27438 Sup;
+Tbigchunk27442* next;
+Tbigchunk27442* prev;
+NI align;
+NF data;
 };
-struct  ttrunk27213  {
-ttrunk27213* Next;
-NI Key;
-TY27220 Bits;
+struct  Ttrunk27413  {
+Ttrunk27413* next;
+NI key;
+TY27420 bits;
 };
-typedef tavlnode28008* TY28014[2];
-struct  tavlnode28008  {
-TY28014 Link;
-NI Key;
-NI Upperbound;
-NI Level;
+typedef Tavlnode28208* TY28214[2];
+struct  Tavlnode28208  {
+TY28214 link;
+NI key;
+NI upperbound;
+NI level;
 };
-struct  filestreamobj135692  {
-  streamobj135027 Sup;
-FILE* F;
+struct  Filestreamobj138692  {
+  Streamobj138027 Sup;
+FILE* f;
 };
-struct  tfreecell27230  {
-tfreecell27230* Next;
-NI Zerofield;
+struct  Tfreecell27430  {
+Tfreecell27430* next;
+NI zerofield;
 };
-struct TY120208 {
+struct TY122208 {
   TGenericSeq Sup;
   NimStringDesc* data[SEQ_DECL_SIZE];
 };
-struct keyvaluepairseq131010 {
+struct TY144201 {
   TGenericSeq Sup;
-  keyvaluepair131008 data[SEQ_DECL_SIZE];
+  Processobj143402* data[SEQ_DECL_SIZE];
 };
-struct TY141201 {
+struct Keyvaluepairseq134010 {
   TGenericSeq Sup;
-  processobj140402* data[SEQ_DECL_SIZE];
+  Keyvaluepair134008 data[SEQ_DECL_SIZE];
 };
 N_NIMCALL(NimStringDesc*, nospquoteShellPosix)(NimStringDesc* s);
 N_NIMCALL(NimStringDesc*, copyString)(NimStringDesc* src);
-N_NIMCALL(NIM_BOOL, allcharsinset_97127)(NimStringDesc* s, TY194407 theset);
+N_NIMCALL(NIM_BOOL, allcharsinset_98459)(NimStringDesc* s, TY178407 theset);
 static N_INLINE(void, appendString)(NimStringDesc* dest, NimStringDesc* src);
 N_NIMCALL(NimStringDesc*, nsuReplaceStr)(NimStringDesc* s, NimStringDesc* sub, NimStringDesc* by);
 N_NIMCALL(NimStringDesc*, rawNewString)(NI space);
 N_NIMCALL(void, nimGCvisit)(void* d, NI op);
-N_NIMCALL(void, TMP2943)(void* p, NI op);
+N_NIMCALL(void, TMP2886)(void* p, NI op);
 N_NIMCALL(void*, newObj)(TNimType* typ, NI size);
-N_NIMCALL(void, raiseoserror_115009)(NI32 errorcode);
-N_NIMCALL(NI32, oslasterror_115033)(void);
+N_NIMCALL(void, raiseoserror_117009)(NI32 errorcode);
+N_NIMCALL(NI32, oslasterror_117033)(void);
 N_NIMCALL(void*, newSeq)(TNimType* typ, NI len);
 N_NIMCALL(NimStringDesc*, copyStringRC1)(NimStringDesc* src);
 static N_INLINE(void, nimGCunrefNoCycle)(void* p);
-static N_INLINE(tcell46147*, usrtocell_49646)(void* usr);
-static N_INLINE(void, rtladdzct_51204)(tcell46147* c);
-N_NOINLINE(void, addzct_49617)(tcellseq46163* s, tcell46147* c);
+static N_INLINE(Tcell46347*, usrtocell_49846)(void* usr);
+static N_INLINE(void, rtladdzct_51404)(Tcell46347* c);
+N_NOINLINE(void, addzct_49817)(Tcellseq46363* s, Tcell46347* c);
 N_NIMCALL(TGenericSeq*, incrSeq)(TGenericSeq* seq, NI elemsize);
 N_NIMCALL(NCSTRING*, alloccstringarray_14201)(NimStringDesc** a, NI aLen0);
 static N_INLINE(void, pushSafePoint)(TSafePoint* s);
-N_NIMCALL(NCSTRING*, envtocstringarray_141854)(void);
-N_NIMCALL(void, getenvvarsc_120404)(void);
+N_NIMCALL(NCSTRING*, envtocstringarray_144854)(void);
+N_NIMCALL(void, getenvvarsc_122404)(void);
 N_NIMCALL(NI, nsuFindChar)(NimStringDesc* s, NIM_CHAR sub, NI start);
-N_NIMCALL(NimStringDesc*, copyStrLast)(NimStringDesc* s, NI start_76043, NI last);
+N_NIMCALL(NimStringDesc*, copyStrLast)(NimStringDesc* s, NI start_76243, NI last);
 N_NIMCALL(NimStringDesc*, copyStrLast)(NimStringDesc* s, NI first, NI last);
 N_NIMCALL(NimStringDesc*, copyStr)(NimStringDesc* s, NI start);
 N_NIMCALL(NimStringDesc*, copyStr)(NimStringDesc* s, NI first);
 N_NOCONV(void*, alloc0_6017)(NI size);
 N_NOCONV(void*, alloc_6001)(NI size);
-N_NIMCALL(NCSTRING*, envtocstringarray_141806)(stringtableobj131012* t);
-N_NIMCALL(NI, nstlen)(stringtableobj131012* t);
-N_NIMCALL(pid_t, startprocessauxspawn_142001)(tstartprocessdata141948* data);
-static N_INLINE(void, setcurrentdir_117207)(NimStringDesc* newdir);
+N_NIMCALL(NCSTRING*, envtocstringarray_144806)(Stringtableobj134012* t);
+N_NIMCALL(NI, nstlen)(Stringtableobj134012* t);
+N_NIMCALL(pid_t, startprocessauxspawn_145001)(Tstartprocessdata144948* data);
+static N_INLINE(void, setcurrentdir_119207)(NimStringDesc* newdir);
 N_NIMCALL(NimStringDesc*, cstrToNimstr)(NCSTRING str);
 N_NIMCALL(NimStringDesc*, nsuJoinSep)(NimStringDesc** a, NI aLen0, NimStringDesc* sep);
 static N_INLINE(void, popSafePoint)(void);
-N_NIMCALL(void, dealloccstringarray_14255)(NCSTRING* a);
+N_NIMCALL(void, dealloccstringarray_14450)(NCSTRING* a);
 N_NIMCALL(void, reraiseException)(void);
-N_NIMCALL(void, createstream_143441)(streamobj135027** stream, int* handle, NU8 filemode);
+N_NIMCALL(void, createstream_146441)(Streamobj138027** stream, int* handle, NU8 filemode);
 N_NIMCALL(NIM_BOOL, open_13411)(FILE** f, int filehandle, NU8 mode);
-N_NIMCALL(filestreamobj135692*, newfilestream_135758)(FILE* f);
+N_NIMCALL(Filestreamobj138692*, newfilestream_138758)(FILE* f);
 N_NIMCALL(void, unsureAsgnRef)(void** dest, void* src);
 N_NIMCALL(NI, ncpicountProcessors)(void);
-N_NIMCALL(void, TMP4288)(void* p, NI op);
-N_NIMCALL(processobj140402*, nospstartProcess)(NimStringDesc* command, NimStringDesc* workingdir, NimStringDesc** args, NI argsLen0, stringtableobj131012* env, NU8 options);
+N_NIMCALL(void, TMP4335)(void* p, NI op);
+N_NIMCALL(Processobj143402*, nospstartProcess)(NimStringDesc* command, NimStringDesc* workingdir, NimStringDesc** args, NI argsLen0, Stringtableobj134012* env, NU8 options);
 static N_INLINE(void, asgnRef)(void** dest, void* src);
-static N_INLINE(void, incref_52022)(tcell46147* c);
-static N_INLINE(NIM_BOOL, canbecycleroot_49667)(tcell46147* c);
-static N_INLINE(void, rtladdcycleroot_50423)(tcell46147* c);
-N_NOINLINE(void, incl_46867)(tcellset46159* s, tcell46147* cell);
-static N_INLINE(void, decref_51604)(tcell46147* c);
+static N_INLINE(void, incref_52222)(Tcell46347* c);
+static N_INLINE(NIM_BOOL, canbecycleroot_49867)(Tcell46347* c);
+static N_INLINE(void, rtladdcycleroot_50623)(Tcell46347* c);
+N_NOINLINE(void, incl_47065)(Tcellset46359* s, Tcell46347* cell);
+static N_INLINE(void, decref_51804)(Tcell46347* c);
 N_NIMCALL(void, nossleep)(NI milsecs);
-N_NIMCALL(NIM_BOOL, nosprunning)(processobj140402* p);
-N_NIMCALL(NI, nospwaitForExit)(processobj140402* p, NI timeout);
-N_NIMCALL(void, nospclose)(processobj140402* p);
-N_NIMCALL(void, close_135085)(streamobj135027* s);
-STRING_LITERAL(TMP1809, "\'\'", 2);
-static NIM_CONST TY194407 TMP1810 = {
+N_NIMCALL(NIM_BOOL, nosprunning)(Processobj143402* p);
+N_NIMCALL(NI, nospwaitForExit)(Processobj143402* p, NI timeout);
+N_NIMCALL(void, nospclose)(Processobj143402* p);
+N_NIMCALL(void, close_138085)(Streamobj138027* s);
+STRING_LITERAL(TMP1764, "\'\'", 2);
+static NIM_CONST TY178407 TMP1765 = {
 0x00, 0x00, 0x00, 0x00, 0x20, 0xE8, 0xFF, 0x27,
 0xFF, 0xFF, 0xFF, 0x87, 0xFE, 0xFF, 0xFF, 0x07,
 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}
 ;
-STRING_LITERAL(TMP1811, "\'", 1);
-STRING_LITERAL(TMP1812, "\'\"\'\"\'", 5);
-STRING_LITERAL(TMP2944, "/bin/sh", 7);
-STRING_LITERAL(TMP2945, "-c", 2);
-STRING_LITERAL(TMP2947, "=", 1);
-STRING_LITERAL(TMP2949, " ", 1);
-static NIM_CONST TY187622 TMP4289 = {NIM_NIL,NIM_NIL};
-STRING_LITERAL(TMP4291, "", 0);
+STRING_LITERAL(TMP1766, "\'", 1);
+STRING_LITERAL(TMP1767, "\'\"\'\"\'", 5);
+STRING_LITERAL(TMP2887, "/bin/sh", 7);
+STRING_LITERAL(TMP2888, "-c", 2);
+STRING_LITERAL(TMP2890, "=", 1);
+STRING_LITERAL(TMP2892, " ", 1);
+static NIM_CONST TY171656 TMP4336 = {NIM_NIL,NIM_NIL};
+STRING_LITERAL(TMP4338, "", 0);
 extern NCSTRING* environ;
 extern TNimType NTI3411; /* RootObj */
-TNimType NTI140402; /* ProcessObj */
+TNimType NTI143402; /* ProcessObj */
 extern TNimType NTI13208; /* FileHandle */
-extern TNimType NTI135025; /* Stream */
-extern TNimType NTI105285; /* TPid */
+extern TNimType NTI138025; /* Stream */
+extern TNimType NTI107285; /* TPid */
 extern TNimType NTI5811; /* cint */
-TNimType NTI140404; /* Process */
-extern TNimType NTI120208; /* seq[string] */
-extern tgcheap48016 gch_48044;
-extern TSafePoint* exchandler_17043;
-extern TY120208* environment_120209;
-TNimType NTI141201; /* seq[Process] */
+TNimType NTI143404; /* Process */
+extern TNimType NTI122208; /* seq[string] */
+extern Tgcheap48216 gch_48244;
+extern TSafePoint* exchandler_17243;
+extern TY122208* environment_122209;
+TNimType NTI144201; /* seq[Process] */
 
 static N_INLINE(void, appendString)(NimStringDesc* dest, NimStringDesc* src) {
-	memcpy(((NCSTRING) ((&(*dest).data[((*dest).Sup.len)- 0]))), ((NCSTRING) ((*src).data)), (NI32)((*src).Sup.len + ((NI) 1)));
+	memcpy(((NCSTRING) ((&(*dest).data[((*dest).Sup.len)- 0]))), ((NCSTRING) ((*src).data)), (NI)((*src).Sup.len + ((NI) 1)));
 	(*dest).Sup.len += (*src).Sup.len;
 }
 
@@ -379,12 +379,12 @@ N_NIMCALL(NimStringDesc*, nospquoteShellPosix)(NimStringDesc* s) {
 	NIM_BOOL safe;
 {	result = 0;
 	{
-		if (!(s->Sup.len == ((NI) 0))) goto LA3;
-		result = copyString(((NimStringDesc*) &TMP1809));
+		if (!((s ? s->Sup.len : 0) == ((NI) 0))) goto LA3;
+		result = copyString(((NimStringDesc*) &TMP1764));
 		goto BeforeRet;
 	}
 	LA3: ;
-	safe = allcharsinset_97127(s, TMP1810);
+	safe = allcharsinset_98459(s, TMP1765);
 	{
 		if (!safe) goto LA7;
 		result = copyString(s);
@@ -397,11 +397,11 @@ N_NIMCALL(NimStringDesc*, nospquoteShellPosix)(NimStringDesc* s) {
 		NimStringDesc* LOC11;
 		LOC10 = 0;
 		LOC11 = 0;
-		LOC11 = nsuReplaceStr(s, ((NimStringDesc*) &TMP1811), ((NimStringDesc*) &TMP1812));
+		LOC11 = nsuReplaceStr(s, ((NimStringDesc*) &TMP1766), ((NimStringDesc*) &TMP1767));
 		LOC10 = rawNewString(LOC11->Sup.len + 2);
-appendString(LOC10, ((NimStringDesc*) &TMP1811));
+appendString(LOC10, ((NimStringDesc*) &TMP1766));
 appendString(LOC10, LOC11);
-appendString(LOC10, ((NimStringDesc*) &TMP1811));
+appendString(LOC10, ((NimStringDesc*) &TMP1766));
 		result = LOC10;
 		goto BeforeRet;
 	}
@@ -418,43 +418,43 @@ N_NIMCALL(NimStringDesc*, nospquoteShell)(NimStringDesc* s) {
 	}BeforeRet: ;
 	return result;
 }
-N_NIMCALL(void, TMP2943)(void* p, NI op) {
-	processobj140402* a;
-	a = (processobj140402*)p;
-	nimGCvisit((void*)(*a).Instream, op);
-	nimGCvisit((void*)(*a).Outstream, op);
-	nimGCvisit((void*)(*a).Errstream, op);
+N_NIMCALL(void, TMP2886)(void* p, NI op) {
+	Processobj143402* a;
+	a = (Processobj143402*)p;
+	nimGCvisit((void*)(*a).instream, op);
+	nimGCvisit((void*)(*a).outstream, op);
+	nimGCvisit((void*)(*a).errstream, op);
 }
 
-static N_INLINE(tcell46147*, usrtocell_49646)(void* usr) {
-	tcell46147* result;
+static N_INLINE(Tcell46347*, usrtocell_49846)(void* usr) {
+	Tcell46347* result;
 	result = 0;
-	result = ((tcell46147*) ((NI)((NU32)(((NI) (usr))) - (NU32)(((NI)sizeof(tcell46147))))));
+	result = ((Tcell46347*) ((NI)((NU32)(((NI) (usr))) - (NU32)(((NI)sizeof(Tcell46347))))));
 	return result;
 }
 
-static N_INLINE(void, rtladdzct_51204)(tcell46147* c) {
-	addzct_49617((&gch_48044.Zct), c);
+static N_INLINE(void, rtladdzct_51404)(Tcell46347* c) {
+	addzct_49817((&gch_48244.zct), c);
 }
 
 static N_INLINE(void, nimGCunrefNoCycle)(void* p) {
-	tcell46147* c;
-	c = usrtocell_49646(p);
+	Tcell46347* c;
+	c = usrtocell_49846(p);
 	{
-		(*c).Refcount -= ((NI) 8);
-		if (!((NU32)((*c).Refcount) < (NU32)(((NI) 8)))) goto LA3;
-		rtladdzct_51204(c);
+		(*c).refcount -= ((NI) 8);
+		if (!((NU32)((*c).refcount) < (NU32)(((NI) 8)))) goto LA3;
+		rtladdzct_51404(c);
 	}
 	LA3: ;
 }
 
 static N_INLINE(void, pushSafePoint)(TSafePoint* s) {
 	(*s).hasRaiseAction = NIM_FALSE;
-	(*s).prev = exchandler_17043;
-	exchandler_17043 = s;
+	(*s).prev = exchandler_17243;
+	exchandler_17243 = s;
 }
 
-N_NIMCALL(NCSTRING*, envtocstringarray_141854)(void) {
+N_NIMCALL(NCSTRING*, envtocstringarray_144854)(void) {
 	NCSTRING* result;
 	NI counter;
 	void* LOC5;
@@ -462,74 +462,74 @@ N_NIMCALL(NCSTRING*, envtocstringarray_141854)(void) {
 	result = 0;
 	counter = ((NI) 0);
 	{
-		NimStringDesc* key_141858;
-		NimStringDesc* val_141859;
-		key_141858 = 0;
-		val_141859 = 0;
-		getenvvarsc_120404();
+		NimStringDesc* key_144858;
+		NimStringDesc* val_144859;
+		key_144858 = 0;
+		val_144859 = 0;
+		getenvvarsc_122404();
 		{
-			NI i_141888;
-			NI HEX3Atmp_141890;
-			NI res_141892;
-			i_141888 = 0;
-			HEX3Atmp_141890 = 0;
-			HEX3Atmp_141890 = (environment_120209->Sup.len-1);
-			res_141892 = ((NI) 0);
+			NI i_144888;
+			NI HEX3Atmp_144890;
+			NI res_144892;
+			i_144888 = 0;
+			HEX3Atmp_144890 = 0;
+			HEX3Atmp_144890 = (environment_122209 ? (environment_122209->Sup.len-1) : -1);
+			res_144892 = ((NI) 0);
 			{
 				while (1) {
-					NI p_141896;
-					if (!(res_141892 <= HEX3Atmp_141890)) goto LA4;
-					i_141888 = res_141892;
-					p_141896 = nsuFindChar(environment_120209->data[i_141888], 61, ((NI) 0));
-					key_141858 = copyStrLast(environment_120209->data[i_141888], ((NI) 0), (NI32)(p_141896 - ((NI) 1)));
-					val_141859 = copyStr(environment_120209->data[i_141888], (NI32)(p_141896 + ((NI) 1)));
+					NI p_144896;
+					if (!(res_144892 <= HEX3Atmp_144890)) goto LA4;
+					i_144888 = res_144892;
+					p_144896 = nsuFindChar(environment_122209->data[i_144888], 61, ((NI) 0));
+					key_144858 = copyStrLast(environment_122209->data[i_144888], ((NI) 0), (NI)(p_144896 - ((NI) 1)));
+					val_144859 = copyStr(environment_122209->data[i_144888], (NI)(p_144896 + ((NI) 1)));
 					counter += ((NI) 1);
-					res_141892 += ((NI) 1);
+					res_144892 += ((NI) 1);
 				} LA4: ;
 			}
 		}
 	}
 	LOC5 = 0;
-	LOC5 = alloc0_6017((NI32)((NI32)(counter + ((NI) 1)) * ((NI) 4)));
+	LOC5 = alloc0_6017(((NI) ((NI)((NI)(counter + ((NI) 1)) * ((NI) 4)))));
 	result = ((NCSTRING*) (LOC5));
 	i = ((NI) 0);
 	{
-		NimStringDesc* key_141871;
-		NimStringDesc* val_141872;
-		key_141871 = 0;
-		val_141872 = 0;
-		getenvvarsc_120404();
+		NimStringDesc* key_144871;
+		NimStringDesc* val_144872;
+		key_144871 = 0;
+		val_144872 = 0;
+		getenvvarsc_122404();
 		{
-			NI i_141909;
-			NI HEX3Atmp_141911;
-			NI res_141913;
-			i_141909 = 0;
-			HEX3Atmp_141911 = 0;
-			HEX3Atmp_141911 = (environment_120209->Sup.len-1);
-			res_141913 = ((NI) 0);
+			NI i_144909;
+			NI HEX3Atmp_144911;
+			NI res_144913;
+			i_144909 = 0;
+			HEX3Atmp_144911 = 0;
+			HEX3Atmp_144911 = (environment_122209 ? (environment_122209->Sup.len-1) : -1);
+			res_144913 = ((NI) 0);
 			{
 				while (1) {
-					NI p_141917;
+					NI p_144917;
 					NimStringDesc* x;
 					NimStringDesc* LOC10;
 					void* LOC11;
-					if (!(res_141913 <= HEX3Atmp_141911)) goto LA9;
-					i_141909 = res_141913;
-					p_141917 = nsuFindChar(environment_120209->data[i_141909], 61, ((NI) 0));
-					key_141871 = copyStrLast(environment_120209->data[i_141909], ((NI) 0), (NI32)(p_141917 - ((NI) 1)));
-					val_141872 = copyStr(environment_120209->data[i_141909], (NI32)(p_141917 + ((NI) 1)));
+					if (!(res_144913 <= HEX3Atmp_144911)) goto LA9;
+					i_144909 = res_144913;
+					p_144917 = nsuFindChar(environment_122209->data[i_144909], 61, ((NI) 0));
+					key_144871 = copyStrLast(environment_122209->data[i_144909], ((NI) 0), (NI)(p_144917 - ((NI) 1)));
+					val_144872 = copyStr(environment_122209->data[i_144909], (NI)(p_144917 + ((NI) 1)));
 					LOC10 = 0;
-					LOC10 = rawNewString(key_141871->Sup.len + val_141872->Sup.len + 1);
-appendString(LOC10, key_141871);
-appendString(LOC10, ((NimStringDesc*) &TMP2947));
-appendString(LOC10, val_141872);
+					LOC10 = rawNewString(key_144871->Sup.len + val_144872->Sup.len + 1);
+appendString(LOC10, key_144871);
+appendString(LOC10, ((NimStringDesc*) &TMP2890));
+appendString(LOC10, val_144872);
 					x = LOC10;
 					LOC11 = 0;
-					LOC11 = alloc_6001((NI32)(x->Sup.len + ((NI) 1)));
+					LOC11 = alloc_6001(((NI) ((NI)((x ? x->Sup.len : 0) + ((NI) 1)))));
 					result[(i)- 0] = ((NCSTRING) (LOC11));
-					memcpy(((void*) (result[(i)- 0])), ((void*) ((&x->data[((NI) 0)]))), (NI32)(x->Sup.len + ((NI) 1)));
+					memcpy(((void*) (result[(i)- 0])), ((void*) ((&x->data[((NI) 0)]))), ((NI) ((NI)((x ? x->Sup.len : 0) + ((NI) 1)))));
 					i += ((NI) 1);
-					res_141913 += ((NI) 1);
+					res_144913 += ((NI) 1);
 				} LA9: ;
 			}
 		}
@@ -537,7 +537,7 @@ appendString(LOC10, val_141872);
 	return result;
 }
 
-N_NIMCALL(NCSTRING*, envtocstringarray_141806)(stringtableobj131012* t) {
+N_NIMCALL(NCSTRING*, envtocstringarray_144806)(Stringtableobj134012* t) {
 	NCSTRING* result;
 	NI LOC1;
 	void* LOC2;
@@ -546,47 +546,47 @@ N_NIMCALL(NCSTRING*, envtocstringarray_141806)(stringtableobj131012* t) {
 	LOC1 = 0;
 	LOC1 = nstlen(t);
 	LOC2 = 0;
-	LOC2 = alloc0_6017((NI32)((NI32)(LOC1 + ((NI) 1)) * ((NI) 4)));
+	LOC2 = alloc0_6017(((NI) ((NI)((NI)(LOC1 + ((NI) 1)) * ((NI) 4)))));
 	result = ((NCSTRING*) (LOC2));
 	i = ((NI) 0);
 	{
-		NimStringDesc* key_141812;
-		NimStringDesc* val_141813;
-		key_141812 = 0;
-		val_141813 = 0;
+		NimStringDesc* key_144812;
+		NimStringDesc* val_144813;
+		key_144812 = 0;
+		val_144813 = 0;
 		{
-			NI h_141832;
-			NI HEX3Atmp_141834;
-			NI res_141836;
-			h_141832 = 0;
-			HEX3Atmp_141834 = 0;
-			HEX3Atmp_141834 = ((*t).Data->Sup.len-1);
-			res_141836 = ((NI) 0);
+			NI h_144832;
+			NI HEX3Atmp_144834;
+			NI res_144836;
+			h_144832 = 0;
+			HEX3Atmp_144834 = 0;
+			HEX3Atmp_144834 = ((*t).data ? ((*t).data->Sup.len-1) : -1);
+			res_144836 = ((NI) 0);
 			{
 				while (1) {
-					if (!(res_141836 <= HEX3Atmp_141834)) goto LA6;
-					h_141832 = res_141836;
+					if (!(res_144836 <= HEX3Atmp_144834)) goto LA6;
+					h_144832 = res_144836;
 					{
 						NimStringDesc* x;
 						NimStringDesc* LOC11;
 						void* LOC12;
-						if (!!((*t).Data->data[h_141832].Field0 == 0)) goto LA9;
-						key_141812 = (*t).Data->data[h_141832].Field0;
-						val_141813 = (*t).Data->data[h_141832].Field1;
+						if (!!((*t).data->data[h_144832].Field0 == 0)) goto LA9;
+						key_144812 = (*t).data->data[h_144832].Field0;
+						val_144813 = (*t).data->data[h_144832].Field1;
 						LOC11 = 0;
-						LOC11 = rawNewString(key_141812->Sup.len + val_141813->Sup.len + 1);
-appendString(LOC11, key_141812);
-appendString(LOC11, ((NimStringDesc*) &TMP2947));
-appendString(LOC11, val_141813);
+						LOC11 = rawNewString(key_144812->Sup.len + val_144813->Sup.len + 1);
+appendString(LOC11, key_144812);
+appendString(LOC11, ((NimStringDesc*) &TMP2890));
+appendString(LOC11, val_144813);
 						x = LOC11;
 						LOC12 = 0;
-						LOC12 = alloc_6001((NI32)(x->Sup.len + ((NI) 1)));
+						LOC12 = alloc_6001(((NI) ((NI)((x ? x->Sup.len : 0) + ((NI) 1)))));
 						result[(i)- 0] = ((NCSTRING) (LOC12));
-						memcpy(((void*) (result[(i)- 0])), ((void*) ((&x->data[((NI) 0)]))), (NI32)(x->Sup.len + ((NI) 1)));
+						memcpy(((void*) (result[(i)- 0])), ((void*) ((&x->data[((NI) 0)]))), ((NI) ((NI)((x ? x->Sup.len : 0) + ((NI) 1)))));
 						i += ((NI) 1);
 					}
 					LA9: ;
-					res_141836 += ((NI) 1);
+					res_144836 += ((NI) 1);
 				} LA6: ;
 			}
 		}
@@ -594,7 +594,7 @@ appendString(LOC11, val_141813);
 	return result;
 }
 
-static N_INLINE(void, setcurrentdir_117207)(NimStringDesc* newdir) {
+static N_INLINE(void, setcurrentdir_119207)(NimStringDesc* newdir) {
 	{
 		int LOC3;
 		NI32 LOC6;
@@ -602,13 +602,13 @@ static N_INLINE(void, setcurrentdir_117207)(NimStringDesc* newdir) {
 		LOC3 = chdir(newdir->data);
 		if (!!((LOC3 == ((NI32) 0)))) goto LA4;
 		LOC6 = 0;
-		LOC6 = oslasterror_115033();
-		raiseoserror_115009(LOC6);
+		LOC6 = oslasterror_117033();
+		raiseoserror_117009(LOC6);
 	}
 	LA4: ;
 }
 
-N_NIMCALL(pid_t, startprocessauxspawn_142001)(tstartprocessdata141948* data) {
+N_NIMCALL(pid_t, startprocessauxspawn_145001)(Tstartprocessdata144948* data) {
 	pid_t result;
 	posix_spawnattr_t attr;
 	posix_spawn_file_actions_t fops;
@@ -627,8 +627,8 @@ N_NIMCALL(pid_t, startprocessauxspawn_142001)(tstartprocessdata141948* data) {
 		LOC3 = posix_spawn_file_actions_init((&fops));
 		if (!!((LOC3 == ((NI32) 0)))) goto LA4;
 		LOC6 = 0;
-		LOC6 = oslasterror_115033();
-		raiseoserror_115009(LOC6);
+		LOC6 = oslasterror_117033();
+		raiseoserror_117009(LOC6);
 	}
 	LA4: ;
 	{
@@ -638,8 +638,8 @@ N_NIMCALL(pid_t, startprocessauxspawn_142001)(tstartprocessdata141948* data) {
 		LOC9 = posix_spawnattr_init((&attr));
 		if (!!((LOC9 == ((NI32) 0)))) goto LA10;
 		LOC12 = 0;
-		LOC12 = oslasterror_115033();
-		raiseoserror_115009(LOC12);
+		LOC12 = oslasterror_117033();
+		raiseoserror_117009(LOC12);
 	}
 	LA10: ;
 	memset((void*)(&mask), 0, sizeof(mask));
@@ -650,8 +650,8 @@ N_NIMCALL(pid_t, startprocessauxspawn_142001)(tstartprocessdata141948* data) {
 		LOC15 = sigemptyset((&mask));
 		if (!!((LOC15 == ((NI32) 0)))) goto LA16;
 		LOC18 = 0;
-		LOC18 = oslasterror_115033();
-		raiseoserror_115009(LOC18);
+		LOC18 = oslasterror_117033();
+		raiseoserror_117009(LOC18);
 	}
 	LA16: ;
 	{
@@ -661,8 +661,8 @@ N_NIMCALL(pid_t, startprocessauxspawn_142001)(tstartprocessdata141948* data) {
 		LOC21 = posix_spawnattr_setsigmask((&attr), (&mask));
 		if (!!((LOC21 == ((NI32) 0)))) goto LA22;
 		LOC24 = 0;
-		LOC24 = oslasterror_115033();
-		raiseoserror_115009(LOC24);
+		LOC24 = oslasterror_117033();
+		raiseoserror_117009(LOC24);
 	}
 	LA22: ;
 	{
@@ -672,8 +672,8 @@ N_NIMCALL(pid_t, startprocessauxspawn_142001)(tstartprocessdata141948* data) {
 		LOC27 = posix_spawnattr_setpgroup((&attr), ((pid_t) 0));
 		if (!!((LOC27 == ((NI32) 0)))) goto LA28;
 		LOC30 = 0;
-		LOC30 = oslasterror_115033();
-		raiseoserror_115009(LOC30);
+		LOC30 = oslasterror_117033();
+		raiseoserror_117009(LOC30);
 	}
 	LA28: ;
 	{
@@ -683,78 +683,78 @@ N_NIMCALL(pid_t, startprocessauxspawn_142001)(tstartprocessdata141948* data) {
 		LOC33 = posix_spawnattr_setflags((&attr), (NI32)((NI32)(((int) 0) | POSIX_SPAWN_SETSIGMASK) | POSIX_SPAWN_SETPGROUP));
 		if (!!((LOC33 == ((NI32) 0)))) goto LA34;
 		LOC36 = 0;
-		LOC36 = oslasterror_115033();
-		raiseoserror_115009(LOC36);
+		LOC36 = oslasterror_117033();
+		raiseoserror_117009(LOC36);
 	}
 	LA34: ;
 	{
-		if (!!((*data).Optionpoparentstreams)) goto LA39;
+		if (!!((*data).optionpoparentstreams)) goto LA39;
 		{
 			int LOC43;
 			NI32 LOC46;
 			LOC43 = 0;
-			LOC43 = posix_spawn_file_actions_addclose((&fops), (*data).Pstdin[(((NI) 1))- 0]);
+			LOC43 = posix_spawn_file_actions_addclose((&fops), (*data).pstdin[(((NI) 1))- 0]);
 			if (!!((LOC43 == ((NI32) 0)))) goto LA44;
 			LOC46 = 0;
-			LOC46 = oslasterror_115033();
-			raiseoserror_115009(LOC46);
+			LOC46 = oslasterror_117033();
+			raiseoserror_117009(LOC46);
 		}
 		LA44: ;
 		{
 			int LOC49;
 			NI32 LOC52;
 			LOC49 = 0;
-			LOC49 = posix_spawn_file_actions_adddup2((&fops), (*data).Pstdin[(((NI) 0))- 0], ((int) 0));
+			LOC49 = posix_spawn_file_actions_adddup2((&fops), (*data).pstdin[(((NI) 0))- 0], ((int) 0));
 			if (!!((LOC49 == ((NI32) 0)))) goto LA50;
 			LOC52 = 0;
-			LOC52 = oslasterror_115033();
-			raiseoserror_115009(LOC52);
+			LOC52 = oslasterror_117033();
+			raiseoserror_117009(LOC52);
 		}
 		LA50: ;
 		{
 			int LOC55;
 			NI32 LOC58;
 			LOC55 = 0;
-			LOC55 = posix_spawn_file_actions_addclose((&fops), (*data).Pstdout[(((NI) 0))- 0]);
+			LOC55 = posix_spawn_file_actions_addclose((&fops), (*data).pstdout[(((NI) 0))- 0]);
 			if (!!((LOC55 == ((NI32) 0)))) goto LA56;
 			LOC58 = 0;
-			LOC58 = oslasterror_115033();
-			raiseoserror_115009(LOC58);
+			LOC58 = oslasterror_117033();
+			raiseoserror_117009(LOC58);
 		}
 		LA56: ;
 		{
 			int LOC61;
 			NI32 LOC64;
 			LOC61 = 0;
-			LOC61 = posix_spawn_file_actions_adddup2((&fops), (*data).Pstdout[(((NI) 1))- 0], ((int) 1));
+			LOC61 = posix_spawn_file_actions_adddup2((&fops), (*data).pstdout[(((NI) 1))- 0], ((int) 1));
 			if (!!((LOC61 == ((NI32) 0)))) goto LA62;
 			LOC64 = 0;
-			LOC64 = oslasterror_115033();
-			raiseoserror_115009(LOC64);
+			LOC64 = oslasterror_117033();
+			raiseoserror_117009(LOC64);
 		}
 		LA62: ;
 		{
 			int LOC67;
 			NI32 LOC70;
 			LOC67 = 0;
-			LOC67 = posix_spawn_file_actions_addclose((&fops), (*data).Pstderr[(((NI) 0))- 0]);
+			LOC67 = posix_spawn_file_actions_addclose((&fops), (*data).pstderr[(((NI) 0))- 0]);
 			if (!!((LOC67 == ((NI32) 0)))) goto LA68;
 			LOC70 = 0;
-			LOC70 = oslasterror_115033();
-			raiseoserror_115009(LOC70);
+			LOC70 = oslasterror_117033();
+			raiseoserror_117009(LOC70);
 		}
 		LA68: ;
 		{
-			if (!(*data).Optionpostderrtostdout) goto LA73;
+			if (!(*data).optionpostderrtostdout) goto LA73;
 			{
 				int LOC77;
 				NI32 LOC80;
 				LOC77 = 0;
-				LOC77 = posix_spawn_file_actions_adddup2((&fops), (*data).Pstdout[(((NI) 1))- 0], ((int) 2));
+				LOC77 = posix_spawn_file_actions_adddup2((&fops), (*data).pstdout[(((NI) 1))- 0], ((int) 2));
 				if (!!((LOC77 == ((NI32) 0)))) goto LA78;
 				LOC80 = 0;
-				LOC80 = oslasterror_115033();
-				raiseoserror_115009(LOC80);
+				LOC80 = oslasterror_117033();
+				raiseoserror_117009(LOC80);
 			}
 			LA78: ;
 		}
@@ -765,11 +765,11 @@ N_NIMCALL(pid_t, startprocessauxspawn_142001)(tstartprocessdata141948* data) {
 				int LOC84;
 				NI32 LOC87;
 				LOC84 = 0;
-				LOC84 = posix_spawn_file_actions_adddup2((&fops), (*data).Pstderr[(((NI) 1))- 0], ((int) 2));
+				LOC84 = posix_spawn_file_actions_adddup2((&fops), (*data).pstderr[(((NI) 1))- 0], ((int) 2));
 				if (!!((LOC84 == ((NI32) 0)))) goto LA85;
 				LOC87 = 0;
-				LOC87 = oslasterror_115033();
-				raiseoserror_115009(LOC87);
+				LOC87 = oslasterror_117033();
+				raiseoserror_117009(LOC87);
 			}
 			LA85: ;
 		}
@@ -779,21 +779,21 @@ N_NIMCALL(pid_t, startprocessauxspawn_142001)(tstartprocessdata141948* data) {
 	res = 0;
 	{
 		NimStringDesc* LOC92;
-		if (!(((NI) 0) < strlen((*data).Workingdir))) goto LA90;
+		if (!(((NI) 0) < ((*data).workingdir ? strlen((*data).workingdir) : 0))) goto LA90;
 		LOC92 = 0;
-		LOC92 = cstrToNimstr((*data).Workingdir);
-		setcurrentdir_117207(LOC92);
+		LOC92 = cstrToNimstr((*data).workingdir);
+		setcurrentdir_119207(LOC92);
 	}
 	LA90: ;
 	pid = 0;
 	{
-		if (!(*data).Optionpousepath) goto LA95;
-		res = posix_spawnp((&pid), (*data).Syscommand, (&fops), (&attr), (*data).Sysargs, (*data).Sysenv);
+		if (!(*data).optionpousepath) goto LA95;
+		res = posix_spawnp((&pid), (*data).syscommand, (&fops), (&attr), (*data).sysargs, (*data).sysenv);
 	}
 	goto LA93;
 	LA95: ;
 	{
-		res = posix_spawn((&pid), (*data).Syscommand, (&fops), (&attr), (*data).Sysargs, (*data).Sysenv);
+		res = posix_spawn((&pid), (*data).syscommand, (&fops), (&attr), (*data).sysargs, (*data).sysenv);
 	}
 	LA93: ;
 	LOC98 = 0;
@@ -804,8 +804,8 @@ N_NIMCALL(pid_t, startprocessauxspawn_142001)(tstartprocessdata141948* data) {
 		NI32 LOC104;
 		if (!!((res == ((NI32) 0)))) goto LA102;
 		LOC104 = 0;
-		LOC104 = oslasterror_115033();
-		raiseoserror_115009(LOC104);
+		LOC104 = oslasterror_117033();
+		raiseoserror_117009(LOC104);
 	}
 	LA102: ;
 	result = pid;
@@ -815,26 +815,26 @@ N_NIMCALL(pid_t, startprocessauxspawn_142001)(tstartprocessdata141948* data) {
 }
 
 static N_INLINE(void, popSafePoint)(void) {
-	exchandler_17043 = (*exchandler_17043).prev;
+	exchandler_17243 = (*exchandler_17243).prev;
 }
 
-N_NIMCALL(processobj140402*, nospstartProcess)(NimStringDesc* command, NimStringDesc* workingdir, NimStringDesc** args, NI argsLen0, stringtableobj131012* env, NU8 options) {
-	processobj140402* result;
-	TY142025 pstdin;
-	TY142025 pstdout;
-	TY142025 pstderr;
+N_NIMCALL(Processobj143402*, nospstartProcess)(NimStringDesc* command, NimStringDesc* workingdir, NimStringDesc** args, NI argsLen0, Stringtableobj134012* env, NU8 options) {
+	Processobj143402* result;
+	TY145025 pstdin;
+	TY145025 pstdout;
+	TY145025 pstderr;
 	NimStringDesc* syscommand;
-	TY120208* sysargsraw;
+	TY122208* sysargsraw;
 	pid_t volatile pid;
 	NCSTRING* sysargs;
-	TSafePoint TMP2946;
+	TSafePoint TMP2889;
 	result = 0;
 	memset((void*)pstdin, 0, sizeof(pstdin));
 	memset((void*)pstdout, 0, sizeof(pstdout));
 	memset((void*)pstderr, 0, sizeof(pstderr));
-	result = (processobj140402*) newObj((&NTI140404), sizeof(processobj140402));
-	(*result).Sup.m_type = (&NTI140402);
-	(*result).Exitcode = ((int) -3);
+	result = (Processobj143402*) newObj((&NTI143404), sizeof(Processobj143402));
+	(*result).Sup.m_type = (&NTI143402);
+	(*result).exitcode = ((int) -3);
 	{
 		if (!!(((options &(1<<((((NU8) 4))&7)))!=0))) goto LA3;
 		{
@@ -862,8 +862,8 @@ N_NIMCALL(processobj140402*, nospstartProcess)(NimStringDesc* command, NimString
 			LA12: ;
 			if (!LOC7) goto LA14;
 			LOC16 = 0;
-			LOC16 = oslasterror_115033();
-			raiseoserror_115009(LOC16);
+			LOC16 = oslasterror_117033();
+			raiseoserror_117009(LOC16);
 		}
 		LA14: ;
 	}
@@ -871,16 +871,16 @@ N_NIMCALL(processobj140402*, nospstartProcess)(NimStringDesc* command, NimString
 	syscommand = 0;
 	sysargsraw = 0;
 	{
-		TY192063 LOC21;
+		TY176063 LOC21;
 		NimStringDesc* LOC22;
 		NimStringDesc* LOC23;
 		NimStringDesc* LOC24;
 		if (!((options &(1<<((((NU8) 2))&7)))!=0)) goto LA19;
-		syscommand = copyString(((NimStringDesc*) &TMP2944));
-		sysargsraw = (TY120208*) newSeq((&NTI120208), 3);
+		syscommand = copyString(((NimStringDesc*) &TMP2887));
+		sysargsraw = (TY122208*) newSeq((&NTI122208), 3);
 		memset((void*)LOC21, 0, sizeof(LOC21));
 		LOC21[0] = copyString(syscommand);
-		LOC21[1] = copyString(((NimStringDesc*) &TMP2945));
+		LOC21[1] = copyString(((NimStringDesc*) &TMP2888));
 		LOC21[2] = copyString(command);
 		LOC22 = 0;
 		LOC22 = sysargsraw->data[0]; sysargsraw->data[0] = copyStringRC1(LOC21[0]);
@@ -895,30 +895,30 @@ N_NIMCALL(processobj140402*, nospstartProcess)(NimStringDesc* command, NimString
 	goto LA17;
 	LA19: ;
 	{
-		TY181780 LOC26;
+		TY164580 LOC26;
 		NimStringDesc* LOC27;
 		syscommand = copyString(command);
-		sysargsraw = (TY120208*) newSeq((&NTI120208), 1);
+		sysargsraw = (TY122208*) newSeq((&NTI122208), 1);
 		memset((void*)LOC26, 0, sizeof(LOC26));
 		LOC26[0] = copyString(command);
 		LOC27 = 0;
 		LOC27 = sysargsraw->data[0]; sysargsraw->data[0] = copyStringRC1(LOC26[0]);
 		if (LOC27) nimGCunrefNoCycle(LOC27);
 		{
-			NimStringDesc* arg_142224;
-			NI i_142481;
-			arg_142224 = 0;
-			i_142481 = ((NI) 0);
+			NimStringDesc* arg_145224;
+			NI i_145481;
+			arg_145224 = 0;
+			i_145481 = ((NI) 0);
 			{
 				while (1) {
 					NimStringDesc* LOC31;
-					if (!(i_142481 < argsLen0)) goto LA30;
-					arg_142224 = args[i_142481];
-					sysargsraw = (TY120208*) incrSeq(&(sysargsraw)->Sup, sizeof(NimStringDesc*));
+					if (!(i_145481 < argsLen0)) goto LA30;
+					arg_145224 = args[i_145481];
+					sysargsraw = (TY122208*) incrSeq(&(sysargsraw)->Sup, sizeof(NimStringDesc*));
 					LOC31 = 0;
-					LOC31 = sysargsraw->data[sysargsraw->Sup.len-1]; sysargsraw->data[sysargsraw->Sup.len-1] = copyStringRC1(arg_142224);
+					LOC31 = sysargsraw->data[sysargsraw->Sup.len-1]; sysargsraw->data[sysargsraw->Sup.len-1] = copyStringRC1(arg_145224);
 					if (LOC31) nimGCunrefNoCycle(LOC31);
-					i_142481 += ((NI) 1);
+					i_145481 += ((NI) 1);
 				} LA30: ;
 			}
 		}
@@ -926,58 +926,58 @@ N_NIMCALL(processobj140402*, nospstartProcess)(NimStringDesc* command, NimString
 	LA17: ;
 	pid = 0;
 	sysargs = alloccstringarray_14201(sysargsraw->data, sysargsraw->Sup.len);
-	pushSafePoint(&TMP2946);
-	TMP2946.status = _setjmp(TMP2946.context);
-	if (TMP2946.status == 0) {
+	pushSafePoint(&TMP2889);
+	TMP2889.status = _setjmp(TMP2889.context);
+	if (TMP2889.status == 0) {
 		NCSTRING* sysenv;
-		TSafePoint TMP2948;
+		TSafePoint TMP2891;
 		{
 			if (!(env == NIM_NIL)) goto LA35;
-			sysenv = envtocstringarray_141854();
+			sysenv = envtocstringarray_144854();
 		}
 		goto LA33;
 		LA35: ;
 		{
-			sysenv = envtocstringarray_141806(env);
+			sysenv = envtocstringarray_144806(env);
 		}
 		LA33: ;
-		pushSafePoint(&TMP2948);
-		TMP2948.status = _setjmp(TMP2948.context);
-		if (TMP2948.status == 0) {
-			tstartprocessdata141948 data;
+		pushSafePoint(&TMP2891);
+		TMP2891.status = _setjmp(TMP2891.context);
+		if (TMP2891.status == 0) {
+			Tstartprocessdata144948 data;
 			memset((void*)(&data), 0, sizeof(data));
-			data.Syscommand = syscommand->data;
-			data.Sysargs = sysargs;
-			data.Sysenv = sysenv;
-			memcpy((void*)data.Pstdin, (NIM_CONST void*)pstdin, sizeof(data.Pstdin));
-			memcpy((void*)data.Pstdout, (NIM_CONST void*)pstdout, sizeof(data.Pstdout));
-			memcpy((void*)data.Pstderr, (NIM_CONST void*)pstderr, sizeof(data.Pstderr));
-			data.Optionpoparentstreams = ((options &(1<<((((NU8) 4))&7)))!=0);
-			data.Optionpousepath = ((options &(1<<((((NU8) 1))&7)))!=0);
-			data.Optionpostderrtostdout = ((options &(1<<((((NU8) 3))&7)))!=0);
-			data.Workingdir = workingdir->data;
-			pid = startprocessauxspawn_142001((&data));
+			data.syscommand = syscommand->data;
+			data.sysargs = sysargs;
+			data.sysenv = sysenv;
+			memcpy((void*)data.pstdin, (NIM_CONST void*)pstdin, sizeof(data.pstdin));
+			memcpy((void*)data.pstdout, (NIM_CONST void*)pstdout, sizeof(data.pstdout));
+			memcpy((void*)data.pstderr, (NIM_CONST void*)pstderr, sizeof(data.pstderr));
+			data.optionpoparentstreams = ((options &(1<<((((NU8) 4))&7)))!=0);
+			data.optionpousepath = ((options &(1<<((((NU8) 1))&7)))!=0);
+			data.optionpostderrtostdout = ((options &(1<<((((NU8) 3))&7)))!=0);
+			data.workingdir = workingdir->data;
+			pid = startprocessauxspawn_145001((&data));
 			{
 				NimStringDesc* LOC43;
 				if (!((options &(1<<((((NU8) 0))&7)))!=0)) goto LA41;
 				LOC43 = 0;
-				LOC43 = nsuJoinSep(args, argsLen0, ((NimStringDesc*) &TMP2949));
-				printf("%s%s%s\012", command? (command)->data:"nil", ((NimStringDesc*) &TMP2949)? (((NimStringDesc*) &TMP2949))->data:"nil", LOC43? (LOC43)->data:"nil");
+				LOC43 = nsuJoinSep(args, argsLen0, ((NimStringDesc*) &TMP2892));
+				printf("%s%s%s\012", command? (command)->data:"nil", ((NimStringDesc*) &TMP2892)? (((NimStringDesc*) &TMP2892))->data:"nil", LOC43? (LOC43)->data:"nil");
 			}
 			LA41: ;
-			(*result).Id = pid;
+			(*result).id = pid;
 			{
 				if (!((options &(1<<((((NU8) 4))&7)))!=0)) goto LA46;
-				(*result).Inhandle = ((int) 0);
-				(*result).Outhandle = ((int) 1);
+				(*result).inhandle = ((int) 0);
+				(*result).outhandle = ((int) 1);
 				{
 					if (!((options &(1<<((((NU8) 3))&7)))!=0)) goto LA50;
-					(*result).Errhandle = (*result).Outhandle;
+					(*result).errhandle = (*result).outhandle;
 				}
 				goto LA48;
 				LA50: ;
 				{
-					(*result).Errhandle = ((int) 2);
+					(*result).errhandle = ((int) 2);
 				}
 				LA48: ;
 			}
@@ -987,19 +987,19 @@ N_NIMCALL(processobj140402*, nospstartProcess)(NimStringDesc* command, NimString
 				int LOC60;
 				int LOC61;
 				int LOC62;
-				(*result).Inhandle = pstdin[(((NI) 1))- 0];
-				(*result).Outhandle = pstdout[(((NI) 0))- 0];
+				(*result).inhandle = pstdin[(((NI) 1))- 0];
+				(*result).outhandle = pstdout[(((NI) 0))- 0];
 				{
 					int LOC58;
 					if (!((options &(1<<((((NU8) 3))&7)))!=0)) goto LA56;
-					(*result).Errhandle = (*result).Outhandle;
+					(*result).errhandle = (*result).outhandle;
 					LOC58 = 0;
 					LOC58 = close(pstderr[(((NI) 0))- 0]);
 				}
 				goto LA54;
 				LA56: ;
 				{
-					(*result).Errhandle = pstderr[(((NI) 0))- 0];
+					(*result).errhandle = pstderr[(((NI) 0))- 0];
 				}
 				LA54: ;
 				LOC60 = 0;
@@ -1016,24 +1016,24 @@ N_NIMCALL(processobj140402*, nospstartProcess)(NimStringDesc* command, NimString
 			popSafePoint();
 		}
 		{
-			dealloccstringarray_14255(sysenv);
+			dealloccstringarray_14450(sysenv);
 		}
-		if (TMP2948.status != 0) reraiseException();
+		if (TMP2891.status != 0) reraiseException();
 		popSafePoint();
 	}
 	else {
 		popSafePoint();
 	}
 	{
-		dealloccstringarray_14255(sysargs);
+		dealloccstringarray_14450(sysargs);
 	}
-	if (TMP2946.status != 0) reraiseException();
+	if (TMP2889.status != 0) reraiseException();
 	return result;
 }
 
-N_NIMCALL(void, createstream_143441)(streamobj135027** stream, int* handle, NU8 filemode) {
+N_NIMCALL(void, createstream_146441)(Streamobj138027** stream, int* handle, NU8 filemode) {
 	FILE* f;
-	filestreamobj135692* LOC7;
+	Filestreamobj138692* LOC7;
 	f = 0;
 	{
 		NIM_BOOL LOC3;
@@ -1042,49 +1042,49 @@ N_NIMCALL(void, createstream_143441)(streamobj135027** stream, int* handle, NU8 
 		LOC3 = open_13411(&f, (*handle), filemode);
 		if (!!(LOC3)) goto LA4;
 		LOC6 = 0;
-		LOC6 = oslasterror_115033();
-		raiseoserror_115009(LOC6);
+		LOC6 = oslasterror_117033();
+		raiseoserror_117009(LOC6);
 	}
 	LA4: ;
 	LOC7 = 0;
-	LOC7 = newfilestream_135758(f);
+	LOC7 = newfilestream_138758(f);
 	unsureAsgnRef((void**) (&(*stream)), &LOC7->Sup);
 }
 
-N_NIMCALL(streamobj135027*, nospinputStream)(processobj140402* p) {
-	streamobj135027* result;
+N_NIMCALL(Streamobj138027*, nospinputStream)(Processobj143402* p) {
+	Streamobj138027* result;
 {	result = 0;
 	{
-		if (!((*p).Instream == NIM_NIL)) goto LA3;
-		createstream_143441(&(*p).Instream, (&(*p).Inhandle), ((NU8) 1));
+		if (!((*p).instream == NIM_NIL)) goto LA3;
+		createstream_146441(&(*p).instream, (&(*p).inhandle), ((NU8) 1));
 	}
 	LA3: ;
-	result = (*p).Instream;
+	result = (*p).instream;
 	goto BeforeRet;
 	}BeforeRet: ;
 	return result;
 }
 
-N_NIMCALL(streamobj135027*, nospoutputStream)(processobj140402* p) {
-	streamobj135027* result;
+N_NIMCALL(Streamobj138027*, nospoutputStream)(Processobj143402* p) {
+	Streamobj138027* result;
 {	result = 0;
 	{
-		if (!((*p).Outstream == NIM_NIL)) goto LA3;
-		createstream_143441(&(*p).Outstream, (&(*p).Outhandle), ((NU8) 0));
+		if (!((*p).outstream == NIM_NIL)) goto LA3;
+		createstream_146441(&(*p).outstream, (&(*p).outhandle), ((NU8) 0));
 	}
 	LA3: ;
-	result = (*p).Outstream;
+	result = (*p).outstream;
 	goto BeforeRet;
 	}BeforeRet: ;
 	return result;
 }
 
-N_NIMCALL(NI, nospwaitForExit)(processobj140402* p, NI timeout) {
+N_NIMCALL(NI, nospwaitForExit)(Processobj143402* p, NI timeout) {
 	NI result;
 {	result = 0;
 	{
-		if (!!(((*p).Exitcode == ((NI32) -3)))) goto LA3;
-		result = ((NI) ((*p).Exitcode));
+		if (!!(((*p).exitcode == ((NI32) -3)))) goto LA3;
+		result = ((NI) ((*p).exitcode));
 		goto BeforeRet;
 	}
 	LA3: ;
@@ -1092,15 +1092,15 @@ N_NIMCALL(NI, nospwaitForExit)(processobj140402* p, NI timeout) {
 		pid_t LOC7;
 		NI32 LOC10;
 		LOC7 = 0;
-		LOC7 = waitpid((*p).Id, (&(*p).Exitcode), ((int) 0));
+		LOC7 = waitpid((*p).id, (&(*p).exitcode), ((int) 0));
 		if (!(LOC7 < ((NI) 0))) goto LA8;
-		(*p).Exitcode = ((int) -3);
+		(*p).exitcode = ((int) -3);
 		LOC10 = 0;
-		LOC10 = oslasterror_115033();
-		raiseoserror_115009(LOC10);
+		LOC10 = oslasterror_117033();
+		raiseoserror_117009(LOC10);
 	}
 	LA8: ;
-	result = (NI)((NU32)(((NI) ((*p).Exitcode))) >> (NU32)(((NI) 8)));
+	result = (NI)((NU32)(((NI) ((*p).exitcode))) >> (NU32)(((NI) 8)));
 	}BeforeRet: ;
 	return result;
 }
@@ -1121,58 +1121,58 @@ N_NIMCALL(NI, nospexecCmd)(NimStringDesc* command) {
 	result = ((NI) (LOC1));
 	return result;
 }
-N_NIMCALL(void, TMP4288)(void* p, NI op) {
-	TY141201* a;
+N_NIMCALL(void, TMP4335)(void* p, NI op) {
+	TY144201* a;
 	NI LOC1;
-	a = (TY141201*)p;
+	a = (TY144201*)p;
 	LOC1 = 0;
 	for (LOC1 = 0; LOC1 < a->Sup.len; LOC1++) {
 	nimGCvisit((void*)a->data[LOC1], op);
 	}
 }
 
-static N_INLINE(NIM_BOOL, canbecycleroot_49667)(tcell46147* c) {
+static N_INLINE(NIM_BOOL, canbecycleroot_49867)(Tcell46347* c) {
 	NIM_BOOL result;
 	result = 0;
-	result = !((((*(*c).Typ).flags &(1<<((((NU8) 1))&7)))!=0));
+	result = !((((*(*c).typ).flags &(1<<((((NU8) 1))&7)))!=0));
 	return result;
 }
 
-static N_INLINE(void, rtladdcycleroot_50423)(tcell46147* c) {
+static N_INLINE(void, rtladdcycleroot_50623)(Tcell46347* c) {
 	{
-		if (!!((((NI) ((NI)((*c).Refcount & ((NI) 3)))) == ((NI) 3)))) goto LA3;
-		(*c).Refcount = (NI)((NI)((*c).Refcount & ((NI) -4)) | ((NI) 3));
-		incl_46867((&gch_48044.Cycleroots), c);
+		if (!!((((NI) ((NI)((*c).refcount & ((NI) 3)))) == ((NI) 3)))) goto LA3;
+		(*c).refcount = (NI)((NI)((*c).refcount & ((NI) -4)) | ((NI) 3));
+		incl_47065((&gch_48244.cycleroots), c);
 	}
 	LA3: ;
 }
 
-static N_INLINE(void, incref_52022)(tcell46147* c) {
-	(*c).Refcount = (NI)((NU32)((*c).Refcount) + (NU32)(((NI) 8)));
+static N_INLINE(void, incref_52222)(Tcell46347* c) {
+	(*c).refcount = (NI)((NU32)((*c).refcount) + (NU32)(((NI) 8)));
 	{
 		NIM_BOOL LOC3;
 		LOC3 = 0;
-		LOC3 = canbecycleroot_49667(c);
+		LOC3 = canbecycleroot_49867(c);
 		if (!LOC3) goto LA4;
-		rtladdcycleroot_50423(c);
+		rtladdcycleroot_50623(c);
 	}
 	LA4: ;
 }
 
-static N_INLINE(void, decref_51604)(tcell46147* c) {
+static N_INLINE(void, decref_51804)(Tcell46347* c) {
 	{
-		(*c).Refcount -= ((NI) 8);
-		if (!((NU32)((*c).Refcount) < (NU32)(((NI) 8)))) goto LA3;
-		rtladdzct_51204(c);
+		(*c).refcount -= ((NI) 8);
+		if (!((NU32)((*c).refcount) < (NU32)(((NI) 8)))) goto LA3;
+		rtladdzct_51404(c);
 	}
 	goto LA1;
 	LA3: ;
 	{
 		NIM_BOOL LOC6;
 		LOC6 = 0;
-		LOC6 = canbecycleroot_49667(c);
+		LOC6 = canbecycleroot_49867(c);
 		if (!LOC6) goto LA7;
-		rtladdcycleroot_50423(c);
+		rtladdcycleroot_50623(c);
 	}
 	goto LA1;
 	LA7: ;
@@ -1181,102 +1181,102 @@ static N_INLINE(void, decref_51604)(tcell46147* c) {
 
 static N_INLINE(void, asgnRef)(void** dest, void* src) {
 	{
-		tcell46147* LOC5;
+		Tcell46347* LOC5;
 		if (!!((src == NIM_NIL))) goto LA3;
 		LOC5 = 0;
-		LOC5 = usrtocell_49646(src);
-		incref_52022(LOC5);
+		LOC5 = usrtocell_49846(src);
+		incref_52222(LOC5);
 	}
 	LA3: ;
 	{
-		tcell46147* LOC10;
+		Tcell46347* LOC10;
 		if (!!(((*dest) == NIM_NIL))) goto LA8;
 		LOC10 = 0;
-		LOC10 = usrtocell_49646((*dest));
-		decref_51604(LOC10);
+		LOC10 = usrtocell_49846((*dest));
+		decref_51804(LOC10);
 	}
 	LA8: ;
 	(*dest) = src;
 }
 
-N_NIMCALL(NIM_BOOL, nosprunning)(processobj140402* p) {
+N_NIMCALL(NIM_BOOL, nosprunning)(Processobj143402* p) {
 	NIM_BOOL result;
 	NI ret;
 {	result = 0;
 	ret = 0;
-	ret = waitpid((*p).Id, (&(*p).Exitcode), WNOHANG);
+	ret = waitpid((*p).id, (&(*p).exitcode), WNOHANG);
 	{
 		if (!(ret == ((NI) 0))) goto LA3;
 		result = NIM_TRUE;
 		goto BeforeRet;
 	}
 	LA3: ;
-	result = (ret == (*p).Id);
+	result = (ret == (*p).id);
 	}BeforeRet: ;
 	return result;
 }
 
-N_NIMCALL(void, nospclose)(processobj140402* p) {
+N_NIMCALL(void, nospclose)(Processobj143402* p) {
 	int LOC13;
 	int LOC14;
 	int LOC15;
 	{
-		if (!!(((*p).Instream == NIM_NIL))) goto LA3;
-		close_135085((*p).Instream);
+		if (!!(((*p).instream == NIM_NIL))) goto LA3;
+		close_138085((*p).instream);
 	}
 	LA3: ;
 	{
-		if (!!(((*p).Outstream == NIM_NIL))) goto LA7;
-		close_135085((*p).Outstream);
+		if (!!(((*p).outstream == NIM_NIL))) goto LA7;
+		close_138085((*p).outstream);
 	}
 	LA7: ;
 	{
-		if (!!(((*p).Errstream == NIM_NIL))) goto LA11;
-		close_135085((*p).Errstream);
+		if (!!(((*p).errstream == NIM_NIL))) goto LA11;
+		close_138085((*p).errstream);
 	}
 	LA11: ;
 	LOC13 = 0;
-	LOC13 = close((*p).Inhandle);
+	LOC13 = close((*p).inhandle);
 	LOC14 = 0;
-	LOC14 = close((*p).Outhandle);
+	LOC14 = close((*p).outhandle);
 	LOC15 = 0;
-	LOC15 = close((*p).Errhandle);
+	LOC15 = close((*p).errhandle);
 }
 
-N_NIMCALL(NI, nospexecProcesses)(NimStringDesc** cmds, NI cmdsLen0, NU8 options_140795, NI n, TY187622 beforerunevent) {
+N_NIMCALL(NI, nospexecProcesses)(NimStringDesc** cmds, NI cmdsLen0, NU8 options_143795, NI n, TY171656 beforerunevent) {
 	NI result;
 	NU8 options;
 	result = 0;
-	options = (options_140795 & ~ 16);
+	options = (options_143795 & ~ 16);
 	{
-		TY141201* q;
+		TY144201* q;
 		NI m;
 		NI i;
 		if (!(((NI) 1) < n)) goto LA3;
 		q = 0;
-		q = (TY141201*) newSeq((&NTI141201), n);
+		q = (TY144201*) newSeq((&NTI144201), ((NI) (n)));
 		m = ((n <= cmdsLen0) ? n : cmdsLen0);
 		{
-			NI i_141235;
-			NI HEX3Atmp_141536;
-			NI res_141539;
-			i_141235 = 0;
-			HEX3Atmp_141536 = 0;
-			HEX3Atmp_141536 = (NI32)(m - ((NI) 1));
-			res_141539 = ((NI) 0);
+			NI i_144235;
+			NI HEX3Atmp_144536;
+			NI res_144539;
+			i_144235 = 0;
+			HEX3Atmp_144536 = 0;
+			HEX3Atmp_144536 = (NI)(m - ((NI) 1));
+			res_144539 = ((NI) 0);
 			{
 				while (1) {
-					TY234722 LOC12;
-					if (!(res_141539 <= HEX3Atmp_141536)) goto LA7;
-					i_141235 = res_141539;
+					TY219714 LOC12;
+					if (!(res_144539 <= HEX3Atmp_144536)) goto LA7;
+					i_144235 = res_144539;
 					{
-						if (!!((beforerunevent.ClPrc == TMP4289.ClPrc && beforerunevent.ClEnv == TMP4289.ClEnv))) goto LA10;
-						beforerunevent.ClEnv? beforerunevent.ClPrc(i_141235, beforerunevent.ClEnv):((TMP4290)(beforerunevent.ClPrc))(i_141235);
+						if (!!((beforerunevent.ClPrc == TMP4336.ClPrc && beforerunevent.ClEnv == TMP4336.ClEnv))) goto LA10;
+						beforerunevent.ClEnv? beforerunevent.ClPrc(i_144235, beforerunevent.ClEnv):((TMP4337)(beforerunevent.ClPrc))(i_144235);
 					}
 					LA10: ;
 					memset((void*)LOC12, 0, sizeof(LOC12));
-					asgnRef((void**) (&q->data[i_141235]), nospstartProcess(cmds[i_141235], ((NimStringDesc*) &TMP4291), LOC12, 0, NIM_NIL, (options | 4)));
-					res_141539 += ((NI) 1);
+					asgnRef((void**) (&q->data[i_144235]), nospstartProcess(cmds[i_144235], ((NimStringDesc*) &TMP4338), LOC12, 0, NIM_NIL, (options | 4)));
+					res_144539 += ((NI) 1);
 				} LA7: ;
 			}
 		}
@@ -1286,39 +1286,39 @@ N_NIMCALL(NI, nospexecProcesses)(NimStringDesc** cmds, NI cmdsLen0, NU8 options_
 				if (!(i <= (cmdsLen0-1))) goto LA14;
 				nossleep(((NI) 50));
 				{
-					NI r_141413;
-					NI HEX3Atmp_141545;
-					NI res_141548;
-					r_141413 = 0;
-					HEX3Atmp_141545 = 0;
-					HEX3Atmp_141545 = (NI32)(n - ((NI) 1));
-					res_141548 = ((NI) 0);
+					NI r_144413;
+					NI HEX3Atmp_144545;
+					NI res_144548;
+					r_144413 = 0;
+					HEX3Atmp_144545 = 0;
+					HEX3Atmp_144545 = (NI)(n - ((NI) 1));
+					res_144548 = ((NI) 0);
 					{
 						while (1) {
-							if (!(res_141548 <= HEX3Atmp_141545)) goto LA17;
-							r_141413 = res_141548;
+							if (!(res_144548 <= HEX3Atmp_144545)) goto LA17;
+							r_144413 = res_144548;
 							{
 								NIM_BOOL LOC20;
 								NI LOC23;
-								TY234722 LOC32;
+								TY219714 LOC32;
 								LOC20 = 0;
-								LOC20 = nosprunning(q->data[r_141413]);
+								LOC20 = nosprunning(q->data[r_144413]);
 								if (!!(LOC20)) goto LA21;
 								LOC23 = 0;
-								LOC23 = nospwaitForExit(q->data[r_141413], ((NI) -1));
+								LOC23 = nospwaitForExit(q->data[r_144413], ((NI) -1));
 								result = ((LOC23 >= result) ? LOC23 : result);
 								{
-									if (!!((q->data[r_141413] == NIM_NIL))) goto LA26;
-									nospclose(q->data[r_141413]);
+									if (!!((q->data[r_144413] == NIM_NIL))) goto LA26;
+									nospclose(q->data[r_144413]);
 								}
 								LA26: ;
 								{
-									if (!!((beforerunevent.ClPrc == TMP4289.ClPrc && beforerunevent.ClEnv == TMP4289.ClEnv))) goto LA30;
-									beforerunevent.ClEnv? beforerunevent.ClPrc(i, beforerunevent.ClEnv):((TMP4292)(beforerunevent.ClPrc))(i);
+									if (!!((beforerunevent.ClPrc == TMP4336.ClPrc && beforerunevent.ClEnv == TMP4336.ClEnv))) goto LA30;
+									beforerunevent.ClEnv? beforerunevent.ClPrc(i, beforerunevent.ClEnv):((TMP4339)(beforerunevent.ClPrc))(i);
 								}
 								LA30: ;
 								memset((void*)LOC32, 0, sizeof(LOC32));
-								asgnRef((void**) (&q->data[r_141413]), nospstartProcess(cmds[i], ((NimStringDesc*) &TMP4291), LOC32, 0, NIM_NIL, (options | 4)));
+								asgnRef((void**) (&q->data[r_144413]), nospstartProcess(cmds[i], ((NimStringDesc*) &TMP4338), LOC32, 0, NIM_NIL, (options | 4)));
 								i += ((NI) 1);
 								{
 									if (!((cmdsLen0-1) < i)) goto LA35;
@@ -1327,34 +1327,34 @@ N_NIMCALL(NI, nospexecProcesses)(NimStringDesc** cmds, NI cmdsLen0, NU8 options_
 								LA35: ;
 							}
 							LA21: ;
-							res_141548 += ((NI) 1);
+							res_144548 += ((NI) 1);
 						} LA17: ;
 					}
 				} LA15: ;
 			} LA14: ;
 		}
 		{
-			NI j_141475;
-			NI HEX3Atmp_141553;
-			NI res_141556;
-			j_141475 = 0;
-			HEX3Atmp_141553 = 0;
-			HEX3Atmp_141553 = (NI32)(m - ((NI) 1));
-			res_141556 = ((NI) 0);
+			NI j_144475;
+			NI HEX3Atmp_144553;
+			NI res_144556;
+			j_144475 = 0;
+			HEX3Atmp_144553 = 0;
+			HEX3Atmp_144553 = (NI)(m - ((NI) 1));
+			res_144556 = ((NI) 0);
 			{
 				while (1) {
 					NI LOC40;
-					if (!(res_141556 <= HEX3Atmp_141553)) goto LA39;
-					j_141475 = res_141556;
+					if (!(res_144556 <= HEX3Atmp_144553)) goto LA39;
+					j_144475 = res_144556;
 					LOC40 = 0;
-					LOC40 = nospwaitForExit(q->data[j_141475], ((NI) -1));
+					LOC40 = nospwaitForExit(q->data[j_144475], ((NI) -1));
 					result = ((LOC40 >= result) ? LOC40 : result);
 					{
-						if (!!((q->data[j_141475] == NIM_NIL))) goto LA43;
-						nospclose(q->data[j_141475]);
+						if (!!((q->data[j_144475] == NIM_NIL))) goto LA43;
+						nospclose(q->data[j_144475]);
 					}
 					LA43: ;
-					res_141556 += ((NI) 1);
+					res_144556 += ((NI) 1);
 				} LA39: ;
 			}
 		}
@@ -1363,32 +1363,32 @@ N_NIMCALL(NI, nospexecProcesses)(NimStringDesc** cmds, NI cmdsLen0, NU8 options_
 	LA3: ;
 	{
 		{
-			NI i_141502;
-			NI HEX3Atmp_141561;
-			NI res_141564;
-			i_141502 = 0;
-			HEX3Atmp_141561 = 0;
-			HEX3Atmp_141561 = (cmdsLen0-1);
-			res_141564 = ((NI) 0);
+			NI i_144502;
+			NI HEX3Atmp_144561;
+			NI res_144564;
+			i_144502 = 0;
+			HEX3Atmp_144561 = 0;
+			HEX3Atmp_144561 = (cmdsLen0-1);
+			res_144564 = ((NI) 0);
 			{
 				while (1) {
-					processobj140402* p;
-					TY234722 LOC53;
+					Processobj143402* p;
+					TY219714 LOC53;
 					NI LOC54;
-					if (!(res_141564 <= HEX3Atmp_141561)) goto LA48;
-					i_141502 = res_141564;
+					if (!(res_144564 <= HEX3Atmp_144561)) goto LA48;
+					i_144502 = res_144564;
 					{
-						if (!!((beforerunevent.ClPrc == TMP4289.ClPrc && beforerunevent.ClEnv == TMP4289.ClEnv))) goto LA51;
-						beforerunevent.ClEnv? beforerunevent.ClPrc(i_141502, beforerunevent.ClEnv):((TMP4293)(beforerunevent.ClPrc))(i_141502);
+						if (!!((beforerunevent.ClPrc == TMP4336.ClPrc && beforerunevent.ClEnv == TMP4336.ClEnv))) goto LA51;
+						beforerunevent.ClEnv? beforerunevent.ClPrc(i_144502, beforerunevent.ClEnv):((TMP4340)(beforerunevent.ClPrc))(i_144502);
 					}
 					LA51: ;
 					memset((void*)LOC53, 0, sizeof(LOC53));
-					p = nospstartProcess(cmds[i_141502], ((NimStringDesc*) &TMP4291), LOC53, 0, NIM_NIL, (options | 4));
+					p = nospstartProcess(cmds[i_144502], ((NimStringDesc*) &TMP4338), LOC53, 0, NIM_NIL, (options | 4));
 					LOC54 = 0;
 					LOC54 = nospwaitForExit(p, ((NI) -1));
 					result = ((LOC54 >= result) ? LOC54 : result);
 					nospclose(p);
-					res_141564 += ((NI) 1);
+					res_144564 += ((NI) 1);
 				} LA48: ;
 			}
 		}
@@ -1400,60 +1400,60 @@ NIM_EXTERNC N_NOINLINE(void, stdlib_osprocInit)(void) {
 }
 
 NIM_EXTERNC N_NOINLINE(void, stdlib_osprocDatInit)(void) {
-static TNimNode* TMP2942[8];
+static TNimNode* TMP2885[8];
 static TNimNode TMP29[9];
-NTI140402.size = sizeof(processobj140402);
-NTI140402.kind = 17;
-NTI140402.base = (&NTI3411);
-TMP2942[0] = &TMP29[1];
+NTI143402.size = sizeof(Processobj143402);
+NTI143402.kind = 17;
+NTI143402.base = (&NTI3411);
+TMP2885[0] = &TMP29[1];
 TMP29[1].kind = 1;
-TMP29[1].offset = offsetof(processobj140402, Inhandle);
+TMP29[1].offset = offsetof(Processobj143402, inhandle);
 TMP29[1].typ = (&NTI13208);
 TMP29[1].name = "inHandle";
-TMP2942[1] = &TMP29[2];
+TMP2885[1] = &TMP29[2];
 TMP29[2].kind = 1;
-TMP29[2].offset = offsetof(processobj140402, Outhandle);
+TMP29[2].offset = offsetof(Processobj143402, outhandle);
 TMP29[2].typ = (&NTI13208);
 TMP29[2].name = "outHandle";
-TMP2942[2] = &TMP29[3];
+TMP2885[2] = &TMP29[3];
 TMP29[3].kind = 1;
-TMP29[3].offset = offsetof(processobj140402, Errhandle);
+TMP29[3].offset = offsetof(Processobj143402, errhandle);
 TMP29[3].typ = (&NTI13208);
 TMP29[3].name = "errHandle";
-TMP2942[3] = &TMP29[4];
+TMP2885[3] = &TMP29[4];
 TMP29[4].kind = 1;
-TMP29[4].offset = offsetof(processobj140402, Instream);
-TMP29[4].typ = (&NTI135025);
+TMP29[4].offset = offsetof(Processobj143402, instream);
+TMP29[4].typ = (&NTI138025);
 TMP29[4].name = "inStream";
-TMP2942[4] = &TMP29[5];
+TMP2885[4] = &TMP29[5];
 TMP29[5].kind = 1;
-TMP29[5].offset = offsetof(processobj140402, Outstream);
-TMP29[5].typ = (&NTI135025);
+TMP29[5].offset = offsetof(Processobj143402, outstream);
+TMP29[5].typ = (&NTI138025);
 TMP29[5].name = "outStream";
-TMP2942[5] = &TMP29[6];
+TMP2885[5] = &TMP29[6];
 TMP29[6].kind = 1;
-TMP29[6].offset = offsetof(processobj140402, Errstream);
-TMP29[6].typ = (&NTI135025);
+TMP29[6].offset = offsetof(Processobj143402, errstream);
+TMP29[6].typ = (&NTI138025);
 TMP29[6].name = "errStream";
-TMP2942[6] = &TMP29[7];
+TMP2885[6] = &TMP29[7];
 TMP29[7].kind = 1;
-TMP29[7].offset = offsetof(processobj140402, Id);
-TMP29[7].typ = (&NTI105285);
+TMP29[7].offset = offsetof(Processobj143402, id);
+TMP29[7].typ = (&NTI107285);
 TMP29[7].name = "id";
-TMP2942[7] = &TMP29[8];
+TMP2885[7] = &TMP29[8];
 TMP29[8].kind = 1;
-TMP29[8].offset = offsetof(processobj140402, Exitcode);
+TMP29[8].offset = offsetof(Processobj143402, exitcode);
 TMP29[8].typ = (&NTI5811);
 TMP29[8].name = "exitCode";
-TMP29[0].len = 8; TMP29[0].kind = 2; TMP29[0].sons = &TMP2942[0];
-NTI140402.node = &TMP29[0];
-NTI140404.size = sizeof(processobj140402*);
-NTI140404.kind = 22;
-NTI140404.base = (&NTI140402);
-NTI140404.marker = TMP2943;
-NTI141201.size = sizeof(TY141201*);
-NTI141201.kind = 24;
-NTI141201.base = (&NTI140404);
-NTI141201.marker = TMP4288;
+TMP29[0].len = 8; TMP29[0].kind = 2; TMP29[0].sons = &TMP2885[0];
+NTI143402.node = &TMP29[0];
+NTI143404.size = sizeof(Processobj143402*);
+NTI143404.kind = 22;
+NTI143404.base = (&NTI143402);
+NTI143404.marker = TMP2886;
+NTI144201.size = sizeof(TY144201*);
+NTI144201.kind = 24;
+NTI144201.base = (&NTI143404);
+NTI144201.marker = TMP4335;
 }
 

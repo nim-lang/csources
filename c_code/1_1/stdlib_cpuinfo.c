@@ -13,17 +13,17 @@ struct  NimStringDesc  {
   TGenericSeq Sup;
 NIM_CHAR data[SEQ_DECL_SIZE];
 };
-N_NIMCALL(NimStringDesc*, getenv_122843)(NimStringDesc* key);
+N_NIMCALL(NimStringDesc*, getenv_123843)(NimStringDesc* key);
 N_NIMCALL(NI, nsuParseInt)(NimStringDesc* s);
-STRING_LITERAL(TMP4291, "NUMBER_OF_PROCESSORS", 20);
+STRING_LITERAL(TMP4338, "NUMBER_OF_PROCESSORS", 20);
 
 N_NIMCALL(NI, ncpicountProcessors)(void) {
 	NI result;
 	NimStringDesc* x;
 	result = 0;
-	x = getenv_122843(((NimStringDesc*) &TMP4291));
+	x = getenv_123843(((NimStringDesc*) &TMP4338));
 	{
-		if (!(((NI) 0) < x->Sup.len)) goto LA3;
+		if (!(((NI) 0) < (x ? x->Sup.len : 0))) goto LA3;
 		result = nsuParseInt(x);
 	}
 	LA3: ;

@@ -27,14 +27,14 @@ NCSTRING name;
 NI len;
 TNimNode** sons;
 };
-TNimType NTI105285; /* TPid */
+TNimType NTI107285; /* TPid */
 NIM_EXTERNC N_NOINLINE(void, stdlib_posixInit)(void) {
 }
 
 NIM_EXTERNC N_NOINLINE(void, stdlib_posixDatInit)(void) {
-NTI105285.size = sizeof(pid_t);
-NTI105285.kind = 31;
-NTI105285.base = 0;
-NTI105285.flags = 3;
+NTI107285.size = sizeof(pid_t);
+NTI107285.kind = 31;
+NTI107285.base = 0;
+NTI107285.flags = 3;
 }
 

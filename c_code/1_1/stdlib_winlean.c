@@ -7,27 +7,27 @@
 #include <string.h>
 
 #include "winsock2.h"
-typedef struct tguid105614 tguid105614;
+typedef struct Tguid106614 Tguid106614;
 typedef struct TGenericSeq TGenericSeq;
 typedef struct NimStringDesc NimStringDesc;
-typedef struct twin32finddata104219 twin32finddata104219;
-typedef struct tfiletime103245 tfiletime103245;
+typedef struct Twin32finddata105219 Twin32finddata105219;
+typedef struct Tfiletime104245 Tfiletime104245;
 typedef struct TNimType TNimType;
 typedef struct TNimNode TNimNode;
-typedef struct tsecurityattributes103239 tsecurityattributes103239;
-typedef struct tstartupinfo103241 tstartupinfo103241;
-typedef struct tprocessinformation103243 tprocessinformation103243;
-typedef struct addrinfo104868 addrinfo104868;
-typedef struct tfdset104864 tfdset104864;
-typedef struct timeval104866 timeval104866;
-typedef NI8 TY105627[8];
-struct  tguid105614  {
+typedef struct Tsecurityattributes104239 Tsecurityattributes104239;
+typedef struct Tstartupinfo104241 Tstartupinfo104241;
+typedef struct Tprocessinformation104243 Tprocessinformation104243;
+typedef struct Addrinfo105868 Addrinfo105868;
+typedef struct Tfdset105864 Tfdset105864;
+typedef struct Timeval105866 Timeval105866;
+typedef NI8 TY106627[8];
+struct  Tguid106614  {
 NI32 D1;
 NI16 D2;
 NI16 D3;
-TY105627 D4;
+TY106627 D4;
 };
-typedef NI8 TY105708[8];
+typedef NI8 TY106708[8];
 struct  TGenericSeq  {
 NI len;
 NI reserved;
@@ -36,34 +36,34 @@ struct  NimStringDesc  {
   TGenericSeq Sup;
 NIM_CHAR data[SEQ_DECL_SIZE];
 };
-typedef N_STDCALL_PTR(int, TY105236) (NI16 wversionrequired, WSADATA* wsdata);
-typedef N_STDCALL_PTR(NI32, TY103663) (NI32 dwflags, void* lpsource, NI32 dwmessageid, NI32 dwlanguageid, void* lpbuffer, NI32 nsize, void* arguments);
-typedef N_STDCALL_PTR(void, TY103805) (void* p);
-typedef N_STDCALL_PTR(NI32, TY103658) (void);
-typedef N_STDCALL_PTR(NI32, TY104411) (NI16* lpfilename, NI32 nbufferlength, NI16* lpbuffer, NI16** lpfilepart);
-typedef N_STDCALL_PTR(NI32, TY103829) (NI handle, NI16* buf, NI32 size);
-typedef N_STDCALL_PTR(NI, TY104240) (NI16* lpfilename, twin32finddata104219* lpfindfiledata);
-typedef N_STDCALL_PTR(NI32, TY104245) (NI hfindfile, twin32finddata104219* lpfindfiledata);
-typedef N_STDCALL_PTR(void, TY104405) (NI hfindfile);
-typedef N_STDCALL_PTR(NI32, TY103818) (NI16* pathname, void* security);
-typedef N_STDCALL_PTR(NI, TY105318) (NI16* lpfilename, NI32 dwdesiredaccess, NI32 dwsharemode, void* lpsecurityattributes, NI32 dwcreationdisposition, NI32 dwflagsandattributes, NI htemplatefile);
-typedef N_STDCALL_PTR(NI32, TY103425) (NI hobject);
-typedef N_STDCALL_PTR(NI32, TY105411) (NI hfile, NI32 ldistancetomove, NI32* lpdistancetomovehigh, NI32 dwmovemethod);
-typedef N_STDCALL_PTR(NI32, TY105405) (NI hfile);
-typedef N_STDCALL_PTR(NI, TY105440) (NI hfile, void* lpfilemappingattributes, NI32 flprotect, NI32 dwmaximumsizehigh, NI32 dwmaximumsizelow, void* lpname);
-typedef N_STDCALL_PTR(void*, TY105429) (NI hfilemappingobject, NI32 dwdesiredaccess, NI32 dwfileoffsethigh, NI32 dwfileoffsetlow, NI32 dwnumberofbytestomap, void* lpbaseaddress);
-typedef N_STDCALL_PTR(NI32, TY105421) (NI hfile, NI32* lpfilesizehigh);
-typedef N_STDCALL_PTR(NI32, TY104418) (NI16* lpfilename);
-typedef N_STDCALL_PTR(NI32, TY105602) (void* lpbaseaddress);
-typedef N_STDCALL_PTR(NI16*, TY104440) (void);
-typedef N_STDCALL_PTR(NI16*, TY104435) (void);
-typedef N_STDCALL_PTR(NI32, TY104437) (NI16* para1);
-typedef N_STDCALL_PTR(NI32, TY103825) (NI16* lpname, NI16* lpvalue);
-typedef N_STDCALL_PTR(NI32, TY103811) (NI32 nbufferlength, NI16* lpbuffer);
-typedef N_STDCALL_PTR(void, TY104625) (tfiletime103245* lpsystemtimeasfiletime);
-struct  tfiletime103245  {
-NI32 Dwlowdatetime;
-NI32 Dwhighdatetime;
+typedef N_STDCALL_PTR(int, TY106236) (NI16 wversionrequired, WSADATA* Wsdata);
+typedef N_STDCALL_PTR(NI32, TY104663) (NI32 dwflags, void* lpsource, NI32 dwmessageid, NI32 dwlanguageid, void* lpbuffer, NI32 nsize, void* Arguments);
+typedef N_STDCALL_PTR(void, TY104805) (void* p);
+typedef N_STDCALL_PTR(NI32, TY104658) (void);
+typedef N_STDCALL_PTR(NI32, TY105411) (NI16* lpfilename, NI32 nbufferlength, NI16* lpbuffer, NI16** lpfilepart);
+typedef N_STDCALL_PTR(NI32, TY104829) (NI handle, NI16* buf, NI32 size);
+typedef N_STDCALL_PTR(NI, TY105240) (NI16* lpfilename, Twin32finddata105219* lpfindfiledata);
+typedef N_STDCALL_PTR(NI32, TY105245) (NI hfindfile, Twin32finddata105219* lpfindfiledata);
+typedef N_STDCALL_PTR(void, TY105405) (NI hfindfile);
+typedef N_STDCALL_PTR(NI32, TY104818) (NI16* pathname, void* security);
+typedef N_STDCALL_PTR(NI, TY106318) (NI16* lpfilename, NI32 dwdesiredaccess, NI32 dwsharemode, void* lpsecurityattributes, NI32 dwcreationdisposition, NI32 dwflagsandattributes, NI htemplatefile);
+typedef N_STDCALL_PTR(NI32, TY104425) (NI hobject);
+typedef N_STDCALL_PTR(NI32, TY106411) (NI hfile, NI32 ldistancetomove, NI32* lpdistancetomovehigh, NI32 dwmovemethod);
+typedef N_STDCALL_PTR(NI32, TY106405) (NI hfile);
+typedef N_STDCALL_PTR(NI, TY106440) (NI hfile, void* lpfilemappingattributes, NI32 flprotect, NI32 dwmaximumsizehigh, NI32 dwmaximumsizelow, void* lpname);
+typedef N_STDCALL_PTR(void*, TY106429) (NI hfilemappingobject, NI32 dwdesiredaccess, NI32 dwfileoffsethigh, NI32 dwfileoffsetlow, NI32 dwnumberofbytestomap, void* lpbaseaddress);
+typedef N_STDCALL_PTR(NI32, TY106421) (NI hfile, NI32* lpfilesizehigh);
+typedef N_STDCALL_PTR(NI32, TY105418) (NI16* lpfilename);
+typedef N_STDCALL_PTR(NI32, TY106602) (void* lpbaseaddress);
+typedef N_STDCALL_PTR(NI16*, TY105440) (void);
+typedef N_STDCALL_PTR(NI16*, TY105435) (void);
+typedef N_STDCALL_PTR(NI32, TY105437) (NI16* para1);
+typedef N_STDCALL_PTR(NI32, TY104825) (NI16* lpname, NI16* lpvalue);
+typedef N_STDCALL_PTR(NI32, TY104811) (NI32 nbufferlength, NI16* lpbuffer);
+typedef N_STDCALL_PTR(void, TY105625) (Tfiletime104245* lpsystemtimeasfiletime);
+struct  Tfiletime104245  {
+NI32 dwlowdatetime;
+NI32 dwhighdatetime;
 };
 typedef N_NIMCALL_PTR(void, TY3289) (void* p, NI op);
 typedef N_NIMCALL_PTR(void*, TY3294) (void* p);
@@ -77,46 +77,46 @@ void* finalizer;
 TY3289 marker;
 TY3294 deepcopy;
 };
-typedef N_STDCALL_PTR(NI32, TY103453) (NI* hreadpipe, NI* hwritepipe, tsecurityattributes103239* lppipeattributes, NI32 nsize);
-typedef N_STDCALL_PTR(NI, TY103639) (NI32 nstdhandle);
-typedef N_STDCALL_PTR(NI32, TY103464) (NI16* lpapplicationname, NI16* lpcommandline, tsecurityattributes103239* lpprocessattributes, tsecurityattributes103239* lpthreadattributes, NI32 binherithandles, NI32 dwcreationflags, NI16* lpenvironment, NI16* lpcurrentdirectory, tstartupinfo103241* lpstartupinfo, tprocessinformation103243* lpprocessinformation);
-typedef N_STDCALL_PTR(NI32, TY103431) (NI hfile, void* buffer, NI32 nnumberofbytestoread, NI32* lpnumberofbytesread, void* lpoverlapped);
-typedef N_STDCALL_PTR(NI32, TY103442) (NI hfile, void* buffer, NI32 nnumberofbytestowrite, NI32* lpnumberofbyteswritten, void* lpoverlapped);
-typedef N_STDCALL_PTR(NI32, TY103617) (NI hhandle, NI32 dwmilliseconds);
-typedef N_STDCALL_PTR(NI32, TY103631) (NI hprocess, NI32* lpexitcode);
-typedef N_STDCALL_PTR(void, TY104632) (NI32 dwmilliseconds);
-typedef N_STDCALL_PTR(NI, TY105024) (int af, int typ, int protocol);
-typedef N_STDCALL_PTR(int, TY105048) (NI s, SOCKADDR* name, int namelen);
-typedef N_STDCALL_PTR(int, TY105244) (NCSTRING nodename, NCSTRING servname, addrinfo104868* hints, addrinfo104868** res);
-typedef N_STDCALL_PTR(void, TY105256) (addrinfo104868* ai);
-typedef N_STDCALL_PTR(int, TY105097) (NI s, int backlog);
-typedef N_STDCALL_PTR(int, TY105138) (NI s, void* buf, int len, int flags);
-typedef N_STDCALL_PTR(NI, TY105038) (NI s, SOCKADDR* a, int* addrlen);
-typedef N_STDCALL_PTR(NCSTRING, TY105263) (IN_ADDR i);
-typedef NI TY104915[64];
-struct  tfdset104864  {
-int Fdcount;
-TY104915 Fdarray;
+typedef N_STDCALL_PTR(NI32, TY104453) (NI* hreadpipe, NI* hwritepipe, Tsecurityattributes104239* lppipeattributes, NI32 nsize);
+typedef N_STDCALL_PTR(NI, TY104639) (NI32 nstdhandle);
+typedef N_STDCALL_PTR(NI32, TY104464) (NI16* lpapplicationname, NI16* lpcommandline, Tsecurityattributes104239* lpprocessattributes, Tsecurityattributes104239* lpthreadattributes, NI32 binherithandles, NI32 dwcreationflags, NI16* lpenvironment, NI16* lpcurrentdirectory, Tstartupinfo104241* lpstartupinfo, Tprocessinformation104243* lpprocessinformation);
+typedef N_STDCALL_PTR(NI32, TY104431) (NI hfile, void* Buffer, NI32 nnumberofbytestoread, NI32* lpnumberofbytesread, void* lpoverlapped);
+typedef N_STDCALL_PTR(NI32, TY104442) (NI hfile, void* Buffer, NI32 nnumberofbytestowrite, NI32* lpnumberofbyteswritten, void* lpoverlapped);
+typedef N_STDCALL_PTR(NI32, TY104617) (NI hhandle, NI32 dwmilliseconds);
+typedef N_STDCALL_PTR(NI32, TY104631) (NI hprocess, NI32* lpexitcode);
+typedef N_STDCALL_PTR(void, TY105632) (NI32 dwmilliseconds);
+typedef N_STDCALL_PTR(NI, TY106024) (int af, int typ, int protocol);
+typedef N_STDCALL_PTR(int, TY106048) (NI s, SOCKADDR* name, unsigned int namelen);
+typedef N_STDCALL_PTR(int, TY106244) (NCSTRING nodename, NCSTRING servname, Addrinfo105868* hints, Addrinfo105868** res);
+typedef N_STDCALL_PTR(void, TY106256) (Addrinfo105868* ai);
+typedef N_STDCALL_PTR(int, TY106097) (NI s, int backlog);
+typedef N_STDCALL_PTR(int, TY106138) (NI s, void* buf, int len, int flags);
+typedef N_STDCALL_PTR(NI, TY106038) (NI s, SOCKADDR* a, unsigned int* addrlen);
+typedef N_STDCALL_PTR(NCSTRING, TY106263) (IN_ADDR i);
+typedef NI TY105915[64];
+struct  Tfdset105864  {
+int fdcount;
+TY105915 fdarray;
 };
-typedef N_STDCALL_PTR(int, TY105126) (int nfds, tfdset104864* readfds, tfdset104864* writefds, tfdset104864* exceptfds, timeval104866* timeout);
-typedef N_STDCALL_PTR(NIM_BOOL, TY105185) (NI s, tfdset104864* set);
-typedef N_STDCALL_PTR(int, TY105104) (NI s, void* buf, int len, int flags);
-typedef N_STDCALL_PTR(int, TY105032) (NI s);
-typedef NIM_CHAR TY104873[257];
-typedef NIM_CHAR TY104876[129];
-typedef NI16 TY104228[260];
-typedef NI16 TY104232[14];
-struct  twin32finddata104219  {
-NI32 Dwfileattributes;
-tfiletime103245 Ftcreationtime;
-tfiletime103245 Ftlastaccesstime;
-tfiletime103245 Ftlastwritetime;
-NI32 Nfilesizehigh;
-NI32 Nfilesizelow;
-NI32 Dwreserved0;
-NI32 Dwreserved1;
-TY104228 Cfilename;
-TY104232 Calternatefilename;
+typedef N_STDCALL_PTR(int, TY106126) (int nfds, Tfdset105864* readfds, Tfdset105864* writefds, Tfdset105864* exceptfds, Timeval105866* timeout);
+typedef N_STDCALL_PTR(NIM_BOOL, TY106185) (NI s, Tfdset105864* set);
+typedef N_STDCALL_PTR(int, TY106104) (NI s, void* buf, int len, int flags);
+typedef N_STDCALL_PTR(int, TY106032) (NI s);
+typedef NIM_CHAR TY105873[257];
+typedef NIM_CHAR TY105876[129];
+typedef NI16 TY105228[260];
+typedef NI16 TY105232[14];
+struct  Twin32finddata105219  {
+NI32 dwfileattributes;
+Tfiletime104245 ftcreationtime;
+Tfiletime104245 ftlastaccesstime;
+Tfiletime104245 ftlastwritetime;
+NI32 nfilesizehigh;
+NI32 nfilesizelow;
+NI32 dwreserved0;
+NI32 dwreserved1;
+TY105228 cfilename;
+TY105232 calternatefilename;
 };
 struct  TNimNode  {
 NU8 kind;
@@ -126,56 +126,56 @@ NCSTRING name;
 NI len;
 TNimNode** sons;
 };
-struct  tsecurityattributes103239  {
-NI32 Nlength;
-void* Lpsecuritydescriptor;
-NI32 Binherithandle;
+struct  Tsecurityattributes104239  {
+NI32 nlength;
+void* lpsecuritydescriptor;
+NI32 binherithandle;
 };
-struct  tstartupinfo103241  {
-NI32 Cb;
-NCSTRING Lpreserved;
-NCSTRING Lpdesktop;
-NCSTRING Lptitle;
-NI32 Dwx;
-NI32 Dwy;
-NI32 Dwxsize;
-NI32 Dwysize;
-NI32 Dwxcountchars;
-NI32 Dwycountchars;
-NI32 Dwfillattribute;
-NI32 Dwflags;
-NI16 Wshowwindow;
-NI16 Cbreserved2;
-void* Lpreserved2;
-NI Hstdinput;
-NI Hstdoutput;
-NI Hstderror;
+struct  Tstartupinfo104241  {
+NI32 cb;
+NCSTRING lpreserved;
+NCSTRING lpdesktop;
+NCSTRING lptitle;
+NI32 dwx;
+NI32 dwy;
+NI32 dwxsize;
+NI32 dwysize;
+NI32 dwxcountchars;
+NI32 dwycountchars;
+NI32 dwfillattribute;
+NI32 dwflags;
+NI16 wshowwindow;
+NI16 cbreserved2;
+void* lpreserved2;
+NI hstdinput;
+NI hstdoutput;
+NI hstderror;
 };
-struct  tprocessinformation103243  {
-NI Hprocess;
-NI Hthread;
-NI32 Dwprocessid;
-NI32 Dwthreadid;
+struct  Tprocessinformation104243  {
+NI hprocess;
+NI hthread;
+NI32 dwprocessid;
+NI32 dwthreadid;
 };
-typedef NIM_CHAR TY104883[14];
-struct  addrinfo104868  {
-int Aiflags;
-int Aifamily;
-int Aisocktype;
-int Aiprotocol;
-NI Aiaddrlen;
-NCSTRING Aicanonname;
-SOCKADDR* Aiaddr;
-addrinfo104868* Ainext;
+typedef NIM_CHAR TY105883[14];
+struct  Addrinfo105868  {
+int aiflags;
+int aifamily;
+int aisocktype;
+int aiprotocol;
+NI aiaddrlen;
+NCSTRING aicanonname;
+SOCKADDR* aiaddr;
+Addrinfo105868* ainext;
 };
-struct  timeval104866  {
-NI32 Tvsec;
-NI32 Tvusec;
+struct  Timeval105866  {
+NI32 tvsec;
+NI32 tvusec;
 };
 N_NIMCALL(void*, nimLoadLibrary)(NimStringDesc* path);
 N_NOINLINE(void, nimLoadLibraryError)(NimStringDesc* path);
 N_NIMCALL(void*, nimGetProcAddr)(void* lib, NCSTRING name);
-NIM_CONST TY105708 TMP19 = {((NI8) -114),
+NIM_CONST TY106708 TMP19 = {((NI8) -114),
 ((NI8) -23),
 ((NI8) 118),
 ((NI8) -27),
@@ -184,7 +184,7 @@ NIM_CONST TY105708 TMP19 = {((NI8) -114),
 ((NI8) 6),
 ((NI8) 62)}
 ;
-NIM_CONST TY105708 TMP20 = {((NI8) -107),
+NIM_CONST TY106708 TMP20 = {((NI8) -107),
 ((NI8) -54),
 ((NI8) 0),
 ((NI8) -128),
@@ -193,89 +193,89 @@ NIM_CONST TY105708 TMP20 = {((NI8) -107),
 ((NI8) -95),
 ((NI8) -110)}
 ;
-STRING_LITERAL(TMP996, "Ws2_32.dll", 10);
-STRING_LITERAL(TMP997, "Ws2_32.dll", 10);
-STRING_LITERAL(TMP1003, "kernel32", 8);
-STRING_LITERAL(TMP1004, "kernel32", 8);
-tguid105614 wsaidconnectex_105710;
-tguid105614 wsaidacceptex_105714;
-tguid105614 wsaidgetacceptexsockaddrs_105718;
-static void* TMP995;
-TY105236 Dl_105235;
-static void* TMP1002;
-TY103663 Dl_103662;
-TY103805 Dl_103804;
-TY103658 Dl_103657;
-TY104411 Dl_104410;
-TY103829 Dl_103828;
-TY104240 Dl_104239;
-TY104245 Dl_104244;
-TY104405 Dl_104404;
-TY103818 Dl_103817;
-TY105318 Dl_105317;
-TY103425 Dl_103424;
+STRING_LITERAL(TMP1079, "Ws2_32.dll", 10);
+STRING_LITERAL(TMP1080, "Ws2_32.dll", 10);
+STRING_LITERAL(TMP1086, "kernel32", 8);
+STRING_LITERAL(TMP1087, "kernel32", 8);
+Tguid106614 Wsaidconnectex_106710;
+Tguid106614 Wsaidacceptex_106714;
+Tguid106614 Wsaidgetacceptexsockaddrs_106718;
+static void* TMP1078;
+TY106236 Dl_106235;
+static void* TMP1085;
+TY104663 Dl_104662;
+TY104805 Dl_104804;
+TY104658 Dl_104657;
 TY105411 Dl_105410;
+TY104829 Dl_104828;
+TY105240 Dl_105239;
+TY105245 Dl_105244;
 TY105405 Dl_105404;
+TY104818 Dl_104817;
+TY106318 Dl_106317;
+TY104425 Dl_104424;
+TY106411 Dl_106410;
+TY106405 Dl_106404;
+TY106440 Dl_106439;
+TY106429 Dl_106428;
+TY106421 Dl_106420;
+TY105418 Dl_105417;
+TY106602 Dl_106601;
 TY105440 Dl_105439;
-TY105429 Dl_105428;
-TY105421 Dl_105420;
-TY104418 Dl_104417;
-TY105602 Dl_105601;
-TY104440 Dl_104439;
-TY104435 Dl_104434;
-TY104437 Dl_104436;
-TY103825 Dl_103824;
-TY103811 Dl_103810;
-TY104625 Dl_104624;
-TNimType NTI103219; /* THandle */
-TY103453 Dl_103452;
-TY103639 Dl_103638;
-TY103464 Dl_103463;
-TY103431 Dl_103430;
-TY103442 Dl_103441;
-TY103617 Dl_103616;
-TY103631 Dl_103630;
-TY104632 Dl_104631;
-TY105024 Dl_105023;
-TY105048 Dl_105047;
-TY105244 Dl_105243;
-TY105256 Dl_105255;
-TY105097 Dl_105096;
-TY105138 Dl_105137;
-TY105038 Dl_105037;
-TY105263 Dl_105262;
-TY105126 Dl_105125;
-TY105185 Dl_105184;
-TY105104 Dl_105103;
-TY105032 Dl_105031;
+TY105435 Dl_105434;
+TY105437 Dl_105436;
+TY104825 Dl_104824;
+TY104811 Dl_104810;
+TY105625 Dl_105624;
+TNimType NTI104219; /* THandle */
+TY104453 Dl_104452;
+TY104639 Dl_104638;
+TY104464 Dl_104463;
+TY104431 Dl_104430;
+TY104442 Dl_104441;
+TY104617 Dl_104616;
+TY104631 Dl_104630;
+TY105632 Dl_105631;
+TY106024 Dl_106023;
+TY106048 Dl_106047;
+TY106244 Dl_106243;
+TY106256 Dl_106255;
+TY106097 Dl_106096;
+TY106138 Dl_106137;
+TY106038 Dl_106037;
+TY106263 Dl_106262;
+TY106126 Dl_106125;
+TY106185 Dl_106184;
+TY106104 Dl_106103;
+TY106032 Dl_106031;
 
-N_NIMCALL(NI64, rdfiletime_104604)(tfiletime103245 f) {
+N_NIMCALL(NI64, rdfiletime_105604)(Tfiletime104245 f) {
 	NI64 result;
 	result = 0;
-	result = (NI64)(((NI64)(NU64)(NU32)(f.Dwlowdatetime)) | (NI64)((NU64)(((NI64)(NU64)(NU32)(f.Dwhighdatetime))) << (NU64)(IL64(32))));
+	result = (NI64)(((NI64)(NU64)(NU32)(f.dwlowdatetime)) | (NI64)((NU64)(((NI64)(NU64)(NU32)(f.dwhighdatetime))) << (NU64)(IL64(32))));
 	return result;
 }
 
-N_NIMCALL(void, fdzero_105225)(tfdset104864* s) {
-	(*s).Fdcount = ((int) 0);
+N_NIMCALL(void, Fdzero_106225)(Tfdset105864* s) {
+	(*s).fdcount = ((int) 0);
 }
 
-N_NIMCALL(void, fdset_105204)(NI socket, tfdset104864* s) {
+N_NIMCALL(void, Fdset_106204)(NI socket, Tfdset105864* s) {
 	{
-		if (!((*s).Fdcount < ((NI32) 64))) goto LA3;
-		(*s).Fdarray[(((NI) ((*s).Fdcount)))- 0] = socket;
-		(*s).Fdcount += ((NI) 1);
+		if (!((*s).fdcount < ((NI32) 64))) goto LA3;
+		(*s).fdarray[(((NI) ((*s).fdcount)))- 0] = socket;
+		(*s).fdcount += ((NI) 1);
 	}
 	LA3: ;
 }
 
-N_NIMCALL(int, fdisset_105192)(NI socket, tfdset104864* set) {
+N_NIMCALL(int, Fdisset_106192)(NI socket, Tfdset105864* set) {
 	int result;
 	result = 0;
 	{
 		NIM_BOOL LOC3;
 		LOC3 = 0;
-		LOC3 = Dl_105184(socket, set);
+		LOC3 = Dl_106184(socket, set);
 		if (!LOC3) goto LA4;
 		result = ((NI32) 1);
 	}
@@ -288,82 +288,82 @@ N_NIMCALL(int, fdisset_105192)(NI socket, tfdset104864* set) {
 	return result;
 }
 NIM_EXTERNC N_NOINLINE(void, stdlib_winleanInit)(void) {
-	tguid105614 LOC1;
-	tguid105614 LOC2;
-	tguid105614 LOC3;
+	Tguid106614 LOC1;
+	Tguid106614 LOC2;
+	Tguid106614 LOC3;
 	memset((void*)(&LOC1), 0, sizeof(LOC1));
 	LOC1.D1 = ((NI32) 631375801);
 	LOC1.D2 = ((NI16) -8717);
 	LOC1.D3 = ((NI16) 18016);
 	memcpy((void*)LOC1.D4, (NIM_CONST void*)TMP19, sizeof(LOC1.D4));
-	wsaidconnectex_105710 = LOC1;
+	Wsaidconnectex_106710 = LOC1;
 	memset((void*)(&LOC2), 0, sizeof(LOC2));
 	LOC2.D1 = ((NI32) -1254720015);
 	LOC2.D2 = ((NI16) -13396);
 	LOC2.D3 = ((NI16) 4559);
 	memcpy((void*)LOC2.D4, (NIM_CONST void*)TMP20, sizeof(LOC2.D4));
-	wsaidacceptex_105714 = LOC2;
+	Wsaidacceptex_106714 = LOC2;
 	memset((void*)(&LOC3), 0, sizeof(LOC3));
 	LOC3.D1 = ((NI32) -1254720014);
 	LOC3.D2 = ((NI16) -13396);
 	LOC3.D3 = ((NI16) 4559);
 	memcpy((void*)LOC3.D4, (NIM_CONST void*)TMP20, sizeof(LOC3.D4));
-	wsaidgetacceptexsockaddrs_105718 = LOC3;
+	Wsaidgetacceptexsockaddrs_106718 = LOC3;
 }
 
 NIM_EXTERNC N_NOINLINE(void, stdlib_winleanDatInit)(void) {
-NTI103219.size = sizeof(NI);
-NTI103219.kind = 31;
-NTI103219.base = 0;
-NTI103219.flags = 3;
-if (!((TMP995 = nimLoadLibrary((NimStringDesc*) &TMP996))
-)) nimLoadLibraryError((NimStringDesc*) &TMP997);
-	Dl_105235 = (TY105236) nimGetProcAddr(TMP995, "WSAStartup");
-if (!((TMP1002 = nimLoadLibrary((NimStringDesc*) &TMP1003))
-)) nimLoadLibraryError((NimStringDesc*) &TMP1004);
-	Dl_103662 = (TY103663) nimGetProcAddr(TMP1002, "FormatMessageW");
-	Dl_103804 = (TY103805) nimGetProcAddr(TMP1002, "LocalFree");
-	Dl_103657 = (TY103658) nimGetProcAddr(TMP1002, "GetLastError");
-	Dl_104410 = (TY104411) nimGetProcAddr(TMP1002, "GetFullPathNameW");
-	Dl_103828 = (TY103829) nimGetProcAddr(TMP1002, "GetModuleFileNameW");
-	Dl_104239 = (TY104240) nimGetProcAddr(TMP1002, "FindFirstFileW");
-	Dl_104244 = (TY104245) nimGetProcAddr(TMP1002, "FindNextFileW");
-	Dl_104404 = (TY104405) nimGetProcAddr(TMP1002, "FindClose");
-	Dl_103817 = (TY103818) nimGetProcAddr(TMP1002, "CreateDirectoryW");
-	Dl_105317 = (TY105318) nimGetProcAddr(TMP1002, "CreateFileW");
-	Dl_103424 = (TY103425) nimGetProcAddr(TMP1002, "CloseHandle");
-	Dl_105410 = (TY105411) nimGetProcAddr(TMP1002, "SetFilePointer");
-	Dl_105404 = (TY105405) nimGetProcAddr(TMP1002, "SetEndOfFile");
-	Dl_105439 = (TY105440) nimGetProcAddr(TMP1002, "CreateFileMappingW");
-	Dl_105428 = (TY105429) nimGetProcAddr(TMP1002, "MapViewOfFileEx");
-	Dl_105420 = (TY105421) nimGetProcAddr(TMP1002, "GetFileSize");
-	Dl_104417 = (TY104418) nimGetProcAddr(TMP1002, "GetFileAttributesW");
-	Dl_105601 = (TY105602) nimGetProcAddr(TMP1002, "UnmapViewOfFile");
-	Dl_104439 = (TY104440) nimGetProcAddr(TMP1002, "GetCommandLineW");
-	Dl_104434 = (TY104435) nimGetProcAddr(TMP1002, "GetEnvironmentStringsW");
-	Dl_104436 = (TY104437) nimGetProcAddr(TMP1002, "FreeEnvironmentStringsW");
-	Dl_103824 = (TY103825) nimGetProcAddr(TMP1002, "SetEnvironmentVariableW");
-	Dl_103810 = (TY103811) nimGetProcAddr(TMP1002, "GetCurrentDirectoryW");
-	Dl_104624 = (TY104625) nimGetProcAddr(TMP1002, "GetSystemTimeAsFileTime");
-	Dl_103452 = (TY103453) nimGetProcAddr(TMP1002, "CreatePipe");
-	Dl_103638 = (TY103639) nimGetProcAddr(TMP1002, "GetStdHandle");
-	Dl_103463 = (TY103464) nimGetProcAddr(TMP1002, "CreateProcessW");
-	Dl_103430 = (TY103431) nimGetProcAddr(TMP1002, "ReadFile");
-	Dl_103441 = (TY103442) nimGetProcAddr(TMP1002, "WriteFile");
-	Dl_103616 = (TY103617) nimGetProcAddr(TMP1002, "WaitForSingleObject");
-	Dl_103630 = (TY103631) nimGetProcAddr(TMP1002, "GetExitCodeProcess");
-	Dl_104631 = (TY104632) nimGetProcAddr(TMP1002, "Sleep");
-	Dl_105023 = (TY105024) nimGetProcAddr(TMP995, "socket");
-	Dl_105047 = (TY105048) nimGetProcAddr(TMP995, "bind");
-	Dl_105243 = (TY105244) nimGetProcAddr(TMP995, "getaddrinfo");
-	Dl_105255 = (TY105256) nimGetProcAddr(TMP995, "freeaddrinfo");
-	Dl_105096 = (TY105097) nimGetProcAddr(TMP995, "listen");
-	Dl_105137 = (TY105138) nimGetProcAddr(TMP995, "send");
-	Dl_105037 = (TY105038) nimGetProcAddr(TMP995, "accept");
-	Dl_105262 = (TY105263) nimGetProcAddr(TMP995, "inet_ntoa");
-	Dl_105125 = (TY105126) nimGetProcAddr(TMP995, "select");
-	Dl_105184 = (TY105185) nimGetProcAddr(TMP995, "__WSAFDIsSet");
-	Dl_105103 = (TY105104) nimGetProcAddr(TMP995, "recv");
-	Dl_105031 = (TY105032) nimGetProcAddr(TMP995, "closesocket");
+NTI104219.size = sizeof(NI);
+NTI104219.kind = 31;
+NTI104219.base = 0;
+NTI104219.flags = 3;
+if (!((TMP1078 = nimLoadLibrary((NimStringDesc*) &TMP1079))
+)) nimLoadLibraryError((NimStringDesc*) &TMP1080);
+	Dl_106235 = (TY106236) nimGetProcAddr(TMP1078, "WSAStartup");
+if (!((TMP1085 = nimLoadLibrary((NimStringDesc*) &TMP1086))
+)) nimLoadLibraryError((NimStringDesc*) &TMP1087);
+	Dl_104662 = (TY104663) nimGetProcAddr(TMP1085, "FormatMessageW");
+	Dl_104804 = (TY104805) nimGetProcAddr(TMP1085, "LocalFree");
+	Dl_104657 = (TY104658) nimGetProcAddr(TMP1085, "GetLastError");
+	Dl_105410 = (TY105411) nimGetProcAddr(TMP1085, "GetFullPathNameW");
+	Dl_104828 = (TY104829) nimGetProcAddr(TMP1085, "GetModuleFileNameW");
+	Dl_105239 = (TY105240) nimGetProcAddr(TMP1085, "FindFirstFileW");
+	Dl_105244 = (TY105245) nimGetProcAddr(TMP1085, "FindNextFileW");
+	Dl_105404 = (TY105405) nimGetProcAddr(TMP1085, "FindClose");
+	Dl_104817 = (TY104818) nimGetProcAddr(TMP1085, "CreateDirectoryW");
+	Dl_106317 = (TY106318) nimGetProcAddr(TMP1085, "CreateFileW");
+	Dl_104424 = (TY104425) nimGetProcAddr(TMP1085, "CloseHandle");
+	Dl_106410 = (TY106411) nimGetProcAddr(TMP1085, "SetFilePointer");
+	Dl_106404 = (TY106405) nimGetProcAddr(TMP1085, "SetEndOfFile");
+	Dl_106439 = (TY106440) nimGetProcAddr(TMP1085, "CreateFileMappingW");
+	Dl_106428 = (TY106429) nimGetProcAddr(TMP1085, "MapViewOfFileEx");
+	Dl_106420 = (TY106421) nimGetProcAddr(TMP1085, "GetFileSize");
+	Dl_105417 = (TY105418) nimGetProcAddr(TMP1085, "GetFileAttributesW");
+	Dl_106601 = (TY106602) nimGetProcAddr(TMP1085, "UnmapViewOfFile");
+	Dl_105439 = (TY105440) nimGetProcAddr(TMP1085, "GetCommandLineW");
+	Dl_105434 = (TY105435) nimGetProcAddr(TMP1085, "GetEnvironmentStringsW");
+	Dl_105436 = (TY105437) nimGetProcAddr(TMP1085, "FreeEnvironmentStringsW");
+	Dl_104824 = (TY104825) nimGetProcAddr(TMP1085, "SetEnvironmentVariableW");
+	Dl_104810 = (TY104811) nimGetProcAddr(TMP1085, "GetCurrentDirectoryW");
+	Dl_105624 = (TY105625) nimGetProcAddr(TMP1085, "GetSystemTimeAsFileTime");
+	Dl_104452 = (TY104453) nimGetProcAddr(TMP1085, "CreatePipe");
+	Dl_104638 = (TY104639) nimGetProcAddr(TMP1085, "GetStdHandle");
+	Dl_104463 = (TY104464) nimGetProcAddr(TMP1085, "CreateProcessW");
+	Dl_104430 = (TY104431) nimGetProcAddr(TMP1085, "ReadFile");
+	Dl_104441 = (TY104442) nimGetProcAddr(TMP1085, "WriteFile");
+	Dl_104616 = (TY104617) nimGetProcAddr(TMP1085, "WaitForSingleObject");
+	Dl_104630 = (TY104631) nimGetProcAddr(TMP1085, "GetExitCodeProcess");
+	Dl_105631 = (TY105632) nimGetProcAddr(TMP1085, "Sleep");
+	Dl_106023 = (TY106024) nimGetProcAddr(TMP1078, "socket");
+	Dl_106047 = (TY106048) nimGetProcAddr(TMP1078, "bind");
+	Dl_106243 = (TY106244) nimGetProcAddr(TMP1078, "getaddrinfo");
+	Dl_106255 = (TY106256) nimGetProcAddr(TMP1078, "freeaddrinfo");
+	Dl_106096 = (TY106097) nimGetProcAddr(TMP1078, "listen");
+	Dl_106137 = (TY106138) nimGetProcAddr(TMP1078, "send");
+	Dl_106037 = (TY106038) nimGetProcAddr(TMP1078, "accept");
+	Dl_106262 = (TY106263) nimGetProcAddr(TMP1078, "inet_ntoa");
+	Dl_106125 = (TY106126) nimGetProcAddr(TMP1078, "select");
+	Dl_106184 = (TY106185) nimGetProcAddr(TMP1078, "__WSAFDIsSet");
+	Dl_106103 = (TY106104) nimGetProcAddr(TMP1078, "recv");
+	Dl_106031 = (TY106032) nimGetProcAddr(TMP1078, "closesocket");
 }
 

@@ -5,71 +5,71 @@
 #include "nimbase.h"
 
 #include <string.h>
-typedef struct tsymseq207815 tsymseq207815;
-typedef struct tsym207843 tsym207843;
+typedef struct Tsymseq190815 Tsymseq190815;
+typedef struct Tsym190843 Tsym190843;
 typedef struct TGenericSeq TGenericSeq;
 typedef struct TNimType TNimType;
 typedef struct TNimNode TNimNode;
-typedef struct tcell45947 tcell45947;
-typedef struct tcellseq45963 tcellseq45963;
-typedef struct tgcheap47816 tgcheap47816;
-typedef struct tcellset45959 tcellset45959;
-typedef struct tpagedesc45955 tpagedesc45955;
-typedef struct tmemregion27810 tmemregion27810;
-typedef struct tsmallchunk27040 tsmallchunk27040;
-typedef struct tllchunk27804 tllchunk27804;
-typedef struct tbigchunk27042 tbigchunk27042;
-typedef struct tintset27017 tintset27017;
-typedef struct ttrunk27013 ttrunk27013;
-typedef struct tavlnode27808 tavlnode27808;
-typedef struct tgcstat47814 tgcstat47814;
-typedef struct tcontext259021 tcontext259021;
-typedef struct tpasscontext256005 tpasscontext256005;
+typedef struct Tcell46147 Tcell46147;
+typedef struct Tcellseq46163 Tcellseq46163;
+typedef struct Tgcheap48016 Tgcheap48016;
+typedef struct Tcellset46159 Tcellset46159;
+typedef struct Tpagedesc46155 Tpagedesc46155;
+typedef struct Tmemregion28010 Tmemregion28010;
+typedef struct Tsmallchunk27240 Tsmallchunk27240;
+typedef struct Tllchunk28004 Tllchunk28004;
+typedef struct Tbigchunk27242 Tbigchunk27242;
+typedef struct Tintset27217 Tintset27217;
+typedef struct Ttrunk27213 Ttrunk27213;
+typedef struct Tavlnode28008 Tavlnode28008;
+typedef struct Tgcstat48014 Tgcstat48014;
+typedef struct Ttype190849 Ttype190849;
+typedef struct Tcontext243023 Tcontext243023;
+typedef struct Tpasscontext240005 Tpasscontext240005;
 typedef struct TNimObject TNimObject;
-typedef struct tscope207837 tscope207837;
-typedef struct tproccon259011 tproccon259011;
-typedef struct intset204056 intset204056;
-typedef struct ttrunk204052 ttrunk204052;
-typedef struct ttrunkseq204054 ttrunkseq204054;
-typedef struct tlinkedlist127028 tlinkedlist127028;
-typedef struct tlistentry127022 tlistentry127022;
-typedef struct tidtable207861 tidtable207861;
-typedef struct tidpairseq207859 tidpairseq207859;
-typedef struct tidpair207857 tidpair207857;
-typedef struct tidobj184015 tidobj184015;
-typedef struct tnode207813 tnode207813;
-typedef struct ttype207849 ttype207849;
-typedef struct tlineinfo180338 tlineinfo180338;
-typedef struct tstrtable207817 tstrtable207817;
-typedef struct tctx258048 tctx258048;
-typedef struct TY259134 TY259134;
-typedef struct tinstantiationpair259013 tinstantiationpair259013;
-typedef struct tinstantiation207833 tinstantiation207833;
-typedef struct TY529942 TY529942;
-typedef struct TY529945 TY529945;
-typedef struct toptionentry259005 toptionentry259005;
-typedef struct tlib207831 tlib207831;
-typedef struct ttypeseq207845 ttypeseq207845;
-typedef struct tloc207827 tloc207827;
-typedef struct trope177009 trope177009;
+typedef struct Tscope190837 Tscope190837;
+typedef struct Tproccon243011 Tproccon243011;
+typedef struct Intset187056 Intset187056;
+typedef struct Ttrunk187052 Ttrunk187052;
+typedef struct Ttrunkseq187054 Ttrunkseq187054;
+typedef struct Tlinkedlist129028 Tlinkedlist129028;
+typedef struct Tlistentry129022 Tlistentry129022;
+typedef struct Tidtable190861 Tidtable190861;
+typedef struct Tidpairseq190859 Tidpairseq190859;
+typedef struct Tnode190813 Tnode190813;
+typedef struct Tlineinfo162338 Tlineinfo162338;
+typedef struct Tstrtable190817 Tstrtable190817;
+typedef struct Tctx242048 Tctx242048;
+typedef struct TY243141 TY243141;
+typedef struct TY522942 TY522942;
+typedef struct TY522945 TY522945;
+typedef struct Tinstantiationpair243013 Tinstantiationpair243013;
+typedef struct Tinstantiation190833 Tinstantiation190833;
+typedef struct Toptionentry243005 Toptionentry243005;
+typedef struct Tlib190831 Tlib190831;
+typedef struct Tidobj166015 Tidobj166015;
+typedef struct Ttypeseq190845 Ttypeseq190845;
+typedef struct Tloc190827 Tloc190827;
+typedef struct Ropeobj160009 Ropeobj160009;
 typedef struct NimStringDesc NimStringDesc;
-typedef struct TY85545 TY85545;
-typedef struct tident184021 tident184021;
-typedef struct tnodeseq207807 tnodeseq207807;
-typedef struct TY207944 TY207944;
-typedef struct tbasechunk27038 tbasechunk27038;
-typedef struct tfreecell27030 tfreecell27030;
-typedef struct TY258250 TY258250;
-typedef struct TY181036 TY181036;
-typedef struct pprocHEX3Aobjecttype258230 pprocHEX3Aobjecttype258230;
-typedef struct TY258269 TY258269;
-typedef struct TY258270 TY258270;
-typedef struct vmargs258042 vmargs258042;
-typedef struct TY207933 TY207933;
-typedef struct TY258231 TY258231;
-typedef struct tblock258030 tblock258030;
-typedef struct TY258211 TY258211;
-typedef struct TY258237 TY258237;
+typedef struct TY86145 TY86145;
+typedef struct Tident166021 Tident166021;
+typedef struct Tnodeseq190807 Tnodeseq190807;
+typedef struct TY190944 TY190944;
+typedef struct Tbasechunk27238 Tbasechunk27238;
+typedef struct Tfreecell27230 Tfreecell27230;
+typedef struct Tidpair190857 Tidpair190857;
+typedef struct TY242253 TY242253;
+typedef struct TY163037 TY163037;
+typedef struct PprocHEX3Aobjecttype242232 PprocHEX3Aobjecttype242232;
+typedef struct TY242272 TY242272;
+typedef struct TY190933 TY190933;
+typedef struct TY242233 TY242233;
+typedef struct TY242239 TY242239;
+typedef struct TY242273 TY242273;
+typedef struct Vmargs242042 Vmargs242042;
+typedef struct Tblock242030 Tblock242030;
+typedef struct TY242213 TY242213;
 struct  TGenericSeq  {
 NI len;
 NI reserved;
@@ -94,700 +94,720 @@ NCSTRING name;
 NI len;
 TNimNode** sons;
 };
-struct  tcell45947  {
-NI Refcount;
-TNimType* Typ;
+struct  Tcell46147  {
+NI refcount;
+TNimType* typ;
 };
-struct  tcellseq45963  {
-NI Len;
-NI Cap;
-tcell45947** D;
+struct  Tcellseq46163  {
+NI len;
+NI cap;
+Tcell46147** d;
 };
-struct  tcellset45959  {
-NI Counter;
-NI Max;
-tpagedesc45955* Head;
-tpagedesc45955** Data;
+struct  Tcellset46159  {
+NI counter;
+NI max;
+Tpagedesc46155* head;
+Tpagedesc46155** data;
 };
-typedef tsmallchunk27040* TY27822[512];
-typedef ttrunk27013* ttrunkbuckets27015[256];
-struct  tintset27017  {
-ttrunkbuckets27015 Data;
+typedef Tsmallchunk27240* TY28022[512];
+typedef Ttrunk27213* Ttrunkbuckets27215[256];
+struct  Tintset27217  {
+Ttrunkbuckets27215 data;
 };
-struct  tmemregion27810  {
-NI Minlargeobj;
-NI Maxlargeobj;
-TY27822 Freesmallchunks;
-tllchunk27804* Llmem;
-NI Currmem;
-NI Maxmem;
-NI Freemem;
-NI Lastsize;
-tbigchunk27042* Freechunkslist;
-tintset27017 Chunkstarts;
-tavlnode27808* Root;
-tavlnode27808* Deleted;
-tavlnode27808* Last;
-tavlnode27808* Freeavlnodes;
+struct  Tmemregion28010  {
+NI minlargeobj;
+NI maxlargeobj;
+TY28022 freesmallchunks;
+Tllchunk28004* llmem;
+NI currmem;
+NI maxmem;
+NI freemem;
+NI lastsize;
+Tbigchunk27242* freechunkslist;
+Tintset27217 chunkstarts;
+Tavlnode28008* root;
+Tavlnode28008* deleted;
+Tavlnode28008* last;
+Tavlnode28008* freeavlnodes;
 };
-struct  tgcstat47814  {
-NI Stackscans;
-NI Cyclecollections;
-NI Maxthreshold;
-NI Maxstacksize;
-NI Maxstackcells;
-NI Cycletablesize;
-NI64 Maxpause;
+struct  Tgcstat48014  {
+NI stackscans;
+NI cyclecollections;
+NI maxthreshold;
+NI maxstacksize;
+NI maxstackcells;
+NI cycletablesize;
+NI64 maxpause;
 };
-struct  tgcheap47816  {
-void* Stackbottom;
-NI Cyclethreshold;
-tcellseq45963 Zct;
-tcellseq45963 Decstack;
-tcellset45959 Cycleroots;
-tcellseq45963 Tempstack;
-NI Recgclock;
-tmemregion27810 Region;
-tgcstat47814 Stat;
+struct  Tgcheap48016  {
+void* stackbottom;
+NI cyclethreshold;
+Tcellseq46163 zct;
+Tcellseq46163 decstack;
+Tcellset46159 cycleroots;
+Tcellseq46163 tempstack;
+NI recgclock;
+Tmemregion28010 region;
+Tgcstat48014 stat;
 };
 struct  TNimObject  {
 TNimType* m_type;
 };
-struct  tpasscontext256005  {
+struct  Tpasscontext240005  {
   TNimObject Sup;
-NIM_BOOL Fromcache;
+NIM_BOOL fromcache;
 };
-struct  intset204056  {
-NI Counter;
-NI Max;
-ttrunk204052* Head;
-ttrunkseq204054* Data;
+struct  Intset187056  {
+NI counter;
+NI max;
+Ttrunk187052* head;
+Ttrunkseq187054* data;
 };
-struct  tlinkedlist127028  {
-tlistentry127022* Head;
-tlistentry127022* Tail;
-NI Counter;
+struct  Tlinkedlist129028  {
+Tlistentry129022* head;
+Tlistentry129022* tail;
+NI counter;
 };
-struct  tidpair207857  {
-tidobj184015* Key;
-TNimObject* Val;
+struct  Tidtable190861  {
+NI counter;
+Tidpairseq190859* data;
 };
-struct  tidtable207861  {
-NI Counter;
-tidpairseq207859* Data;
-};
-typedef N_NIMCALL_PTR(tnode207813*, TY259065) (tcontext259021* c, tnode207813* n);
-typedef N_NIMCALL_PTR(tnode207813*, TY259070) (tcontext259021* c, tnode207813* n, NU16 flags);
-typedef N_NIMCALL_PTR(tnode207813*, TY259078) (tcontext259021* c, tnode207813* n, NU16 flags);
-typedef N_NIMCALL_PTR(tnode207813*, TY259086) (tcontext259021* c, tnode207813* n);
-typedef N_NIMCALL_PTR(tnode207813*, TY259091) (tcontext259021* c, tnode207813* n, NU16 flags);
-typedef N_NIMCALL_PTR(tnode207813*, TY259099) (tcontext259021* c, tnode207813* n);
-typedef N_NIMCALL_PTR(tnode207813*, TY259104) (tcontext259021* c, tnode207813* n, tnode207813* norig, NU32 filter);
-typedef N_NIMCALL_PTR(ttype207849*, TY259111) (tcontext259021* c, tnode207813* n, ttype207849* prev);
+typedef N_NIMCALL_PTR(Tnode190813*, TY243072) (Tcontext243023* c, Tnode190813* n);
+typedef N_NIMCALL_PTR(Tnode190813*, TY243077) (Tcontext243023* c, Tnode190813* n, NU16 flags);
+typedef N_NIMCALL_PTR(Tnode190813*, TY243085) (Tcontext243023* c, Tnode190813* n, NU16 flags);
+typedef N_NIMCALL_PTR(Tnode190813*, TY243093) (Tcontext243023* c, Tnode190813* n);
+typedef N_NIMCALL_PTR(Tnode190813*, TY243098) (Tcontext243023* c, Tnode190813* n, NU16 flags);
+typedef N_NIMCALL_PTR(Tnode190813*, TY243106) (Tcontext243023* c, Tnode190813* n);
+typedef N_NIMCALL_PTR(Tnode190813*, TY243111) (Tcontext243023* c, Tnode190813* n, Tnode190813* norig, NU32 filter);
+typedef N_NIMCALL_PTR(Ttype190849*, TY243118) (Tcontext243023* c, Tnode190813* n, Ttype190849* prev);
 typedef struct {
-N_NIMCALL_PTR(tnode207813*, ClPrc) (tcontext259021* c, tidtable207861 pt, tnode207813* n, void* ClEnv);
+N_NIMCALL_PTR(Tnode190813*, ClPrc) (Tcontext243023* c, Tidtable190861 pt, Tnode190813* n, void* ClEnv);
 void* ClEnv;
-} TY259117;
-struct  tlineinfo180338  {
-NI16 Line;
-NI16 Col;
-NI32 Fileindex;
+} TY243124;
+struct  Tlineinfo162338  {
+NI16 line;
+NI16 col;
+NI32 fileindex;
 };
 typedef struct {
-N_NIMCALL_PTR(tsym207843*, ClPrc) (tcontext259021* c, tsym207843* fn, tidtable207861 pt, tlineinfo180338 info, void* ClEnv);
+N_NIMCALL_PTR(Tsym190843*, ClPrc) (Tcontext243023* c, Tsym190843* fn, Tidtable190861 pt, Tlineinfo162338 info, void* ClEnv);
 void* ClEnv;
-} TY259123;
-struct  tstrtable207817  {
-NI Counter;
-tsymseq207815* Data;
+} TY243130;
+struct  Tstrtable190817  {
+NI counter;
+Tsymseq190815* data;
 };
-struct  tinstantiationpair259013  {
-tsym207843* Genericsym;
-tinstantiation207833* Inst;
+typedef N_NIMCALL_PTR(Tsym190843*, TY243146) (Tcontext243023* c, Tsym190843* dc, Ttype190849* t, Tlineinfo162338 info, NU8 op);
+struct  Tcontext243023  {
+  Tpasscontext240005 Sup;
+Tsym190843* module;
+Tscope190837* currentscope;
+Tscope190837* importtable;
+Tscope190837* toplevelscope;
+Tproccon243011* p;
+Tsymseq190815* friendmodules;
+NI instcounter;
+Intset187056 ambiguoussymbols;
+NI intypeclass;
+NI ingenericcontext;
+NI inunrolledcontext;
+NI incompilescontext;
+NI ingenericinst;
+Tsymseq190815* converters;
+Tsymseq190815* patterns;
+Tlinkedlist129028 optionstack;
+Tidtable190861 symmapping;
+Tlinkedlist129028 libs;
+TY243072 semconstexpr;
+TY243077 semexpr;
+TY243085 semtryexpr;
+TY243093 semtryconstexpr;
+TY243098 semoperand;
+TY243106 semconstboolexpr;
+TY243111 semoverloadedcall;
+TY243118 semtypenode;
+TY243124 seminferredlambda;
+TY243130 semgenerateinstance;
+Intset187056 includedfiles;
+Tstrtable190817 userpragmas;
+Tctx242048* evalcontext;
+Intset187056 unknownidents;
+TY243141* generics;
+NI lastgenericidx;
+NI hloloopdetector;
+NI inparallelstmt;
+TY243146 insttypeboundop;
 };
-typedef N_NIMCALL_PTR(tsym207843*, TY259139) (tcontext259021* c, tsym207843* dc, ttype207849* t, tlineinfo180338 info);
-struct  tcontext259021  {
-  tpasscontext256005 Sup;
-tsym207843* Module;
-tscope207837* Currentscope;
-tscope207837* Importtable;
-tscope207837* Toplevelscope;
-tproccon259011* P;
-tsymseq207815* Friendmodules;
-NI Instcounter;
-intset204056 Ambiguoussymbols;
-NI Intypeclass;
-NI Ingenericcontext;
-NI Inunrolledcontext;
-NI Incompilescontext;
-NI Ingenericinst;
-tsymseq207815* Converters;
-tsymseq207815* Patterns;
-tlinkedlist127028 Optionstack;
-tidtable207861 Symmapping;
-tlinkedlist127028 Libs;
-TY259065 Semconstexpr;
-TY259070 Semexpr;
-TY259078 Semtryexpr;
-TY259086 Semtryconstexpr;
-TY259091 Semoperand;
-TY259099 Semconstboolexpr;
-TY259104 Semoverloadedcall;
-TY259111 Semtypenode;
-TY259117 Seminferredlambda;
-TY259123 Semgenerateinstance;
-intset204056 Includedfiles;
-tstrtable207817 Userpragmas;
-tctx258048* Evalcontext;
-intset204056 Unknownidents;
-TY259134* Generics;
-NI Lastgenericidx;
-NI Hloloopdetector;
-NI Inparallelstmt;
-TY259139 Instdeepcopy;
+struct  Tproccon243011  {
+Tsym190843* owner;
+Tsym190843* resultsym;
+NI nestedloopcounter;
+NI nestedblockcounter;
+NI intrystmt;
+Tproccon243011* next;
+NIM_BOOL wasforwarded;
+Tnode190813* bracketexpr;
 };
-struct  tproccon259011  {
-tsym207843* Owner;
-tsym207843* Resultsym;
-NI Nestedloopcounter;
-NI Nestedblockcounter;
-NI Intrystmt;
-tproccon259011* Next;
-NIM_BOOL Wasforwarded;
-};
-struct TY529942 {
+struct TY522942 {
 void* Field0;
-TY529945* Field1;
+TY522945* Field1;
 };
-struct  tlistentry127022  {
+struct  Tinstantiationpair243013  {
+Tsym190843* genericsym;
+Tinstantiation190833* inst;
+};
+struct  Tlistentry129022  {
   TNimObject Sup;
-tlistentry127022* Prev;
-tlistentry127022* Next;
+Tlistentry129022* prev;
+Tlistentry129022* next;
 };
-struct  toptionentry259005  {
-  tlistentry127022 Sup;
-NU32 Options;
-NU8 Defaultcc;
-tlib207831* Dynlib;
-NU64 Notes;
-tnode207813* Otherpragmas;
+struct  Toptionentry243005  {
+  Tlistentry129022 Sup;
+NU32 options;
+NU8 defaultcc;
+Tlib190831* dynlib;
+NU64 notes;
+Tnode190813* otherpragmas;
 };
-typedef tsym207843* TY259445[1];
-struct  tidobj184015  {
+typedef Tsym190843* TY243446[1];
+struct  Tidobj166015  {
   TNimObject Sup;
-NI Id;
+NI id;
 };
-struct  tloc207827  {
-NU8 K;
-NU8 S;
-NU16 Flags;
-ttype207849* T;
-trope177009* R;
-trope177009* Heaproot;
+struct  Tloc190827  {
+NU8 k;
+NU8 s;
+NU16 flags;
+Ttype190849* t;
+Ropeobj160009* r;
+Ropeobj160009* heaproot;
 };
-struct  ttype207849  {
-  tidobj184015 Sup;
-NU8 Kind;
-NU8 Callconv;
-NU32 Flags;
-ttypeseq207845* Sons;
-tnode207813* N;
-tsym207843* Owner;
-tsym207843* Sym;
-tsym207843* Destructor;
-tsym207843* Deepcopy;
-NI64 Size;
-NI16 Align;
-NI16 Locklevel;
-tloc207827 Loc;
+struct  Ttype190849  {
+  Tidobj166015 Sup;
+NU8 kind;
+NU8 callconv;
+NU32 flags;
+Ttypeseq190845* sons;
+Tnode190813* n;
+Tsym190843* owner;
+Tsym190843* sym;
+Tsym190843* destructor;
+Tsym190843* deepcopy;
+Tsym190843* assignment;
+NI64 size;
+NI16 align;
+NI16 locklevel;
+Tloc190827 loc;
 };
 struct  NimStringDesc  {
   TGenericSeq Sup;
 NIM_CHAR data[SEQ_DECL_SIZE];
 };
-struct TY85545 {
+struct TY86145 {
 NimStringDesc* Field0;
 NI Field1;
 };
-struct  tnode207813  {
-ttype207849* Typ;
-tlineinfo180338 Info;
-NU16 Flags;
-NU8 Kind;
+struct  Tnode190813  {
+Ttype190849* typ;
+Tlineinfo162338 info;
+NU16 flags;
+NU8 kind;
 union{
-struct {NI64 Intval;
+struct {NI64 intval;
 } S1;
-struct {NF Floatval;
+struct {NF floatval;
 } S2;
-struct {NimStringDesc* Strval;
+struct {NimStringDesc* strval;
 } S3;
-struct {tsym207843* Sym;
+struct {Tsym190843* sym;
 } S4;
-struct {tident184021* Ident;
+struct {Tident166021* ident;
 } S5;
-struct {tnodeseq207807* Sons;
+struct {Tnodeseq190807* sons;
 } S6;
 } kindU;
-NimStringDesc* Comment;
+NimStringDesc* comment;
 };
-typedef tnode207813* TY224674[1];
-typedef ttype207849* TY364353[1];
-typedef ttype207849* TY259881[2];
-typedef tnode207813* TY260101[2];
-struct  tlib207831  {
-  tlistentry127022 Sup;
-NU8 Kind;
-NIM_BOOL Generated;
-NIM_BOOL Isoverriden;
-trope177009* Name;
-tnode207813* Path;
+typedef Tnode190813* TY208694[1];
+typedef Ttype190849* TY348230[1];
+typedef Ttype190849* TY243881[2];
+typedef Tnode190813* TY244131[2];
+struct  Tlib190831  {
+  Tlistentry129022 Sup;
+NU8 kind;
+NIM_BOOL generated;
+NIM_BOOL isoverriden;
+Ropeobj160009* name;
+Tnode190813* path;
 };
-struct  tsym207843  {
-  tidobj184015 Sup;
-NU8 Kind;
+struct  Tsym190843  {
+  Tidobj166015 Sup;
+NU8 kind;
 union{
-struct {ttypeseq207845* Typeinstcache;
-tscope207837* Typscope;
+struct {Ttypeseq190845* typeinstcache;
+Tscope190837* typscope;
 } S1;
-struct {TY207944* Procinstcache;
-tscope207837* Scope;
+struct {TY190944* procinstcache;
+Tsym190843* gcunsafetyreason;
 } S2;
-struct {TY207944* Usedgenerics;
-tstrtable207817 Tab;
+struct {TY190944* usedgenerics;
+Tstrtable190817 tab;
 } S3;
-struct {tsym207843* Guard;
+struct {Tsym190843* guard;
 } S4;
 } kindU;
-NU16 Magic;
-ttype207849* Typ;
-tident184021* Name;
-tlineinfo180338 Info;
-tsym207843* Owner;
-NU32 Flags;
-tnode207813* Ast;
-NU32 Options;
-NI Position;
-NI Offset;
-tloc207827 Loc;
-tlib207831* Annex;
-tnode207813* Constraint;
+NU16 magic;
+Ttype190849* typ;
+Tident166021* name;
+Tlineinfo162338 info;
+Tsym190843* owner;
+NU32 flags;
+Tnode190813* ast;
+NU32 options;
+NI position;
+NI offset;
+Tloc190827 loc;
+Tlib190831* annex;
+Tnode190813* constraint;
 };
-typedef NI TY27020[8];
-struct  tpagedesc45955  {
-tpagedesc45955* Next;
-NI Key;
-TY27020 Bits;
+typedef NI TY27220[8];
+struct  Tpagedesc46155  {
+Tpagedesc46155* next;
+NI key;
+TY27220 bits;
 };
-struct  tbasechunk27038  {
-NI Prevsize;
-NI Size;
-NIM_BOOL Used;
+struct  Tbasechunk27238  {
+NI prevsize;
+NI size;
+NIM_BOOL used;
 };
-struct  tsmallchunk27040  {
-  tbasechunk27038 Sup;
-tsmallchunk27040* Next;
-tsmallchunk27040* Prev;
-tfreecell27030* Freelist;
-NI Free;
-NI Acc;
-NF Data;
+struct  Tsmallchunk27240  {
+  Tbasechunk27238 Sup;
+Tsmallchunk27240* next;
+Tsmallchunk27240* prev;
+Tfreecell27230* freelist;
+NI free;
+NI acc;
+NF data;
 };
-struct  tllchunk27804  {
-NI Size;
-NI Acc;
-tllchunk27804* Next;
+struct  Tllchunk28004  {
+NI size;
+NI acc;
+Tllchunk28004* next;
 };
-struct  tbigchunk27042  {
-  tbasechunk27038 Sup;
-tbigchunk27042* Next;
-tbigchunk27042* Prev;
-NI Align;
-NF Data;
+struct  Tbigchunk27242  {
+  Tbasechunk27238 Sup;
+Tbigchunk27242* next;
+Tbigchunk27242* prev;
+NI align;
+NF data;
 };
-struct  ttrunk27013  {
-ttrunk27013* Next;
-NI Key;
-TY27020 Bits;
+struct  Ttrunk27213  {
+Ttrunk27213* next;
+NI key;
+TY27220 bits;
 };
-typedef tavlnode27808* TY27814[2];
-struct  tavlnode27808  {
-TY27814 Link;
-NI Key;
-NI Upperbound;
-NI Level;
+typedef Tavlnode28008* TY28014[2];
+struct  Tavlnode28008  {
+TY28014 link;
+NI key;
+NI upperbound;
+NI level;
 };
-struct  tscope207837  {
-NI Depthlevel;
-tstrtable207817 Symbols;
-tnodeseq207807* Usingsyms;
-tscope207837* Parent;
+struct  Tscope190837  {
+NI depthlevel;
+Tstrtable190817 symbols;
+Tnodeseq190807* usingsyms;
+Tscope190837* parent;
 };
-struct  ttrunk204052  {
-ttrunk204052* Next;
-NI Key;
-TY27020 Bits;
+struct  Ttrunk187052  {
+Ttrunk187052* next;
+NI key;
+TY27220 bits;
 };
-typedef struct {
-N_NIMCALL_PTR(void, ClPrc) (vmargs258042* args, void* ClEnv);
-void* ClEnv;
-} vmcallback258044;
-struct TY258270 {
-NimStringDesc* Field0;
-vmcallback258044 Field1;
+struct  Tidpair190857  {
+Tidobj166015* key;
+TNimObject* val;
 };
-struct  tctx258048  {
-  tpasscontext256005 Sup;
-TY258250* Code;
-TY181036* Debug;
-tnode207813* Globals;
-tnode207813* Constants;
-ttypeseq207845* Types;
-tnode207813* Currentexceptiona;
-tnode207813* Currentexceptionb;
-NI Exceptioninstr;
-pprocHEX3Aobjecttype258230* Prc;
-tsym207843* Module;
-tnode207813* Callsite;
-NU8 Mode;
-NU8 Features;
-NIM_BOOL Traceactive;
-NI Loopiterations;
-tlineinfo180338 Comesfromheuristic;
-TY258269* Callbacks;
-NimStringDesc* Errorflag;
+struct  Tctx242048  {
+  Tpasscontext240005 Sup;
+TY242253* code;
+TY163037* debug;
+Tnode190813* globals;
+Tnode190813* constants;
+Ttypeseq190845* types;
+Tnode190813* currentexceptiona;
+Tnode190813* currentexceptionb;
+NI exceptioninstr;
+PprocHEX3Aobjecttype242232* prc;
+Tsym190843* module;
+Tnode190813* callsite;
+NU8 mode;
+NU8 features;
+NIM_BOOL traceactive;
+NI loopiterations;
+Tlineinfo162338 comesfromheuristic;
+TY242272* callbacks;
+NimStringDesc* errorflag;
 };
-struct  tinstantiation207833  {
-tsym207843* Sym;
-ttypeseq207845* Concretetypes;
-TY207933* Usedby;
-};
-struct TY529945 {
+struct TY522945 {
 char dummy;
 };
-struct  trope177009  {
+struct  Tinstantiation190833  {
+Tsym190843* sym;
+Ttypeseq190845* concretetypes;
+TY190933* usedby;
+};
+struct  Ropeobj160009  {
   TNimObject Sup;
-trope177009* Left;
-trope177009* Right;
-NI Length;
-NimStringDesc* Data;
+Ropeobj160009* left;
+Ropeobj160009* right;
+NI length;
+NimStringDesc* data;
 };
-struct  tident184021  {
-  tidobj184015 Sup;
-NimStringDesc* S;
-tident184021* Next;
-NI H;
+struct  Tident166021  {
+  Tidobj166015 Sup;
+NimStringDesc* s;
+Tident166021* next;
+NI h;
 };
-struct  tfreecell27030  {
-tfreecell27030* Next;
-NI Zerofield;
+struct  Tfreecell27230  {
+Tfreecell27230* next;
+NI zerofield;
 };
-struct  tblock258030  {
-tsym207843* Label;
-TY258211* Fixups;
-};
-struct TY258237 {
+struct TY242239 {
 NIM_BOOL Field0;
 NU8 Field1;
 };
-typedef TY258237 TY258234[256];
-struct  pprocHEX3Aobjecttype258230  {
-TY258231* Blocks;
-tsym207843* Sym;
-TY258234 Slots;
-NI Maxslots;
+typedef TY242239 TY242236[256];
+struct  PprocHEX3Aobjecttype242232  {
+TY242233* blocks;
+Tsym190843* sym;
+TY242236 slots;
+NI maxslots;
 };
-struct  vmargs258042  {
-NI Ra;
-NI Rb;
-NI Rc;
-void* Slots;
-tnode207813* Currentexception;
+typedef struct {
+N_NIMCALL_PTR(void, ClPrc) (Vmargs242042* args, void* ClEnv);
+void* ClEnv;
+} Vmcallback242044;
+struct TY242273 {
+NimStringDesc* Field0;
+Vmcallback242044 Field1;
 };
-struct tsymseq207815 {
+struct  Tblock242030  {
+Tsym190843* label;
+TY242213* fixups;
+};
+struct  Vmargs242042  {
+NI ra;
+NI rb;
+NI rc;
+void* slots;
+Tnode190813* currentexception;
+};
+struct Tsymseq190815 {
   TGenericSeq Sup;
-  tsym207843* data[SEQ_DECL_SIZE];
+  Tsym190843* data[SEQ_DECL_SIZE];
 };
-struct ttrunkseq204054 {
+struct TY243141 {
   TGenericSeq Sup;
-  ttrunk204052* data[SEQ_DECL_SIZE];
+  Tinstantiationpair243013 data[SEQ_DECL_SIZE];
 };
-struct tidpairseq207859 {
+struct Ttypeseq190845 {
   TGenericSeq Sup;
-  tidpair207857 data[SEQ_DECL_SIZE];
+  Ttype190849* data[SEQ_DECL_SIZE];
 };
-struct TY259134 {
+struct Tnodeseq190807 {
   TGenericSeq Sup;
-  tinstantiationpair259013 data[SEQ_DECL_SIZE];
+  Tnode190813* data[SEQ_DECL_SIZE];
 };
-struct ttypeseq207845 {
+struct Ttrunkseq187054 {
   TGenericSeq Sup;
-  ttype207849* data[SEQ_DECL_SIZE];
+  Ttrunk187052* data[SEQ_DECL_SIZE];
 };
-struct tnodeseq207807 {
+struct Tidpairseq190859 {
   TGenericSeq Sup;
-  tnode207813* data[SEQ_DECL_SIZE];
+  Tidpair190857 data[SEQ_DECL_SIZE];
 };
-struct TY207944 {
+struct TY190944 {
   TGenericSeq Sup;
-  tinstantiation207833* data[SEQ_DECL_SIZE];
+  Tinstantiation190833* data[SEQ_DECL_SIZE];
 };
-struct TY258250 {
+struct TY242253 {
   TGenericSeq Sup;
   NU32 data[SEQ_DECL_SIZE];
 };
-struct TY181036 {
+struct TY163037 {
   TGenericSeq Sup;
-  tlineinfo180338 data[SEQ_DECL_SIZE];
+  Tlineinfo162338 data[SEQ_DECL_SIZE];
 };
-struct TY258269 {
+struct TY242272 {
   TGenericSeq Sup;
-  TY258270 data[SEQ_DECL_SIZE];
+  TY242273 data[SEQ_DECL_SIZE];
 };
-struct TY207933 {
+struct TY190933 {
   TGenericSeq Sup;
   NI32 data[SEQ_DECL_SIZE];
 };
-struct TY258211 {
+struct TY242233 {
+  TGenericSeq Sup;
+  Tblock242030 data[SEQ_DECL_SIZE];
+};
+struct TY242213 {
   TGenericSeq Sup;
   NI data[SEQ_DECL_SIZE];
 };
-struct TY258231 {
-  TGenericSeq Sup;
-  tblock258030 data[SEQ_DECL_SIZE];
-};
 static N_INLINE(void, nimGCunrefNoCycle)(void* p);
-static N_INLINE(tcell45947*, usrtocell_49446)(void* usr);
-static N_INLINE(void, rtladdzct_51004)(tcell45947* c);
-N_NOINLINE(void, addzct_49417)(tcellseq45963* s, tcell45947* c);
+static N_INLINE(Tcell46147*, usrtocell_49646)(void* usr);
+static N_INLINE(void, rtladdzct_51204)(Tcell46147* c);
+N_NOINLINE(void, addzct_49617)(Tcellseq46163* s, Tcell46147* c);
 N_NIMCALL(void*, newSeqRC1)(TNimType* typ, NI len);
+N_NIMCALL(Ttype190849*, newtype_193144)(NU8 kind, Tsym190843* owner);
+N_NIMCALL(Tsym190843*, getcurrowner_243255)(void);
 N_NIMCALL(void, nimGCvisit)(void* d, NI op);
-N_NIMCALL(void, TMP1974)(void* p, NI op);
-N_NIMCALL(void, TMP1999)(void* p, NI op);
-N_NIMCALL(void, TMP2000)(void* p, NI op);
+N_NIMCALL(void, TMP1930)(void* p, NI op);
+N_NIMCALL(void, TMP1955)(void* p, NI op);
+N_NIMCALL(void, TMP1956)(void* p, NI op);
 N_NIMCALL(void*, newObj)(TNimType* typ, NI size);
-N_NIMCALL(void, initintset_204927)(intset204056* Result);
-N_NIMCALL(void, initlinkedlist_127043)(tlinkedlist127028* list);
-N_NIMCALL(void, append_127053)(tlinkedlist127028* list, tlistentry127022* entry);
-N_NIMCALL(toptionentry259005*, newoptionentry_259185)(void);
-N_NIMCALL(void, TMP2005)(void* p, NI op);
+N_NIMCALL(void, initintset_187927)(Intset187056* Result);
+N_NIMCALL(void, initlinkedlist_129043)(Tlinkedlist129028* list);
+N_NIMCALL(void, append_129053)(Tlinkedlist129028* list, Tlistentry129022* entry);
+N_NIMCALL(Toptionentry243005*, newoptionentry_243193)(void);
+N_NIMCALL(void, TMP1961)(void* p, NI op);
 static N_INLINE(void, asgnRef)(void** dest, void* src);
-static N_INLINE(void, incref_51822)(tcell45947* c);
-static N_INLINE(NIM_BOOL, canbecycleroot_49467)(tcell45947* c);
-static N_INLINE(void, rtladdcycleroot_50223)(tcell45947* c);
-N_NOINLINE(void, incl_46667)(tcellset45959* s, tcell45947* cell);
-static N_INLINE(void, decref_51404)(tcell45947* c);
+static N_INLINE(void, incref_52022)(Tcell46147* c);
+static N_INLINE(NIM_BOOL, canbecycleroot_49667)(Tcell46147* c);
+static N_INLINE(void, rtladdcycleroot_50423)(Tcell46147* c);
+N_NOINLINE(void, incl_46865)(Tcellset46159* s, Tcell46147* cell);
+static N_INLINE(void, decref_51604)(Tcell46147* c);
 static N_INLINE(void, asgnRefNoCycle)(void** dest, void* src);
-N_NIMCALL(void, initstrtable_211007)(tstrtable207817* x);
-N_NIMCALL(ttype207849*, newtypes_259217)(NU8 kind, tcontext259021* c);
-N_NIMCALL(ttype207849*, newtype_210144)(NU8 kind, tsym207843* owner);
-N_NIMCALL(tsym207843*, getcurrowner_259254)(void);
-N_NIMCALL(void, addsonskipintlit_253730)(ttype207849* father, ttype207849* son);
-N_NIMCALL(void, internalerror_182443)(NimStringDesc* errmsg);
-N_NIMCALL(NimStringDesc*, HEX24_182531)(TY85545 x);
-N_NIMCALL(void, globalerror_182371)(tlineinfo180338 info, NU16 msg, NimStringDesc* arg);
-N_NIMCALL(NimStringDesc*, rendertree_228058)(tnode207813* n, NU8 renderflags);
-N_NIMCALL(NI, sonslen_210403)(tnode207813* n);
-N_NIMCALL(void, illformedast_260215)(tnode207813* n);
-N_NIMCALL(void, genericSeqAssign)(void* dest, void* src_80404, TNimType* mt);
-N_NIMCALL(tnode207813*, newnodei_209351)(NU8 kind, tlineinfo180338 info);
-N_NIMCALL(void, addson_209819)(tnode207813* father, tnode207813* son);
-N_NIMCALL(tnode207813*, newinttypenode_208619)(NU8 kind, NI64 intval, ttype207849* typ);
-N_NIMCALL(ttype207849*, newtypewithsons_259807)(tcontext259021* c, NU8 kind, ttypeseq207845* sons);
+N_NIMCALL(void, initstrtable_194007)(Tstrtable190817* x);
+N_NIMCALL(Ttype190849*, newtypes_243218)(NU8 kind, Tcontext243023* c);
+N_NIMCALL(void, addsonskipintlit_237731)(Ttype190849* father, Ttype190849* son);
+N_NIMCALL(void, internalerror_164234)(NimStringDesc* errmsg);
+N_NIMCALL(NimStringDesc*, HEX24_164322)(TY86145 x);
+N_NIMCALL(void, globalerror_164150)(Tlineinfo162338 info, NU16 msg, NimStringDesc* arg);
+N_NIMCALL(NimStringDesc*, rendertree_212058)(Tnode190813* n, NU8 renderflags);
+N_NIMCALL(NI, sonslen_193403)(Tnode190813* n);
+N_NIMCALL(void, illformedast_244245)(Tnode190813* n);
+N_NIMCALL(void, genericSeqAssign)(void* dest, void* src_81004, TNimType* mt);
+N_NIMCALL(Tnode190813*, newnodei_192351)(NU8 kind, Tlineinfo162338 info);
+N_NIMCALL(void, addson_192819)(Tnode190813* father, Tnode190813* son);
+N_NIMCALL(Tnode190813*, newinttypenode_191619)(NU8 kind, NI64 intval, Ttype190849* typ);
+N_NIMCALL(Ttype190849*, newtypewithsons_243807)(Tcontext243023* c, NU8 kind, Ttypeseq190845* sons);
 N_NIMCALL(void*, newSeq)(TNimType* typ, NI len);
-N_NIMCALL(void, propagatetoowner_211234)(ttype207849* owner, ttype207849* elem);
-N_NIMCALL(ttype207849*, getsystype_253030)(NU8 kind);
-N_NIMCALL(tnode207813*, newnode_209607)(NU8 kind, tlineinfo180338 info, tnodeseq207807* sons, ttype207849* typ);
-N_NIMCALL(tnode207813*, makestaticexpr_259820)(tcontext259021* c, tnode207813* n);
-N_NIMCALL(tnode207813*, nminusone_260041)(tnode207813* n);
-N_NIMCALL(tnode207813*, newsymnode_209325)(tsym207843* sym);
-N_NIMCALL(tsym207843*, getsysmagic_253155)(NimStringDesc* name, NU16 m);
+N_NIMCALL(void, propagatetoowner_194274)(Ttype190849* owner, Ttype190849* elem);
+N_NIMCALL(Ttype190849*, getsystype_237030)(NU8 kind);
+N_NIMCALL(Tnode190813*, newnode_192607)(NU8 kind, Tlineinfo162338 info, Tnodeseq190807* sons, Ttype190849* typ);
+N_NIMCALL(Tnode190813*, makestaticexpr_243820)(Tcontext243023* c, Tnode190813* n);
+N_NIMCALL(Tnode190813*, nminusone_244071)(Tnode190813* n);
+N_NIMCALL(Tnode190813*, newsymnode_192325)(Tsym190843* sym);
+N_NIMCALL(Tsym190843*, getsysmagic_237155)(NimStringDesc* name, NU16 m);
 N_NIMCALL(TGenericSeq*, incrSeq)(TGenericSeq* seq, NI elemsize);
 N_NIMCALL(void, unsureAsgnRef)(void** dest, void* src);
-N_NIMCALL(void, localerror_182392)(tlineinfo180338 info, NU16 msg, NimStringDesc* arg);
+N_NIMCALL(void, localerror_164171)(Tlineinfo162338 info, NU16 msg, NimStringDesc* arg);
 N_NIMCALL(TGenericSeq*, setLengthSeq)(TGenericSeq* seq, NI elemsize, NI newlen);
-N_NIMCALL(ttype207849*, errortype_260136)(tcontext259021* c);
-N_NIMCALL(ttype207849*, maketypedesc_259681)(tcontext259021* c, ttype207849* typ);
-N_NIMCALL(tsym207843*, linkto_208884)(tsym207843* s, ttype207849* t);
-N_NIMCALL(tsym207843*, newsym_208655)(NU8 symkind, tident184021* name, tsym207843* owner, tlineinfo180338 info);
-N_NIMCALL(tnode207813*, newsymnode_209338)(tsym207843* sym, tlineinfo180338 info);
-N_NIMCALL(void, inclsym_259508)(tsymseq207815** sq, tsym207843* s);
-STRING_LITERAL(TMP2702, "compiler/semdata.nim", 20);
-NIM_CONST TY85545 TMP2701 = {((NimStringDesc*) &TMP2702),
-((NI) 215)}
+N_NIMCALL(Ttype190849*, errortype_244166)(Tcontext243023* c);
+N_NIMCALL(Ttype190849*, maketypedesc_243691)(Tcontext243023* c, Ttype190849* typ);
+N_NIMCALL(Tsym190843*, linkto_191884)(Tsym190843* s, Ttype190849* t);
+N_NIMCALL(Tsym190843*, newsym_191655)(NU8 symkind, Tident166021* name, Tsym190843* owner, Tlineinfo162338 info);
+N_NIMCALL(Tnode190813*, newsymnode_192338)(Tsym190843* sym, Tlineinfo162338 info);
+N_NIMCALL(void, inclsym_243509)(Tsymseq190815** sq, Tsym190843* s);
+STRING_LITERAL(TMP2637, "compiler/semdata.nim", 20);
+NIM_CONST TY86145 TMP2636 = {((NimStringDesc*) &TMP2637),
+((NI) 224)}
 ;
-NIM_CONST TY85545 TMP2715 = {((NimStringDesc*) &TMP2702),
-((NI) 211)}
+NIM_CONST TY86145 TMP2650 = {((NimStringDesc*) &TMP2637),
+((NI) 220)}
 ;
-STRING_LITERAL(TMP2978, "<", 1);
-STRING_LITERAL(TMP3136, "popOwner", 8);
-NIM_CONST TY85545 TMP3336 = {((NimStringDesc*) &TMP2702),
-((NI) 207)}
+STRING_LITERAL(TMP2994, "<", 1);
+STRING_LITERAL(TMP3153, "popOwner", 8);
+NIM_CONST TY86145 TMP3197 = {((NimStringDesc*) &TMP2637),
+((NI) 213)}
 ;
-tsymseq207815* gowners_259289;
-extern TNimType NTI207815; /* TSymSeq */
-extern tgcheap47816 gch_47844;
-extern TNimType NTI256005; /* TPassContext */
-TNimType NTI259021; /* TContext */
-extern TNimType NTI207811; /* PSym */
-extern TNimType NTI207839; /* PScope */
-TNimType NTI259011; /* TProcCon */
+Tsymseq190815* gowners_243290;
+extern TNimType NTI190815; /* TSymSeq */
+extern Tgcheap48016 gch_48044;
+extern TNimType NTI240005; /* TPassContext */
+TNimType NTI243023; /* TContext */
+extern TNimType NTI190811; /* PSym */
+extern TNimType NTI190839; /* PScope */
+TNimType NTI243011; /* TProcCon */
 extern TNimType NTI108; /* int */
 extern TNimType NTI138; /* bool */
-TNimType NTI259009; /* PProcCon */
-extern TNimType NTI204056; /* IntSet */
-extern TNimType NTI127028; /* TLinkedList */
-extern TNimType NTI207861; /* TIdTable */
-TNimType NTI259065; /* proc (PContext, PNode): PNode */
-TNimType NTI259070; /* proc (PContext, PNode, TExprFlags): PNode */
-TNimType NTI259078; /* proc (PContext, PNode, TExprFlags): PNode */
-TNimType NTI259086; /* proc (PContext, PNode): PNode */
-TNimType NTI259091; /* proc (PContext, PNode, TExprFlags): PNode */
-TNimType NTI259099; /* proc (PContext, PNode): PNode */
-TNimType NTI259104; /* proc (PContext, PNode, PNode, TSymKinds): PNode */
-TNimType NTI259111; /* proc (PContext, PNode, PType): PType */
-TNimType NTI259117; /* (pointer, ref tuple[]) */
+extern TNimType NTI190805; /* PNode */
+TNimType NTI243009; /* PProcCon */
+extern TNimType NTI187056; /* IntSet */
+extern TNimType NTI129028; /* TLinkedList */
+extern TNimType NTI190861; /* TIdTable */
+TNimType NTI243072; /* proc (c: PContext, n: PNode): PNode */
+TNimType NTI243077; /* proc (c: PContext, n: PNode, flags: TExprFlags): PNode */
+TNimType NTI243085; /* proc (c: PContext, n: PNode, flags: TExprFlags): PNode */
+TNimType NTI243093; /* proc (c: PContext, n: PNode): PNode */
+TNimType NTI243098; /* proc (c: PContext, n: PNode, flags: TExprFlags): PNode */
+TNimType NTI243106; /* proc (c: PContext, n: PNode): PNode */
+TNimType NTI243111; /* proc (c: PContext, n: PNode, nOrig: PNode, filter: TSymKinds): PNode */
+TNimType NTI243118; /* proc (c: PContext, n: PNode, prev: PType): PType */
+TNimType NTI243124; /* (pointer, ref tuple[]) */
 extern TNimType NTI153; /* pointer */
-extern TNimType NTI529944; /* ref tuple[] */
-TNimType NTI259123; /* (pointer, ref tuple[]) */
-extern TNimType NTI207817; /* TStrTable */
-extern TNimType NTI258046; /* PCtx */
-TNimType NTI259013; /* TInstantiationPair */
-extern TNimType NTI207835; /* PInstantiation */
-TNimType NTI259134; /* seq[TInstantiationPair] */
-TNimType NTI259139; /* proc (PContext, PSym, PType, TLineInfo): PSym */
-TNimType NTI259019; /* PContext */
-extern TNimType NTI127022; /* TListEntry */
-TNimType NTI259005; /* TOptionEntry */
-extern TNimType NTI169016; /* TOptions */
-extern TNimType NTI207005; /* TCallingConvention */
-extern TNimType NTI207841; /* PLib */
-extern TNimType NTI180334; /* TNoteKinds */
-extern TNimType NTI207805; /* PNode */
-TNimType NTI259007; /* POptionEntry */
-extern NU32 goptions_169126;
-extern NU64 gnotes_181014;
-extern TNimType NTI207845; /* TTypeSeq */
-extern TNimType NTI207807; /* TNodeSeq */
-extern TNimType NTI207831; /* TLib */
-extern tident184021* idanon_184495;
+extern TNimType NTI522944; /* ref tuple[] */
+TNimType NTI243130; /* (pointer, ref tuple[]) */
+extern TNimType NTI190817; /* TStrTable */
+extern TNimType NTI242046; /* PCtx */
+TNimType NTI243013; /* TInstantiationPair */
+extern TNimType NTI190835; /* PInstantiation */
+TNimType NTI243141; /* seq[TInstantiationPair] */
+TNimType NTI243146; /* proc (c: PContext, dc: PSym, t: PType, info: TLineInfo, op: TTypeAttachedOp): PSym */
+TNimType NTI243021; /* PContext */
+extern TNimType NTI129022; /* TListEntry */
+TNimType NTI243005; /* TOptionEntry */
+extern TNimType NTI153016; /* TOptions */
+extern TNimType NTI190005; /* TCallingConvention */
+extern TNimType NTI190841; /* PLib */
+extern TNimType NTI162334; /* TNoteKinds */
+TNimType NTI243007; /* POptionEntry */
+extern NU32 goptions_153126;
+extern NU64 gnotes_163015;
+extern TNimType NTI190845; /* TTypeSeq */
+extern TNimType NTI190807; /* TNodeSeq */
+extern TNimType NTI190831; /* TLib */
+extern Tident166021* idanon_166495;
 
-static N_INLINE(tcell45947*, usrtocell_49446)(void* usr) {
-	tcell45947* result;
+static N_INLINE(Tcell46147*, usrtocell_49646)(void* usr) {
+	Tcell46147* result;
 	result = 0;
-	result = ((tcell45947*) ((NI)((NU64)(((NI) (usr))) - (NU64)(((NI)sizeof(tcell45947))))));
+	result = ((Tcell46147*) ((NI)((NU64)(((NI) (usr))) - (NU64)(((NI)sizeof(Tcell46147))))));
 	return result;
 }
 
-static N_INLINE(void, rtladdzct_51004)(tcell45947* c) {
-	addzct_49417((&gch_47844.Zct), c);
+static N_INLINE(void, rtladdzct_51204)(Tcell46147* c) {
+	addzct_49617((&gch_48044.zct), c);
 }
 
 static N_INLINE(void, nimGCunrefNoCycle)(void* p) {
-	tcell45947* c;
-	c = usrtocell_49446(p);
+	Tcell46147* c;
+	c = usrtocell_49646(p);
 	{
-		(*c).Refcount -= ((NI) 8);
-		if (!((NU64)((*c).Refcount) < (NU64)(((NI) 8)))) goto LA3;
-		rtladdzct_51004(c);
+		(*c).refcount -= ((NI) 8);
+		if (!((NU64)((*c).refcount) < (NU64)(((NI) 8)))) goto LA3;
+		rtladdzct_51204(c);
 	}
 	LA3: ;
 }
-N_NIMCALL(void, TMP1974)(void* p, NI op) {
-	tproccon259011* a;
-	a = (tproccon259011*)p;
-	nimGCvisit((void*)(*a).Owner, op);
-	nimGCvisit((void*)(*a).Resultsym, op);
-	nimGCvisit((void*)(*a).Next, op);
-}
-N_NIMCALL(void, TMP1999)(void* p, NI op) {
-	TY259134* a;
-	NI LOC1;
-	a = (TY259134*)p;
-	LOC1 = 0;
-	for (LOC1 = 0; LOC1 < a->Sup.len; LOC1++) {
-	nimGCvisit((void*)a->data[LOC1].Genericsym, op);
-	nimGCvisit((void*)a->data[LOC1].Inst, op);
-	}
-}
-N_NIMCALL(void, TMP2000)(void* p, NI op) {
-	tcontext259021* a;
-	a = (tcontext259021*)p;
-	nimGCvisit((void*)(*a).Module, op);
-	nimGCvisit((void*)(*a).Currentscope, op);
-	nimGCvisit((void*)(*a).Importtable, op);
-	nimGCvisit((void*)(*a).Toplevelscope, op);
-	nimGCvisit((void*)(*a).P, op);
-	nimGCvisit((void*)(*a).Friendmodules, op);
-	nimGCvisit((void*)(*a).Ambiguoussymbols.Head, op);
-	nimGCvisit((void*)(*a).Ambiguoussymbols.Data, op);
-	nimGCvisit((void*)(*a).Converters, op);
-	nimGCvisit((void*)(*a).Patterns, op);
-	nimGCvisit((void*)(*a).Optionstack.Head, op);
-	nimGCvisit((void*)(*a).Optionstack.Tail, op);
-	nimGCvisit((void*)(*a).Symmapping.Data, op);
-	nimGCvisit((void*)(*a).Libs.Head, op);
-	nimGCvisit((void*)(*a).Libs.Tail, op);
-	nimGCvisit((void*)(*a).Seminferredlambda.ClEnv, op);
-	nimGCvisit((void*)(*a).Semgenerateinstance.ClEnv, op);
-	nimGCvisit((void*)(*a).Includedfiles.Head, op);
-	nimGCvisit((void*)(*a).Includedfiles.Data, op);
-	nimGCvisit((void*)(*a).Userpragmas.Data, op);
-	nimGCvisit((void*)(*a).Evalcontext, op);
-	nimGCvisit((void*)(*a).Unknownidents.Head, op);
-	nimGCvisit((void*)(*a).Unknownidents.Data, op);
-	nimGCvisit((void*)(*a).Generics, op);
-}
-N_NIMCALL(void, TMP2005)(void* p, NI op) {
-	toptionentry259005* a;
-	a = (toptionentry259005*)p;
-	nimGCvisit((void*)(*a).Sup.Prev, op);
-	nimGCvisit((void*)(*a).Sup.Next, op);
-	nimGCvisit((void*)(*a).Dynlib, op);
-	nimGCvisit((void*)(*a).Otherpragmas, op);
-}
 
-static N_INLINE(NIM_BOOL, canbecycleroot_49467)(tcell45947* c) {
-	NIM_BOOL result;
+N_NIMCALL(Tsym190843*, getcurrowner_243255)(void) {
+	Tsym190843* result;
 	result = 0;
-	result = !((((*(*c).Typ).flags &(1<<((((NU8) 1))&7)))!=0));
+	result = gowners_243290->data[(gowners_243290 ? (gowners_243290->Sup.len-1) : -1)];
 	return result;
 }
 
-static N_INLINE(void, rtladdcycleroot_50223)(tcell45947* c) {
+N_NIMCALL(Ttype190849*, newtypes_243218)(NU8 kind, Tcontext243023* c) {
+	Ttype190849* result;
+	Tsym190843* LOC1;
+	result = 0;
+	LOC1 = 0;
+	LOC1 = getcurrowner_243255();
+	result = newtype_193144(kind, LOC1);
+	return result;
+}
+N_NIMCALL(void, TMP1930)(void* p, NI op) {
+	Tproccon243011* a;
+	a = (Tproccon243011*)p;
+	nimGCvisit((void*)(*a).owner, op);
+	nimGCvisit((void*)(*a).resultsym, op);
+	nimGCvisit((void*)(*a).next, op);
+	nimGCvisit((void*)(*a).bracketexpr, op);
+}
+N_NIMCALL(void, TMP1955)(void* p, NI op) {
+	TY243141* a;
+	NI LOC1;
+	a = (TY243141*)p;
+	LOC1 = 0;
+	for (LOC1 = 0; LOC1 < a->Sup.len; LOC1++) {
+	nimGCvisit((void*)a->data[LOC1].genericsym, op);
+	nimGCvisit((void*)a->data[LOC1].inst, op);
+	}
+}
+N_NIMCALL(void, TMP1956)(void* p, NI op) {
+	Tcontext243023* a;
+	a = (Tcontext243023*)p;
+	nimGCvisit((void*)(*a).module, op);
+	nimGCvisit((void*)(*a).currentscope, op);
+	nimGCvisit((void*)(*a).importtable, op);
+	nimGCvisit((void*)(*a).toplevelscope, op);
+	nimGCvisit((void*)(*a).p, op);
+	nimGCvisit((void*)(*a).friendmodules, op);
+	nimGCvisit((void*)(*a).ambiguoussymbols.head, op);
+	nimGCvisit((void*)(*a).ambiguoussymbols.data, op);
+	nimGCvisit((void*)(*a).converters, op);
+	nimGCvisit((void*)(*a).patterns, op);
+	nimGCvisit((void*)(*a).optionstack.head, op);
+	nimGCvisit((void*)(*a).optionstack.tail, op);
+	nimGCvisit((void*)(*a).symmapping.data, op);
+	nimGCvisit((void*)(*a).libs.head, op);
+	nimGCvisit((void*)(*a).libs.tail, op);
+	nimGCvisit((void*)(*a).seminferredlambda.ClEnv, op);
+	nimGCvisit((void*)(*a).semgenerateinstance.ClEnv, op);
+	nimGCvisit((void*)(*a).includedfiles.head, op);
+	nimGCvisit((void*)(*a).includedfiles.data, op);
+	nimGCvisit((void*)(*a).userpragmas.data, op);
+	nimGCvisit((void*)(*a).evalcontext, op);
+	nimGCvisit((void*)(*a).unknownidents.head, op);
+	nimGCvisit((void*)(*a).unknownidents.data, op);
+	nimGCvisit((void*)(*a).generics, op);
+}
+N_NIMCALL(void, TMP1961)(void* p, NI op) {
+	Toptionentry243005* a;
+	a = (Toptionentry243005*)p;
+	nimGCvisit((void*)(*a).Sup.prev, op);
+	nimGCvisit((void*)(*a).Sup.next, op);
+	nimGCvisit((void*)(*a).dynlib, op);
+	nimGCvisit((void*)(*a).otherpragmas, op);
+}
+
+static N_INLINE(NIM_BOOL, canbecycleroot_49667)(Tcell46147* c) {
+	NIM_BOOL result;
+	result = 0;
+	result = !((((*(*c).typ).flags &(1<<((((NU8) 1))&7)))!=0));
+	return result;
+}
+
+static N_INLINE(void, rtladdcycleroot_50423)(Tcell46147* c) {
 	{
-		if (!!((((NI) ((NI)((*c).Refcount & ((NI) 3)))) == ((NI) 3)))) goto LA3;
-		(*c).Refcount = (NI)((NI)((*c).Refcount & ((NI) -4)) | ((NI) 3));
-		incl_46667((&gch_47844.Cycleroots), c);
+		if (!!((((NI) ((NI)((*c).refcount & ((NI) 3)))) == ((NI) 3)))) goto LA3;
+		(*c).refcount = (NI)((NI)((*c).refcount & ((NI) -4)) | ((NI) 3));
+		incl_46865((&gch_48044.cycleroots), c);
 	}
 	LA3: ;
 }
 
-static N_INLINE(void, incref_51822)(tcell45947* c) {
-	(*c).Refcount = (NI)((NU64)((*c).Refcount) + (NU64)(((NI) 8)));
+static N_INLINE(void, incref_52022)(Tcell46147* c) {
+	(*c).refcount = (NI)((NU64)((*c).refcount) + (NU64)(((NI) 8)));
 	{
 		NIM_BOOL LOC3;
 		LOC3 = 0;
-		LOC3 = canbecycleroot_49467(c);
+		LOC3 = canbecycleroot_49667(c);
 		if (!LOC3) goto LA4;
-		rtladdcycleroot_50223(c);
+		rtladdcycleroot_50423(c);
 	}
 	LA4: ;
 }
 
-static N_INLINE(void, decref_51404)(tcell45947* c) {
+static N_INLINE(void, decref_51604)(Tcell46147* c) {
 	{
-		(*c).Refcount -= ((NI) 8);
-		if (!((NU64)((*c).Refcount) < (NU64)(((NI) 8)))) goto LA3;
-		rtladdzct_51004(c);
+		(*c).refcount -= ((NI) 8);
+		if (!((NU64)((*c).refcount) < (NU64)(((NI) 8)))) goto LA3;
+		rtladdzct_51204(c);
 	}
 	goto LA1;
 	LA3: ;
 	{
 		NIM_BOOL LOC6;
 		LOC6 = 0;
-		LOC6 = canbecycleroot_49467(c);
+		LOC6 = canbecycleroot_49667(c);
 		if (!LOC6) goto LA7;
-		rtladdcycleroot_50223(c);
+		rtladdcycleroot_50423(c);
 	}
 	goto LA1;
 	LA7: ;
@@ -796,52 +816,52 @@ static N_INLINE(void, decref_51404)(tcell45947* c) {
 
 static N_INLINE(void, asgnRef)(void** dest, void* src) {
 	{
-		tcell45947* LOC5;
+		Tcell46147* LOC5;
 		if (!!((src == NIM_NIL))) goto LA3;
 		LOC5 = 0;
-		LOC5 = usrtocell_49446(src);
-		incref_51822(LOC5);
+		LOC5 = usrtocell_49646(src);
+		incref_52022(LOC5);
 	}
 	LA3: ;
 	{
-		tcell45947* LOC10;
+		Tcell46147* LOC10;
 		if (!!(((*dest) == NIM_NIL))) goto LA8;
 		LOC10 = 0;
-		LOC10 = usrtocell_49446((*dest));
-		decref_51404(LOC10);
+		LOC10 = usrtocell_49646((*dest));
+		decref_51604(LOC10);
 	}
 	LA8: ;
 	(*dest) = src;
 }
 
-N_NIMCALL(toptionentry259005*, newoptionentry_259185)(void) {
-	toptionentry259005* result;
+N_NIMCALL(Toptionentry243005*, newoptionentry_243193)(void) {
+	Toptionentry243005* result;
 	result = 0;
-	result = (toptionentry259005*) newObj((&NTI259007), sizeof(toptionentry259005));
-	(*result).Sup.Sup.m_type = (&NTI259005);
-	(*result).Options = goptions_169126;
-	(*result).Defaultcc = ((NU8) 0);
-	asgnRef((void**) (&(*result).Dynlib), NIM_NIL);
-	(*result).Notes = gnotes_181014;
+	result = (Toptionentry243005*) newObj((&NTI243007), sizeof(Toptionentry243005));
+	(*result).Sup.Sup.m_type = (&NTI243005);
+	(*result).options = goptions_153126;
+	(*result).defaultcc = ((NU8) 0);
+	asgnRef((void**) (&(*result).dynlib), NIM_NIL);
+	(*result).notes = gnotes_163015;
 	return result;
 }
 
 static N_INLINE(void, asgnRefNoCycle)(void** dest, void* src) {
 	{
-		tcell45947* c;
+		Tcell46147* c;
 		if (!!((src == NIM_NIL))) goto LA3;
-		c = usrtocell_49446(src);
-		(*c).Refcount += ((NI) 8);
+		c = usrtocell_49646(src);
+		(*c).refcount += ((NI) 8);
 	}
 	LA3: ;
 	{
-		tcell45947* c;
+		Tcell46147* c;
 		if (!!(((*dest) == NIM_NIL))) goto LA7;
-		c = usrtocell_49446((*dest));
+		c = usrtocell_49646((*dest));
 		{
-			(*c).Refcount -= ((NI) 8);
-			if (!((NU64)((*c).Refcount) < (NU64)(((NI) 8)))) goto LA11;
-			rtladdzct_51004(c);
+			(*c).refcount -= ((NI) 8);
+			if (!((NU64)((*c).refcount) < (NU64)(((NI) 8)))) goto LA11;
+			rtladdzct_51204(c);
 		}
 		LA11: ;
 	}
@@ -849,786 +869,786 @@ static N_INLINE(void, asgnRefNoCycle)(void** dest, void* src) {
 	(*dest) = src;
 }
 
-N_NIMCALL(tcontext259021*, newcontext_259173)(tsym207843* module) {
-	tcontext259021* result;
-	toptionentry259005* LOC1;
-	tlistentry127022* LOC2;
-	TY259445 LOC3;
+N_NIMCALL(Tcontext243023*, newcontext_243181)(Tsym190843* module) {
+	Tcontext243023* result;
+	Toptionentry243005* LOC1;
+	Tlistentry129022* LOC2;
+	TY243446 LOC3;
 	result = 0;
-	result = (tcontext259021*) newObj((&NTI259019), sizeof(tcontext259021));
-	(*result).Sup.Sup.m_type = (&NTI259021);
-	initintset_204927((&(*result).Ambiguoussymbols));
-	initlinkedlist_127043((&(*result).Optionstack));
-	initlinkedlist_127043((&(*result).Libs));
+	result = (Tcontext243023*) newObj((&NTI243021), sizeof(Tcontext243023));
+	(*result).Sup.Sup.m_type = (&NTI243023);
+	initintset_187927((&(*result).ambiguoussymbols));
+	initlinkedlist_129043((&(*result).optionstack));
+	initlinkedlist_129043((&(*result).libs));
 	LOC1 = 0;
-	LOC1 = newoptionentry_259185();
+	LOC1 = newoptionentry_243193();
 	LOC2 = 0;
 	LOC2 = &LOC1->Sup;
-	append_127053((&(*result).Optionstack), LOC2);
-	asgnRefNoCycle((void**) (&(*result).Module), module);
-	if ((*result).Friendmodules) nimGCunrefNoCycle((*result).Friendmodules);
-	(*result).Friendmodules = (tsymseq207815*) newSeqRC1((&NTI207815), 1);
+	append_129053((&(*result).optionstack), LOC2);
+	asgnRefNoCycle((void**) (&(*result).module), module);
+	if ((*result).friendmodules) nimGCunrefNoCycle((*result).friendmodules);
+	(*result).friendmodules = (Tsymseq190815*) newSeqRC1((&NTI190815), 1);
 	memset((void*)LOC3, 0, sizeof(LOC3));
 	LOC3[0] = module;
-	asgnRefNoCycle((void**) (&(*result).Friendmodules->data[0]), LOC3[0]);
-	if ((*result).Converters) nimGCunrefNoCycle((*result).Converters);
-	(*result).Converters = (tsymseq207815*) newSeqRC1((&NTI207815), 0);
-	if ((*result).Patterns) nimGCunrefNoCycle((*result).Patterns);
-	(*result).Patterns = (tsymseq207815*) newSeqRC1((&NTI207815), 0);
-	initintset_204927((&(*result).Includedfiles));
-	initstrtable_211007((&(*result).Userpragmas));
-	if ((*result).Generics) nimGCunrefNoCycle((*result).Generics);
-	(*result).Generics = (TY259134*) newSeqRC1((&NTI259134), 0);
-	initintset_204927((&(*result).Unknownidents));
+	asgnRefNoCycle((void**) (&(*result).friendmodules->data[0]), LOC3[0]);
+	if ((*result).converters) nimGCunrefNoCycle((*result).converters);
+	(*result).converters = (Tsymseq190815*) newSeqRC1((&NTI190815), 0);
+	if ((*result).patterns) nimGCunrefNoCycle((*result).patterns);
+	(*result).patterns = (Tsymseq190815*) newSeqRC1((&NTI190815), 0);
+	initintset_187927((&(*result).includedfiles));
+	initstrtable_194007((&(*result).userpragmas));
+	if ((*result).generics) nimGCunrefNoCycle((*result).generics);
+	(*result).generics = (TY243141*) newSeqRC1((&NTI243141), 0);
+	initintset_187927((&(*result).unknownidents));
 	return result;
 }
 
-N_NIMCALL(tsym207843*, getcurrowner_259254)(void) {
-	tsym207843* result;
+N_NIMCALL(Ttype190849*, maketypefromexpr_243736)(Tcontext243023* c, Tnode190813* n) {
+	Ttype190849* result;
 	result = 0;
-	result = gowners_259289->data[(gowners_259289->Sup.len-1)];
+	result = newtypes_243218(((NU8) 60), c);
+	asgnRefNoCycle((void**) (&(*result).n), n);
 	return result;
 }
 
-N_NIMCALL(ttype207849*, newtypes_259217)(NU8 kind, tcontext259021* c) {
-	ttype207849* result;
-	tsym207843* LOC1;
+N_NIMCALL(Ttype190849*, errortype_244166)(Tcontext243023* c) {
+	Ttype190849* result;
 	result = 0;
-	LOC1 = 0;
-	LOC1 = getcurrowner_259254();
-	result = newtype_210144(kind, LOC1);
+	result = newtypes_243218(((NU8) 50), c);
 	return result;
 }
 
-N_NIMCALL(ttype207849*, maketypefromexpr_259726)(tcontext259021* c, tnode207813* n) {
-	ttype207849* result;
+N_NIMCALL(Ttype190849*, maketypedesc_243691)(Tcontext243023* c, Ttype190849* typ) {
+	Ttype190849* result;
 	result = 0;
-	result = newtypes_259217(((NU8) 60), c);
-	asgnRefNoCycle((void**) (&(*result).N), n);
-	return result;
-}
-
-N_NIMCALL(ttype207849*, errortype_260136)(tcontext259021* c) {
-	ttype207849* result;
-	result = 0;
-	result = newtypes_259217(((NU8) 50), c);
-	return result;
-}
-
-N_NIMCALL(ttype207849*, maketypedesc_259681)(tcontext259021* c, ttype207849* typ) {
-	ttype207849* result;
-	result = 0;
-	result = newtypes_259217(((NU8) 8), c);
+	result = newtypes_243218(((NU8) 8), c);
 	{
 		NimStringDesc* LOC5;
 		if (!(typ == NIM_NIL)) goto LA3;
 		LOC5 = 0;
-		LOC5 = HEX24_182531(TMP2701);
-		internalerror_182443(LOC5);
+		LOC5 = HEX24_164322(TMP2636);
+		internalerror_164234(LOC5);
 	}
 	LA3: ;
-	addsonskipintlit_253730(result, typ);
+	addsonskipintlit_237731(result, typ);
 	return result;
 }
 
-N_NIMCALL(void, illformedast_260215)(tnode207813* n) {
+N_NIMCALL(void, illformedast_244245)(Tnode190813* n) {
 	NimStringDesc* LOC1;
 	LOC1 = 0;
-	LOC1 = rendertree_228058(n, 4);
-	globalerror_182371((*n).Info, ((NU16) 1), LOC1);
+	LOC1 = rendertree_212058(n, 4);
+	globalerror_164150((*n).info, ((NU16) 1), LOC1);
 }
 
-N_NIMCALL(void, checksonslen_260235)(tnode207813* n, NI length) {
+N_NIMCALL(void, checksonslen_244265)(Tnode190813* n, NI length) {
 	{
 		NI LOC3;
 		LOC3 = 0;
-		LOC3 = sonslen_210403(n);
+		LOC3 = sonslen_193403(n);
 		if (!!((LOC3 == length))) goto LA4;
-		illformedast_260215(n);
+		illformedast_244245(n);
 	}
 	LA4: ;
 }
 
-N_NIMCALL(ttype207849*, newtypewithsons_259807)(tcontext259021* c, NU8 kind, ttypeseq207845* sons) {
-	ttype207849* result;
-	tsym207843* LOC1;
+N_NIMCALL(Ttype190849*, newtypewithsons_243807)(Tcontext243023* c, NU8 kind, Ttypeseq190845* sons) {
+	Ttype190849* result;
+	Tsym190843* LOC1;
 	result = 0;
 	LOC1 = 0;
-	LOC1 = getcurrowner_259254();
-	result = newtype_210144(kind, LOC1);
-	genericSeqAssign((&(*result).Sons), sons, (&NTI207845));
+	LOC1 = getcurrowner_243255();
+	result = newtype_193144(kind, LOC1);
+	genericSeqAssign((&(*result).sons), sons, (&NTI190845));
 	return result;
 }
 
-N_NIMCALL(ttype207849*, makevartype_259210)(tcontext259021* c, ttype207849* basetype) {
-	ttype207849* result;
+N_NIMCALL(Ttype190849*, makevartype_243652)(Tcontext243023* c, Ttype190849* basetype) {
+	Ttype190849* result;
 	result = 0;
-	result = newtypes_259217(((NU8) 23), c);
 	{
-		NimStringDesc* LOC5;
-		if (!(basetype == NIM_NIL)) goto LA3;
-		LOC5 = 0;
-		LOC5 = HEX24_182531(TMP2715);
-		internalerror_182443(LOC5);
-	}
-	LA3: ;
-	addsonskipintlit_253730(result, basetype);
-	return result;
-}
-
-N_NIMCALL(ttype207849*, makerangetype_260168)(tcontext259021* c, NI64 first, NI64 last, tlineinfo180338 info, ttype207849* inttype) {
-	ttype207849* result;
-	tnode207813* n;
-	tnode207813* LOC1;
-	tnode207813* LOC2;
-	result = 0;
-	n = newnodei_209351(((NU8) 44), info);
-	LOC1 = 0;
-	LOC1 = newinttypenode_208619(((NU8) 6), first, inttype);
-	addson_209819(n, LOC1);
-	LOC2 = 0;
-	LOC2 = newinttypenode_208619(((NU8) 6), last, inttype);
-	addson_209819(n, LOC2);
-	result = newtypes_259217(((NU8) 20), c);
-	asgnRefNoCycle((void**) (&(*result).N), n);
-	addsonskipintlit_253730(result, inttype);
-	return result;
-}
-
-N_NIMCALL(tnode207813*, makestaticexpr_259820)(tcontext259021* c, tnode207813* n) {
-	tnode207813* result;
-	TY224674 LOC1;
-	ttypeseq207845* LOC2;
-	TY364353 LOC3;
-	result = 0;
-	result = newnodei_209351(((NU8) 62), (*n).Info);
-	if ((*result).kindU.S6.Sons) nimGCunrefNoCycle((*result).kindU.S6.Sons);
-	(*result).kindU.S6.Sons = (tnodeseq207807*) newSeqRC1((&NTI207807), 1);
-	memset((void*)LOC1, 0, sizeof(LOC1));
-	LOC1[0] = n;
-	asgnRefNoCycle((void**) (&(*result).kindU.S6.Sons->data[0]), LOC1[0]);
-	LOC2 = 0;
-	LOC2 = (ttypeseq207845*) newSeq((&NTI207845), 1);
-	memset((void*)LOC3, 0, sizeof(LOC3));
-	LOC3[0] = (*n).Typ;
-	asgnRefNoCycle((void**) (&LOC2->data[0]), LOC3[0]);
-	asgnRefNoCycle((void**) (&(*result).Typ), newtypewithsons_259807(c, ((NU8) 59), LOC2));
-	return result;
-}
-
-N_NIMCALL(ttype207849*, makeandtype_259862)(tcontext259021* c, ttype207849* t1, ttype207849* t2) {
-	ttype207849* result;
-	TY259881 LOC1;
-	result = 0;
-	result = newtypes_259217(((NU8) 55), c);
-	if ((*result).Sons) nimGCunrefNoCycle((*result).Sons);
-	(*result).Sons = (ttypeseq207845*) newSeqRC1((&NTI207845), 2);
-	memset((void*)LOC1, 0, sizeof(LOC1));
-	LOC1[0] = t1;
-	LOC1[1] = t2;
-	asgnRefNoCycle((void**) (&(*result).Sons->data[0]), LOC1[0]);
-	asgnRefNoCycle((void**) (&(*result).Sons->data[1]), LOC1[1]);
-	propagatetoowner_211234(result, t1);
-	propagatetoowner_211234(result, t2);
-	(*result).Flags = ((*result).Flags | (((*t1).Flags | (*t2).Flags) & 4194304));
-	return result;
-}
-
-N_NIMCALL(ttype207849*, makeortype_259926)(tcontext259021* c, ttype207849* t1, ttype207849* t2) {
-	ttype207849* result;
-	TY259881 LOC1;
-	result = 0;
-	result = newtypes_259217(((NU8) 56), c);
-	if ((*result).Sons) nimGCunrefNoCycle((*result).Sons);
-	(*result).Sons = (ttypeseq207845*) newSeqRC1((&NTI207845), 2);
-	memset((void*)LOC1, 0, sizeof(LOC1));
-	LOC1[0] = t1;
-	LOC1[1] = t2;
-	asgnRefNoCycle((void**) (&(*result).Sons->data[0]), LOC1[0]);
-	asgnRefNoCycle((void**) (&(*result).Sons->data[1]), LOC1[1]);
-	propagatetoowner_211234(result, t1);
-	propagatetoowner_211234(result, t2);
-	(*result).Flags = ((*result).Flags | (((*t1).Flags | (*t2).Flags) & 4194304));
-	return result;
-}
-
-N_NIMCALL(ttype207849*, makenottype_259990)(tcontext259021* c, ttype207849* t1) {
-	ttype207849* result;
-	TY364353 LOC1;
-	result = 0;
-	result = newtypes_259217(((NU8) 57), c);
-	if ((*result).Sons) nimGCunrefNoCycle((*result).Sons);
-	(*result).Sons = (ttypeseq207845*) newSeqRC1((&NTI207845), 1);
-	memset((void*)LOC1, 0, sizeof(LOC1));
-	LOC1[0] = t1;
-	asgnRefNoCycle((void**) (&(*result).Sons->data[0]), LOC1[0]);
-	propagatetoowner_211234(result, t1);
-	(*result).Flags = ((*result).Flags | ((*t1).Flags & 4194304));
-	return result;
-}
-
-N_NIMCALL(void, checkminsonslen_260245)(tnode207813* n, NI length) {
-	{
-		NI LOC3;
-		LOC3 = 0;
-		LOC3 = sonslen_210403(n);
-		if (!(LOC3 < length)) goto LA4;
-		illformedast_260215(n);
-	}
-	LA4: ;
-}
-
-N_NIMCALL(tnode207813*, nminusone_260041)(tnode207813* n) {
-	tnode207813* result;
-	tnodeseq207807* LOC1;
-	TY260101 LOC2;
-	tsym207843* LOC3;
-	result = 0;
-	LOC1 = 0;
-	LOC1 = (tnodeseq207807*) newSeq((&NTI207807), 2);
-	memset((void*)LOC2, 0, sizeof(LOC2));
-	LOC3 = 0;
-	LOC3 = getsysmagic_253155(((NimStringDesc*) &TMP2978), ((NU16) 18));
-	LOC2[0] = newsymnode_209325(LOC3);
-	LOC2[1] = n;
-	asgnRefNoCycle((void**) (&LOC1->data[0]), LOC2[0]);
-	asgnRefNoCycle((void**) (&LOC1->data[1]), LOC2[1]);
-	result = newnode_209607(((NU8) 27), (*n).Info, LOC1, NIM_NIL);
-	return result;
-}
-
-N_NIMCALL(ttype207849*, makerangewithstaticexpr_260066)(tcontext259021* c, tnode207813* n) {
-	ttype207849* result;
-	ttype207849* inttype;
-	TY364353 LOC1;
-	tnodeseq207807* LOC2;
-	TY260101 LOC3;
-	tnode207813* LOC4;
-	result = 0;
-	inttype = getsystype_253030(((NU8) 31));
-	result = newtypes_259217(((NU8) 20), c);
-	if ((*result).Sons) nimGCunrefNoCycle((*result).Sons);
-	(*result).Sons = (ttypeseq207845*) newSeqRC1((&NTI207845), 1);
-	memset((void*)LOC1, 0, sizeof(LOC1));
-	LOC1[0] = inttype;
-	asgnRefNoCycle((void**) (&(*result).Sons->data[0]), LOC1[0]);
-	LOC2 = 0;
-	LOC2 = (tnodeseq207807*) newSeq((&NTI207807), 2);
-	memset((void*)LOC3, 0, sizeof(LOC3));
-	LOC3[0] = newinttypenode_208619(((NU8) 6), IL64(0), inttype);
-	LOC4 = 0;
-	LOC4 = nminusone_260041(n);
-	LOC3[1] = makestaticexpr_259820(c, LOC4);
-	asgnRefNoCycle((void**) (&LOC2->data[0]), LOC3[0]);
-	asgnRefNoCycle((void**) (&LOC2->data[1]), LOC3[1]);
-	asgnRefNoCycle((void**) (&(*result).N), newnode_209607(((NU8) 44), (*n).Info, LOC2, NIM_NIL));
-	return result;
-}
-
-N_NIMCALL(void, pushowner_259259)(tsym207843* owner) {
-	gowners_259289 = (tsymseq207815*) incrSeq(&(gowners_259289)->Sup, sizeof(tsym207843*));
-	asgnRefNoCycle((void**) (&gowners_259289->data[gowners_259289->Sup.len-1]), owner);
-}
-
-N_NIMCALL(void, makeinstpair_259149)(tsym207843* s, tinstantiation207833* inst, tinstantiationpair259013* Result) {
-	unsureAsgnRef((void**) (&(*Result).Genericsym), s);
-	unsureAsgnRef((void**) (&(*Result).Inst), inst);
-}
-
-N_NIMCALL(tlib207831*, newlib_259190)(NU8 kind) {
-	tlib207831* result;
-	result = 0;
-	result = (tlib207831*) newObj((&NTI207841), sizeof(tlib207831));
-	(*result).Sup.Sup.m_type = (&NTI207831);
-	(*result).Kind = kind;
-	return result;
-}
-
-N_NIMCALL(void, addtolib_259196)(tlib207831* lib, tsym207843* sym) {
-	asgnRef((void**) (&(*sym).Annex), lib);
-}
-
-N_NIMCALL(void, illformedastlocal_260225)(tnode207813* n) {
-	NimStringDesc* LOC1;
-	LOC1 = 0;
-	LOC1 = rendertree_228058(n, 4);
-	localerror_182392((*n).Info, ((NU16) 1), LOC1);
-}
-
-N_NIMCALL(toptionentry259005*, lastoptionentry_259179)(tcontext259021* c) {
-	toptionentry259005* result;
-	result = 0;
-	result = ((toptionentry259005*) ((*c).Optionstack.Tail));
-	return result;
-}
-
-N_NIMCALL(void, popowner_259265)(void) {
-	NI length;
-	length = gowners_259289->Sup.len;
-	{
-		if (!(((NI) 0) < length)) goto LA3;
-		gowners_259289 = (tsymseq207815*) setLengthSeq(&(gowners_259289)->Sup, sizeof(tsym207843*), (NI64)(length - ((NI) 1)));
+		if (!((*basetype).kind == ((NU8) 23))) goto LA3;
+		result = basetype;
 	}
 	goto LA1;
 	LA3: ;
 	{
-		internalerror_182443(((NimStringDesc*) &TMP3136));
+		result = newtypes_243218(((NU8) 23), c);
+		{
+			NimStringDesc* LOC10;
+			if (!(basetype == NIM_NIL)) goto LA8;
+			LOC10 = 0;
+			LOC10 = HEX24_164322(TMP2650);
+			internalerror_164234(LOC10);
+		}
+		LA8: ;
+		addsonskipintlit_237731(result, basetype);
+	}
+	LA1: ;
+	return result;
+}
+
+N_NIMCALL(Ttype190849*, makerangetype_244198)(Tcontext243023* c, NI64 first, NI64 last, Tlineinfo162338 info, Ttype190849* inttype) {
+	Ttype190849* result;
+	Tnode190813* n;
+	Tnode190813* LOC1;
+	Tnode190813* LOC2;
+	result = 0;
+	n = newnodei_192351(((NU8) 44), info);
+	LOC1 = 0;
+	LOC1 = newinttypenode_191619(((NU8) 6), first, inttype);
+	addson_192819(n, LOC1);
+	LOC2 = 0;
+	LOC2 = newinttypenode_191619(((NU8) 6), last, inttype);
+	addson_192819(n, LOC2);
+	result = newtypes_243218(((NU8) 20), c);
+	asgnRefNoCycle((void**) (&(*result).n), n);
+	addsonskipintlit_237731(result, inttype);
+	return result;
+}
+
+N_NIMCALL(Tnode190813*, makestaticexpr_243820)(Tcontext243023* c, Tnode190813* n) {
+	Tnode190813* result;
+	TY208694 LOC1;
+	Ttypeseq190845* LOC2;
+	TY348230 LOC3;
+	result = 0;
+	result = newnodei_192351(((NU8) 62), (*n).info);
+	if ((*result).kindU.S6.sons) nimGCunrefNoCycle((*result).kindU.S6.sons);
+	(*result).kindU.S6.sons = (Tnodeseq190807*) newSeqRC1((&NTI190807), 1);
+	memset((void*)LOC1, 0, sizeof(LOC1));
+	LOC1[0] = n;
+	asgnRefNoCycle((void**) (&(*result).kindU.S6.sons->data[0]), LOC1[0]);
+	LOC2 = 0;
+	LOC2 = (Ttypeseq190845*) newSeq((&NTI190845), 1);
+	memset((void*)LOC3, 0, sizeof(LOC3));
+	LOC3[0] = (*n).typ;
+	asgnRefNoCycle((void**) (&LOC2->data[0]), LOC3[0]);
+	asgnRefNoCycle((void**) (&(*result).typ), newtypewithsons_243807(c, ((NU8) 59), LOC2));
+	return result;
+}
+
+N_NIMCALL(Ttype190849*, makeandtype_243862)(Tcontext243023* c, Ttype190849* t1, Ttype190849* t2) {
+	Ttype190849* result;
+	TY243881 LOC1;
+	result = 0;
+	result = newtypes_243218(((NU8) 55), c);
+	if ((*result).sons) nimGCunrefNoCycle((*result).sons);
+	(*result).sons = (Ttypeseq190845*) newSeqRC1((&NTI190845), 2);
+	memset((void*)LOC1, 0, sizeof(LOC1));
+	LOC1[0] = t1;
+	LOC1[1] = t2;
+	asgnRefNoCycle((void**) (&(*result).sons->data[0]), LOC1[0]);
+	asgnRefNoCycle((void**) (&(*result).sons->data[1]), LOC1[1]);
+	propagatetoowner_194274(result, t1);
+	propagatetoowner_194274(result, t2);
+	(*result).flags = ((*result).flags | (((*t1).flags | (*t2).flags) & 4194304));
+	(*result).flags |= ((NI32)1)<<((((NU8) 19))%(sizeof(NI32)*8));
+	return result;
+}
+
+N_NIMCALL(Ttype190849*, makeortype_243936)(Tcontext243023* c, Ttype190849* t1, Ttype190849* t2) {
+	Ttype190849* result;
+	TY243881 LOC1;
+	result = 0;
+	result = newtypes_243218(((NU8) 56), c);
+	if ((*result).sons) nimGCunrefNoCycle((*result).sons);
+	(*result).sons = (Ttypeseq190845*) newSeqRC1((&NTI190845), 2);
+	memset((void*)LOC1, 0, sizeof(LOC1));
+	LOC1[0] = t1;
+	LOC1[1] = t2;
+	asgnRefNoCycle((void**) (&(*result).sons->data[0]), LOC1[0]);
+	asgnRefNoCycle((void**) (&(*result).sons->data[1]), LOC1[1]);
+	propagatetoowner_194274(result, t1);
+	propagatetoowner_194274(result, t2);
+	(*result).flags = ((*result).flags | (((*t1).flags | (*t2).flags) & 4194304));
+	(*result).flags |= ((NI32)1)<<((((NU8) 19))%(sizeof(NI32)*8));
+	return result;
+}
+
+N_NIMCALL(Ttype190849*, makenottype_244010)(Tcontext243023* c, Ttype190849* t1) {
+	Ttype190849* result;
+	TY348230 LOC1;
+	result = 0;
+	result = newtypes_243218(((NU8) 57), c);
+	if ((*result).sons) nimGCunrefNoCycle((*result).sons);
+	(*result).sons = (Ttypeseq190845*) newSeqRC1((&NTI190845), 1);
+	memset((void*)LOC1, 0, sizeof(LOC1));
+	LOC1[0] = t1;
+	asgnRefNoCycle((void**) (&(*result).sons->data[0]), LOC1[0]);
+	propagatetoowner_194274(result, t1);
+	(*result).flags = ((*result).flags | ((*t1).flags & 4194304));
+	(*result).flags |= ((NI32)1)<<((((NU8) 19))%(sizeof(NI32)*8));
+	return result;
+}
+
+N_NIMCALL(void, checkminsonslen_244275)(Tnode190813* n, NI length) {
+	{
+		NI LOC3;
+		LOC3 = 0;
+		LOC3 = sonslen_193403(n);
+		if (!(LOC3 < length)) goto LA4;
+		illformedast_244245(n);
+	}
+	LA4: ;
+}
+
+N_NIMCALL(Tnode190813*, nminusone_244071)(Tnode190813* n) {
+	Tnode190813* result;
+	Tnodeseq190807* LOC1;
+	TY244131 LOC2;
+	Tsym190843* LOC3;
+	result = 0;
+	LOC1 = 0;
+	LOC1 = (Tnodeseq190807*) newSeq((&NTI190807), 2);
+	memset((void*)LOC2, 0, sizeof(LOC2));
+	LOC3 = 0;
+	LOC3 = getsysmagic_237155(((NimStringDesc*) &TMP2994), ((NU16) 22));
+	LOC2[0] = newsymnode_192325(LOC3);
+	LOC2[1] = n;
+	asgnRefNoCycle((void**) (&LOC1->data[0]), LOC2[0]);
+	asgnRefNoCycle((void**) (&LOC1->data[1]), LOC2[1]);
+	result = newnode_192607(((NU8) 27), (*n).info, LOC1, NIM_NIL);
+	return result;
+}
+
+N_NIMCALL(Ttype190849*, makerangewithstaticexpr_244096)(Tcontext243023* c, Tnode190813* n) {
+	Ttype190849* result;
+	Ttype190849* inttype;
+	TY348230 LOC1;
+	Tnodeseq190807* LOC2;
+	TY244131 LOC3;
+	Tnode190813* LOC4;
+	result = 0;
+	inttype = getsystype_237030(((NU8) 31));
+	result = newtypes_243218(((NU8) 20), c);
+	if ((*result).sons) nimGCunrefNoCycle((*result).sons);
+	(*result).sons = (Ttypeseq190845*) newSeqRC1((&NTI190845), 1);
+	memset((void*)LOC1, 0, sizeof(LOC1));
+	LOC1[0] = inttype;
+	asgnRefNoCycle((void**) (&(*result).sons->data[0]), LOC1[0]);
+	LOC2 = 0;
+	LOC2 = (Tnodeseq190807*) newSeq((&NTI190807), 2);
+	memset((void*)LOC3, 0, sizeof(LOC3));
+	LOC3[0] = newinttypenode_191619(((NU8) 6), IL64(0), inttype);
+	LOC4 = 0;
+	LOC4 = nminusone_244071(n);
+	LOC3[1] = makestaticexpr_243820(c, LOC4);
+	asgnRefNoCycle((void**) (&LOC2->data[0]), LOC3[0]);
+	asgnRefNoCycle((void**) (&LOC2->data[1]), LOC3[1]);
+	asgnRefNoCycle((void**) (&(*result).n), newnode_192607(((NU8) 44), (*n).info, LOC2, NIM_NIL));
+	return result;
+}
+
+N_NIMCALL(void, pushowner_243260)(Tsym190843* owner) {
+	gowners_243290 = (Tsymseq190815*) incrSeq(&(gowners_243290)->Sup, sizeof(Tsym190843*));
+	asgnRefNoCycle((void**) (&gowners_243290->data[gowners_243290->Sup.len-1]), owner);
+}
+
+N_NIMCALL(void, makeinstpair_243157)(Tsym190843* s, Tinstantiation190833* inst, Tinstantiationpair243013* Result) {
+	unsureAsgnRef((void**) (&(*Result).genericsym), s);
+	unsureAsgnRef((void**) (&(*Result).inst), inst);
+}
+
+N_NIMCALL(Tlib190831*, newlib_243198)(NU8 kind) {
+	Tlib190831* result;
+	result = 0;
+	result = (Tlib190831*) newObj((&NTI190841), sizeof(Tlib190831));
+	(*result).Sup.Sup.m_type = (&NTI190831);
+	(*result).kind = kind;
+	return result;
+}
+
+N_NIMCALL(void, addtolib_243204)(Tlib190831* lib, Tsym190843* sym) {
+	asgnRef((void**) (&(*sym).annex), lib);
+}
+
+N_NIMCALL(void, illformedastlocal_244255)(Tnode190813* n) {
+	NimStringDesc* LOC1;
+	LOC1 = 0;
+	LOC1 = rendertree_212058(n, 4);
+	localerror_164171((*n).info, ((NU16) 1), LOC1);
+}
+
+N_NIMCALL(Toptionentry243005*, lastoptionentry_243187)(Tcontext243023* c) {
+	Toptionentry243005* result;
+	result = 0;
+	result = ((Toptionentry243005*) ((*c).optionstack.tail));
+	return result;
+}
+
+N_NIMCALL(void, popowner_243266)(void) {
+	NI length;
+	length = (gowners_243290 ? gowners_243290->Sup.len : 0);
+	{
+		if (!(((NI) 0) < length)) goto LA3;
+		gowners_243290 = (Tsymseq190815*) setLengthSeq(&(gowners_243290)->Sup, sizeof(Tsym190843*), ((NI) ((NI)(length - ((NI) 1)))));
+	}
+	goto LA1;
+	LA3: ;
+	{
+		internalerror_164234(((NimStringDesc*) &TMP3153));
 	}
 	LA1: ;
 }
 
-N_NIMCALL(tnode207813*, errornode_260146)(tcontext259021* c, tnode207813* n) {
-	tnode207813* result;
+N_NIMCALL(Ttype190849*, makeptrtype_243211)(Tcontext243023* c, Ttype190849* basetype) {
+	Ttype190849* result;
 	result = 0;
-	result = newnodei_209351(((NU8) 1), (*n).Info);
-	asgnRefNoCycle((void**) (&(*result).Typ), errortype_260136(c));
-	return result;
-}
-
-N_NIMCALL(ttype207849*, makeptrtype_259203)(tcontext259021* c, ttype207849* basetype) {
-	ttype207849* result;
-	result = 0;
-	result = newtypes_259217(((NU8) 21), c);
+	result = newtypes_243218(((NU8) 21), c);
 	{
 		NimStringDesc* LOC5;
 		if (!(basetype == NIM_NIL)) goto LA3;
 		LOC5 = 0;
-		LOC5 = HEX24_182531(TMP3336);
-		internalerror_182443(LOC5);
+		LOC5 = HEX24_164322(TMP3197);
+		internalerror_164234(LOC5);
 	}
 	LA3: ;
-	addsonskipintlit_253730(result, basetype);
+	addsonskipintlit_237731(result, basetype);
 	return result;
 }
 
-N_NIMCALL(tnode207813*, maketypesymnode_259711)(tcontext259021* c, ttype207849* typ, tlineinfo180338 info) {
-	tnode207813* result;
-	ttype207849* typedesc;
-	tsym207843* sym;
-	tsym207843* LOC1;
-	tsym207843* LOC2;
+N_NIMCALL(Tnode190813*, errornode_244176)(Tcontext243023* c, Tnode190813* n) {
+	Tnode190813* result;
+	result = 0;
+	result = newnodei_192351(((NU8) 1), (*n).info);
+	asgnRefNoCycle((void**) (&(*result).typ), errortype_244166(c));
+	return result;
+}
+
+N_NIMCALL(Tnode190813*, maketypesymnode_243721)(Tcontext243023* c, Ttype190849* typ, Tlineinfo162338 info) {
+	Tnode190813* result;
+	Ttype190849* typedesc;
+	Tsym190843* sym;
+	Tsym190843* LOC1;
+	Tsym190843* LOC2;
 {	result = 0;
-	typedesc = maketypedesc_259681(c, typ);
+	typedesc = maketypedesc_243691(c, typ);
 	LOC1 = 0;
-	LOC1 = getcurrowner_259254();
+	LOC1 = getcurrowner_243255();
 	LOC2 = 0;
-	LOC2 = newsym_208655(((NU8) 7), idanon_184495, LOC1, info);
-	sym = linkto_208884(LOC2, typedesc);
-	result = newsymnode_209338(sym, info);
+	LOC2 = newsym_191655(((NU8) 7), idanon_166495, LOC1, info);
+	sym = linkto_191884(LOC2, typedesc);
+	result = newsymnode_192338(sym, info);
 	goto BeforeRet;
 	}BeforeRet: ;
 	return result;
 }
 
-N_NIMCALL(void, inclsym_259508)(tsymseq207815** sq, tsym207843* s) {
-	NI l;
-{	l = (*sq)->Sup.len;
+N_NIMCALL(void, inclsym_243509)(Tsymseq190815** sq, Tsym190843* s) {
+	NI L;
+{	L = ((*sq) ? (*sq)->Sup.len : 0);
 	{
-		NI i_259534;
-		NI HEX3Atmp_259548;
-		NI res_259551;
-		i_259534 = 0;
-		HEX3Atmp_259548 = 0;
-		HEX3Atmp_259548 = (NI64)(l - ((NI) 1));
-		res_259551 = ((NI) 0);
+		NI i_243535;
+		NI HEX3Atmp_243549;
+		NI res_243552;
+		i_243535 = 0;
+		HEX3Atmp_243549 = 0;
+		HEX3Atmp_243549 = (NI)(L - ((NI) 1));
+		res_243552 = ((NI) 0);
 		{
 			while (1) {
-				if (!(res_259551 <= HEX3Atmp_259548)) goto LA3;
-				i_259534 = res_259551;
+				if (!(res_243552 <= HEX3Atmp_243549)) goto LA3;
+				i_243535 = res_243552;
 				{
-					if (!((*(*sq)->data[i_259534]).Sup.Id == (*s).Sup.Id)) goto LA6;
+					if (!((*(*sq)->data[i_243535]).Sup.id == (*s).Sup.id)) goto LA6;
 					goto BeforeRet;
 				}
 				LA6: ;
-				res_259551 += ((NI) 1);
+				res_243552 += ((NI) 1);
 			} LA3: ;
 		}
 	}
-	(*sq) = (tsymseq207815*) setLengthSeq(&((*sq))->Sup, sizeof(tsym207843*), (NI64)(l + ((NI) 1)));
-	asgnRefNoCycle((void**) (&(*sq)->data[l]), s);
+	(*sq) = (Tsymseq190815*) setLengthSeq(&((*sq))->Sup, sizeof(Tsym190843*), ((NI) ((NI)(L + ((NI) 1)))));
+	asgnRefNoCycle((void**) (&(*sq)->data[L]), s);
 	}BeforeRet: ;
 }
 
-N_NIMCALL(void, addconverter_259570)(tcontext259021* c, tsym207843* conv) {
-	inclsym_259508((&(*c).Converters), conv);
+N_NIMCALL(void, addconverter_243571)(Tcontext243023* c, Tsym190843* conv) {
+	inclsym_243509((&(*c).converters), conv);
 }
 
-N_NIMCALL(void, addpattern_259581)(tcontext259021* c, tsym207843* p) {
-	inclsym_259508((&(*c).Patterns), p);
+N_NIMCALL(void, addpattern_243582)(Tcontext243023* c, Tsym190843* p) {
+	inclsym_243509((&(*c).patterns), p);
 }
 NIM_EXTERNC N_NOINLINE(void, compiler_semdataInit)(void) {
-	if (gowners_259289) nimGCunrefNoCycle(gowners_259289);
-	gowners_259289 = (tsymseq207815*) newSeqRC1((&NTI207815), 0);
+	if (gowners_243290) nimGCunrefNoCycle(gowners_243290);
+	gowners_243290 = (Tsymseq190815*) newSeqRC1((&NTI190815), 0);
 }
 
 NIM_EXTERNC N_NOINLINE(void, compiler_semdataDatInit)(void) {
-static TNimNode* TMP1972[37];
-static TNimNode* TMP1973[7];
-static TNimNode* TMP1975[2];
-static TNimNode* TMP1976[2];
-static TNimNode* TMP1998[2];
-static TNimNode* TMP2001[5];
-static TNimNode TMP848[61];
-NTI259021.size = sizeof(tcontext259021);
-NTI259021.kind = 17;
-NTI259021.base = (&NTI256005);
-TMP1972[0] = &TMP848[1];
+static TNimNode* TMP1928[37];
+static TNimNode* TMP1929[8];
+static TNimNode* TMP1931[2];
+static TNimNode* TMP1932[2];
+static TNimNode* TMP1954[2];
+static TNimNode* TMP1957[5];
+static TNimNode TMP848[62];
+NTI243023.size = sizeof(Tcontext243023);
+NTI243023.kind = 17;
+NTI243023.base = (&NTI240005);
+TMP1928[0] = &TMP848[1];
 TMP848[1].kind = 1;
-TMP848[1].offset = offsetof(tcontext259021, Module);
-TMP848[1].typ = (&NTI207811);
+TMP848[1].offset = offsetof(Tcontext243023, module);
+TMP848[1].typ = (&NTI190811);
 TMP848[1].name = "module";
-TMP1972[1] = &TMP848[2];
+TMP1928[1] = &TMP848[2];
 TMP848[2].kind = 1;
-TMP848[2].offset = offsetof(tcontext259021, Currentscope);
-TMP848[2].typ = (&NTI207839);
+TMP848[2].offset = offsetof(Tcontext243023, currentscope);
+TMP848[2].typ = (&NTI190839);
 TMP848[2].name = "currentScope";
-TMP1972[2] = &TMP848[3];
+TMP1928[2] = &TMP848[3];
 TMP848[3].kind = 1;
-TMP848[3].offset = offsetof(tcontext259021, Importtable);
-TMP848[3].typ = (&NTI207839);
+TMP848[3].offset = offsetof(Tcontext243023, importtable);
+TMP848[3].typ = (&NTI190839);
 TMP848[3].name = "importTable";
-TMP1972[3] = &TMP848[4];
+TMP1928[3] = &TMP848[4];
 TMP848[4].kind = 1;
-TMP848[4].offset = offsetof(tcontext259021, Toplevelscope);
-TMP848[4].typ = (&NTI207839);
+TMP848[4].offset = offsetof(Tcontext243023, toplevelscope);
+TMP848[4].typ = (&NTI190839);
 TMP848[4].name = "topLevelScope";
-TMP1972[4] = &TMP848[5];
-NTI259011.size = sizeof(tproccon259011);
-NTI259011.kind = 18;
-NTI259011.base = 0;
-TMP1973[0] = &TMP848[7];
+TMP1928[4] = &TMP848[5];
+NTI243011.size = sizeof(Tproccon243011);
+NTI243011.kind = 18;
+NTI243011.base = 0;
+TMP1929[0] = &TMP848[7];
 TMP848[7].kind = 1;
-TMP848[7].offset = offsetof(tproccon259011, Owner);
-TMP848[7].typ = (&NTI207811);
+TMP848[7].offset = offsetof(Tproccon243011, owner);
+TMP848[7].typ = (&NTI190811);
 TMP848[7].name = "owner";
-TMP1973[1] = &TMP848[8];
+TMP1929[1] = &TMP848[8];
 TMP848[8].kind = 1;
-TMP848[8].offset = offsetof(tproccon259011, Resultsym);
-TMP848[8].typ = (&NTI207811);
+TMP848[8].offset = offsetof(Tproccon243011, resultsym);
+TMP848[8].typ = (&NTI190811);
 TMP848[8].name = "resultSym";
-TMP1973[2] = &TMP848[9];
+TMP1929[2] = &TMP848[9];
 TMP848[9].kind = 1;
-TMP848[9].offset = offsetof(tproccon259011, Nestedloopcounter);
+TMP848[9].offset = offsetof(Tproccon243011, nestedloopcounter);
 TMP848[9].typ = (&NTI108);
 TMP848[9].name = "nestedLoopCounter";
-TMP1973[3] = &TMP848[10];
+TMP1929[3] = &TMP848[10];
 TMP848[10].kind = 1;
-TMP848[10].offset = offsetof(tproccon259011, Nestedblockcounter);
+TMP848[10].offset = offsetof(Tproccon243011, nestedblockcounter);
 TMP848[10].typ = (&NTI108);
 TMP848[10].name = "nestedBlockCounter";
-TMP1973[4] = &TMP848[11];
+TMP1929[4] = &TMP848[11];
 TMP848[11].kind = 1;
-TMP848[11].offset = offsetof(tproccon259011, Intrystmt);
+TMP848[11].offset = offsetof(Tproccon243011, intrystmt);
 TMP848[11].typ = (&NTI108);
 TMP848[11].name = "inTryStmt";
-TMP1973[5] = &TMP848[12];
+TMP1929[5] = &TMP848[12];
 TMP848[12].kind = 1;
-TMP848[12].offset = offsetof(tproccon259011, Next);
-TMP848[12].typ = (&NTI259009);
+TMP848[12].offset = offsetof(Tproccon243011, next);
+TMP848[12].typ = (&NTI243009);
 TMP848[12].name = "next";
-TMP1973[6] = &TMP848[13];
+TMP1929[6] = &TMP848[13];
 TMP848[13].kind = 1;
-TMP848[13].offset = offsetof(tproccon259011, Wasforwarded);
+TMP848[13].offset = offsetof(Tproccon243011, wasforwarded);
 TMP848[13].typ = (&NTI138);
 TMP848[13].name = "wasForwarded";
-TMP848[6].len = 7; TMP848[6].kind = 2; TMP848[6].sons = &TMP1973[0];
-NTI259011.node = &TMP848[6];
-NTI259009.size = sizeof(tproccon259011*);
-NTI259009.kind = 22;
-NTI259009.base = (&NTI259011);
-NTI259009.marker = TMP1974;
-TMP848[5].kind = 1;
-TMP848[5].offset = offsetof(tcontext259021, P);
-TMP848[5].typ = (&NTI259009);
-TMP848[5].name = "p";
-TMP1972[5] = &TMP848[14];
+TMP1929[7] = &TMP848[14];
 TMP848[14].kind = 1;
-TMP848[14].offset = offsetof(tcontext259021, Friendmodules);
-TMP848[14].typ = (&NTI207815);
-TMP848[14].name = "friendModules";
-TMP1972[6] = &TMP848[15];
+TMP848[14].offset = offsetof(Tproccon243011, bracketexpr);
+TMP848[14].typ = (&NTI190805);
+TMP848[14].name = "bracketExpr";
+TMP848[6].len = 8; TMP848[6].kind = 2; TMP848[6].sons = &TMP1929[0];
+NTI243011.node = &TMP848[6];
+NTI243009.size = sizeof(Tproccon243011*);
+NTI243009.kind = 22;
+NTI243009.base = (&NTI243011);
+NTI243009.marker = TMP1930;
+TMP848[5].kind = 1;
+TMP848[5].offset = offsetof(Tcontext243023, p);
+TMP848[5].typ = (&NTI243009);
+TMP848[5].name = "p";
+TMP1928[5] = &TMP848[15];
 TMP848[15].kind = 1;
-TMP848[15].offset = offsetof(tcontext259021, Instcounter);
-TMP848[15].typ = (&NTI108);
-TMP848[15].name = "instCounter";
-TMP1972[7] = &TMP848[16];
+TMP848[15].offset = offsetof(Tcontext243023, friendmodules);
+TMP848[15].typ = (&NTI190815);
+TMP848[15].name = "friendModules";
+TMP1928[6] = &TMP848[16];
 TMP848[16].kind = 1;
-TMP848[16].offset = offsetof(tcontext259021, Ambiguoussymbols);
-TMP848[16].typ = (&NTI204056);
-TMP848[16].name = "ambiguousSymbols";
-TMP1972[8] = &TMP848[17];
+TMP848[16].offset = offsetof(Tcontext243023, instcounter);
+TMP848[16].typ = (&NTI108);
+TMP848[16].name = "instCounter";
+TMP1928[7] = &TMP848[17];
 TMP848[17].kind = 1;
-TMP848[17].offset = offsetof(tcontext259021, Intypeclass);
-TMP848[17].typ = (&NTI108);
-TMP848[17].name = "inTypeClass";
-TMP1972[9] = &TMP848[18];
+TMP848[17].offset = offsetof(Tcontext243023, ambiguoussymbols);
+TMP848[17].typ = (&NTI187056);
+TMP848[17].name = "ambiguousSymbols";
+TMP1928[8] = &TMP848[18];
 TMP848[18].kind = 1;
-TMP848[18].offset = offsetof(tcontext259021, Ingenericcontext);
+TMP848[18].offset = offsetof(Tcontext243023, intypeclass);
 TMP848[18].typ = (&NTI108);
-TMP848[18].name = "inGenericContext";
-TMP1972[10] = &TMP848[19];
+TMP848[18].name = "inTypeClass";
+TMP1928[9] = &TMP848[19];
 TMP848[19].kind = 1;
-TMP848[19].offset = offsetof(tcontext259021, Inunrolledcontext);
+TMP848[19].offset = offsetof(Tcontext243023, ingenericcontext);
 TMP848[19].typ = (&NTI108);
-TMP848[19].name = "inUnrolledContext";
-TMP1972[11] = &TMP848[20];
+TMP848[19].name = "inGenericContext";
+TMP1928[10] = &TMP848[20];
 TMP848[20].kind = 1;
-TMP848[20].offset = offsetof(tcontext259021, Incompilescontext);
+TMP848[20].offset = offsetof(Tcontext243023, inunrolledcontext);
 TMP848[20].typ = (&NTI108);
-TMP848[20].name = "inCompilesContext";
-TMP1972[12] = &TMP848[21];
+TMP848[20].name = "inUnrolledContext";
+TMP1928[11] = &TMP848[21];
 TMP848[21].kind = 1;
-TMP848[21].offset = offsetof(tcontext259021, Ingenericinst);
+TMP848[21].offset = offsetof(Tcontext243023, incompilescontext);
 TMP848[21].typ = (&NTI108);
-TMP848[21].name = "inGenericInst";
-TMP1972[13] = &TMP848[22];
+TMP848[21].name = "inCompilesContext";
+TMP1928[12] = &TMP848[22];
 TMP848[22].kind = 1;
-TMP848[22].offset = offsetof(tcontext259021, Converters);
-TMP848[22].typ = (&NTI207815);
-TMP848[22].name = "converters";
-TMP1972[14] = &TMP848[23];
+TMP848[22].offset = offsetof(Tcontext243023, ingenericinst);
+TMP848[22].typ = (&NTI108);
+TMP848[22].name = "inGenericInst";
+TMP1928[13] = &TMP848[23];
 TMP848[23].kind = 1;
-TMP848[23].offset = offsetof(tcontext259021, Patterns);
-TMP848[23].typ = (&NTI207815);
-TMP848[23].name = "patterns";
-TMP1972[15] = &TMP848[24];
+TMP848[23].offset = offsetof(Tcontext243023, converters);
+TMP848[23].typ = (&NTI190815);
+TMP848[23].name = "converters";
+TMP1928[14] = &TMP848[24];
 TMP848[24].kind = 1;
-TMP848[24].offset = offsetof(tcontext259021, Optionstack);
-TMP848[24].typ = (&NTI127028);
-TMP848[24].name = "optionStack";
-TMP1972[16] = &TMP848[25];
+TMP848[24].offset = offsetof(Tcontext243023, patterns);
+TMP848[24].typ = (&NTI190815);
+TMP848[24].name = "patterns";
+TMP1928[15] = &TMP848[25];
 TMP848[25].kind = 1;
-TMP848[25].offset = offsetof(tcontext259021, Symmapping);
-TMP848[25].typ = (&NTI207861);
-TMP848[25].name = "symMapping";
-TMP1972[17] = &TMP848[26];
+TMP848[25].offset = offsetof(Tcontext243023, optionstack);
+TMP848[25].typ = (&NTI129028);
+TMP848[25].name = "optionStack";
+TMP1928[16] = &TMP848[26];
 TMP848[26].kind = 1;
-TMP848[26].offset = offsetof(tcontext259021, Libs);
-TMP848[26].typ = (&NTI127028);
-TMP848[26].name = "libs";
-TMP1972[18] = &TMP848[27];
-NTI259065.size = sizeof(TY259065);
-NTI259065.kind = 25;
-NTI259065.base = 0;
-NTI259065.flags = 3;
+TMP848[26].offset = offsetof(Tcontext243023, symmapping);
+TMP848[26].typ = (&NTI190861);
+TMP848[26].name = "symMapping";
+TMP1928[17] = &TMP848[27];
 TMP848[27].kind = 1;
-TMP848[27].offset = offsetof(tcontext259021, Semconstexpr);
-TMP848[27].typ = (&NTI259065);
-TMP848[27].name = "semConstExpr";
-TMP1972[19] = &TMP848[28];
-NTI259070.size = sizeof(TY259070);
-NTI259070.kind = 25;
-NTI259070.base = 0;
-NTI259070.flags = 3;
+TMP848[27].offset = offsetof(Tcontext243023, libs);
+TMP848[27].typ = (&NTI129028);
+TMP848[27].name = "libs";
+TMP1928[18] = &TMP848[28];
+NTI243072.size = sizeof(TY243072);
+NTI243072.kind = 25;
+NTI243072.base = 0;
+NTI243072.flags = 3;
 TMP848[28].kind = 1;
-TMP848[28].offset = offsetof(tcontext259021, Semexpr);
-TMP848[28].typ = (&NTI259070);
-TMP848[28].name = "semExpr";
-TMP1972[20] = &TMP848[29];
-NTI259078.size = sizeof(TY259078);
-NTI259078.kind = 25;
-NTI259078.base = 0;
-NTI259078.flags = 3;
+TMP848[28].offset = offsetof(Tcontext243023, semconstexpr);
+TMP848[28].typ = (&NTI243072);
+TMP848[28].name = "semConstExpr";
+TMP1928[19] = &TMP848[29];
+NTI243077.size = sizeof(TY243077);
+NTI243077.kind = 25;
+NTI243077.base = 0;
+NTI243077.flags = 3;
 TMP848[29].kind = 1;
-TMP848[29].offset = offsetof(tcontext259021, Semtryexpr);
-TMP848[29].typ = (&NTI259078);
-TMP848[29].name = "semTryExpr";
-TMP1972[21] = &TMP848[30];
-NTI259086.size = sizeof(TY259086);
-NTI259086.kind = 25;
-NTI259086.base = 0;
-NTI259086.flags = 3;
+TMP848[29].offset = offsetof(Tcontext243023, semexpr);
+TMP848[29].typ = (&NTI243077);
+TMP848[29].name = "semExpr";
+TMP1928[20] = &TMP848[30];
+NTI243085.size = sizeof(TY243085);
+NTI243085.kind = 25;
+NTI243085.base = 0;
+NTI243085.flags = 3;
 TMP848[30].kind = 1;
-TMP848[30].offset = offsetof(tcontext259021, Semtryconstexpr);
-TMP848[30].typ = (&NTI259086);
-TMP848[30].name = "semTryConstExpr";
-TMP1972[22] = &TMP848[31];
-NTI259091.size = sizeof(TY259091);
-NTI259091.kind = 25;
-NTI259091.base = 0;
-NTI259091.flags = 3;
+TMP848[30].offset = offsetof(Tcontext243023, semtryexpr);
+TMP848[30].typ = (&NTI243085);
+TMP848[30].name = "semTryExpr";
+TMP1928[21] = &TMP848[31];
+NTI243093.size = sizeof(TY243093);
+NTI243093.kind = 25;
+NTI243093.base = 0;
+NTI243093.flags = 3;
 TMP848[31].kind = 1;
-TMP848[31].offset = offsetof(tcontext259021, Semoperand);
-TMP848[31].typ = (&NTI259091);
-TMP848[31].name = "semOperand";
-TMP1972[23] = &TMP848[32];
-NTI259099.size = sizeof(TY259099);
-NTI259099.kind = 25;
-NTI259099.base = 0;
-NTI259099.flags = 3;
+TMP848[31].offset = offsetof(Tcontext243023, semtryconstexpr);
+TMP848[31].typ = (&NTI243093);
+TMP848[31].name = "semTryConstExpr";
+TMP1928[22] = &TMP848[32];
+NTI243098.size = sizeof(TY243098);
+NTI243098.kind = 25;
+NTI243098.base = 0;
+NTI243098.flags = 3;
 TMP848[32].kind = 1;
-TMP848[32].offset = offsetof(tcontext259021, Semconstboolexpr);
-TMP848[32].typ = (&NTI259099);
-TMP848[32].name = "semConstBoolExpr";
-TMP1972[24] = &TMP848[33];
-NTI259104.size = sizeof(TY259104);
-NTI259104.kind = 25;
-NTI259104.base = 0;
-NTI259104.flags = 3;
+TMP848[32].offset = offsetof(Tcontext243023, semoperand);
+TMP848[32].typ = (&NTI243098);
+TMP848[32].name = "semOperand";
+TMP1928[23] = &TMP848[33];
+NTI243106.size = sizeof(TY243106);
+NTI243106.kind = 25;
+NTI243106.base = 0;
+NTI243106.flags = 3;
 TMP848[33].kind = 1;
-TMP848[33].offset = offsetof(tcontext259021, Semoverloadedcall);
-TMP848[33].typ = (&NTI259104);
-TMP848[33].name = "semOverloadedCall";
-TMP1972[25] = &TMP848[34];
-NTI259111.size = sizeof(TY259111);
-NTI259111.kind = 25;
-NTI259111.base = 0;
-NTI259111.flags = 3;
+TMP848[33].offset = offsetof(Tcontext243023, semconstboolexpr);
+TMP848[33].typ = (&NTI243106);
+TMP848[33].name = "semConstBoolExpr";
+TMP1928[24] = &TMP848[34];
+NTI243111.size = sizeof(TY243111);
+NTI243111.kind = 25;
+NTI243111.base = 0;
+NTI243111.flags = 3;
 TMP848[34].kind = 1;
-TMP848[34].offset = offsetof(tcontext259021, Semtypenode);
-TMP848[34].typ = (&NTI259111);
-TMP848[34].name = "semTypeNode";
-TMP1972[26] = &TMP848[35];
-NTI259117.size = sizeof(TY529942);
-NTI259117.kind = 18;
-NTI259117.base = 0;
-NTI259117.flags = 2;
-TMP1975[0] = &TMP848[37];
-TMP848[37].kind = 1;
-TMP848[37].offset = offsetof(TY529942, Field0);
-TMP848[37].typ = (&NTI153);
-TMP848[37].name = "Field0";
-TMP1975[1] = &TMP848[38];
-TMP848[38].kind = 1;
-TMP848[38].offset = offsetof(TY529942, Field1);
-TMP848[38].typ = (&NTI529944);
-TMP848[38].name = "Field1";
-TMP848[36].len = 2; TMP848[36].kind = 2; TMP848[36].sons = &TMP1975[0];
-NTI259117.node = &TMP848[36];
+TMP848[34].offset = offsetof(Tcontext243023, semoverloadedcall);
+TMP848[34].typ = (&NTI243111);
+TMP848[34].name = "semOverloadedCall";
+TMP1928[25] = &TMP848[35];
+NTI243118.size = sizeof(TY243118);
+NTI243118.kind = 25;
+NTI243118.base = 0;
+NTI243118.flags = 3;
 TMP848[35].kind = 1;
-TMP848[35].offset = offsetof(tcontext259021, Seminferredlambda);
-TMP848[35].typ = (&NTI259117);
-TMP848[35].name = "semInferredLambda";
-TMP1972[27] = &TMP848[39];
-NTI259123.size = sizeof(TY529942);
-NTI259123.kind = 18;
-NTI259123.base = 0;
-NTI259123.flags = 2;
-TMP1976[0] = &TMP848[41];
-TMP848[41].kind = 1;
-TMP848[41].offset = offsetof(TY529942, Field0);
-TMP848[41].typ = (&NTI153);
-TMP848[41].name = "Field0";
-TMP1976[1] = &TMP848[42];
-TMP848[42].kind = 1;
-TMP848[42].offset = offsetof(TY529942, Field1);
-TMP848[42].typ = (&NTI529944);
-TMP848[42].name = "Field1";
-TMP848[40].len = 2; TMP848[40].kind = 2; TMP848[40].sons = &TMP1976[0];
-NTI259123.node = &TMP848[40];
+TMP848[35].offset = offsetof(Tcontext243023, semtypenode);
+TMP848[35].typ = (&NTI243118);
+TMP848[35].name = "semTypeNode";
+TMP1928[26] = &TMP848[36];
+NTI243124.size = sizeof(TY522942);
+NTI243124.kind = 18;
+NTI243124.base = 0;
+NTI243124.flags = 2;
+TMP1931[0] = &TMP848[38];
+TMP848[38].kind = 1;
+TMP848[38].offset = offsetof(TY522942, Field0);
+TMP848[38].typ = (&NTI153);
+TMP848[38].name = "Field0";
+TMP1931[1] = &TMP848[39];
 TMP848[39].kind = 1;
-TMP848[39].offset = offsetof(tcontext259021, Semgenerateinstance);
-TMP848[39].typ = (&NTI259123);
-TMP848[39].name = "semGenerateInstance";
-TMP1972[28] = &TMP848[43];
+TMP848[39].offset = offsetof(TY522942, Field1);
+TMP848[39].typ = (&NTI522944);
+TMP848[39].name = "Field1";
+TMP848[37].len = 2; TMP848[37].kind = 2; TMP848[37].sons = &TMP1931[0];
+NTI243124.node = &TMP848[37];
+TMP848[36].kind = 1;
+TMP848[36].offset = offsetof(Tcontext243023, seminferredlambda);
+TMP848[36].typ = (&NTI243124);
+TMP848[36].name = "semInferredLambda";
+TMP1928[27] = &TMP848[40];
+NTI243130.size = sizeof(TY522942);
+NTI243130.kind = 18;
+NTI243130.base = 0;
+NTI243130.flags = 2;
+TMP1932[0] = &TMP848[42];
+TMP848[42].kind = 1;
+TMP848[42].offset = offsetof(TY522942, Field0);
+TMP848[42].typ = (&NTI153);
+TMP848[42].name = "Field0";
+TMP1932[1] = &TMP848[43];
 TMP848[43].kind = 1;
-TMP848[43].offset = offsetof(tcontext259021, Includedfiles);
-TMP848[43].typ = (&NTI204056);
-TMP848[43].name = "includedFiles";
-TMP1972[29] = &TMP848[44];
+TMP848[43].offset = offsetof(TY522942, Field1);
+TMP848[43].typ = (&NTI522944);
+TMP848[43].name = "Field1";
+TMP848[41].len = 2; TMP848[41].kind = 2; TMP848[41].sons = &TMP1932[0];
+NTI243130.node = &TMP848[41];
+TMP848[40].kind = 1;
+TMP848[40].offset = offsetof(Tcontext243023, semgenerateinstance);
+TMP848[40].typ = (&NTI243130);
+TMP848[40].name = "semGenerateInstance";
+TMP1928[28] = &TMP848[44];
 TMP848[44].kind = 1;
-TMP848[44].offset = offsetof(tcontext259021, Userpragmas);
-TMP848[44].typ = (&NTI207817);
-TMP848[44].name = "userPragmas";
-TMP1972[30] = &TMP848[45];
+TMP848[44].offset = offsetof(Tcontext243023, includedfiles);
+TMP848[44].typ = (&NTI187056);
+TMP848[44].name = "includedFiles";
+TMP1928[29] = &TMP848[45];
 TMP848[45].kind = 1;
-TMP848[45].offset = offsetof(tcontext259021, Evalcontext);
-TMP848[45].typ = (&NTI258046);
-TMP848[45].name = "evalContext";
-TMP1972[31] = &TMP848[46];
+TMP848[45].offset = offsetof(Tcontext243023, userpragmas);
+TMP848[45].typ = (&NTI190817);
+TMP848[45].name = "userPragmas";
+TMP1928[30] = &TMP848[46];
 TMP848[46].kind = 1;
-TMP848[46].offset = offsetof(tcontext259021, Unknownidents);
-TMP848[46].typ = (&NTI204056);
-TMP848[46].name = "unknownIdents";
-TMP1972[32] = &TMP848[47];
-NTI259013.size = sizeof(tinstantiationpair259013);
-NTI259013.kind = 18;
-NTI259013.base = 0;
-NTI259013.flags = 2;
-TMP1998[0] = &TMP848[49];
-TMP848[49].kind = 1;
-TMP848[49].offset = offsetof(tinstantiationpair259013, Genericsym);
-TMP848[49].typ = (&NTI207811);
-TMP848[49].name = "genericSym";
-TMP1998[1] = &TMP848[50];
-TMP848[50].kind = 1;
-TMP848[50].offset = offsetof(tinstantiationpair259013, Inst);
-TMP848[50].typ = (&NTI207835);
-TMP848[50].name = "inst";
-TMP848[48].len = 2; TMP848[48].kind = 2; TMP848[48].sons = &TMP1998[0];
-NTI259013.node = &TMP848[48];
-NTI259134.size = sizeof(TY259134*);
-NTI259134.kind = 24;
-NTI259134.base = (&NTI259013);
-NTI259134.flags = 2;
-NTI259134.marker = TMP1999;
+TMP848[46].offset = offsetof(Tcontext243023, evalcontext);
+TMP848[46].typ = (&NTI242046);
+TMP848[46].name = "evalContext";
+TMP1928[31] = &TMP848[47];
 TMP848[47].kind = 1;
-TMP848[47].offset = offsetof(tcontext259021, Generics);
-TMP848[47].typ = (&NTI259134);
-TMP848[47].name = "generics";
-TMP1972[33] = &TMP848[51];
+TMP848[47].offset = offsetof(Tcontext243023, unknownidents);
+TMP848[47].typ = (&NTI187056);
+TMP848[47].name = "unknownIdents";
+TMP1928[32] = &TMP848[48];
+NTI243013.size = sizeof(Tinstantiationpair243013);
+NTI243013.kind = 18;
+NTI243013.base = 0;
+NTI243013.flags = 2;
+TMP1954[0] = &TMP848[50];
+TMP848[50].kind = 1;
+TMP848[50].offset = offsetof(Tinstantiationpair243013, genericsym);
+TMP848[50].typ = (&NTI190811);
+TMP848[50].name = "genericSym";
+TMP1954[1] = &TMP848[51];
 TMP848[51].kind = 1;
-TMP848[51].offset = offsetof(tcontext259021, Lastgenericidx);
-TMP848[51].typ = (&NTI108);
-TMP848[51].name = "lastGenericIdx";
-TMP1972[34] = &TMP848[52];
+TMP848[51].offset = offsetof(Tinstantiationpair243013, inst);
+TMP848[51].typ = (&NTI190835);
+TMP848[51].name = "inst";
+TMP848[49].len = 2; TMP848[49].kind = 2; TMP848[49].sons = &TMP1954[0];
+NTI243013.node = &TMP848[49];
+NTI243141.size = sizeof(TY243141*);
+NTI243141.kind = 24;
+NTI243141.base = (&NTI243013);
+NTI243141.flags = 2;
+NTI243141.marker = TMP1955;
+TMP848[48].kind = 1;
+TMP848[48].offset = offsetof(Tcontext243023, generics);
+TMP848[48].typ = (&NTI243141);
+TMP848[48].name = "generics";
+TMP1928[33] = &TMP848[52];
 TMP848[52].kind = 1;
-TMP848[52].offset = offsetof(tcontext259021, Hloloopdetector);
+TMP848[52].offset = offsetof(Tcontext243023, lastgenericidx);
 TMP848[52].typ = (&NTI108);
-TMP848[52].name = "hloLoopDetector";
-TMP1972[35] = &TMP848[53];
+TMP848[52].name = "lastGenericIdx";
+TMP1928[34] = &TMP848[53];
 TMP848[53].kind = 1;
-TMP848[53].offset = offsetof(tcontext259021, Inparallelstmt);
+TMP848[53].offset = offsetof(Tcontext243023, hloloopdetector);
 TMP848[53].typ = (&NTI108);
-TMP848[53].name = "inParallelStmt";
-TMP1972[36] = &TMP848[54];
-NTI259139.size = sizeof(TY259139);
-NTI259139.kind = 25;
-NTI259139.base = 0;
-NTI259139.flags = 3;
+TMP848[53].name = "hloLoopDetector";
+TMP1928[35] = &TMP848[54];
 TMP848[54].kind = 1;
-TMP848[54].offset = offsetof(tcontext259021, Instdeepcopy);
-TMP848[54].typ = (&NTI259139);
-TMP848[54].name = "instDeepCopy";
-TMP848[0].len = 37; TMP848[0].kind = 2; TMP848[0].sons = &TMP1972[0];
-NTI259021.node = &TMP848[0];
-NTI259019.size = sizeof(tcontext259021*);
-NTI259019.kind = 22;
-NTI259019.base = (&NTI259021);
-NTI259019.marker = TMP2000;
-NTI259005.size = sizeof(toptionentry259005);
-NTI259005.kind = 17;
-NTI259005.base = (&NTI127022);
-TMP2001[0] = &TMP848[56];
-TMP848[56].kind = 1;
-TMP848[56].offset = offsetof(toptionentry259005, Options);
-TMP848[56].typ = (&NTI169016);
-TMP848[56].name = "options";
-TMP2001[1] = &TMP848[57];
+TMP848[54].offset = offsetof(Tcontext243023, inparallelstmt);
+TMP848[54].typ = (&NTI108);
+TMP848[54].name = "inParallelStmt";
+TMP1928[36] = &TMP848[55];
+NTI243146.size = sizeof(TY243146);
+NTI243146.kind = 25;
+NTI243146.base = 0;
+NTI243146.flags = 3;
+TMP848[55].kind = 1;
+TMP848[55].offset = offsetof(Tcontext243023, insttypeboundop);
+TMP848[55].typ = (&NTI243146);
+TMP848[55].name = "instTypeBoundOp";
+TMP848[0].len = 37; TMP848[0].kind = 2; TMP848[0].sons = &TMP1928[0];
+NTI243023.node = &TMP848[0];
+NTI243021.size = sizeof(Tcontext243023*);
+NTI243021.kind = 22;
+NTI243021.base = (&NTI243023);
+NTI243021.marker = TMP1956;
+NTI243005.size = sizeof(Toptionentry243005);
+NTI243005.kind = 17;
+NTI243005.base = (&NTI129022);
+TMP1957[0] = &TMP848[57];
 TMP848[57].kind = 1;
-TMP848[57].offset = offsetof(toptionentry259005, Defaultcc);
-TMP848[57].typ = (&NTI207005);
-TMP848[57].name = "defaultCC";
-TMP2001[2] = &TMP848[58];
+TMP848[57].offset = offsetof(Toptionentry243005, options);
+TMP848[57].typ = (&NTI153016);
+TMP848[57].name = "options";
+TMP1957[1] = &TMP848[58];
 TMP848[58].kind = 1;
-TMP848[58].offset = offsetof(toptionentry259005, Dynlib);
-TMP848[58].typ = (&NTI207841);
-TMP848[58].name = "dynlib";
-TMP2001[3] = &TMP848[59];
+TMP848[58].offset = offsetof(Toptionentry243005, defaultcc);
+TMP848[58].typ = (&NTI190005);
+TMP848[58].name = "defaultCC";
+TMP1957[2] = &TMP848[59];
 TMP848[59].kind = 1;
-TMP848[59].offset = offsetof(toptionentry259005, Notes);
-TMP848[59].typ = (&NTI180334);
-TMP848[59].name = "notes";
-TMP2001[4] = &TMP848[60];
+TMP848[59].offset = offsetof(Toptionentry243005, dynlib);
+TMP848[59].typ = (&NTI190841);
+TMP848[59].name = "dynlib";
+TMP1957[3] = &TMP848[60];
 TMP848[60].kind = 1;
-TMP848[60].offset = offsetof(toptionentry259005, Otherpragmas);
-TMP848[60].typ = (&NTI207805);
-TMP848[60].name = "otherPragmas";
-TMP848[55].len = 5; TMP848[55].kind = 2; TMP848[55].sons = &TMP2001[0];
-NTI259005.node = &TMP848[55];
-NTI259007.size = sizeof(toptionentry259005*);
-NTI259007.kind = 22;
-NTI259007.base = (&NTI259005);
-NTI259007.marker = TMP2005;
+TMP848[60].offset = offsetof(Toptionentry243005, notes);
+TMP848[60].typ = (&NTI162334);
+TMP848[60].name = "notes";
+TMP1957[4] = &TMP848[61];
+TMP848[61].kind = 1;
+TMP848[61].offset = offsetof(Toptionentry243005, otherpragmas);
+TMP848[61].typ = (&NTI190805);
+TMP848[61].name = "otherPragmas";
+TMP848[56].len = 5; TMP848[56].kind = 2; TMP848[56].sons = &TMP1957[0];
+NTI243005.node = &TMP848[56];
+NTI243007.size = sizeof(Toptionentry243005*);
+NTI243007.kind = 22;
+NTI243007.base = (&NTI243005);
+NTI243007.marker = TMP1961;
 }
 

@@ -3,10 +3,10 @@
 /* The generated code is subject to the original license. */
 #define NIM_INTBITS 64
 #include "nimbase.h"
-typedef struct tident186021 tident186021;
+typedef struct Tident168021 Tident168021;
 typedef struct NimStringDesc NimStringDesc;
 typedef struct TGenericSeq TGenericSeq;
-typedef struct tidobj186015 tidobj186015;
+typedef struct Tidobj168015 Tidobj168015;
 typedef struct TNimObject TNimObject;
 typedef struct TNimType TNimType;
 typedef struct TNimNode TNimNode;
@@ -18,7 +18,7 @@ struct  NimStringDesc  {
   TGenericSeq Sup;
 NIM_CHAR data[SEQ_DECL_SIZE];
 };
-typedef NimStringDesc* TY190333[255];
+typedef NimStringDesc* TY173335[257];
 typedef N_NIMCALL_PTR(void, TY3289) (void* p, NI op);
 typedef N_NIMCALL_PTR(void*, TY3294) (void* p);
 struct  TNimType  {
@@ -34,15 +34,15 @@ TY3294 deepcopy;
 struct  TNimObject  {
 TNimType* m_type;
 };
-struct  tidobj186015  {
+struct  Tidobj168015  {
   TNimObject Sup;
-NI Id;
+NI id;
 };
-struct  tident186021  {
-  tidobj186015 Sup;
-NimStringDesc* S;
-tident186021* Next;
-NI H;
+struct  Tident168021  {
+  Tidobj168015 Sup;
+NimStringDesc* s;
+Tident168021* next;
+NI h;
 };
 struct  TNimNode  {
 NU8 kind;
@@ -52,96 +52,98 @@ NCSTRING name;
 NI len;
 TNimNode** sons;
 };
-N_NIMCALL(void, initspecials_190404)(void);
-N_NIMCALL(tident186021*, getident_186473)(NimStringDesc* identifier, NI h);
-N_NIMCALL(NI, hashignorestyle_131887)(NimStringDesc* x);
-N_NIMCALL(NU8, whichkeyword_190384)(tident186021* id);
-N_NIMCALL(tident186021*, getident_186463)(NimStringDesc* identifier);
+N_NIMCALL(void, initspecials_173406)(void);
+N_NIMCALL(Tident168021*, getident_168473)(NimStringDesc* identifier, NI h);
+N_NIMCALL(NI, hashignorestyle_133887)(NimStringDesc* x);
+N_NIMCALL(NU16, whichkeyword_173386)(Tident168021* id);
+N_NIMCALL(Tident168021*, getident_168463)(NimStringDesc* identifier);
 N_NIMCALL(NI, nsuCmpIgnoreStyle)(NimStringDesc* a, NimStringDesc* b);
-STRING_LITERAL(TMP451, "", 0);
-STRING_LITERAL(TMP452, "addr", 4);
-STRING_LITERAL(TMP453, "and", 3);
-STRING_LITERAL(TMP454, "as", 2);
-STRING_LITERAL(TMP455, "asm", 3);
-STRING_LITERAL(TMP456, "atomic", 6);
-STRING_LITERAL(TMP457, "bind", 4);
-STRING_LITERAL(TMP458, "block", 5);
-STRING_LITERAL(TMP459, "break", 5);
-STRING_LITERAL(TMP460, "case", 4);
-STRING_LITERAL(TMP461, "cast", 4);
-STRING_LITERAL(TMP462, "const", 5);
-STRING_LITERAL(TMP463, "continue", 8);
-STRING_LITERAL(TMP464, "converter", 9);
-STRING_LITERAL(TMP465, "defer", 5);
-STRING_LITERAL(TMP466, "discard", 7);
-STRING_LITERAL(TMP467, "distinct", 8);
-STRING_LITERAL(TMP468, "div", 3);
-STRING_LITERAL(TMP469, "do", 2);
-STRING_LITERAL(TMP470, "elif", 4);
-STRING_LITERAL(TMP471, "else", 4);
-STRING_LITERAL(TMP472, "end", 3);
-STRING_LITERAL(TMP473, "enum", 4);
-STRING_LITERAL(TMP474, "except", 6);
-STRING_LITERAL(TMP475, "export", 6);
-STRING_LITERAL(TMP476, "finally", 7);
-STRING_LITERAL(TMP477, "for", 3);
-STRING_LITERAL(TMP478, "from", 4);
-STRING_LITERAL(TMP479, "func", 4);
-STRING_LITERAL(TMP480, "generic", 7);
-STRING_LITERAL(TMP481, "if", 2);
-STRING_LITERAL(TMP482, "import", 6);
-STRING_LITERAL(TMP483, "in", 2);
-STRING_LITERAL(TMP484, "include", 7);
-STRING_LITERAL(TMP485, "interface", 9);
-STRING_LITERAL(TMP486, "is", 2);
-STRING_LITERAL(TMP487, "isnot", 5);
-STRING_LITERAL(TMP488, "iterator", 8);
-STRING_LITERAL(TMP489, "let", 3);
-STRING_LITERAL(TMP490, "macro", 5);
-STRING_LITERAL(TMP491, "method", 6);
-STRING_LITERAL(TMP492, "mixin", 5);
-STRING_LITERAL(TMP493, "mod", 3);
-STRING_LITERAL(TMP494, "nil", 3);
-STRING_LITERAL(TMP495, "not", 3);
-STRING_LITERAL(TMP496, "notin", 5);
-STRING_LITERAL(TMP497, "object", 6);
-STRING_LITERAL(TMP498, "of", 2);
-STRING_LITERAL(TMP499, "or", 2);
-STRING_LITERAL(TMP500, "out", 3);
-STRING_LITERAL(TMP501, "proc", 4);
-STRING_LITERAL(TMP502, "ptr", 3);
-STRING_LITERAL(TMP503, "raise", 5);
-STRING_LITERAL(TMP504, "ref", 3);
-STRING_LITERAL(TMP505, "return", 6);
-STRING_LITERAL(TMP506, "shl", 3);
-STRING_LITERAL(TMP507, "shr", 3);
-STRING_LITERAL(TMP508, "static", 6);
-STRING_LITERAL(TMP509, "template", 8);
-STRING_LITERAL(TMP510, "try", 3);
-STRING_LITERAL(TMP511, "tuple", 5);
-STRING_LITERAL(TMP512, "type", 4);
-STRING_LITERAL(TMP513, "using", 5);
-STRING_LITERAL(TMP514, "var", 3);
-STRING_LITERAL(TMP515, "when", 4);
-STRING_LITERAL(TMP516, "while", 5);
-STRING_LITERAL(TMP517, "with", 4);
-STRING_LITERAL(TMP518, "without", 7);
-STRING_LITERAL(TMP519, "xor", 3);
-STRING_LITERAL(TMP520, "yield", 5);
-STRING_LITERAL(TMP521, ":", 1);
-STRING_LITERAL(TMP522, "::", 2);
-STRING_LITERAL(TMP523, "=", 1);
-STRING_LITERAL(TMP524, ".", 1);
-STRING_LITERAL(TMP525, "..", 2);
-STRING_LITERAL(TMP526, "*", 1);
-STRING_LITERAL(TMP527, "-", 1);
-STRING_LITERAL(TMP528, "magic", 5);
-STRING_LITERAL(TMP529, "thread", 6);
-STRING_LITERAL(TMP530, "final", 5);
-STRING_LITERAL(TMP531, "profiler", 8);
-STRING_LITERAL(TMP532, "objchecks", 9);
-STRING_LITERAL(TMP533, "destroy", 7);
-STRING_LITERAL(TMP534, "immediate", 9);
+STRING_LITERAL(TMP449, "", 0);
+STRING_LITERAL(TMP450, "addr", 4);
+STRING_LITERAL(TMP451, "and", 3);
+STRING_LITERAL(TMP452, "as", 2);
+STRING_LITERAL(TMP453, "asm", 3);
+STRING_LITERAL(TMP454, "atomic", 6);
+STRING_LITERAL(TMP455, "bind", 4);
+STRING_LITERAL(TMP456, "block", 5);
+STRING_LITERAL(TMP457, "break", 5);
+STRING_LITERAL(TMP458, "case", 4);
+STRING_LITERAL(TMP459, "cast", 4);
+STRING_LITERAL(TMP460, "concept", 7);
+STRING_LITERAL(TMP461, "const", 5);
+STRING_LITERAL(TMP462, "continue", 8);
+STRING_LITERAL(TMP463, "converter", 9);
+STRING_LITERAL(TMP464, "defer", 5);
+STRING_LITERAL(TMP465, "discard", 7);
+STRING_LITERAL(TMP466, "distinct", 8);
+STRING_LITERAL(TMP467, "div", 3);
+STRING_LITERAL(TMP468, "do", 2);
+STRING_LITERAL(TMP469, "elif", 4);
+STRING_LITERAL(TMP470, "else", 4);
+STRING_LITERAL(TMP471, "end", 3);
+STRING_LITERAL(TMP472, "enum", 4);
+STRING_LITERAL(TMP473, "except", 6);
+STRING_LITERAL(TMP474, "export", 6);
+STRING_LITERAL(TMP475, "finally", 7);
+STRING_LITERAL(TMP476, "for", 3);
+STRING_LITERAL(TMP477, "from", 4);
+STRING_LITERAL(TMP478, "func", 4);
+STRING_LITERAL(TMP479, "generic", 7);
+STRING_LITERAL(TMP480, "if", 2);
+STRING_LITERAL(TMP481, "import", 6);
+STRING_LITERAL(TMP482, "in", 2);
+STRING_LITERAL(TMP483, "include", 7);
+STRING_LITERAL(TMP484, "interface", 9);
+STRING_LITERAL(TMP485, "is", 2);
+STRING_LITERAL(TMP486, "isnot", 5);
+STRING_LITERAL(TMP487, "iterator", 8);
+STRING_LITERAL(TMP488, "let", 3);
+STRING_LITERAL(TMP489, "macro", 5);
+STRING_LITERAL(TMP490, "method", 6);
+STRING_LITERAL(TMP491, "mixin", 5);
+STRING_LITERAL(TMP492, "mod", 3);
+STRING_LITERAL(TMP493, "nil", 3);
+STRING_LITERAL(TMP494, "not", 3);
+STRING_LITERAL(TMP495, "notin", 5);
+STRING_LITERAL(TMP496, "object", 6);
+STRING_LITERAL(TMP497, "of", 2);
+STRING_LITERAL(TMP498, "or", 2);
+STRING_LITERAL(TMP499, "out", 3);
+STRING_LITERAL(TMP500, "proc", 4);
+STRING_LITERAL(TMP501, "ptr", 3);
+STRING_LITERAL(TMP502, "raise", 5);
+STRING_LITERAL(TMP503, "ref", 3);
+STRING_LITERAL(TMP504, "return", 6);
+STRING_LITERAL(TMP505, "shl", 3);
+STRING_LITERAL(TMP506, "shr", 3);
+STRING_LITERAL(TMP507, "static", 6);
+STRING_LITERAL(TMP508, "template", 8);
+STRING_LITERAL(TMP509, "try", 3);
+STRING_LITERAL(TMP510, "tuple", 5);
+STRING_LITERAL(TMP511, "type", 4);
+STRING_LITERAL(TMP512, "using", 5);
+STRING_LITERAL(TMP513, "var", 3);
+STRING_LITERAL(TMP514, "when", 4);
+STRING_LITERAL(TMP515, "while", 5);
+STRING_LITERAL(TMP516, "with", 4);
+STRING_LITERAL(TMP517, "without", 7);
+STRING_LITERAL(TMP518, "xor", 3);
+STRING_LITERAL(TMP519, "yield", 5);
+STRING_LITERAL(TMP520, ":", 1);
+STRING_LITERAL(TMP521, "::", 2);
+STRING_LITERAL(TMP522, "=", 1);
+STRING_LITERAL(TMP523, ".", 1);
+STRING_LITERAL(TMP524, "..", 2);
+STRING_LITERAL(TMP525, "*", 1);
+STRING_LITERAL(TMP526, "-", 1);
+STRING_LITERAL(TMP527, "magic", 5);
+STRING_LITERAL(TMP528, "thread", 6);
+STRING_LITERAL(TMP529, "final", 5);
+STRING_LITERAL(TMP530, "profiler", 8);
+STRING_LITERAL(TMP531, "objchecks", 9);
+STRING_LITERAL(TMP532, "destroy", 7);
+STRING_LITERAL(TMP533, "immediate", 9);
+STRING_LITERAL(TMP534, "constructor", 11);
 STRING_LITERAL(TMP535, "destructor", 10);
 STRING_LITERAL(TMP536, "delegator", 9);
 STRING_LITERAL(TMP537, "override", 8);
@@ -313,7 +315,9 @@ STRING_LITERAL(TMP702, "inout", 5);
 STRING_LITERAL(TMP703, "bycopy", 6);
 STRING_LITERAL(TMP704, "byref", 5);
 STRING_LITERAL(TMP705, "oneway", 6);
-NIM_CONST TY190333 specialwords_190332 = {((NimStringDesc*) &TMP451),
+NIM_CONST TY173335 specialwords_173334 = {((NimStringDesc*) &TMP449),
+((NimStringDesc*) &TMP450),
+((NimStringDesc*) &TMP451),
 ((NimStringDesc*) &TMP452),
 ((NimStringDesc*) &TMP453),
 ((NimStringDesc*) &TMP454),
@@ -570,80 +574,80 @@ NIM_CONST TY190333 specialwords_190332 = {((NimStringDesc*) &TMP451),
 ((NimStringDesc*) &TMP705)}
 ;
 
-N_NIMCALL(void, initspecials_190404)(void) {
+N_NIMCALL(void, initspecials_173406)(void) {
 	{
-		NU8 s_190632;
-		NU8 res_190644;
-		s_190632 = 0;
-		res_190644 = ((NU8) 1);
+		NU16 s_173623;
+		NI res_173635;
+		s_173623 = 0;
+		res_173635 = ((NI) 1);
 		{
 			while (1) {
 				NI LOC4;
-				tident186021* LOC5;
-				if (!(res_190644 <= ((NU8) 254))) goto LA3;
-				s_190632 = res_190644;
+				Tident168021* LOC5;
+				if (!(res_173635 <= ((NI) 256))) goto LA3;
+				s_173623 = ((NU16) (res_173635));
 				LOC4 = 0;
-				LOC4 = hashignorestyle_131887(specialwords_190332[(s_190632)- 0]);
+				LOC4 = hashignorestyle_133887(specialwords_173334[(s_173623)- 0]);
 				LOC5 = 0;
-				LOC5 = getident_186473(specialwords_190332[(s_190632)- 0], LOC4);
-				(*LOC5).Sup.Id = ((NI) (s_190632));
-				res_190644 += ((NI) 1);
+				LOC5 = getident_168473(specialwords_173334[(s_173623)- 0], LOC4);
+				(*LOC5).Sup.id = ((NI) (s_173623));
+				res_173635 += ((NI) 1);
 			} LA3: ;
 		}
 	}
 }
 
-N_NIMCALL(NU8, whichkeyword_190384)(tident186021* id) {
-	NU8 result;
+N_NIMCALL(NU16, whichkeyword_173386)(Tident168021* id) {
+	NU16 result;
 	result = 0;
 	{
-		if (!((*id).Sup.Id < ((NI) 0))) goto LA3;
-		result = ((NU8) 0);
+		if (!((*id).Sup.id < ((NI) 0))) goto LA3;
+		result = ((NU16) 0);
 	}
 	goto LA1;
 	LA3: ;
 	{
-		result = ((NU8) ((*id).Sup.Id));
+		result = ((NU16) ((*id).Sup.id));
 	}
 	LA1: ;
 	return result;
 }
 
-N_NIMCALL(NU8, whichkeyword_190394)(NimStringDesc* id) {
-	NU8 result;
-	tident186021* LOC1;
+N_NIMCALL(NU16, whichkeyword_173396)(NimStringDesc* id) {
+	NU16 result;
+	Tident168021* LOC1;
 	result = 0;
 	LOC1 = 0;
-	LOC1 = getident_186463(id);
-	result = whichkeyword_190384(LOC1);
+	LOC1 = getident_168463(id);
+	result = whichkeyword_173386(LOC1);
 	return result;
 }
 
-N_NIMCALL(NI, findstr_190342)(NimStringDesc** a, NI aLen0, NimStringDesc* s) {
+N_NIMCALL(NI, findstr_173344)(NimStringDesc** a, NI aLen0, NimStringDesc* s) {
 	NI result;
 {	result = 0;
 	{
-		NI i_190360;
-		NI HEX3Atmp_190362;
-		NI res_190365;
-		i_190360 = 0;
-		HEX3Atmp_190362 = 0;
-		HEX3Atmp_190362 = (aLen0-1);
-		res_190365 = ((NI) 0);
+		NI i_173362;
+		NI HEX3Atmp_173364;
+		NI res_173367;
+		i_173362 = 0;
+		HEX3Atmp_173364 = 0;
+		HEX3Atmp_173364 = (aLen0-1);
+		res_173367 = ((NI) 0);
 		{
 			while (1) {
-				if (!(res_190365 <= HEX3Atmp_190362)) goto LA3;
-				i_190360 = res_190365;
+				if (!(res_173367 <= HEX3Atmp_173364)) goto LA3;
+				i_173362 = res_173367;
 				{
 					NI LOC6;
 					LOC6 = 0;
-					LOC6 = nsuCmpIgnoreStyle(a[i_190360], s);
+					LOC6 = nsuCmpIgnoreStyle(a[i_173362], s);
 					if (!(LOC6 == ((NI) 0))) goto LA7;
-					result = i_190360;
+					result = i_173362;
 					goto BeforeRet;
 				}
 				LA7: ;
-				res_190365 += ((NI) 1);
+				res_173367 += ((NI) 1);
 			} LA3: ;
 		}
 	}
@@ -652,7 +656,7 @@ N_NIMCALL(NI, findstr_190342)(NimStringDesc** a, NI aLen0, NimStringDesc* s) {
 	return result;
 }
 NIM_EXTERNC N_NOINLINE(void, compiler_wordrecgInit)(void) {
-	initspecials_190404();
+	initspecials_173406();
 }
 
 NIM_EXTERNC N_NOINLINE(void, compiler_wordrecgDatInit)(void) {

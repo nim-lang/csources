@@ -17,88 +17,88 @@ NIM_CHAR data[SEQ_DECL_SIZE];
 };
 N_NIMCALL(NimStringDesc*, rawNewString)(NI space);
 N_NIMCALL(NimStringDesc*, rawNewString)(NI cap);
-N_NIMCALL(void, addescaped_349039)(NimStringDesc** result, NimStringDesc* s);
+N_NIMCALL(void, addescaped_333039)(NimStringDesc** result, NimStringDesc* s);
 static N_INLINE(void, appendString)(NimStringDesc* dest, NimStringDesc* src);
 N_NIMCALL(NimStringDesc*, resizeString)(NimStringDesc* dest, NI addlen);
 N_NIMCALL(NimStringDesc*, addChar)(NimStringDesc* s, NIM_CHAR c);
-STRING_LITERAL(TMP4742, "&lt;", 4);
-STRING_LITERAL(TMP4743, "&gt;", 4);
-STRING_LITERAL(TMP4744, "&amp;", 5);
-STRING_LITERAL(TMP4745, "&quot;", 6);
-STRING_LITERAL(TMP4746, "&#x27;", 6);
-STRING_LITERAL(TMP4747, "&#x2F;", 6);
+STRING_LITERAL(TMP4793, "&lt;", 4);
+STRING_LITERAL(TMP4794, "&gt;", 4);
+STRING_LITERAL(TMP4795, "&amp;", 5);
+STRING_LITERAL(TMP4796, "&quot;", 6);
+STRING_LITERAL(TMP4797, "&#x27;", 6);
+STRING_LITERAL(TMP4798, "&#x2F;", 6);
 
 static N_INLINE(void, appendString)(NimStringDesc* dest, NimStringDesc* src) {
-	memcpy(((NCSTRING) ((&(*dest).data[((*dest).Sup.len)- 0]))), ((NCSTRING) ((*src).data)), (NI32)((*src).Sup.len + ((NI) 1)));
+	memcpy(((NCSTRING) ((&(*dest).data[((*dest).Sup.len)- 0]))), ((NCSTRING) ((*src).data)), (NI)((*src).Sup.len + ((NI) 1)));
 	(*dest).Sup.len += (*src).Sup.len;
 }
 
-N_NIMCALL(void, addescaped_349039)(NimStringDesc** result, NimStringDesc* s) {
+N_NIMCALL(void, addescaped_333039)(NimStringDesc** result, NimStringDesc* s) {
 	{
-		NIM_CHAR c_349044;
-		NI i_349048;
-		NI l_349050;
-		c_349044 = 0;
-		i_349048 = ((NI) 0);
-		l_349050 = s->Sup.len;
+		NIM_CHAR c_333044;
+		NI i_333048;
+		NI L_333050;
+		c_333044 = 0;
+		i_333048 = ((NI) 0);
+		L_333050 = (s ? s->Sup.len : 0);
 		{
 			while (1) {
-				if (!(i_349048 < l_349050)) goto LA3;
-				c_349044 = s->data[i_349048];
-				switch (((NU8)(c_349044))) {
+				if (!(i_333048 < L_333050)) goto LA3;
+				c_333044 = s->data[i_333048];
+				switch (((NU8)(c_333044))) {
 				case 60:
 				{
 					(*result) = resizeString((*result), 4);
-appendString((*result), ((NimStringDesc*) &TMP4742));
+appendString((*result), ((NimStringDesc*) &TMP4793));
 				}
 				break;
 				case 62:
 				{
 					(*result) = resizeString((*result), 4);
-appendString((*result), ((NimStringDesc*) &TMP4743));
+appendString((*result), ((NimStringDesc*) &TMP4794));
 				}
 				break;
 				case 38:
 				{
 					(*result) = resizeString((*result), 5);
-appendString((*result), ((NimStringDesc*) &TMP4744));
+appendString((*result), ((NimStringDesc*) &TMP4795));
 				}
 				break;
 				case 34:
 				{
 					(*result) = resizeString((*result), 6);
-appendString((*result), ((NimStringDesc*) &TMP4745));
+appendString((*result), ((NimStringDesc*) &TMP4796));
 				}
 				break;
 				case 39:
 				{
 					(*result) = resizeString((*result), 6);
-appendString((*result), ((NimStringDesc*) &TMP4746));
+appendString((*result), ((NimStringDesc*) &TMP4797));
 				}
 				break;
 				case 47:
 				{
 					(*result) = resizeString((*result), 6);
-appendString((*result), ((NimStringDesc*) &TMP4747));
+appendString((*result), ((NimStringDesc*) &TMP4798));
 				}
 				break;
 				default:
 				{
-					(*result) = addChar((*result), c_349044);
+					(*result) = addChar((*result), c_333044);
 				}
 				break;
 				}
-				i_349048 += ((NI) 1);
+				i_333048 += ((NI) 1);
 			} LA3: ;
 		}
 	}
 }
 
-N_NIMCALL(NimStringDesc*, escape_349066)(NimStringDesc* s) {
+N_NIMCALL(NimStringDesc*, escape_333066)(NimStringDesc* s) {
 	NimStringDesc* result;
 	result = 0;
-	result = rawNewString(s->Sup.len);
-	addescaped_349039((&result), s);
+	result = rawNewString(((NI) ((s ? s->Sup.len : 0))));
+	addescaped_333039((&result), s);
 	return result;
 }
 NIM_EXTERNC N_NOINLINE(void, stdlib_xmltreeInit)(void) {

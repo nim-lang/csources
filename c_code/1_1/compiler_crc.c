@@ -29,7 +29,7 @@ struct  NimStringDesc  {
   TGenericSeq Sup;
 NIM_CHAR data[SEQ_DECL_SIZE];
 };
-typedef NI TY178066[256];
+typedef NI TY170071[256];
 struct  TNimNode  {
 NU8 kind;
 NI offset;
@@ -41,10 +41,10 @@ TNimNode** sons;
 N_NIMCALL(NIM_BOOL, open_13203)(FILE** f, NimStringDesc* filename, NU8 mode, NI bufsize);
 N_NOCONV(void*, alloc_6001)(NI size);
 N_NIMCALL(NI, readbuffer_13515)(FILE* f, void* buffer, NI len);
-static N_INLINE(NI32, updatecrc32_178019)(NI8 val, NI32 crc);
+static N_INLINE(NI32, updatecrc32_170024)(NI8 val, NI32 crc);
 N_NOCONV(void, dealloc_6048)(void* p);
-static N_INLINE(NI32, updatecrc32_178026)(NIM_CHAR val, NI32 crc);
-NIM_CONST TY178066 crc32table_178065 = {((NI) 0),
+static N_INLINE(NI32, updatecrc32_170031)(NIM_CHAR val, NI32 crc);
+NIM_CONST TY170071 crc32table_170070 = {((NI) 0),
 ((NI) 1996959894),
 ((NI) -301047508),
 ((NI) -1727442502),
@@ -301,16 +301,16 @@ NIM_CONST TY178066 crc32table_178065 = {((NI) 0),
 ((NI) 1510334235),
 ((NI) 755167117)}
 ;
-TNimType NTI178010; /* TCrc32 */
+TNimType NTI170015; /* TCrc32 */
 
-static N_INLINE(NI32, updatecrc32_178019)(NI8 val, NI32 crc) {
+static N_INLINE(NI32, updatecrc32_170024)(NI8 val, NI32 crc) {
 	NI32 result;
 	result = 0;
-	result = (NI32)(((NI32) (crc32table_178065[((NI)((NI)(((NI) (crc)) ^ ((NI) ((NI)(((NI) (val)) & ((NI) 255))))) & ((NI) 255)))- 0])) ^ (NI32)((NU32)(crc) >> (NU32)(((NI32) 8))));
+	result = (NI32)(((NI32) (crc32table_170070[((NI)((NI)(((NI) (crc)) ^ ((NI) ((NI)(((NI) (val)) & ((NI) 255))))) & ((NI) 255)))- 0])) ^ (NI32)((NU32)(crc) >> (NU32)(((NI32) 8))));
 	return result;
 }
 
-N_NIMCALL(NI32, crcfromfile_178046)(NimStringDesc* filename) {
+N_NIMCALL(NI32, crcfromfile_170051)(NimStringDesc* filename) {
 	NI32 result;
 	FILE* bin;
 	void* buf;
@@ -333,19 +333,19 @@ N_NIMCALL(NI32, crcfromfile_178046)(NimStringDesc* filename) {
 			NI readbytes;
 			readbytes = readbuffer_13515(bin, buf, ((NI) 8000));
 			{
-				NI i_178649;
-				NI HEX3Atmp_178654;
-				NI res_178657;
-				i_178649 = 0;
-				HEX3Atmp_178654 = 0;
-				HEX3Atmp_178654 = (NI32)(readbytes - ((NI) 1));
-				res_178657 = ((NI) 0);
+				NI i_170654;
+				NI HEX3Atmp_170659;
+				NI res_170662;
+				i_170654 = 0;
+				HEX3Atmp_170659 = 0;
+				HEX3Atmp_170659 = (NI)(readbytes - ((NI) 1));
+				res_170662 = ((NI) 0);
 				{
 					while (1) {
-						if (!(res_178657 <= HEX3Atmp_178654)) goto LA10;
-						i_178649 = res_178657;
-						result = updatecrc32_178019(p[(i_178649)- 0], result);
-						res_178657 += ((NI) 1);
+						if (!(res_170662 <= HEX3Atmp_170659)) goto LA10;
+						i_170654 = res_170662;
+						result = updatecrc32_170024(p[(i_170654)- 0], result);
+						res_170662 += ((NI) 1);
 					} LA10: ;
 				}
 			}
@@ -362,31 +362,31 @@ N_NIMCALL(NI32, crcfromfile_178046)(NimStringDesc* filename) {
 	return result;
 }
 
-static N_INLINE(NI32, updatecrc32_178026)(NIM_CHAR val, NI32 crc) {
+static N_INLINE(NI32, updatecrc32_170031)(NIM_CHAR val, NI32 crc) {
 	NI32 result;
 	result = 0;
-	result = updatecrc32_178019(((NI8)(NU8)(NU)(((NI) (((NU8)(val)))))), crc);
+	result = updatecrc32_170024(((NI8)(NU8)(NU)(((NI) (((NU8)(val)))))), crc);
 	return result;
 }
 
-N_NIMCALL(NI32, HEX3EHEX3C_178535)(NI32 c, NimStringDesc* s) {
+N_NIMCALL(NI32, HEX3EHEX3C_170540)(NI32 c, NimStringDesc* s) {
 	NI32 result;
 	result = 0;
 	result = c;
 	{
-		NI i_178550;
-		NI HEX3Atmp_178552;
-		NI res_178555;
-		i_178550 = 0;
-		HEX3Atmp_178552 = 0;
-		HEX3Atmp_178552 = (NI32)(s->Sup.len - ((NI) 1));
-		res_178555 = ((NI) 0);
+		NI i_170555;
+		NI HEX3Atmp_170557;
+		NI res_170560;
+		i_170555 = 0;
+		HEX3Atmp_170557 = 0;
+		HEX3Atmp_170557 = (NI)((s ? s->Sup.len : 0) - ((NI) 1));
+		res_170560 = ((NI) 0);
 		{
 			while (1) {
-				if (!(res_178555 <= HEX3Atmp_178552)) goto LA3;
-				i_178550 = res_178555;
-				result = updatecrc32_178026(s->data[i_178550], result);
-				res_178555 += ((NI) 1);
+				if (!(res_170560 <= HEX3Atmp_170557)) goto LA3;
+				i_170555 = res_170560;
+				result = updatecrc32_170031(s->data[i_170555], result);
+				res_170560 += ((NI) 1);
 			} LA3: ;
 		}
 	}
@@ -396,9 +396,9 @@ NIM_EXTERNC N_NOINLINE(void, compiler_crcInit)(void) {
 }
 
 NIM_EXTERNC N_NOINLINE(void, compiler_crcDatInit)(void) {
-NTI178010.size = sizeof(NI32);
-NTI178010.kind = 34;
-NTI178010.base = 0;
-NTI178010.flags = 3;
+NTI170015.size = sizeof(NI32);
+NTI170015.kind = 34;
+NTI170015.base = 0;
+NTI170015.flags = 3;
 }
 

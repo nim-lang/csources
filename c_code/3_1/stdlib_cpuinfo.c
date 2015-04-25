@@ -5,13 +5,13 @@
 #include "nimbase.h"
 
 #include <string.h>
-typedef int TY139201[4];
+typedef int TY142201[4];
 #include <sys/types.h>
 #include <sys/sysctl.h>
 
 N_NIMCALL(NI, ncpicountProcessors)(void) {
 	NI result;
-	TY139201 mib;
+	TY142201 mib;
 	NI numcpu;
 	size_t len;
 	int LOC1;

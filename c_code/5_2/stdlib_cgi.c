@@ -5,14 +5,14 @@
 #include "nimbase.h"
 
 #include <string.h>
-typedef struct stringtableobj131012 stringtableobj131012;
+typedef struct Stringtableobj133012 Stringtableobj133012;
 typedef struct NimStringDesc NimStringDesc;
 typedef struct TGenericSeq TGenericSeq;
 typedef struct TNimObject TNimObject;
 typedef struct TNimType TNimType;
 typedef struct TNimNode TNimNode;
-typedef struct keyvaluepairseq131010 keyvaluepairseq131010;
-typedef struct keyvaluepair131008 keyvaluepair131008;
+typedef struct Keyvaluepairseq133010 Keyvaluepairseq133010;
+typedef struct Keyvaluepair133008 Keyvaluepair133008;
 struct  TGenericSeq  {
 NI len;
 NI reserved;
@@ -36,15 +36,11 @@ TY3294 deepcopy;
 struct  TNimObject  {
 TNimType* m_type;
 };
-struct keyvaluepair131008 {
-NimStringDesc* Field0;
-NimStringDesc* Field1;
-};
-struct  stringtableobj131012  {
+struct  Stringtableobj133012  {
   TNimObject Sup;
-NI Counter;
-keyvaluepairseq131010* Data;
-NU8 Mode;
+NI counter;
+Keyvaluepairseq133010* data;
+NU8 mode;
 };
 struct  TNimNode  {
 NU8 kind;
@@ -54,9 +50,13 @@ NCSTRING name;
 NI len;
 TNimNode** sons;
 };
-struct keyvaluepairseq131010 {
+struct Keyvaluepair133008 {
+NimStringDesc* Field0;
+NimStringDesc* Field1;
+};
+struct Keyvaluepairseq133010 {
   TGenericSeq Sup;
-  keyvaluepair131008 data[SEQ_DECL_SIZE];
+  Keyvaluepair133008 data[SEQ_DECL_SIZE];
 };
 N_NIMCALL(NimStringDesc*, rawNewString)(NI space);
 N_NIMCALL(NimStringDesc*, rawNewString)(NI cap);
@@ -64,36 +64,36 @@ N_NIMCALL(NimStringDesc*, addChar)(NimStringDesc* s, NIM_CHAR c);
 N_NIMCALL(NimStringDesc*, nsuToHex)(NI64 x, NI len);
 static N_INLINE(void, appendString)(NimStringDesc* dest, NimStringDesc* src);
 N_NIMCALL(NimStringDesc*, resizeString)(NimStringDesc* dest, NI addlen);
-stringtableobj131012* gcookies_351120;
+Stringtableobj133012* gcookies_335120;
 
 static N_INLINE(void, appendString)(NimStringDesc* dest, NimStringDesc* src) {
-	memcpy(((NCSTRING) ((&(*dest).data[((*dest).Sup.len)- 0]))), ((NCSTRING) ((*src).data)), (NI64)((*src).Sup.len + ((NI) 1)));
+	memcpy(((NCSTRING) ((&(*dest).data[((*dest).Sup.len)- 0]))), ((NCSTRING) ((*src).data)), (NI)((*src).Sup.len + ((NI) 1)));
 	(*dest).Sup.len += (*src).Sup.len;
 }
 
-N_NIMCALL(NimStringDesc*, encodeurl_350004)(NimStringDesc* s) {
+N_NIMCALL(NimStringDesc*, encodeurl_334004)(NimStringDesc* s) {
 	NimStringDesc* result;
 	result = 0;
-	result = rawNewString((NI64)(s->Sup.len + (NI)((NU64)(s->Sup.len) >> (NU64)(((NI) 2)))));
+	result = rawNewString(((NI) ((NI)((s ? s->Sup.len : 0) + (NI)((NU64)((s ? s->Sup.len : 0)) >> (NU64)(((NI) 2)))))));
 	{
-		NI i_350018;
-		NI HEX3Atmp_350028;
-		NI res_350031;
-		i_350018 = 0;
-		HEX3Atmp_350028 = 0;
-		HEX3Atmp_350028 = (NI64)(s->Sup.len - ((NI) 1));
-		res_350031 = ((NI) 0);
+		NI i_334018;
+		NI HEX3Atmp_334028;
+		NI res_334031;
+		i_334018 = 0;
+		HEX3Atmp_334028 = 0;
+		HEX3Atmp_334028 = (NI)((s ? s->Sup.len : 0) - ((NI) 1));
+		res_334031 = ((NI) 0);
 		{
 			while (1) {
-				if (!(res_350031 <= HEX3Atmp_350028)) goto LA3;
-				i_350018 = res_350031;
-				switch (((NU8)(s->data[i_350018]))) {
+				if (!(res_334031 <= HEX3Atmp_334028)) goto LA3;
+				i_334018 = res_334031;
+				switch (((NU8)(s->data[i_334018]))) {
 				case 97 ... 122:
 				case 65 ... 90:
 				case 48 ... 57:
 				case 95:
 				{
-					result = addChar(result, s->data[i_350018]);
+					result = addChar(result, s->data[i_334018]);
 				}
 				break;
 				case 32:
@@ -106,13 +106,13 @@ N_NIMCALL(NimStringDesc*, encodeurl_350004)(NimStringDesc* s) {
 					NimStringDesc* LOC7;
 					result = addChar(result, 37);
 					LOC7 = 0;
-					LOC7 = nsuToHex(((NI64) (((NU8)(s->data[i_350018])))), ((NI) 2));
+					LOC7 = nsuToHex(((NI64) (((NU8)(s->data[i_334018])))), ((NI) 2));
 					result = resizeString(result, LOC7->Sup.len + 0);
 appendString(result, LOC7);
 				}
 				break;
 				}
-				res_350031 += ((NI) 1);
+				res_334031 += ((NI) 1);
 			} LA3: ;
 		}
 	}
