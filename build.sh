@@ -91,6 +91,9 @@ case $uos in
     ;;
   *haiku* )
     myos="haiku"
+    CC="clang"
+    LINKER="clang"
+    LINK_FLAGS="$LINK_FLAGS -lm -lroot -lnetwork"
     ;;
   *) 
     echo 2>&1 "Error: unknown operating system: $uos"
