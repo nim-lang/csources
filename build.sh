@@ -92,6 +92,9 @@ case $uos in
   *haiku* )
     myos="haiku"
     ;;
+  *mingw*)
+    myos="windows"
+    ;;
   *) 
     echo 2>&1 "Error: unknown operating system: $uos"
     exit 1
