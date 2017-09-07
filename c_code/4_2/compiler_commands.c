@@ -780,7 +780,7 @@ STRING_LITERAL(TM_brsa2DgNdQAKzy1F0pSZlA_217, "consoleapp", 10);
 STRING_LITERAL(TM_brsa2DgNdQAKzy1F0pSZlA_218, "library", 7);
 STRING_LITERAL(TM_brsa2DgNdQAKzy1F0pSZlA_219, "dll", 3);
 extern NIM_CONST tyArray_IlNhGDatWU6om4nwRZr6fg NotesVerbosity_tA5gPQl7kBOPNsEKQ9c8Sgw;
-STRING_LITERAL(TM_brsa2DgNdQAKzy1F0pSZlA_220, "git hash: 49cc175e4b383a2105728073435649abe4191540", 50);
+STRING_LITERAL(TM_brsa2DgNdQAKzy1F0pSZlA_220, "git hash: 811fbdafd958443ddac98ad58c77245860b38620", 50);
 STRING_LITERAL(TM_brsa2DgNdQAKzy1F0pSZlA_221, "active boot switches: -d:release", 32);
 STRING_LITERAL(TM_brsa2DgNdQAKzy1F0pSZlA_222, "Advanced commands:\012  compileToC, cc          compile project wi"
 "th C code generator\012  compileToCpp, cpp       compile project to"

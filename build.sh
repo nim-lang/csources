@@ -46,7 +46,7 @@ PS4=""
 # platform detection
 ucpu=`uname -m`
 uos=`uname`
-uosname=`uname -o`
+uosname=
 # bin dir detection
 binDir=bin
 
