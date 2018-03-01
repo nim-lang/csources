@@ -87,6 +87,15 @@ IF ERRORLEVEL 1 (GOTO:END)
 ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_cpuinfo.c -o c_code\1_2\stdlib_cpuinfo.o
 CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_cpuinfo.c -o c_code\1_2\stdlib_cpuinfo.o
 IF ERRORLEVEL 1 (GOTO:END)
+ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_strformat.c -o c_code\1_2\stdlib_strformat.o
+CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_strformat.c -o c_code\1_2\stdlib_strformat.o
+IF ERRORLEVEL 1 (GOTO:END)
+ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_unicode.c -o c_code\1_2\stdlib_unicode.o
+CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_unicode.c -o c_code\1_2\stdlib_unicode.o
+IF ERRORLEVEL 1 (GOTO:END)
+ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_colors.c -o c_code\1_2\stdlib_colors.o
+CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_colors.c -o c_code\1_2\stdlib_colors.o
+IF ERRORLEVEL 1 (GOTO:END)
 ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_nversion.c -o c_code\1_2\compiler_nversion.o
 CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_nversion.c -o c_code\1_2\compiler_nversion.o
 IF ERRORLEVEL 1 (GOTO:END)
@@ -102,8 +111,8 @@ IF ERRORLEVEL 1 (GOTO:END)
 ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_extccomp.c -o c_code\1_2\compiler_extccomp.o
 CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_extccomp.c -o c_code\1_2\compiler_extccomp.o
 IF ERRORLEVEL 1 (GOTO:END)
-ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_securehash.c -o c_code\1_2\stdlib_securehash.o
-CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_securehash.c -o c_code\1_2\stdlib_securehash.o
+ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_sha1.c -o c_code\1_2\stdlib_sha1.o
+CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_sha1.c -o c_code\1_2\stdlib_sha1.o
 IF ERRORLEVEL 1 (GOTO:END)
 ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_json.c -o c_code\1_2\stdlib_json.o
 CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_json.c -o c_code\1_2\stdlib_json.o
@@ -111,8 +120,11 @@ IF ERRORLEVEL 1 (GOTO:END)
 ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_lexbase.c -o c_code\1_2\stdlib_lexbase.o
 CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_lexbase.c -o c_code\1_2\stdlib_lexbase.o
 IF ERRORLEVEL 1 (GOTO:END)
-ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_unicode.c -o c_code\1_2\stdlib_unicode.o
-CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_unicode.c -o c_code\1_2\stdlib_unicode.o
+ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_options.c -o c_code\1_2\stdlib_options.o
+CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_options.c -o c_code\1_2\stdlib_options.o
+IF ERRORLEVEL 1 (GOTO:END)
+ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_typetraits.c -o c_code\1_2\stdlib_typetraits.o
+CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_typetraits.c -o c_code\1_2\stdlib_typetraits.o
 IF ERRORLEVEL 1 (GOTO:END)
 ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_nimblecmd.c -o c_code\1_2\compiler_nimblecmd.o
 CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_nimblecmd.c -o c_code\1_2\compiler_nimblecmd.o
@@ -216,6 +228,9 @@ IF ERRORLEVEL 1 (GOTO:END)
 ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_modulegraphs.c -o c_code\1_2\compiler_modulegraphs.o
 CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_modulegraphs.c -o c_code\1_2\compiler_modulegraphs.o
 IF ERRORLEVEL 1 (GOTO:END)
+ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_rod.c -o c_code\1_2\compiler_rod.o
+CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_rod.c -o c_code\1_2\compiler_rod.o
+IF ERRORLEVEL 1 (GOTO:END)
 ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_intsets.c -o c_code\1_2\stdlib_intsets.o
 CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_intsets.c -o c_code\1_2\stdlib_intsets.o
 IF ERRORLEVEL 1 (GOTO:END)
@@ -237,6 +252,9 @@ IF ERRORLEVEL 1 (GOTO:END)
 ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_trees.c -o c_code\1_2\compiler_trees.o
 CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_trees.c -o c_code\1_2\compiler_trees.o
 IF ERRORLEVEL 1 (GOTO:END)
+ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_modulepaths.c -o c_code\1_2\compiler_modulepaths.o
+CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_modulepaths.c -o c_code\1_2\compiler_modulepaths.o
+IF ERRORLEVEL 1 (GOTO:END)
 ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_magicsys.c -o c_code\1_2\compiler_magicsys.o
 CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_magicsys.c -o c_code\1_2\compiler_magicsys.o
 IF ERRORLEVEL 1 (GOTO:END)
@@ -249,12 +267,6 @@ IF ERRORLEVEL 1 (GOTO:END)
 ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_bitsets.c -o c_code\1_2\compiler_bitsets.o
 CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_bitsets.c -o c_code\1_2\compiler_bitsets.o
 IF ERRORLEVEL 1 (GOTO:END)
-ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_lookups.c -o c_code\1_2\compiler_lookups.o
-CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_lookups.c -o c_code\1_2\compiler_lookups.o
-IF ERRORLEVEL 1 (GOTO:END)
-ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_prettybase.c -o c_code\1_2\compiler_prettybase.o
-CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_prettybase.c -o c_code\1_2\compiler_prettybase.o
-IF ERRORLEVEL 1 (GOTO:END)
 ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_treetab.c -o c_code\1_2\compiler_treetab.o
 CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_treetab.c -o c_code\1_2\compiler_treetab.o
 IF ERRORLEVEL 1 (GOTO:END)
@@ -263,6 +275,9 @@ CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_semfold.c -o c_code\1_2\c
 IF ERRORLEVEL 1 (GOTO:END)
 ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_procfind.c -o c_code\1_2\compiler_procfind.o
 CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_procfind.c -o c_code\1_2\compiler_procfind.o
+IF ERRORLEVEL 1 (GOTO:END)
+ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_lookups.c -o c_code\1_2\compiler_lookups.o
+CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_lookups.c -o c_code\1_2\compiler_lookups.o
 IF ERRORLEVEL 1 (GOTO:END)
 ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_pragmas.c -o c_code\1_2\compiler_pragmas.o
 CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_pragmas.c -o c_code\1_2\compiler_pragmas.o
@@ -294,9 +309,6 @@ IF ERRORLEVEL 1 (GOTO:END)
 ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_sempass2.c -o c_code\1_2\compiler_sempass2.o
 CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_sempass2.c -o c_code\1_2\compiler_sempass2.o
 IF ERRORLEVEL 1 (GOTO:END)
-ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_pretty.c -o c_code\1_2\compiler_pretty.o
-CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_pretty.c -o c_code\1_2\compiler_pretty.o
-IF ERRORLEVEL 1 (GOTO:END)
 ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_semmacrosanity.c -o c_code\1_2\compiler_semmacrosanity.o
 CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_semmacrosanity.c -o c_code\1_2\compiler_semmacrosanity.o
 IF ERRORLEVEL 1 (GOTO:END)
@@ -309,11 +321,23 @@ IF ERRORLEVEL 1 (GOTO:END)
 ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_pluginsupport.c -o c_code\1_2\compiler_pluginsupport.o
 CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_pluginsupport.c -o c_code\1_2\compiler_pluginsupport.o
 IF ERRORLEVEL 1 (GOTO:END)
-ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_active.c -o c_code\1_2\compiler_active.o
-CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_active.c -o c_code\1_2\compiler_active.o
-IF ERRORLEVEL 1 (GOTO:END)
 ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_saturate.c -o c_code\1_2\compiler_saturate.o
 CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_saturate.c -o c_code\1_2\compiler_saturate.o
+IF ERRORLEVEL 1 (GOTO:END)
+ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_prettybase.c -o c_code\1_2\compiler_prettybase.o
+CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_prettybase.c -o c_code\1_2\compiler_prettybase.o
+IF ERRORLEVEL 1 (GOTO:END)
+ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_pretty.c -o c_code\1_2\compiler_pretty.o
+CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_pretty.c -o c_code\1_2\compiler_pretty.o
+IF ERRORLEVEL 1 (GOTO:END)
+ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_xmltree.c -o c_code\1_2\stdlib_xmltree.o
+CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_xmltree.c -o c_code\1_2\stdlib_xmltree.o
+IF ERRORLEVEL 1 (GOTO:END)
+ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_cgi.c -o c_code\1_2\stdlib_cgi.o
+CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_cgi.c -o c_code\1_2\stdlib_cgi.o
+IF ERRORLEVEL 1 (GOTO:END)
+ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_typesrenderer.c -o c_code\1_2\compiler_typesrenderer.o
+CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_typesrenderer.c -o c_code\1_2\compiler_typesrenderer.o
 IF ERRORLEVEL 1 (GOTO:END)
 ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\docutils_rstast.c -o c_code\1_2\docutils_rstast.o
 CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\docutils_rstast.c -o c_code\1_2\docutils_rstast.o
@@ -327,15 +351,6 @@ IF ERRORLEVEL 1 (GOTO:END)
 ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\docutils_highlite.c -o c_code\1_2\docutils_highlite.o
 CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\docutils_highlite.c -o c_code\1_2\docutils_highlite.o
 IF ERRORLEVEL 1 (GOTO:END)
-ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_xmltree.c -o c_code\1_2\stdlib_xmltree.o
-CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_xmltree.c -o c_code\1_2\stdlib_xmltree.o
-IF ERRORLEVEL 1 (GOTO:END)
-ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_cgi.c -o c_code\1_2\stdlib_cgi.o
-CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_cgi.c -o c_code\1_2\stdlib_cgi.o
-IF ERRORLEVEL 1 (GOTO:END)
-ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_typesrenderer.c -o c_code\1_2\compiler_typesrenderer.o
-CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_typesrenderer.c -o c_code\1_2\compiler_typesrenderer.o
-IF ERRORLEVEL 1 (GOTO:END)
 ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_guards.c -o c_code\1_2\compiler_guards.o
 CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_guards.c -o c_code\1_2\compiler_guards.o
 IF ERRORLEVEL 1 (GOTO:END)
@@ -345,8 +360,20 @@ IF ERRORLEVEL 1 (GOTO:END)
 ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_cookies.c -o c_code\1_2\stdlib_cookies.o
 CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_cookies.c -o c_code\1_2\stdlib_cookies.o
 IF ERRORLEVEL 1 (GOTO:END)
+ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_uri.c -o c_code\1_2\stdlib_uri.o
+CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_uri.c -o c_code\1_2\stdlib_uri.o
+IF ERRORLEVEL 1 (GOTO:END)
 ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_prefixmatches.c -o c_code\1_2\compiler_prefixmatches.o
 CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_prefixmatches.c -o c_code\1_2\compiler_prefixmatches.o
+IF ERRORLEVEL 1 (GOTO:END)
+ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_destroyer.c -o c_code\1_2\compiler_destroyer.o
+CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_destroyer.c -o c_code\1_2\compiler_destroyer.o
+IF ERRORLEVEL 1 (GOTO:END)
+ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_liftlocals.c -o c_code\1_2\compiler_liftlocals.o
+CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_liftlocals.c -o c_code\1_2\compiler_liftlocals.o
+IF ERRORLEVEL 1 (GOTO:END)
+ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_dfa.c -o c_code\1_2\compiler_dfa.o
+CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_dfa.c -o c_code\1_2\compiler_dfa.o
 IF ERRORLEVEL 1 (GOTO:END)
 ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_vmgen.c -o c_code\1_2\compiler_vmgen.o
 CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_vmgen.c -o c_code\1_2\compiler_vmgen.o
@@ -357,11 +384,17 @@ IF ERRORLEVEL 1 (GOTO:END)
 ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_vmmarshal.c -o c_code\1_2\compiler_vmmarshal.o
 CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_vmmarshal.c -o c_code\1_2\compiler_vmmarshal.o
 IF ERRORLEVEL 1 (GOTO:END)
-ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_locals.c -o c_code\1_2\compiler_locals.o
-CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_locals.c -o c_code\1_2\compiler_locals.o
+ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_gorgeimpl.c -o c_code\1_2\compiler_gorgeimpl.o
+CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_gorgeimpl.c -o c_code\1_2\compiler_gorgeimpl.o
+IF ERRORLEVEL 1 (GOTO:END)
+ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_active.c -o c_code\1_2\compiler_active.o
+CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_active.c -o c_code\1_2\compiler_active.o
 IF ERRORLEVEL 1 (GOTO:END)
 ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_itersgen.c -o c_code\1_2\compiler_itersgen.o
 CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_itersgen.c -o c_code\1_2\compiler_itersgen.o
+IF ERRORLEVEL 1 (GOTO:END)
+ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_locals.c -o c_code\1_2\compiler_locals.o
+CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_locals.c -o c_code\1_2\compiler_locals.o
 IF ERRORLEVEL 1 (GOTO:END)
 ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_cgendata.c -o c_code\1_2\compiler_cgendata.o
 CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_cgendata.c -o c_code\1_2\compiler_cgendata.o
@@ -384,12 +417,6 @@ IF ERRORLEVEL 1 (GOTO:END)
 ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_nativesockets.c -o c_code\1_2\stdlib_nativesockets.o
 CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_nativesockets.c -o c_code\1_2\stdlib_nativesockets.o
 IF ERRORLEVEL 1 (GOTO:END)
-ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_options.c -o c_code\1_2\stdlib_options.o
-CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_options.c -o c_code\1_2\stdlib_options.o
-IF ERRORLEVEL 1 (GOTO:END)
-ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_typetraits.c -o c_code\1_2\stdlib_typetraits.o
-CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\stdlib_typetraits.c -o c_code\1_2\stdlib_typetraits.o
-IF ERRORLEVEL 1 (GOTO:END)
 ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_nodejs.c -o c_code\1_2\compiler_nodejs.o
 CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_nodejs.c -o c_code\1_2\compiler_nodejs.o
 IF ERRORLEVEL 1 (GOTO:END)
@@ -397,8 +424,8 @@ ECHO %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_scriptconfig.c -o c_code\
 CALL %CC% %COMP_FLAGS% -Ic_code -c c_code\1_2\compiler_scriptconfig.c -o c_code\1_2\compiler_scriptconfig.o
 IF ERRORLEVEL 1 (GOTO:END)
 
-ECHO %LINKER% -o %BIN_DIR%\nim.exe  c_code\1_2\compiler_nim.o c_code\1_2\stdlib_system.o c_code\1_2\compiler_commands.o c_code\1_2\stdlib_os.o c_code\1_2\stdlib_strutils.o c_code\1_2\stdlib_parseutils.o c_code\1_2\stdlib_math.o c_code\1_2\stdlib_algorithm.o c_code\1_2\stdlib_times.o c_code\1_2\stdlib_winlean.o c_code\1_2\stdlib_dynlib.o c_code\1_2\stdlib_ospaths.o c_code\1_2\compiler_msgs.o c_code\1_2\compiler_options.o c_code\1_2\stdlib_tables.o c_code\1_2\compiler_ropes.o c_code\1_2\compiler_platform.o c_code\1_2\stdlib_terminal.o c_code\1_2\stdlib_macros.o c_code\1_2\stdlib_strtabs.o c_code\1_2\stdlib_osproc.o c_code\1_2\stdlib_sets.o c_code\1_2\stdlib_hashes.o c_code\1_2\stdlib_streams.o c_code\1_2\stdlib_cpuinfo.o c_code\1_2\compiler_nversion.o c_code\1_2\compiler_condsyms.o c_code\1_2\compiler_idents.o c_code\1_2\compiler_wordrecg.o c_code\1_2\compiler_extccomp.o c_code\1_2\stdlib_securehash.o c_code\1_2\stdlib_json.o c_code\1_2\stdlib_lexbase.o c_code\1_2\stdlib_unicode.o c_code\1_2\compiler_nimblecmd.o c_code\1_2\stdlib_sequtils.o c_code\1_2\stdlib_parseopt.o c_code\1_2\compiler_lexer.o c_code\1_2\compiler_nimlexbase.o c_code\1_2\compiler_llstream.o c_code\1_2\compiler_nimconf.o c_code\1_2\compiler_main.o c_code\1_2\compiler_ast.o c_code\1_2\compiler_astalgo.o c_code\1_2\compiler_syntaxes.o c_code\1_2\compiler_renderer.o c_code\1_2\compiler_rodread.o c_code\1_2\compiler_rodwrite.o c_code\1_2\compiler_sem.o c_code\1_2\compiler_semdata.o c_code\1_2\compiler_passes.o c_code\1_2\compiler_docgen.o c_code\1_2\compiler_cgen.o c_code\1_2\compiler_jsgen.o c_code\1_2\compiler_importer.o c_code\1_2\compiler_passaux.o c_code\1_2\compiler_depends.o c_code\1_2\compiler_vm.o c_code\1_2\compiler_vmdef.o c_code\1_2\compiler_types.o c_code\1_2\compiler_idgen.o c_code\1_2\compiler_docgen2.o c_code\1_2\compiler_service.o c_code\1_2\compiler_parser.o c_code\1_2\compiler_modules.o c_code\1_2\compiler_ccgutils.o c_code\1_2\compiler_sigmatch.o c_code\1_2\compiler_modulegraphs.o c_code\1_2\stdlib_intsets.o c_code\1_2\compiler_rodutils.o c_code\1_2\compiler_pbraces.o c_code\1_2\compiler_filters.o c_code\1_2\compiler_filter_tmpl.o c_code\1_2\stdlib_memfiles.o c_code\1_2\compiler_trees.o c_code\1_2\compiler_magicsys.o c_code\1_2\compiler_nimsets.o c_code\1_2\compiler_reorder.o c_code\1_2\compiler_bitsets.o c_code\1_2\compiler_lookups.o c_code\1_2\compiler_prettybase.o c_code\1_2\compiler_treetab.o c_code\1_2\compiler_semfold.o c_code\1_2\compiler_procfind.o c_code\1_2\compiler_pragmas.o c_code\1_2\compiler_semtypinst.o c_code\1_2\compiler_transf.o c_code\1_2\compiler_aliases.o c_code\1_2\compiler_cgmeth.o c_code\1_2\compiler_lambdalifting.o c_code\1_2\compiler_evaltempl.o c_code\1_2\compiler_patterns.o c_code\1_2\compiler_parampatterns.o c_code\1_2\compiler_sempass2.o c_code\1_2\compiler_pretty.o c_code\1_2\compiler_semmacrosanity.o c_code\1_2\compiler_semparallel.o c_code\1_2\compiler_lowerings.o c_code\1_2\compiler_pluginsupport.o c_code\1_2\compiler_active.o c_code\1_2\compiler_saturate.o c_code\1_2\docutils_rstast.o c_code\1_2\docutils_rst.o c_code\1_2\docutils_rstgen.o c_code\1_2\docutils_highlite.o c_code\1_2\stdlib_xmltree.o c_code\1_2\stdlib_cgi.o c_code\1_2\compiler_typesrenderer.o c_code\1_2\compiler_guards.o c_code\1_2\compiler_writetracking.o c_code\1_2\stdlib_cookies.o c_code\1_2\compiler_prefixmatches.o c_code\1_2\compiler_vmgen.o c_code\1_2\compiler_vmdeps.o c_code\1_2\compiler_vmmarshal.o c_code\1_2\compiler_locals.o c_code\1_2\compiler_itersgen.o c_code\1_2\compiler_cgendata.o c_code\1_2\compiler_ccgmerge.o c_code\1_2\compiler_ndi.o c_code\1_2\compiler_sighashes.o c_code\1_2\stdlib_md5.o c_code\1_2\stdlib_net.o c_code\1_2\stdlib_nativesockets.o c_code\1_2\stdlib_options.o c_code\1_2\stdlib_typetraits.o c_code\1_2\compiler_nodejs.o c_code\1_2\compiler_scriptconfig.o %LINK_FLAGS%
-CALL %LINKER% -o %BIN_DIR%\nim.exe  c_code\1_2\compiler_nim.o c_code\1_2\stdlib_system.o c_code\1_2\compiler_commands.o c_code\1_2\stdlib_os.o c_code\1_2\stdlib_strutils.o c_code\1_2\stdlib_parseutils.o c_code\1_2\stdlib_math.o c_code\1_2\stdlib_algorithm.o c_code\1_2\stdlib_times.o c_code\1_2\stdlib_winlean.o c_code\1_2\stdlib_dynlib.o c_code\1_2\stdlib_ospaths.o c_code\1_2\compiler_msgs.o c_code\1_2\compiler_options.o c_code\1_2\stdlib_tables.o c_code\1_2\compiler_ropes.o c_code\1_2\compiler_platform.o c_code\1_2\stdlib_terminal.o c_code\1_2\stdlib_macros.o c_code\1_2\stdlib_strtabs.o c_code\1_2\stdlib_osproc.o c_code\1_2\stdlib_sets.o c_code\1_2\stdlib_hashes.o c_code\1_2\stdlib_streams.o c_code\1_2\stdlib_cpuinfo.o c_code\1_2\compiler_nversion.o c_code\1_2\compiler_condsyms.o c_code\1_2\compiler_idents.o c_code\1_2\compiler_wordrecg.o c_code\1_2\compiler_extccomp.o c_code\1_2\stdlib_securehash.o c_code\1_2\stdlib_json.o c_code\1_2\stdlib_lexbase.o c_code\1_2\stdlib_unicode.o c_code\1_2\compiler_nimblecmd.o c_code\1_2\stdlib_sequtils.o c_code\1_2\stdlib_parseopt.o c_code\1_2\compiler_lexer.o c_code\1_2\compiler_nimlexbase.o c_code\1_2\compiler_llstream.o c_code\1_2\compiler_nimconf.o c_code\1_2\compiler_main.o c_code\1_2\compiler_ast.o c_code\1_2\compiler_astalgo.o c_code\1_2\compiler_syntaxes.o c_code\1_2\compiler_renderer.o c_code\1_2\compiler_rodread.o c_code\1_2\compiler_rodwrite.o c_code\1_2\compiler_sem.o c_code\1_2\compiler_semdata.o c_code\1_2\compiler_passes.o c_code\1_2\compiler_docgen.o c_code\1_2\compiler_cgen.o c_code\1_2\compiler_jsgen.o c_code\1_2\compiler_importer.o c_code\1_2\compiler_passaux.o c_code\1_2\compiler_depends.o c_code\1_2\compiler_vm.o c_code\1_2\compiler_vmdef.o c_code\1_2\compiler_types.o c_code\1_2\compiler_idgen.o c_code\1_2\compiler_docgen2.o c_code\1_2\compiler_service.o c_code\1_2\compiler_parser.o c_code\1_2\compiler_modules.o c_code\1_2\compiler_ccgutils.o c_code\1_2\compiler_sigmatch.o c_code\1_2\compiler_modulegraphs.o c_code\1_2\stdlib_intsets.o c_code\1_2\compiler_rodutils.o c_code\1_2\compiler_pbraces.o c_code\1_2\compiler_filters.o c_code\1_2\compiler_filter_tmpl.o c_code\1_2\stdlib_memfiles.o c_code\1_2\compiler_trees.o c_code\1_2\compiler_magicsys.o c_code\1_2\compiler_nimsets.o c_code\1_2\compiler_reorder.o c_code\1_2\compiler_bitsets.o c_code\1_2\compiler_lookups.o c_code\1_2\compiler_prettybase.o c_code\1_2\compiler_treetab.o c_code\1_2\compiler_semfold.o c_code\1_2\compiler_procfind.o c_code\1_2\compiler_pragmas.o c_code\1_2\compiler_semtypinst.o c_code\1_2\compiler_transf.o c_code\1_2\compiler_aliases.o c_code\1_2\compiler_cgmeth.o c_code\1_2\compiler_lambdalifting.o c_code\1_2\compiler_evaltempl.o c_code\1_2\compiler_patterns.o c_code\1_2\compiler_parampatterns.o c_code\1_2\compiler_sempass2.o c_code\1_2\compiler_pretty.o c_code\1_2\compiler_semmacrosanity.o c_code\1_2\compiler_semparallel.o c_code\1_2\compiler_lowerings.o c_code\1_2\compiler_pluginsupport.o c_code\1_2\compiler_active.o c_code\1_2\compiler_saturate.o c_code\1_2\docutils_rstast.o c_code\1_2\docutils_rst.o c_code\1_2\docutils_rstgen.o c_code\1_2\docutils_highlite.o c_code\1_2\stdlib_xmltree.o c_code\1_2\stdlib_cgi.o c_code\1_2\compiler_typesrenderer.o c_code\1_2\compiler_guards.o c_code\1_2\compiler_writetracking.o c_code\1_2\stdlib_cookies.o c_code\1_2\compiler_prefixmatches.o c_code\1_2\compiler_vmgen.o c_code\1_2\compiler_vmdeps.o c_code\1_2\compiler_vmmarshal.o c_code\1_2\compiler_locals.o c_code\1_2\compiler_itersgen.o c_code\1_2\compiler_cgendata.o c_code\1_2\compiler_ccgmerge.o c_code\1_2\compiler_ndi.o c_code\1_2\compiler_sighashes.o c_code\1_2\stdlib_md5.o c_code\1_2\stdlib_net.o c_code\1_2\stdlib_nativesockets.o c_code\1_2\stdlib_options.o c_code\1_2\stdlib_typetraits.o c_code\1_2\compiler_nodejs.o c_code\1_2\compiler_scriptconfig.o %LINK_FLAGS%
+ECHO %LINKER% -o %BIN_DIR%\nim.exe  c_code\1_2\compiler_nim.o c_code\1_2\stdlib_system.o c_code\1_2\compiler_commands.o c_code\1_2\stdlib_os.o c_code\1_2\stdlib_strutils.o c_code\1_2\stdlib_parseutils.o c_code\1_2\stdlib_math.o c_code\1_2\stdlib_algorithm.o c_code\1_2\stdlib_times.o c_code\1_2\stdlib_winlean.o c_code\1_2\stdlib_dynlib.o c_code\1_2\stdlib_ospaths.o c_code\1_2\compiler_msgs.o c_code\1_2\compiler_options.o c_code\1_2\stdlib_tables.o c_code\1_2\compiler_ropes.o c_code\1_2\compiler_platform.o c_code\1_2\stdlib_terminal.o c_code\1_2\stdlib_macros.o c_code\1_2\stdlib_strtabs.o c_code\1_2\stdlib_osproc.o c_code\1_2\stdlib_sets.o c_code\1_2\stdlib_hashes.o c_code\1_2\stdlib_streams.o c_code\1_2\stdlib_cpuinfo.o c_code\1_2\stdlib_strformat.o c_code\1_2\stdlib_unicode.o c_code\1_2\stdlib_colors.o c_code\1_2\compiler_nversion.o c_code\1_2\compiler_condsyms.o c_code\1_2\compiler_idents.o c_code\1_2\compiler_wordrecg.o c_code\1_2\compiler_extccomp.o c_code\1_2\stdlib_sha1.o c_code\1_2\stdlib_json.o c_code\1_2\stdlib_lexbase.o c_code\1_2\stdlib_options.o c_code\1_2\stdlib_typetraits.o c_code\1_2\compiler_nimblecmd.o c_code\1_2\stdlib_sequtils.o c_code\1_2\stdlib_parseopt.o c_code\1_2\compiler_lexer.o c_code\1_2\compiler_nimlexbase.o c_code\1_2\compiler_llstream.o c_code\1_2\compiler_nimconf.o c_code\1_2\compiler_main.o c_code\1_2\compiler_ast.o c_code\1_2\compiler_astalgo.o c_code\1_2\compiler_syntaxes.o c_code\1_2\compiler_renderer.o c_code\1_2\compiler_rodread.o c_code\1_2\compiler_rodwrite.o c_code\1_2\compiler_sem.o c_code\1_2\compiler_semdata.o c_code\1_2\compiler_passes.o c_code\1_2\compiler_docgen.o c_code\1_2\compiler_cgen.o c_code\1_2\compiler_jsgen.o c_code\1_2\compiler_importer.o c_code\1_2\compiler_passaux.o c_code\1_2\compiler_depends.o c_code\1_2\compiler_vm.o c_code\1_2\compiler_vmdef.o c_code\1_2\compiler_types.o c_code\1_2\compiler_idgen.o c_code\1_2\compiler_docgen2.o c_code\1_2\compiler_service.o c_code\1_2\compiler_parser.o c_code\1_2\compiler_modules.o c_code\1_2\compiler_ccgutils.o c_code\1_2\compiler_sigmatch.o c_code\1_2\compiler_modulegraphs.o c_code\1_2\compiler_rod.o c_code\1_2\stdlib_intsets.o c_code\1_2\compiler_rodutils.o c_code\1_2\compiler_pbraces.o c_code\1_2\compiler_filters.o c_code\1_2\compiler_filter_tmpl.o c_code\1_2\stdlib_memfiles.o c_code\1_2\compiler_trees.o c_code\1_2\compiler_modulepaths.o c_code\1_2\compiler_magicsys.o c_code\1_2\compiler_nimsets.o c_code\1_2\compiler_reorder.o c_code\1_2\compiler_bitsets.o c_code\1_2\compiler_treetab.o c_code\1_2\compiler_semfold.o c_code\1_2\compiler_procfind.o c_code\1_2\compiler_lookups.o c_code\1_2\compiler_pragmas.o c_code\1_2\compiler_semtypinst.o c_code\1_2\compiler_transf.o c_code\1_2\compiler_aliases.o c_code\1_2\compiler_cgmeth.o c_code\1_2\compiler_lambdalifting.o c_code\1_2\compiler_evaltempl.o c_code\1_2\compiler_patterns.o c_code\1_2\compiler_parampatterns.o c_code\1_2\compiler_sempass2.o c_code\1_2\compiler_semmacrosanity.o c_code\1_2\compiler_semparallel.o c_code\1_2\compiler_lowerings.o c_code\1_2\compiler_pluginsupport.o c_code\1_2\compiler_saturate.o c_code\1_2\compiler_prettybase.o c_code\1_2\compiler_pretty.o c_code\1_2\stdlib_xmltree.o c_code\1_2\stdlib_cgi.o c_code\1_2\compiler_typesrenderer.o c_code\1_2\docutils_rstast.o c_code\1_2\docutils_rst.o c_code\1_2\docutils_rstgen.o c_code\1_2\docutils_highlite.o c_code\1_2\compiler_guards.o c_code\1_2\compiler_writetracking.o c_code\1_2\stdlib_cookies.o c_code\1_2\stdlib_uri.o c_code\1_2\compiler_prefixmatches.o c_code\1_2\compiler_destroyer.o c_code\1_2\compiler_liftlocals.o c_code\1_2\compiler_dfa.o c_code\1_2\compiler_vmgen.o c_code\1_2\compiler_vmdeps.o c_code\1_2\compiler_vmmarshal.o c_code\1_2\compiler_gorgeimpl.o c_code\1_2\compiler_active.o c_code\1_2\compiler_itersgen.o c_code\1_2\compiler_locals.o c_code\1_2\compiler_cgendata.o c_code\1_2\compiler_ccgmerge.o c_code\1_2\compiler_ndi.o c_code\1_2\compiler_sighashes.o c_code\1_2\stdlib_md5.o c_code\1_2\stdlib_net.o c_code\1_2\stdlib_nativesockets.o c_code\1_2\compiler_nodejs.o c_code\1_2\compiler_scriptconfig.o %LINK_FLAGS%
+CALL %LINKER% -o %BIN_DIR%\nim.exe  c_code\1_2\compiler_nim.o c_code\1_2\stdlib_system.o c_code\1_2\compiler_commands.o c_code\1_2\stdlib_os.o c_code\1_2\stdlib_strutils.o c_code\1_2\stdlib_parseutils.o c_code\1_2\stdlib_math.o c_code\1_2\stdlib_algorithm.o c_code\1_2\stdlib_times.o c_code\1_2\stdlib_winlean.o c_code\1_2\stdlib_dynlib.o c_code\1_2\stdlib_ospaths.o c_code\1_2\compiler_msgs.o c_code\1_2\compiler_options.o c_code\1_2\stdlib_tables.o c_code\1_2\compiler_ropes.o c_code\1_2\compiler_platform.o c_code\1_2\stdlib_terminal.o c_code\1_2\stdlib_macros.o c_code\1_2\stdlib_strtabs.o c_code\1_2\stdlib_osproc.o c_code\1_2\stdlib_sets.o c_code\1_2\stdlib_hashes.o c_code\1_2\stdlib_streams.o c_code\1_2\stdlib_cpuinfo.o c_code\1_2\stdlib_strformat.o c_code\1_2\stdlib_unicode.o c_code\1_2\stdlib_colors.o c_code\1_2\compiler_nversion.o c_code\1_2\compiler_condsyms.o c_code\1_2\compiler_idents.o c_code\1_2\compiler_wordrecg.o c_code\1_2\compiler_extccomp.o c_code\1_2\stdlib_sha1.o c_code\1_2\stdlib_json.o c_code\1_2\stdlib_lexbase.o c_code\1_2\stdlib_options.o c_code\1_2\stdlib_typetraits.o c_code\1_2\compiler_nimblecmd.o c_code\1_2\stdlib_sequtils.o c_code\1_2\stdlib_parseopt.o c_code\1_2\compiler_lexer.o c_code\1_2\compiler_nimlexbase.o c_code\1_2\compiler_llstream.o c_code\1_2\compiler_nimconf.o c_code\1_2\compiler_main.o c_code\1_2\compiler_ast.o c_code\1_2\compiler_astalgo.o c_code\1_2\compiler_syntaxes.o c_code\1_2\compiler_renderer.o c_code\1_2\compiler_rodread.o c_code\1_2\compiler_rodwrite.o c_code\1_2\compiler_sem.o c_code\1_2\compiler_semdata.o c_code\1_2\compiler_passes.o c_code\1_2\compiler_docgen.o c_code\1_2\compiler_cgen.o c_code\1_2\compiler_jsgen.o c_code\1_2\compiler_importer.o c_code\1_2\compiler_passaux.o c_code\1_2\compiler_depends.o c_code\1_2\compiler_vm.o c_code\1_2\compiler_vmdef.o c_code\1_2\compiler_types.o c_code\1_2\compiler_idgen.o c_code\1_2\compiler_docgen2.o c_code\1_2\compiler_service.o c_code\1_2\compiler_parser.o c_code\1_2\compiler_modules.o c_code\1_2\compiler_ccgutils.o c_code\1_2\compiler_sigmatch.o c_code\1_2\compiler_modulegraphs.o c_code\1_2\compiler_rod.o c_code\1_2\stdlib_intsets.o c_code\1_2\compiler_rodutils.o c_code\1_2\compiler_pbraces.o c_code\1_2\compiler_filters.o c_code\1_2\compiler_filter_tmpl.o c_code\1_2\stdlib_memfiles.o c_code\1_2\compiler_trees.o c_code\1_2\compiler_modulepaths.o c_code\1_2\compiler_magicsys.o c_code\1_2\compiler_nimsets.o c_code\1_2\compiler_reorder.o c_code\1_2\compiler_bitsets.o c_code\1_2\compiler_treetab.o c_code\1_2\compiler_semfold.o c_code\1_2\compiler_procfind.o c_code\1_2\compiler_lookups.o c_code\1_2\compiler_pragmas.o c_code\1_2\compiler_semtypinst.o c_code\1_2\compiler_transf.o c_code\1_2\compiler_aliases.o c_code\1_2\compiler_cgmeth.o c_code\1_2\compiler_lambdalifting.o c_code\1_2\compiler_evaltempl.o c_code\1_2\compiler_patterns.o c_code\1_2\compiler_parampatterns.o c_code\1_2\compiler_sempass2.o c_code\1_2\compiler_semmacrosanity.o c_code\1_2\compiler_semparallel.o c_code\1_2\compiler_lowerings.o c_code\1_2\compiler_pluginsupport.o c_code\1_2\compiler_saturate.o c_code\1_2\compiler_prettybase.o c_code\1_2\compiler_pretty.o c_code\1_2\stdlib_xmltree.o c_code\1_2\stdlib_cgi.o c_code\1_2\compiler_typesrenderer.o c_code\1_2\docutils_rstast.o c_code\1_2\docutils_rst.o c_code\1_2\docutils_rstgen.o c_code\1_2\docutils_highlite.o c_code\1_2\compiler_guards.o c_code\1_2\compiler_writetracking.o c_code\1_2\stdlib_cookies.o c_code\1_2\stdlib_uri.o c_code\1_2\compiler_prefixmatches.o c_code\1_2\compiler_destroyer.o c_code\1_2\compiler_liftlocals.o c_code\1_2\compiler_dfa.o c_code\1_2\compiler_vmgen.o c_code\1_2\compiler_vmdeps.o c_code\1_2\compiler_vmmarshal.o c_code\1_2\compiler_gorgeimpl.o c_code\1_2\compiler_active.o c_code\1_2\compiler_itersgen.o c_code\1_2\compiler_locals.o c_code\1_2\compiler_cgendata.o c_code\1_2\compiler_ccgmerge.o c_code\1_2\compiler_ndi.o c_code\1_2\compiler_sighashes.o c_code\1_2\stdlib_md5.o c_code\1_2\stdlib_net.o c_code\1_2\stdlib_nativesockets.o c_code\1_2\compiler_nodejs.o c_code\1_2\compiler_scriptconfig.o %LINK_FLAGS%
 
 
 :END

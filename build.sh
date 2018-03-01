@@ -143,6 +143,8 @@ case $ucpu in
       mycpu="sparc64"
     fi
     ;;
+  *ppc64le* )
+    mycpu="powerpc64el" ;;
   *ppc64* )
     if [ "$myos" = "linux" ] ; then
       COMP_FLAGS="$COMP_FLAGS -m64"
@@ -213,15 +215,19 @@ windows)
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/stdlib_hashes.c -o c_code/1_1/stdlib_hashes.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/stdlib_streams.c -o c_code/1_1/stdlib_streams.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/stdlib_cpuinfo.c -o c_code/1_1/stdlib_cpuinfo.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/stdlib_strformat.c -o c_code/1_1/stdlib_strformat.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/stdlib_unicode.c -o c_code/1_1/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/stdlib_colors.c -o c_code/1_1/stdlib_colors.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_nversion.c -o c_code/1_1/compiler_nversion.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_condsyms.c -o c_code/1_1/compiler_condsyms.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_idents.c -o c_code/1_1/compiler_idents.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_wordrecg.c -o c_code/1_1/compiler_wordrecg.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_extccomp.c -o c_code/1_1/compiler_extccomp.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/stdlib_securehash.c -o c_code/1_1/stdlib_securehash.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/stdlib_sha1.c -o c_code/1_1/stdlib_sha1.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/stdlib_json.c -o c_code/1_1/stdlib_json.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/stdlib_lexbase.c -o c_code/1_1/stdlib_lexbase.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/stdlib_unicode.c -o c_code/1_1/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/stdlib_options.c -o c_code/1_1/stdlib_options.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/stdlib_typetraits.c -o c_code/1_1/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_nimblecmd.c -o c_code/1_1/compiler_nimblecmd.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/stdlib_sequtils.c -o c_code/1_1/stdlib_sequtils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/stdlib_parseopt.c -o c_code/1_1/stdlib_parseopt.o
@@ -256,6 +262,7 @@ windows)
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_ccgutils.c -o c_code/1_1/compiler_ccgutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_sigmatch.c -o c_code/1_1/compiler_sigmatch.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_modulegraphs.c -o c_code/1_1/compiler_modulegraphs.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_rod.c -o c_code/1_1/compiler_rod.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/stdlib_intsets.c -o c_code/1_1/stdlib_intsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_rodutils.c -o c_code/1_1/compiler_rodutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_pbraces.c -o c_code/1_1/compiler_pbraces.o
@@ -263,15 +270,15 @@ windows)
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_filter_tmpl.c -o c_code/1_1/compiler_filter_tmpl.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/stdlib_memfiles.c -o c_code/1_1/stdlib_memfiles.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_trees.c -o c_code/1_1/compiler_trees.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_modulepaths.c -o c_code/1_1/compiler_modulepaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_magicsys.c -o c_code/1_1/compiler_magicsys.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_nimsets.c -o c_code/1_1/compiler_nimsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_reorder.c -o c_code/1_1/compiler_reorder.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_bitsets.c -o c_code/1_1/compiler_bitsets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_lookups.c -o c_code/1_1/compiler_lookups.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_prettybase.c -o c_code/1_1/compiler_prettybase.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_treetab.c -o c_code/1_1/compiler_treetab.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_semfold.c -o c_code/1_1/compiler_semfold.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_procfind.c -o c_code/1_1/compiler_procfind.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_lookups.c -o c_code/1_1/compiler_lookups.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_pragmas.c -o c_code/1_1/compiler_pragmas.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_semtypinst.c -o c_code/1_1/compiler_semtypinst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_transf.c -o c_code/1_1/compiler_transf.o
@@ -282,29 +289,35 @@ windows)
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_patterns.c -o c_code/1_1/compiler_patterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_parampatterns.c -o c_code/1_1/compiler_parampatterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_sempass2.c -o c_code/1_1/compiler_sempass2.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_pretty.c -o c_code/1_1/compiler_pretty.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_semmacrosanity.c -o c_code/1_1/compiler_semmacrosanity.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_semparallel.c -o c_code/1_1/compiler_semparallel.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_lowerings.c -o c_code/1_1/compiler_lowerings.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_pluginsupport.c -o c_code/1_1/compiler_pluginsupport.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_active.c -o c_code/1_1/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_saturate.c -o c_code/1_1/compiler_saturate.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_prettybase.c -o c_code/1_1/compiler_prettybase.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_pretty.c -o c_code/1_1/compiler_pretty.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/stdlib_xmltree.c -o c_code/1_1/stdlib_xmltree.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/stdlib_cgi.c -o c_code/1_1/stdlib_cgi.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_typesrenderer.c -o c_code/1_1/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/docutils_rstast.c -o c_code/1_1/docutils_rstast.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/docutils_rst.c -o c_code/1_1/docutils_rst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/docutils_rstgen.c -o c_code/1_1/docutils_rstgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/docutils_highlite.c -o c_code/1_1/docutils_highlite.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/stdlib_xmltree.c -o c_code/1_1/stdlib_xmltree.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/stdlib_cgi.c -o c_code/1_1/stdlib_cgi.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_typesrenderer.c -o c_code/1_1/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_guards.c -o c_code/1_1/compiler_guards.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_writetracking.c -o c_code/1_1/compiler_writetracking.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/stdlib_cookies.c -o c_code/1_1/stdlib_cookies.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/stdlib_uri.c -o c_code/1_1/stdlib_uri.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_prefixmatches.c -o c_code/1_1/compiler_prefixmatches.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_destroyer.c -o c_code/1_1/compiler_destroyer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_liftlocals.c -o c_code/1_1/compiler_liftlocals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_dfa.c -o c_code/1_1/compiler_dfa.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_vmgen.c -o c_code/1_1/compiler_vmgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_vmdeps.c -o c_code/1_1/compiler_vmdeps.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_vmmarshal.c -o c_code/1_1/compiler_vmmarshal.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_locals.c -o c_code/1_1/compiler_locals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_gorgeimpl.c -o c_code/1_1/compiler_gorgeimpl.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_active.c -o c_code/1_1/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_itersgen.c -o c_code/1_1/compiler_itersgen.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_locals.c -o c_code/1_1/compiler_locals.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_cgendata.c -o c_code/1_1/compiler_cgendata.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_ccgmerge.c -o c_code/1_1/compiler_ccgmerge.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_ndi.c -o c_code/1_1/compiler_ndi.o
@@ -312,8 +325,6 @@ windows)
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/stdlib_md5.c -o c_code/1_1/stdlib_md5.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/stdlib_net.c -o c_code/1_1/stdlib_net.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/stdlib_nativesockets.c -o c_code/1_1/stdlib_nativesockets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/stdlib_options.c -o c_code/1_1/stdlib_options.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/1_1/stdlib_typetraits.c -o c_code/1_1/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_nodejs.c -o c_code/1_1/compiler_nodejs.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_1/compiler_scriptconfig.c -o c_code/1_1/compiler_scriptconfig.o
     $LINKER -o $binDir/nim  \
@@ -342,15 +353,19 @@ c_code/1_1/stdlib_sets.o \
 c_code/1_1/stdlib_hashes.o \
 c_code/1_1/stdlib_streams.o \
 c_code/1_1/stdlib_cpuinfo.o \
+c_code/1_1/stdlib_strformat.o \
+c_code/1_1/stdlib_unicode.o \
+c_code/1_1/stdlib_colors.o \
 c_code/1_1/compiler_nversion.o \
 c_code/1_1/compiler_condsyms.o \
 c_code/1_1/compiler_idents.o \
 c_code/1_1/compiler_wordrecg.o \
 c_code/1_1/compiler_extccomp.o \
-c_code/1_1/stdlib_securehash.o \
+c_code/1_1/stdlib_sha1.o \
 c_code/1_1/stdlib_json.o \
 c_code/1_1/stdlib_lexbase.o \
-c_code/1_1/stdlib_unicode.o \
+c_code/1_1/stdlib_options.o \
+c_code/1_1/stdlib_typetraits.o \
 c_code/1_1/compiler_nimblecmd.o \
 c_code/1_1/stdlib_sequtils.o \
 c_code/1_1/stdlib_parseopt.o \
@@ -385,6 +400,7 @@ c_code/1_1/compiler_modules.o \
 c_code/1_1/compiler_ccgutils.o \
 c_code/1_1/compiler_sigmatch.o \
 c_code/1_1/compiler_modulegraphs.o \
+c_code/1_1/compiler_rod.o \
 c_code/1_1/stdlib_intsets.o \
 c_code/1_1/compiler_rodutils.o \
 c_code/1_1/compiler_pbraces.o \
@@ -392,15 +408,15 @@ c_code/1_1/compiler_filters.o \
 c_code/1_1/compiler_filter_tmpl.o \
 c_code/1_1/stdlib_memfiles.o \
 c_code/1_1/compiler_trees.o \
+c_code/1_1/compiler_modulepaths.o \
 c_code/1_1/compiler_magicsys.o \
 c_code/1_1/compiler_nimsets.o \
 c_code/1_1/compiler_reorder.o \
 c_code/1_1/compiler_bitsets.o \
-c_code/1_1/compiler_lookups.o \
-c_code/1_1/compiler_prettybase.o \
 c_code/1_1/compiler_treetab.o \
 c_code/1_1/compiler_semfold.o \
 c_code/1_1/compiler_procfind.o \
+c_code/1_1/compiler_lookups.o \
 c_code/1_1/compiler_pragmas.o \
 c_code/1_1/compiler_semtypinst.o \
 c_code/1_1/compiler_transf.o \
@@ -411,29 +427,35 @@ c_code/1_1/compiler_evaltempl.o \
 c_code/1_1/compiler_patterns.o \
 c_code/1_1/compiler_parampatterns.o \
 c_code/1_1/compiler_sempass2.o \
-c_code/1_1/compiler_pretty.o \
 c_code/1_1/compiler_semmacrosanity.o \
 c_code/1_1/compiler_semparallel.o \
 c_code/1_1/compiler_lowerings.o \
 c_code/1_1/compiler_pluginsupport.o \
-c_code/1_1/compiler_active.o \
 c_code/1_1/compiler_saturate.o \
+c_code/1_1/compiler_prettybase.o \
+c_code/1_1/compiler_pretty.o \
+c_code/1_1/stdlib_xmltree.o \
+c_code/1_1/stdlib_cgi.o \
+c_code/1_1/compiler_typesrenderer.o \
 c_code/1_1/docutils_rstast.o \
 c_code/1_1/docutils_rst.o \
 c_code/1_1/docutils_rstgen.o \
 c_code/1_1/docutils_highlite.o \
-c_code/1_1/stdlib_xmltree.o \
-c_code/1_1/stdlib_cgi.o \
-c_code/1_1/compiler_typesrenderer.o \
 c_code/1_1/compiler_guards.o \
 c_code/1_1/compiler_writetracking.o \
 c_code/1_1/stdlib_cookies.o \
+c_code/1_1/stdlib_uri.o \
 c_code/1_1/compiler_prefixmatches.o \
+c_code/1_1/compiler_destroyer.o \
+c_code/1_1/compiler_liftlocals.o \
+c_code/1_1/compiler_dfa.o \
 c_code/1_1/compiler_vmgen.o \
 c_code/1_1/compiler_vmdeps.o \
 c_code/1_1/compiler_vmmarshal.o \
-c_code/1_1/compiler_locals.o \
+c_code/1_1/compiler_gorgeimpl.o \
+c_code/1_1/compiler_active.o \
 c_code/1_1/compiler_itersgen.o \
+c_code/1_1/compiler_locals.o \
 c_code/1_1/compiler_cgendata.o \
 c_code/1_1/compiler_ccgmerge.o \
 c_code/1_1/compiler_ndi.o \
@@ -441,8 +463,6 @@ c_code/1_1/compiler_sighashes.o \
 c_code/1_1/stdlib_md5.o \
 c_code/1_1/stdlib_net.o \
 c_code/1_1/stdlib_nativesockets.o \
-c_code/1_1/stdlib_options.o \
-c_code/1_1/stdlib_typetraits.o \
 c_code/1_1/compiler_nodejs.o \
 c_code/1_1/compiler_scriptconfig.o $LINK_FLAGS
     ;;
@@ -473,15 +493,19 @@ c_code/1_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/stdlib_hashes.c -o c_code/1_2/stdlib_hashes.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/stdlib_streams.c -o c_code/1_2/stdlib_streams.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/stdlib_cpuinfo.c -o c_code/1_2/stdlib_cpuinfo.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/stdlib_strformat.c -o c_code/1_2/stdlib_strformat.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/stdlib_unicode.c -o c_code/1_2/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/stdlib_colors.c -o c_code/1_2/stdlib_colors.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_nversion.c -o c_code/1_2/compiler_nversion.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_condsyms.c -o c_code/1_2/compiler_condsyms.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_idents.c -o c_code/1_2/compiler_idents.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_wordrecg.c -o c_code/1_2/compiler_wordrecg.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_extccomp.c -o c_code/1_2/compiler_extccomp.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/stdlib_securehash.c -o c_code/1_2/stdlib_securehash.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/stdlib_sha1.c -o c_code/1_2/stdlib_sha1.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/stdlib_json.c -o c_code/1_2/stdlib_json.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/stdlib_lexbase.c -o c_code/1_2/stdlib_lexbase.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/stdlib_unicode.c -o c_code/1_2/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/stdlib_options.c -o c_code/1_2/stdlib_options.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/stdlib_typetraits.c -o c_code/1_2/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_nimblecmd.c -o c_code/1_2/compiler_nimblecmd.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/stdlib_sequtils.c -o c_code/1_2/stdlib_sequtils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/stdlib_parseopt.c -o c_code/1_2/stdlib_parseopt.o
@@ -516,6 +540,7 @@ c_code/1_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_ccgutils.c -o c_code/1_2/compiler_ccgutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_sigmatch.c -o c_code/1_2/compiler_sigmatch.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_modulegraphs.c -o c_code/1_2/compiler_modulegraphs.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_rod.c -o c_code/1_2/compiler_rod.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/stdlib_intsets.c -o c_code/1_2/stdlib_intsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_rodutils.c -o c_code/1_2/compiler_rodutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_pbraces.c -o c_code/1_2/compiler_pbraces.o
@@ -523,15 +548,15 @@ c_code/1_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_filter_tmpl.c -o c_code/1_2/compiler_filter_tmpl.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/stdlib_memfiles.c -o c_code/1_2/stdlib_memfiles.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_trees.c -o c_code/1_2/compiler_trees.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_modulepaths.c -o c_code/1_2/compiler_modulepaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_magicsys.c -o c_code/1_2/compiler_magicsys.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_nimsets.c -o c_code/1_2/compiler_nimsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_reorder.c -o c_code/1_2/compiler_reorder.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_bitsets.c -o c_code/1_2/compiler_bitsets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_lookups.c -o c_code/1_2/compiler_lookups.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_prettybase.c -o c_code/1_2/compiler_prettybase.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_treetab.c -o c_code/1_2/compiler_treetab.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_semfold.c -o c_code/1_2/compiler_semfold.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_procfind.c -o c_code/1_2/compiler_procfind.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_lookups.c -o c_code/1_2/compiler_lookups.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_pragmas.c -o c_code/1_2/compiler_pragmas.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_semtypinst.c -o c_code/1_2/compiler_semtypinst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_transf.c -o c_code/1_2/compiler_transf.o
@@ -542,29 +567,35 @@ c_code/1_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_patterns.c -o c_code/1_2/compiler_patterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_parampatterns.c -o c_code/1_2/compiler_parampatterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_sempass2.c -o c_code/1_2/compiler_sempass2.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_pretty.c -o c_code/1_2/compiler_pretty.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_semmacrosanity.c -o c_code/1_2/compiler_semmacrosanity.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_semparallel.c -o c_code/1_2/compiler_semparallel.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_lowerings.c -o c_code/1_2/compiler_lowerings.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_pluginsupport.c -o c_code/1_2/compiler_pluginsupport.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_active.c -o c_code/1_2/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_saturate.c -o c_code/1_2/compiler_saturate.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_prettybase.c -o c_code/1_2/compiler_prettybase.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_pretty.c -o c_code/1_2/compiler_pretty.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/stdlib_xmltree.c -o c_code/1_2/stdlib_xmltree.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/stdlib_cgi.c -o c_code/1_2/stdlib_cgi.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_typesrenderer.c -o c_code/1_2/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/docutils_rstast.c -o c_code/1_2/docutils_rstast.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/docutils_rst.c -o c_code/1_2/docutils_rst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/docutils_rstgen.c -o c_code/1_2/docutils_rstgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/docutils_highlite.c -o c_code/1_2/docutils_highlite.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/stdlib_xmltree.c -o c_code/1_2/stdlib_xmltree.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/stdlib_cgi.c -o c_code/1_2/stdlib_cgi.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_typesrenderer.c -o c_code/1_2/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_guards.c -o c_code/1_2/compiler_guards.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_writetracking.c -o c_code/1_2/compiler_writetracking.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/stdlib_cookies.c -o c_code/1_2/stdlib_cookies.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/stdlib_uri.c -o c_code/1_2/stdlib_uri.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_prefixmatches.c -o c_code/1_2/compiler_prefixmatches.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_destroyer.c -o c_code/1_2/compiler_destroyer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_liftlocals.c -o c_code/1_2/compiler_liftlocals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_dfa.c -o c_code/1_2/compiler_dfa.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_vmgen.c -o c_code/1_2/compiler_vmgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_vmdeps.c -o c_code/1_2/compiler_vmdeps.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_vmmarshal.c -o c_code/1_2/compiler_vmmarshal.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_locals.c -o c_code/1_2/compiler_locals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_gorgeimpl.c -o c_code/1_2/compiler_gorgeimpl.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_active.c -o c_code/1_2/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_itersgen.c -o c_code/1_2/compiler_itersgen.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_locals.c -o c_code/1_2/compiler_locals.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_cgendata.c -o c_code/1_2/compiler_cgendata.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_ccgmerge.c -o c_code/1_2/compiler_ccgmerge.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_ndi.c -o c_code/1_2/compiler_ndi.o
@@ -572,8 +603,6 @@ c_code/1_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/stdlib_md5.c -o c_code/1_2/stdlib_md5.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/stdlib_net.c -o c_code/1_2/stdlib_net.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/stdlib_nativesockets.c -o c_code/1_2/stdlib_nativesockets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/stdlib_options.c -o c_code/1_2/stdlib_options.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/1_2/stdlib_typetraits.c -o c_code/1_2/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_nodejs.c -o c_code/1_2/compiler_nodejs.o
     $CC $COMP_FLAGS -Ic_code -c c_code/1_2/compiler_scriptconfig.c -o c_code/1_2/compiler_scriptconfig.o
     $LINKER -o $binDir/nim  \
@@ -602,15 +631,19 @@ c_code/1_2/stdlib_sets.o \
 c_code/1_2/stdlib_hashes.o \
 c_code/1_2/stdlib_streams.o \
 c_code/1_2/stdlib_cpuinfo.o \
+c_code/1_2/stdlib_strformat.o \
+c_code/1_2/stdlib_unicode.o \
+c_code/1_2/stdlib_colors.o \
 c_code/1_2/compiler_nversion.o \
 c_code/1_2/compiler_condsyms.o \
 c_code/1_2/compiler_idents.o \
 c_code/1_2/compiler_wordrecg.o \
 c_code/1_2/compiler_extccomp.o \
-c_code/1_2/stdlib_securehash.o \
+c_code/1_2/stdlib_sha1.o \
 c_code/1_2/stdlib_json.o \
 c_code/1_2/stdlib_lexbase.o \
-c_code/1_2/stdlib_unicode.o \
+c_code/1_2/stdlib_options.o \
+c_code/1_2/stdlib_typetraits.o \
 c_code/1_2/compiler_nimblecmd.o \
 c_code/1_2/stdlib_sequtils.o \
 c_code/1_2/stdlib_parseopt.o \
@@ -645,6 +678,7 @@ c_code/1_2/compiler_modules.o \
 c_code/1_2/compiler_ccgutils.o \
 c_code/1_2/compiler_sigmatch.o \
 c_code/1_2/compiler_modulegraphs.o \
+c_code/1_2/compiler_rod.o \
 c_code/1_2/stdlib_intsets.o \
 c_code/1_2/compiler_rodutils.o \
 c_code/1_2/compiler_pbraces.o \
@@ -652,15 +686,15 @@ c_code/1_2/compiler_filters.o \
 c_code/1_2/compiler_filter_tmpl.o \
 c_code/1_2/stdlib_memfiles.o \
 c_code/1_2/compiler_trees.o \
+c_code/1_2/compiler_modulepaths.o \
 c_code/1_2/compiler_magicsys.o \
 c_code/1_2/compiler_nimsets.o \
 c_code/1_2/compiler_reorder.o \
 c_code/1_2/compiler_bitsets.o \
-c_code/1_2/compiler_lookups.o \
-c_code/1_2/compiler_prettybase.o \
 c_code/1_2/compiler_treetab.o \
 c_code/1_2/compiler_semfold.o \
 c_code/1_2/compiler_procfind.o \
+c_code/1_2/compiler_lookups.o \
 c_code/1_2/compiler_pragmas.o \
 c_code/1_2/compiler_semtypinst.o \
 c_code/1_2/compiler_transf.o \
@@ -671,29 +705,35 @@ c_code/1_2/compiler_evaltempl.o \
 c_code/1_2/compiler_patterns.o \
 c_code/1_2/compiler_parampatterns.o \
 c_code/1_2/compiler_sempass2.o \
-c_code/1_2/compiler_pretty.o \
 c_code/1_2/compiler_semmacrosanity.o \
 c_code/1_2/compiler_semparallel.o \
 c_code/1_2/compiler_lowerings.o \
 c_code/1_2/compiler_pluginsupport.o \
-c_code/1_2/compiler_active.o \
 c_code/1_2/compiler_saturate.o \
+c_code/1_2/compiler_prettybase.o \
+c_code/1_2/compiler_pretty.o \
+c_code/1_2/stdlib_xmltree.o \
+c_code/1_2/stdlib_cgi.o \
+c_code/1_2/compiler_typesrenderer.o \
 c_code/1_2/docutils_rstast.o \
 c_code/1_2/docutils_rst.o \
 c_code/1_2/docutils_rstgen.o \
 c_code/1_2/docutils_highlite.o \
-c_code/1_2/stdlib_xmltree.o \
-c_code/1_2/stdlib_cgi.o \
-c_code/1_2/compiler_typesrenderer.o \
 c_code/1_2/compiler_guards.o \
 c_code/1_2/compiler_writetracking.o \
 c_code/1_2/stdlib_cookies.o \
+c_code/1_2/stdlib_uri.o \
 c_code/1_2/compiler_prefixmatches.o \
+c_code/1_2/compiler_destroyer.o \
+c_code/1_2/compiler_liftlocals.o \
+c_code/1_2/compiler_dfa.o \
 c_code/1_2/compiler_vmgen.o \
 c_code/1_2/compiler_vmdeps.o \
 c_code/1_2/compiler_vmmarshal.o \
-c_code/1_2/compiler_locals.o \
+c_code/1_2/compiler_gorgeimpl.o \
+c_code/1_2/compiler_active.o \
 c_code/1_2/compiler_itersgen.o \
+c_code/1_2/compiler_locals.o \
 c_code/1_2/compiler_cgendata.o \
 c_code/1_2/compiler_ccgmerge.o \
 c_code/1_2/compiler_ndi.o \
@@ -701,8 +741,6 @@ c_code/1_2/compiler_sighashes.o \
 c_code/1_2/stdlib_md5.o \
 c_code/1_2/stdlib_net.o \
 c_code/1_2/stdlib_nativesockets.o \
-c_code/1_2/stdlib_options.o \
-c_code/1_2/stdlib_typetraits.o \
 c_code/1_2/compiler_nodejs.o \
 c_code/1_2/compiler_scriptconfig.o $LINK_FLAGS
     ;;
@@ -785,16 +823,20 @@ linux)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_streams.c -o c_code/2_1/stdlib_streams.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cpuinfo.c -o c_code/2_1/stdlib_cpuinfo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_linux.c -o c_code/2_1/stdlib_linux.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_strformat.c -o c_code/2_1/stdlib_strformat.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_unicode.c -o c_code/2_1/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_colors.c -o c_code/2_1/stdlib_colors.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_termios.c -o c_code/2_1/stdlib_termios.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nversion.c -o c_code/2_1/compiler_nversion.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_condsyms.c -o c_code/2_1/compiler_condsyms.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_idents.c -o c_code/2_1/compiler_idents.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_wordrecg.c -o c_code/2_1/compiler_wordrecg.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_extccomp.c -o c_code/2_1/compiler_extccomp.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_securehash.c -o c_code/2_1/stdlib_securehash.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_sha1.c -o c_code/2_1/stdlib_sha1.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_json.c -o c_code/2_1/stdlib_json.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_lexbase.c -o c_code/2_1/stdlib_lexbase.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_unicode.c -o c_code/2_1/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_options.c -o c_code/2_1/stdlib_options.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_typetraits.c -o c_code/2_1/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nimblecmd.c -o c_code/2_1/compiler_nimblecmd.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_sequtils.c -o c_code/2_1/stdlib_sequtils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_parseopt.c -o c_code/2_1/stdlib_parseopt.o
@@ -829,6 +871,7 @@ linux)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ccgutils.c -o c_code/2_1/compiler_ccgutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_sigmatch.c -o c_code/2_1/compiler_sigmatch.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_modulegraphs.c -o c_code/2_1/compiler_modulegraphs.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rod.c -o c_code/2_1/compiler_rod.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_intsets.c -o c_code/2_1/stdlib_intsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rodutils.c -o c_code/2_1/compiler_rodutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pbraces.c -o c_code/2_1/compiler_pbraces.o
@@ -836,15 +879,15 @@ linux)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_filter_tmpl.c -o c_code/2_1/compiler_filter_tmpl.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_memfiles.c -o c_code/2_1/stdlib_memfiles.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_trees.c -o c_code/2_1/compiler_trees.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_modulepaths.c -o c_code/2_1/compiler_modulepaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_magicsys.c -o c_code/2_1/compiler_magicsys.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nimsets.c -o c_code/2_1/compiler_nimsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_reorder.c -o c_code/2_1/compiler_reorder.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_bitsets.c -o c_code/2_1/compiler_bitsets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lookups.c -o c_code/2_1/compiler_lookups.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_prettybase.c -o c_code/2_1/compiler_prettybase.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_treetab.c -o c_code/2_1/compiler_treetab.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semfold.c -o c_code/2_1/compiler_semfold.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_procfind.c -o c_code/2_1/compiler_procfind.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lookups.c -o c_code/2_1/compiler_lookups.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pragmas.c -o c_code/2_1/compiler_pragmas.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semtypinst.c -o c_code/2_1/compiler_semtypinst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_transf.c -o c_code/2_1/compiler_transf.o
@@ -855,29 +898,35 @@ linux)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_patterns.c -o c_code/2_1/compiler_patterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_parampatterns.c -o c_code/2_1/compiler_parampatterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_sempass2.c -o c_code/2_1/compiler_sempass2.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pretty.c -o c_code/2_1/compiler_pretty.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semmacrosanity.c -o c_code/2_1/compiler_semmacrosanity.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semparallel.c -o c_code/2_1/compiler_semparallel.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lowerings.c -o c_code/2_1/compiler_lowerings.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pluginsupport.c -o c_code/2_1/compiler_pluginsupport.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_active.c -o c_code/2_1/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_saturate.c -o c_code/2_1/compiler_saturate.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_prettybase.c -o c_code/2_1/compiler_prettybase.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pretty.c -o c_code/2_1/compiler_pretty.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_xmltree.c -o c_code/2_1/stdlib_xmltree.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cgi.c -o c_code/2_1/stdlib_cgi.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_typesrenderer.c -o c_code/2_1/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rstast.c -o c_code/2_1/docutils_rstast.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rst.c -o c_code/2_1/docutils_rst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rstgen.c -o c_code/2_1/docutils_rstgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_highlite.c -o c_code/2_1/docutils_highlite.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_xmltree.c -o c_code/2_1/stdlib_xmltree.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cgi.c -o c_code/2_1/stdlib_cgi.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_typesrenderer.c -o c_code/2_1/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_guards.c -o c_code/2_1/compiler_guards.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_writetracking.c -o c_code/2_1/compiler_writetracking.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cookies.c -o c_code/2_1/stdlib_cookies.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_uri.c -o c_code/2_1/stdlib_uri.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_prefixmatches.c -o c_code/2_1/compiler_prefixmatches.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_destroyer.c -o c_code/2_1/compiler_destroyer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_liftlocals.c -o c_code/2_1/compiler_liftlocals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_dfa.c -o c_code/2_1/compiler_dfa.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmgen.c -o c_code/2_1/compiler_vmgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmdeps.c -o c_code/2_1/compiler_vmdeps.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmmarshal.c -o c_code/2_1/compiler_vmmarshal.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_locals.c -o c_code/2_1/compiler_locals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_gorgeimpl.c -o c_code/2_1/compiler_gorgeimpl.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_active.c -o c_code/2_1/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_itersgen.c -o c_code/2_1/compiler_itersgen.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_locals.c -o c_code/2_1/compiler_locals.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_cgendata.c -o c_code/2_1/compiler_cgendata.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ccgmerge.c -o c_code/2_1/compiler_ccgmerge.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ndi.c -o c_code/2_1/compiler_ndi.o
@@ -886,8 +935,6 @@ linux)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_dynlib.c -o c_code/2_1/stdlib_dynlib.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_net.c -o c_code/2_1/stdlib_net.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_nativesockets.c -o c_code/2_1/stdlib_nativesockets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_options.c -o c_code/2_1/stdlib_options.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_typetraits.c -o c_code/2_1/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nodejs.c -o c_code/2_1/compiler_nodejs.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_scriptconfig.c -o c_code/2_1/compiler_scriptconfig.o
     $LINKER -o $binDir/nim  \
@@ -916,16 +963,20 @@ c_code/2_1/stdlib_hashes.o \
 c_code/2_1/stdlib_streams.o \
 c_code/2_1/stdlib_cpuinfo.o \
 c_code/2_1/stdlib_linux.o \
+c_code/2_1/stdlib_strformat.o \
+c_code/2_1/stdlib_unicode.o \
+c_code/2_1/stdlib_colors.o \
 c_code/2_1/stdlib_termios.o \
 c_code/2_1/compiler_nversion.o \
 c_code/2_1/compiler_condsyms.o \
 c_code/2_1/compiler_idents.o \
 c_code/2_1/compiler_wordrecg.o \
 c_code/2_1/compiler_extccomp.o \
-c_code/2_1/stdlib_securehash.o \
+c_code/2_1/stdlib_sha1.o \
 c_code/2_1/stdlib_json.o \
 c_code/2_1/stdlib_lexbase.o \
-c_code/2_1/stdlib_unicode.o \
+c_code/2_1/stdlib_options.o \
+c_code/2_1/stdlib_typetraits.o \
 c_code/2_1/compiler_nimblecmd.o \
 c_code/2_1/stdlib_sequtils.o \
 c_code/2_1/stdlib_parseopt.o \
@@ -960,6 +1011,7 @@ c_code/2_1/compiler_modules.o \
 c_code/2_1/compiler_ccgutils.o \
 c_code/2_1/compiler_sigmatch.o \
 c_code/2_1/compiler_modulegraphs.o \
+c_code/2_1/compiler_rod.o \
 c_code/2_1/stdlib_intsets.o \
 c_code/2_1/compiler_rodutils.o \
 c_code/2_1/compiler_pbraces.o \
@@ -967,15 +1019,15 @@ c_code/2_1/compiler_filters.o \
 c_code/2_1/compiler_filter_tmpl.o \
 c_code/2_1/stdlib_memfiles.o \
 c_code/2_1/compiler_trees.o \
+c_code/2_1/compiler_modulepaths.o \
 c_code/2_1/compiler_magicsys.o \
 c_code/2_1/compiler_nimsets.o \
 c_code/2_1/compiler_reorder.o \
 c_code/2_1/compiler_bitsets.o \
-c_code/2_1/compiler_lookups.o \
-c_code/2_1/compiler_prettybase.o \
 c_code/2_1/compiler_treetab.o \
 c_code/2_1/compiler_semfold.o \
 c_code/2_1/compiler_procfind.o \
+c_code/2_1/compiler_lookups.o \
 c_code/2_1/compiler_pragmas.o \
 c_code/2_1/compiler_semtypinst.o \
 c_code/2_1/compiler_transf.o \
@@ -986,29 +1038,35 @@ c_code/2_1/compiler_evaltempl.o \
 c_code/2_1/compiler_patterns.o \
 c_code/2_1/compiler_parampatterns.o \
 c_code/2_1/compiler_sempass2.o \
-c_code/2_1/compiler_pretty.o \
 c_code/2_1/compiler_semmacrosanity.o \
 c_code/2_1/compiler_semparallel.o \
 c_code/2_1/compiler_lowerings.o \
 c_code/2_1/compiler_pluginsupport.o \
-c_code/2_1/compiler_active.o \
 c_code/2_1/compiler_saturate.o \
+c_code/2_1/compiler_prettybase.o \
+c_code/2_1/compiler_pretty.o \
+c_code/2_1/stdlib_xmltree.o \
+c_code/2_1/stdlib_cgi.o \
+c_code/2_1/compiler_typesrenderer.o \
 c_code/2_1/docutils_rstast.o \
 c_code/2_1/docutils_rst.o \
 c_code/2_1/docutils_rstgen.o \
 c_code/2_1/docutils_highlite.o \
-c_code/2_1/stdlib_xmltree.o \
-c_code/2_1/stdlib_cgi.o \
-c_code/2_1/compiler_typesrenderer.o \
 c_code/2_1/compiler_guards.o \
 c_code/2_1/compiler_writetracking.o \
 c_code/2_1/stdlib_cookies.o \
+c_code/2_1/stdlib_uri.o \
 c_code/2_1/compiler_prefixmatches.o \
+c_code/2_1/compiler_destroyer.o \
+c_code/2_1/compiler_liftlocals.o \
+c_code/2_1/compiler_dfa.o \
 c_code/2_1/compiler_vmgen.o \
 c_code/2_1/compiler_vmdeps.o \
 c_code/2_1/compiler_vmmarshal.o \
-c_code/2_1/compiler_locals.o \
+c_code/2_1/compiler_gorgeimpl.o \
+c_code/2_1/compiler_active.o \
 c_code/2_1/compiler_itersgen.o \
+c_code/2_1/compiler_locals.o \
 c_code/2_1/compiler_cgendata.o \
 c_code/2_1/compiler_ccgmerge.o \
 c_code/2_1/compiler_ndi.o \
@@ -1017,8 +1075,6 @@ c_code/2_1/stdlib_md5.o \
 c_code/2_1/stdlib_dynlib.o \
 c_code/2_1/stdlib_net.o \
 c_code/2_1/stdlib_nativesockets.o \
-c_code/2_1/stdlib_options.o \
-c_code/2_1/stdlib_typetraits.o \
 c_code/2_1/compiler_nodejs.o \
 c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     ;;
@@ -1049,16 +1105,20 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_streams.c -o c_code/2_2/stdlib_streams.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cpuinfo.c -o c_code/2_2/stdlib_cpuinfo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_linux.c -o c_code/2_2/stdlib_linux.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_strformat.c -o c_code/2_2/stdlib_strformat.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_unicode.c -o c_code/2_2/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_colors.c -o c_code/2_2/stdlib_colors.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_termios.c -o c_code/2_2/stdlib_termios.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nversion.c -o c_code/2_2/compiler_nversion.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_condsyms.c -o c_code/2_2/compiler_condsyms.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_idents.c -o c_code/2_2/compiler_idents.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_wordrecg.c -o c_code/2_2/compiler_wordrecg.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_extccomp.c -o c_code/2_2/compiler_extccomp.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_securehash.c -o c_code/2_2/stdlib_securehash.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_sha1.c -o c_code/2_2/stdlib_sha1.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_json.c -o c_code/2_2/stdlib_json.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_lexbase.c -o c_code/2_2/stdlib_lexbase.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_unicode.c -o c_code/2_2/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_options.c -o c_code/2_2/stdlib_options.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_typetraits.c -o c_code/2_2/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nimblecmd.c -o c_code/2_2/compiler_nimblecmd.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_sequtils.c -o c_code/2_2/stdlib_sequtils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_parseopt.c -o c_code/2_2/stdlib_parseopt.o
@@ -1093,6 +1153,7 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ccgutils.c -o c_code/2_2/compiler_ccgutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_sigmatch.c -o c_code/2_2/compiler_sigmatch.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_modulegraphs.c -o c_code/2_2/compiler_modulegraphs.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rod.c -o c_code/2_2/compiler_rod.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_intsets.c -o c_code/2_2/stdlib_intsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodutils.c -o c_code/2_2/compiler_rodutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pbraces.c -o c_code/2_2/compiler_pbraces.o
@@ -1100,15 +1161,15 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_filter_tmpl.c -o c_code/2_2/compiler_filter_tmpl.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_memfiles.c -o c_code/2_2/stdlib_memfiles.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_trees.c -o c_code/2_2/compiler_trees.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_modulepaths.c -o c_code/2_2/compiler_modulepaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_magicsys.c -o c_code/2_2/compiler_magicsys.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nimsets.c -o c_code/2_2/compiler_nimsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_reorder.c -o c_code/2_2/compiler_reorder.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_bitsets.c -o c_code/2_2/compiler_bitsets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lookups.c -o c_code/2_2/compiler_lookups.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_prettybase.c -o c_code/2_2/compiler_prettybase.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_treetab.c -o c_code/2_2/compiler_treetab.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semfold.c -o c_code/2_2/compiler_semfold.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_procfind.c -o c_code/2_2/compiler_procfind.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lookups.c -o c_code/2_2/compiler_lookups.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pragmas.c -o c_code/2_2/compiler_pragmas.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semtypinst.c -o c_code/2_2/compiler_semtypinst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_transf.c -o c_code/2_2/compiler_transf.o
@@ -1119,29 +1180,35 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_patterns.c -o c_code/2_2/compiler_patterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_parampatterns.c -o c_code/2_2/compiler_parampatterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_sempass2.c -o c_code/2_2/compiler_sempass2.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pretty.c -o c_code/2_2/compiler_pretty.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semmacrosanity.c -o c_code/2_2/compiler_semmacrosanity.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semparallel.c -o c_code/2_2/compiler_semparallel.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lowerings.c -o c_code/2_2/compiler_lowerings.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pluginsupport.c -o c_code/2_2/compiler_pluginsupport.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_active.c -o c_code/2_2/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_saturate.c -o c_code/2_2/compiler_saturate.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_prettybase.c -o c_code/2_2/compiler_prettybase.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pretty.c -o c_code/2_2/compiler_pretty.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_xmltree.c -o c_code/2_2/stdlib_xmltree.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cgi.c -o c_code/2_2/stdlib_cgi.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_typesrenderer.c -o c_code/2_2/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_rstast.c -o c_code/2_2/docutils_rstast.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_rst.c -o c_code/2_2/docutils_rst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_rstgen.c -o c_code/2_2/docutils_rstgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_highlite.c -o c_code/2_2/docutils_highlite.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_xmltree.c -o c_code/2_2/stdlib_xmltree.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cgi.c -o c_code/2_2/stdlib_cgi.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_typesrenderer.c -o c_code/2_2/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_guards.c -o c_code/2_2/compiler_guards.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_writetracking.c -o c_code/2_2/compiler_writetracking.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cookies.c -o c_code/2_2/stdlib_cookies.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_uri.c -o c_code/2_2/stdlib_uri.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_prefixmatches.c -o c_code/2_2/compiler_prefixmatches.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_destroyer.c -o c_code/2_2/compiler_destroyer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_liftlocals.c -o c_code/2_2/compiler_liftlocals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_dfa.c -o c_code/2_2/compiler_dfa.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_vmgen.c -o c_code/2_2/compiler_vmgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_vmdeps.c -o c_code/2_2/compiler_vmdeps.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_vmmarshal.c -o c_code/2_2/compiler_vmmarshal.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_locals.c -o c_code/2_2/compiler_locals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_gorgeimpl.c -o c_code/2_2/compiler_gorgeimpl.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_active.c -o c_code/2_2/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_itersgen.c -o c_code/2_2/compiler_itersgen.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_locals.c -o c_code/2_2/compiler_locals.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_cgendata.c -o c_code/2_2/compiler_cgendata.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ccgmerge.c -o c_code/2_2/compiler_ccgmerge.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ndi.c -o c_code/2_2/compiler_ndi.o
@@ -1150,8 +1217,6 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_dynlib.c -o c_code/2_2/stdlib_dynlib.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_net.c -o c_code/2_2/stdlib_net.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_nativesockets.c -o c_code/2_2/stdlib_nativesockets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_options.c -o c_code/2_2/stdlib_options.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_typetraits.c -o c_code/2_2/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nodejs.c -o c_code/2_2/compiler_nodejs.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_scriptconfig.c -o c_code/2_2/compiler_scriptconfig.o
     $LINKER -o $binDir/nim  \
@@ -1180,16 +1245,20 @@ c_code/2_2/stdlib_hashes.o \
 c_code/2_2/stdlib_streams.o \
 c_code/2_2/stdlib_cpuinfo.o \
 c_code/2_2/stdlib_linux.o \
+c_code/2_2/stdlib_strformat.o \
+c_code/2_2/stdlib_unicode.o \
+c_code/2_2/stdlib_colors.o \
 c_code/2_2/stdlib_termios.o \
 c_code/2_2/compiler_nversion.o \
 c_code/2_2/compiler_condsyms.o \
 c_code/2_2/compiler_idents.o \
 c_code/2_2/compiler_wordrecg.o \
 c_code/2_2/compiler_extccomp.o \
-c_code/2_2/stdlib_securehash.o \
+c_code/2_2/stdlib_sha1.o \
 c_code/2_2/stdlib_json.o \
 c_code/2_2/stdlib_lexbase.o \
-c_code/2_2/stdlib_unicode.o \
+c_code/2_2/stdlib_options.o \
+c_code/2_2/stdlib_typetraits.o \
 c_code/2_2/compiler_nimblecmd.o \
 c_code/2_2/stdlib_sequtils.o \
 c_code/2_2/stdlib_parseopt.o \
@@ -1224,6 +1293,7 @@ c_code/2_2/compiler_modules.o \
 c_code/2_2/compiler_ccgutils.o \
 c_code/2_2/compiler_sigmatch.o \
 c_code/2_2/compiler_modulegraphs.o \
+c_code/2_2/compiler_rod.o \
 c_code/2_2/stdlib_intsets.o \
 c_code/2_2/compiler_rodutils.o \
 c_code/2_2/compiler_pbraces.o \
@@ -1231,15 +1301,15 @@ c_code/2_2/compiler_filters.o \
 c_code/2_2/compiler_filter_tmpl.o \
 c_code/2_2/stdlib_memfiles.o \
 c_code/2_2/compiler_trees.o \
+c_code/2_2/compiler_modulepaths.o \
 c_code/2_2/compiler_magicsys.o \
 c_code/2_2/compiler_nimsets.o \
 c_code/2_2/compiler_reorder.o \
 c_code/2_2/compiler_bitsets.o \
-c_code/2_2/compiler_lookups.o \
-c_code/2_2/compiler_prettybase.o \
 c_code/2_2/compiler_treetab.o \
 c_code/2_2/compiler_semfold.o \
 c_code/2_2/compiler_procfind.o \
+c_code/2_2/compiler_lookups.o \
 c_code/2_2/compiler_pragmas.o \
 c_code/2_2/compiler_semtypinst.o \
 c_code/2_2/compiler_transf.o \
@@ -1250,29 +1320,35 @@ c_code/2_2/compiler_evaltempl.o \
 c_code/2_2/compiler_patterns.o \
 c_code/2_2/compiler_parampatterns.o \
 c_code/2_2/compiler_sempass2.o \
-c_code/2_2/compiler_pretty.o \
 c_code/2_2/compiler_semmacrosanity.o \
 c_code/2_2/compiler_semparallel.o \
 c_code/2_2/compiler_lowerings.o \
 c_code/2_2/compiler_pluginsupport.o \
-c_code/2_2/compiler_active.o \
 c_code/2_2/compiler_saturate.o \
+c_code/2_2/compiler_prettybase.o \
+c_code/2_2/compiler_pretty.o \
+c_code/2_2/stdlib_xmltree.o \
+c_code/2_2/stdlib_cgi.o \
+c_code/2_2/compiler_typesrenderer.o \
 c_code/2_2/docutils_rstast.o \
 c_code/2_2/docutils_rst.o \
 c_code/2_2/docutils_rstgen.o \
 c_code/2_2/docutils_highlite.o \
-c_code/2_2/stdlib_xmltree.o \
-c_code/2_2/stdlib_cgi.o \
-c_code/2_2/compiler_typesrenderer.o \
 c_code/2_2/compiler_guards.o \
 c_code/2_2/compiler_writetracking.o \
 c_code/2_2/stdlib_cookies.o \
+c_code/2_2/stdlib_uri.o \
 c_code/2_2/compiler_prefixmatches.o \
+c_code/2_2/compiler_destroyer.o \
+c_code/2_2/compiler_liftlocals.o \
+c_code/2_2/compiler_dfa.o \
 c_code/2_2/compiler_vmgen.o \
 c_code/2_2/compiler_vmdeps.o \
 c_code/2_2/compiler_vmmarshal.o \
-c_code/2_2/compiler_locals.o \
+c_code/2_2/compiler_gorgeimpl.o \
+c_code/2_2/compiler_active.o \
 c_code/2_2/compiler_itersgen.o \
+c_code/2_2/compiler_locals.o \
 c_code/2_2/compiler_cgendata.o \
 c_code/2_2/compiler_ccgmerge.o \
 c_code/2_2/compiler_ndi.o \
@@ -1281,8 +1357,6 @@ c_code/2_2/stdlib_md5.o \
 c_code/2_2/stdlib_dynlib.o \
 c_code/2_2/stdlib_net.o \
 c_code/2_2/stdlib_nativesockets.o \
-c_code/2_2/stdlib_options.o \
-c_code/2_2/stdlib_typetraits.o \
 c_code/2_2/compiler_nodejs.o \
 c_code/2_2/compiler_scriptconfig.o $LINK_FLAGS
     ;;
@@ -1313,16 +1387,20 @@ c_code/2_2/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_streams.c -o c_code/2_3/stdlib_streams.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_cpuinfo.c -o c_code/2_3/stdlib_cpuinfo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_linux.c -o c_code/2_2/stdlib_linux.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_strformat.c -o c_code/2_2/stdlib_strformat.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_unicode.c -o c_code/2_2/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_colors.c -o c_code/2_2/stdlib_colors.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_termios.c -o c_code/2_2/stdlib_termios.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nversion.c -o c_code/2_2/compiler_nversion.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_condsyms.c -o c_code/2_2/compiler_condsyms.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_idents.c -o c_code/2_2/compiler_idents.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_wordrecg.c -o c_code/2_2/compiler_wordrecg.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_extccomp.c -o c_code/2_3/compiler_extccomp.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_securehash.c -o c_code/2_2/stdlib_securehash.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_json.c -o c_code/2_2/stdlib_json.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_sha1.c -o c_code/2_2/stdlib_sha1.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_json.c -o c_code/2_3/stdlib_json.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_lexbase.c -o c_code/2_2/stdlib_lexbase.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_unicode.c -o c_code/2_2/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_options.c -o c_code/2_2/stdlib_options.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_typetraits.c -o c_code/2_2/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_nimblecmd.c -o c_code/2_3/compiler_nimblecmd.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_sequtils.c -o c_code/2_2/stdlib_sequtils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_parseopt.c -o c_code/2_2/stdlib_parseopt.o
@@ -1335,7 +1413,7 @@ c_code/2_2/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_astalgo.c -o c_code/2_2/compiler_astalgo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_syntaxes.c -o c_code/2_2/compiler_syntaxes.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_renderer.c -o c_code/2_2/compiler_renderer.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_rodread.c -o c_code/2_3/compiler_rodread.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodread.c -o c_code/2_2/compiler_rodread.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodwrite.c -o c_code/2_2/compiler_rodwrite.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_sem.c -o c_code/2_3/compiler_sem.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semdata.c -o c_code/2_2/compiler_semdata.o
@@ -1343,7 +1421,7 @@ c_code/2_2/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_docgen.c -o c_code/2_2/compiler_docgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_cgen.c -o c_code/2_2/compiler_cgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_jsgen.c -o c_code/2_2/compiler_jsgen.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_importer.c -o c_code/2_3/compiler_importer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_importer.c -o c_code/2_2/compiler_importer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_passaux.c -o c_code/2_2/compiler_passaux.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_depends.c -o c_code/2_2/compiler_depends.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_vm.c -o c_code/2_3/compiler_vm.o
@@ -1357,22 +1435,23 @@ c_code/2_2/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ccgutils.c -o c_code/2_2/compiler_ccgutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_sigmatch.c -o c_code/2_3/compiler_sigmatch.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_modulegraphs.c -o c_code/2_2/compiler_modulegraphs.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rod.c -o c_code/2_2/compiler_rod.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_intsets.c -o c_code/2_2/stdlib_intsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodutils.c -o c_code/2_2/compiler_rodutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pbraces.c -o c_code/2_2/compiler_pbraces.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_filters.c -o c_code/2_2/compiler_filters.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_filter_tmpl.c -o c_code/2_2/compiler_filter_tmpl.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_memfiles.c -o c_code/2_3/stdlib_memfiles.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_memfiles.c -o c_code/2_2/stdlib_memfiles.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_trees.c -o c_code/2_2/compiler_trees.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_modulepaths.c -o c_code/2_3/compiler_modulepaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_magicsys.c -o c_code/2_2/compiler_magicsys.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nimsets.c -o c_code/2_2/compiler_nimsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_reorder.c -o c_code/2_2/compiler_reorder.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_bitsets.c -o c_code/2_2/compiler_bitsets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lookups.c -o c_code/2_2/compiler_lookups.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_prettybase.c -o c_code/2_3/compiler_prettybase.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_treetab.c -o c_code/2_2/compiler_treetab.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_semfold.c -o c_code/2_3/compiler_semfold.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_procfind.c -o c_code/2_2/compiler_procfind.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lookups.c -o c_code/2_2/compiler_lookups.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_pragmas.c -o c_code/2_3/compiler_pragmas.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semtypinst.c -o c_code/2_2/compiler_semtypinst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_transf.c -o c_code/2_2/compiler_transf.o
@@ -1383,29 +1462,35 @@ c_code/2_2/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_patterns.c -o c_code/2_2/compiler_patterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_parampatterns.c -o c_code/2_2/compiler_parampatterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_sempass2.c -o c_code/2_2/compiler_sempass2.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pretty.c -o c_code/2_2/compiler_pretty.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semmacrosanity.c -o c_code/2_2/compiler_semmacrosanity.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semparallel.c -o c_code/2_2/compiler_semparallel.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lowerings.c -o c_code/2_2/compiler_lowerings.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pluginsupport.c -o c_code/2_2/compiler_pluginsupport.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_active.c -o c_code/2_2/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_saturate.c -o c_code/2_2/compiler_saturate.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_prettybase.c -o c_code/2_3/compiler_prettybase.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pretty.c -o c_code/2_2/compiler_pretty.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_xmltree.c -o c_code/2_2/stdlib_xmltree.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cgi.c -o c_code/2_2/stdlib_cgi.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_typesrenderer.c -o c_code/2_2/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_rstast.c -o c_code/2_2/docutils_rstast.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_rst.c -o c_code/2_2/docutils_rst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/docutils_rstgen.c -o c_code/2_3/docutils_rstgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_highlite.c -o c_code/2_2/docutils_highlite.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_xmltree.c -o c_code/2_2/stdlib_xmltree.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cgi.c -o c_code/2_2/stdlib_cgi.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_typesrenderer.c -o c_code/2_2/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_guards.c -o c_code/2_2/compiler_guards.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_writetracking.c -o c_code/2_2/compiler_writetracking.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cookies.c -o c_code/2_2/stdlib_cookies.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_uri.c -o c_code/2_2/stdlib_uri.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_prefixmatches.c -o c_code/2_2/compiler_prefixmatches.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_destroyer.c -o c_code/2_2/compiler_destroyer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_liftlocals.c -o c_code/2_2/compiler_liftlocals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_dfa.c -o c_code/2_2/compiler_dfa.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_vmgen.c -o c_code/2_2/compiler_vmgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_vmdeps.c -o c_code/2_3/compiler_vmdeps.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_vmmarshal.c -o c_code/2_2/compiler_vmmarshal.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_locals.c -o c_code/2_2/compiler_locals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_gorgeimpl.c -o c_code/2_3/compiler_gorgeimpl.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_active.c -o c_code/2_2/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_itersgen.c -o c_code/2_2/compiler_itersgen.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_locals.c -o c_code/2_2/compiler_locals.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_cgendata.c -o c_code/2_2/compiler_cgendata.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ccgmerge.c -o c_code/2_2/compiler_ccgmerge.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ndi.c -o c_code/2_2/compiler_ndi.o
@@ -1414,8 +1499,6 @@ c_code/2_2/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_dynlib.c -o c_code/2_2/stdlib_dynlib.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_net.c -o c_code/2_2/stdlib_net.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_nativesockets.c -o c_code/2_3/stdlib_nativesockets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_options.c -o c_code/2_2/stdlib_options.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_typetraits.c -o c_code/2_2/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nodejs.c -o c_code/2_2/compiler_nodejs.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_scriptconfig.c -o c_code/2_3/compiler_scriptconfig.o
     $LINKER -o $binDir/nim  \
@@ -1444,16 +1527,20 @@ c_code/2_2/stdlib_hashes.o \
 c_code/2_3/stdlib_streams.o \
 c_code/2_3/stdlib_cpuinfo.o \
 c_code/2_2/stdlib_linux.o \
+c_code/2_2/stdlib_strformat.o \
+c_code/2_2/stdlib_unicode.o \
+c_code/2_2/stdlib_colors.o \
 c_code/2_2/stdlib_termios.o \
 c_code/2_2/compiler_nversion.o \
 c_code/2_2/compiler_condsyms.o \
 c_code/2_2/compiler_idents.o \
 c_code/2_2/compiler_wordrecg.o \
 c_code/2_3/compiler_extccomp.o \
-c_code/2_2/stdlib_securehash.o \
-c_code/2_2/stdlib_json.o \
+c_code/2_2/stdlib_sha1.o \
+c_code/2_3/stdlib_json.o \
 c_code/2_2/stdlib_lexbase.o \
-c_code/2_2/stdlib_unicode.o \
+c_code/2_2/stdlib_options.o \
+c_code/2_2/stdlib_typetraits.o \
 c_code/2_3/compiler_nimblecmd.o \
 c_code/2_2/stdlib_sequtils.o \
 c_code/2_2/stdlib_parseopt.o \
@@ -1466,7 +1553,7 @@ c_code/2_2/compiler_ast.o \
 c_code/2_2/compiler_astalgo.o \
 c_code/2_2/compiler_syntaxes.o \
 c_code/2_2/compiler_renderer.o \
-c_code/2_3/compiler_rodread.o \
+c_code/2_2/compiler_rodread.o \
 c_code/2_2/compiler_rodwrite.o \
 c_code/2_3/compiler_sem.o \
 c_code/2_2/compiler_semdata.o \
@@ -1474,7 +1561,7 @@ c_code/2_2/compiler_passes.o \
 c_code/2_2/compiler_docgen.o \
 c_code/2_2/compiler_cgen.o \
 c_code/2_2/compiler_jsgen.o \
-c_code/2_3/compiler_importer.o \
+c_code/2_2/compiler_importer.o \
 c_code/2_2/compiler_passaux.o \
 c_code/2_2/compiler_depends.o \
 c_code/2_3/compiler_vm.o \
@@ -1488,22 +1575,23 @@ c_code/2_2/compiler_modules.o \
 c_code/2_2/compiler_ccgutils.o \
 c_code/2_3/compiler_sigmatch.o \
 c_code/2_2/compiler_modulegraphs.o \
+c_code/2_2/compiler_rod.o \
 c_code/2_2/stdlib_intsets.o \
 c_code/2_2/compiler_rodutils.o \
 c_code/2_2/compiler_pbraces.o \
 c_code/2_2/compiler_filters.o \
 c_code/2_2/compiler_filter_tmpl.o \
-c_code/2_3/stdlib_memfiles.o \
+c_code/2_2/stdlib_memfiles.o \
 c_code/2_2/compiler_trees.o \
+c_code/2_3/compiler_modulepaths.o \
 c_code/2_2/compiler_magicsys.o \
 c_code/2_2/compiler_nimsets.o \
 c_code/2_2/compiler_reorder.o \
 c_code/2_2/compiler_bitsets.o \
-c_code/2_2/compiler_lookups.o \
-c_code/2_3/compiler_prettybase.o \
 c_code/2_2/compiler_treetab.o \
 c_code/2_3/compiler_semfold.o \
 c_code/2_2/compiler_procfind.o \
+c_code/2_2/compiler_lookups.o \
 c_code/2_3/compiler_pragmas.o \
 c_code/2_2/compiler_semtypinst.o \
 c_code/2_2/compiler_transf.o \
@@ -1514,29 +1602,35 @@ c_code/2_2/compiler_evaltempl.o \
 c_code/2_2/compiler_patterns.o \
 c_code/2_2/compiler_parampatterns.o \
 c_code/2_2/compiler_sempass2.o \
-c_code/2_2/compiler_pretty.o \
 c_code/2_2/compiler_semmacrosanity.o \
 c_code/2_2/compiler_semparallel.o \
 c_code/2_2/compiler_lowerings.o \
 c_code/2_2/compiler_pluginsupport.o \
-c_code/2_2/compiler_active.o \
 c_code/2_2/compiler_saturate.o \
+c_code/2_3/compiler_prettybase.o \
+c_code/2_2/compiler_pretty.o \
+c_code/2_2/stdlib_xmltree.o \
+c_code/2_2/stdlib_cgi.o \
+c_code/2_2/compiler_typesrenderer.o \
 c_code/2_2/docutils_rstast.o \
 c_code/2_2/docutils_rst.o \
 c_code/2_3/docutils_rstgen.o \
 c_code/2_2/docutils_highlite.o \
-c_code/2_2/stdlib_xmltree.o \
-c_code/2_2/stdlib_cgi.o \
-c_code/2_2/compiler_typesrenderer.o \
 c_code/2_2/compiler_guards.o \
 c_code/2_2/compiler_writetracking.o \
 c_code/2_2/stdlib_cookies.o \
+c_code/2_2/stdlib_uri.o \
 c_code/2_2/compiler_prefixmatches.o \
+c_code/2_2/compiler_destroyer.o \
+c_code/2_2/compiler_liftlocals.o \
+c_code/2_2/compiler_dfa.o \
 c_code/2_2/compiler_vmgen.o \
 c_code/2_3/compiler_vmdeps.o \
 c_code/2_2/compiler_vmmarshal.o \
-c_code/2_2/compiler_locals.o \
+c_code/2_3/compiler_gorgeimpl.o \
+c_code/2_2/compiler_active.o \
 c_code/2_2/compiler_itersgen.o \
+c_code/2_2/compiler_locals.o \
 c_code/2_2/compiler_cgendata.o \
 c_code/2_2/compiler_ccgmerge.o \
 c_code/2_2/compiler_ndi.o \
@@ -1545,8 +1639,6 @@ c_code/2_2/stdlib_md5.o \
 c_code/2_2/stdlib_dynlib.o \
 c_code/2_2/stdlib_net.o \
 c_code/2_3/stdlib_nativesockets.o \
-c_code/2_2/stdlib_options.o \
-c_code/2_2/stdlib_typetraits.o \
 c_code/2_2/compiler_nodejs.o \
 c_code/2_3/compiler_scriptconfig.o $LINK_FLAGS
     ;;
@@ -1577,16 +1669,20 @@ c_code/2_3/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_streams.c -o c_code/2_1/stdlib_streams.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cpuinfo.c -o c_code/2_1/stdlib_cpuinfo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_linux.c -o c_code/2_1/stdlib_linux.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_strformat.c -o c_code/2_1/stdlib_strformat.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_unicode.c -o c_code/2_1/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_colors.c -o c_code/2_1/stdlib_colors.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_termios.c -o c_code/2_1/stdlib_termios.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nversion.c -o c_code/2_1/compiler_nversion.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_condsyms.c -o c_code/2_1/compiler_condsyms.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_idents.c -o c_code/2_1/compiler_idents.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_wordrecg.c -o c_code/2_1/compiler_wordrecg.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_extccomp.c -o c_code/2_1/compiler_extccomp.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_securehash.c -o c_code/2_1/stdlib_securehash.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_sha1.c -o c_code/2_1/stdlib_sha1.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_json.c -o c_code/2_1/stdlib_json.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_lexbase.c -o c_code/2_1/stdlib_lexbase.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_unicode.c -o c_code/2_1/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_options.c -o c_code/2_1/stdlib_options.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_typetraits.c -o c_code/2_1/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nimblecmd.c -o c_code/2_1/compiler_nimblecmd.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_sequtils.c -o c_code/2_1/stdlib_sequtils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_parseopt.c -o c_code/2_1/stdlib_parseopt.o
@@ -1621,6 +1717,7 @@ c_code/2_3/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ccgutils.c -o c_code/2_1/compiler_ccgutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_sigmatch.c -o c_code/2_1/compiler_sigmatch.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_modulegraphs.c -o c_code/2_1/compiler_modulegraphs.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rod.c -o c_code/2_1/compiler_rod.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_intsets.c -o c_code/2_1/stdlib_intsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rodutils.c -o c_code/2_1/compiler_rodutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pbraces.c -o c_code/2_1/compiler_pbraces.o
@@ -1628,15 +1725,15 @@ c_code/2_3/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_filter_tmpl.c -o c_code/2_1/compiler_filter_tmpl.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_memfiles.c -o c_code/2_1/stdlib_memfiles.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_trees.c -o c_code/2_1/compiler_trees.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_modulepaths.c -o c_code/2_1/compiler_modulepaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_magicsys.c -o c_code/2_1/compiler_magicsys.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nimsets.c -o c_code/2_1/compiler_nimsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_reorder.c -o c_code/2_1/compiler_reorder.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_bitsets.c -o c_code/2_1/compiler_bitsets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lookups.c -o c_code/2_1/compiler_lookups.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_prettybase.c -o c_code/2_1/compiler_prettybase.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_treetab.c -o c_code/2_1/compiler_treetab.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semfold.c -o c_code/2_1/compiler_semfold.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_procfind.c -o c_code/2_1/compiler_procfind.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lookups.c -o c_code/2_1/compiler_lookups.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pragmas.c -o c_code/2_1/compiler_pragmas.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semtypinst.c -o c_code/2_1/compiler_semtypinst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_transf.c -o c_code/2_1/compiler_transf.o
@@ -1647,29 +1744,35 @@ c_code/2_3/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_patterns.c -o c_code/2_1/compiler_patterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_parampatterns.c -o c_code/2_1/compiler_parampatterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_sempass2.c -o c_code/2_1/compiler_sempass2.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pretty.c -o c_code/2_1/compiler_pretty.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semmacrosanity.c -o c_code/2_1/compiler_semmacrosanity.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semparallel.c -o c_code/2_1/compiler_semparallel.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lowerings.c -o c_code/2_1/compiler_lowerings.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pluginsupport.c -o c_code/2_1/compiler_pluginsupport.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_active.c -o c_code/2_1/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_saturate.c -o c_code/2_1/compiler_saturate.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_prettybase.c -o c_code/2_1/compiler_prettybase.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pretty.c -o c_code/2_1/compiler_pretty.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_xmltree.c -o c_code/2_1/stdlib_xmltree.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cgi.c -o c_code/2_1/stdlib_cgi.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_typesrenderer.c -o c_code/2_1/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rstast.c -o c_code/2_1/docutils_rstast.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rst.c -o c_code/2_1/docutils_rst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rstgen.c -o c_code/2_1/docutils_rstgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_highlite.c -o c_code/2_1/docutils_highlite.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_xmltree.c -o c_code/2_1/stdlib_xmltree.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cgi.c -o c_code/2_1/stdlib_cgi.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_typesrenderer.c -o c_code/2_1/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_guards.c -o c_code/2_1/compiler_guards.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_writetracking.c -o c_code/2_1/compiler_writetracking.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cookies.c -o c_code/2_1/stdlib_cookies.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_uri.c -o c_code/2_1/stdlib_uri.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_prefixmatches.c -o c_code/2_1/compiler_prefixmatches.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_destroyer.c -o c_code/2_1/compiler_destroyer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_liftlocals.c -o c_code/2_1/compiler_liftlocals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_dfa.c -o c_code/2_1/compiler_dfa.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmgen.c -o c_code/2_1/compiler_vmgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmdeps.c -o c_code/2_1/compiler_vmdeps.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmmarshal.c -o c_code/2_1/compiler_vmmarshal.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_locals.c -o c_code/2_1/compiler_locals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_gorgeimpl.c -o c_code/2_1/compiler_gorgeimpl.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_active.c -o c_code/2_1/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_itersgen.c -o c_code/2_1/compiler_itersgen.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_locals.c -o c_code/2_1/compiler_locals.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_cgendata.c -o c_code/2_1/compiler_cgendata.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ccgmerge.c -o c_code/2_1/compiler_ccgmerge.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ndi.c -o c_code/2_1/compiler_ndi.o
@@ -1678,8 +1781,6 @@ c_code/2_3/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_dynlib.c -o c_code/2_1/stdlib_dynlib.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_net.c -o c_code/2_1/stdlib_net.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_nativesockets.c -o c_code/2_1/stdlib_nativesockets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_options.c -o c_code/2_1/stdlib_options.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_typetraits.c -o c_code/2_1/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nodejs.c -o c_code/2_1/compiler_nodejs.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_scriptconfig.c -o c_code/2_1/compiler_scriptconfig.o
     $LINKER -o $binDir/nim  \
@@ -1708,16 +1809,20 @@ c_code/2_1/stdlib_hashes.o \
 c_code/2_1/stdlib_streams.o \
 c_code/2_1/stdlib_cpuinfo.o \
 c_code/2_1/stdlib_linux.o \
+c_code/2_1/stdlib_strformat.o \
+c_code/2_1/stdlib_unicode.o \
+c_code/2_1/stdlib_colors.o \
 c_code/2_1/stdlib_termios.o \
 c_code/2_1/compiler_nversion.o \
 c_code/2_1/compiler_condsyms.o \
 c_code/2_1/compiler_idents.o \
 c_code/2_1/compiler_wordrecg.o \
 c_code/2_1/compiler_extccomp.o \
-c_code/2_1/stdlib_securehash.o \
+c_code/2_1/stdlib_sha1.o \
 c_code/2_1/stdlib_json.o \
 c_code/2_1/stdlib_lexbase.o \
-c_code/2_1/stdlib_unicode.o \
+c_code/2_1/stdlib_options.o \
+c_code/2_1/stdlib_typetraits.o \
 c_code/2_1/compiler_nimblecmd.o \
 c_code/2_1/stdlib_sequtils.o \
 c_code/2_1/stdlib_parseopt.o \
@@ -1752,6 +1857,7 @@ c_code/2_1/compiler_modules.o \
 c_code/2_1/compiler_ccgutils.o \
 c_code/2_1/compiler_sigmatch.o \
 c_code/2_1/compiler_modulegraphs.o \
+c_code/2_1/compiler_rod.o \
 c_code/2_1/stdlib_intsets.o \
 c_code/2_1/compiler_rodutils.o \
 c_code/2_1/compiler_pbraces.o \
@@ -1759,15 +1865,15 @@ c_code/2_1/compiler_filters.o \
 c_code/2_1/compiler_filter_tmpl.o \
 c_code/2_1/stdlib_memfiles.o \
 c_code/2_1/compiler_trees.o \
+c_code/2_1/compiler_modulepaths.o \
 c_code/2_1/compiler_magicsys.o \
 c_code/2_1/compiler_nimsets.o \
 c_code/2_1/compiler_reorder.o \
 c_code/2_1/compiler_bitsets.o \
-c_code/2_1/compiler_lookups.o \
-c_code/2_1/compiler_prettybase.o \
 c_code/2_1/compiler_treetab.o \
 c_code/2_1/compiler_semfold.o \
 c_code/2_1/compiler_procfind.o \
+c_code/2_1/compiler_lookups.o \
 c_code/2_1/compiler_pragmas.o \
 c_code/2_1/compiler_semtypinst.o \
 c_code/2_1/compiler_transf.o \
@@ -1778,29 +1884,35 @@ c_code/2_1/compiler_evaltempl.o \
 c_code/2_1/compiler_patterns.o \
 c_code/2_1/compiler_parampatterns.o \
 c_code/2_1/compiler_sempass2.o \
-c_code/2_1/compiler_pretty.o \
 c_code/2_1/compiler_semmacrosanity.o \
 c_code/2_1/compiler_semparallel.o \
 c_code/2_1/compiler_lowerings.o \
 c_code/2_1/compiler_pluginsupport.o \
-c_code/2_1/compiler_active.o \
 c_code/2_1/compiler_saturate.o \
+c_code/2_1/compiler_prettybase.o \
+c_code/2_1/compiler_pretty.o \
+c_code/2_1/stdlib_xmltree.o \
+c_code/2_1/stdlib_cgi.o \
+c_code/2_1/compiler_typesrenderer.o \
 c_code/2_1/docutils_rstast.o \
 c_code/2_1/docutils_rst.o \
 c_code/2_1/docutils_rstgen.o \
 c_code/2_1/docutils_highlite.o \
-c_code/2_1/stdlib_xmltree.o \
-c_code/2_1/stdlib_cgi.o \
-c_code/2_1/compiler_typesrenderer.o \
 c_code/2_1/compiler_guards.o \
 c_code/2_1/compiler_writetracking.o \
 c_code/2_1/stdlib_cookies.o \
+c_code/2_1/stdlib_uri.o \
 c_code/2_1/compiler_prefixmatches.o \
+c_code/2_1/compiler_destroyer.o \
+c_code/2_1/compiler_liftlocals.o \
+c_code/2_1/compiler_dfa.o \
 c_code/2_1/compiler_vmgen.o \
 c_code/2_1/compiler_vmdeps.o \
 c_code/2_1/compiler_vmmarshal.o \
-c_code/2_1/compiler_locals.o \
+c_code/2_1/compiler_gorgeimpl.o \
+c_code/2_1/compiler_active.o \
 c_code/2_1/compiler_itersgen.o \
+c_code/2_1/compiler_locals.o \
 c_code/2_1/compiler_cgendata.o \
 c_code/2_1/compiler_ccgmerge.o \
 c_code/2_1/compiler_ndi.o \
@@ -1809,8 +1921,6 @@ c_code/2_1/stdlib_md5.o \
 c_code/2_1/stdlib_dynlib.o \
 c_code/2_1/stdlib_net.o \
 c_code/2_1/stdlib_nativesockets.o \
-c_code/2_1/stdlib_options.o \
-c_code/2_1/stdlib_typetraits.o \
 c_code/2_1/compiler_nodejs.o \
 c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     ;;
@@ -1841,16 +1951,20 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_streams.c -o c_code/2_1/stdlib_streams.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cpuinfo.c -o c_code/2_1/stdlib_cpuinfo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_linux.c -o c_code/2_1/stdlib_linux.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_strformat.c -o c_code/2_1/stdlib_strformat.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_unicode.c -o c_code/2_1/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_colors.c -o c_code/2_1/stdlib_colors.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_termios.c -o c_code/2_1/stdlib_termios.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nversion.c -o c_code/2_1/compiler_nversion.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_condsyms.c -o c_code/2_1/compiler_condsyms.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_idents.c -o c_code/2_1/compiler_idents.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_wordrecg.c -o c_code/2_1/compiler_wordrecg.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_extccomp.c -o c_code/2_1/compiler_extccomp.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_securehash.c -o c_code/2_1/stdlib_securehash.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_sha1.c -o c_code/2_1/stdlib_sha1.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_json.c -o c_code/2_1/stdlib_json.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_lexbase.c -o c_code/2_1/stdlib_lexbase.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_unicode.c -o c_code/2_1/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_options.c -o c_code/2_1/stdlib_options.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_typetraits.c -o c_code/2_1/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nimblecmd.c -o c_code/2_1/compiler_nimblecmd.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_sequtils.c -o c_code/2_1/stdlib_sequtils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_parseopt.c -o c_code/2_1/stdlib_parseopt.o
@@ -1885,6 +1999,7 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ccgutils.c -o c_code/2_1/compiler_ccgutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_sigmatch.c -o c_code/2_1/compiler_sigmatch.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_modulegraphs.c -o c_code/2_1/compiler_modulegraphs.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rod.c -o c_code/2_1/compiler_rod.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_intsets.c -o c_code/2_1/stdlib_intsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rodutils.c -o c_code/2_1/compiler_rodutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pbraces.c -o c_code/2_1/compiler_pbraces.o
@@ -1892,15 +2007,15 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_filter_tmpl.c -o c_code/2_1/compiler_filter_tmpl.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_memfiles.c -o c_code/2_1/stdlib_memfiles.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_trees.c -o c_code/2_1/compiler_trees.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_modulepaths.c -o c_code/2_1/compiler_modulepaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_magicsys.c -o c_code/2_1/compiler_magicsys.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nimsets.c -o c_code/2_1/compiler_nimsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_reorder.c -o c_code/2_1/compiler_reorder.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_bitsets.c -o c_code/2_1/compiler_bitsets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lookups.c -o c_code/2_1/compiler_lookups.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_prettybase.c -o c_code/2_1/compiler_prettybase.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_treetab.c -o c_code/2_1/compiler_treetab.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semfold.c -o c_code/2_1/compiler_semfold.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_procfind.c -o c_code/2_1/compiler_procfind.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lookups.c -o c_code/2_1/compiler_lookups.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pragmas.c -o c_code/2_1/compiler_pragmas.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semtypinst.c -o c_code/2_1/compiler_semtypinst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_transf.c -o c_code/2_1/compiler_transf.o
@@ -1911,29 +2026,35 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_patterns.c -o c_code/2_1/compiler_patterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_parampatterns.c -o c_code/2_1/compiler_parampatterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_sempass2.c -o c_code/2_1/compiler_sempass2.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pretty.c -o c_code/2_1/compiler_pretty.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semmacrosanity.c -o c_code/2_1/compiler_semmacrosanity.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semparallel.c -o c_code/2_1/compiler_semparallel.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lowerings.c -o c_code/2_1/compiler_lowerings.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pluginsupport.c -o c_code/2_1/compiler_pluginsupport.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_active.c -o c_code/2_1/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_saturate.c -o c_code/2_1/compiler_saturate.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_prettybase.c -o c_code/2_1/compiler_prettybase.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pretty.c -o c_code/2_1/compiler_pretty.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_xmltree.c -o c_code/2_1/stdlib_xmltree.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cgi.c -o c_code/2_1/stdlib_cgi.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_typesrenderer.c -o c_code/2_1/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rstast.c -o c_code/2_1/docutils_rstast.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rst.c -o c_code/2_1/docutils_rst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rstgen.c -o c_code/2_1/docutils_rstgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_highlite.c -o c_code/2_1/docutils_highlite.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_xmltree.c -o c_code/2_1/stdlib_xmltree.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cgi.c -o c_code/2_1/stdlib_cgi.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_typesrenderer.c -o c_code/2_1/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_guards.c -o c_code/2_1/compiler_guards.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_writetracking.c -o c_code/2_1/compiler_writetracking.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cookies.c -o c_code/2_1/stdlib_cookies.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_uri.c -o c_code/2_1/stdlib_uri.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_prefixmatches.c -o c_code/2_1/compiler_prefixmatches.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_destroyer.c -o c_code/2_1/compiler_destroyer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_liftlocals.c -o c_code/2_1/compiler_liftlocals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_dfa.c -o c_code/2_1/compiler_dfa.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmgen.c -o c_code/2_1/compiler_vmgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmdeps.c -o c_code/2_1/compiler_vmdeps.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmmarshal.c -o c_code/2_1/compiler_vmmarshal.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_locals.c -o c_code/2_1/compiler_locals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_gorgeimpl.c -o c_code/2_1/compiler_gorgeimpl.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_active.c -o c_code/2_1/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_itersgen.c -o c_code/2_1/compiler_itersgen.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_locals.c -o c_code/2_1/compiler_locals.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_cgendata.c -o c_code/2_1/compiler_cgendata.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ccgmerge.c -o c_code/2_1/compiler_ccgmerge.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ndi.c -o c_code/2_1/compiler_ndi.o
@@ -1942,8 +2063,6 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_dynlib.c -o c_code/2_1/stdlib_dynlib.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_net.c -o c_code/2_1/stdlib_net.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_nativesockets.c -o c_code/2_1/stdlib_nativesockets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_options.c -o c_code/2_1/stdlib_options.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_typetraits.c -o c_code/2_1/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nodejs.c -o c_code/2_1/compiler_nodejs.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_scriptconfig.c -o c_code/2_1/compiler_scriptconfig.o
     $LINKER -o $binDir/nim  \
@@ -1972,16 +2091,20 @@ c_code/2_1/stdlib_hashes.o \
 c_code/2_1/stdlib_streams.o \
 c_code/2_1/stdlib_cpuinfo.o \
 c_code/2_1/stdlib_linux.o \
+c_code/2_1/stdlib_strformat.o \
+c_code/2_1/stdlib_unicode.o \
+c_code/2_1/stdlib_colors.o \
 c_code/2_1/stdlib_termios.o \
 c_code/2_1/compiler_nversion.o \
 c_code/2_1/compiler_condsyms.o \
 c_code/2_1/compiler_idents.o \
 c_code/2_1/compiler_wordrecg.o \
 c_code/2_1/compiler_extccomp.o \
-c_code/2_1/stdlib_securehash.o \
+c_code/2_1/stdlib_sha1.o \
 c_code/2_1/stdlib_json.o \
 c_code/2_1/stdlib_lexbase.o \
-c_code/2_1/stdlib_unicode.o \
+c_code/2_1/stdlib_options.o \
+c_code/2_1/stdlib_typetraits.o \
 c_code/2_1/compiler_nimblecmd.o \
 c_code/2_1/stdlib_sequtils.o \
 c_code/2_1/stdlib_parseopt.o \
@@ -2016,6 +2139,7 @@ c_code/2_1/compiler_modules.o \
 c_code/2_1/compiler_ccgutils.o \
 c_code/2_1/compiler_sigmatch.o \
 c_code/2_1/compiler_modulegraphs.o \
+c_code/2_1/compiler_rod.o \
 c_code/2_1/stdlib_intsets.o \
 c_code/2_1/compiler_rodutils.o \
 c_code/2_1/compiler_pbraces.o \
@@ -2023,15 +2147,15 @@ c_code/2_1/compiler_filters.o \
 c_code/2_1/compiler_filter_tmpl.o \
 c_code/2_1/stdlib_memfiles.o \
 c_code/2_1/compiler_trees.o \
+c_code/2_1/compiler_modulepaths.o \
 c_code/2_1/compiler_magicsys.o \
 c_code/2_1/compiler_nimsets.o \
 c_code/2_1/compiler_reorder.o \
 c_code/2_1/compiler_bitsets.o \
-c_code/2_1/compiler_lookups.o \
-c_code/2_1/compiler_prettybase.o \
 c_code/2_1/compiler_treetab.o \
 c_code/2_1/compiler_semfold.o \
 c_code/2_1/compiler_procfind.o \
+c_code/2_1/compiler_lookups.o \
 c_code/2_1/compiler_pragmas.o \
 c_code/2_1/compiler_semtypinst.o \
 c_code/2_1/compiler_transf.o \
@@ -2042,29 +2166,35 @@ c_code/2_1/compiler_evaltempl.o \
 c_code/2_1/compiler_patterns.o \
 c_code/2_1/compiler_parampatterns.o \
 c_code/2_1/compiler_sempass2.o \
-c_code/2_1/compiler_pretty.o \
 c_code/2_1/compiler_semmacrosanity.o \
 c_code/2_1/compiler_semparallel.o \
 c_code/2_1/compiler_lowerings.o \
 c_code/2_1/compiler_pluginsupport.o \
-c_code/2_1/compiler_active.o \
 c_code/2_1/compiler_saturate.o \
+c_code/2_1/compiler_prettybase.o \
+c_code/2_1/compiler_pretty.o \
+c_code/2_1/stdlib_xmltree.o \
+c_code/2_1/stdlib_cgi.o \
+c_code/2_1/compiler_typesrenderer.o \
 c_code/2_1/docutils_rstast.o \
 c_code/2_1/docutils_rst.o \
 c_code/2_1/docutils_rstgen.o \
 c_code/2_1/docutils_highlite.o \
-c_code/2_1/stdlib_xmltree.o \
-c_code/2_1/stdlib_cgi.o \
-c_code/2_1/compiler_typesrenderer.o \
 c_code/2_1/compiler_guards.o \
 c_code/2_1/compiler_writetracking.o \
 c_code/2_1/stdlib_cookies.o \
+c_code/2_1/stdlib_uri.o \
 c_code/2_1/compiler_prefixmatches.o \
+c_code/2_1/compiler_destroyer.o \
+c_code/2_1/compiler_liftlocals.o \
+c_code/2_1/compiler_dfa.o \
 c_code/2_1/compiler_vmgen.o \
 c_code/2_1/compiler_vmdeps.o \
 c_code/2_1/compiler_vmmarshal.o \
-c_code/2_1/compiler_locals.o \
+c_code/2_1/compiler_gorgeimpl.o \
+c_code/2_1/compiler_active.o \
 c_code/2_1/compiler_itersgen.o \
+c_code/2_1/compiler_locals.o \
 c_code/2_1/compiler_cgendata.o \
 c_code/2_1/compiler_ccgmerge.o \
 c_code/2_1/compiler_ndi.o \
@@ -2073,8 +2203,6 @@ c_code/2_1/stdlib_md5.o \
 c_code/2_1/stdlib_dynlib.o \
 c_code/2_1/stdlib_net.o \
 c_code/2_1/stdlib_nativesockets.o \
-c_code/2_1/stdlib_options.o \
-c_code/2_1/stdlib_typetraits.o \
 c_code/2_1/compiler_nodejs.o \
 c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     ;;
@@ -2105,16 +2233,20 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_streams.c -o c_code/2_1/stdlib_streams.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cpuinfo.c -o c_code/2_1/stdlib_cpuinfo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_linux.c -o c_code/2_1/stdlib_linux.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_strformat.c -o c_code/2_1/stdlib_strformat.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_unicode.c -o c_code/2_1/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_colors.c -o c_code/2_1/stdlib_colors.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_termios.c -o c_code/2_1/stdlib_termios.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nversion.c -o c_code/2_1/compiler_nversion.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_condsyms.c -o c_code/2_1/compiler_condsyms.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_idents.c -o c_code/2_1/compiler_idents.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_wordrecg.c -o c_code/2_1/compiler_wordrecg.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_extccomp.c -o c_code/2_1/compiler_extccomp.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_securehash.c -o c_code/2_1/stdlib_securehash.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_sha1.c -o c_code/2_1/stdlib_sha1.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_json.c -o c_code/2_1/stdlib_json.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_lexbase.c -o c_code/2_1/stdlib_lexbase.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_unicode.c -o c_code/2_1/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_options.c -o c_code/2_1/stdlib_options.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_typetraits.c -o c_code/2_1/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nimblecmd.c -o c_code/2_1/compiler_nimblecmd.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_sequtils.c -o c_code/2_1/stdlib_sequtils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_parseopt.c -o c_code/2_1/stdlib_parseopt.o
@@ -2149,6 +2281,7 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ccgutils.c -o c_code/2_1/compiler_ccgutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_sigmatch.c -o c_code/2_1/compiler_sigmatch.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_modulegraphs.c -o c_code/2_1/compiler_modulegraphs.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rod.c -o c_code/2_1/compiler_rod.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_intsets.c -o c_code/2_1/stdlib_intsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rodutils.c -o c_code/2_1/compiler_rodutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pbraces.c -o c_code/2_1/compiler_pbraces.o
@@ -2156,15 +2289,15 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_filter_tmpl.c -o c_code/2_1/compiler_filter_tmpl.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_memfiles.c -o c_code/2_1/stdlib_memfiles.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_trees.c -o c_code/2_1/compiler_trees.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_modulepaths.c -o c_code/2_1/compiler_modulepaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_magicsys.c -o c_code/2_1/compiler_magicsys.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nimsets.c -o c_code/2_1/compiler_nimsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_reorder.c -o c_code/2_1/compiler_reorder.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_bitsets.c -o c_code/2_1/compiler_bitsets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lookups.c -o c_code/2_1/compiler_lookups.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_prettybase.c -o c_code/2_1/compiler_prettybase.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_treetab.c -o c_code/2_1/compiler_treetab.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semfold.c -o c_code/2_1/compiler_semfold.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_procfind.c -o c_code/2_1/compiler_procfind.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lookups.c -o c_code/2_1/compiler_lookups.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pragmas.c -o c_code/2_1/compiler_pragmas.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semtypinst.c -o c_code/2_1/compiler_semtypinst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_transf.c -o c_code/2_1/compiler_transf.o
@@ -2175,29 +2308,35 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_patterns.c -o c_code/2_1/compiler_patterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_parampatterns.c -o c_code/2_1/compiler_parampatterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_sempass2.c -o c_code/2_1/compiler_sempass2.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pretty.c -o c_code/2_1/compiler_pretty.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semmacrosanity.c -o c_code/2_1/compiler_semmacrosanity.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semparallel.c -o c_code/2_1/compiler_semparallel.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lowerings.c -o c_code/2_1/compiler_lowerings.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pluginsupport.c -o c_code/2_1/compiler_pluginsupport.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_active.c -o c_code/2_1/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_saturate.c -o c_code/2_1/compiler_saturate.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_prettybase.c -o c_code/2_1/compiler_prettybase.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pretty.c -o c_code/2_1/compiler_pretty.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_xmltree.c -o c_code/2_1/stdlib_xmltree.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cgi.c -o c_code/2_1/stdlib_cgi.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_typesrenderer.c -o c_code/2_1/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rstast.c -o c_code/2_1/docutils_rstast.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rst.c -o c_code/2_1/docutils_rst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rstgen.c -o c_code/2_1/docutils_rstgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_highlite.c -o c_code/2_1/docutils_highlite.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_xmltree.c -o c_code/2_1/stdlib_xmltree.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cgi.c -o c_code/2_1/stdlib_cgi.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_typesrenderer.c -o c_code/2_1/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_guards.c -o c_code/2_1/compiler_guards.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_writetracking.c -o c_code/2_1/compiler_writetracking.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cookies.c -o c_code/2_1/stdlib_cookies.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_uri.c -o c_code/2_1/stdlib_uri.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_prefixmatches.c -o c_code/2_1/compiler_prefixmatches.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_destroyer.c -o c_code/2_1/compiler_destroyer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_liftlocals.c -o c_code/2_1/compiler_liftlocals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_dfa.c -o c_code/2_1/compiler_dfa.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmgen.c -o c_code/2_1/compiler_vmgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmdeps.c -o c_code/2_1/compiler_vmdeps.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmmarshal.c -o c_code/2_1/compiler_vmmarshal.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_locals.c -o c_code/2_1/compiler_locals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_gorgeimpl.c -o c_code/2_1/compiler_gorgeimpl.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_active.c -o c_code/2_1/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_itersgen.c -o c_code/2_1/compiler_itersgen.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_locals.c -o c_code/2_1/compiler_locals.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_cgendata.c -o c_code/2_1/compiler_cgendata.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ccgmerge.c -o c_code/2_1/compiler_ccgmerge.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ndi.c -o c_code/2_1/compiler_ndi.o
@@ -2206,8 +2345,6 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_dynlib.c -o c_code/2_1/stdlib_dynlib.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_net.c -o c_code/2_1/stdlib_net.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_nativesockets.c -o c_code/2_1/stdlib_nativesockets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_options.c -o c_code/2_1/stdlib_options.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_typetraits.c -o c_code/2_1/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nodejs.c -o c_code/2_1/compiler_nodejs.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_scriptconfig.c -o c_code/2_1/compiler_scriptconfig.o
     $LINKER -o $binDir/nim  \
@@ -2236,16 +2373,20 @@ c_code/2_1/stdlib_hashes.o \
 c_code/2_1/stdlib_streams.o \
 c_code/2_1/stdlib_cpuinfo.o \
 c_code/2_1/stdlib_linux.o \
+c_code/2_1/stdlib_strformat.o \
+c_code/2_1/stdlib_unicode.o \
+c_code/2_1/stdlib_colors.o \
 c_code/2_1/stdlib_termios.o \
 c_code/2_1/compiler_nversion.o \
 c_code/2_1/compiler_condsyms.o \
 c_code/2_1/compiler_idents.o \
 c_code/2_1/compiler_wordrecg.o \
 c_code/2_1/compiler_extccomp.o \
-c_code/2_1/stdlib_securehash.o \
+c_code/2_1/stdlib_sha1.o \
 c_code/2_1/stdlib_json.o \
 c_code/2_1/stdlib_lexbase.o \
-c_code/2_1/stdlib_unicode.o \
+c_code/2_1/stdlib_options.o \
+c_code/2_1/stdlib_typetraits.o \
 c_code/2_1/compiler_nimblecmd.o \
 c_code/2_1/stdlib_sequtils.o \
 c_code/2_1/stdlib_parseopt.o \
@@ -2280,6 +2421,7 @@ c_code/2_1/compiler_modules.o \
 c_code/2_1/compiler_ccgutils.o \
 c_code/2_1/compiler_sigmatch.o \
 c_code/2_1/compiler_modulegraphs.o \
+c_code/2_1/compiler_rod.o \
 c_code/2_1/stdlib_intsets.o \
 c_code/2_1/compiler_rodutils.o \
 c_code/2_1/compiler_pbraces.o \
@@ -2287,15 +2429,15 @@ c_code/2_1/compiler_filters.o \
 c_code/2_1/compiler_filter_tmpl.o \
 c_code/2_1/stdlib_memfiles.o \
 c_code/2_1/compiler_trees.o \
+c_code/2_1/compiler_modulepaths.o \
 c_code/2_1/compiler_magicsys.o \
 c_code/2_1/compiler_nimsets.o \
 c_code/2_1/compiler_reorder.o \
 c_code/2_1/compiler_bitsets.o \
-c_code/2_1/compiler_lookups.o \
-c_code/2_1/compiler_prettybase.o \
 c_code/2_1/compiler_treetab.o \
 c_code/2_1/compiler_semfold.o \
 c_code/2_1/compiler_procfind.o \
+c_code/2_1/compiler_lookups.o \
 c_code/2_1/compiler_pragmas.o \
 c_code/2_1/compiler_semtypinst.o \
 c_code/2_1/compiler_transf.o \
@@ -2306,29 +2448,35 @@ c_code/2_1/compiler_evaltempl.o \
 c_code/2_1/compiler_patterns.o \
 c_code/2_1/compiler_parampatterns.o \
 c_code/2_1/compiler_sempass2.o \
-c_code/2_1/compiler_pretty.o \
 c_code/2_1/compiler_semmacrosanity.o \
 c_code/2_1/compiler_semparallel.o \
 c_code/2_1/compiler_lowerings.o \
 c_code/2_1/compiler_pluginsupport.o \
-c_code/2_1/compiler_active.o \
 c_code/2_1/compiler_saturate.o \
+c_code/2_1/compiler_prettybase.o \
+c_code/2_1/compiler_pretty.o \
+c_code/2_1/stdlib_xmltree.o \
+c_code/2_1/stdlib_cgi.o \
+c_code/2_1/compiler_typesrenderer.o \
 c_code/2_1/docutils_rstast.o \
 c_code/2_1/docutils_rst.o \
 c_code/2_1/docutils_rstgen.o \
 c_code/2_1/docutils_highlite.o \
-c_code/2_1/stdlib_xmltree.o \
-c_code/2_1/stdlib_cgi.o \
-c_code/2_1/compiler_typesrenderer.o \
 c_code/2_1/compiler_guards.o \
 c_code/2_1/compiler_writetracking.o \
 c_code/2_1/stdlib_cookies.o \
+c_code/2_1/stdlib_uri.o \
 c_code/2_1/compiler_prefixmatches.o \
+c_code/2_1/compiler_destroyer.o \
+c_code/2_1/compiler_liftlocals.o \
+c_code/2_1/compiler_dfa.o \
 c_code/2_1/compiler_vmgen.o \
 c_code/2_1/compiler_vmdeps.o \
 c_code/2_1/compiler_vmmarshal.o \
-c_code/2_1/compiler_locals.o \
+c_code/2_1/compiler_gorgeimpl.o \
+c_code/2_1/compiler_active.o \
 c_code/2_1/compiler_itersgen.o \
+c_code/2_1/compiler_locals.o \
 c_code/2_1/compiler_cgendata.o \
 c_code/2_1/compiler_ccgmerge.o \
 c_code/2_1/compiler_ndi.o \
@@ -2337,8 +2485,6 @@ c_code/2_1/stdlib_md5.o \
 c_code/2_1/stdlib_dynlib.o \
 c_code/2_1/stdlib_net.o \
 c_code/2_1/stdlib_nativesockets.o \
-c_code/2_1/stdlib_options.o \
-c_code/2_1/stdlib_typetraits.o \
 c_code/2_1/compiler_nodejs.o \
 c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     ;;
@@ -2369,16 +2515,20 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_streams.c -o c_code/2_1/stdlib_streams.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cpuinfo.c -o c_code/2_1/stdlib_cpuinfo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_linux.c -o c_code/2_1/stdlib_linux.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_strformat.c -o c_code/2_1/stdlib_strformat.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_unicode.c -o c_code/2_1/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_colors.c -o c_code/2_1/stdlib_colors.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_termios.c -o c_code/2_1/stdlib_termios.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nversion.c -o c_code/2_1/compiler_nversion.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_condsyms.c -o c_code/2_1/compiler_condsyms.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_idents.c -o c_code/2_1/compiler_idents.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_wordrecg.c -o c_code/2_1/compiler_wordrecg.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_extccomp.c -o c_code/2_1/compiler_extccomp.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_securehash.c -o c_code/2_1/stdlib_securehash.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_sha1.c -o c_code/2_1/stdlib_sha1.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_json.c -o c_code/2_1/stdlib_json.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_lexbase.c -o c_code/2_1/stdlib_lexbase.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_unicode.c -o c_code/2_1/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_options.c -o c_code/2_1/stdlib_options.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_typetraits.c -o c_code/2_1/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nimblecmd.c -o c_code/2_1/compiler_nimblecmd.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_sequtils.c -o c_code/2_1/stdlib_sequtils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_parseopt.c -o c_code/2_1/stdlib_parseopt.o
@@ -2413,6 +2563,7 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ccgutils.c -o c_code/2_1/compiler_ccgutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_sigmatch.c -o c_code/2_1/compiler_sigmatch.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_modulegraphs.c -o c_code/2_1/compiler_modulegraphs.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rod.c -o c_code/2_1/compiler_rod.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_intsets.c -o c_code/2_1/stdlib_intsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rodutils.c -o c_code/2_1/compiler_rodutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pbraces.c -o c_code/2_1/compiler_pbraces.o
@@ -2420,15 +2571,15 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_filter_tmpl.c -o c_code/2_1/compiler_filter_tmpl.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_memfiles.c -o c_code/2_1/stdlib_memfiles.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_trees.c -o c_code/2_1/compiler_trees.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_modulepaths.c -o c_code/2_1/compiler_modulepaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_magicsys.c -o c_code/2_1/compiler_magicsys.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nimsets.c -o c_code/2_1/compiler_nimsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_reorder.c -o c_code/2_1/compiler_reorder.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_bitsets.c -o c_code/2_1/compiler_bitsets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lookups.c -o c_code/2_1/compiler_lookups.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_prettybase.c -o c_code/2_1/compiler_prettybase.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_treetab.c -o c_code/2_1/compiler_treetab.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semfold.c -o c_code/2_1/compiler_semfold.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_procfind.c -o c_code/2_1/compiler_procfind.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lookups.c -o c_code/2_1/compiler_lookups.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pragmas.c -o c_code/2_1/compiler_pragmas.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semtypinst.c -o c_code/2_1/compiler_semtypinst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_transf.c -o c_code/2_1/compiler_transf.o
@@ -2439,29 +2590,35 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_patterns.c -o c_code/2_1/compiler_patterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_parampatterns.c -o c_code/2_1/compiler_parampatterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_sempass2.c -o c_code/2_1/compiler_sempass2.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pretty.c -o c_code/2_1/compiler_pretty.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semmacrosanity.c -o c_code/2_1/compiler_semmacrosanity.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semparallel.c -o c_code/2_1/compiler_semparallel.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lowerings.c -o c_code/2_1/compiler_lowerings.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pluginsupport.c -o c_code/2_1/compiler_pluginsupport.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_active.c -o c_code/2_1/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_saturate.c -o c_code/2_1/compiler_saturate.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_prettybase.c -o c_code/2_1/compiler_prettybase.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pretty.c -o c_code/2_1/compiler_pretty.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_xmltree.c -o c_code/2_1/stdlib_xmltree.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cgi.c -o c_code/2_1/stdlib_cgi.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_typesrenderer.c -o c_code/2_1/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rstast.c -o c_code/2_1/docutils_rstast.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rst.c -o c_code/2_1/docutils_rst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rstgen.c -o c_code/2_1/docutils_rstgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_highlite.c -o c_code/2_1/docutils_highlite.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_xmltree.c -o c_code/2_1/stdlib_xmltree.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cgi.c -o c_code/2_1/stdlib_cgi.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_typesrenderer.c -o c_code/2_1/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_guards.c -o c_code/2_1/compiler_guards.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_writetracking.c -o c_code/2_1/compiler_writetracking.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cookies.c -o c_code/2_1/stdlib_cookies.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_uri.c -o c_code/2_1/stdlib_uri.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_prefixmatches.c -o c_code/2_1/compiler_prefixmatches.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_destroyer.c -o c_code/2_1/compiler_destroyer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_liftlocals.c -o c_code/2_1/compiler_liftlocals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_dfa.c -o c_code/2_1/compiler_dfa.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmgen.c -o c_code/2_1/compiler_vmgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmdeps.c -o c_code/2_1/compiler_vmdeps.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmmarshal.c -o c_code/2_1/compiler_vmmarshal.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_locals.c -o c_code/2_1/compiler_locals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_gorgeimpl.c -o c_code/2_1/compiler_gorgeimpl.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_active.c -o c_code/2_1/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_itersgen.c -o c_code/2_1/compiler_itersgen.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_locals.c -o c_code/2_1/compiler_locals.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_cgendata.c -o c_code/2_1/compiler_cgendata.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ccgmerge.c -o c_code/2_1/compiler_ccgmerge.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ndi.c -o c_code/2_1/compiler_ndi.o
@@ -2470,8 +2627,6 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_dynlib.c -o c_code/2_1/stdlib_dynlib.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_net.c -o c_code/2_1/stdlib_net.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_nativesockets.c -o c_code/2_1/stdlib_nativesockets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_options.c -o c_code/2_1/stdlib_options.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_typetraits.c -o c_code/2_1/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nodejs.c -o c_code/2_1/compiler_nodejs.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_scriptconfig.c -o c_code/2_1/compiler_scriptconfig.o
     $LINKER -o $binDir/nim  \
@@ -2500,16 +2655,20 @@ c_code/2_1/stdlib_hashes.o \
 c_code/2_1/stdlib_streams.o \
 c_code/2_1/stdlib_cpuinfo.o \
 c_code/2_1/stdlib_linux.o \
+c_code/2_1/stdlib_strformat.o \
+c_code/2_1/stdlib_unicode.o \
+c_code/2_1/stdlib_colors.o \
 c_code/2_1/stdlib_termios.o \
 c_code/2_1/compiler_nversion.o \
 c_code/2_1/compiler_condsyms.o \
 c_code/2_1/compiler_idents.o \
 c_code/2_1/compiler_wordrecg.o \
 c_code/2_1/compiler_extccomp.o \
-c_code/2_1/stdlib_securehash.o \
+c_code/2_1/stdlib_sha1.o \
 c_code/2_1/stdlib_json.o \
 c_code/2_1/stdlib_lexbase.o \
-c_code/2_1/stdlib_unicode.o \
+c_code/2_1/stdlib_options.o \
+c_code/2_1/stdlib_typetraits.o \
 c_code/2_1/compiler_nimblecmd.o \
 c_code/2_1/stdlib_sequtils.o \
 c_code/2_1/stdlib_parseopt.o \
@@ -2544,6 +2703,7 @@ c_code/2_1/compiler_modules.o \
 c_code/2_1/compiler_ccgutils.o \
 c_code/2_1/compiler_sigmatch.o \
 c_code/2_1/compiler_modulegraphs.o \
+c_code/2_1/compiler_rod.o \
 c_code/2_1/stdlib_intsets.o \
 c_code/2_1/compiler_rodutils.o \
 c_code/2_1/compiler_pbraces.o \
@@ -2551,15 +2711,15 @@ c_code/2_1/compiler_filters.o \
 c_code/2_1/compiler_filter_tmpl.o \
 c_code/2_1/stdlib_memfiles.o \
 c_code/2_1/compiler_trees.o \
+c_code/2_1/compiler_modulepaths.o \
 c_code/2_1/compiler_magicsys.o \
 c_code/2_1/compiler_nimsets.o \
 c_code/2_1/compiler_reorder.o \
 c_code/2_1/compiler_bitsets.o \
-c_code/2_1/compiler_lookups.o \
-c_code/2_1/compiler_prettybase.o \
 c_code/2_1/compiler_treetab.o \
 c_code/2_1/compiler_semfold.o \
 c_code/2_1/compiler_procfind.o \
+c_code/2_1/compiler_lookups.o \
 c_code/2_1/compiler_pragmas.o \
 c_code/2_1/compiler_semtypinst.o \
 c_code/2_1/compiler_transf.o \
@@ -2570,29 +2730,35 @@ c_code/2_1/compiler_evaltempl.o \
 c_code/2_1/compiler_patterns.o \
 c_code/2_1/compiler_parampatterns.o \
 c_code/2_1/compiler_sempass2.o \
-c_code/2_1/compiler_pretty.o \
 c_code/2_1/compiler_semmacrosanity.o \
 c_code/2_1/compiler_semparallel.o \
 c_code/2_1/compiler_lowerings.o \
 c_code/2_1/compiler_pluginsupport.o \
-c_code/2_1/compiler_active.o \
 c_code/2_1/compiler_saturate.o \
+c_code/2_1/compiler_prettybase.o \
+c_code/2_1/compiler_pretty.o \
+c_code/2_1/stdlib_xmltree.o \
+c_code/2_1/stdlib_cgi.o \
+c_code/2_1/compiler_typesrenderer.o \
 c_code/2_1/docutils_rstast.o \
 c_code/2_1/docutils_rst.o \
 c_code/2_1/docutils_rstgen.o \
 c_code/2_1/docutils_highlite.o \
-c_code/2_1/stdlib_xmltree.o \
-c_code/2_1/stdlib_cgi.o \
-c_code/2_1/compiler_typesrenderer.o \
 c_code/2_1/compiler_guards.o \
 c_code/2_1/compiler_writetracking.o \
 c_code/2_1/stdlib_cookies.o \
+c_code/2_1/stdlib_uri.o \
 c_code/2_1/compiler_prefixmatches.o \
+c_code/2_1/compiler_destroyer.o \
+c_code/2_1/compiler_liftlocals.o \
+c_code/2_1/compiler_dfa.o \
 c_code/2_1/compiler_vmgen.o \
 c_code/2_1/compiler_vmdeps.o \
 c_code/2_1/compiler_vmmarshal.o \
-c_code/2_1/compiler_locals.o \
+c_code/2_1/compiler_gorgeimpl.o \
+c_code/2_1/compiler_active.o \
 c_code/2_1/compiler_itersgen.o \
+c_code/2_1/compiler_locals.o \
 c_code/2_1/compiler_cgendata.o \
 c_code/2_1/compiler_ccgmerge.o \
 c_code/2_1/compiler_ndi.o \
@@ -2601,8 +2767,6 @@ c_code/2_1/stdlib_md5.o \
 c_code/2_1/stdlib_dynlib.o \
 c_code/2_1/stdlib_net.o \
 c_code/2_1/stdlib_nativesockets.o \
-c_code/2_1/stdlib_options.o \
-c_code/2_1/stdlib_typetraits.o \
 c_code/2_1/compiler_nodejs.o \
 c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     ;;
@@ -2633,16 +2797,20 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_streams.c -o c_code/2_3/stdlib_streams.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_cpuinfo.c -o c_code/2_3/stdlib_cpuinfo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_linux.c -o c_code/2_2/stdlib_linux.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_strformat.c -o c_code/2_2/stdlib_strformat.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_unicode.c -o c_code/2_2/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_colors.c -o c_code/2_2/stdlib_colors.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_termios.c -o c_code/2_2/stdlib_termios.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nversion.c -o c_code/2_2/compiler_nversion.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_condsyms.c -o c_code/2_2/compiler_condsyms.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_idents.c -o c_code/2_2/compiler_idents.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_wordrecg.c -o c_code/2_2/compiler_wordrecg.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_extccomp.c -o c_code/2_3/compiler_extccomp.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_securehash.c -o c_code/2_2/stdlib_securehash.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_json.c -o c_code/2_2/stdlib_json.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_sha1.c -o c_code/2_2/stdlib_sha1.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_json.c -o c_code/2_3/stdlib_json.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_lexbase.c -o c_code/2_2/stdlib_lexbase.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_unicode.c -o c_code/2_2/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_options.c -o c_code/2_2/stdlib_options.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_typetraits.c -o c_code/2_2/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_nimblecmd.c -o c_code/2_3/compiler_nimblecmd.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_sequtils.c -o c_code/2_2/stdlib_sequtils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_parseopt.c -o c_code/2_2/stdlib_parseopt.o
@@ -2655,7 +2823,7 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_astalgo.c -o c_code/2_2/compiler_astalgo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_syntaxes.c -o c_code/2_2/compiler_syntaxes.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_renderer.c -o c_code/2_2/compiler_renderer.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_rodread.c -o c_code/2_3/compiler_rodread.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodread.c -o c_code/2_2/compiler_rodread.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodwrite.c -o c_code/2_2/compiler_rodwrite.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_sem.c -o c_code/2_3/compiler_sem.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semdata.c -o c_code/2_2/compiler_semdata.o
@@ -2663,7 +2831,7 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_docgen.c -o c_code/2_2/compiler_docgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_cgen.c -o c_code/2_2/compiler_cgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_jsgen.c -o c_code/2_2/compiler_jsgen.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_importer.c -o c_code/2_3/compiler_importer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_importer.c -o c_code/2_2/compiler_importer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_passaux.c -o c_code/2_2/compiler_passaux.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_depends.c -o c_code/2_2/compiler_depends.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_vm.c -o c_code/2_3/compiler_vm.o
@@ -2677,22 +2845,23 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ccgutils.c -o c_code/2_2/compiler_ccgutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_sigmatch.c -o c_code/2_3/compiler_sigmatch.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_modulegraphs.c -o c_code/2_2/compiler_modulegraphs.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rod.c -o c_code/2_2/compiler_rod.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_intsets.c -o c_code/2_2/stdlib_intsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodutils.c -o c_code/2_2/compiler_rodutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pbraces.c -o c_code/2_2/compiler_pbraces.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_filters.c -o c_code/2_2/compiler_filters.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_filter_tmpl.c -o c_code/2_2/compiler_filter_tmpl.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_memfiles.c -o c_code/2_3/stdlib_memfiles.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_memfiles.c -o c_code/2_2/stdlib_memfiles.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_trees.c -o c_code/2_2/compiler_trees.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_modulepaths.c -o c_code/2_3/compiler_modulepaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_magicsys.c -o c_code/2_2/compiler_magicsys.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nimsets.c -o c_code/2_2/compiler_nimsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_reorder.c -o c_code/2_2/compiler_reorder.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_bitsets.c -o c_code/2_2/compiler_bitsets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lookups.c -o c_code/2_2/compiler_lookups.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_prettybase.c -o c_code/2_3/compiler_prettybase.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_treetab.c -o c_code/2_2/compiler_treetab.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_semfold.c -o c_code/2_3/compiler_semfold.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_procfind.c -o c_code/2_2/compiler_procfind.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lookups.c -o c_code/2_2/compiler_lookups.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_pragmas.c -o c_code/2_3/compiler_pragmas.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semtypinst.c -o c_code/2_2/compiler_semtypinst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_transf.c -o c_code/2_2/compiler_transf.o
@@ -2703,29 +2872,35 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_patterns.c -o c_code/2_2/compiler_patterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_parampatterns.c -o c_code/2_2/compiler_parampatterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_sempass2.c -o c_code/2_2/compiler_sempass2.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pretty.c -o c_code/2_2/compiler_pretty.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semmacrosanity.c -o c_code/2_2/compiler_semmacrosanity.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semparallel.c -o c_code/2_2/compiler_semparallel.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lowerings.c -o c_code/2_2/compiler_lowerings.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pluginsupport.c -o c_code/2_2/compiler_pluginsupport.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_active.c -o c_code/2_2/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_saturate.c -o c_code/2_2/compiler_saturate.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_prettybase.c -o c_code/2_3/compiler_prettybase.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pretty.c -o c_code/2_2/compiler_pretty.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_xmltree.c -o c_code/2_2/stdlib_xmltree.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cgi.c -o c_code/2_2/stdlib_cgi.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_typesrenderer.c -o c_code/2_2/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_rstast.c -o c_code/2_2/docutils_rstast.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_rst.c -o c_code/2_2/docutils_rst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/docutils_rstgen.c -o c_code/2_3/docutils_rstgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_highlite.c -o c_code/2_2/docutils_highlite.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_xmltree.c -o c_code/2_2/stdlib_xmltree.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cgi.c -o c_code/2_2/stdlib_cgi.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_typesrenderer.c -o c_code/2_2/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_guards.c -o c_code/2_2/compiler_guards.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_writetracking.c -o c_code/2_2/compiler_writetracking.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cookies.c -o c_code/2_2/stdlib_cookies.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_uri.c -o c_code/2_2/stdlib_uri.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_prefixmatches.c -o c_code/2_2/compiler_prefixmatches.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_destroyer.c -o c_code/2_2/compiler_destroyer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_liftlocals.c -o c_code/2_2/compiler_liftlocals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_dfa.c -o c_code/2_2/compiler_dfa.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_vmgen.c -o c_code/2_2/compiler_vmgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_vmdeps.c -o c_code/2_3/compiler_vmdeps.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_vmmarshal.c -o c_code/2_2/compiler_vmmarshal.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_locals.c -o c_code/2_2/compiler_locals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_gorgeimpl.c -o c_code/2_3/compiler_gorgeimpl.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_active.c -o c_code/2_2/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_itersgen.c -o c_code/2_2/compiler_itersgen.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_locals.c -o c_code/2_2/compiler_locals.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_cgendata.c -o c_code/2_2/compiler_cgendata.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ccgmerge.c -o c_code/2_2/compiler_ccgmerge.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ndi.c -o c_code/2_2/compiler_ndi.o
@@ -2734,8 +2909,6 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_dynlib.c -o c_code/2_2/stdlib_dynlib.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_net.c -o c_code/2_2/stdlib_net.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_nativesockets.c -o c_code/2_3/stdlib_nativesockets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_options.c -o c_code/2_2/stdlib_options.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_typetraits.c -o c_code/2_2/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nodejs.c -o c_code/2_2/compiler_nodejs.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_scriptconfig.c -o c_code/2_3/compiler_scriptconfig.o
     $LINKER -o $binDir/nim  \
@@ -2764,16 +2937,20 @@ c_code/2_2/stdlib_hashes.o \
 c_code/2_3/stdlib_streams.o \
 c_code/2_3/stdlib_cpuinfo.o \
 c_code/2_2/stdlib_linux.o \
+c_code/2_2/stdlib_strformat.o \
+c_code/2_2/stdlib_unicode.o \
+c_code/2_2/stdlib_colors.o \
 c_code/2_2/stdlib_termios.o \
 c_code/2_2/compiler_nversion.o \
 c_code/2_2/compiler_condsyms.o \
 c_code/2_2/compiler_idents.o \
 c_code/2_2/compiler_wordrecg.o \
 c_code/2_3/compiler_extccomp.o \
-c_code/2_2/stdlib_securehash.o \
-c_code/2_2/stdlib_json.o \
+c_code/2_2/stdlib_sha1.o \
+c_code/2_3/stdlib_json.o \
 c_code/2_2/stdlib_lexbase.o \
-c_code/2_2/stdlib_unicode.o \
+c_code/2_2/stdlib_options.o \
+c_code/2_2/stdlib_typetraits.o \
 c_code/2_3/compiler_nimblecmd.o \
 c_code/2_2/stdlib_sequtils.o \
 c_code/2_2/stdlib_parseopt.o \
@@ -2786,7 +2963,7 @@ c_code/2_2/compiler_ast.o \
 c_code/2_2/compiler_astalgo.o \
 c_code/2_2/compiler_syntaxes.o \
 c_code/2_2/compiler_renderer.o \
-c_code/2_3/compiler_rodread.o \
+c_code/2_2/compiler_rodread.o \
 c_code/2_2/compiler_rodwrite.o \
 c_code/2_3/compiler_sem.o \
 c_code/2_2/compiler_semdata.o \
@@ -2794,7 +2971,7 @@ c_code/2_2/compiler_passes.o \
 c_code/2_2/compiler_docgen.o \
 c_code/2_2/compiler_cgen.o \
 c_code/2_2/compiler_jsgen.o \
-c_code/2_3/compiler_importer.o \
+c_code/2_2/compiler_importer.o \
 c_code/2_2/compiler_passaux.o \
 c_code/2_2/compiler_depends.o \
 c_code/2_3/compiler_vm.o \
@@ -2808,22 +2985,23 @@ c_code/2_2/compiler_modules.o \
 c_code/2_2/compiler_ccgutils.o \
 c_code/2_3/compiler_sigmatch.o \
 c_code/2_2/compiler_modulegraphs.o \
+c_code/2_2/compiler_rod.o \
 c_code/2_2/stdlib_intsets.o \
 c_code/2_2/compiler_rodutils.o \
 c_code/2_2/compiler_pbraces.o \
 c_code/2_2/compiler_filters.o \
 c_code/2_2/compiler_filter_tmpl.o \
-c_code/2_3/stdlib_memfiles.o \
+c_code/2_2/stdlib_memfiles.o \
 c_code/2_2/compiler_trees.o \
+c_code/2_3/compiler_modulepaths.o \
 c_code/2_2/compiler_magicsys.o \
 c_code/2_2/compiler_nimsets.o \
 c_code/2_2/compiler_reorder.o \
 c_code/2_2/compiler_bitsets.o \
-c_code/2_2/compiler_lookups.o \
-c_code/2_3/compiler_prettybase.o \
 c_code/2_2/compiler_treetab.o \
 c_code/2_3/compiler_semfold.o \
 c_code/2_2/compiler_procfind.o \
+c_code/2_2/compiler_lookups.o \
 c_code/2_3/compiler_pragmas.o \
 c_code/2_2/compiler_semtypinst.o \
 c_code/2_2/compiler_transf.o \
@@ -2834,29 +3012,35 @@ c_code/2_2/compiler_evaltempl.o \
 c_code/2_2/compiler_patterns.o \
 c_code/2_2/compiler_parampatterns.o \
 c_code/2_2/compiler_sempass2.o \
-c_code/2_2/compiler_pretty.o \
 c_code/2_2/compiler_semmacrosanity.o \
 c_code/2_2/compiler_semparallel.o \
 c_code/2_2/compiler_lowerings.o \
 c_code/2_2/compiler_pluginsupport.o \
-c_code/2_2/compiler_active.o \
 c_code/2_2/compiler_saturate.o \
+c_code/2_3/compiler_prettybase.o \
+c_code/2_2/compiler_pretty.o \
+c_code/2_2/stdlib_xmltree.o \
+c_code/2_2/stdlib_cgi.o \
+c_code/2_2/compiler_typesrenderer.o \
 c_code/2_2/docutils_rstast.o \
 c_code/2_2/docutils_rst.o \
 c_code/2_3/docutils_rstgen.o \
 c_code/2_2/docutils_highlite.o \
-c_code/2_2/stdlib_xmltree.o \
-c_code/2_2/stdlib_cgi.o \
-c_code/2_2/compiler_typesrenderer.o \
 c_code/2_2/compiler_guards.o \
 c_code/2_2/compiler_writetracking.o \
 c_code/2_2/stdlib_cookies.o \
+c_code/2_2/stdlib_uri.o \
 c_code/2_2/compiler_prefixmatches.o \
+c_code/2_2/compiler_destroyer.o \
+c_code/2_2/compiler_liftlocals.o \
+c_code/2_2/compiler_dfa.o \
 c_code/2_2/compiler_vmgen.o \
 c_code/2_3/compiler_vmdeps.o \
 c_code/2_2/compiler_vmmarshal.o \
-c_code/2_2/compiler_locals.o \
+c_code/2_3/compiler_gorgeimpl.o \
+c_code/2_2/compiler_active.o \
 c_code/2_2/compiler_itersgen.o \
+c_code/2_2/compiler_locals.o \
 c_code/2_2/compiler_cgendata.o \
 c_code/2_2/compiler_ccgmerge.o \
 c_code/2_2/compiler_ndi.o \
@@ -2865,8 +3049,6 @@ c_code/2_2/stdlib_md5.o \
 c_code/2_2/stdlib_dynlib.o \
 c_code/2_2/stdlib_net.o \
 c_code/2_3/stdlib_nativesockets.o \
-c_code/2_2/stdlib_options.o \
-c_code/2_2/stdlib_typetraits.o \
 c_code/2_2/compiler_nodejs.o \
 c_code/2_3/compiler_scriptconfig.o $LINK_FLAGS
     ;;
@@ -2897,16 +3079,20 @@ c_code/2_3/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_streams.c -o c_code/2_3/stdlib_streams.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_cpuinfo.c -o c_code/2_3/stdlib_cpuinfo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_linux.c -o c_code/2_2/stdlib_linux.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_strformat.c -o c_code/2_2/stdlib_strformat.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_unicode.c -o c_code/2_2/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_colors.c -o c_code/2_2/stdlib_colors.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_termios.c -o c_code/2_2/stdlib_termios.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nversion.c -o c_code/2_2/compiler_nversion.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_condsyms.c -o c_code/2_2/compiler_condsyms.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_idents.c -o c_code/2_2/compiler_idents.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_wordrecg.c -o c_code/2_2/compiler_wordrecg.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_extccomp.c -o c_code/2_3/compiler_extccomp.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_securehash.c -o c_code/2_2/stdlib_securehash.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_json.c -o c_code/2_2/stdlib_json.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_sha1.c -o c_code/2_2/stdlib_sha1.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_json.c -o c_code/2_3/stdlib_json.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_lexbase.c -o c_code/2_2/stdlib_lexbase.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_unicode.c -o c_code/2_2/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_options.c -o c_code/2_2/stdlib_options.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_typetraits.c -o c_code/2_2/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_nimblecmd.c -o c_code/2_3/compiler_nimblecmd.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_sequtils.c -o c_code/2_2/stdlib_sequtils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_parseopt.c -o c_code/2_2/stdlib_parseopt.o
@@ -2919,7 +3105,7 @@ c_code/2_3/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_astalgo.c -o c_code/2_2/compiler_astalgo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_syntaxes.c -o c_code/2_2/compiler_syntaxes.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_renderer.c -o c_code/2_2/compiler_renderer.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_rodread.c -o c_code/2_3/compiler_rodread.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodread.c -o c_code/2_2/compiler_rodread.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodwrite.c -o c_code/2_2/compiler_rodwrite.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_sem.c -o c_code/2_3/compiler_sem.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semdata.c -o c_code/2_2/compiler_semdata.o
@@ -2927,7 +3113,7 @@ c_code/2_3/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_docgen.c -o c_code/2_2/compiler_docgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_cgen.c -o c_code/2_2/compiler_cgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_jsgen.c -o c_code/2_2/compiler_jsgen.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_importer.c -o c_code/2_3/compiler_importer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_importer.c -o c_code/2_2/compiler_importer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_passaux.c -o c_code/2_2/compiler_passaux.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_depends.c -o c_code/2_2/compiler_depends.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_9/compiler_vm.c -o c_code/2_9/compiler_vm.o
@@ -2941,22 +3127,23 @@ c_code/2_3/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ccgutils.c -o c_code/2_2/compiler_ccgutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_sigmatch.c -o c_code/2_3/compiler_sigmatch.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_modulegraphs.c -o c_code/2_2/compiler_modulegraphs.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rod.c -o c_code/2_2/compiler_rod.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_intsets.c -o c_code/2_2/stdlib_intsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodutils.c -o c_code/2_2/compiler_rodutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pbraces.c -o c_code/2_2/compiler_pbraces.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_filters.c -o c_code/2_2/compiler_filters.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_filter_tmpl.c -o c_code/2_2/compiler_filter_tmpl.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_memfiles.c -o c_code/2_3/stdlib_memfiles.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_memfiles.c -o c_code/2_2/stdlib_memfiles.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_trees.c -o c_code/2_2/compiler_trees.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_modulepaths.c -o c_code/2_3/compiler_modulepaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_magicsys.c -o c_code/2_2/compiler_magicsys.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nimsets.c -o c_code/2_2/compiler_nimsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_reorder.c -o c_code/2_2/compiler_reorder.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_bitsets.c -o c_code/2_2/compiler_bitsets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lookups.c -o c_code/2_2/compiler_lookups.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_prettybase.c -o c_code/2_3/compiler_prettybase.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_treetab.c -o c_code/2_2/compiler_treetab.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_semfold.c -o c_code/2_3/compiler_semfold.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_procfind.c -o c_code/2_2/compiler_procfind.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lookups.c -o c_code/2_2/compiler_lookups.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_pragmas.c -o c_code/2_3/compiler_pragmas.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semtypinst.c -o c_code/2_2/compiler_semtypinst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_transf.c -o c_code/2_2/compiler_transf.o
@@ -2967,29 +3154,35 @@ c_code/2_3/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_patterns.c -o c_code/2_2/compiler_patterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_parampatterns.c -o c_code/2_2/compiler_parampatterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_sempass2.c -o c_code/2_2/compiler_sempass2.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pretty.c -o c_code/2_2/compiler_pretty.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semmacrosanity.c -o c_code/2_2/compiler_semmacrosanity.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semparallel.c -o c_code/2_2/compiler_semparallel.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lowerings.c -o c_code/2_2/compiler_lowerings.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pluginsupport.c -o c_code/2_2/compiler_pluginsupport.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_active.c -o c_code/2_2/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_saturate.c -o c_code/2_2/compiler_saturate.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_prettybase.c -o c_code/2_3/compiler_prettybase.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pretty.c -o c_code/2_2/compiler_pretty.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_xmltree.c -o c_code/2_2/stdlib_xmltree.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cgi.c -o c_code/2_2/stdlib_cgi.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_typesrenderer.c -o c_code/2_2/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_rstast.c -o c_code/2_2/docutils_rstast.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_rst.c -o c_code/2_2/docutils_rst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/docutils_rstgen.c -o c_code/2_3/docutils_rstgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_highlite.c -o c_code/2_2/docutils_highlite.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_xmltree.c -o c_code/2_2/stdlib_xmltree.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cgi.c -o c_code/2_2/stdlib_cgi.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_typesrenderer.c -o c_code/2_2/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_guards.c -o c_code/2_2/compiler_guards.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_writetracking.c -o c_code/2_2/compiler_writetracking.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cookies.c -o c_code/2_2/stdlib_cookies.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_uri.c -o c_code/2_2/stdlib_uri.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_prefixmatches.c -o c_code/2_2/compiler_prefixmatches.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_destroyer.c -o c_code/2_2/compiler_destroyer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_liftlocals.c -o c_code/2_2/compiler_liftlocals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_dfa.c -o c_code/2_2/compiler_dfa.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_vmgen.c -o c_code/2_2/compiler_vmgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_vmdeps.c -o c_code/2_3/compiler_vmdeps.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_vmmarshal.c -o c_code/2_2/compiler_vmmarshal.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_locals.c -o c_code/2_2/compiler_locals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_gorgeimpl.c -o c_code/2_3/compiler_gorgeimpl.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_active.c -o c_code/2_2/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_itersgen.c -o c_code/2_2/compiler_itersgen.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_locals.c -o c_code/2_2/compiler_locals.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_cgendata.c -o c_code/2_2/compiler_cgendata.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ccgmerge.c -o c_code/2_2/compiler_ccgmerge.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ndi.c -o c_code/2_2/compiler_ndi.o
@@ -2998,8 +3191,6 @@ c_code/2_3/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_dynlib.c -o c_code/2_2/stdlib_dynlib.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_net.c -o c_code/2_2/stdlib_net.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_nativesockets.c -o c_code/2_3/stdlib_nativesockets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_options.c -o c_code/2_2/stdlib_options.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_typetraits.c -o c_code/2_2/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nodejs.c -o c_code/2_2/compiler_nodejs.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_scriptconfig.c -o c_code/2_3/compiler_scriptconfig.o
     $LINKER -o $binDir/nim  \
@@ -3028,16 +3219,20 @@ c_code/2_2/stdlib_hashes.o \
 c_code/2_3/stdlib_streams.o \
 c_code/2_3/stdlib_cpuinfo.o \
 c_code/2_2/stdlib_linux.o \
+c_code/2_2/stdlib_strformat.o \
+c_code/2_2/stdlib_unicode.o \
+c_code/2_2/stdlib_colors.o \
 c_code/2_2/stdlib_termios.o \
 c_code/2_2/compiler_nversion.o \
 c_code/2_2/compiler_condsyms.o \
 c_code/2_2/compiler_idents.o \
 c_code/2_2/compiler_wordrecg.o \
 c_code/2_3/compiler_extccomp.o \
-c_code/2_2/stdlib_securehash.o \
-c_code/2_2/stdlib_json.o \
+c_code/2_2/stdlib_sha1.o \
+c_code/2_3/stdlib_json.o \
 c_code/2_2/stdlib_lexbase.o \
-c_code/2_2/stdlib_unicode.o \
+c_code/2_2/stdlib_options.o \
+c_code/2_2/stdlib_typetraits.o \
 c_code/2_3/compiler_nimblecmd.o \
 c_code/2_2/stdlib_sequtils.o \
 c_code/2_2/stdlib_parseopt.o \
@@ -3050,7 +3245,7 @@ c_code/2_2/compiler_ast.o \
 c_code/2_2/compiler_astalgo.o \
 c_code/2_2/compiler_syntaxes.o \
 c_code/2_2/compiler_renderer.o \
-c_code/2_3/compiler_rodread.o \
+c_code/2_2/compiler_rodread.o \
 c_code/2_2/compiler_rodwrite.o \
 c_code/2_3/compiler_sem.o \
 c_code/2_2/compiler_semdata.o \
@@ -3058,7 +3253,7 @@ c_code/2_2/compiler_passes.o \
 c_code/2_2/compiler_docgen.o \
 c_code/2_2/compiler_cgen.o \
 c_code/2_2/compiler_jsgen.o \
-c_code/2_3/compiler_importer.o \
+c_code/2_2/compiler_importer.o \
 c_code/2_2/compiler_passaux.o \
 c_code/2_2/compiler_depends.o \
 c_code/2_9/compiler_vm.o \
@@ -3072,22 +3267,23 @@ c_code/2_2/compiler_modules.o \
 c_code/2_2/compiler_ccgutils.o \
 c_code/2_3/compiler_sigmatch.o \
 c_code/2_2/compiler_modulegraphs.o \
+c_code/2_2/compiler_rod.o \
 c_code/2_2/stdlib_intsets.o \
 c_code/2_2/compiler_rodutils.o \
 c_code/2_2/compiler_pbraces.o \
 c_code/2_2/compiler_filters.o \
 c_code/2_2/compiler_filter_tmpl.o \
-c_code/2_3/stdlib_memfiles.o \
+c_code/2_2/stdlib_memfiles.o \
 c_code/2_2/compiler_trees.o \
+c_code/2_3/compiler_modulepaths.o \
 c_code/2_2/compiler_magicsys.o \
 c_code/2_2/compiler_nimsets.o \
 c_code/2_2/compiler_reorder.o \
 c_code/2_2/compiler_bitsets.o \
-c_code/2_2/compiler_lookups.o \
-c_code/2_3/compiler_prettybase.o \
 c_code/2_2/compiler_treetab.o \
 c_code/2_3/compiler_semfold.o \
 c_code/2_2/compiler_procfind.o \
+c_code/2_2/compiler_lookups.o \
 c_code/2_3/compiler_pragmas.o \
 c_code/2_2/compiler_semtypinst.o \
 c_code/2_2/compiler_transf.o \
@@ -3098,29 +3294,35 @@ c_code/2_2/compiler_evaltempl.o \
 c_code/2_2/compiler_patterns.o \
 c_code/2_2/compiler_parampatterns.o \
 c_code/2_2/compiler_sempass2.o \
-c_code/2_2/compiler_pretty.o \
 c_code/2_2/compiler_semmacrosanity.o \
 c_code/2_2/compiler_semparallel.o \
 c_code/2_2/compiler_lowerings.o \
 c_code/2_2/compiler_pluginsupport.o \
-c_code/2_2/compiler_active.o \
 c_code/2_2/compiler_saturate.o \
+c_code/2_3/compiler_prettybase.o \
+c_code/2_2/compiler_pretty.o \
+c_code/2_2/stdlib_xmltree.o \
+c_code/2_2/stdlib_cgi.o \
+c_code/2_2/compiler_typesrenderer.o \
 c_code/2_2/docutils_rstast.o \
 c_code/2_2/docutils_rst.o \
 c_code/2_3/docutils_rstgen.o \
 c_code/2_2/docutils_highlite.o \
-c_code/2_2/stdlib_xmltree.o \
-c_code/2_2/stdlib_cgi.o \
-c_code/2_2/compiler_typesrenderer.o \
 c_code/2_2/compiler_guards.o \
 c_code/2_2/compiler_writetracking.o \
 c_code/2_2/stdlib_cookies.o \
+c_code/2_2/stdlib_uri.o \
 c_code/2_2/compiler_prefixmatches.o \
+c_code/2_2/compiler_destroyer.o \
+c_code/2_2/compiler_liftlocals.o \
+c_code/2_2/compiler_dfa.o \
 c_code/2_2/compiler_vmgen.o \
 c_code/2_3/compiler_vmdeps.o \
 c_code/2_2/compiler_vmmarshal.o \
-c_code/2_2/compiler_locals.o \
+c_code/2_3/compiler_gorgeimpl.o \
+c_code/2_2/compiler_active.o \
 c_code/2_2/compiler_itersgen.o \
+c_code/2_2/compiler_locals.o \
 c_code/2_2/compiler_cgendata.o \
 c_code/2_2/compiler_ccgmerge.o \
 c_code/2_2/compiler_ndi.o \
@@ -3129,8 +3331,6 @@ c_code/2_2/stdlib_md5.o \
 c_code/2_2/stdlib_dynlib.o \
 c_code/2_2/stdlib_net.o \
 c_code/2_3/stdlib_nativesockets.o \
-c_code/2_2/stdlib_options.o \
-c_code/2_2/stdlib_typetraits.o \
 c_code/2_2/compiler_nodejs.o \
 c_code/2_3/compiler_scriptconfig.o $LINK_FLAGS
     ;;
@@ -3161,16 +3361,20 @@ c_code/2_3/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_streams.c -o c_code/2_1/stdlib_streams.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cpuinfo.c -o c_code/2_1/stdlib_cpuinfo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_linux.c -o c_code/2_1/stdlib_linux.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_strformat.c -o c_code/2_1/stdlib_strformat.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_unicode.c -o c_code/2_1/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_colors.c -o c_code/2_1/stdlib_colors.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_termios.c -o c_code/2_1/stdlib_termios.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nversion.c -o c_code/2_1/compiler_nversion.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_condsyms.c -o c_code/2_1/compiler_condsyms.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_idents.c -o c_code/2_1/compiler_idents.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_wordrecg.c -o c_code/2_1/compiler_wordrecg.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_extccomp.c -o c_code/2_1/compiler_extccomp.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_securehash.c -o c_code/2_1/stdlib_securehash.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_sha1.c -o c_code/2_1/stdlib_sha1.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_json.c -o c_code/2_1/stdlib_json.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_lexbase.c -o c_code/2_1/stdlib_lexbase.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_unicode.c -o c_code/2_1/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_options.c -o c_code/2_1/stdlib_options.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_typetraits.c -o c_code/2_1/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nimblecmd.c -o c_code/2_1/compiler_nimblecmd.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_sequtils.c -o c_code/2_1/stdlib_sequtils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_parseopt.c -o c_code/2_1/stdlib_parseopt.o
@@ -3205,6 +3409,7 @@ c_code/2_3/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ccgutils.c -o c_code/2_1/compiler_ccgutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_sigmatch.c -o c_code/2_1/compiler_sigmatch.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_modulegraphs.c -o c_code/2_1/compiler_modulegraphs.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rod.c -o c_code/2_1/compiler_rod.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_intsets.c -o c_code/2_1/stdlib_intsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rodutils.c -o c_code/2_1/compiler_rodutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pbraces.c -o c_code/2_1/compiler_pbraces.o
@@ -3212,15 +3417,15 @@ c_code/2_3/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_filter_tmpl.c -o c_code/2_1/compiler_filter_tmpl.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_memfiles.c -o c_code/2_1/stdlib_memfiles.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_trees.c -o c_code/2_1/compiler_trees.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_modulepaths.c -o c_code/2_1/compiler_modulepaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_magicsys.c -o c_code/2_1/compiler_magicsys.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nimsets.c -o c_code/2_1/compiler_nimsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_reorder.c -o c_code/2_1/compiler_reorder.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_bitsets.c -o c_code/2_1/compiler_bitsets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lookups.c -o c_code/2_1/compiler_lookups.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_prettybase.c -o c_code/2_1/compiler_prettybase.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_treetab.c -o c_code/2_1/compiler_treetab.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semfold.c -o c_code/2_1/compiler_semfold.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_procfind.c -o c_code/2_1/compiler_procfind.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lookups.c -o c_code/2_1/compiler_lookups.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pragmas.c -o c_code/2_1/compiler_pragmas.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semtypinst.c -o c_code/2_1/compiler_semtypinst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_transf.c -o c_code/2_1/compiler_transf.o
@@ -3231,29 +3436,35 @@ c_code/2_3/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_patterns.c -o c_code/2_1/compiler_patterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_parampatterns.c -o c_code/2_1/compiler_parampatterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_sempass2.c -o c_code/2_1/compiler_sempass2.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pretty.c -o c_code/2_1/compiler_pretty.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semmacrosanity.c -o c_code/2_1/compiler_semmacrosanity.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semparallel.c -o c_code/2_1/compiler_semparallel.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lowerings.c -o c_code/2_1/compiler_lowerings.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pluginsupport.c -o c_code/2_1/compiler_pluginsupport.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_active.c -o c_code/2_1/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_saturate.c -o c_code/2_1/compiler_saturate.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_prettybase.c -o c_code/2_1/compiler_prettybase.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pretty.c -o c_code/2_1/compiler_pretty.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_xmltree.c -o c_code/2_1/stdlib_xmltree.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cgi.c -o c_code/2_1/stdlib_cgi.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_typesrenderer.c -o c_code/2_1/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rstast.c -o c_code/2_1/docutils_rstast.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rst.c -o c_code/2_1/docutils_rst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rstgen.c -o c_code/2_1/docutils_rstgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_highlite.c -o c_code/2_1/docutils_highlite.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_xmltree.c -o c_code/2_1/stdlib_xmltree.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cgi.c -o c_code/2_1/stdlib_cgi.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_typesrenderer.c -o c_code/2_1/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_guards.c -o c_code/2_1/compiler_guards.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_writetracking.c -o c_code/2_1/compiler_writetracking.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cookies.c -o c_code/2_1/stdlib_cookies.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_uri.c -o c_code/2_1/stdlib_uri.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_prefixmatches.c -o c_code/2_1/compiler_prefixmatches.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_destroyer.c -o c_code/2_1/compiler_destroyer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_liftlocals.c -o c_code/2_1/compiler_liftlocals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_dfa.c -o c_code/2_1/compiler_dfa.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmgen.c -o c_code/2_1/compiler_vmgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmdeps.c -o c_code/2_1/compiler_vmdeps.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmmarshal.c -o c_code/2_1/compiler_vmmarshal.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_locals.c -o c_code/2_1/compiler_locals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_gorgeimpl.c -o c_code/2_1/compiler_gorgeimpl.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_active.c -o c_code/2_1/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_itersgen.c -o c_code/2_1/compiler_itersgen.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_locals.c -o c_code/2_1/compiler_locals.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_cgendata.c -o c_code/2_1/compiler_cgendata.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ccgmerge.c -o c_code/2_1/compiler_ccgmerge.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ndi.c -o c_code/2_1/compiler_ndi.o
@@ -3262,8 +3473,6 @@ c_code/2_3/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_dynlib.c -o c_code/2_1/stdlib_dynlib.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_net.c -o c_code/2_1/stdlib_net.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_nativesockets.c -o c_code/2_1/stdlib_nativesockets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_options.c -o c_code/2_1/stdlib_options.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_typetraits.c -o c_code/2_1/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nodejs.c -o c_code/2_1/compiler_nodejs.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_scriptconfig.c -o c_code/2_1/compiler_scriptconfig.o
     $LINKER -o $binDir/nim  \
@@ -3292,16 +3501,20 @@ c_code/2_1/stdlib_hashes.o \
 c_code/2_1/stdlib_streams.o \
 c_code/2_1/stdlib_cpuinfo.o \
 c_code/2_1/stdlib_linux.o \
+c_code/2_1/stdlib_strformat.o \
+c_code/2_1/stdlib_unicode.o \
+c_code/2_1/stdlib_colors.o \
 c_code/2_1/stdlib_termios.o \
 c_code/2_1/compiler_nversion.o \
 c_code/2_1/compiler_condsyms.o \
 c_code/2_1/compiler_idents.o \
 c_code/2_1/compiler_wordrecg.o \
 c_code/2_1/compiler_extccomp.o \
-c_code/2_1/stdlib_securehash.o \
+c_code/2_1/stdlib_sha1.o \
 c_code/2_1/stdlib_json.o \
 c_code/2_1/stdlib_lexbase.o \
-c_code/2_1/stdlib_unicode.o \
+c_code/2_1/stdlib_options.o \
+c_code/2_1/stdlib_typetraits.o \
 c_code/2_1/compiler_nimblecmd.o \
 c_code/2_1/stdlib_sequtils.o \
 c_code/2_1/stdlib_parseopt.o \
@@ -3336,6 +3549,7 @@ c_code/2_1/compiler_modules.o \
 c_code/2_1/compiler_ccgutils.o \
 c_code/2_1/compiler_sigmatch.o \
 c_code/2_1/compiler_modulegraphs.o \
+c_code/2_1/compiler_rod.o \
 c_code/2_1/stdlib_intsets.o \
 c_code/2_1/compiler_rodutils.o \
 c_code/2_1/compiler_pbraces.o \
@@ -3343,15 +3557,15 @@ c_code/2_1/compiler_filters.o \
 c_code/2_1/compiler_filter_tmpl.o \
 c_code/2_1/stdlib_memfiles.o \
 c_code/2_1/compiler_trees.o \
+c_code/2_1/compiler_modulepaths.o \
 c_code/2_1/compiler_magicsys.o \
 c_code/2_1/compiler_nimsets.o \
 c_code/2_1/compiler_reorder.o \
 c_code/2_1/compiler_bitsets.o \
-c_code/2_1/compiler_lookups.o \
-c_code/2_1/compiler_prettybase.o \
 c_code/2_1/compiler_treetab.o \
 c_code/2_1/compiler_semfold.o \
 c_code/2_1/compiler_procfind.o \
+c_code/2_1/compiler_lookups.o \
 c_code/2_1/compiler_pragmas.o \
 c_code/2_1/compiler_semtypinst.o \
 c_code/2_1/compiler_transf.o \
@@ -3362,29 +3576,35 @@ c_code/2_1/compiler_evaltempl.o \
 c_code/2_1/compiler_patterns.o \
 c_code/2_1/compiler_parampatterns.o \
 c_code/2_1/compiler_sempass2.o \
-c_code/2_1/compiler_pretty.o \
 c_code/2_1/compiler_semmacrosanity.o \
 c_code/2_1/compiler_semparallel.o \
 c_code/2_1/compiler_lowerings.o \
 c_code/2_1/compiler_pluginsupport.o \
-c_code/2_1/compiler_active.o \
 c_code/2_1/compiler_saturate.o \
+c_code/2_1/compiler_prettybase.o \
+c_code/2_1/compiler_pretty.o \
+c_code/2_1/stdlib_xmltree.o \
+c_code/2_1/stdlib_cgi.o \
+c_code/2_1/compiler_typesrenderer.o \
 c_code/2_1/docutils_rstast.o \
 c_code/2_1/docutils_rst.o \
 c_code/2_1/docutils_rstgen.o \
 c_code/2_1/docutils_highlite.o \
-c_code/2_1/stdlib_xmltree.o \
-c_code/2_1/stdlib_cgi.o \
-c_code/2_1/compiler_typesrenderer.o \
 c_code/2_1/compiler_guards.o \
 c_code/2_1/compiler_writetracking.o \
 c_code/2_1/stdlib_cookies.o \
+c_code/2_1/stdlib_uri.o \
 c_code/2_1/compiler_prefixmatches.o \
+c_code/2_1/compiler_destroyer.o \
+c_code/2_1/compiler_liftlocals.o \
+c_code/2_1/compiler_dfa.o \
 c_code/2_1/compiler_vmgen.o \
 c_code/2_1/compiler_vmdeps.o \
 c_code/2_1/compiler_vmmarshal.o \
-c_code/2_1/compiler_locals.o \
+c_code/2_1/compiler_gorgeimpl.o \
+c_code/2_1/compiler_active.o \
 c_code/2_1/compiler_itersgen.o \
+c_code/2_1/compiler_locals.o \
 c_code/2_1/compiler_cgendata.o \
 c_code/2_1/compiler_ccgmerge.o \
 c_code/2_1/compiler_ndi.o \
@@ -3393,8 +3613,6 @@ c_code/2_1/stdlib_md5.o \
 c_code/2_1/stdlib_dynlib.o \
 c_code/2_1/stdlib_net.o \
 c_code/2_1/stdlib_nativesockets.o \
-c_code/2_1/stdlib_options.o \
-c_code/2_1/stdlib_typetraits.o \
 c_code/2_1/compiler_nodejs.o \
 c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     ;;
@@ -3425,16 +3643,20 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_streams.c -o c_code/2_3/stdlib_streams.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_cpuinfo.c -o c_code/2_3/stdlib_cpuinfo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_linux.c -o c_code/2_2/stdlib_linux.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_strformat.c -o c_code/2_2/stdlib_strformat.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_unicode.c -o c_code/2_2/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_colors.c -o c_code/2_2/stdlib_colors.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_termios.c -o c_code/2_2/stdlib_termios.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nversion.c -o c_code/2_2/compiler_nversion.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_condsyms.c -o c_code/2_2/compiler_condsyms.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_idents.c -o c_code/2_2/compiler_idents.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_wordrecg.c -o c_code/2_2/compiler_wordrecg.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_extccomp.c -o c_code/2_3/compiler_extccomp.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_securehash.c -o c_code/2_2/stdlib_securehash.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_json.c -o c_code/2_2/stdlib_json.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_sha1.c -o c_code/2_2/stdlib_sha1.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_json.c -o c_code/2_3/stdlib_json.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_lexbase.c -o c_code/2_2/stdlib_lexbase.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_unicode.c -o c_code/2_2/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_options.c -o c_code/2_2/stdlib_options.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_typetraits.c -o c_code/2_2/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_nimblecmd.c -o c_code/2_3/compiler_nimblecmd.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_sequtils.c -o c_code/2_2/stdlib_sequtils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_parseopt.c -o c_code/2_2/stdlib_parseopt.o
@@ -3447,7 +3669,7 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_astalgo.c -o c_code/2_2/compiler_astalgo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_syntaxes.c -o c_code/2_2/compiler_syntaxes.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_renderer.c -o c_code/2_2/compiler_renderer.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_rodread.c -o c_code/2_3/compiler_rodread.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodread.c -o c_code/2_2/compiler_rodread.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodwrite.c -o c_code/2_2/compiler_rodwrite.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_sem.c -o c_code/2_3/compiler_sem.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semdata.c -o c_code/2_2/compiler_semdata.o
@@ -3455,7 +3677,7 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_docgen.c -o c_code/2_2/compiler_docgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_cgen.c -o c_code/2_2/compiler_cgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_jsgen.c -o c_code/2_2/compiler_jsgen.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_importer.c -o c_code/2_3/compiler_importer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_importer.c -o c_code/2_2/compiler_importer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_passaux.c -o c_code/2_2/compiler_passaux.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_depends.c -o c_code/2_2/compiler_depends.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_9/compiler_vm.c -o c_code/2_9/compiler_vm.o
@@ -3469,22 +3691,23 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ccgutils.c -o c_code/2_2/compiler_ccgutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_sigmatch.c -o c_code/2_3/compiler_sigmatch.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_modulegraphs.c -o c_code/2_2/compiler_modulegraphs.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rod.c -o c_code/2_2/compiler_rod.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_intsets.c -o c_code/2_2/stdlib_intsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodutils.c -o c_code/2_2/compiler_rodutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pbraces.c -o c_code/2_2/compiler_pbraces.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_filters.c -o c_code/2_2/compiler_filters.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_filter_tmpl.c -o c_code/2_2/compiler_filter_tmpl.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_memfiles.c -o c_code/2_3/stdlib_memfiles.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_memfiles.c -o c_code/2_2/stdlib_memfiles.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_trees.c -o c_code/2_2/compiler_trees.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_modulepaths.c -o c_code/2_3/compiler_modulepaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_magicsys.c -o c_code/2_2/compiler_magicsys.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nimsets.c -o c_code/2_2/compiler_nimsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_reorder.c -o c_code/2_2/compiler_reorder.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_bitsets.c -o c_code/2_2/compiler_bitsets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lookups.c -o c_code/2_2/compiler_lookups.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_prettybase.c -o c_code/2_3/compiler_prettybase.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_treetab.c -o c_code/2_2/compiler_treetab.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_semfold.c -o c_code/2_3/compiler_semfold.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_procfind.c -o c_code/2_2/compiler_procfind.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lookups.c -o c_code/2_2/compiler_lookups.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_pragmas.c -o c_code/2_3/compiler_pragmas.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semtypinst.c -o c_code/2_2/compiler_semtypinst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_transf.c -o c_code/2_2/compiler_transf.o
@@ -3495,29 +3718,35 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_patterns.c -o c_code/2_2/compiler_patterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_parampatterns.c -o c_code/2_2/compiler_parampatterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_sempass2.c -o c_code/2_2/compiler_sempass2.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pretty.c -o c_code/2_2/compiler_pretty.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semmacrosanity.c -o c_code/2_2/compiler_semmacrosanity.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semparallel.c -o c_code/2_2/compiler_semparallel.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lowerings.c -o c_code/2_2/compiler_lowerings.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pluginsupport.c -o c_code/2_2/compiler_pluginsupport.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_active.c -o c_code/2_2/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_saturate.c -o c_code/2_2/compiler_saturate.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_prettybase.c -o c_code/2_3/compiler_prettybase.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pretty.c -o c_code/2_2/compiler_pretty.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_xmltree.c -o c_code/2_2/stdlib_xmltree.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cgi.c -o c_code/2_2/stdlib_cgi.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_typesrenderer.c -o c_code/2_2/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_rstast.c -o c_code/2_2/docutils_rstast.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_rst.c -o c_code/2_2/docutils_rst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/docutils_rstgen.c -o c_code/2_3/docutils_rstgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_highlite.c -o c_code/2_2/docutils_highlite.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_xmltree.c -o c_code/2_2/stdlib_xmltree.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cgi.c -o c_code/2_2/stdlib_cgi.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_typesrenderer.c -o c_code/2_2/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_guards.c -o c_code/2_2/compiler_guards.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_writetracking.c -o c_code/2_2/compiler_writetracking.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cookies.c -o c_code/2_2/stdlib_cookies.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_uri.c -o c_code/2_2/stdlib_uri.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_prefixmatches.c -o c_code/2_2/compiler_prefixmatches.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_destroyer.c -o c_code/2_2/compiler_destroyer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_liftlocals.c -o c_code/2_2/compiler_liftlocals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_dfa.c -o c_code/2_2/compiler_dfa.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_vmgen.c -o c_code/2_2/compiler_vmgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_vmdeps.c -o c_code/2_3/compiler_vmdeps.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_vmmarshal.c -o c_code/2_2/compiler_vmmarshal.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_locals.c -o c_code/2_2/compiler_locals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_gorgeimpl.c -o c_code/2_3/compiler_gorgeimpl.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_active.c -o c_code/2_2/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_itersgen.c -o c_code/2_2/compiler_itersgen.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_locals.c -o c_code/2_2/compiler_locals.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_cgendata.c -o c_code/2_2/compiler_cgendata.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ccgmerge.c -o c_code/2_2/compiler_ccgmerge.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ndi.c -o c_code/2_2/compiler_ndi.o
@@ -3526,8 +3755,6 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_dynlib.c -o c_code/2_2/stdlib_dynlib.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_net.c -o c_code/2_2/stdlib_net.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_nativesockets.c -o c_code/2_3/stdlib_nativesockets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_options.c -o c_code/2_2/stdlib_options.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_typetraits.c -o c_code/2_2/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nodejs.c -o c_code/2_2/compiler_nodejs.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_scriptconfig.c -o c_code/2_3/compiler_scriptconfig.o
     $LINKER -o $binDir/nim  \
@@ -3556,16 +3783,20 @@ c_code/2_2/stdlib_hashes.o \
 c_code/2_3/stdlib_streams.o \
 c_code/2_3/stdlib_cpuinfo.o \
 c_code/2_2/stdlib_linux.o \
+c_code/2_2/stdlib_strformat.o \
+c_code/2_2/stdlib_unicode.o \
+c_code/2_2/stdlib_colors.o \
 c_code/2_2/stdlib_termios.o \
 c_code/2_2/compiler_nversion.o \
 c_code/2_2/compiler_condsyms.o \
 c_code/2_2/compiler_idents.o \
 c_code/2_2/compiler_wordrecg.o \
 c_code/2_3/compiler_extccomp.o \
-c_code/2_2/stdlib_securehash.o \
-c_code/2_2/stdlib_json.o \
+c_code/2_2/stdlib_sha1.o \
+c_code/2_3/stdlib_json.o \
 c_code/2_2/stdlib_lexbase.o \
-c_code/2_2/stdlib_unicode.o \
+c_code/2_2/stdlib_options.o \
+c_code/2_2/stdlib_typetraits.o \
 c_code/2_3/compiler_nimblecmd.o \
 c_code/2_2/stdlib_sequtils.o \
 c_code/2_2/stdlib_parseopt.o \
@@ -3578,7 +3809,7 @@ c_code/2_2/compiler_ast.o \
 c_code/2_2/compiler_astalgo.o \
 c_code/2_2/compiler_syntaxes.o \
 c_code/2_2/compiler_renderer.o \
-c_code/2_3/compiler_rodread.o \
+c_code/2_2/compiler_rodread.o \
 c_code/2_2/compiler_rodwrite.o \
 c_code/2_3/compiler_sem.o \
 c_code/2_2/compiler_semdata.o \
@@ -3586,7 +3817,7 @@ c_code/2_2/compiler_passes.o \
 c_code/2_2/compiler_docgen.o \
 c_code/2_2/compiler_cgen.o \
 c_code/2_2/compiler_jsgen.o \
-c_code/2_3/compiler_importer.o \
+c_code/2_2/compiler_importer.o \
 c_code/2_2/compiler_passaux.o \
 c_code/2_2/compiler_depends.o \
 c_code/2_9/compiler_vm.o \
@@ -3600,22 +3831,23 @@ c_code/2_2/compiler_modules.o \
 c_code/2_2/compiler_ccgutils.o \
 c_code/2_3/compiler_sigmatch.o \
 c_code/2_2/compiler_modulegraphs.o \
+c_code/2_2/compiler_rod.o \
 c_code/2_2/stdlib_intsets.o \
 c_code/2_2/compiler_rodutils.o \
 c_code/2_2/compiler_pbraces.o \
 c_code/2_2/compiler_filters.o \
 c_code/2_2/compiler_filter_tmpl.o \
-c_code/2_3/stdlib_memfiles.o \
+c_code/2_2/stdlib_memfiles.o \
 c_code/2_2/compiler_trees.o \
+c_code/2_3/compiler_modulepaths.o \
 c_code/2_2/compiler_magicsys.o \
 c_code/2_2/compiler_nimsets.o \
 c_code/2_2/compiler_reorder.o \
 c_code/2_2/compiler_bitsets.o \
-c_code/2_2/compiler_lookups.o \
-c_code/2_3/compiler_prettybase.o \
 c_code/2_2/compiler_treetab.o \
 c_code/2_3/compiler_semfold.o \
 c_code/2_2/compiler_procfind.o \
+c_code/2_2/compiler_lookups.o \
 c_code/2_3/compiler_pragmas.o \
 c_code/2_2/compiler_semtypinst.o \
 c_code/2_2/compiler_transf.o \
@@ -3626,29 +3858,35 @@ c_code/2_2/compiler_evaltempl.o \
 c_code/2_2/compiler_patterns.o \
 c_code/2_2/compiler_parampatterns.o \
 c_code/2_2/compiler_sempass2.o \
-c_code/2_2/compiler_pretty.o \
 c_code/2_2/compiler_semmacrosanity.o \
 c_code/2_2/compiler_semparallel.o \
 c_code/2_2/compiler_lowerings.o \
 c_code/2_2/compiler_pluginsupport.o \
-c_code/2_2/compiler_active.o \
 c_code/2_2/compiler_saturate.o \
+c_code/2_3/compiler_prettybase.o \
+c_code/2_2/compiler_pretty.o \
+c_code/2_2/stdlib_xmltree.o \
+c_code/2_2/stdlib_cgi.o \
+c_code/2_2/compiler_typesrenderer.o \
 c_code/2_2/docutils_rstast.o \
 c_code/2_2/docutils_rst.o \
 c_code/2_3/docutils_rstgen.o \
 c_code/2_2/docutils_highlite.o \
-c_code/2_2/stdlib_xmltree.o \
-c_code/2_2/stdlib_cgi.o \
-c_code/2_2/compiler_typesrenderer.o \
 c_code/2_2/compiler_guards.o \
 c_code/2_2/compiler_writetracking.o \
 c_code/2_2/stdlib_cookies.o \
+c_code/2_2/stdlib_uri.o \
 c_code/2_2/compiler_prefixmatches.o \
+c_code/2_2/compiler_destroyer.o \
+c_code/2_2/compiler_liftlocals.o \
+c_code/2_2/compiler_dfa.o \
 c_code/2_2/compiler_vmgen.o \
 c_code/2_3/compiler_vmdeps.o \
 c_code/2_2/compiler_vmmarshal.o \
-c_code/2_2/compiler_locals.o \
+c_code/2_3/compiler_gorgeimpl.o \
+c_code/2_2/compiler_active.o \
 c_code/2_2/compiler_itersgen.o \
+c_code/2_2/compiler_locals.o \
 c_code/2_2/compiler_cgendata.o \
 c_code/2_2/compiler_ccgmerge.o \
 c_code/2_2/compiler_ndi.o \
@@ -3657,8 +3895,6 @@ c_code/2_2/stdlib_md5.o \
 c_code/2_2/stdlib_dynlib.o \
 c_code/2_2/stdlib_net.o \
 c_code/2_3/stdlib_nativesockets.o \
-c_code/2_2/stdlib_options.o \
-c_code/2_2/stdlib_typetraits.o \
 c_code/2_2/compiler_nodejs.o \
 c_code/2_3/compiler_scriptconfig.o $LINK_FLAGS
     ;;
@@ -3689,16 +3925,20 @@ c_code/2_3/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_streams.c -o c_code/2_3/stdlib_streams.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_cpuinfo.c -o c_code/2_3/stdlib_cpuinfo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_linux.c -o c_code/2_2/stdlib_linux.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_strformat.c -o c_code/2_2/stdlib_strformat.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_unicode.c -o c_code/2_2/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_colors.c -o c_code/2_2/stdlib_colors.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_termios.c -o c_code/2_2/stdlib_termios.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nversion.c -o c_code/2_2/compiler_nversion.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_condsyms.c -o c_code/2_2/compiler_condsyms.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_idents.c -o c_code/2_2/compiler_idents.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_wordrecg.c -o c_code/2_2/compiler_wordrecg.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_extccomp.c -o c_code/2_3/compiler_extccomp.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_securehash.c -o c_code/2_2/stdlib_securehash.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_json.c -o c_code/2_2/stdlib_json.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_sha1.c -o c_code/2_2/stdlib_sha1.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_json.c -o c_code/2_3/stdlib_json.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_lexbase.c -o c_code/2_2/stdlib_lexbase.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_unicode.c -o c_code/2_2/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_options.c -o c_code/2_2/stdlib_options.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_typetraits.c -o c_code/2_2/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_nimblecmd.c -o c_code/2_3/compiler_nimblecmd.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_sequtils.c -o c_code/2_2/stdlib_sequtils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_parseopt.c -o c_code/2_2/stdlib_parseopt.o
@@ -3711,7 +3951,7 @@ c_code/2_3/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_astalgo.c -o c_code/2_2/compiler_astalgo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_syntaxes.c -o c_code/2_2/compiler_syntaxes.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_renderer.c -o c_code/2_2/compiler_renderer.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_rodread.c -o c_code/2_3/compiler_rodread.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodread.c -o c_code/2_2/compiler_rodread.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodwrite.c -o c_code/2_2/compiler_rodwrite.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_sem.c -o c_code/2_3/compiler_sem.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semdata.c -o c_code/2_2/compiler_semdata.o
@@ -3719,7 +3959,7 @@ c_code/2_3/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_docgen.c -o c_code/2_2/compiler_docgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_cgen.c -o c_code/2_2/compiler_cgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_jsgen.c -o c_code/2_2/compiler_jsgen.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_importer.c -o c_code/2_3/compiler_importer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_importer.c -o c_code/2_2/compiler_importer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_passaux.c -o c_code/2_2/compiler_passaux.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_depends.c -o c_code/2_2/compiler_depends.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_9/compiler_vm.c -o c_code/2_9/compiler_vm.o
@@ -3733,22 +3973,23 @@ c_code/2_3/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ccgutils.c -o c_code/2_2/compiler_ccgutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_sigmatch.c -o c_code/2_3/compiler_sigmatch.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_modulegraphs.c -o c_code/2_2/compiler_modulegraphs.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rod.c -o c_code/2_2/compiler_rod.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_intsets.c -o c_code/2_2/stdlib_intsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodutils.c -o c_code/2_2/compiler_rodutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pbraces.c -o c_code/2_2/compiler_pbraces.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_filters.c -o c_code/2_2/compiler_filters.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_filter_tmpl.c -o c_code/2_2/compiler_filter_tmpl.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_memfiles.c -o c_code/2_3/stdlib_memfiles.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_memfiles.c -o c_code/2_2/stdlib_memfiles.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_trees.c -o c_code/2_2/compiler_trees.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_modulepaths.c -o c_code/2_3/compiler_modulepaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_magicsys.c -o c_code/2_2/compiler_magicsys.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nimsets.c -o c_code/2_2/compiler_nimsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_reorder.c -o c_code/2_2/compiler_reorder.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_bitsets.c -o c_code/2_2/compiler_bitsets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lookups.c -o c_code/2_2/compiler_lookups.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_prettybase.c -o c_code/2_3/compiler_prettybase.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_treetab.c -o c_code/2_2/compiler_treetab.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_semfold.c -o c_code/2_3/compiler_semfold.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_procfind.c -o c_code/2_2/compiler_procfind.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lookups.c -o c_code/2_2/compiler_lookups.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_pragmas.c -o c_code/2_3/compiler_pragmas.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semtypinst.c -o c_code/2_2/compiler_semtypinst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_transf.c -o c_code/2_2/compiler_transf.o
@@ -3759,29 +4000,35 @@ c_code/2_3/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_patterns.c -o c_code/2_2/compiler_patterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_parampatterns.c -o c_code/2_2/compiler_parampatterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_sempass2.c -o c_code/2_2/compiler_sempass2.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pretty.c -o c_code/2_2/compiler_pretty.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semmacrosanity.c -o c_code/2_2/compiler_semmacrosanity.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semparallel.c -o c_code/2_2/compiler_semparallel.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lowerings.c -o c_code/2_2/compiler_lowerings.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pluginsupport.c -o c_code/2_2/compiler_pluginsupport.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_active.c -o c_code/2_2/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_saturate.c -o c_code/2_2/compiler_saturate.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_prettybase.c -o c_code/2_3/compiler_prettybase.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pretty.c -o c_code/2_2/compiler_pretty.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_xmltree.c -o c_code/2_2/stdlib_xmltree.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cgi.c -o c_code/2_2/stdlib_cgi.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_typesrenderer.c -o c_code/2_2/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_rstast.c -o c_code/2_2/docutils_rstast.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_rst.c -o c_code/2_2/docutils_rst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/docutils_rstgen.c -o c_code/2_3/docutils_rstgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_highlite.c -o c_code/2_2/docutils_highlite.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_xmltree.c -o c_code/2_2/stdlib_xmltree.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cgi.c -o c_code/2_2/stdlib_cgi.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_typesrenderer.c -o c_code/2_2/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_guards.c -o c_code/2_2/compiler_guards.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_writetracking.c -o c_code/2_2/compiler_writetracking.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cookies.c -o c_code/2_2/stdlib_cookies.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_uri.c -o c_code/2_2/stdlib_uri.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_prefixmatches.c -o c_code/2_2/compiler_prefixmatches.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_destroyer.c -o c_code/2_2/compiler_destroyer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_liftlocals.c -o c_code/2_2/compiler_liftlocals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_dfa.c -o c_code/2_2/compiler_dfa.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_vmgen.c -o c_code/2_2/compiler_vmgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_vmdeps.c -o c_code/2_3/compiler_vmdeps.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_vmmarshal.c -o c_code/2_2/compiler_vmmarshal.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_locals.c -o c_code/2_2/compiler_locals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_gorgeimpl.c -o c_code/2_3/compiler_gorgeimpl.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_active.c -o c_code/2_2/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_itersgen.c -o c_code/2_2/compiler_itersgen.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_locals.c -o c_code/2_2/compiler_locals.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_cgendata.c -o c_code/2_2/compiler_cgendata.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ccgmerge.c -o c_code/2_2/compiler_ccgmerge.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ndi.c -o c_code/2_2/compiler_ndi.o
@@ -3790,8 +4037,6 @@ c_code/2_3/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_dynlib.c -o c_code/2_2/stdlib_dynlib.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_net.c -o c_code/2_2/stdlib_net.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_nativesockets.c -o c_code/2_3/stdlib_nativesockets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_options.c -o c_code/2_2/stdlib_options.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_typetraits.c -o c_code/2_2/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nodejs.c -o c_code/2_2/compiler_nodejs.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_scriptconfig.c -o c_code/2_3/compiler_scriptconfig.o
     $LINKER -o $binDir/nim  \
@@ -3820,16 +4065,20 @@ c_code/2_2/stdlib_hashes.o \
 c_code/2_3/stdlib_streams.o \
 c_code/2_3/stdlib_cpuinfo.o \
 c_code/2_2/stdlib_linux.o \
+c_code/2_2/stdlib_strformat.o \
+c_code/2_2/stdlib_unicode.o \
+c_code/2_2/stdlib_colors.o \
 c_code/2_2/stdlib_termios.o \
 c_code/2_2/compiler_nversion.o \
 c_code/2_2/compiler_condsyms.o \
 c_code/2_2/compiler_idents.o \
 c_code/2_2/compiler_wordrecg.o \
 c_code/2_3/compiler_extccomp.o \
-c_code/2_2/stdlib_securehash.o \
-c_code/2_2/stdlib_json.o \
+c_code/2_2/stdlib_sha1.o \
+c_code/2_3/stdlib_json.o \
 c_code/2_2/stdlib_lexbase.o \
-c_code/2_2/stdlib_unicode.o \
+c_code/2_2/stdlib_options.o \
+c_code/2_2/stdlib_typetraits.o \
 c_code/2_3/compiler_nimblecmd.o \
 c_code/2_2/stdlib_sequtils.o \
 c_code/2_2/stdlib_parseopt.o \
@@ -3842,7 +4091,7 @@ c_code/2_2/compiler_ast.o \
 c_code/2_2/compiler_astalgo.o \
 c_code/2_2/compiler_syntaxes.o \
 c_code/2_2/compiler_renderer.o \
-c_code/2_3/compiler_rodread.o \
+c_code/2_2/compiler_rodread.o \
 c_code/2_2/compiler_rodwrite.o \
 c_code/2_3/compiler_sem.o \
 c_code/2_2/compiler_semdata.o \
@@ -3850,7 +4099,7 @@ c_code/2_2/compiler_passes.o \
 c_code/2_2/compiler_docgen.o \
 c_code/2_2/compiler_cgen.o \
 c_code/2_2/compiler_jsgen.o \
-c_code/2_3/compiler_importer.o \
+c_code/2_2/compiler_importer.o \
 c_code/2_2/compiler_passaux.o \
 c_code/2_2/compiler_depends.o \
 c_code/2_9/compiler_vm.o \
@@ -3864,22 +4113,23 @@ c_code/2_2/compiler_modules.o \
 c_code/2_2/compiler_ccgutils.o \
 c_code/2_3/compiler_sigmatch.o \
 c_code/2_2/compiler_modulegraphs.o \
+c_code/2_2/compiler_rod.o \
 c_code/2_2/stdlib_intsets.o \
 c_code/2_2/compiler_rodutils.o \
 c_code/2_2/compiler_pbraces.o \
 c_code/2_2/compiler_filters.o \
 c_code/2_2/compiler_filter_tmpl.o \
-c_code/2_3/stdlib_memfiles.o \
+c_code/2_2/stdlib_memfiles.o \
 c_code/2_2/compiler_trees.o \
+c_code/2_3/compiler_modulepaths.o \
 c_code/2_2/compiler_magicsys.o \
 c_code/2_2/compiler_nimsets.o \
 c_code/2_2/compiler_reorder.o \
 c_code/2_2/compiler_bitsets.o \
-c_code/2_2/compiler_lookups.o \
-c_code/2_3/compiler_prettybase.o \
 c_code/2_2/compiler_treetab.o \
 c_code/2_3/compiler_semfold.o \
 c_code/2_2/compiler_procfind.o \
+c_code/2_2/compiler_lookups.o \
 c_code/2_3/compiler_pragmas.o \
 c_code/2_2/compiler_semtypinst.o \
 c_code/2_2/compiler_transf.o \
@@ -3890,29 +4140,35 @@ c_code/2_2/compiler_evaltempl.o \
 c_code/2_2/compiler_patterns.o \
 c_code/2_2/compiler_parampatterns.o \
 c_code/2_2/compiler_sempass2.o \
-c_code/2_2/compiler_pretty.o \
 c_code/2_2/compiler_semmacrosanity.o \
 c_code/2_2/compiler_semparallel.o \
 c_code/2_2/compiler_lowerings.o \
 c_code/2_2/compiler_pluginsupport.o \
-c_code/2_2/compiler_active.o \
 c_code/2_2/compiler_saturate.o \
+c_code/2_3/compiler_prettybase.o \
+c_code/2_2/compiler_pretty.o \
+c_code/2_2/stdlib_xmltree.o \
+c_code/2_2/stdlib_cgi.o \
+c_code/2_2/compiler_typesrenderer.o \
 c_code/2_2/docutils_rstast.o \
 c_code/2_2/docutils_rst.o \
 c_code/2_3/docutils_rstgen.o \
 c_code/2_2/docutils_highlite.o \
-c_code/2_2/stdlib_xmltree.o \
-c_code/2_2/stdlib_cgi.o \
-c_code/2_2/compiler_typesrenderer.o \
 c_code/2_2/compiler_guards.o \
 c_code/2_2/compiler_writetracking.o \
 c_code/2_2/stdlib_cookies.o \
+c_code/2_2/stdlib_uri.o \
 c_code/2_2/compiler_prefixmatches.o \
+c_code/2_2/compiler_destroyer.o \
+c_code/2_2/compiler_liftlocals.o \
+c_code/2_2/compiler_dfa.o \
 c_code/2_2/compiler_vmgen.o \
 c_code/2_3/compiler_vmdeps.o \
 c_code/2_2/compiler_vmmarshal.o \
-c_code/2_2/compiler_locals.o \
+c_code/2_3/compiler_gorgeimpl.o \
+c_code/2_2/compiler_active.o \
 c_code/2_2/compiler_itersgen.o \
+c_code/2_2/compiler_locals.o \
 c_code/2_2/compiler_cgendata.o \
 c_code/2_2/compiler_ccgmerge.o \
 c_code/2_2/compiler_ndi.o \
@@ -3921,8 +4177,6 @@ c_code/2_2/stdlib_md5.o \
 c_code/2_2/stdlib_dynlib.o \
 c_code/2_2/stdlib_net.o \
 c_code/2_3/stdlib_nativesockets.o \
-c_code/2_2/stdlib_options.o \
-c_code/2_2/stdlib_typetraits.o \
 c_code/2_2/compiler_nodejs.o \
 c_code/2_3/compiler_scriptconfig.o $LINK_FLAGS
     ;;
@@ -3948,7 +4202,7 @@ macosx)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_parseutils.c -o c_code/2_1/stdlib_parseutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_math.c -o c_code/2_1/stdlib_math.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_algorithm.c -o c_code/2_1/stdlib_algorithm.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/stdlib_times.c -o c_code/3_1/stdlib_times.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_times.c -o c_code/2_1/stdlib_times.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/stdlib_posix.c -o c_code/3_1/stdlib_posix.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/stdlib_ospaths.c -o c_code/3_1/stdlib_ospaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_msgs.c -o c_code/3_1/compiler_msgs.o
@@ -3965,16 +4219,20 @@ macosx)
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/stdlib_streams.c -o c_code/3_1/stdlib_streams.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/stdlib_cpuinfo.c -o c_code/3_1/stdlib_cpuinfo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/stdlib_kqueue.c -o c_code/3_1/stdlib_kqueue.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_strformat.c -o c_code/2_1/stdlib_strformat.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_unicode.c -o c_code/2_1/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_colors.c -o c_code/2_1/stdlib_colors.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_termios.c -o c_code/2_1/stdlib_termios.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nversion.c -o c_code/2_1/compiler_nversion.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_condsyms.c -o c_code/2_1/compiler_condsyms.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_idents.c -o c_code/2_1/compiler_idents.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_wordrecg.c -o c_code/2_1/compiler_wordrecg.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_extccomp.c -o c_code/3_1/compiler_extccomp.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_securehash.c -o c_code/2_1/stdlib_securehash.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_json.c -o c_code/2_1/stdlib_json.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_sha1.c -o c_code/2_1/stdlib_sha1.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/stdlib_json.c -o c_code/3_1/stdlib_json.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_lexbase.c -o c_code/2_1/stdlib_lexbase.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_unicode.c -o c_code/2_1/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_options.c -o c_code/2_1/stdlib_options.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_typetraits.c -o c_code/2_1/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_nimblecmd.c -o c_code/3_1/compiler_nimblecmd.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_sequtils.c -o c_code/2_1/stdlib_sequtils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_parseopt.c -o c_code/2_1/stdlib_parseopt.o
@@ -3987,7 +4245,7 @@ macosx)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_astalgo.c -o c_code/2_1/compiler_astalgo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_syntaxes.c -o c_code/2_1/compiler_syntaxes.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_renderer.c -o c_code/2_1/compiler_renderer.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_rodread.c -o c_code/3_1/compiler_rodread.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rodread.c -o c_code/2_1/compiler_rodread.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rodwrite.c -o c_code/2_1/compiler_rodwrite.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_sem.c -o c_code/3_1/compiler_sem.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semdata.c -o c_code/2_1/compiler_semdata.o
@@ -3995,7 +4253,7 @@ macosx)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_docgen.c -o c_code/2_1/compiler_docgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_cgen.c -o c_code/2_1/compiler_cgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_jsgen.c -o c_code/2_1/compiler_jsgen.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_importer.c -o c_code/3_1/compiler_importer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_importer.c -o c_code/2_1/compiler_importer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_passaux.c -o c_code/2_1/compiler_passaux.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_depends.c -o c_code/2_1/compiler_depends.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_vm.c -o c_code/3_1/compiler_vm.o
@@ -4009,22 +4267,23 @@ macosx)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ccgutils.c -o c_code/2_1/compiler_ccgutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_sigmatch.c -o c_code/3_1/compiler_sigmatch.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_modulegraphs.c -o c_code/2_1/compiler_modulegraphs.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rod.c -o c_code/2_1/compiler_rod.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_intsets.c -o c_code/2_1/stdlib_intsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rodutils.c -o c_code/2_1/compiler_rodutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pbraces.c -o c_code/2_1/compiler_pbraces.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_filters.c -o c_code/2_1/compiler_filters.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_filter_tmpl.c -o c_code/2_1/compiler_filter_tmpl.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/stdlib_memfiles.c -o c_code/3_1/stdlib_memfiles.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_memfiles.c -o c_code/2_1/stdlib_memfiles.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_trees.c -o c_code/2_1/compiler_trees.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_modulepaths.c -o c_code/3_1/compiler_modulepaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_magicsys.c -o c_code/2_1/compiler_magicsys.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nimsets.c -o c_code/2_1/compiler_nimsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_reorder.c -o c_code/2_1/compiler_reorder.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_bitsets.c -o c_code/2_1/compiler_bitsets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lookups.c -o c_code/2_1/compiler_lookups.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_prettybase.c -o c_code/3_1/compiler_prettybase.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_treetab.c -o c_code/2_1/compiler_treetab.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_semfold.c -o c_code/3_1/compiler_semfold.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_procfind.c -o c_code/2_1/compiler_procfind.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lookups.c -o c_code/2_1/compiler_lookups.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_pragmas.c -o c_code/3_1/compiler_pragmas.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semtypinst.c -o c_code/2_1/compiler_semtypinst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_transf.c -o c_code/2_1/compiler_transf.o
@@ -4035,29 +4294,35 @@ macosx)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_patterns.c -o c_code/2_1/compiler_patterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_parampatterns.c -o c_code/2_1/compiler_parampatterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_sempass2.c -o c_code/2_1/compiler_sempass2.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pretty.c -o c_code/2_1/compiler_pretty.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semmacrosanity.c -o c_code/2_1/compiler_semmacrosanity.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semparallel.c -o c_code/2_1/compiler_semparallel.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lowerings.c -o c_code/2_1/compiler_lowerings.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pluginsupport.c -o c_code/2_1/compiler_pluginsupport.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_active.c -o c_code/2_1/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_saturate.c -o c_code/2_1/compiler_saturate.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_prettybase.c -o c_code/3_1/compiler_prettybase.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pretty.c -o c_code/2_1/compiler_pretty.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_xmltree.c -o c_code/2_1/stdlib_xmltree.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cgi.c -o c_code/2_1/stdlib_cgi.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_typesrenderer.c -o c_code/2_1/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rstast.c -o c_code/2_1/docutils_rstast.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rst.c -o c_code/2_1/docutils_rst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/docutils_rstgen.c -o c_code/3_1/docutils_rstgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_highlite.c -o c_code/2_1/docutils_highlite.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_xmltree.c -o c_code/2_1/stdlib_xmltree.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cgi.c -o c_code/2_1/stdlib_cgi.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_typesrenderer.c -o c_code/2_1/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_guards.c -o c_code/2_1/compiler_guards.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_writetracking.c -o c_code/2_1/compiler_writetracking.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cookies.c -o c_code/2_1/stdlib_cookies.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_uri.c -o c_code/2_1/stdlib_uri.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_prefixmatches.c -o c_code/2_1/compiler_prefixmatches.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_destroyer.c -o c_code/2_1/compiler_destroyer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_liftlocals.c -o c_code/2_1/compiler_liftlocals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_dfa.c -o c_code/2_1/compiler_dfa.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmgen.c -o c_code/2_1/compiler_vmgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_vmdeps.c -o c_code/3_1/compiler_vmdeps.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmmarshal.c -o c_code/2_1/compiler_vmmarshal.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_locals.c -o c_code/2_1/compiler_locals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_gorgeimpl.c -o c_code/3_1/compiler_gorgeimpl.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_active.c -o c_code/2_1/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_itersgen.c -o c_code/2_1/compiler_itersgen.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_locals.c -o c_code/2_1/compiler_locals.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_cgendata.c -o c_code/2_1/compiler_cgendata.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ccgmerge.c -o c_code/2_1/compiler_ccgmerge.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ndi.c -o c_code/2_1/compiler_ndi.o
@@ -4066,8 +4331,6 @@ macosx)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_dynlib.c -o c_code/2_1/stdlib_dynlib.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_net.c -o c_code/2_1/stdlib_net.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_nativesockets.c -o c_code/2_1/stdlib_nativesockets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_options.c -o c_code/2_1/stdlib_options.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_typetraits.c -o c_code/2_1/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nodejs.c -o c_code/2_1/compiler_nodejs.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_scriptconfig.c -o c_code/3_1/compiler_scriptconfig.o
     $LINKER -o $binDir/nim  \
@@ -4079,7 +4342,7 @@ c_code/2_1/stdlib_strutils.o \
 c_code/2_1/stdlib_parseutils.o \
 c_code/2_1/stdlib_math.o \
 c_code/2_1/stdlib_algorithm.o \
-c_code/3_1/stdlib_times.o \
+c_code/2_1/stdlib_times.o \
 c_code/3_1/stdlib_posix.o \
 c_code/3_1/stdlib_ospaths.o \
 c_code/3_1/compiler_msgs.o \
@@ -4096,16 +4359,20 @@ c_code/2_1/stdlib_hashes.o \
 c_code/3_1/stdlib_streams.o \
 c_code/3_1/stdlib_cpuinfo.o \
 c_code/3_1/stdlib_kqueue.o \
+c_code/2_1/stdlib_strformat.o \
+c_code/2_1/stdlib_unicode.o \
+c_code/2_1/stdlib_colors.o \
 c_code/2_1/stdlib_termios.o \
 c_code/2_1/compiler_nversion.o \
 c_code/2_1/compiler_condsyms.o \
 c_code/2_1/compiler_idents.o \
 c_code/2_1/compiler_wordrecg.o \
 c_code/3_1/compiler_extccomp.o \
-c_code/2_1/stdlib_securehash.o \
-c_code/2_1/stdlib_json.o \
+c_code/2_1/stdlib_sha1.o \
+c_code/3_1/stdlib_json.o \
 c_code/2_1/stdlib_lexbase.o \
-c_code/2_1/stdlib_unicode.o \
+c_code/2_1/stdlib_options.o \
+c_code/2_1/stdlib_typetraits.o \
 c_code/3_1/compiler_nimblecmd.o \
 c_code/2_1/stdlib_sequtils.o \
 c_code/2_1/stdlib_parseopt.o \
@@ -4118,7 +4385,7 @@ c_code/2_1/compiler_ast.o \
 c_code/2_1/compiler_astalgo.o \
 c_code/2_1/compiler_syntaxes.o \
 c_code/2_1/compiler_renderer.o \
-c_code/3_1/compiler_rodread.o \
+c_code/2_1/compiler_rodread.o \
 c_code/2_1/compiler_rodwrite.o \
 c_code/3_1/compiler_sem.o \
 c_code/2_1/compiler_semdata.o \
@@ -4126,7 +4393,7 @@ c_code/2_1/compiler_passes.o \
 c_code/2_1/compiler_docgen.o \
 c_code/2_1/compiler_cgen.o \
 c_code/2_1/compiler_jsgen.o \
-c_code/3_1/compiler_importer.o \
+c_code/2_1/compiler_importer.o \
 c_code/2_1/compiler_passaux.o \
 c_code/2_1/compiler_depends.o \
 c_code/3_1/compiler_vm.o \
@@ -4140,22 +4407,23 @@ c_code/2_1/compiler_modules.o \
 c_code/2_1/compiler_ccgutils.o \
 c_code/3_1/compiler_sigmatch.o \
 c_code/2_1/compiler_modulegraphs.o \
+c_code/2_1/compiler_rod.o \
 c_code/2_1/stdlib_intsets.o \
 c_code/2_1/compiler_rodutils.o \
 c_code/2_1/compiler_pbraces.o \
 c_code/2_1/compiler_filters.o \
 c_code/2_1/compiler_filter_tmpl.o \
-c_code/3_1/stdlib_memfiles.o \
+c_code/2_1/stdlib_memfiles.o \
 c_code/2_1/compiler_trees.o \
+c_code/3_1/compiler_modulepaths.o \
 c_code/2_1/compiler_magicsys.o \
 c_code/2_1/compiler_nimsets.o \
 c_code/2_1/compiler_reorder.o \
 c_code/2_1/compiler_bitsets.o \
-c_code/2_1/compiler_lookups.o \
-c_code/3_1/compiler_prettybase.o \
 c_code/2_1/compiler_treetab.o \
 c_code/3_1/compiler_semfold.o \
 c_code/2_1/compiler_procfind.o \
+c_code/2_1/compiler_lookups.o \
 c_code/3_1/compiler_pragmas.o \
 c_code/2_1/compiler_semtypinst.o \
 c_code/2_1/compiler_transf.o \
@@ -4166,29 +4434,35 @@ c_code/2_1/compiler_evaltempl.o \
 c_code/2_1/compiler_patterns.o \
 c_code/2_1/compiler_parampatterns.o \
 c_code/2_1/compiler_sempass2.o \
-c_code/2_1/compiler_pretty.o \
 c_code/2_1/compiler_semmacrosanity.o \
 c_code/2_1/compiler_semparallel.o \
 c_code/2_1/compiler_lowerings.o \
 c_code/2_1/compiler_pluginsupport.o \
-c_code/2_1/compiler_active.o \
 c_code/2_1/compiler_saturate.o \
+c_code/3_1/compiler_prettybase.o \
+c_code/2_1/compiler_pretty.o \
+c_code/2_1/stdlib_xmltree.o \
+c_code/2_1/stdlib_cgi.o \
+c_code/2_1/compiler_typesrenderer.o \
 c_code/2_1/docutils_rstast.o \
 c_code/2_1/docutils_rst.o \
 c_code/3_1/docutils_rstgen.o \
 c_code/2_1/docutils_highlite.o \
-c_code/2_1/stdlib_xmltree.o \
-c_code/2_1/stdlib_cgi.o \
-c_code/2_1/compiler_typesrenderer.o \
 c_code/2_1/compiler_guards.o \
 c_code/2_1/compiler_writetracking.o \
 c_code/2_1/stdlib_cookies.o \
+c_code/2_1/stdlib_uri.o \
 c_code/2_1/compiler_prefixmatches.o \
+c_code/2_1/compiler_destroyer.o \
+c_code/2_1/compiler_liftlocals.o \
+c_code/2_1/compiler_dfa.o \
 c_code/2_1/compiler_vmgen.o \
 c_code/3_1/compiler_vmdeps.o \
 c_code/2_1/compiler_vmmarshal.o \
-c_code/2_1/compiler_locals.o \
+c_code/3_1/compiler_gorgeimpl.o \
+c_code/2_1/compiler_active.o \
 c_code/2_1/compiler_itersgen.o \
+c_code/2_1/compiler_locals.o \
 c_code/2_1/compiler_cgendata.o \
 c_code/2_1/compiler_ccgmerge.o \
 c_code/2_1/compiler_ndi.o \
@@ -4197,8 +4471,6 @@ c_code/2_1/stdlib_md5.o \
 c_code/2_1/stdlib_dynlib.o \
 c_code/2_1/stdlib_net.o \
 c_code/2_1/stdlib_nativesockets.o \
-c_code/2_1/stdlib_options.o \
-c_code/2_1/stdlib_typetraits.o \
 c_code/2_1/compiler_nodejs.o \
 c_code/3_1/compiler_scriptconfig.o $LINK_FLAGS
     ;;
@@ -4212,7 +4484,7 @@ c_code/3_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_parseutils.c -o c_code/2_2/stdlib_parseutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_math.c -o c_code/2_2/stdlib_math.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_algorithm.c -o c_code/2_2/stdlib_algorithm.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_times.c -o c_code/3_2/stdlib_times.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_times.c -o c_code/2_2/stdlib_times.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_posix.c -o c_code/3_2/stdlib_posix.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_ospaths.c -o c_code/3_2/stdlib_ospaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_msgs.c -o c_code/3_2/compiler_msgs.o
@@ -4229,16 +4501,20 @@ c_code/3_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_streams.c -o c_code/3_2/stdlib_streams.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_cpuinfo.c -o c_code/3_2/stdlib_cpuinfo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_kqueue.c -o c_code/3_2/stdlib_kqueue.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_strformat.c -o c_code/2_2/stdlib_strformat.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_unicode.c -o c_code/2_2/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_colors.c -o c_code/2_2/stdlib_colors.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_termios.c -o c_code/2_2/stdlib_termios.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nversion.c -o c_code/2_2/compiler_nversion.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_condsyms.c -o c_code/2_2/compiler_condsyms.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_idents.c -o c_code/2_2/compiler_idents.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_wordrecg.c -o c_code/2_2/compiler_wordrecg.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_extccomp.c -o c_code/3_2/compiler_extccomp.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_securehash.c -o c_code/2_2/stdlib_securehash.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_json.c -o c_code/2_2/stdlib_json.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_sha1.c -o c_code/2_2/stdlib_sha1.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_json.c -o c_code/3_2/stdlib_json.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_lexbase.c -o c_code/2_2/stdlib_lexbase.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_unicode.c -o c_code/2_2/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_options.c -o c_code/2_2/stdlib_options.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_typetraits.c -o c_code/2_2/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_nimblecmd.c -o c_code/3_2/compiler_nimblecmd.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_sequtils.c -o c_code/2_2/stdlib_sequtils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_parseopt.c -o c_code/2_2/stdlib_parseopt.o
@@ -4251,7 +4527,7 @@ c_code/3_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_astalgo.c -o c_code/2_2/compiler_astalgo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_syntaxes.c -o c_code/2_2/compiler_syntaxes.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_renderer.c -o c_code/2_2/compiler_renderer.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_rodread.c -o c_code/3_2/compiler_rodread.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodread.c -o c_code/2_2/compiler_rodread.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodwrite.c -o c_code/2_2/compiler_rodwrite.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_sem.c -o c_code/3_2/compiler_sem.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semdata.c -o c_code/2_2/compiler_semdata.o
@@ -4259,7 +4535,7 @@ c_code/3_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_docgen.c -o c_code/2_2/compiler_docgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_cgen.c -o c_code/2_2/compiler_cgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_jsgen.c -o c_code/2_2/compiler_jsgen.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_importer.c -o c_code/3_2/compiler_importer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_importer.c -o c_code/2_2/compiler_importer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_passaux.c -o c_code/2_2/compiler_passaux.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_depends.c -o c_code/2_2/compiler_depends.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_vm.c -o c_code/3_2/compiler_vm.o
@@ -4273,22 +4549,23 @@ c_code/3_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ccgutils.c -o c_code/2_2/compiler_ccgutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_sigmatch.c -o c_code/3_2/compiler_sigmatch.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_modulegraphs.c -o c_code/2_2/compiler_modulegraphs.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rod.c -o c_code/2_2/compiler_rod.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_intsets.c -o c_code/2_2/stdlib_intsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodutils.c -o c_code/2_2/compiler_rodutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pbraces.c -o c_code/2_2/compiler_pbraces.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_filters.c -o c_code/2_2/compiler_filters.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_filter_tmpl.c -o c_code/2_2/compiler_filter_tmpl.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_memfiles.c -o c_code/3_2/stdlib_memfiles.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_memfiles.c -o c_code/2_2/stdlib_memfiles.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_trees.c -o c_code/2_2/compiler_trees.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_modulepaths.c -o c_code/3_2/compiler_modulepaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_magicsys.c -o c_code/2_2/compiler_magicsys.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nimsets.c -o c_code/2_2/compiler_nimsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_reorder.c -o c_code/2_2/compiler_reorder.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_bitsets.c -o c_code/2_2/compiler_bitsets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lookups.c -o c_code/2_2/compiler_lookups.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_prettybase.c -o c_code/3_2/compiler_prettybase.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_treetab.c -o c_code/2_2/compiler_treetab.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_semfold.c -o c_code/3_2/compiler_semfold.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_procfind.c -o c_code/2_2/compiler_procfind.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lookups.c -o c_code/2_2/compiler_lookups.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_pragmas.c -o c_code/3_2/compiler_pragmas.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semtypinst.c -o c_code/2_2/compiler_semtypinst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_transf.c -o c_code/2_2/compiler_transf.o
@@ -4299,29 +4576,35 @@ c_code/3_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_patterns.c -o c_code/2_2/compiler_patterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_parampatterns.c -o c_code/2_2/compiler_parampatterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_sempass2.c -o c_code/2_2/compiler_sempass2.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pretty.c -o c_code/2_2/compiler_pretty.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semmacrosanity.c -o c_code/2_2/compiler_semmacrosanity.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semparallel.c -o c_code/2_2/compiler_semparallel.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lowerings.c -o c_code/2_2/compiler_lowerings.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pluginsupport.c -o c_code/2_2/compiler_pluginsupport.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_active.c -o c_code/2_2/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_saturate.c -o c_code/2_2/compiler_saturate.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_prettybase.c -o c_code/3_2/compiler_prettybase.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pretty.c -o c_code/2_2/compiler_pretty.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_xmltree.c -o c_code/2_2/stdlib_xmltree.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cgi.c -o c_code/2_2/stdlib_cgi.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_typesrenderer.c -o c_code/2_2/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_rstast.c -o c_code/2_2/docutils_rstast.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_rst.c -o c_code/2_2/docutils_rst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/docutils_rstgen.c -o c_code/3_2/docutils_rstgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_highlite.c -o c_code/2_2/docutils_highlite.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_xmltree.c -o c_code/2_2/stdlib_xmltree.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cgi.c -o c_code/2_2/stdlib_cgi.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_typesrenderer.c -o c_code/2_2/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_guards.c -o c_code/2_2/compiler_guards.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_writetracking.c -o c_code/2_2/compiler_writetracking.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cookies.c -o c_code/2_2/stdlib_cookies.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_uri.c -o c_code/2_2/stdlib_uri.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_prefixmatches.c -o c_code/2_2/compiler_prefixmatches.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_destroyer.c -o c_code/2_2/compiler_destroyer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_liftlocals.c -o c_code/2_2/compiler_liftlocals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_dfa.c -o c_code/2_2/compiler_dfa.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_vmgen.c -o c_code/2_2/compiler_vmgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_vmdeps.c -o c_code/3_2/compiler_vmdeps.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_vmmarshal.c -o c_code/2_2/compiler_vmmarshal.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_locals.c -o c_code/2_2/compiler_locals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_gorgeimpl.c -o c_code/3_2/compiler_gorgeimpl.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_active.c -o c_code/2_2/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_itersgen.c -o c_code/2_2/compiler_itersgen.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_locals.c -o c_code/2_2/compiler_locals.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_cgendata.c -o c_code/2_2/compiler_cgendata.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ccgmerge.c -o c_code/2_2/compiler_ccgmerge.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ndi.c -o c_code/2_2/compiler_ndi.o
@@ -4330,8 +4613,6 @@ c_code/3_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_dynlib.c -o c_code/2_2/stdlib_dynlib.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_net.c -o c_code/2_2/stdlib_net.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_nativesockets.c -o c_code/2_3/stdlib_nativesockets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_options.c -o c_code/2_2/stdlib_options.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_typetraits.c -o c_code/2_2/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nodejs.c -o c_code/2_2/compiler_nodejs.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_scriptconfig.c -o c_code/3_2/compiler_scriptconfig.o
     $LINKER -o $binDir/nim  \
@@ -4343,7 +4624,7 @@ c_code/2_2/stdlib_strutils.o \
 c_code/2_2/stdlib_parseutils.o \
 c_code/2_2/stdlib_math.o \
 c_code/2_2/stdlib_algorithm.o \
-c_code/3_2/stdlib_times.o \
+c_code/2_2/stdlib_times.o \
 c_code/3_2/stdlib_posix.o \
 c_code/3_2/stdlib_ospaths.o \
 c_code/3_2/compiler_msgs.o \
@@ -4360,16 +4641,20 @@ c_code/2_2/stdlib_hashes.o \
 c_code/3_2/stdlib_streams.o \
 c_code/3_2/stdlib_cpuinfo.o \
 c_code/3_2/stdlib_kqueue.o \
+c_code/2_2/stdlib_strformat.o \
+c_code/2_2/stdlib_unicode.o \
+c_code/2_2/stdlib_colors.o \
 c_code/2_2/stdlib_termios.o \
 c_code/2_2/compiler_nversion.o \
 c_code/2_2/compiler_condsyms.o \
 c_code/2_2/compiler_idents.o \
 c_code/2_2/compiler_wordrecg.o \
 c_code/3_2/compiler_extccomp.o \
-c_code/2_2/stdlib_securehash.o \
-c_code/2_2/stdlib_json.o \
+c_code/2_2/stdlib_sha1.o \
+c_code/3_2/stdlib_json.o \
 c_code/2_2/stdlib_lexbase.o \
-c_code/2_2/stdlib_unicode.o \
+c_code/2_2/stdlib_options.o \
+c_code/2_2/stdlib_typetraits.o \
 c_code/3_2/compiler_nimblecmd.o \
 c_code/2_2/stdlib_sequtils.o \
 c_code/2_2/stdlib_parseopt.o \
@@ -4382,7 +4667,7 @@ c_code/2_2/compiler_ast.o \
 c_code/2_2/compiler_astalgo.o \
 c_code/2_2/compiler_syntaxes.o \
 c_code/2_2/compiler_renderer.o \
-c_code/3_2/compiler_rodread.o \
+c_code/2_2/compiler_rodread.o \
 c_code/2_2/compiler_rodwrite.o \
 c_code/3_2/compiler_sem.o \
 c_code/2_2/compiler_semdata.o \
@@ -4390,7 +4675,7 @@ c_code/2_2/compiler_passes.o \
 c_code/2_2/compiler_docgen.o \
 c_code/2_2/compiler_cgen.o \
 c_code/2_2/compiler_jsgen.o \
-c_code/3_2/compiler_importer.o \
+c_code/2_2/compiler_importer.o \
 c_code/2_2/compiler_passaux.o \
 c_code/2_2/compiler_depends.o \
 c_code/3_2/compiler_vm.o \
@@ -4404,22 +4689,23 @@ c_code/2_2/compiler_modules.o \
 c_code/2_2/compiler_ccgutils.o \
 c_code/3_2/compiler_sigmatch.o \
 c_code/2_2/compiler_modulegraphs.o \
+c_code/2_2/compiler_rod.o \
 c_code/2_2/stdlib_intsets.o \
 c_code/2_2/compiler_rodutils.o \
 c_code/2_2/compiler_pbraces.o \
 c_code/2_2/compiler_filters.o \
 c_code/2_2/compiler_filter_tmpl.o \
-c_code/3_2/stdlib_memfiles.o \
+c_code/2_2/stdlib_memfiles.o \
 c_code/2_2/compiler_trees.o \
+c_code/3_2/compiler_modulepaths.o \
 c_code/2_2/compiler_magicsys.o \
 c_code/2_2/compiler_nimsets.o \
 c_code/2_2/compiler_reorder.o \
 c_code/2_2/compiler_bitsets.o \
-c_code/2_2/compiler_lookups.o \
-c_code/3_2/compiler_prettybase.o \
 c_code/2_2/compiler_treetab.o \
 c_code/3_2/compiler_semfold.o \
 c_code/2_2/compiler_procfind.o \
+c_code/2_2/compiler_lookups.o \
 c_code/3_2/compiler_pragmas.o \
 c_code/2_2/compiler_semtypinst.o \
 c_code/2_2/compiler_transf.o \
@@ -4430,29 +4716,35 @@ c_code/2_2/compiler_evaltempl.o \
 c_code/2_2/compiler_patterns.o \
 c_code/2_2/compiler_parampatterns.o \
 c_code/2_2/compiler_sempass2.o \
-c_code/2_2/compiler_pretty.o \
 c_code/2_2/compiler_semmacrosanity.o \
 c_code/2_2/compiler_semparallel.o \
 c_code/2_2/compiler_lowerings.o \
 c_code/2_2/compiler_pluginsupport.o \
-c_code/2_2/compiler_active.o \
 c_code/2_2/compiler_saturate.o \
+c_code/3_2/compiler_prettybase.o \
+c_code/2_2/compiler_pretty.o \
+c_code/2_2/stdlib_xmltree.o \
+c_code/2_2/stdlib_cgi.o \
+c_code/2_2/compiler_typesrenderer.o \
 c_code/2_2/docutils_rstast.o \
 c_code/2_2/docutils_rst.o \
 c_code/3_2/docutils_rstgen.o \
 c_code/2_2/docutils_highlite.o \
-c_code/2_2/stdlib_xmltree.o \
-c_code/2_2/stdlib_cgi.o \
-c_code/2_2/compiler_typesrenderer.o \
 c_code/2_2/compiler_guards.o \
 c_code/2_2/compiler_writetracking.o \
 c_code/2_2/stdlib_cookies.o \
+c_code/2_2/stdlib_uri.o \
 c_code/2_2/compiler_prefixmatches.o \
+c_code/2_2/compiler_destroyer.o \
+c_code/2_2/compiler_liftlocals.o \
+c_code/2_2/compiler_dfa.o \
 c_code/2_2/compiler_vmgen.o \
 c_code/3_2/compiler_vmdeps.o \
 c_code/2_2/compiler_vmmarshal.o \
-c_code/2_2/compiler_locals.o \
+c_code/3_2/compiler_gorgeimpl.o \
+c_code/2_2/compiler_active.o \
 c_code/2_2/compiler_itersgen.o \
+c_code/2_2/compiler_locals.o \
 c_code/2_2/compiler_cgendata.o \
 c_code/2_2/compiler_ccgmerge.o \
 c_code/2_2/compiler_ndi.o \
@@ -4461,8 +4753,6 @@ c_code/2_2/stdlib_md5.o \
 c_code/2_2/stdlib_dynlib.o \
 c_code/2_2/stdlib_net.o \
 c_code/2_3/stdlib_nativesockets.o \
-c_code/2_2/stdlib_options.o \
-c_code/2_2/stdlib_typetraits.o \
 c_code/2_2/compiler_nodejs.o \
 c_code/3_2/compiler_scriptconfig.o $LINK_FLAGS
     ;;
@@ -4476,7 +4766,7 @@ c_code/3_2/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_parseutils.c -o c_code/2_2/stdlib_parseutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_math.c -o c_code/2_2/stdlib_math.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_algorithm.c -o c_code/2_2/stdlib_algorithm.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_times.c -o c_code/3_2/stdlib_times.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_times.c -o c_code/2_2/stdlib_times.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_posix.c -o c_code/3_2/stdlib_posix.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_ospaths.c -o c_code/3_2/stdlib_ospaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_msgs.c -o c_code/3_2/compiler_msgs.o
@@ -4493,16 +4783,20 @@ c_code/3_2/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_streams.c -o c_code/3_2/stdlib_streams.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_cpuinfo.c -o c_code/3_2/stdlib_cpuinfo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_kqueue.c -o c_code/3_2/stdlib_kqueue.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_strformat.c -o c_code/2_2/stdlib_strformat.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_unicode.c -o c_code/2_2/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_colors.c -o c_code/2_2/stdlib_colors.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_termios.c -o c_code/2_2/stdlib_termios.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nversion.c -o c_code/2_2/compiler_nversion.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_condsyms.c -o c_code/2_2/compiler_condsyms.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_idents.c -o c_code/2_2/compiler_idents.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_wordrecg.c -o c_code/2_2/compiler_wordrecg.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_extccomp.c -o c_code/3_2/compiler_extccomp.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_securehash.c -o c_code/2_2/stdlib_securehash.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_json.c -o c_code/2_2/stdlib_json.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_sha1.c -o c_code/2_2/stdlib_sha1.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_json.c -o c_code/3_2/stdlib_json.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_lexbase.c -o c_code/2_2/stdlib_lexbase.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_unicode.c -o c_code/2_2/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_options.c -o c_code/2_2/stdlib_options.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_typetraits.c -o c_code/2_2/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_nimblecmd.c -o c_code/3_2/compiler_nimblecmd.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_sequtils.c -o c_code/2_2/stdlib_sequtils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_parseopt.c -o c_code/2_2/stdlib_parseopt.o
@@ -4515,7 +4809,7 @@ c_code/3_2/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_astalgo.c -o c_code/2_2/compiler_astalgo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_syntaxes.c -o c_code/2_2/compiler_syntaxes.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_renderer.c -o c_code/2_2/compiler_renderer.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_rodread.c -o c_code/3_2/compiler_rodread.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodread.c -o c_code/2_2/compiler_rodread.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodwrite.c -o c_code/2_2/compiler_rodwrite.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_sem.c -o c_code/3_2/compiler_sem.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semdata.c -o c_code/2_2/compiler_semdata.o
@@ -4523,7 +4817,7 @@ c_code/3_2/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_docgen.c -o c_code/2_2/compiler_docgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_cgen.c -o c_code/2_2/compiler_cgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_jsgen.c -o c_code/2_2/compiler_jsgen.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_importer.c -o c_code/3_2/compiler_importer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_importer.c -o c_code/2_2/compiler_importer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_passaux.c -o c_code/2_2/compiler_passaux.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_depends.c -o c_code/2_2/compiler_depends.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_3/compiler_vm.c -o c_code/3_3/compiler_vm.o
@@ -4537,22 +4831,23 @@ c_code/3_2/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ccgutils.c -o c_code/2_2/compiler_ccgutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_sigmatch.c -o c_code/3_2/compiler_sigmatch.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_modulegraphs.c -o c_code/2_2/compiler_modulegraphs.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rod.c -o c_code/2_2/compiler_rod.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_intsets.c -o c_code/2_2/stdlib_intsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodutils.c -o c_code/2_2/compiler_rodutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pbraces.c -o c_code/2_2/compiler_pbraces.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_filters.c -o c_code/2_2/compiler_filters.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_filter_tmpl.c -o c_code/2_2/compiler_filter_tmpl.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_memfiles.c -o c_code/3_2/stdlib_memfiles.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_memfiles.c -o c_code/2_2/stdlib_memfiles.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_trees.c -o c_code/2_2/compiler_trees.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_modulepaths.c -o c_code/3_2/compiler_modulepaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_magicsys.c -o c_code/2_2/compiler_magicsys.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nimsets.c -o c_code/2_2/compiler_nimsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_reorder.c -o c_code/2_2/compiler_reorder.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_bitsets.c -o c_code/2_2/compiler_bitsets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lookups.c -o c_code/2_2/compiler_lookups.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_prettybase.c -o c_code/3_2/compiler_prettybase.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_treetab.c -o c_code/2_2/compiler_treetab.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_semfold.c -o c_code/3_2/compiler_semfold.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_procfind.c -o c_code/2_2/compiler_procfind.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lookups.c -o c_code/2_2/compiler_lookups.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_pragmas.c -o c_code/3_2/compiler_pragmas.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semtypinst.c -o c_code/2_2/compiler_semtypinst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_transf.c -o c_code/2_2/compiler_transf.o
@@ -4563,29 +4858,35 @@ c_code/3_2/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_patterns.c -o c_code/2_2/compiler_patterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_parampatterns.c -o c_code/2_2/compiler_parampatterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_sempass2.c -o c_code/2_2/compiler_sempass2.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pretty.c -o c_code/2_2/compiler_pretty.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semmacrosanity.c -o c_code/2_2/compiler_semmacrosanity.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semparallel.c -o c_code/2_2/compiler_semparallel.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lowerings.c -o c_code/2_2/compiler_lowerings.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pluginsupport.c -o c_code/2_2/compiler_pluginsupport.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_active.c -o c_code/2_2/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_saturate.c -o c_code/2_2/compiler_saturate.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_prettybase.c -o c_code/3_2/compiler_prettybase.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pretty.c -o c_code/2_2/compiler_pretty.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_xmltree.c -o c_code/2_2/stdlib_xmltree.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cgi.c -o c_code/2_2/stdlib_cgi.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_typesrenderer.c -o c_code/2_2/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_rstast.c -o c_code/2_2/docutils_rstast.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_rst.c -o c_code/2_2/docutils_rst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/docutils_rstgen.c -o c_code/3_2/docutils_rstgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_highlite.c -o c_code/2_2/docutils_highlite.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_xmltree.c -o c_code/2_2/stdlib_xmltree.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cgi.c -o c_code/2_2/stdlib_cgi.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_typesrenderer.c -o c_code/2_2/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_guards.c -o c_code/2_2/compiler_guards.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_writetracking.c -o c_code/2_2/compiler_writetracking.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cookies.c -o c_code/2_2/stdlib_cookies.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_uri.c -o c_code/2_2/stdlib_uri.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_prefixmatches.c -o c_code/2_2/compiler_prefixmatches.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_destroyer.c -o c_code/2_2/compiler_destroyer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_liftlocals.c -o c_code/2_2/compiler_liftlocals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_dfa.c -o c_code/2_2/compiler_dfa.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_vmgen.c -o c_code/2_2/compiler_vmgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_vmdeps.c -o c_code/3_2/compiler_vmdeps.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_vmmarshal.c -o c_code/2_2/compiler_vmmarshal.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_locals.c -o c_code/2_2/compiler_locals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_gorgeimpl.c -o c_code/3_2/compiler_gorgeimpl.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_active.c -o c_code/2_2/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_itersgen.c -o c_code/2_2/compiler_itersgen.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_locals.c -o c_code/2_2/compiler_locals.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_cgendata.c -o c_code/2_2/compiler_cgendata.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ccgmerge.c -o c_code/2_2/compiler_ccgmerge.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ndi.c -o c_code/2_2/compiler_ndi.o
@@ -4594,8 +4895,6 @@ c_code/3_2/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_dynlib.c -o c_code/2_2/stdlib_dynlib.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_net.c -o c_code/2_2/stdlib_net.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_nativesockets.c -o c_code/2_3/stdlib_nativesockets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_options.c -o c_code/2_2/stdlib_options.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_typetraits.c -o c_code/2_2/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nodejs.c -o c_code/2_2/compiler_nodejs.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_scriptconfig.c -o c_code/3_2/compiler_scriptconfig.o
     $LINKER -o $binDir/nim  \
@@ -4607,7 +4906,7 @@ c_code/2_2/stdlib_strutils.o \
 c_code/2_2/stdlib_parseutils.o \
 c_code/2_2/stdlib_math.o \
 c_code/2_2/stdlib_algorithm.o \
-c_code/3_2/stdlib_times.o \
+c_code/2_2/stdlib_times.o \
 c_code/3_2/stdlib_posix.o \
 c_code/3_2/stdlib_ospaths.o \
 c_code/3_2/compiler_msgs.o \
@@ -4624,16 +4923,20 @@ c_code/2_2/stdlib_hashes.o \
 c_code/3_2/stdlib_streams.o \
 c_code/3_2/stdlib_cpuinfo.o \
 c_code/3_2/stdlib_kqueue.o \
+c_code/2_2/stdlib_strformat.o \
+c_code/2_2/stdlib_unicode.o \
+c_code/2_2/stdlib_colors.o \
 c_code/2_2/stdlib_termios.o \
 c_code/2_2/compiler_nversion.o \
 c_code/2_2/compiler_condsyms.o \
 c_code/2_2/compiler_idents.o \
 c_code/2_2/compiler_wordrecg.o \
 c_code/3_2/compiler_extccomp.o \
-c_code/2_2/stdlib_securehash.o \
-c_code/2_2/stdlib_json.o \
+c_code/2_2/stdlib_sha1.o \
+c_code/3_2/stdlib_json.o \
 c_code/2_2/stdlib_lexbase.o \
-c_code/2_2/stdlib_unicode.o \
+c_code/2_2/stdlib_options.o \
+c_code/2_2/stdlib_typetraits.o \
 c_code/3_2/compiler_nimblecmd.o \
 c_code/2_2/stdlib_sequtils.o \
 c_code/2_2/stdlib_parseopt.o \
@@ -4646,7 +4949,7 @@ c_code/2_2/compiler_ast.o \
 c_code/2_2/compiler_astalgo.o \
 c_code/2_2/compiler_syntaxes.o \
 c_code/2_2/compiler_renderer.o \
-c_code/3_2/compiler_rodread.o \
+c_code/2_2/compiler_rodread.o \
 c_code/2_2/compiler_rodwrite.o \
 c_code/3_2/compiler_sem.o \
 c_code/2_2/compiler_semdata.o \
@@ -4654,7 +4957,7 @@ c_code/2_2/compiler_passes.o \
 c_code/2_2/compiler_docgen.o \
 c_code/2_2/compiler_cgen.o \
 c_code/2_2/compiler_jsgen.o \
-c_code/3_2/compiler_importer.o \
+c_code/2_2/compiler_importer.o \
 c_code/2_2/compiler_passaux.o \
 c_code/2_2/compiler_depends.o \
 c_code/3_3/compiler_vm.o \
@@ -4668,22 +4971,23 @@ c_code/2_2/compiler_modules.o \
 c_code/2_2/compiler_ccgutils.o \
 c_code/3_2/compiler_sigmatch.o \
 c_code/2_2/compiler_modulegraphs.o \
+c_code/2_2/compiler_rod.o \
 c_code/2_2/stdlib_intsets.o \
 c_code/2_2/compiler_rodutils.o \
 c_code/2_2/compiler_pbraces.o \
 c_code/2_2/compiler_filters.o \
 c_code/2_2/compiler_filter_tmpl.o \
-c_code/3_2/stdlib_memfiles.o \
+c_code/2_2/stdlib_memfiles.o \
 c_code/2_2/compiler_trees.o \
+c_code/3_2/compiler_modulepaths.o \
 c_code/2_2/compiler_magicsys.o \
 c_code/2_2/compiler_nimsets.o \
 c_code/2_2/compiler_reorder.o \
 c_code/2_2/compiler_bitsets.o \
-c_code/2_2/compiler_lookups.o \
-c_code/3_2/compiler_prettybase.o \
 c_code/2_2/compiler_treetab.o \
 c_code/3_2/compiler_semfold.o \
 c_code/2_2/compiler_procfind.o \
+c_code/2_2/compiler_lookups.o \
 c_code/3_2/compiler_pragmas.o \
 c_code/2_2/compiler_semtypinst.o \
 c_code/2_2/compiler_transf.o \
@@ -4694,29 +4998,35 @@ c_code/2_2/compiler_evaltempl.o \
 c_code/2_2/compiler_patterns.o \
 c_code/2_2/compiler_parampatterns.o \
 c_code/2_2/compiler_sempass2.o \
-c_code/2_2/compiler_pretty.o \
 c_code/2_2/compiler_semmacrosanity.o \
 c_code/2_2/compiler_semparallel.o \
 c_code/2_2/compiler_lowerings.o \
 c_code/2_2/compiler_pluginsupport.o \
-c_code/2_2/compiler_active.o \
 c_code/2_2/compiler_saturate.o \
+c_code/3_2/compiler_prettybase.o \
+c_code/2_2/compiler_pretty.o \
+c_code/2_2/stdlib_xmltree.o \
+c_code/2_2/stdlib_cgi.o \
+c_code/2_2/compiler_typesrenderer.o \
 c_code/2_2/docutils_rstast.o \
 c_code/2_2/docutils_rst.o \
 c_code/3_2/docutils_rstgen.o \
 c_code/2_2/docutils_highlite.o \
-c_code/2_2/stdlib_xmltree.o \
-c_code/2_2/stdlib_cgi.o \
-c_code/2_2/compiler_typesrenderer.o \
 c_code/2_2/compiler_guards.o \
 c_code/2_2/compiler_writetracking.o \
 c_code/2_2/stdlib_cookies.o \
+c_code/2_2/stdlib_uri.o \
 c_code/2_2/compiler_prefixmatches.o \
+c_code/2_2/compiler_destroyer.o \
+c_code/2_2/compiler_liftlocals.o \
+c_code/2_2/compiler_dfa.o \
 c_code/2_2/compiler_vmgen.o \
 c_code/3_2/compiler_vmdeps.o \
 c_code/2_2/compiler_vmmarshal.o \
-c_code/2_2/compiler_locals.o \
+c_code/3_2/compiler_gorgeimpl.o \
+c_code/2_2/compiler_active.o \
 c_code/2_2/compiler_itersgen.o \
+c_code/2_2/compiler_locals.o \
 c_code/2_2/compiler_cgendata.o \
 c_code/2_2/compiler_ccgmerge.o \
 c_code/2_2/compiler_ndi.o \
@@ -4725,8 +5035,6 @@ c_code/2_2/stdlib_md5.o \
 c_code/2_2/stdlib_dynlib.o \
 c_code/2_2/stdlib_net.o \
 c_code/2_3/stdlib_nativesockets.o \
-c_code/2_2/stdlib_options.o \
-c_code/2_2/stdlib_typetraits.o \
 c_code/2_2/compiler_nodejs.o \
 c_code/3_2/compiler_scriptconfig.o $LINK_FLAGS
     ;;
@@ -4804,16 +5112,20 @@ solaris)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_hashes.c -o c_code/2_1/stdlib_hashes.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/stdlib_streams.c -o c_code/3_1/stdlib_streams.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cpuinfo.c -o c_code/2_1/stdlib_cpuinfo.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_strformat.c -o c_code/2_1/stdlib_strformat.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_unicode.c -o c_code/2_1/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_colors.c -o c_code/2_1/stdlib_colors.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_termios.c -o c_code/2_1/stdlib_termios.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nversion.c -o c_code/2_1/compiler_nversion.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_condsyms.c -o c_code/2_1/compiler_condsyms.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_idents.c -o c_code/2_1/compiler_idents.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_wordrecg.c -o c_code/2_1/compiler_wordrecg.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_extccomp.c -o c_code/3_1/compiler_extccomp.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_securehash.c -o c_code/2_1/stdlib_securehash.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_json.c -o c_code/2_1/stdlib_json.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_extccomp.c -o c_code/4_1/compiler_extccomp.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_sha1.c -o c_code/2_1/stdlib_sha1.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/stdlib_json.c -o c_code/3_1/stdlib_json.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_lexbase.c -o c_code/2_1/stdlib_lexbase.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_unicode.c -o c_code/2_1/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_options.c -o c_code/2_1/stdlib_options.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_typetraits.c -o c_code/2_1/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_nimblecmd.c -o c_code/4_1/compiler_nimblecmd.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_sequtils.c -o c_code/2_1/stdlib_sequtils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_parseopt.c -o c_code/2_1/stdlib_parseopt.o
@@ -4826,7 +5138,7 @@ solaris)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_astalgo.c -o c_code/2_1/compiler_astalgo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_syntaxes.c -o c_code/2_1/compiler_syntaxes.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_renderer.c -o c_code/2_1/compiler_renderer.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_rodread.c -o c_code/3_1/compiler_rodread.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rodread.c -o c_code/2_1/compiler_rodread.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rodwrite.c -o c_code/2_1/compiler_rodwrite.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_sem.c -o c_code/3_1/compiler_sem.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semdata.c -o c_code/2_1/compiler_semdata.o
@@ -4834,7 +5146,7 @@ solaris)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_docgen.c -o c_code/2_1/compiler_docgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_cgen.c -o c_code/2_1/compiler_cgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_jsgen.c -o c_code/2_1/compiler_jsgen.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_importer.c -o c_code/3_1/compiler_importer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_importer.c -o c_code/2_1/compiler_importer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_passaux.c -o c_code/2_1/compiler_passaux.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_depends.c -o c_code/2_1/compiler_depends.o
     $CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_vm.c -o c_code/4_1/compiler_vm.o
@@ -4848,22 +5160,23 @@ solaris)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ccgutils.c -o c_code/2_1/compiler_ccgutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_sigmatch.c -o c_code/3_1/compiler_sigmatch.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_modulegraphs.c -o c_code/2_1/compiler_modulegraphs.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rod.c -o c_code/2_1/compiler_rod.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_intsets.c -o c_code/2_1/stdlib_intsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rodutils.c -o c_code/2_1/compiler_rodutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pbraces.c -o c_code/2_1/compiler_pbraces.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_filters.c -o c_code/2_1/compiler_filters.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_filter_tmpl.c -o c_code/2_1/compiler_filter_tmpl.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/stdlib_memfiles.c -o c_code/3_1/stdlib_memfiles.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_memfiles.c -o c_code/2_1/stdlib_memfiles.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_trees.c -o c_code/2_1/compiler_trees.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_modulepaths.c -o c_code/3_1/compiler_modulepaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_magicsys.c -o c_code/2_1/compiler_magicsys.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nimsets.c -o c_code/2_1/compiler_nimsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_reorder.c -o c_code/2_1/compiler_reorder.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_bitsets.c -o c_code/2_1/compiler_bitsets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lookups.c -o c_code/2_1/compiler_lookups.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_prettybase.c -o c_code/3_1/compiler_prettybase.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_treetab.c -o c_code/2_1/compiler_treetab.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_semfold.c -o c_code/3_1/compiler_semfold.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_procfind.c -o c_code/2_1/compiler_procfind.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lookups.c -o c_code/2_1/compiler_lookups.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_pragmas.c -o c_code/3_1/compiler_pragmas.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semtypinst.c -o c_code/2_1/compiler_semtypinst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_transf.c -o c_code/2_1/compiler_transf.o
@@ -4874,29 +5187,35 @@ solaris)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_patterns.c -o c_code/2_1/compiler_patterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_parampatterns.c -o c_code/2_1/compiler_parampatterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_sempass2.c -o c_code/2_1/compiler_sempass2.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pretty.c -o c_code/2_1/compiler_pretty.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semmacrosanity.c -o c_code/2_1/compiler_semmacrosanity.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semparallel.c -o c_code/2_1/compiler_semparallel.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lowerings.c -o c_code/2_1/compiler_lowerings.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pluginsupport.c -o c_code/2_1/compiler_pluginsupport.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_active.c -o c_code/2_1/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_saturate.c -o c_code/2_1/compiler_saturate.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_prettybase.c -o c_code/3_1/compiler_prettybase.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pretty.c -o c_code/2_1/compiler_pretty.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_xmltree.c -o c_code/2_1/stdlib_xmltree.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cgi.c -o c_code/2_1/stdlib_cgi.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_typesrenderer.c -o c_code/2_1/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rstast.c -o c_code/2_1/docutils_rstast.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rst.c -o c_code/2_1/docutils_rst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/4_1/docutils_rstgen.c -o c_code/4_1/docutils_rstgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_highlite.c -o c_code/2_1/docutils_highlite.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_xmltree.c -o c_code/2_1/stdlib_xmltree.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cgi.c -o c_code/2_1/stdlib_cgi.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_typesrenderer.c -o c_code/2_1/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_guards.c -o c_code/2_1/compiler_guards.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_writetracking.c -o c_code/2_1/compiler_writetracking.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cookies.c -o c_code/2_1/stdlib_cookies.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_uri.c -o c_code/2_1/stdlib_uri.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_prefixmatches.c -o c_code/2_1/compiler_prefixmatches.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_destroyer.c -o c_code/2_1/compiler_destroyer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_liftlocals.c -o c_code/2_1/compiler_liftlocals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_dfa.c -o c_code/2_1/compiler_dfa.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmgen.c -o c_code/2_1/compiler_vmgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_vmdeps.c -o c_code/3_1/compiler_vmdeps.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmmarshal.c -o c_code/2_1/compiler_vmmarshal.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_locals.c -o c_code/2_1/compiler_locals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_gorgeimpl.c -o c_code/3_1/compiler_gorgeimpl.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_active.c -o c_code/2_1/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_itersgen.c -o c_code/2_1/compiler_itersgen.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_locals.c -o c_code/2_1/compiler_locals.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_cgendata.c -o c_code/2_1/compiler_cgendata.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ccgmerge.c -o c_code/2_1/compiler_ccgmerge.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ndi.c -o c_code/2_1/compiler_ndi.o
@@ -4905,8 +5224,6 @@ solaris)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_dynlib.c -o c_code/2_1/stdlib_dynlib.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_net.c -o c_code/2_1/stdlib_net.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_nativesockets.c -o c_code/2_1/stdlib_nativesockets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_options.c -o c_code/2_1/stdlib_options.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_typetraits.c -o c_code/2_1/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nodejs.c -o c_code/2_1/compiler_nodejs.o
     $CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_scriptconfig.c -o c_code/4_1/compiler_scriptconfig.o
     $LINKER -o $binDir/nim  \
@@ -4934,16 +5251,20 @@ c_code/2_1/stdlib_sets.o \
 c_code/2_1/stdlib_hashes.o \
 c_code/3_1/stdlib_streams.o \
 c_code/2_1/stdlib_cpuinfo.o \
+c_code/2_1/stdlib_strformat.o \
+c_code/2_1/stdlib_unicode.o \
+c_code/2_1/stdlib_colors.o \
 c_code/2_1/stdlib_termios.o \
 c_code/2_1/compiler_nversion.o \
 c_code/2_1/compiler_condsyms.o \
 c_code/2_1/compiler_idents.o \
 c_code/2_1/compiler_wordrecg.o \
-c_code/3_1/compiler_extccomp.o \
-c_code/2_1/stdlib_securehash.o \
-c_code/2_1/stdlib_json.o \
+c_code/4_1/compiler_extccomp.o \
+c_code/2_1/stdlib_sha1.o \
+c_code/3_1/stdlib_json.o \
 c_code/2_1/stdlib_lexbase.o \
-c_code/2_1/stdlib_unicode.o \
+c_code/2_1/stdlib_options.o \
+c_code/2_1/stdlib_typetraits.o \
 c_code/4_1/compiler_nimblecmd.o \
 c_code/2_1/stdlib_sequtils.o \
 c_code/2_1/stdlib_parseopt.o \
@@ -4956,7 +5277,7 @@ c_code/2_1/compiler_ast.o \
 c_code/2_1/compiler_astalgo.o \
 c_code/2_1/compiler_syntaxes.o \
 c_code/2_1/compiler_renderer.o \
-c_code/3_1/compiler_rodread.o \
+c_code/2_1/compiler_rodread.o \
 c_code/2_1/compiler_rodwrite.o \
 c_code/3_1/compiler_sem.o \
 c_code/2_1/compiler_semdata.o \
@@ -4964,7 +5285,7 @@ c_code/2_1/compiler_passes.o \
 c_code/2_1/compiler_docgen.o \
 c_code/2_1/compiler_cgen.o \
 c_code/2_1/compiler_jsgen.o \
-c_code/3_1/compiler_importer.o \
+c_code/2_1/compiler_importer.o \
 c_code/2_1/compiler_passaux.o \
 c_code/2_1/compiler_depends.o \
 c_code/4_1/compiler_vm.o \
@@ -4978,22 +5299,23 @@ c_code/2_1/compiler_modules.o \
 c_code/2_1/compiler_ccgutils.o \
 c_code/3_1/compiler_sigmatch.o \
 c_code/2_1/compiler_modulegraphs.o \
+c_code/2_1/compiler_rod.o \
 c_code/2_1/stdlib_intsets.o \
 c_code/2_1/compiler_rodutils.o \
 c_code/2_1/compiler_pbraces.o \
 c_code/2_1/compiler_filters.o \
 c_code/2_1/compiler_filter_tmpl.o \
-c_code/3_1/stdlib_memfiles.o \
+c_code/2_1/stdlib_memfiles.o \
 c_code/2_1/compiler_trees.o \
+c_code/3_1/compiler_modulepaths.o \
 c_code/2_1/compiler_magicsys.o \
 c_code/2_1/compiler_nimsets.o \
 c_code/2_1/compiler_reorder.o \
 c_code/2_1/compiler_bitsets.o \
-c_code/2_1/compiler_lookups.o \
-c_code/3_1/compiler_prettybase.o \
 c_code/2_1/compiler_treetab.o \
 c_code/3_1/compiler_semfold.o \
 c_code/2_1/compiler_procfind.o \
+c_code/2_1/compiler_lookups.o \
 c_code/3_1/compiler_pragmas.o \
 c_code/2_1/compiler_semtypinst.o \
 c_code/2_1/compiler_transf.o \
@@ -5004,29 +5326,35 @@ c_code/2_1/compiler_evaltempl.o \
 c_code/2_1/compiler_patterns.o \
 c_code/2_1/compiler_parampatterns.o \
 c_code/2_1/compiler_sempass2.o \
-c_code/2_1/compiler_pretty.o \
 c_code/2_1/compiler_semmacrosanity.o \
 c_code/2_1/compiler_semparallel.o \
 c_code/2_1/compiler_lowerings.o \
 c_code/2_1/compiler_pluginsupport.o \
-c_code/2_1/compiler_active.o \
 c_code/2_1/compiler_saturate.o \
+c_code/3_1/compiler_prettybase.o \
+c_code/2_1/compiler_pretty.o \
+c_code/2_1/stdlib_xmltree.o \
+c_code/2_1/stdlib_cgi.o \
+c_code/2_1/compiler_typesrenderer.o \
 c_code/2_1/docutils_rstast.o \
 c_code/2_1/docutils_rst.o \
 c_code/4_1/docutils_rstgen.o \
 c_code/2_1/docutils_highlite.o \
-c_code/2_1/stdlib_xmltree.o \
-c_code/2_1/stdlib_cgi.o \
-c_code/2_1/compiler_typesrenderer.o \
 c_code/2_1/compiler_guards.o \
 c_code/2_1/compiler_writetracking.o \
 c_code/2_1/stdlib_cookies.o \
+c_code/2_1/stdlib_uri.o \
 c_code/2_1/compiler_prefixmatches.o \
+c_code/2_1/compiler_destroyer.o \
+c_code/2_1/compiler_liftlocals.o \
+c_code/2_1/compiler_dfa.o \
 c_code/2_1/compiler_vmgen.o \
 c_code/3_1/compiler_vmdeps.o \
 c_code/2_1/compiler_vmmarshal.o \
-c_code/2_1/compiler_locals.o \
+c_code/3_1/compiler_gorgeimpl.o \
+c_code/2_1/compiler_active.o \
 c_code/2_1/compiler_itersgen.o \
+c_code/2_1/compiler_locals.o \
 c_code/2_1/compiler_cgendata.o \
 c_code/2_1/compiler_ccgmerge.o \
 c_code/2_1/compiler_ndi.o \
@@ -5035,8 +5363,6 @@ c_code/2_1/stdlib_md5.o \
 c_code/2_1/stdlib_dynlib.o \
 c_code/2_1/stdlib_net.o \
 c_code/2_1/stdlib_nativesockets.o \
-c_code/2_1/stdlib_options.o \
-c_code/2_1/stdlib_typetraits.o \
 c_code/2_1/compiler_nodejs.o \
 c_code/4_1/compiler_scriptconfig.o $LINK_FLAGS
     ;;
@@ -5066,16 +5392,20 @@ c_code/4_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_hashes.c -o c_code/2_2/stdlib_hashes.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_streams.c -o c_code/3_2/stdlib_streams.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_cpuinfo.c -o c_code/2_3/stdlib_cpuinfo.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_strformat.c -o c_code/2_2/stdlib_strformat.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_unicode.c -o c_code/2_2/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_colors.c -o c_code/2_2/stdlib_colors.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_termios.c -o c_code/2_2/stdlib_termios.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nversion.c -o c_code/2_2/compiler_nversion.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_condsyms.c -o c_code/2_2/compiler_condsyms.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_idents.c -o c_code/2_2/compiler_idents.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_wordrecg.c -o c_code/2_2/compiler_wordrecg.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_extccomp.c -o c_code/3_2/compiler_extccomp.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_securehash.c -o c_code/2_2/stdlib_securehash.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_json.c -o c_code/2_2/stdlib_json.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_extccomp.c -o c_code/4_2/compiler_extccomp.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_sha1.c -o c_code/2_2/stdlib_sha1.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_json.c -o c_code/3_2/stdlib_json.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_lexbase.c -o c_code/2_2/stdlib_lexbase.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_unicode.c -o c_code/2_2/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_options.c -o c_code/2_2/stdlib_options.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_typetraits.c -o c_code/2_2/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_nimblecmd.c -o c_code/4_2/compiler_nimblecmd.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_sequtils.c -o c_code/2_2/stdlib_sequtils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_parseopt.c -o c_code/2_2/stdlib_parseopt.o
@@ -5088,7 +5418,7 @@ c_code/4_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_astalgo.c -o c_code/2_2/compiler_astalgo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_syntaxes.c -o c_code/2_2/compiler_syntaxes.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_renderer.c -o c_code/2_2/compiler_renderer.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_rodread.c -o c_code/3_2/compiler_rodread.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodread.c -o c_code/2_2/compiler_rodread.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodwrite.c -o c_code/2_2/compiler_rodwrite.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_sem.c -o c_code/3_2/compiler_sem.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semdata.c -o c_code/2_2/compiler_semdata.o
@@ -5096,7 +5426,7 @@ c_code/4_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_docgen.c -o c_code/2_2/compiler_docgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_cgen.c -o c_code/2_2/compiler_cgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_jsgen.c -o c_code/2_2/compiler_jsgen.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_importer.c -o c_code/3_2/compiler_importer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_importer.c -o c_code/2_2/compiler_importer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_passaux.c -o c_code/2_2/compiler_passaux.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_depends.c -o c_code/2_2/compiler_depends.o
     $CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_vm.c -o c_code/4_2/compiler_vm.o
@@ -5110,22 +5440,23 @@ c_code/4_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ccgutils.c -o c_code/2_2/compiler_ccgutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_sigmatch.c -o c_code/3_2/compiler_sigmatch.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_modulegraphs.c -o c_code/2_2/compiler_modulegraphs.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rod.c -o c_code/2_2/compiler_rod.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_intsets.c -o c_code/2_2/stdlib_intsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodutils.c -o c_code/2_2/compiler_rodutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pbraces.c -o c_code/2_2/compiler_pbraces.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_filters.c -o c_code/2_2/compiler_filters.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_filter_tmpl.c -o c_code/2_2/compiler_filter_tmpl.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_memfiles.c -o c_code/3_2/stdlib_memfiles.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_memfiles.c -o c_code/2_2/stdlib_memfiles.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_trees.c -o c_code/2_2/compiler_trees.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_modulepaths.c -o c_code/3_2/compiler_modulepaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_magicsys.c -o c_code/2_2/compiler_magicsys.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nimsets.c -o c_code/2_2/compiler_nimsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_reorder.c -o c_code/2_2/compiler_reorder.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_bitsets.c -o c_code/2_2/compiler_bitsets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lookups.c -o c_code/2_2/compiler_lookups.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_prettybase.c -o c_code/3_2/compiler_prettybase.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_treetab.c -o c_code/2_2/compiler_treetab.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_semfold.c -o c_code/3_2/compiler_semfold.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_procfind.c -o c_code/2_2/compiler_procfind.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lookups.c -o c_code/2_2/compiler_lookups.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_pragmas.c -o c_code/3_2/compiler_pragmas.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semtypinst.c -o c_code/2_2/compiler_semtypinst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_transf.c -o c_code/2_2/compiler_transf.o
@@ -5136,29 +5467,35 @@ c_code/4_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_patterns.c -o c_code/2_2/compiler_patterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_parampatterns.c -o c_code/2_2/compiler_parampatterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_sempass2.c -o c_code/2_2/compiler_sempass2.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pretty.c -o c_code/2_2/compiler_pretty.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semmacrosanity.c -o c_code/2_2/compiler_semmacrosanity.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semparallel.c -o c_code/2_2/compiler_semparallel.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lowerings.c -o c_code/2_2/compiler_lowerings.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pluginsupport.c -o c_code/2_2/compiler_pluginsupport.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_active.c -o c_code/2_2/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_saturate.c -o c_code/2_2/compiler_saturate.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_prettybase.c -o c_code/3_2/compiler_prettybase.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pretty.c -o c_code/2_2/compiler_pretty.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_xmltree.c -o c_code/2_2/stdlib_xmltree.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cgi.c -o c_code/2_2/stdlib_cgi.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_typesrenderer.c -o c_code/2_2/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_rstast.c -o c_code/2_2/docutils_rstast.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_rst.c -o c_code/2_2/docutils_rst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/4_2/docutils_rstgen.c -o c_code/4_2/docutils_rstgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_highlite.c -o c_code/2_2/docutils_highlite.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_xmltree.c -o c_code/2_2/stdlib_xmltree.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cgi.c -o c_code/2_2/stdlib_cgi.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_typesrenderer.c -o c_code/2_2/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_guards.c -o c_code/2_2/compiler_guards.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_writetracking.c -o c_code/2_2/compiler_writetracking.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cookies.c -o c_code/2_2/stdlib_cookies.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_uri.c -o c_code/2_2/stdlib_uri.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_prefixmatches.c -o c_code/2_2/compiler_prefixmatches.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_destroyer.c -o c_code/2_2/compiler_destroyer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_liftlocals.c -o c_code/2_2/compiler_liftlocals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_dfa.c -o c_code/2_2/compiler_dfa.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_vmgen.c -o c_code/2_2/compiler_vmgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_vmdeps.c -o c_code/3_2/compiler_vmdeps.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_vmmarshal.c -o c_code/2_2/compiler_vmmarshal.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_locals.c -o c_code/2_2/compiler_locals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_gorgeimpl.c -o c_code/3_2/compiler_gorgeimpl.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_active.c -o c_code/2_2/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_itersgen.c -o c_code/2_2/compiler_itersgen.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_locals.c -o c_code/2_2/compiler_locals.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_cgendata.c -o c_code/2_2/compiler_cgendata.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ccgmerge.c -o c_code/2_2/compiler_ccgmerge.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ndi.c -o c_code/2_2/compiler_ndi.o
@@ -5167,8 +5504,6 @@ c_code/4_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_dynlib.c -o c_code/2_2/stdlib_dynlib.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_net.c -o c_code/2_2/stdlib_net.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_nativesockets.c -o c_code/2_3/stdlib_nativesockets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_options.c -o c_code/2_2/stdlib_options.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_typetraits.c -o c_code/2_2/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nodejs.c -o c_code/2_2/compiler_nodejs.o
     $CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_scriptconfig.c -o c_code/4_2/compiler_scriptconfig.o
     $LINKER -o $binDir/nim  \
@@ -5196,16 +5531,20 @@ c_code/2_2/stdlib_sets.o \
 c_code/2_2/stdlib_hashes.o \
 c_code/3_2/stdlib_streams.o \
 c_code/2_3/stdlib_cpuinfo.o \
+c_code/2_2/stdlib_strformat.o \
+c_code/2_2/stdlib_unicode.o \
+c_code/2_2/stdlib_colors.o \
 c_code/2_2/stdlib_termios.o \
 c_code/2_2/compiler_nversion.o \
 c_code/2_2/compiler_condsyms.o \
 c_code/2_2/compiler_idents.o \
 c_code/2_2/compiler_wordrecg.o \
-c_code/3_2/compiler_extccomp.o \
-c_code/2_2/stdlib_securehash.o \
-c_code/2_2/stdlib_json.o \
+c_code/4_2/compiler_extccomp.o \
+c_code/2_2/stdlib_sha1.o \
+c_code/3_2/stdlib_json.o \
 c_code/2_2/stdlib_lexbase.o \
-c_code/2_2/stdlib_unicode.o \
+c_code/2_2/stdlib_options.o \
+c_code/2_2/stdlib_typetraits.o \
 c_code/4_2/compiler_nimblecmd.o \
 c_code/2_2/stdlib_sequtils.o \
 c_code/2_2/stdlib_parseopt.o \
@@ -5218,7 +5557,7 @@ c_code/2_2/compiler_ast.o \
 c_code/2_2/compiler_astalgo.o \
 c_code/2_2/compiler_syntaxes.o \
 c_code/2_2/compiler_renderer.o \
-c_code/3_2/compiler_rodread.o \
+c_code/2_2/compiler_rodread.o \
 c_code/2_2/compiler_rodwrite.o \
 c_code/3_2/compiler_sem.o \
 c_code/2_2/compiler_semdata.o \
@@ -5226,7 +5565,7 @@ c_code/2_2/compiler_passes.o \
 c_code/2_2/compiler_docgen.o \
 c_code/2_2/compiler_cgen.o \
 c_code/2_2/compiler_jsgen.o \
-c_code/3_2/compiler_importer.o \
+c_code/2_2/compiler_importer.o \
 c_code/2_2/compiler_passaux.o \
 c_code/2_2/compiler_depends.o \
 c_code/4_2/compiler_vm.o \
@@ -5240,22 +5579,23 @@ c_code/2_2/compiler_modules.o \
 c_code/2_2/compiler_ccgutils.o \
 c_code/3_2/compiler_sigmatch.o \
 c_code/2_2/compiler_modulegraphs.o \
+c_code/2_2/compiler_rod.o \
 c_code/2_2/stdlib_intsets.o \
 c_code/2_2/compiler_rodutils.o \
 c_code/2_2/compiler_pbraces.o \
 c_code/2_2/compiler_filters.o \
 c_code/2_2/compiler_filter_tmpl.o \
-c_code/3_2/stdlib_memfiles.o \
+c_code/2_2/stdlib_memfiles.o \
 c_code/2_2/compiler_trees.o \
+c_code/3_2/compiler_modulepaths.o \
 c_code/2_2/compiler_magicsys.o \
 c_code/2_2/compiler_nimsets.o \
 c_code/2_2/compiler_reorder.o \
 c_code/2_2/compiler_bitsets.o \
-c_code/2_2/compiler_lookups.o \
-c_code/3_2/compiler_prettybase.o \
 c_code/2_2/compiler_treetab.o \
 c_code/3_2/compiler_semfold.o \
 c_code/2_2/compiler_procfind.o \
+c_code/2_2/compiler_lookups.o \
 c_code/3_2/compiler_pragmas.o \
 c_code/2_2/compiler_semtypinst.o \
 c_code/2_2/compiler_transf.o \
@@ -5266,29 +5606,35 @@ c_code/2_2/compiler_evaltempl.o \
 c_code/2_2/compiler_patterns.o \
 c_code/2_2/compiler_parampatterns.o \
 c_code/2_2/compiler_sempass2.o \
-c_code/2_2/compiler_pretty.o \
 c_code/2_2/compiler_semmacrosanity.o \
 c_code/2_2/compiler_semparallel.o \
 c_code/2_2/compiler_lowerings.o \
 c_code/2_2/compiler_pluginsupport.o \
-c_code/2_2/compiler_active.o \
 c_code/2_2/compiler_saturate.o \
+c_code/3_2/compiler_prettybase.o \
+c_code/2_2/compiler_pretty.o \
+c_code/2_2/stdlib_xmltree.o \
+c_code/2_2/stdlib_cgi.o \
+c_code/2_2/compiler_typesrenderer.o \
 c_code/2_2/docutils_rstast.o \
 c_code/2_2/docutils_rst.o \
 c_code/4_2/docutils_rstgen.o \
 c_code/2_2/docutils_highlite.o \
-c_code/2_2/stdlib_xmltree.o \
-c_code/2_2/stdlib_cgi.o \
-c_code/2_2/compiler_typesrenderer.o \
 c_code/2_2/compiler_guards.o \
 c_code/2_2/compiler_writetracking.o \
 c_code/2_2/stdlib_cookies.o \
+c_code/2_2/stdlib_uri.o \
 c_code/2_2/compiler_prefixmatches.o \
+c_code/2_2/compiler_destroyer.o \
+c_code/2_2/compiler_liftlocals.o \
+c_code/2_2/compiler_dfa.o \
 c_code/2_2/compiler_vmgen.o \
 c_code/3_2/compiler_vmdeps.o \
 c_code/2_2/compiler_vmmarshal.o \
-c_code/2_2/compiler_locals.o \
+c_code/3_2/compiler_gorgeimpl.o \
+c_code/2_2/compiler_active.o \
 c_code/2_2/compiler_itersgen.o \
+c_code/2_2/compiler_locals.o \
 c_code/2_2/compiler_cgendata.o \
 c_code/2_2/compiler_ccgmerge.o \
 c_code/2_2/compiler_ndi.o \
@@ -5297,8 +5643,6 @@ c_code/2_2/stdlib_md5.o \
 c_code/2_2/stdlib_dynlib.o \
 c_code/2_2/stdlib_net.o \
 c_code/2_3/stdlib_nativesockets.o \
-c_code/2_2/stdlib_options.o \
-c_code/2_2/stdlib_typetraits.o \
 c_code/2_2/compiler_nodejs.o \
 c_code/4_2/compiler_scriptconfig.o $LINK_FLAGS
     ;;
@@ -5336,16 +5680,20 @@ c_code/4_2/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_hashes.c -o c_code/2_1/stdlib_hashes.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/stdlib_streams.c -o c_code/3_1/stdlib_streams.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cpuinfo.c -o c_code/2_1/stdlib_cpuinfo.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_strformat.c -o c_code/2_1/stdlib_strformat.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_unicode.c -o c_code/2_1/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_colors.c -o c_code/2_1/stdlib_colors.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_termios.c -o c_code/2_1/stdlib_termios.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nversion.c -o c_code/2_1/compiler_nversion.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_condsyms.c -o c_code/2_1/compiler_condsyms.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_idents.c -o c_code/2_1/compiler_idents.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_wordrecg.c -o c_code/2_1/compiler_wordrecg.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_extccomp.c -o c_code/3_1/compiler_extccomp.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_securehash.c -o c_code/2_1/stdlib_securehash.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_json.c -o c_code/2_1/stdlib_json.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_extccomp.c -o c_code/4_1/compiler_extccomp.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_sha1.c -o c_code/2_1/stdlib_sha1.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/stdlib_json.c -o c_code/3_1/stdlib_json.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_lexbase.c -o c_code/2_1/stdlib_lexbase.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_unicode.c -o c_code/2_1/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_options.c -o c_code/2_1/stdlib_options.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_typetraits.c -o c_code/2_1/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_nimblecmd.c -o c_code/4_1/compiler_nimblecmd.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_sequtils.c -o c_code/2_1/stdlib_sequtils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_parseopt.c -o c_code/2_1/stdlib_parseopt.o
@@ -5358,7 +5706,7 @@ c_code/4_2/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_astalgo.c -o c_code/2_1/compiler_astalgo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_syntaxes.c -o c_code/2_1/compiler_syntaxes.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_renderer.c -o c_code/2_1/compiler_renderer.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_rodread.c -o c_code/3_1/compiler_rodread.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rodread.c -o c_code/2_1/compiler_rodread.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rodwrite.c -o c_code/2_1/compiler_rodwrite.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_sem.c -o c_code/3_1/compiler_sem.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semdata.c -o c_code/2_1/compiler_semdata.o
@@ -5366,7 +5714,7 @@ c_code/4_2/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_docgen.c -o c_code/2_1/compiler_docgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_cgen.c -o c_code/2_1/compiler_cgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_jsgen.c -o c_code/2_1/compiler_jsgen.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_importer.c -o c_code/3_1/compiler_importer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_importer.c -o c_code/2_1/compiler_importer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_passaux.c -o c_code/2_1/compiler_passaux.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_depends.c -o c_code/2_1/compiler_depends.o
     $CC $COMP_FLAGS -Ic_code -c c_code/4_5/compiler_vm.c -o c_code/4_5/compiler_vm.o
@@ -5380,22 +5728,23 @@ c_code/4_2/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ccgutils.c -o c_code/2_1/compiler_ccgutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_sigmatch.c -o c_code/3_1/compiler_sigmatch.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_modulegraphs.c -o c_code/2_1/compiler_modulegraphs.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rod.c -o c_code/2_1/compiler_rod.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_intsets.c -o c_code/2_1/stdlib_intsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rodutils.c -o c_code/2_1/compiler_rodutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pbraces.c -o c_code/2_1/compiler_pbraces.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_filters.c -o c_code/2_1/compiler_filters.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_filter_tmpl.c -o c_code/2_1/compiler_filter_tmpl.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/stdlib_memfiles.c -o c_code/3_1/stdlib_memfiles.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_memfiles.c -o c_code/2_1/stdlib_memfiles.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_trees.c -o c_code/2_1/compiler_trees.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_modulepaths.c -o c_code/3_1/compiler_modulepaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_magicsys.c -o c_code/2_1/compiler_magicsys.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nimsets.c -o c_code/2_1/compiler_nimsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_reorder.c -o c_code/2_1/compiler_reorder.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_bitsets.c -o c_code/2_1/compiler_bitsets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lookups.c -o c_code/2_1/compiler_lookups.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_prettybase.c -o c_code/3_1/compiler_prettybase.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_treetab.c -o c_code/2_1/compiler_treetab.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_semfold.c -o c_code/3_1/compiler_semfold.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_procfind.c -o c_code/2_1/compiler_procfind.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lookups.c -o c_code/2_1/compiler_lookups.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_pragmas.c -o c_code/3_1/compiler_pragmas.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semtypinst.c -o c_code/2_1/compiler_semtypinst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_transf.c -o c_code/2_1/compiler_transf.o
@@ -5406,29 +5755,35 @@ c_code/4_2/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_patterns.c -o c_code/2_1/compiler_patterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_parampatterns.c -o c_code/2_1/compiler_parampatterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_sempass2.c -o c_code/2_1/compiler_sempass2.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pretty.c -o c_code/2_1/compiler_pretty.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semmacrosanity.c -o c_code/2_1/compiler_semmacrosanity.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semparallel.c -o c_code/2_1/compiler_semparallel.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lowerings.c -o c_code/2_1/compiler_lowerings.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pluginsupport.c -o c_code/2_1/compiler_pluginsupport.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_active.c -o c_code/2_1/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_saturate.c -o c_code/2_1/compiler_saturate.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_prettybase.c -o c_code/3_1/compiler_prettybase.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pretty.c -o c_code/2_1/compiler_pretty.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_xmltree.c -o c_code/2_1/stdlib_xmltree.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cgi.c -o c_code/2_1/stdlib_cgi.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_typesrenderer.c -o c_code/2_1/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rstast.c -o c_code/2_1/docutils_rstast.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rst.c -o c_code/2_1/docutils_rst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/4_1/docutils_rstgen.c -o c_code/4_1/docutils_rstgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_highlite.c -o c_code/2_1/docutils_highlite.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_xmltree.c -o c_code/2_1/stdlib_xmltree.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cgi.c -o c_code/2_1/stdlib_cgi.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_typesrenderer.c -o c_code/2_1/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_guards.c -o c_code/2_1/compiler_guards.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_writetracking.c -o c_code/2_1/compiler_writetracking.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cookies.c -o c_code/2_1/stdlib_cookies.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_uri.c -o c_code/2_1/stdlib_uri.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_prefixmatches.c -o c_code/2_1/compiler_prefixmatches.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_destroyer.c -o c_code/2_1/compiler_destroyer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_liftlocals.c -o c_code/2_1/compiler_liftlocals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_dfa.c -o c_code/2_1/compiler_dfa.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmgen.c -o c_code/2_1/compiler_vmgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_vmdeps.c -o c_code/3_1/compiler_vmdeps.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmmarshal.c -o c_code/2_1/compiler_vmmarshal.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_locals.c -o c_code/2_1/compiler_locals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_gorgeimpl.c -o c_code/3_1/compiler_gorgeimpl.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_active.c -o c_code/2_1/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_itersgen.c -o c_code/2_1/compiler_itersgen.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_locals.c -o c_code/2_1/compiler_locals.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_cgendata.c -o c_code/2_1/compiler_cgendata.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ccgmerge.c -o c_code/2_1/compiler_ccgmerge.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ndi.c -o c_code/2_1/compiler_ndi.o
@@ -5437,8 +5792,6 @@ c_code/4_2/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_dynlib.c -o c_code/2_1/stdlib_dynlib.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_net.c -o c_code/2_1/stdlib_net.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_nativesockets.c -o c_code/2_1/stdlib_nativesockets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_options.c -o c_code/2_1/stdlib_options.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_typetraits.c -o c_code/2_1/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nodejs.c -o c_code/2_1/compiler_nodejs.o
     $CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_scriptconfig.c -o c_code/4_1/compiler_scriptconfig.o
     $LINKER -o $binDir/nim  \
@@ -5466,16 +5819,20 @@ c_code/2_1/stdlib_sets.o \
 c_code/2_1/stdlib_hashes.o \
 c_code/3_1/stdlib_streams.o \
 c_code/2_1/stdlib_cpuinfo.o \
+c_code/2_1/stdlib_strformat.o \
+c_code/2_1/stdlib_unicode.o \
+c_code/2_1/stdlib_colors.o \
 c_code/2_1/stdlib_termios.o \
 c_code/2_1/compiler_nversion.o \
 c_code/2_1/compiler_condsyms.o \
 c_code/2_1/compiler_idents.o \
 c_code/2_1/compiler_wordrecg.o \
-c_code/3_1/compiler_extccomp.o \
-c_code/2_1/stdlib_securehash.o \
-c_code/2_1/stdlib_json.o \
+c_code/4_1/compiler_extccomp.o \
+c_code/2_1/stdlib_sha1.o \
+c_code/3_1/stdlib_json.o \
 c_code/2_1/stdlib_lexbase.o \
-c_code/2_1/stdlib_unicode.o \
+c_code/2_1/stdlib_options.o \
+c_code/2_1/stdlib_typetraits.o \
 c_code/4_1/compiler_nimblecmd.o \
 c_code/2_1/stdlib_sequtils.o \
 c_code/2_1/stdlib_parseopt.o \
@@ -5488,7 +5845,7 @@ c_code/2_1/compiler_ast.o \
 c_code/2_1/compiler_astalgo.o \
 c_code/2_1/compiler_syntaxes.o \
 c_code/2_1/compiler_renderer.o \
-c_code/3_1/compiler_rodread.o \
+c_code/2_1/compiler_rodread.o \
 c_code/2_1/compiler_rodwrite.o \
 c_code/3_1/compiler_sem.o \
 c_code/2_1/compiler_semdata.o \
@@ -5496,7 +5853,7 @@ c_code/2_1/compiler_passes.o \
 c_code/2_1/compiler_docgen.o \
 c_code/2_1/compiler_cgen.o \
 c_code/2_1/compiler_jsgen.o \
-c_code/3_1/compiler_importer.o \
+c_code/2_1/compiler_importer.o \
 c_code/2_1/compiler_passaux.o \
 c_code/2_1/compiler_depends.o \
 c_code/4_5/compiler_vm.o \
@@ -5510,22 +5867,23 @@ c_code/2_1/compiler_modules.o \
 c_code/2_1/compiler_ccgutils.o \
 c_code/3_1/compiler_sigmatch.o \
 c_code/2_1/compiler_modulegraphs.o \
+c_code/2_1/compiler_rod.o \
 c_code/2_1/stdlib_intsets.o \
 c_code/2_1/compiler_rodutils.o \
 c_code/2_1/compiler_pbraces.o \
 c_code/2_1/compiler_filters.o \
 c_code/2_1/compiler_filter_tmpl.o \
-c_code/3_1/stdlib_memfiles.o \
+c_code/2_1/stdlib_memfiles.o \
 c_code/2_1/compiler_trees.o \
+c_code/3_1/compiler_modulepaths.o \
 c_code/2_1/compiler_magicsys.o \
 c_code/2_1/compiler_nimsets.o \
 c_code/2_1/compiler_reorder.o \
 c_code/2_1/compiler_bitsets.o \
-c_code/2_1/compiler_lookups.o \
-c_code/3_1/compiler_prettybase.o \
 c_code/2_1/compiler_treetab.o \
 c_code/3_1/compiler_semfold.o \
 c_code/2_1/compiler_procfind.o \
+c_code/2_1/compiler_lookups.o \
 c_code/3_1/compiler_pragmas.o \
 c_code/2_1/compiler_semtypinst.o \
 c_code/2_1/compiler_transf.o \
@@ -5536,29 +5894,35 @@ c_code/2_1/compiler_evaltempl.o \
 c_code/2_1/compiler_patterns.o \
 c_code/2_1/compiler_parampatterns.o \
 c_code/2_1/compiler_sempass2.o \
-c_code/2_1/compiler_pretty.o \
 c_code/2_1/compiler_semmacrosanity.o \
 c_code/2_1/compiler_semparallel.o \
 c_code/2_1/compiler_lowerings.o \
 c_code/2_1/compiler_pluginsupport.o \
-c_code/2_1/compiler_active.o \
 c_code/2_1/compiler_saturate.o \
+c_code/3_1/compiler_prettybase.o \
+c_code/2_1/compiler_pretty.o \
+c_code/2_1/stdlib_xmltree.o \
+c_code/2_1/stdlib_cgi.o \
+c_code/2_1/compiler_typesrenderer.o \
 c_code/2_1/docutils_rstast.o \
 c_code/2_1/docutils_rst.o \
 c_code/4_1/docutils_rstgen.o \
 c_code/2_1/docutils_highlite.o \
-c_code/2_1/stdlib_xmltree.o \
-c_code/2_1/stdlib_cgi.o \
-c_code/2_1/compiler_typesrenderer.o \
 c_code/2_1/compiler_guards.o \
 c_code/2_1/compiler_writetracking.o \
 c_code/2_1/stdlib_cookies.o \
+c_code/2_1/stdlib_uri.o \
 c_code/2_1/compiler_prefixmatches.o \
+c_code/2_1/compiler_destroyer.o \
+c_code/2_1/compiler_liftlocals.o \
+c_code/2_1/compiler_dfa.o \
 c_code/2_1/compiler_vmgen.o \
 c_code/3_1/compiler_vmdeps.o \
 c_code/2_1/compiler_vmmarshal.o \
-c_code/2_1/compiler_locals.o \
+c_code/3_1/compiler_gorgeimpl.o \
+c_code/2_1/compiler_active.o \
 c_code/2_1/compiler_itersgen.o \
+c_code/2_1/compiler_locals.o \
 c_code/2_1/compiler_cgendata.o \
 c_code/2_1/compiler_ccgmerge.o \
 c_code/2_1/compiler_ndi.o \
@@ -5567,8 +5931,6 @@ c_code/2_1/stdlib_md5.o \
 c_code/2_1/stdlib_dynlib.o \
 c_code/2_1/stdlib_net.o \
 c_code/2_1/stdlib_nativesockets.o \
-c_code/2_1/stdlib_options.o \
-c_code/2_1/stdlib_typetraits.o \
 c_code/2_1/compiler_nodejs.o \
 c_code/4_1/compiler_scriptconfig.o $LINK_FLAGS
     ;;
@@ -5626,16 +5988,20 @@ c_code/4_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_hashes.c -o c_code/2_2/stdlib_hashes.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_streams.c -o c_code/3_2/stdlib_streams.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_cpuinfo.c -o c_code/2_3/stdlib_cpuinfo.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_strformat.c -o c_code/2_2/stdlib_strformat.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_unicode.c -o c_code/2_2/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_colors.c -o c_code/2_2/stdlib_colors.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_termios.c -o c_code/2_2/stdlib_termios.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nversion.c -o c_code/2_2/compiler_nversion.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_condsyms.c -o c_code/2_2/compiler_condsyms.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_idents.c -o c_code/2_2/compiler_idents.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_wordrecg.c -o c_code/2_2/compiler_wordrecg.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_extccomp.c -o c_code/3_2/compiler_extccomp.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_securehash.c -o c_code/2_2/stdlib_securehash.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_json.c -o c_code/2_2/stdlib_json.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_extccomp.c -o c_code/4_2/compiler_extccomp.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_sha1.c -o c_code/2_2/stdlib_sha1.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_json.c -o c_code/3_2/stdlib_json.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_lexbase.c -o c_code/2_2/stdlib_lexbase.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_unicode.c -o c_code/2_2/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_options.c -o c_code/2_2/stdlib_options.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_typetraits.c -o c_code/2_2/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_nimblecmd.c -o c_code/4_2/compiler_nimblecmd.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_sequtils.c -o c_code/2_2/stdlib_sequtils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_parseopt.c -o c_code/2_2/stdlib_parseopt.o
@@ -5648,7 +6014,7 @@ c_code/4_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_astalgo.c -o c_code/2_2/compiler_astalgo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_syntaxes.c -o c_code/2_2/compiler_syntaxes.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_renderer.c -o c_code/2_2/compiler_renderer.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_rodread.c -o c_code/3_2/compiler_rodread.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodread.c -o c_code/2_2/compiler_rodread.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodwrite.c -o c_code/2_2/compiler_rodwrite.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_sem.c -o c_code/3_2/compiler_sem.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semdata.c -o c_code/2_2/compiler_semdata.o
@@ -5656,7 +6022,7 @@ c_code/4_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_docgen.c -o c_code/2_2/compiler_docgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_cgen.c -o c_code/2_2/compiler_cgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_jsgen.c -o c_code/2_2/compiler_jsgen.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_importer.c -o c_code/3_2/compiler_importer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_importer.c -o c_code/2_2/compiler_importer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_passaux.c -o c_code/2_2/compiler_passaux.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_depends.c -o c_code/2_2/compiler_depends.o
     $CC $COMP_FLAGS -Ic_code -c c_code/4_13/compiler_vm.c -o c_code/4_13/compiler_vm.o
@@ -5670,22 +6036,23 @@ c_code/4_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ccgutils.c -o c_code/2_2/compiler_ccgutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_sigmatch.c -o c_code/3_2/compiler_sigmatch.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_modulegraphs.c -o c_code/2_2/compiler_modulegraphs.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rod.c -o c_code/2_2/compiler_rod.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_intsets.c -o c_code/2_2/stdlib_intsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodutils.c -o c_code/2_2/compiler_rodutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pbraces.c -o c_code/2_2/compiler_pbraces.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_filters.c -o c_code/2_2/compiler_filters.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_filter_tmpl.c -o c_code/2_2/compiler_filter_tmpl.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_memfiles.c -o c_code/3_2/stdlib_memfiles.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_memfiles.c -o c_code/2_2/stdlib_memfiles.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_trees.c -o c_code/2_2/compiler_trees.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_modulepaths.c -o c_code/3_2/compiler_modulepaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_magicsys.c -o c_code/2_2/compiler_magicsys.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nimsets.c -o c_code/2_2/compiler_nimsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_reorder.c -o c_code/2_2/compiler_reorder.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_bitsets.c -o c_code/2_2/compiler_bitsets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lookups.c -o c_code/2_2/compiler_lookups.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_prettybase.c -o c_code/3_2/compiler_prettybase.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_treetab.c -o c_code/2_2/compiler_treetab.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_semfold.c -o c_code/3_2/compiler_semfold.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_procfind.c -o c_code/2_2/compiler_procfind.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lookups.c -o c_code/2_2/compiler_lookups.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_pragmas.c -o c_code/3_2/compiler_pragmas.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semtypinst.c -o c_code/2_2/compiler_semtypinst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_transf.c -o c_code/2_2/compiler_transf.o
@@ -5696,29 +6063,35 @@ c_code/4_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_patterns.c -o c_code/2_2/compiler_patterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_parampatterns.c -o c_code/2_2/compiler_parampatterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_sempass2.c -o c_code/2_2/compiler_sempass2.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pretty.c -o c_code/2_2/compiler_pretty.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semmacrosanity.c -o c_code/2_2/compiler_semmacrosanity.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semparallel.c -o c_code/2_2/compiler_semparallel.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lowerings.c -o c_code/2_2/compiler_lowerings.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pluginsupport.c -o c_code/2_2/compiler_pluginsupport.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_active.c -o c_code/2_2/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_saturate.c -o c_code/2_2/compiler_saturate.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_prettybase.c -o c_code/3_2/compiler_prettybase.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pretty.c -o c_code/2_2/compiler_pretty.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_xmltree.c -o c_code/2_2/stdlib_xmltree.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cgi.c -o c_code/2_2/stdlib_cgi.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_typesrenderer.c -o c_code/2_2/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_rstast.c -o c_code/2_2/docutils_rstast.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_rst.c -o c_code/2_2/docutils_rst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/4_2/docutils_rstgen.c -o c_code/4_2/docutils_rstgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_highlite.c -o c_code/2_2/docutils_highlite.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_xmltree.c -o c_code/2_2/stdlib_xmltree.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cgi.c -o c_code/2_2/stdlib_cgi.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_typesrenderer.c -o c_code/2_2/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_guards.c -o c_code/2_2/compiler_guards.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_writetracking.c -o c_code/2_2/compiler_writetracking.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cookies.c -o c_code/2_2/stdlib_cookies.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_uri.c -o c_code/2_2/stdlib_uri.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_prefixmatches.c -o c_code/2_2/compiler_prefixmatches.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_destroyer.c -o c_code/2_2/compiler_destroyer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_liftlocals.c -o c_code/2_2/compiler_liftlocals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_dfa.c -o c_code/2_2/compiler_dfa.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_vmgen.c -o c_code/2_2/compiler_vmgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_vmdeps.c -o c_code/3_2/compiler_vmdeps.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_vmmarshal.c -o c_code/2_2/compiler_vmmarshal.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_locals.c -o c_code/2_2/compiler_locals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_gorgeimpl.c -o c_code/3_2/compiler_gorgeimpl.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_active.c -o c_code/2_2/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_itersgen.c -o c_code/2_2/compiler_itersgen.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_locals.c -o c_code/2_2/compiler_locals.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_cgendata.c -o c_code/2_2/compiler_cgendata.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ccgmerge.c -o c_code/2_2/compiler_ccgmerge.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ndi.c -o c_code/2_2/compiler_ndi.o
@@ -5727,8 +6100,6 @@ c_code/4_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_dynlib.c -o c_code/2_2/stdlib_dynlib.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_net.c -o c_code/2_2/stdlib_net.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_nativesockets.c -o c_code/2_3/stdlib_nativesockets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_options.c -o c_code/2_2/stdlib_options.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_typetraits.c -o c_code/2_2/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nodejs.c -o c_code/2_2/compiler_nodejs.o
     $CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_scriptconfig.c -o c_code/4_2/compiler_scriptconfig.o
     $LINKER -o $binDir/nim  \
@@ -5756,16 +6127,20 @@ c_code/2_2/stdlib_sets.o \
 c_code/2_2/stdlib_hashes.o \
 c_code/3_2/stdlib_streams.o \
 c_code/2_3/stdlib_cpuinfo.o \
+c_code/2_2/stdlib_strformat.o \
+c_code/2_2/stdlib_unicode.o \
+c_code/2_2/stdlib_colors.o \
 c_code/2_2/stdlib_termios.o \
 c_code/2_2/compiler_nversion.o \
 c_code/2_2/compiler_condsyms.o \
 c_code/2_2/compiler_idents.o \
 c_code/2_2/compiler_wordrecg.o \
-c_code/3_2/compiler_extccomp.o \
-c_code/2_2/stdlib_securehash.o \
-c_code/2_2/stdlib_json.o \
+c_code/4_2/compiler_extccomp.o \
+c_code/2_2/stdlib_sha1.o \
+c_code/3_2/stdlib_json.o \
 c_code/2_2/stdlib_lexbase.o \
-c_code/2_2/stdlib_unicode.o \
+c_code/2_2/stdlib_options.o \
+c_code/2_2/stdlib_typetraits.o \
 c_code/4_2/compiler_nimblecmd.o \
 c_code/2_2/stdlib_sequtils.o \
 c_code/2_2/stdlib_parseopt.o \
@@ -5778,7 +6153,7 @@ c_code/2_2/compiler_ast.o \
 c_code/2_2/compiler_astalgo.o \
 c_code/2_2/compiler_syntaxes.o \
 c_code/2_2/compiler_renderer.o \
-c_code/3_2/compiler_rodread.o \
+c_code/2_2/compiler_rodread.o \
 c_code/2_2/compiler_rodwrite.o \
 c_code/3_2/compiler_sem.o \
 c_code/2_2/compiler_semdata.o \
@@ -5786,7 +6161,7 @@ c_code/2_2/compiler_passes.o \
 c_code/2_2/compiler_docgen.o \
 c_code/2_2/compiler_cgen.o \
 c_code/2_2/compiler_jsgen.o \
-c_code/3_2/compiler_importer.o \
+c_code/2_2/compiler_importer.o \
 c_code/2_2/compiler_passaux.o \
 c_code/2_2/compiler_depends.o \
 c_code/4_13/compiler_vm.o \
@@ -5800,22 +6175,23 @@ c_code/2_2/compiler_modules.o \
 c_code/2_2/compiler_ccgutils.o \
 c_code/3_2/compiler_sigmatch.o \
 c_code/2_2/compiler_modulegraphs.o \
+c_code/2_2/compiler_rod.o \
 c_code/2_2/stdlib_intsets.o \
 c_code/2_2/compiler_rodutils.o \
 c_code/2_2/compiler_pbraces.o \
 c_code/2_2/compiler_filters.o \
 c_code/2_2/compiler_filter_tmpl.o \
-c_code/3_2/stdlib_memfiles.o \
+c_code/2_2/stdlib_memfiles.o \
 c_code/2_2/compiler_trees.o \
+c_code/3_2/compiler_modulepaths.o \
 c_code/2_2/compiler_magicsys.o \
 c_code/2_2/compiler_nimsets.o \
 c_code/2_2/compiler_reorder.o \
 c_code/2_2/compiler_bitsets.o \
-c_code/2_2/compiler_lookups.o \
-c_code/3_2/compiler_prettybase.o \
 c_code/2_2/compiler_treetab.o \
 c_code/3_2/compiler_semfold.o \
 c_code/2_2/compiler_procfind.o \
+c_code/2_2/compiler_lookups.o \
 c_code/3_2/compiler_pragmas.o \
 c_code/2_2/compiler_semtypinst.o \
 c_code/2_2/compiler_transf.o \
@@ -5826,29 +6202,35 @@ c_code/2_2/compiler_evaltempl.o \
 c_code/2_2/compiler_patterns.o \
 c_code/2_2/compiler_parampatterns.o \
 c_code/2_2/compiler_sempass2.o \
-c_code/2_2/compiler_pretty.o \
 c_code/2_2/compiler_semmacrosanity.o \
 c_code/2_2/compiler_semparallel.o \
 c_code/2_2/compiler_lowerings.o \
 c_code/2_2/compiler_pluginsupport.o \
-c_code/2_2/compiler_active.o \
 c_code/2_2/compiler_saturate.o \
+c_code/3_2/compiler_prettybase.o \
+c_code/2_2/compiler_pretty.o \
+c_code/2_2/stdlib_xmltree.o \
+c_code/2_2/stdlib_cgi.o \
+c_code/2_2/compiler_typesrenderer.o \
 c_code/2_2/docutils_rstast.o \
 c_code/2_2/docutils_rst.o \
 c_code/4_2/docutils_rstgen.o \
 c_code/2_2/docutils_highlite.o \
-c_code/2_2/stdlib_xmltree.o \
-c_code/2_2/stdlib_cgi.o \
-c_code/2_2/compiler_typesrenderer.o \
 c_code/2_2/compiler_guards.o \
 c_code/2_2/compiler_writetracking.o \
 c_code/2_2/stdlib_cookies.o \
+c_code/2_2/stdlib_uri.o \
 c_code/2_2/compiler_prefixmatches.o \
+c_code/2_2/compiler_destroyer.o \
+c_code/2_2/compiler_liftlocals.o \
+c_code/2_2/compiler_dfa.o \
 c_code/2_2/compiler_vmgen.o \
 c_code/3_2/compiler_vmdeps.o \
 c_code/2_2/compiler_vmmarshal.o \
-c_code/2_2/compiler_locals.o \
+c_code/3_2/compiler_gorgeimpl.o \
+c_code/2_2/compiler_active.o \
 c_code/2_2/compiler_itersgen.o \
+c_code/2_2/compiler_locals.o \
 c_code/2_2/compiler_cgendata.o \
 c_code/2_2/compiler_ccgmerge.o \
 c_code/2_2/compiler_ndi.o \
@@ -5857,8 +6239,6 @@ c_code/2_2/stdlib_md5.o \
 c_code/2_2/stdlib_dynlib.o \
 c_code/2_2/stdlib_net.o \
 c_code/2_3/stdlib_nativesockets.o \
-c_code/2_2/stdlib_options.o \
-c_code/2_2/stdlib_typetraits.o \
 c_code/2_2/compiler_nodejs.o \
 c_code/4_2/compiler_scriptconfig.o $LINK_FLAGS
     ;;
@@ -5897,16 +6277,20 @@ freebsd)
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/stdlib_streams.c -o c_code/3_1/stdlib_streams.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/stdlib_cpuinfo.c -o c_code/3_1/stdlib_cpuinfo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/stdlib_kqueue.c -o c_code/3_1/stdlib_kqueue.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_strformat.c -o c_code/2_1/stdlib_strformat.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_unicode.c -o c_code/2_1/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_colors.c -o c_code/2_1/stdlib_colors.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_termios.c -o c_code/2_1/stdlib_termios.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nversion.c -o c_code/2_1/compiler_nversion.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_condsyms.c -o c_code/2_1/compiler_condsyms.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_idents.c -o c_code/2_1/compiler_idents.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_wordrecg.c -o c_code/2_1/compiler_wordrecg.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_extccomp.c -o c_code/3_1/compiler_extccomp.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_securehash.c -o c_code/2_1/stdlib_securehash.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_json.c -o c_code/2_1/stdlib_json.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_extccomp.c -o c_code/4_1/compiler_extccomp.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_sha1.c -o c_code/2_1/stdlib_sha1.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/stdlib_json.c -o c_code/3_1/stdlib_json.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_lexbase.c -o c_code/2_1/stdlib_lexbase.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_unicode.c -o c_code/2_1/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_options.c -o c_code/2_1/stdlib_options.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_typetraits.c -o c_code/2_1/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_nimblecmd.c -o c_code/3_1/compiler_nimblecmd.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_sequtils.c -o c_code/2_1/stdlib_sequtils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_parseopt.c -o c_code/2_1/stdlib_parseopt.o
@@ -5919,7 +6303,7 @@ freebsd)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_astalgo.c -o c_code/2_1/compiler_astalgo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_syntaxes.c -o c_code/2_1/compiler_syntaxes.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_renderer.c -o c_code/2_1/compiler_renderer.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_rodread.c -o c_code/3_1/compiler_rodread.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rodread.c -o c_code/2_1/compiler_rodread.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rodwrite.c -o c_code/2_1/compiler_rodwrite.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_sem.c -o c_code/3_1/compiler_sem.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semdata.c -o c_code/2_1/compiler_semdata.o
@@ -5927,7 +6311,7 @@ freebsd)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_docgen.c -o c_code/2_1/compiler_docgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_cgen.c -o c_code/2_1/compiler_cgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_jsgen.c -o c_code/2_1/compiler_jsgen.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_importer.c -o c_code/3_1/compiler_importer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_importer.c -o c_code/2_1/compiler_importer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_passaux.c -o c_code/2_1/compiler_passaux.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_depends.c -o c_code/2_1/compiler_depends.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_vm.c -o c_code/3_1/compiler_vm.o
@@ -5941,22 +6325,23 @@ freebsd)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ccgutils.c -o c_code/2_1/compiler_ccgutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_sigmatch.c -o c_code/3_1/compiler_sigmatch.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_modulegraphs.c -o c_code/2_1/compiler_modulegraphs.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rod.c -o c_code/2_1/compiler_rod.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_intsets.c -o c_code/2_1/stdlib_intsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rodutils.c -o c_code/2_1/compiler_rodutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pbraces.c -o c_code/2_1/compiler_pbraces.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_filters.c -o c_code/2_1/compiler_filters.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_filter_tmpl.c -o c_code/2_1/compiler_filter_tmpl.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/stdlib_memfiles.c -o c_code/3_1/stdlib_memfiles.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_memfiles.c -o c_code/2_1/stdlib_memfiles.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_trees.c -o c_code/2_1/compiler_trees.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_modulepaths.c -o c_code/3_1/compiler_modulepaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_magicsys.c -o c_code/2_1/compiler_magicsys.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nimsets.c -o c_code/2_1/compiler_nimsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_reorder.c -o c_code/2_1/compiler_reorder.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_bitsets.c -o c_code/2_1/compiler_bitsets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lookups.c -o c_code/2_1/compiler_lookups.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_prettybase.c -o c_code/3_1/compiler_prettybase.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_treetab.c -o c_code/2_1/compiler_treetab.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_semfold.c -o c_code/3_1/compiler_semfold.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_procfind.c -o c_code/2_1/compiler_procfind.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lookups.c -o c_code/2_1/compiler_lookups.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_pragmas.c -o c_code/3_1/compiler_pragmas.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semtypinst.c -o c_code/2_1/compiler_semtypinst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_transf.c -o c_code/2_1/compiler_transf.o
@@ -5967,29 +6352,35 @@ freebsd)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_patterns.c -o c_code/2_1/compiler_patterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_parampatterns.c -o c_code/2_1/compiler_parampatterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_sempass2.c -o c_code/2_1/compiler_sempass2.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pretty.c -o c_code/2_1/compiler_pretty.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semmacrosanity.c -o c_code/2_1/compiler_semmacrosanity.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semparallel.c -o c_code/2_1/compiler_semparallel.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lowerings.c -o c_code/2_1/compiler_lowerings.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pluginsupport.c -o c_code/2_1/compiler_pluginsupport.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_active.c -o c_code/2_1/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_saturate.c -o c_code/2_1/compiler_saturate.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_prettybase.c -o c_code/3_1/compiler_prettybase.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pretty.c -o c_code/2_1/compiler_pretty.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_xmltree.c -o c_code/2_1/stdlib_xmltree.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cgi.c -o c_code/2_1/stdlib_cgi.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_typesrenderer.c -o c_code/2_1/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rstast.c -o c_code/2_1/docutils_rstast.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rst.c -o c_code/2_1/docutils_rst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/docutils_rstgen.c -o c_code/3_1/docutils_rstgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_highlite.c -o c_code/2_1/docutils_highlite.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_xmltree.c -o c_code/2_1/stdlib_xmltree.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cgi.c -o c_code/2_1/stdlib_cgi.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_typesrenderer.c -o c_code/2_1/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_guards.c -o c_code/2_1/compiler_guards.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_writetracking.c -o c_code/2_1/compiler_writetracking.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cookies.c -o c_code/2_1/stdlib_cookies.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_uri.c -o c_code/2_1/stdlib_uri.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_prefixmatches.c -o c_code/2_1/compiler_prefixmatches.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_destroyer.c -o c_code/2_1/compiler_destroyer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_liftlocals.c -o c_code/2_1/compiler_liftlocals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_dfa.c -o c_code/2_1/compiler_dfa.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmgen.c -o c_code/2_1/compiler_vmgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_vmdeps.c -o c_code/3_1/compiler_vmdeps.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmmarshal.c -o c_code/2_1/compiler_vmmarshal.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_locals.c -o c_code/2_1/compiler_locals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_gorgeimpl.c -o c_code/3_1/compiler_gorgeimpl.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_active.c -o c_code/2_1/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_itersgen.c -o c_code/2_1/compiler_itersgen.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_locals.c -o c_code/2_1/compiler_locals.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_cgendata.c -o c_code/2_1/compiler_cgendata.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ccgmerge.c -o c_code/2_1/compiler_ccgmerge.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ndi.c -o c_code/2_1/compiler_ndi.o
@@ -5998,8 +6389,6 @@ freebsd)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_dynlib.c -o c_code/2_1/stdlib_dynlib.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_net.c -o c_code/2_1/stdlib_net.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_nativesockets.c -o c_code/2_1/stdlib_nativesockets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_options.c -o c_code/2_1/stdlib_options.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_typetraits.c -o c_code/2_1/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nodejs.c -o c_code/2_1/compiler_nodejs.o
     $CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_scriptconfig.c -o c_code/5_1/compiler_scriptconfig.o
     $LINKER -o $binDir/nim  \
@@ -6028,16 +6417,20 @@ c_code/2_1/stdlib_hashes.o \
 c_code/3_1/stdlib_streams.o \
 c_code/3_1/stdlib_cpuinfo.o \
 c_code/3_1/stdlib_kqueue.o \
+c_code/2_1/stdlib_strformat.o \
+c_code/2_1/stdlib_unicode.o \
+c_code/2_1/stdlib_colors.o \
 c_code/2_1/stdlib_termios.o \
 c_code/2_1/compiler_nversion.o \
 c_code/2_1/compiler_condsyms.o \
 c_code/2_1/compiler_idents.o \
 c_code/2_1/compiler_wordrecg.o \
-c_code/3_1/compiler_extccomp.o \
-c_code/2_1/stdlib_securehash.o \
-c_code/2_1/stdlib_json.o \
+c_code/4_1/compiler_extccomp.o \
+c_code/2_1/stdlib_sha1.o \
+c_code/3_1/stdlib_json.o \
 c_code/2_1/stdlib_lexbase.o \
-c_code/2_1/stdlib_unicode.o \
+c_code/2_1/stdlib_options.o \
+c_code/2_1/stdlib_typetraits.o \
 c_code/3_1/compiler_nimblecmd.o \
 c_code/2_1/stdlib_sequtils.o \
 c_code/2_1/stdlib_parseopt.o \
@@ -6050,7 +6443,7 @@ c_code/2_1/compiler_ast.o \
 c_code/2_1/compiler_astalgo.o \
 c_code/2_1/compiler_syntaxes.o \
 c_code/2_1/compiler_renderer.o \
-c_code/3_1/compiler_rodread.o \
+c_code/2_1/compiler_rodread.o \
 c_code/2_1/compiler_rodwrite.o \
 c_code/3_1/compiler_sem.o \
 c_code/2_1/compiler_semdata.o \
@@ -6058,7 +6451,7 @@ c_code/2_1/compiler_passes.o \
 c_code/2_1/compiler_docgen.o \
 c_code/2_1/compiler_cgen.o \
 c_code/2_1/compiler_jsgen.o \
-c_code/3_1/compiler_importer.o \
+c_code/2_1/compiler_importer.o \
 c_code/2_1/compiler_passaux.o \
 c_code/2_1/compiler_depends.o \
 c_code/3_1/compiler_vm.o \
@@ -6072,22 +6465,23 @@ c_code/2_1/compiler_modules.o \
 c_code/2_1/compiler_ccgutils.o \
 c_code/3_1/compiler_sigmatch.o \
 c_code/2_1/compiler_modulegraphs.o \
+c_code/2_1/compiler_rod.o \
 c_code/2_1/stdlib_intsets.o \
 c_code/2_1/compiler_rodutils.o \
 c_code/2_1/compiler_pbraces.o \
 c_code/2_1/compiler_filters.o \
 c_code/2_1/compiler_filter_tmpl.o \
-c_code/3_1/stdlib_memfiles.o \
+c_code/2_1/stdlib_memfiles.o \
 c_code/2_1/compiler_trees.o \
+c_code/3_1/compiler_modulepaths.o \
 c_code/2_1/compiler_magicsys.o \
 c_code/2_1/compiler_nimsets.o \
 c_code/2_1/compiler_reorder.o \
 c_code/2_1/compiler_bitsets.o \
-c_code/2_1/compiler_lookups.o \
-c_code/3_1/compiler_prettybase.o \
 c_code/2_1/compiler_treetab.o \
 c_code/3_1/compiler_semfold.o \
 c_code/2_1/compiler_procfind.o \
+c_code/2_1/compiler_lookups.o \
 c_code/3_1/compiler_pragmas.o \
 c_code/2_1/compiler_semtypinst.o \
 c_code/2_1/compiler_transf.o \
@@ -6098,29 +6492,35 @@ c_code/2_1/compiler_evaltempl.o \
 c_code/2_1/compiler_patterns.o \
 c_code/2_1/compiler_parampatterns.o \
 c_code/2_1/compiler_sempass2.o \
-c_code/2_1/compiler_pretty.o \
 c_code/2_1/compiler_semmacrosanity.o \
 c_code/2_1/compiler_semparallel.o \
 c_code/2_1/compiler_lowerings.o \
 c_code/2_1/compiler_pluginsupport.o \
-c_code/2_1/compiler_active.o \
 c_code/2_1/compiler_saturate.o \
+c_code/3_1/compiler_prettybase.o \
+c_code/2_1/compiler_pretty.o \
+c_code/2_1/stdlib_xmltree.o \
+c_code/2_1/stdlib_cgi.o \
+c_code/2_1/compiler_typesrenderer.o \
 c_code/2_1/docutils_rstast.o \
 c_code/2_1/docutils_rst.o \
 c_code/3_1/docutils_rstgen.o \
 c_code/2_1/docutils_highlite.o \
-c_code/2_1/stdlib_xmltree.o \
-c_code/2_1/stdlib_cgi.o \
-c_code/2_1/compiler_typesrenderer.o \
 c_code/2_1/compiler_guards.o \
 c_code/2_1/compiler_writetracking.o \
 c_code/2_1/stdlib_cookies.o \
+c_code/2_1/stdlib_uri.o \
 c_code/2_1/compiler_prefixmatches.o \
+c_code/2_1/compiler_destroyer.o \
+c_code/2_1/compiler_liftlocals.o \
+c_code/2_1/compiler_dfa.o \
 c_code/2_1/compiler_vmgen.o \
 c_code/3_1/compiler_vmdeps.o \
 c_code/2_1/compiler_vmmarshal.o \
-c_code/2_1/compiler_locals.o \
+c_code/3_1/compiler_gorgeimpl.o \
+c_code/2_1/compiler_active.o \
 c_code/2_1/compiler_itersgen.o \
+c_code/2_1/compiler_locals.o \
 c_code/2_1/compiler_cgendata.o \
 c_code/2_1/compiler_ccgmerge.o \
 c_code/2_1/compiler_ndi.o \
@@ -6129,8 +6529,6 @@ c_code/2_1/stdlib_md5.o \
 c_code/2_1/stdlib_dynlib.o \
 c_code/2_1/stdlib_net.o \
 c_code/2_1/stdlib_nativesockets.o \
-c_code/2_1/stdlib_options.o \
-c_code/2_1/stdlib_typetraits.o \
 c_code/2_1/compiler_nodejs.o \
 c_code/5_1/compiler_scriptconfig.o $LINK_FLAGS
     ;;
@@ -6161,16 +6559,20 @@ c_code/5_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_streams.c -o c_code/3_2/stdlib_streams.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_cpuinfo.c -o c_code/3_2/stdlib_cpuinfo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_kqueue.c -o c_code/3_2/stdlib_kqueue.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_strformat.c -o c_code/2_2/stdlib_strformat.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_unicode.c -o c_code/2_2/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_colors.c -o c_code/2_2/stdlib_colors.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_termios.c -o c_code/2_2/stdlib_termios.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nversion.c -o c_code/2_2/compiler_nversion.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_condsyms.c -o c_code/2_2/compiler_condsyms.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_idents.c -o c_code/2_2/compiler_idents.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_wordrecg.c -o c_code/2_2/compiler_wordrecg.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_extccomp.c -o c_code/3_2/compiler_extccomp.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_securehash.c -o c_code/2_2/stdlib_securehash.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_json.c -o c_code/2_2/stdlib_json.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_extccomp.c -o c_code/4_2/compiler_extccomp.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_sha1.c -o c_code/2_2/stdlib_sha1.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_json.c -o c_code/3_2/stdlib_json.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_lexbase.c -o c_code/2_2/stdlib_lexbase.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_unicode.c -o c_code/2_2/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_options.c -o c_code/2_2/stdlib_options.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_typetraits.c -o c_code/2_2/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_nimblecmd.c -o c_code/3_2/compiler_nimblecmd.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_sequtils.c -o c_code/2_2/stdlib_sequtils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_parseopt.c -o c_code/2_2/stdlib_parseopt.o
@@ -6183,7 +6585,7 @@ c_code/5_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_astalgo.c -o c_code/2_2/compiler_astalgo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_syntaxes.c -o c_code/2_2/compiler_syntaxes.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_renderer.c -o c_code/2_2/compiler_renderer.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_rodread.c -o c_code/3_2/compiler_rodread.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodread.c -o c_code/2_2/compiler_rodread.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodwrite.c -o c_code/2_2/compiler_rodwrite.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_sem.c -o c_code/3_2/compiler_sem.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semdata.c -o c_code/2_2/compiler_semdata.o
@@ -6191,7 +6593,7 @@ c_code/5_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_docgen.c -o c_code/2_2/compiler_docgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_cgen.c -o c_code/2_2/compiler_cgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_jsgen.c -o c_code/2_2/compiler_jsgen.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_importer.c -o c_code/3_2/compiler_importer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_importer.c -o c_code/2_2/compiler_importer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_passaux.c -o c_code/2_2/compiler_passaux.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_depends.c -o c_code/2_2/compiler_depends.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_vm.c -o c_code/3_2/compiler_vm.o
@@ -6205,22 +6607,23 @@ c_code/5_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ccgutils.c -o c_code/2_2/compiler_ccgutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_sigmatch.c -o c_code/3_2/compiler_sigmatch.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_modulegraphs.c -o c_code/2_2/compiler_modulegraphs.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rod.c -o c_code/2_2/compiler_rod.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_intsets.c -o c_code/2_2/stdlib_intsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodutils.c -o c_code/2_2/compiler_rodutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pbraces.c -o c_code/2_2/compiler_pbraces.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_filters.c -o c_code/2_2/compiler_filters.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_filter_tmpl.c -o c_code/2_2/compiler_filter_tmpl.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_memfiles.c -o c_code/3_2/stdlib_memfiles.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_memfiles.c -o c_code/2_2/stdlib_memfiles.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_trees.c -o c_code/2_2/compiler_trees.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_modulepaths.c -o c_code/3_2/compiler_modulepaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_magicsys.c -o c_code/2_2/compiler_magicsys.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nimsets.c -o c_code/2_2/compiler_nimsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_reorder.c -o c_code/2_2/compiler_reorder.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_bitsets.c -o c_code/2_2/compiler_bitsets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lookups.c -o c_code/2_2/compiler_lookups.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_prettybase.c -o c_code/3_2/compiler_prettybase.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_treetab.c -o c_code/2_2/compiler_treetab.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_semfold.c -o c_code/3_2/compiler_semfold.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_procfind.c -o c_code/2_2/compiler_procfind.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lookups.c -o c_code/2_2/compiler_lookups.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_pragmas.c -o c_code/3_2/compiler_pragmas.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semtypinst.c -o c_code/2_2/compiler_semtypinst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_transf.c -o c_code/2_2/compiler_transf.o
@@ -6231,29 +6634,35 @@ c_code/5_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_patterns.c -o c_code/2_2/compiler_patterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_parampatterns.c -o c_code/2_2/compiler_parampatterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_sempass2.c -o c_code/2_2/compiler_sempass2.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pretty.c -o c_code/2_2/compiler_pretty.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semmacrosanity.c -o c_code/2_2/compiler_semmacrosanity.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semparallel.c -o c_code/2_2/compiler_semparallel.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lowerings.c -o c_code/2_2/compiler_lowerings.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pluginsupport.c -o c_code/2_2/compiler_pluginsupport.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_active.c -o c_code/2_2/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_saturate.c -o c_code/2_2/compiler_saturate.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_prettybase.c -o c_code/3_2/compiler_prettybase.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pretty.c -o c_code/2_2/compiler_pretty.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_xmltree.c -o c_code/2_2/stdlib_xmltree.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cgi.c -o c_code/2_2/stdlib_cgi.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_typesrenderer.c -o c_code/2_2/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_rstast.c -o c_code/2_2/docutils_rstast.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_rst.c -o c_code/2_2/docutils_rst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/docutils_rstgen.c -o c_code/3_2/docutils_rstgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_highlite.c -o c_code/2_2/docutils_highlite.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_xmltree.c -o c_code/2_2/stdlib_xmltree.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cgi.c -o c_code/2_2/stdlib_cgi.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_typesrenderer.c -o c_code/2_2/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_guards.c -o c_code/2_2/compiler_guards.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_writetracking.c -o c_code/2_2/compiler_writetracking.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cookies.c -o c_code/2_2/stdlib_cookies.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_uri.c -o c_code/2_2/stdlib_uri.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_prefixmatches.c -o c_code/2_2/compiler_prefixmatches.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_destroyer.c -o c_code/2_2/compiler_destroyer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_liftlocals.c -o c_code/2_2/compiler_liftlocals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_dfa.c -o c_code/2_2/compiler_dfa.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_vmgen.c -o c_code/2_2/compiler_vmgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_vmdeps.c -o c_code/3_2/compiler_vmdeps.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_vmmarshal.c -o c_code/2_2/compiler_vmmarshal.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_locals.c -o c_code/2_2/compiler_locals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_gorgeimpl.c -o c_code/3_2/compiler_gorgeimpl.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_active.c -o c_code/2_2/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_itersgen.c -o c_code/2_2/compiler_itersgen.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_locals.c -o c_code/2_2/compiler_locals.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_cgendata.c -o c_code/2_2/compiler_cgendata.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ccgmerge.c -o c_code/2_2/compiler_ccgmerge.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ndi.c -o c_code/2_2/compiler_ndi.o
@@ -6262,8 +6671,6 @@ c_code/5_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_dynlib.c -o c_code/2_2/stdlib_dynlib.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_net.c -o c_code/2_2/stdlib_net.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_nativesockets.c -o c_code/2_3/stdlib_nativesockets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_options.c -o c_code/2_2/stdlib_options.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_typetraits.c -o c_code/2_2/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nodejs.c -o c_code/2_2/compiler_nodejs.o
     $CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_scriptconfig.c -o c_code/5_2/compiler_scriptconfig.o
     $LINKER -o $binDir/nim  \
@@ -6292,16 +6699,20 @@ c_code/2_2/stdlib_hashes.o \
 c_code/3_2/stdlib_streams.o \
 c_code/3_2/stdlib_cpuinfo.o \
 c_code/3_2/stdlib_kqueue.o \
+c_code/2_2/stdlib_strformat.o \
+c_code/2_2/stdlib_unicode.o \
+c_code/2_2/stdlib_colors.o \
 c_code/2_2/stdlib_termios.o \
 c_code/2_2/compiler_nversion.o \
 c_code/2_2/compiler_condsyms.o \
 c_code/2_2/compiler_idents.o \
 c_code/2_2/compiler_wordrecg.o \
-c_code/3_2/compiler_extccomp.o \
-c_code/2_2/stdlib_securehash.o \
-c_code/2_2/stdlib_json.o \
+c_code/4_2/compiler_extccomp.o \
+c_code/2_2/stdlib_sha1.o \
+c_code/3_2/stdlib_json.o \
 c_code/2_2/stdlib_lexbase.o \
-c_code/2_2/stdlib_unicode.o \
+c_code/2_2/stdlib_options.o \
+c_code/2_2/stdlib_typetraits.o \
 c_code/3_2/compiler_nimblecmd.o \
 c_code/2_2/stdlib_sequtils.o \
 c_code/2_2/stdlib_parseopt.o \
@@ -6314,7 +6725,7 @@ c_code/2_2/compiler_ast.o \
 c_code/2_2/compiler_astalgo.o \
 c_code/2_2/compiler_syntaxes.o \
 c_code/2_2/compiler_renderer.o \
-c_code/3_2/compiler_rodread.o \
+c_code/2_2/compiler_rodread.o \
 c_code/2_2/compiler_rodwrite.o \
 c_code/3_2/compiler_sem.o \
 c_code/2_2/compiler_semdata.o \
@@ -6322,7 +6733,7 @@ c_code/2_2/compiler_passes.o \
 c_code/2_2/compiler_docgen.o \
 c_code/2_2/compiler_cgen.o \
 c_code/2_2/compiler_jsgen.o \
-c_code/3_2/compiler_importer.o \
+c_code/2_2/compiler_importer.o \
 c_code/2_2/compiler_passaux.o \
 c_code/2_2/compiler_depends.o \
 c_code/3_2/compiler_vm.o \
@@ -6336,22 +6747,23 @@ c_code/2_2/compiler_modules.o \
 c_code/2_2/compiler_ccgutils.o \
 c_code/3_2/compiler_sigmatch.o \
 c_code/2_2/compiler_modulegraphs.o \
+c_code/2_2/compiler_rod.o \
 c_code/2_2/stdlib_intsets.o \
 c_code/2_2/compiler_rodutils.o \
 c_code/2_2/compiler_pbraces.o \
 c_code/2_2/compiler_filters.o \
 c_code/2_2/compiler_filter_tmpl.o \
-c_code/3_2/stdlib_memfiles.o \
+c_code/2_2/stdlib_memfiles.o \
 c_code/2_2/compiler_trees.o \
+c_code/3_2/compiler_modulepaths.o \
 c_code/2_2/compiler_magicsys.o \
 c_code/2_2/compiler_nimsets.o \
 c_code/2_2/compiler_reorder.o \
 c_code/2_2/compiler_bitsets.o \
-c_code/2_2/compiler_lookups.o \
-c_code/3_2/compiler_prettybase.o \
 c_code/2_2/compiler_treetab.o \
 c_code/3_2/compiler_semfold.o \
 c_code/2_2/compiler_procfind.o \
+c_code/2_2/compiler_lookups.o \
 c_code/3_2/compiler_pragmas.o \
 c_code/2_2/compiler_semtypinst.o \
 c_code/2_2/compiler_transf.o \
@@ -6362,29 +6774,35 @@ c_code/2_2/compiler_evaltempl.o \
 c_code/2_2/compiler_patterns.o \
 c_code/2_2/compiler_parampatterns.o \
 c_code/2_2/compiler_sempass2.o \
-c_code/2_2/compiler_pretty.o \
 c_code/2_2/compiler_semmacrosanity.o \
 c_code/2_2/compiler_semparallel.o \
 c_code/2_2/compiler_lowerings.o \
 c_code/2_2/compiler_pluginsupport.o \
-c_code/2_2/compiler_active.o \
 c_code/2_2/compiler_saturate.o \
+c_code/3_2/compiler_prettybase.o \
+c_code/2_2/compiler_pretty.o \
+c_code/2_2/stdlib_xmltree.o \
+c_code/2_2/stdlib_cgi.o \
+c_code/2_2/compiler_typesrenderer.o \
 c_code/2_2/docutils_rstast.o \
 c_code/2_2/docutils_rst.o \
 c_code/3_2/docutils_rstgen.o \
 c_code/2_2/docutils_highlite.o \
-c_code/2_2/stdlib_xmltree.o \
-c_code/2_2/stdlib_cgi.o \
-c_code/2_2/compiler_typesrenderer.o \
 c_code/2_2/compiler_guards.o \
 c_code/2_2/compiler_writetracking.o \
 c_code/2_2/stdlib_cookies.o \
+c_code/2_2/stdlib_uri.o \
 c_code/2_2/compiler_prefixmatches.o \
+c_code/2_2/compiler_destroyer.o \
+c_code/2_2/compiler_liftlocals.o \
+c_code/2_2/compiler_dfa.o \
 c_code/2_2/compiler_vmgen.o \
 c_code/3_2/compiler_vmdeps.o \
 c_code/2_2/compiler_vmmarshal.o \
-c_code/2_2/compiler_locals.o \
+c_code/3_2/compiler_gorgeimpl.o \
+c_code/2_2/compiler_active.o \
 c_code/2_2/compiler_itersgen.o \
+c_code/2_2/compiler_locals.o \
 c_code/2_2/compiler_cgendata.o \
 c_code/2_2/compiler_ccgmerge.o \
 c_code/2_2/compiler_ndi.o \
@@ -6393,8 +6811,6 @@ c_code/2_2/stdlib_md5.o \
 c_code/2_2/stdlib_dynlib.o \
 c_code/2_2/stdlib_net.o \
 c_code/2_3/stdlib_nativesockets.o \
-c_code/2_2/stdlib_options.o \
-c_code/2_2/stdlib_typetraits.o \
 c_code/2_2/compiler_nodejs.o \
 c_code/5_2/compiler_scriptconfig.o $LINK_FLAGS
     ;;
@@ -6477,16 +6893,20 @@ netbsd)
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/stdlib_streams.c -o c_code/3_1/stdlib_streams.o
     $CC $COMP_FLAGS -Ic_code -c c_code/6_1/stdlib_cpuinfo.c -o c_code/6_1/stdlib_cpuinfo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/stdlib_kqueue.c -o c_code/3_1/stdlib_kqueue.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_strformat.c -o c_code/2_1/stdlib_strformat.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_unicode.c -o c_code/2_1/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_colors.c -o c_code/2_1/stdlib_colors.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_termios.c -o c_code/2_1/stdlib_termios.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nversion.c -o c_code/2_1/compiler_nversion.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_condsyms.c -o c_code/2_1/compiler_condsyms.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_idents.c -o c_code/2_1/compiler_idents.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_wordrecg.c -o c_code/2_1/compiler_wordrecg.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_extccomp.c -o c_code/3_1/compiler_extccomp.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_securehash.c -o c_code/2_1/stdlib_securehash.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_json.c -o c_code/2_1/stdlib_json.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_extccomp.c -o c_code/4_1/compiler_extccomp.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_sha1.c -o c_code/2_1/stdlib_sha1.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/stdlib_json.c -o c_code/3_1/stdlib_json.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_lexbase.c -o c_code/2_1/stdlib_lexbase.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_unicode.c -o c_code/2_1/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_options.c -o c_code/2_1/stdlib_options.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_typetraits.c -o c_code/2_1/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_nimblecmd.c -o c_code/3_1/compiler_nimblecmd.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_sequtils.c -o c_code/2_1/stdlib_sequtils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_parseopt.c -o c_code/2_1/stdlib_parseopt.o
@@ -6499,7 +6919,7 @@ netbsd)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_astalgo.c -o c_code/2_1/compiler_astalgo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_syntaxes.c -o c_code/2_1/compiler_syntaxes.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_renderer.c -o c_code/2_1/compiler_renderer.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_rodread.c -o c_code/3_1/compiler_rodread.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rodread.c -o c_code/2_1/compiler_rodread.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rodwrite.c -o c_code/2_1/compiler_rodwrite.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_sem.c -o c_code/3_1/compiler_sem.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semdata.c -o c_code/2_1/compiler_semdata.o
@@ -6507,7 +6927,7 @@ netbsd)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_docgen.c -o c_code/2_1/compiler_docgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_cgen.c -o c_code/2_1/compiler_cgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_jsgen.c -o c_code/2_1/compiler_jsgen.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_importer.c -o c_code/3_1/compiler_importer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_importer.c -o c_code/2_1/compiler_importer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_passaux.c -o c_code/2_1/compiler_passaux.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_depends.c -o c_code/2_1/compiler_depends.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_vm.c -o c_code/3_1/compiler_vm.o
@@ -6521,22 +6941,23 @@ netbsd)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ccgutils.c -o c_code/2_1/compiler_ccgutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_sigmatch.c -o c_code/3_1/compiler_sigmatch.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_modulegraphs.c -o c_code/2_1/compiler_modulegraphs.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rod.c -o c_code/2_1/compiler_rod.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_intsets.c -o c_code/2_1/stdlib_intsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rodutils.c -o c_code/2_1/compiler_rodutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pbraces.c -o c_code/2_1/compiler_pbraces.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_filters.c -o c_code/2_1/compiler_filters.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_filter_tmpl.c -o c_code/2_1/compiler_filter_tmpl.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/stdlib_memfiles.c -o c_code/3_1/stdlib_memfiles.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_memfiles.c -o c_code/2_1/stdlib_memfiles.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_trees.c -o c_code/2_1/compiler_trees.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_modulepaths.c -o c_code/3_1/compiler_modulepaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_magicsys.c -o c_code/2_1/compiler_magicsys.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nimsets.c -o c_code/2_1/compiler_nimsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_reorder.c -o c_code/2_1/compiler_reorder.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_bitsets.c -o c_code/2_1/compiler_bitsets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lookups.c -o c_code/2_1/compiler_lookups.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_prettybase.c -o c_code/3_1/compiler_prettybase.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_treetab.c -o c_code/2_1/compiler_treetab.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_semfold.c -o c_code/3_1/compiler_semfold.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_procfind.c -o c_code/2_1/compiler_procfind.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lookups.c -o c_code/2_1/compiler_lookups.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_pragmas.c -o c_code/3_1/compiler_pragmas.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semtypinst.c -o c_code/2_1/compiler_semtypinst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_transf.c -o c_code/2_1/compiler_transf.o
@@ -6547,29 +6968,35 @@ netbsd)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_patterns.c -o c_code/2_1/compiler_patterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_parampatterns.c -o c_code/2_1/compiler_parampatterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_sempass2.c -o c_code/2_1/compiler_sempass2.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pretty.c -o c_code/2_1/compiler_pretty.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semmacrosanity.c -o c_code/2_1/compiler_semmacrosanity.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semparallel.c -o c_code/2_1/compiler_semparallel.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lowerings.c -o c_code/2_1/compiler_lowerings.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pluginsupport.c -o c_code/2_1/compiler_pluginsupport.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_active.c -o c_code/2_1/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_saturate.c -o c_code/2_1/compiler_saturate.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_prettybase.c -o c_code/3_1/compiler_prettybase.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pretty.c -o c_code/2_1/compiler_pretty.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_xmltree.c -o c_code/2_1/stdlib_xmltree.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cgi.c -o c_code/2_1/stdlib_cgi.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_typesrenderer.c -o c_code/2_1/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rstast.c -o c_code/2_1/docutils_rstast.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rst.c -o c_code/2_1/docutils_rst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/docutils_rstgen.c -o c_code/3_1/docutils_rstgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_highlite.c -o c_code/2_1/docutils_highlite.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_xmltree.c -o c_code/2_1/stdlib_xmltree.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cgi.c -o c_code/2_1/stdlib_cgi.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_typesrenderer.c -o c_code/2_1/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_guards.c -o c_code/2_1/compiler_guards.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_writetracking.c -o c_code/2_1/compiler_writetracking.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cookies.c -o c_code/2_1/stdlib_cookies.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_uri.c -o c_code/2_1/stdlib_uri.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_prefixmatches.c -o c_code/2_1/compiler_prefixmatches.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_destroyer.c -o c_code/2_1/compiler_destroyer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_liftlocals.c -o c_code/2_1/compiler_liftlocals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_dfa.c -o c_code/2_1/compiler_dfa.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmgen.c -o c_code/2_1/compiler_vmgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_vmdeps.c -o c_code/3_1/compiler_vmdeps.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmmarshal.c -o c_code/2_1/compiler_vmmarshal.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_locals.c -o c_code/2_1/compiler_locals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_gorgeimpl.c -o c_code/3_1/compiler_gorgeimpl.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_active.c -o c_code/2_1/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_itersgen.c -o c_code/2_1/compiler_itersgen.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_locals.c -o c_code/2_1/compiler_locals.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_cgendata.c -o c_code/2_1/compiler_cgendata.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ccgmerge.c -o c_code/2_1/compiler_ccgmerge.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ndi.c -o c_code/2_1/compiler_ndi.o
@@ -6578,8 +7005,6 @@ netbsd)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_dynlib.c -o c_code/2_1/stdlib_dynlib.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_net.c -o c_code/2_1/stdlib_net.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_nativesockets.c -o c_code/2_1/stdlib_nativesockets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_options.c -o c_code/2_1/stdlib_options.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_typetraits.c -o c_code/2_1/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nodejs.c -o c_code/2_1/compiler_nodejs.o
     $CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_scriptconfig.c -o c_code/5_1/compiler_scriptconfig.o
     $LINKER -o $binDir/nim  \
@@ -6608,16 +7033,20 @@ c_code/2_1/stdlib_hashes.o \
 c_code/3_1/stdlib_streams.o \
 c_code/6_1/stdlib_cpuinfo.o \
 c_code/3_1/stdlib_kqueue.o \
+c_code/2_1/stdlib_strformat.o \
+c_code/2_1/stdlib_unicode.o \
+c_code/2_1/stdlib_colors.o \
 c_code/2_1/stdlib_termios.o \
 c_code/2_1/compiler_nversion.o \
 c_code/2_1/compiler_condsyms.o \
 c_code/2_1/compiler_idents.o \
 c_code/2_1/compiler_wordrecg.o \
-c_code/3_1/compiler_extccomp.o \
-c_code/2_1/stdlib_securehash.o \
-c_code/2_1/stdlib_json.o \
+c_code/4_1/compiler_extccomp.o \
+c_code/2_1/stdlib_sha1.o \
+c_code/3_1/stdlib_json.o \
 c_code/2_1/stdlib_lexbase.o \
-c_code/2_1/stdlib_unicode.o \
+c_code/2_1/stdlib_options.o \
+c_code/2_1/stdlib_typetraits.o \
 c_code/3_1/compiler_nimblecmd.o \
 c_code/2_1/stdlib_sequtils.o \
 c_code/2_1/stdlib_parseopt.o \
@@ -6630,7 +7059,7 @@ c_code/2_1/compiler_ast.o \
 c_code/2_1/compiler_astalgo.o \
 c_code/2_1/compiler_syntaxes.o \
 c_code/2_1/compiler_renderer.o \
-c_code/3_1/compiler_rodread.o \
+c_code/2_1/compiler_rodread.o \
 c_code/2_1/compiler_rodwrite.o \
 c_code/3_1/compiler_sem.o \
 c_code/2_1/compiler_semdata.o \
@@ -6638,7 +7067,7 @@ c_code/2_1/compiler_passes.o \
 c_code/2_1/compiler_docgen.o \
 c_code/2_1/compiler_cgen.o \
 c_code/2_1/compiler_jsgen.o \
-c_code/3_1/compiler_importer.o \
+c_code/2_1/compiler_importer.o \
 c_code/2_1/compiler_passaux.o \
 c_code/2_1/compiler_depends.o \
 c_code/3_1/compiler_vm.o \
@@ -6652,22 +7081,23 @@ c_code/2_1/compiler_modules.o \
 c_code/2_1/compiler_ccgutils.o \
 c_code/3_1/compiler_sigmatch.o \
 c_code/2_1/compiler_modulegraphs.o \
+c_code/2_1/compiler_rod.o \
 c_code/2_1/stdlib_intsets.o \
 c_code/2_1/compiler_rodutils.o \
 c_code/2_1/compiler_pbraces.o \
 c_code/2_1/compiler_filters.o \
 c_code/2_1/compiler_filter_tmpl.o \
-c_code/3_1/stdlib_memfiles.o \
+c_code/2_1/stdlib_memfiles.o \
 c_code/2_1/compiler_trees.o \
+c_code/3_1/compiler_modulepaths.o \
 c_code/2_1/compiler_magicsys.o \
 c_code/2_1/compiler_nimsets.o \
 c_code/2_1/compiler_reorder.o \
 c_code/2_1/compiler_bitsets.o \
-c_code/2_1/compiler_lookups.o \
-c_code/3_1/compiler_prettybase.o \
 c_code/2_1/compiler_treetab.o \
 c_code/3_1/compiler_semfold.o \
 c_code/2_1/compiler_procfind.o \
+c_code/2_1/compiler_lookups.o \
 c_code/3_1/compiler_pragmas.o \
 c_code/2_1/compiler_semtypinst.o \
 c_code/2_1/compiler_transf.o \
@@ -6678,29 +7108,35 @@ c_code/2_1/compiler_evaltempl.o \
 c_code/2_1/compiler_patterns.o \
 c_code/2_1/compiler_parampatterns.o \
 c_code/2_1/compiler_sempass2.o \
-c_code/2_1/compiler_pretty.o \
 c_code/2_1/compiler_semmacrosanity.o \
 c_code/2_1/compiler_semparallel.o \
 c_code/2_1/compiler_lowerings.o \
 c_code/2_1/compiler_pluginsupport.o \
-c_code/2_1/compiler_active.o \
 c_code/2_1/compiler_saturate.o \
+c_code/3_1/compiler_prettybase.o \
+c_code/2_1/compiler_pretty.o \
+c_code/2_1/stdlib_xmltree.o \
+c_code/2_1/stdlib_cgi.o \
+c_code/2_1/compiler_typesrenderer.o \
 c_code/2_1/docutils_rstast.o \
 c_code/2_1/docutils_rst.o \
 c_code/3_1/docutils_rstgen.o \
 c_code/2_1/docutils_highlite.o \
-c_code/2_1/stdlib_xmltree.o \
-c_code/2_1/stdlib_cgi.o \
-c_code/2_1/compiler_typesrenderer.o \
 c_code/2_1/compiler_guards.o \
 c_code/2_1/compiler_writetracking.o \
 c_code/2_1/stdlib_cookies.o \
+c_code/2_1/stdlib_uri.o \
 c_code/2_1/compiler_prefixmatches.o \
+c_code/2_1/compiler_destroyer.o \
+c_code/2_1/compiler_liftlocals.o \
+c_code/2_1/compiler_dfa.o \
 c_code/2_1/compiler_vmgen.o \
 c_code/3_1/compiler_vmdeps.o \
 c_code/2_1/compiler_vmmarshal.o \
-c_code/2_1/compiler_locals.o \
+c_code/3_1/compiler_gorgeimpl.o \
+c_code/2_1/compiler_active.o \
 c_code/2_1/compiler_itersgen.o \
+c_code/2_1/compiler_locals.o \
 c_code/2_1/compiler_cgendata.o \
 c_code/2_1/compiler_ccgmerge.o \
 c_code/2_1/compiler_ndi.o \
@@ -6709,8 +7145,6 @@ c_code/2_1/stdlib_md5.o \
 c_code/2_1/stdlib_dynlib.o \
 c_code/2_1/stdlib_net.o \
 c_code/2_1/stdlib_nativesockets.o \
-c_code/2_1/stdlib_options.o \
-c_code/2_1/stdlib_typetraits.o \
 c_code/2_1/compiler_nodejs.o \
 c_code/5_1/compiler_scriptconfig.o $LINK_FLAGS
     ;;
@@ -6741,16 +7175,20 @@ c_code/5_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_streams.c -o c_code/3_2/stdlib_streams.o
     $CC $COMP_FLAGS -Ic_code -c c_code/6_2/stdlib_cpuinfo.c -o c_code/6_2/stdlib_cpuinfo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_kqueue.c -o c_code/3_2/stdlib_kqueue.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_strformat.c -o c_code/2_2/stdlib_strformat.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_unicode.c -o c_code/2_2/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_colors.c -o c_code/2_2/stdlib_colors.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_termios.c -o c_code/2_2/stdlib_termios.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nversion.c -o c_code/2_2/compiler_nversion.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_condsyms.c -o c_code/2_2/compiler_condsyms.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_idents.c -o c_code/2_2/compiler_idents.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_wordrecg.c -o c_code/2_2/compiler_wordrecg.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_extccomp.c -o c_code/3_2/compiler_extccomp.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_securehash.c -o c_code/2_2/stdlib_securehash.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_json.c -o c_code/2_2/stdlib_json.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_extccomp.c -o c_code/4_2/compiler_extccomp.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_sha1.c -o c_code/2_2/stdlib_sha1.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_json.c -o c_code/3_2/stdlib_json.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_lexbase.c -o c_code/2_2/stdlib_lexbase.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_unicode.c -o c_code/2_2/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_options.c -o c_code/2_2/stdlib_options.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_typetraits.c -o c_code/2_2/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_nimblecmd.c -o c_code/3_2/compiler_nimblecmd.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_sequtils.c -o c_code/2_2/stdlib_sequtils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_parseopt.c -o c_code/2_2/stdlib_parseopt.o
@@ -6763,7 +7201,7 @@ c_code/5_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_astalgo.c -o c_code/2_2/compiler_astalgo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_syntaxes.c -o c_code/2_2/compiler_syntaxes.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_renderer.c -o c_code/2_2/compiler_renderer.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_rodread.c -o c_code/3_2/compiler_rodread.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodread.c -o c_code/2_2/compiler_rodread.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodwrite.c -o c_code/2_2/compiler_rodwrite.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_sem.c -o c_code/3_2/compiler_sem.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semdata.c -o c_code/2_2/compiler_semdata.o
@@ -6771,7 +7209,7 @@ c_code/5_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_docgen.c -o c_code/2_2/compiler_docgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_cgen.c -o c_code/2_2/compiler_cgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_jsgen.c -o c_code/2_2/compiler_jsgen.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_importer.c -o c_code/3_2/compiler_importer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_importer.c -o c_code/2_2/compiler_importer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_passaux.c -o c_code/2_2/compiler_passaux.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_depends.c -o c_code/2_2/compiler_depends.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_vm.c -o c_code/3_2/compiler_vm.o
@@ -6785,22 +7223,23 @@ c_code/5_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ccgutils.c -o c_code/2_2/compiler_ccgutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_sigmatch.c -o c_code/3_2/compiler_sigmatch.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_modulegraphs.c -o c_code/2_2/compiler_modulegraphs.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rod.c -o c_code/2_2/compiler_rod.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_intsets.c -o c_code/2_2/stdlib_intsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodutils.c -o c_code/2_2/compiler_rodutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pbraces.c -o c_code/2_2/compiler_pbraces.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_filters.c -o c_code/2_2/compiler_filters.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_filter_tmpl.c -o c_code/2_2/compiler_filter_tmpl.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_memfiles.c -o c_code/3_2/stdlib_memfiles.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_memfiles.c -o c_code/2_2/stdlib_memfiles.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_trees.c -o c_code/2_2/compiler_trees.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_modulepaths.c -o c_code/3_2/compiler_modulepaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_magicsys.c -o c_code/2_2/compiler_magicsys.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nimsets.c -o c_code/2_2/compiler_nimsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_reorder.c -o c_code/2_2/compiler_reorder.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_bitsets.c -o c_code/2_2/compiler_bitsets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lookups.c -o c_code/2_2/compiler_lookups.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_prettybase.c -o c_code/3_2/compiler_prettybase.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_treetab.c -o c_code/2_2/compiler_treetab.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_semfold.c -o c_code/3_2/compiler_semfold.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_procfind.c -o c_code/2_2/compiler_procfind.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lookups.c -o c_code/2_2/compiler_lookups.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_pragmas.c -o c_code/3_2/compiler_pragmas.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semtypinst.c -o c_code/2_2/compiler_semtypinst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_transf.c -o c_code/2_2/compiler_transf.o
@@ -6811,29 +7250,35 @@ c_code/5_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_patterns.c -o c_code/2_2/compiler_patterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_parampatterns.c -o c_code/2_2/compiler_parampatterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_sempass2.c -o c_code/2_2/compiler_sempass2.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pretty.c -o c_code/2_2/compiler_pretty.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semmacrosanity.c -o c_code/2_2/compiler_semmacrosanity.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semparallel.c -o c_code/2_2/compiler_semparallel.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lowerings.c -o c_code/2_2/compiler_lowerings.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pluginsupport.c -o c_code/2_2/compiler_pluginsupport.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_active.c -o c_code/2_2/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_saturate.c -o c_code/2_2/compiler_saturate.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_prettybase.c -o c_code/3_2/compiler_prettybase.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pretty.c -o c_code/2_2/compiler_pretty.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_xmltree.c -o c_code/2_2/stdlib_xmltree.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cgi.c -o c_code/2_2/stdlib_cgi.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_typesrenderer.c -o c_code/2_2/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_rstast.c -o c_code/2_2/docutils_rstast.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_rst.c -o c_code/2_2/docutils_rst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/docutils_rstgen.c -o c_code/3_2/docutils_rstgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_highlite.c -o c_code/2_2/docutils_highlite.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_xmltree.c -o c_code/2_2/stdlib_xmltree.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cgi.c -o c_code/2_2/stdlib_cgi.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_typesrenderer.c -o c_code/2_2/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_guards.c -o c_code/2_2/compiler_guards.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_writetracking.c -o c_code/2_2/compiler_writetracking.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cookies.c -o c_code/2_2/stdlib_cookies.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_uri.c -o c_code/2_2/stdlib_uri.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_prefixmatches.c -o c_code/2_2/compiler_prefixmatches.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_destroyer.c -o c_code/2_2/compiler_destroyer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_liftlocals.c -o c_code/2_2/compiler_liftlocals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_dfa.c -o c_code/2_2/compiler_dfa.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_vmgen.c -o c_code/2_2/compiler_vmgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_vmdeps.c -o c_code/3_2/compiler_vmdeps.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_vmmarshal.c -o c_code/2_2/compiler_vmmarshal.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_locals.c -o c_code/2_2/compiler_locals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_gorgeimpl.c -o c_code/3_2/compiler_gorgeimpl.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_active.c -o c_code/2_2/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_itersgen.c -o c_code/2_2/compiler_itersgen.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_locals.c -o c_code/2_2/compiler_locals.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_cgendata.c -o c_code/2_2/compiler_cgendata.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ccgmerge.c -o c_code/2_2/compiler_ccgmerge.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ndi.c -o c_code/2_2/compiler_ndi.o
@@ -6842,8 +7287,6 @@ c_code/5_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_dynlib.c -o c_code/2_2/stdlib_dynlib.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_net.c -o c_code/2_2/stdlib_net.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_nativesockets.c -o c_code/2_3/stdlib_nativesockets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_options.c -o c_code/2_2/stdlib_options.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_typetraits.c -o c_code/2_2/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nodejs.c -o c_code/2_2/compiler_nodejs.o
     $CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_scriptconfig.c -o c_code/5_2/compiler_scriptconfig.o
     $LINKER -o $binDir/nim  \
@@ -6872,16 +7315,20 @@ c_code/2_2/stdlib_hashes.o \
 c_code/3_2/stdlib_streams.o \
 c_code/6_2/stdlib_cpuinfo.o \
 c_code/3_2/stdlib_kqueue.o \
+c_code/2_2/stdlib_strformat.o \
+c_code/2_2/stdlib_unicode.o \
+c_code/2_2/stdlib_colors.o \
 c_code/2_2/stdlib_termios.o \
 c_code/2_2/compiler_nversion.o \
 c_code/2_2/compiler_condsyms.o \
 c_code/2_2/compiler_idents.o \
 c_code/2_2/compiler_wordrecg.o \
-c_code/3_2/compiler_extccomp.o \
-c_code/2_2/stdlib_securehash.o \
-c_code/2_2/stdlib_json.o \
+c_code/4_2/compiler_extccomp.o \
+c_code/2_2/stdlib_sha1.o \
+c_code/3_2/stdlib_json.o \
 c_code/2_2/stdlib_lexbase.o \
-c_code/2_2/stdlib_unicode.o \
+c_code/2_2/stdlib_options.o \
+c_code/2_2/stdlib_typetraits.o \
 c_code/3_2/compiler_nimblecmd.o \
 c_code/2_2/stdlib_sequtils.o \
 c_code/2_2/stdlib_parseopt.o \
@@ -6894,7 +7341,7 @@ c_code/2_2/compiler_ast.o \
 c_code/2_2/compiler_astalgo.o \
 c_code/2_2/compiler_syntaxes.o \
 c_code/2_2/compiler_renderer.o \
-c_code/3_2/compiler_rodread.o \
+c_code/2_2/compiler_rodread.o \
 c_code/2_2/compiler_rodwrite.o \
 c_code/3_2/compiler_sem.o \
 c_code/2_2/compiler_semdata.o \
@@ -6902,7 +7349,7 @@ c_code/2_2/compiler_passes.o \
 c_code/2_2/compiler_docgen.o \
 c_code/2_2/compiler_cgen.o \
 c_code/2_2/compiler_jsgen.o \
-c_code/3_2/compiler_importer.o \
+c_code/2_2/compiler_importer.o \
 c_code/2_2/compiler_passaux.o \
 c_code/2_2/compiler_depends.o \
 c_code/3_2/compiler_vm.o \
@@ -6916,22 +7363,23 @@ c_code/2_2/compiler_modules.o \
 c_code/2_2/compiler_ccgutils.o \
 c_code/3_2/compiler_sigmatch.o \
 c_code/2_2/compiler_modulegraphs.o \
+c_code/2_2/compiler_rod.o \
 c_code/2_2/stdlib_intsets.o \
 c_code/2_2/compiler_rodutils.o \
 c_code/2_2/compiler_pbraces.o \
 c_code/2_2/compiler_filters.o \
 c_code/2_2/compiler_filter_tmpl.o \
-c_code/3_2/stdlib_memfiles.o \
+c_code/2_2/stdlib_memfiles.o \
 c_code/2_2/compiler_trees.o \
+c_code/3_2/compiler_modulepaths.o \
 c_code/2_2/compiler_magicsys.o \
 c_code/2_2/compiler_nimsets.o \
 c_code/2_2/compiler_reorder.o \
 c_code/2_2/compiler_bitsets.o \
-c_code/2_2/compiler_lookups.o \
-c_code/3_2/compiler_prettybase.o \
 c_code/2_2/compiler_treetab.o \
 c_code/3_2/compiler_semfold.o \
 c_code/2_2/compiler_procfind.o \
+c_code/2_2/compiler_lookups.o \
 c_code/3_2/compiler_pragmas.o \
 c_code/2_2/compiler_semtypinst.o \
 c_code/2_2/compiler_transf.o \
@@ -6942,29 +7390,35 @@ c_code/2_2/compiler_evaltempl.o \
 c_code/2_2/compiler_patterns.o \
 c_code/2_2/compiler_parampatterns.o \
 c_code/2_2/compiler_sempass2.o \
-c_code/2_2/compiler_pretty.o \
 c_code/2_2/compiler_semmacrosanity.o \
 c_code/2_2/compiler_semparallel.o \
 c_code/2_2/compiler_lowerings.o \
 c_code/2_2/compiler_pluginsupport.o \
-c_code/2_2/compiler_active.o \
 c_code/2_2/compiler_saturate.o \
+c_code/3_2/compiler_prettybase.o \
+c_code/2_2/compiler_pretty.o \
+c_code/2_2/stdlib_xmltree.o \
+c_code/2_2/stdlib_cgi.o \
+c_code/2_2/compiler_typesrenderer.o \
 c_code/2_2/docutils_rstast.o \
 c_code/2_2/docutils_rst.o \
 c_code/3_2/docutils_rstgen.o \
 c_code/2_2/docutils_highlite.o \
-c_code/2_2/stdlib_xmltree.o \
-c_code/2_2/stdlib_cgi.o \
-c_code/2_2/compiler_typesrenderer.o \
 c_code/2_2/compiler_guards.o \
 c_code/2_2/compiler_writetracking.o \
 c_code/2_2/stdlib_cookies.o \
+c_code/2_2/stdlib_uri.o \
 c_code/2_2/compiler_prefixmatches.o \
+c_code/2_2/compiler_destroyer.o \
+c_code/2_2/compiler_liftlocals.o \
+c_code/2_2/compiler_dfa.o \
 c_code/2_2/compiler_vmgen.o \
 c_code/3_2/compiler_vmdeps.o \
 c_code/2_2/compiler_vmmarshal.o \
-c_code/2_2/compiler_locals.o \
+c_code/3_2/compiler_gorgeimpl.o \
+c_code/2_2/compiler_active.o \
 c_code/2_2/compiler_itersgen.o \
+c_code/2_2/compiler_locals.o \
 c_code/2_2/compiler_cgendata.o \
 c_code/2_2/compiler_ccgmerge.o \
 c_code/2_2/compiler_ndi.o \
@@ -6973,8 +7427,6 @@ c_code/2_2/stdlib_md5.o \
 c_code/2_2/stdlib_dynlib.o \
 c_code/2_2/stdlib_net.o \
 c_code/2_3/stdlib_nativesockets.o \
-c_code/2_2/stdlib_options.o \
-c_code/2_2/stdlib_typetraits.o \
 c_code/2_2/compiler_nodejs.o \
 c_code/5_2/compiler_scriptconfig.o $LINK_FLAGS
     ;;
@@ -7057,16 +7509,20 @@ openbsd)
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/stdlib_streams.c -o c_code/3_1/stdlib_streams.o
     $CC $COMP_FLAGS -Ic_code -c c_code/6_1/stdlib_cpuinfo.c -o c_code/6_1/stdlib_cpuinfo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/stdlib_kqueue.c -o c_code/3_1/stdlib_kqueue.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_strformat.c -o c_code/2_1/stdlib_strformat.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_unicode.c -o c_code/2_1/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_colors.c -o c_code/2_1/stdlib_colors.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_termios.c -o c_code/2_1/stdlib_termios.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nversion.c -o c_code/2_1/compiler_nversion.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_condsyms.c -o c_code/2_1/compiler_condsyms.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_idents.c -o c_code/2_1/compiler_idents.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_wordrecg.c -o c_code/2_1/compiler_wordrecg.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_extccomp.c -o c_code/3_1/compiler_extccomp.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_securehash.c -o c_code/2_1/stdlib_securehash.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_json.c -o c_code/2_1/stdlib_json.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_extccomp.c -o c_code/4_1/compiler_extccomp.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_sha1.c -o c_code/2_1/stdlib_sha1.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/stdlib_json.c -o c_code/3_1/stdlib_json.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_lexbase.c -o c_code/2_1/stdlib_lexbase.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_unicode.c -o c_code/2_1/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_options.c -o c_code/2_1/stdlib_options.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_typetraits.c -o c_code/2_1/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_nimblecmd.c -o c_code/3_1/compiler_nimblecmd.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_sequtils.c -o c_code/2_1/stdlib_sequtils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_parseopt.c -o c_code/2_1/stdlib_parseopt.o
@@ -7079,7 +7535,7 @@ openbsd)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_astalgo.c -o c_code/2_1/compiler_astalgo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_syntaxes.c -o c_code/2_1/compiler_syntaxes.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_renderer.c -o c_code/2_1/compiler_renderer.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_rodread.c -o c_code/3_1/compiler_rodread.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rodread.c -o c_code/2_1/compiler_rodread.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rodwrite.c -o c_code/2_1/compiler_rodwrite.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_sem.c -o c_code/3_1/compiler_sem.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semdata.c -o c_code/2_1/compiler_semdata.o
@@ -7087,7 +7543,7 @@ openbsd)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_docgen.c -o c_code/2_1/compiler_docgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_cgen.c -o c_code/2_1/compiler_cgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_jsgen.c -o c_code/2_1/compiler_jsgen.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_importer.c -o c_code/3_1/compiler_importer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_importer.c -o c_code/2_1/compiler_importer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_passaux.c -o c_code/2_1/compiler_passaux.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_depends.c -o c_code/2_1/compiler_depends.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_vm.c -o c_code/3_1/compiler_vm.o
@@ -7101,22 +7557,23 @@ openbsd)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ccgutils.c -o c_code/2_1/compiler_ccgutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_sigmatch.c -o c_code/3_1/compiler_sigmatch.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_modulegraphs.c -o c_code/2_1/compiler_modulegraphs.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rod.c -o c_code/2_1/compiler_rod.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_intsets.c -o c_code/2_1/stdlib_intsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rodutils.c -o c_code/2_1/compiler_rodutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pbraces.c -o c_code/2_1/compiler_pbraces.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_filters.c -o c_code/2_1/compiler_filters.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_filter_tmpl.c -o c_code/2_1/compiler_filter_tmpl.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/stdlib_memfiles.c -o c_code/3_1/stdlib_memfiles.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_memfiles.c -o c_code/2_1/stdlib_memfiles.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_trees.c -o c_code/2_1/compiler_trees.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_modulepaths.c -o c_code/3_1/compiler_modulepaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_magicsys.c -o c_code/2_1/compiler_magicsys.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nimsets.c -o c_code/2_1/compiler_nimsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_reorder.c -o c_code/2_1/compiler_reorder.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_bitsets.c -o c_code/2_1/compiler_bitsets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lookups.c -o c_code/2_1/compiler_lookups.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_prettybase.c -o c_code/3_1/compiler_prettybase.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_treetab.c -o c_code/2_1/compiler_treetab.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_semfold.c -o c_code/3_1/compiler_semfold.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_procfind.c -o c_code/2_1/compiler_procfind.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lookups.c -o c_code/2_1/compiler_lookups.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_pragmas.c -o c_code/3_1/compiler_pragmas.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semtypinst.c -o c_code/2_1/compiler_semtypinst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_transf.c -o c_code/2_1/compiler_transf.o
@@ -7127,29 +7584,35 @@ openbsd)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_patterns.c -o c_code/2_1/compiler_patterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_parampatterns.c -o c_code/2_1/compiler_parampatterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_sempass2.c -o c_code/2_1/compiler_sempass2.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pretty.c -o c_code/2_1/compiler_pretty.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semmacrosanity.c -o c_code/2_1/compiler_semmacrosanity.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semparallel.c -o c_code/2_1/compiler_semparallel.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lowerings.c -o c_code/2_1/compiler_lowerings.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pluginsupport.c -o c_code/2_1/compiler_pluginsupport.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_active.c -o c_code/2_1/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_saturate.c -o c_code/2_1/compiler_saturate.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_prettybase.c -o c_code/3_1/compiler_prettybase.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pretty.c -o c_code/2_1/compiler_pretty.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_xmltree.c -o c_code/2_1/stdlib_xmltree.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cgi.c -o c_code/2_1/stdlib_cgi.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_typesrenderer.c -o c_code/2_1/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rstast.c -o c_code/2_1/docutils_rstast.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rst.c -o c_code/2_1/docutils_rst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/docutils_rstgen.c -o c_code/3_1/docutils_rstgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_highlite.c -o c_code/2_1/docutils_highlite.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_xmltree.c -o c_code/2_1/stdlib_xmltree.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cgi.c -o c_code/2_1/stdlib_cgi.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_typesrenderer.c -o c_code/2_1/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_guards.c -o c_code/2_1/compiler_guards.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_writetracking.c -o c_code/2_1/compiler_writetracking.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cookies.c -o c_code/2_1/stdlib_cookies.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_uri.c -o c_code/2_1/stdlib_uri.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_prefixmatches.c -o c_code/2_1/compiler_prefixmatches.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_destroyer.c -o c_code/2_1/compiler_destroyer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_liftlocals.c -o c_code/2_1/compiler_liftlocals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_dfa.c -o c_code/2_1/compiler_dfa.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmgen.c -o c_code/2_1/compiler_vmgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_vmdeps.c -o c_code/3_1/compiler_vmdeps.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmmarshal.c -o c_code/2_1/compiler_vmmarshal.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_locals.c -o c_code/2_1/compiler_locals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_gorgeimpl.c -o c_code/3_1/compiler_gorgeimpl.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_active.c -o c_code/2_1/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_itersgen.c -o c_code/2_1/compiler_itersgen.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_locals.c -o c_code/2_1/compiler_locals.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_cgendata.c -o c_code/2_1/compiler_cgendata.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ccgmerge.c -o c_code/2_1/compiler_ccgmerge.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ndi.c -o c_code/2_1/compiler_ndi.o
@@ -7158,8 +7621,6 @@ openbsd)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_dynlib.c -o c_code/2_1/stdlib_dynlib.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_net.c -o c_code/2_1/stdlib_net.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_nativesockets.c -o c_code/2_1/stdlib_nativesockets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_options.c -o c_code/2_1/stdlib_options.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_typetraits.c -o c_code/2_1/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nodejs.c -o c_code/2_1/compiler_nodejs.o
     $CC $COMP_FLAGS -Ic_code -c c_code/5_1/compiler_scriptconfig.c -o c_code/5_1/compiler_scriptconfig.o
     $LINKER -o $binDir/nim  \
@@ -7188,16 +7649,20 @@ c_code/2_1/stdlib_hashes.o \
 c_code/3_1/stdlib_streams.o \
 c_code/6_1/stdlib_cpuinfo.o \
 c_code/3_1/stdlib_kqueue.o \
+c_code/2_1/stdlib_strformat.o \
+c_code/2_1/stdlib_unicode.o \
+c_code/2_1/stdlib_colors.o \
 c_code/2_1/stdlib_termios.o \
 c_code/2_1/compiler_nversion.o \
 c_code/2_1/compiler_condsyms.o \
 c_code/2_1/compiler_idents.o \
 c_code/2_1/compiler_wordrecg.o \
-c_code/3_1/compiler_extccomp.o \
-c_code/2_1/stdlib_securehash.o \
-c_code/2_1/stdlib_json.o \
+c_code/4_1/compiler_extccomp.o \
+c_code/2_1/stdlib_sha1.o \
+c_code/3_1/stdlib_json.o \
 c_code/2_1/stdlib_lexbase.o \
-c_code/2_1/stdlib_unicode.o \
+c_code/2_1/stdlib_options.o \
+c_code/2_1/stdlib_typetraits.o \
 c_code/3_1/compiler_nimblecmd.o \
 c_code/2_1/stdlib_sequtils.o \
 c_code/2_1/stdlib_parseopt.o \
@@ -7210,7 +7675,7 @@ c_code/2_1/compiler_ast.o \
 c_code/2_1/compiler_astalgo.o \
 c_code/2_1/compiler_syntaxes.o \
 c_code/2_1/compiler_renderer.o \
-c_code/3_1/compiler_rodread.o \
+c_code/2_1/compiler_rodread.o \
 c_code/2_1/compiler_rodwrite.o \
 c_code/3_1/compiler_sem.o \
 c_code/2_1/compiler_semdata.o \
@@ -7218,7 +7683,7 @@ c_code/2_1/compiler_passes.o \
 c_code/2_1/compiler_docgen.o \
 c_code/2_1/compiler_cgen.o \
 c_code/2_1/compiler_jsgen.o \
-c_code/3_1/compiler_importer.o \
+c_code/2_1/compiler_importer.o \
 c_code/2_1/compiler_passaux.o \
 c_code/2_1/compiler_depends.o \
 c_code/3_1/compiler_vm.o \
@@ -7232,22 +7697,23 @@ c_code/2_1/compiler_modules.o \
 c_code/2_1/compiler_ccgutils.o \
 c_code/3_1/compiler_sigmatch.o \
 c_code/2_1/compiler_modulegraphs.o \
+c_code/2_1/compiler_rod.o \
 c_code/2_1/stdlib_intsets.o \
 c_code/2_1/compiler_rodutils.o \
 c_code/2_1/compiler_pbraces.o \
 c_code/2_1/compiler_filters.o \
 c_code/2_1/compiler_filter_tmpl.o \
-c_code/3_1/stdlib_memfiles.o \
+c_code/2_1/stdlib_memfiles.o \
 c_code/2_1/compiler_trees.o \
+c_code/3_1/compiler_modulepaths.o \
 c_code/2_1/compiler_magicsys.o \
 c_code/2_1/compiler_nimsets.o \
 c_code/2_1/compiler_reorder.o \
 c_code/2_1/compiler_bitsets.o \
-c_code/2_1/compiler_lookups.o \
-c_code/3_1/compiler_prettybase.o \
 c_code/2_1/compiler_treetab.o \
 c_code/3_1/compiler_semfold.o \
 c_code/2_1/compiler_procfind.o \
+c_code/2_1/compiler_lookups.o \
 c_code/3_1/compiler_pragmas.o \
 c_code/2_1/compiler_semtypinst.o \
 c_code/2_1/compiler_transf.o \
@@ -7258,29 +7724,35 @@ c_code/2_1/compiler_evaltempl.o \
 c_code/2_1/compiler_patterns.o \
 c_code/2_1/compiler_parampatterns.o \
 c_code/2_1/compiler_sempass2.o \
-c_code/2_1/compiler_pretty.o \
 c_code/2_1/compiler_semmacrosanity.o \
 c_code/2_1/compiler_semparallel.o \
 c_code/2_1/compiler_lowerings.o \
 c_code/2_1/compiler_pluginsupport.o \
-c_code/2_1/compiler_active.o \
 c_code/2_1/compiler_saturate.o \
+c_code/3_1/compiler_prettybase.o \
+c_code/2_1/compiler_pretty.o \
+c_code/2_1/stdlib_xmltree.o \
+c_code/2_1/stdlib_cgi.o \
+c_code/2_1/compiler_typesrenderer.o \
 c_code/2_1/docutils_rstast.o \
 c_code/2_1/docutils_rst.o \
 c_code/3_1/docutils_rstgen.o \
 c_code/2_1/docutils_highlite.o \
-c_code/2_1/stdlib_xmltree.o \
-c_code/2_1/stdlib_cgi.o \
-c_code/2_1/compiler_typesrenderer.o \
 c_code/2_1/compiler_guards.o \
 c_code/2_1/compiler_writetracking.o \
 c_code/2_1/stdlib_cookies.o \
+c_code/2_1/stdlib_uri.o \
 c_code/2_1/compiler_prefixmatches.o \
+c_code/2_1/compiler_destroyer.o \
+c_code/2_1/compiler_liftlocals.o \
+c_code/2_1/compiler_dfa.o \
 c_code/2_1/compiler_vmgen.o \
 c_code/3_1/compiler_vmdeps.o \
 c_code/2_1/compiler_vmmarshal.o \
-c_code/2_1/compiler_locals.o \
+c_code/3_1/compiler_gorgeimpl.o \
+c_code/2_1/compiler_active.o \
 c_code/2_1/compiler_itersgen.o \
+c_code/2_1/compiler_locals.o \
 c_code/2_1/compiler_cgendata.o \
 c_code/2_1/compiler_ccgmerge.o \
 c_code/2_1/compiler_ndi.o \
@@ -7289,8 +7761,6 @@ c_code/2_1/stdlib_md5.o \
 c_code/2_1/stdlib_dynlib.o \
 c_code/2_1/stdlib_net.o \
 c_code/2_1/stdlib_nativesockets.o \
-c_code/2_1/stdlib_options.o \
-c_code/2_1/stdlib_typetraits.o \
 c_code/2_1/compiler_nodejs.o \
 c_code/5_1/compiler_scriptconfig.o $LINK_FLAGS
     ;;
@@ -7321,16 +7791,20 @@ c_code/5_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_streams.c -o c_code/3_2/stdlib_streams.o
     $CC $COMP_FLAGS -Ic_code -c c_code/6_2/stdlib_cpuinfo.c -o c_code/6_2/stdlib_cpuinfo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_kqueue.c -o c_code/3_2/stdlib_kqueue.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_strformat.c -o c_code/2_2/stdlib_strformat.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_unicode.c -o c_code/2_2/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_colors.c -o c_code/2_2/stdlib_colors.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_termios.c -o c_code/2_2/stdlib_termios.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nversion.c -o c_code/2_2/compiler_nversion.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_condsyms.c -o c_code/2_2/compiler_condsyms.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_idents.c -o c_code/2_2/compiler_idents.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_wordrecg.c -o c_code/2_2/compiler_wordrecg.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_extccomp.c -o c_code/3_2/compiler_extccomp.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_securehash.c -o c_code/2_2/stdlib_securehash.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_json.c -o c_code/2_2/stdlib_json.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_extccomp.c -o c_code/4_2/compiler_extccomp.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_sha1.c -o c_code/2_2/stdlib_sha1.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_json.c -o c_code/3_2/stdlib_json.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_lexbase.c -o c_code/2_2/stdlib_lexbase.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_unicode.c -o c_code/2_2/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_options.c -o c_code/2_2/stdlib_options.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_typetraits.c -o c_code/2_2/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_nimblecmd.c -o c_code/3_2/compiler_nimblecmd.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_sequtils.c -o c_code/2_2/stdlib_sequtils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_parseopt.c -o c_code/2_2/stdlib_parseopt.o
@@ -7343,7 +7817,7 @@ c_code/5_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_astalgo.c -o c_code/2_2/compiler_astalgo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_syntaxes.c -o c_code/2_2/compiler_syntaxes.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_renderer.c -o c_code/2_2/compiler_renderer.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_rodread.c -o c_code/3_2/compiler_rodread.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodread.c -o c_code/2_2/compiler_rodread.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodwrite.c -o c_code/2_2/compiler_rodwrite.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_sem.c -o c_code/3_2/compiler_sem.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semdata.c -o c_code/2_2/compiler_semdata.o
@@ -7351,7 +7825,7 @@ c_code/5_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_docgen.c -o c_code/2_2/compiler_docgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_cgen.c -o c_code/2_2/compiler_cgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_jsgen.c -o c_code/2_2/compiler_jsgen.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_importer.c -o c_code/3_2/compiler_importer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_importer.c -o c_code/2_2/compiler_importer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_passaux.c -o c_code/2_2/compiler_passaux.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_depends.c -o c_code/2_2/compiler_depends.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_vm.c -o c_code/3_2/compiler_vm.o
@@ -7365,22 +7839,23 @@ c_code/5_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ccgutils.c -o c_code/2_2/compiler_ccgutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_sigmatch.c -o c_code/3_2/compiler_sigmatch.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_modulegraphs.c -o c_code/2_2/compiler_modulegraphs.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rod.c -o c_code/2_2/compiler_rod.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_intsets.c -o c_code/2_2/stdlib_intsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodutils.c -o c_code/2_2/compiler_rodutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pbraces.c -o c_code/2_2/compiler_pbraces.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_filters.c -o c_code/2_2/compiler_filters.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_filter_tmpl.c -o c_code/2_2/compiler_filter_tmpl.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_memfiles.c -o c_code/3_2/stdlib_memfiles.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_memfiles.c -o c_code/2_2/stdlib_memfiles.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_trees.c -o c_code/2_2/compiler_trees.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_modulepaths.c -o c_code/3_2/compiler_modulepaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_magicsys.c -o c_code/2_2/compiler_magicsys.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nimsets.c -o c_code/2_2/compiler_nimsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_reorder.c -o c_code/2_2/compiler_reorder.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_bitsets.c -o c_code/2_2/compiler_bitsets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lookups.c -o c_code/2_2/compiler_lookups.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_prettybase.c -o c_code/3_2/compiler_prettybase.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_treetab.c -o c_code/2_2/compiler_treetab.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_semfold.c -o c_code/3_2/compiler_semfold.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_procfind.c -o c_code/2_2/compiler_procfind.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lookups.c -o c_code/2_2/compiler_lookups.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_pragmas.c -o c_code/3_2/compiler_pragmas.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semtypinst.c -o c_code/2_2/compiler_semtypinst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_transf.c -o c_code/2_2/compiler_transf.o
@@ -7391,29 +7866,35 @@ c_code/5_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_patterns.c -o c_code/2_2/compiler_patterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_parampatterns.c -o c_code/2_2/compiler_parampatterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_sempass2.c -o c_code/2_2/compiler_sempass2.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pretty.c -o c_code/2_2/compiler_pretty.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semmacrosanity.c -o c_code/2_2/compiler_semmacrosanity.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semparallel.c -o c_code/2_2/compiler_semparallel.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lowerings.c -o c_code/2_2/compiler_lowerings.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pluginsupport.c -o c_code/2_2/compiler_pluginsupport.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_active.c -o c_code/2_2/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_saturate.c -o c_code/2_2/compiler_saturate.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_prettybase.c -o c_code/3_2/compiler_prettybase.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pretty.c -o c_code/2_2/compiler_pretty.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_xmltree.c -o c_code/2_2/stdlib_xmltree.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cgi.c -o c_code/2_2/stdlib_cgi.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_typesrenderer.c -o c_code/2_2/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_rstast.c -o c_code/2_2/docutils_rstast.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_rst.c -o c_code/2_2/docutils_rst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/docutils_rstgen.c -o c_code/3_2/docutils_rstgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_highlite.c -o c_code/2_2/docutils_highlite.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_xmltree.c -o c_code/2_2/stdlib_xmltree.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cgi.c -o c_code/2_2/stdlib_cgi.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_typesrenderer.c -o c_code/2_2/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_guards.c -o c_code/2_2/compiler_guards.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_writetracking.c -o c_code/2_2/compiler_writetracking.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cookies.c -o c_code/2_2/stdlib_cookies.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_uri.c -o c_code/2_2/stdlib_uri.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_prefixmatches.c -o c_code/2_2/compiler_prefixmatches.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_destroyer.c -o c_code/2_2/compiler_destroyer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_liftlocals.c -o c_code/2_2/compiler_liftlocals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_dfa.c -o c_code/2_2/compiler_dfa.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_vmgen.c -o c_code/2_2/compiler_vmgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_vmdeps.c -o c_code/3_2/compiler_vmdeps.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_vmmarshal.c -o c_code/2_2/compiler_vmmarshal.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_locals.c -o c_code/2_2/compiler_locals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_gorgeimpl.c -o c_code/3_2/compiler_gorgeimpl.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_active.c -o c_code/2_2/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_itersgen.c -o c_code/2_2/compiler_itersgen.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_locals.c -o c_code/2_2/compiler_locals.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_cgendata.c -o c_code/2_2/compiler_cgendata.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ccgmerge.c -o c_code/2_2/compiler_ccgmerge.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ndi.c -o c_code/2_2/compiler_ndi.o
@@ -7422,8 +7903,6 @@ c_code/5_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_dynlib.c -o c_code/2_2/stdlib_dynlib.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_net.c -o c_code/2_2/stdlib_net.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_nativesockets.c -o c_code/2_3/stdlib_nativesockets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_options.c -o c_code/2_2/stdlib_options.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_typetraits.c -o c_code/2_2/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nodejs.c -o c_code/2_2/compiler_nodejs.o
     $CC $COMP_FLAGS -Ic_code -c c_code/5_2/compiler_scriptconfig.c -o c_code/5_2/compiler_scriptconfig.o
     $LINKER -o $binDir/nim  \
@@ -7452,16 +7931,20 @@ c_code/2_2/stdlib_hashes.o \
 c_code/3_2/stdlib_streams.o \
 c_code/6_2/stdlib_cpuinfo.o \
 c_code/3_2/stdlib_kqueue.o \
+c_code/2_2/stdlib_strformat.o \
+c_code/2_2/stdlib_unicode.o \
+c_code/2_2/stdlib_colors.o \
 c_code/2_2/stdlib_termios.o \
 c_code/2_2/compiler_nversion.o \
 c_code/2_2/compiler_condsyms.o \
 c_code/2_2/compiler_idents.o \
 c_code/2_2/compiler_wordrecg.o \
-c_code/3_2/compiler_extccomp.o \
-c_code/2_2/stdlib_securehash.o \
-c_code/2_2/stdlib_json.o \
+c_code/4_2/compiler_extccomp.o \
+c_code/2_2/stdlib_sha1.o \
+c_code/3_2/stdlib_json.o \
 c_code/2_2/stdlib_lexbase.o \
-c_code/2_2/stdlib_unicode.o \
+c_code/2_2/stdlib_options.o \
+c_code/2_2/stdlib_typetraits.o \
 c_code/3_2/compiler_nimblecmd.o \
 c_code/2_2/stdlib_sequtils.o \
 c_code/2_2/stdlib_parseopt.o \
@@ -7474,7 +7957,7 @@ c_code/2_2/compiler_ast.o \
 c_code/2_2/compiler_astalgo.o \
 c_code/2_2/compiler_syntaxes.o \
 c_code/2_2/compiler_renderer.o \
-c_code/3_2/compiler_rodread.o \
+c_code/2_2/compiler_rodread.o \
 c_code/2_2/compiler_rodwrite.o \
 c_code/3_2/compiler_sem.o \
 c_code/2_2/compiler_semdata.o \
@@ -7482,7 +7965,7 @@ c_code/2_2/compiler_passes.o \
 c_code/2_2/compiler_docgen.o \
 c_code/2_2/compiler_cgen.o \
 c_code/2_2/compiler_jsgen.o \
-c_code/3_2/compiler_importer.o \
+c_code/2_2/compiler_importer.o \
 c_code/2_2/compiler_passaux.o \
 c_code/2_2/compiler_depends.o \
 c_code/3_2/compiler_vm.o \
@@ -7496,22 +7979,23 @@ c_code/2_2/compiler_modules.o \
 c_code/2_2/compiler_ccgutils.o \
 c_code/3_2/compiler_sigmatch.o \
 c_code/2_2/compiler_modulegraphs.o \
+c_code/2_2/compiler_rod.o \
 c_code/2_2/stdlib_intsets.o \
 c_code/2_2/compiler_rodutils.o \
 c_code/2_2/compiler_pbraces.o \
 c_code/2_2/compiler_filters.o \
 c_code/2_2/compiler_filter_tmpl.o \
-c_code/3_2/stdlib_memfiles.o \
+c_code/2_2/stdlib_memfiles.o \
 c_code/2_2/compiler_trees.o \
+c_code/3_2/compiler_modulepaths.o \
 c_code/2_2/compiler_magicsys.o \
 c_code/2_2/compiler_nimsets.o \
 c_code/2_2/compiler_reorder.o \
 c_code/2_2/compiler_bitsets.o \
-c_code/2_2/compiler_lookups.o \
-c_code/3_2/compiler_prettybase.o \
 c_code/2_2/compiler_treetab.o \
 c_code/3_2/compiler_semfold.o \
 c_code/2_2/compiler_procfind.o \
+c_code/2_2/compiler_lookups.o \
 c_code/3_2/compiler_pragmas.o \
 c_code/2_2/compiler_semtypinst.o \
 c_code/2_2/compiler_transf.o \
@@ -7522,29 +8006,35 @@ c_code/2_2/compiler_evaltempl.o \
 c_code/2_2/compiler_patterns.o \
 c_code/2_2/compiler_parampatterns.o \
 c_code/2_2/compiler_sempass2.o \
-c_code/2_2/compiler_pretty.o \
 c_code/2_2/compiler_semmacrosanity.o \
 c_code/2_2/compiler_semparallel.o \
 c_code/2_2/compiler_lowerings.o \
 c_code/2_2/compiler_pluginsupport.o \
-c_code/2_2/compiler_active.o \
 c_code/2_2/compiler_saturate.o \
+c_code/3_2/compiler_prettybase.o \
+c_code/2_2/compiler_pretty.o \
+c_code/2_2/stdlib_xmltree.o \
+c_code/2_2/stdlib_cgi.o \
+c_code/2_2/compiler_typesrenderer.o \
 c_code/2_2/docutils_rstast.o \
 c_code/2_2/docutils_rst.o \
 c_code/3_2/docutils_rstgen.o \
 c_code/2_2/docutils_highlite.o \
-c_code/2_2/stdlib_xmltree.o \
-c_code/2_2/stdlib_cgi.o \
-c_code/2_2/compiler_typesrenderer.o \
 c_code/2_2/compiler_guards.o \
 c_code/2_2/compiler_writetracking.o \
 c_code/2_2/stdlib_cookies.o \
+c_code/2_2/stdlib_uri.o \
 c_code/2_2/compiler_prefixmatches.o \
+c_code/2_2/compiler_destroyer.o \
+c_code/2_2/compiler_liftlocals.o \
+c_code/2_2/compiler_dfa.o \
 c_code/2_2/compiler_vmgen.o \
 c_code/3_2/compiler_vmdeps.o \
 c_code/2_2/compiler_vmmarshal.o \
-c_code/2_2/compiler_locals.o \
+c_code/3_2/compiler_gorgeimpl.o \
+c_code/2_2/compiler_active.o \
 c_code/2_2/compiler_itersgen.o \
+c_code/2_2/compiler_locals.o \
 c_code/2_2/compiler_cgendata.o \
 c_code/2_2/compiler_ccgmerge.o \
 c_code/2_2/compiler_ndi.o \
@@ -7553,8 +8043,6 @@ c_code/2_2/stdlib_md5.o \
 c_code/2_2/stdlib_dynlib.o \
 c_code/2_2/stdlib_net.o \
 c_code/2_3/stdlib_nativesockets.o \
-c_code/2_2/stdlib_options.o \
-c_code/2_2/stdlib_typetraits.o \
 c_code/2_2/compiler_nodejs.o \
 c_code/5_2/compiler_scriptconfig.o $LINK_FLAGS
     ;;
@@ -7620,7 +8108,7 @@ dragonfly)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_parseutils.c -o c_code/2_1/stdlib_parseutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_math.c -o c_code/2_1/stdlib_math.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_algorithm.c -o c_code/2_1/stdlib_algorithm.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/stdlib_times.c -o c_code/3_1/stdlib_times.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_times.c -o c_code/2_1/stdlib_times.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/stdlib_posix.c -o c_code/3_1/stdlib_posix.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_ospaths.c -o c_code/2_1/stdlib_ospaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_msgs.c -o c_code/3_1/compiler_msgs.o
@@ -7637,16 +8125,20 @@ dragonfly)
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/stdlib_streams.c -o c_code/3_1/stdlib_streams.o
     $CC $COMP_FLAGS -Ic_code -c c_code/8_1/stdlib_cpuinfo.c -o c_code/8_1/stdlib_cpuinfo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/stdlib_kqueue.c -o c_code/3_1/stdlib_kqueue.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_strformat.c -o c_code/2_1/stdlib_strformat.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_unicode.c -o c_code/2_1/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_colors.c -o c_code/2_1/stdlib_colors.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_termios.c -o c_code/2_1/stdlib_termios.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nversion.c -o c_code/2_1/compiler_nversion.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_condsyms.c -o c_code/2_1/compiler_condsyms.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_idents.c -o c_code/2_1/compiler_idents.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_wordrecg.c -o c_code/2_1/compiler_wordrecg.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_extccomp.c -o c_code/3_1/compiler_extccomp.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_securehash.c -o c_code/2_1/stdlib_securehash.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_json.c -o c_code/2_1/stdlib_json.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/4_1/compiler_extccomp.c -o c_code/4_1/compiler_extccomp.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_sha1.c -o c_code/2_1/stdlib_sha1.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/stdlib_json.c -o c_code/3_1/stdlib_json.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_lexbase.c -o c_code/2_1/stdlib_lexbase.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_unicode.c -o c_code/2_1/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_options.c -o c_code/2_1/stdlib_options.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_typetraits.c -o c_code/2_1/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_nimblecmd.c -o c_code/8_1/compiler_nimblecmd.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_sequtils.c -o c_code/2_1/stdlib_sequtils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_parseopt.c -o c_code/2_1/stdlib_parseopt.o
@@ -7659,7 +8151,7 @@ dragonfly)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_astalgo.c -o c_code/2_1/compiler_astalgo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_syntaxes.c -o c_code/2_1/compiler_syntaxes.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_renderer.c -o c_code/2_1/compiler_renderer.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_rodread.c -o c_code/3_1/compiler_rodread.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rodread.c -o c_code/2_1/compiler_rodread.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rodwrite.c -o c_code/2_1/compiler_rodwrite.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_sem.c -o c_code/3_1/compiler_sem.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semdata.c -o c_code/2_1/compiler_semdata.o
@@ -7667,7 +8159,7 @@ dragonfly)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_docgen.c -o c_code/2_1/compiler_docgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_cgen.c -o c_code/2_1/compiler_cgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_jsgen.c -o c_code/2_1/compiler_jsgen.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_importer.c -o c_code/3_1/compiler_importer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_importer.c -o c_code/2_1/compiler_importer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_passaux.c -o c_code/2_1/compiler_passaux.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_depends.c -o c_code/2_1/compiler_depends.o
     $CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_vm.c -o c_code/8_1/compiler_vm.o
@@ -7681,22 +8173,23 @@ dragonfly)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ccgutils.c -o c_code/2_1/compiler_ccgutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_sigmatch.c -o c_code/3_1/compiler_sigmatch.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_modulegraphs.c -o c_code/2_1/compiler_modulegraphs.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rod.c -o c_code/2_1/compiler_rod.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_intsets.c -o c_code/2_1/stdlib_intsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rodutils.c -o c_code/2_1/compiler_rodutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pbraces.c -o c_code/2_1/compiler_pbraces.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_filters.c -o c_code/2_1/compiler_filters.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_filter_tmpl.c -o c_code/2_1/compiler_filter_tmpl.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/stdlib_memfiles.c -o c_code/3_1/stdlib_memfiles.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_memfiles.c -o c_code/2_1/stdlib_memfiles.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_trees.c -o c_code/2_1/compiler_trees.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_modulepaths.c -o c_code/3_1/compiler_modulepaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_magicsys.c -o c_code/2_1/compiler_magicsys.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nimsets.c -o c_code/2_1/compiler_nimsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_reorder.c -o c_code/2_1/compiler_reorder.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_bitsets.c -o c_code/2_1/compiler_bitsets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lookups.c -o c_code/2_1/compiler_lookups.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_prettybase.c -o c_code/3_1/compiler_prettybase.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_treetab.c -o c_code/2_1/compiler_treetab.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_semfold.c -o c_code/3_1/compiler_semfold.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_procfind.c -o c_code/2_1/compiler_procfind.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lookups.c -o c_code/2_1/compiler_lookups.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_pragmas.c -o c_code/3_1/compiler_pragmas.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semtypinst.c -o c_code/2_1/compiler_semtypinst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_transf.c -o c_code/2_1/compiler_transf.o
@@ -7707,29 +8200,35 @@ dragonfly)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_patterns.c -o c_code/2_1/compiler_patterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_parampatterns.c -o c_code/2_1/compiler_parampatterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_sempass2.c -o c_code/2_1/compiler_sempass2.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pretty.c -o c_code/2_1/compiler_pretty.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semmacrosanity.c -o c_code/2_1/compiler_semmacrosanity.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semparallel.c -o c_code/2_1/compiler_semparallel.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lowerings.c -o c_code/2_1/compiler_lowerings.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pluginsupport.c -o c_code/2_1/compiler_pluginsupport.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_active.c -o c_code/2_1/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_saturate.c -o c_code/2_1/compiler_saturate.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_prettybase.c -o c_code/3_1/compiler_prettybase.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pretty.c -o c_code/2_1/compiler_pretty.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_xmltree.c -o c_code/2_1/stdlib_xmltree.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cgi.c -o c_code/2_1/stdlib_cgi.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_typesrenderer.c -o c_code/2_1/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rstast.c -o c_code/2_1/docutils_rstast.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rst.c -o c_code/2_1/docutils_rst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/8_1/docutils_rstgen.c -o c_code/8_1/docutils_rstgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_highlite.c -o c_code/2_1/docutils_highlite.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_xmltree.c -o c_code/2_1/stdlib_xmltree.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cgi.c -o c_code/2_1/stdlib_cgi.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_typesrenderer.c -o c_code/2_1/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_guards.c -o c_code/2_1/compiler_guards.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_writetracking.c -o c_code/2_1/compiler_writetracking.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cookies.c -o c_code/2_1/stdlib_cookies.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_uri.c -o c_code/2_1/stdlib_uri.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_prefixmatches.c -o c_code/2_1/compiler_prefixmatches.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_destroyer.c -o c_code/2_1/compiler_destroyer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_liftlocals.c -o c_code/2_1/compiler_liftlocals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_dfa.c -o c_code/2_1/compiler_dfa.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmgen.c -o c_code/2_1/compiler_vmgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_vmdeps.c -o c_code/3_1/compiler_vmdeps.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmmarshal.c -o c_code/2_1/compiler_vmmarshal.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_locals.c -o c_code/2_1/compiler_locals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/compiler_gorgeimpl.c -o c_code/3_1/compiler_gorgeimpl.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_active.c -o c_code/2_1/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_itersgen.c -o c_code/2_1/compiler_itersgen.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_locals.c -o c_code/2_1/compiler_locals.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_cgendata.c -o c_code/2_1/compiler_cgendata.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ccgmerge.c -o c_code/2_1/compiler_ccgmerge.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ndi.c -o c_code/2_1/compiler_ndi.o
@@ -7738,8 +8237,6 @@ dragonfly)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_dynlib.c -o c_code/2_1/stdlib_dynlib.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_net.c -o c_code/2_1/stdlib_net.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_nativesockets.c -o c_code/2_1/stdlib_nativesockets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_options.c -o c_code/2_1/stdlib_options.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_typetraits.c -o c_code/2_1/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nodejs.c -o c_code/2_1/compiler_nodejs.o
     $CC $COMP_FLAGS -Ic_code -c c_code/8_1/compiler_scriptconfig.c -o c_code/8_1/compiler_scriptconfig.o
     $LINKER -o $binDir/nim  \
@@ -7751,7 +8248,7 @@ c_code/2_1/stdlib_strutils.o \
 c_code/2_1/stdlib_parseutils.o \
 c_code/2_1/stdlib_math.o \
 c_code/2_1/stdlib_algorithm.o \
-c_code/3_1/stdlib_times.o \
+c_code/2_1/stdlib_times.o \
 c_code/3_1/stdlib_posix.o \
 c_code/2_1/stdlib_ospaths.o \
 c_code/3_1/compiler_msgs.o \
@@ -7768,16 +8265,20 @@ c_code/2_1/stdlib_hashes.o \
 c_code/3_1/stdlib_streams.o \
 c_code/8_1/stdlib_cpuinfo.o \
 c_code/3_1/stdlib_kqueue.o \
+c_code/2_1/stdlib_strformat.o \
+c_code/2_1/stdlib_unicode.o \
+c_code/2_1/stdlib_colors.o \
 c_code/2_1/stdlib_termios.o \
 c_code/2_1/compiler_nversion.o \
 c_code/2_1/compiler_condsyms.o \
 c_code/2_1/compiler_idents.o \
 c_code/2_1/compiler_wordrecg.o \
-c_code/3_1/compiler_extccomp.o \
-c_code/2_1/stdlib_securehash.o \
-c_code/2_1/stdlib_json.o \
+c_code/4_1/compiler_extccomp.o \
+c_code/2_1/stdlib_sha1.o \
+c_code/3_1/stdlib_json.o \
 c_code/2_1/stdlib_lexbase.o \
-c_code/2_1/stdlib_unicode.o \
+c_code/2_1/stdlib_options.o \
+c_code/2_1/stdlib_typetraits.o \
 c_code/8_1/compiler_nimblecmd.o \
 c_code/2_1/stdlib_sequtils.o \
 c_code/2_1/stdlib_parseopt.o \
@@ -7790,7 +8291,7 @@ c_code/2_1/compiler_ast.o \
 c_code/2_1/compiler_astalgo.o \
 c_code/2_1/compiler_syntaxes.o \
 c_code/2_1/compiler_renderer.o \
-c_code/3_1/compiler_rodread.o \
+c_code/2_1/compiler_rodread.o \
 c_code/2_1/compiler_rodwrite.o \
 c_code/3_1/compiler_sem.o \
 c_code/2_1/compiler_semdata.o \
@@ -7798,7 +8299,7 @@ c_code/2_1/compiler_passes.o \
 c_code/2_1/compiler_docgen.o \
 c_code/2_1/compiler_cgen.o \
 c_code/2_1/compiler_jsgen.o \
-c_code/3_1/compiler_importer.o \
+c_code/2_1/compiler_importer.o \
 c_code/2_1/compiler_passaux.o \
 c_code/2_1/compiler_depends.o \
 c_code/8_1/compiler_vm.o \
@@ -7812,22 +8313,23 @@ c_code/2_1/compiler_modules.o \
 c_code/2_1/compiler_ccgutils.o \
 c_code/3_1/compiler_sigmatch.o \
 c_code/2_1/compiler_modulegraphs.o \
+c_code/2_1/compiler_rod.o \
 c_code/2_1/stdlib_intsets.o \
 c_code/2_1/compiler_rodutils.o \
 c_code/2_1/compiler_pbraces.o \
 c_code/2_1/compiler_filters.o \
 c_code/2_1/compiler_filter_tmpl.o \
-c_code/3_1/stdlib_memfiles.o \
+c_code/2_1/stdlib_memfiles.o \
 c_code/2_1/compiler_trees.o \
+c_code/3_1/compiler_modulepaths.o \
 c_code/2_1/compiler_magicsys.o \
 c_code/2_1/compiler_nimsets.o \
 c_code/2_1/compiler_reorder.o \
 c_code/2_1/compiler_bitsets.o \
-c_code/2_1/compiler_lookups.o \
-c_code/3_1/compiler_prettybase.o \
 c_code/2_1/compiler_treetab.o \
 c_code/3_1/compiler_semfold.o \
 c_code/2_1/compiler_procfind.o \
+c_code/2_1/compiler_lookups.o \
 c_code/3_1/compiler_pragmas.o \
 c_code/2_1/compiler_semtypinst.o \
 c_code/2_1/compiler_transf.o \
@@ -7838,29 +8340,35 @@ c_code/2_1/compiler_evaltempl.o \
 c_code/2_1/compiler_patterns.o \
 c_code/2_1/compiler_parampatterns.o \
 c_code/2_1/compiler_sempass2.o \
-c_code/2_1/compiler_pretty.o \
 c_code/2_1/compiler_semmacrosanity.o \
 c_code/2_1/compiler_semparallel.o \
 c_code/2_1/compiler_lowerings.o \
 c_code/2_1/compiler_pluginsupport.o \
-c_code/2_1/compiler_active.o \
 c_code/2_1/compiler_saturate.o \
+c_code/3_1/compiler_prettybase.o \
+c_code/2_1/compiler_pretty.o \
+c_code/2_1/stdlib_xmltree.o \
+c_code/2_1/stdlib_cgi.o \
+c_code/2_1/compiler_typesrenderer.o \
 c_code/2_1/docutils_rstast.o \
 c_code/2_1/docutils_rst.o \
 c_code/8_1/docutils_rstgen.o \
 c_code/2_1/docutils_highlite.o \
-c_code/2_1/stdlib_xmltree.o \
-c_code/2_1/stdlib_cgi.o \
-c_code/2_1/compiler_typesrenderer.o \
 c_code/2_1/compiler_guards.o \
 c_code/2_1/compiler_writetracking.o \
 c_code/2_1/stdlib_cookies.o \
+c_code/2_1/stdlib_uri.o \
 c_code/2_1/compiler_prefixmatches.o \
+c_code/2_1/compiler_destroyer.o \
+c_code/2_1/compiler_liftlocals.o \
+c_code/2_1/compiler_dfa.o \
 c_code/2_1/compiler_vmgen.o \
 c_code/3_1/compiler_vmdeps.o \
 c_code/2_1/compiler_vmmarshal.o \
-c_code/2_1/compiler_locals.o \
+c_code/3_1/compiler_gorgeimpl.o \
+c_code/2_1/compiler_active.o \
 c_code/2_1/compiler_itersgen.o \
+c_code/2_1/compiler_locals.o \
 c_code/2_1/compiler_cgendata.o \
 c_code/2_1/compiler_ccgmerge.o \
 c_code/2_1/compiler_ndi.o \
@@ -7869,8 +8377,6 @@ c_code/2_1/stdlib_md5.o \
 c_code/2_1/stdlib_dynlib.o \
 c_code/2_1/stdlib_net.o \
 c_code/2_1/stdlib_nativesockets.o \
-c_code/2_1/stdlib_options.o \
-c_code/2_1/stdlib_typetraits.o \
 c_code/2_1/compiler_nodejs.o \
 c_code/8_1/compiler_scriptconfig.o $LINK_FLAGS
     ;;
@@ -7884,7 +8390,7 @@ c_code/8_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_parseutils.c -o c_code/2_2/stdlib_parseutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_math.c -o c_code/2_2/stdlib_math.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_algorithm.c -o c_code/2_2/stdlib_algorithm.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_times.c -o c_code/3_2/stdlib_times.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_times.c -o c_code/2_2/stdlib_times.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_posix.c -o c_code/3_2/stdlib_posix.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_ospaths.c -o c_code/2_2/stdlib_ospaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_msgs.c -o c_code/3_2/compiler_msgs.o
@@ -7901,16 +8407,20 @@ c_code/8_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_streams.c -o c_code/3_2/stdlib_streams.o
     $CC $COMP_FLAGS -Ic_code -c c_code/8_2/stdlib_cpuinfo.c -o c_code/8_2/stdlib_cpuinfo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_kqueue.c -o c_code/3_2/stdlib_kqueue.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_strformat.c -o c_code/2_2/stdlib_strformat.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_unicode.c -o c_code/2_2/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_colors.c -o c_code/2_2/stdlib_colors.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_termios.c -o c_code/2_2/stdlib_termios.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nversion.c -o c_code/2_2/compiler_nversion.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_condsyms.c -o c_code/2_2/compiler_condsyms.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_idents.c -o c_code/2_2/compiler_idents.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_wordrecg.c -o c_code/2_2/compiler_wordrecg.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_extccomp.c -o c_code/3_2/compiler_extccomp.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_securehash.c -o c_code/2_2/stdlib_securehash.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_json.c -o c_code/2_2/stdlib_json.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/4_2/compiler_extccomp.c -o c_code/4_2/compiler_extccomp.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_sha1.c -o c_code/2_2/stdlib_sha1.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_json.c -o c_code/3_2/stdlib_json.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_lexbase.c -o c_code/2_2/stdlib_lexbase.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_unicode.c -o c_code/2_2/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_options.c -o c_code/2_2/stdlib_options.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_typetraits.c -o c_code/2_2/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_nimblecmd.c -o c_code/8_2/compiler_nimblecmd.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_sequtils.c -o c_code/2_2/stdlib_sequtils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_parseopt.c -o c_code/2_2/stdlib_parseopt.o
@@ -7923,7 +8433,7 @@ c_code/8_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_astalgo.c -o c_code/2_2/compiler_astalgo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_syntaxes.c -o c_code/2_2/compiler_syntaxes.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_renderer.c -o c_code/2_2/compiler_renderer.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_rodread.c -o c_code/3_2/compiler_rodread.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodread.c -o c_code/2_2/compiler_rodread.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodwrite.c -o c_code/2_2/compiler_rodwrite.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_sem.c -o c_code/3_2/compiler_sem.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semdata.c -o c_code/2_2/compiler_semdata.o
@@ -7931,7 +8441,7 @@ c_code/8_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_docgen.c -o c_code/2_2/compiler_docgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_cgen.c -o c_code/2_2/compiler_cgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_jsgen.c -o c_code/2_2/compiler_jsgen.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_importer.c -o c_code/3_2/compiler_importer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_importer.c -o c_code/2_2/compiler_importer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_passaux.c -o c_code/2_2/compiler_passaux.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_depends.c -o c_code/2_2/compiler_depends.o
     $CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_vm.c -o c_code/8_2/compiler_vm.o
@@ -7945,22 +8455,23 @@ c_code/8_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ccgutils.c -o c_code/2_2/compiler_ccgutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_sigmatch.c -o c_code/3_2/compiler_sigmatch.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_modulegraphs.c -o c_code/2_2/compiler_modulegraphs.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rod.c -o c_code/2_2/compiler_rod.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_intsets.c -o c_code/2_2/stdlib_intsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodutils.c -o c_code/2_2/compiler_rodutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pbraces.c -o c_code/2_2/compiler_pbraces.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_filters.c -o c_code/2_2/compiler_filters.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_filter_tmpl.c -o c_code/2_2/compiler_filter_tmpl.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_memfiles.c -o c_code/3_2/stdlib_memfiles.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_memfiles.c -o c_code/2_2/stdlib_memfiles.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_trees.c -o c_code/2_2/compiler_trees.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_modulepaths.c -o c_code/3_2/compiler_modulepaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_magicsys.c -o c_code/2_2/compiler_magicsys.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nimsets.c -o c_code/2_2/compiler_nimsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_reorder.c -o c_code/2_2/compiler_reorder.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_bitsets.c -o c_code/2_2/compiler_bitsets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lookups.c -o c_code/2_2/compiler_lookups.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_prettybase.c -o c_code/3_2/compiler_prettybase.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_treetab.c -o c_code/2_2/compiler_treetab.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_semfold.c -o c_code/3_2/compiler_semfold.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_procfind.c -o c_code/2_2/compiler_procfind.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lookups.c -o c_code/2_2/compiler_lookups.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_pragmas.c -o c_code/3_2/compiler_pragmas.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semtypinst.c -o c_code/2_2/compiler_semtypinst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_transf.c -o c_code/2_2/compiler_transf.o
@@ -7971,29 +8482,35 @@ c_code/8_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_patterns.c -o c_code/2_2/compiler_patterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_parampatterns.c -o c_code/2_2/compiler_parampatterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_sempass2.c -o c_code/2_2/compiler_sempass2.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pretty.c -o c_code/2_2/compiler_pretty.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semmacrosanity.c -o c_code/2_2/compiler_semmacrosanity.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semparallel.c -o c_code/2_2/compiler_semparallel.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lowerings.c -o c_code/2_2/compiler_lowerings.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pluginsupport.c -o c_code/2_2/compiler_pluginsupport.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_active.c -o c_code/2_2/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_saturate.c -o c_code/2_2/compiler_saturate.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_prettybase.c -o c_code/3_2/compiler_prettybase.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pretty.c -o c_code/2_2/compiler_pretty.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_xmltree.c -o c_code/2_2/stdlib_xmltree.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cgi.c -o c_code/2_2/stdlib_cgi.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_typesrenderer.c -o c_code/2_2/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_rstast.c -o c_code/2_2/docutils_rstast.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_rst.c -o c_code/2_2/docutils_rst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/8_2/docutils_rstgen.c -o c_code/8_2/docutils_rstgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_highlite.c -o c_code/2_2/docutils_highlite.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_xmltree.c -o c_code/2_2/stdlib_xmltree.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cgi.c -o c_code/2_2/stdlib_cgi.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_typesrenderer.c -o c_code/2_2/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_guards.c -o c_code/2_2/compiler_guards.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_writetracking.c -o c_code/2_2/compiler_writetracking.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cookies.c -o c_code/2_2/stdlib_cookies.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_uri.c -o c_code/2_2/stdlib_uri.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_prefixmatches.c -o c_code/2_2/compiler_prefixmatches.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_destroyer.c -o c_code/2_2/compiler_destroyer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_liftlocals.c -o c_code/2_2/compiler_liftlocals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_dfa.c -o c_code/2_2/compiler_dfa.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_vmgen.c -o c_code/2_2/compiler_vmgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_vmdeps.c -o c_code/3_2/compiler_vmdeps.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_vmmarshal.c -o c_code/2_2/compiler_vmmarshal.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_locals.c -o c_code/2_2/compiler_locals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/compiler_gorgeimpl.c -o c_code/3_2/compiler_gorgeimpl.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_active.c -o c_code/2_2/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_itersgen.c -o c_code/2_2/compiler_itersgen.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_locals.c -o c_code/2_2/compiler_locals.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_cgendata.c -o c_code/2_2/compiler_cgendata.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ccgmerge.c -o c_code/2_2/compiler_ccgmerge.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ndi.c -o c_code/2_2/compiler_ndi.o
@@ -8002,8 +8519,6 @@ c_code/8_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_dynlib.c -o c_code/2_2/stdlib_dynlib.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_net.c -o c_code/2_2/stdlib_net.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_nativesockets.c -o c_code/2_3/stdlib_nativesockets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_options.c -o c_code/2_2/stdlib_options.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_typetraits.c -o c_code/2_2/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nodejs.c -o c_code/2_2/compiler_nodejs.o
     $CC $COMP_FLAGS -Ic_code -c c_code/8_2/compiler_scriptconfig.c -o c_code/8_2/compiler_scriptconfig.o
     $LINKER -o $binDir/nim  \
@@ -8015,7 +8530,7 @@ c_code/2_2/stdlib_strutils.o \
 c_code/2_2/stdlib_parseutils.o \
 c_code/2_2/stdlib_math.o \
 c_code/2_2/stdlib_algorithm.o \
-c_code/3_2/stdlib_times.o \
+c_code/2_2/stdlib_times.o \
 c_code/3_2/stdlib_posix.o \
 c_code/2_2/stdlib_ospaths.o \
 c_code/3_2/compiler_msgs.o \
@@ -8032,16 +8547,20 @@ c_code/2_2/stdlib_hashes.o \
 c_code/3_2/stdlib_streams.o \
 c_code/8_2/stdlib_cpuinfo.o \
 c_code/3_2/stdlib_kqueue.o \
+c_code/2_2/stdlib_strformat.o \
+c_code/2_2/stdlib_unicode.o \
+c_code/2_2/stdlib_colors.o \
 c_code/2_2/stdlib_termios.o \
 c_code/2_2/compiler_nversion.o \
 c_code/2_2/compiler_condsyms.o \
 c_code/2_2/compiler_idents.o \
 c_code/2_2/compiler_wordrecg.o \
-c_code/3_2/compiler_extccomp.o \
-c_code/2_2/stdlib_securehash.o \
-c_code/2_2/stdlib_json.o \
+c_code/4_2/compiler_extccomp.o \
+c_code/2_2/stdlib_sha1.o \
+c_code/3_2/stdlib_json.o \
 c_code/2_2/stdlib_lexbase.o \
-c_code/2_2/stdlib_unicode.o \
+c_code/2_2/stdlib_options.o \
+c_code/2_2/stdlib_typetraits.o \
 c_code/8_2/compiler_nimblecmd.o \
 c_code/2_2/stdlib_sequtils.o \
 c_code/2_2/stdlib_parseopt.o \
@@ -8054,7 +8573,7 @@ c_code/2_2/compiler_ast.o \
 c_code/2_2/compiler_astalgo.o \
 c_code/2_2/compiler_syntaxes.o \
 c_code/2_2/compiler_renderer.o \
-c_code/3_2/compiler_rodread.o \
+c_code/2_2/compiler_rodread.o \
 c_code/2_2/compiler_rodwrite.o \
 c_code/3_2/compiler_sem.o \
 c_code/2_2/compiler_semdata.o \
@@ -8062,7 +8581,7 @@ c_code/2_2/compiler_passes.o \
 c_code/2_2/compiler_docgen.o \
 c_code/2_2/compiler_cgen.o \
 c_code/2_2/compiler_jsgen.o \
-c_code/3_2/compiler_importer.o \
+c_code/2_2/compiler_importer.o \
 c_code/2_2/compiler_passaux.o \
 c_code/2_2/compiler_depends.o \
 c_code/8_2/compiler_vm.o \
@@ -8076,22 +8595,23 @@ c_code/2_2/compiler_modules.o \
 c_code/2_2/compiler_ccgutils.o \
 c_code/3_2/compiler_sigmatch.o \
 c_code/2_2/compiler_modulegraphs.o \
+c_code/2_2/compiler_rod.o \
 c_code/2_2/stdlib_intsets.o \
 c_code/2_2/compiler_rodutils.o \
 c_code/2_2/compiler_pbraces.o \
 c_code/2_2/compiler_filters.o \
 c_code/2_2/compiler_filter_tmpl.o \
-c_code/3_2/stdlib_memfiles.o \
+c_code/2_2/stdlib_memfiles.o \
 c_code/2_2/compiler_trees.o \
+c_code/3_2/compiler_modulepaths.o \
 c_code/2_2/compiler_magicsys.o \
 c_code/2_2/compiler_nimsets.o \
 c_code/2_2/compiler_reorder.o \
 c_code/2_2/compiler_bitsets.o \
-c_code/2_2/compiler_lookups.o \
-c_code/3_2/compiler_prettybase.o \
 c_code/2_2/compiler_treetab.o \
 c_code/3_2/compiler_semfold.o \
 c_code/2_2/compiler_procfind.o \
+c_code/2_2/compiler_lookups.o \
 c_code/3_2/compiler_pragmas.o \
 c_code/2_2/compiler_semtypinst.o \
 c_code/2_2/compiler_transf.o \
@@ -8102,29 +8622,35 @@ c_code/2_2/compiler_evaltempl.o \
 c_code/2_2/compiler_patterns.o \
 c_code/2_2/compiler_parampatterns.o \
 c_code/2_2/compiler_sempass2.o \
-c_code/2_2/compiler_pretty.o \
 c_code/2_2/compiler_semmacrosanity.o \
 c_code/2_2/compiler_semparallel.o \
 c_code/2_2/compiler_lowerings.o \
 c_code/2_2/compiler_pluginsupport.o \
-c_code/2_2/compiler_active.o \
 c_code/2_2/compiler_saturate.o \
+c_code/3_2/compiler_prettybase.o \
+c_code/2_2/compiler_pretty.o \
+c_code/2_2/stdlib_xmltree.o \
+c_code/2_2/stdlib_cgi.o \
+c_code/2_2/compiler_typesrenderer.o \
 c_code/2_2/docutils_rstast.o \
 c_code/2_2/docutils_rst.o \
 c_code/8_2/docutils_rstgen.o \
 c_code/2_2/docutils_highlite.o \
-c_code/2_2/stdlib_xmltree.o \
-c_code/2_2/stdlib_cgi.o \
-c_code/2_2/compiler_typesrenderer.o \
 c_code/2_2/compiler_guards.o \
 c_code/2_2/compiler_writetracking.o \
 c_code/2_2/stdlib_cookies.o \
+c_code/2_2/stdlib_uri.o \
 c_code/2_2/compiler_prefixmatches.o \
+c_code/2_2/compiler_destroyer.o \
+c_code/2_2/compiler_liftlocals.o \
+c_code/2_2/compiler_dfa.o \
 c_code/2_2/compiler_vmgen.o \
 c_code/3_2/compiler_vmdeps.o \
 c_code/2_2/compiler_vmmarshal.o \
-c_code/2_2/compiler_locals.o \
+c_code/3_2/compiler_gorgeimpl.o \
+c_code/2_2/compiler_active.o \
 c_code/2_2/compiler_itersgen.o \
+c_code/2_2/compiler_locals.o \
 c_code/2_2/compiler_cgendata.o \
 c_code/2_2/compiler_ccgmerge.o \
 c_code/2_2/compiler_ndi.o \
@@ -8133,8 +8659,6 @@ c_code/2_2/stdlib_md5.o \
 c_code/2_2/stdlib_dynlib.o \
 c_code/2_2/stdlib_net.o \
 c_code/2_3/stdlib_nativesockets.o \
-c_code/2_2/stdlib_options.o \
-c_code/2_2/stdlib_typetraits.o \
 c_code/2_2/compiler_nodejs.o \
 c_code/8_2/compiler_scriptconfig.o $LINK_FLAGS
     ;;
@@ -8216,16 +8740,20 @@ haiku)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_hashes.c -o c_code/2_1/stdlib_hashes.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_streams.c -o c_code/2_1/stdlib_streams.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cpuinfo.c -o c_code/2_1/stdlib_cpuinfo.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_strformat.c -o c_code/2_1/stdlib_strformat.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_unicode.c -o c_code/2_1/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_colors.c -o c_code/2_1/stdlib_colors.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_termios.c -o c_code/2_1/stdlib_termios.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nversion.c -o c_code/2_1/compiler_nversion.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_condsyms.c -o c_code/2_1/compiler_condsyms.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_idents.c -o c_code/2_1/compiler_idents.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_wordrecg.c -o c_code/2_1/compiler_wordrecg.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_extccomp.c -o c_code/2_1/compiler_extccomp.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_securehash.c -o c_code/2_1/stdlib_securehash.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_sha1.c -o c_code/2_1/stdlib_sha1.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_json.c -o c_code/2_1/stdlib_json.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_lexbase.c -o c_code/2_1/stdlib_lexbase.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_unicode.c -o c_code/2_1/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_options.c -o c_code/2_1/stdlib_options.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_typetraits.c -o c_code/2_1/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/9_1/compiler_nimblecmd.c -o c_code/9_1/compiler_nimblecmd.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_sequtils.c -o c_code/2_1/stdlib_sequtils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_parseopt.c -o c_code/2_1/stdlib_parseopt.o
@@ -8260,22 +8788,23 @@ haiku)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ccgutils.c -o c_code/2_1/compiler_ccgutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_sigmatch.c -o c_code/2_1/compiler_sigmatch.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_modulegraphs.c -o c_code/2_1/compiler_modulegraphs.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rod.c -o c_code/2_1/compiler_rod.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_intsets.c -o c_code/2_1/stdlib_intsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rodutils.c -o c_code/2_1/compiler_rodutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pbraces.c -o c_code/2_1/compiler_pbraces.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_filters.c -o c_code/2_1/compiler_filters.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_filter_tmpl.c -o c_code/2_1/compiler_filter_tmpl.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_1/stdlib_memfiles.c -o c_code/3_1/stdlib_memfiles.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_memfiles.c -o c_code/2_1/stdlib_memfiles.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_trees.c -o c_code/2_1/compiler_trees.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_modulepaths.c -o c_code/2_1/compiler_modulepaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_magicsys.c -o c_code/2_1/compiler_magicsys.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nimsets.c -o c_code/2_1/compiler_nimsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_reorder.c -o c_code/2_1/compiler_reorder.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_bitsets.c -o c_code/2_1/compiler_bitsets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lookups.c -o c_code/2_1/compiler_lookups.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_prettybase.c -o c_code/2_1/compiler_prettybase.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_treetab.c -o c_code/2_1/compiler_treetab.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semfold.c -o c_code/2_1/compiler_semfold.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_procfind.c -o c_code/2_1/compiler_procfind.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lookups.c -o c_code/2_1/compiler_lookups.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pragmas.c -o c_code/2_1/compiler_pragmas.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semtypinst.c -o c_code/2_1/compiler_semtypinst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_transf.c -o c_code/2_1/compiler_transf.o
@@ -8286,29 +8815,35 @@ haiku)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_patterns.c -o c_code/2_1/compiler_patterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_parampatterns.c -o c_code/2_1/compiler_parampatterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_sempass2.c -o c_code/2_1/compiler_sempass2.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pretty.c -o c_code/2_1/compiler_pretty.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semmacrosanity.c -o c_code/2_1/compiler_semmacrosanity.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semparallel.c -o c_code/2_1/compiler_semparallel.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lowerings.c -o c_code/2_1/compiler_lowerings.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pluginsupport.c -o c_code/2_1/compiler_pluginsupport.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_active.c -o c_code/2_1/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_saturate.c -o c_code/2_1/compiler_saturate.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_prettybase.c -o c_code/2_1/compiler_prettybase.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pretty.c -o c_code/2_1/compiler_pretty.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_xmltree.c -o c_code/2_1/stdlib_xmltree.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cgi.c -o c_code/2_1/stdlib_cgi.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_typesrenderer.c -o c_code/2_1/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rstast.c -o c_code/2_1/docutils_rstast.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rst.c -o c_code/2_1/docutils_rst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/9_1/docutils_rstgen.c -o c_code/9_1/docutils_rstgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_highlite.c -o c_code/2_1/docutils_highlite.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_xmltree.c -o c_code/2_1/stdlib_xmltree.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cgi.c -o c_code/2_1/stdlib_cgi.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_typesrenderer.c -o c_code/2_1/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_guards.c -o c_code/2_1/compiler_guards.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_writetracking.c -o c_code/2_1/compiler_writetracking.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cookies.c -o c_code/2_1/stdlib_cookies.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_uri.c -o c_code/2_1/stdlib_uri.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_prefixmatches.c -o c_code/2_1/compiler_prefixmatches.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_destroyer.c -o c_code/2_1/compiler_destroyer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_liftlocals.c -o c_code/2_1/compiler_liftlocals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_dfa.c -o c_code/2_1/compiler_dfa.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmgen.c -o c_code/2_1/compiler_vmgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmdeps.c -o c_code/2_1/compiler_vmdeps.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmmarshal.c -o c_code/2_1/compiler_vmmarshal.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_locals.c -o c_code/2_1/compiler_locals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_gorgeimpl.c -o c_code/2_1/compiler_gorgeimpl.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_active.c -o c_code/2_1/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_itersgen.c -o c_code/2_1/compiler_itersgen.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_locals.c -o c_code/2_1/compiler_locals.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_cgendata.c -o c_code/2_1/compiler_cgendata.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ccgmerge.c -o c_code/2_1/compiler_ccgmerge.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ndi.c -o c_code/2_1/compiler_ndi.o
@@ -8317,8 +8852,6 @@ haiku)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_dynlib.c -o c_code/2_1/stdlib_dynlib.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_net.c -o c_code/2_1/stdlib_net.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_nativesockets.c -o c_code/2_1/stdlib_nativesockets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_options.c -o c_code/2_1/stdlib_options.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_typetraits.c -o c_code/2_1/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nodejs.c -o c_code/2_1/compiler_nodejs.o
     $CC $COMP_FLAGS -Ic_code -c c_code/9_1/compiler_scriptconfig.c -o c_code/9_1/compiler_scriptconfig.o
     $LINKER -o $binDir/nim  \
@@ -8346,16 +8879,20 @@ c_code/2_1/stdlib_sets.o \
 c_code/2_1/stdlib_hashes.o \
 c_code/2_1/stdlib_streams.o \
 c_code/2_1/stdlib_cpuinfo.o \
+c_code/2_1/stdlib_strformat.o \
+c_code/2_1/stdlib_unicode.o \
+c_code/2_1/stdlib_colors.o \
 c_code/2_1/stdlib_termios.o \
 c_code/2_1/compiler_nversion.o \
 c_code/2_1/compiler_condsyms.o \
 c_code/2_1/compiler_idents.o \
 c_code/2_1/compiler_wordrecg.o \
 c_code/2_1/compiler_extccomp.o \
-c_code/2_1/stdlib_securehash.o \
+c_code/2_1/stdlib_sha1.o \
 c_code/2_1/stdlib_json.o \
 c_code/2_1/stdlib_lexbase.o \
-c_code/2_1/stdlib_unicode.o \
+c_code/2_1/stdlib_options.o \
+c_code/2_1/stdlib_typetraits.o \
 c_code/9_1/compiler_nimblecmd.o \
 c_code/2_1/stdlib_sequtils.o \
 c_code/2_1/stdlib_parseopt.o \
@@ -8390,22 +8927,23 @@ c_code/2_1/compiler_modules.o \
 c_code/2_1/compiler_ccgutils.o \
 c_code/2_1/compiler_sigmatch.o \
 c_code/2_1/compiler_modulegraphs.o \
+c_code/2_1/compiler_rod.o \
 c_code/2_1/stdlib_intsets.o \
 c_code/2_1/compiler_rodutils.o \
 c_code/2_1/compiler_pbraces.o \
 c_code/2_1/compiler_filters.o \
 c_code/2_1/compiler_filter_tmpl.o \
-c_code/3_1/stdlib_memfiles.o \
+c_code/2_1/stdlib_memfiles.o \
 c_code/2_1/compiler_trees.o \
+c_code/2_1/compiler_modulepaths.o \
 c_code/2_1/compiler_magicsys.o \
 c_code/2_1/compiler_nimsets.o \
 c_code/2_1/compiler_reorder.o \
 c_code/2_1/compiler_bitsets.o \
-c_code/2_1/compiler_lookups.o \
-c_code/2_1/compiler_prettybase.o \
 c_code/2_1/compiler_treetab.o \
 c_code/2_1/compiler_semfold.o \
 c_code/2_1/compiler_procfind.o \
+c_code/2_1/compiler_lookups.o \
 c_code/2_1/compiler_pragmas.o \
 c_code/2_1/compiler_semtypinst.o \
 c_code/2_1/compiler_transf.o \
@@ -8416,29 +8954,35 @@ c_code/2_1/compiler_evaltempl.o \
 c_code/2_1/compiler_patterns.o \
 c_code/2_1/compiler_parampatterns.o \
 c_code/2_1/compiler_sempass2.o \
-c_code/2_1/compiler_pretty.o \
 c_code/2_1/compiler_semmacrosanity.o \
 c_code/2_1/compiler_semparallel.o \
 c_code/2_1/compiler_lowerings.o \
 c_code/2_1/compiler_pluginsupport.o \
-c_code/2_1/compiler_active.o \
 c_code/2_1/compiler_saturate.o \
+c_code/2_1/compiler_prettybase.o \
+c_code/2_1/compiler_pretty.o \
+c_code/2_1/stdlib_xmltree.o \
+c_code/2_1/stdlib_cgi.o \
+c_code/2_1/compiler_typesrenderer.o \
 c_code/2_1/docutils_rstast.o \
 c_code/2_1/docutils_rst.o \
 c_code/9_1/docutils_rstgen.o \
 c_code/2_1/docutils_highlite.o \
-c_code/2_1/stdlib_xmltree.o \
-c_code/2_1/stdlib_cgi.o \
-c_code/2_1/compiler_typesrenderer.o \
 c_code/2_1/compiler_guards.o \
 c_code/2_1/compiler_writetracking.o \
 c_code/2_1/stdlib_cookies.o \
+c_code/2_1/stdlib_uri.o \
 c_code/2_1/compiler_prefixmatches.o \
+c_code/2_1/compiler_destroyer.o \
+c_code/2_1/compiler_liftlocals.o \
+c_code/2_1/compiler_dfa.o \
 c_code/2_1/compiler_vmgen.o \
 c_code/2_1/compiler_vmdeps.o \
 c_code/2_1/compiler_vmmarshal.o \
-c_code/2_1/compiler_locals.o \
+c_code/2_1/compiler_gorgeimpl.o \
+c_code/2_1/compiler_active.o \
 c_code/2_1/compiler_itersgen.o \
+c_code/2_1/compiler_locals.o \
 c_code/2_1/compiler_cgendata.o \
 c_code/2_1/compiler_ccgmerge.o \
 c_code/2_1/compiler_ndi.o \
@@ -8447,8 +8991,6 @@ c_code/2_1/stdlib_md5.o \
 c_code/2_1/stdlib_dynlib.o \
 c_code/2_1/stdlib_net.o \
 c_code/2_1/stdlib_nativesockets.o \
-c_code/2_1/stdlib_options.o \
-c_code/2_1/stdlib_typetraits.o \
 c_code/2_1/compiler_nodejs.o \
 c_code/9_1/compiler_scriptconfig.o $LINK_FLAGS
     ;;
@@ -8478,16 +9020,20 @@ c_code/9_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_hashes.c -o c_code/2_2/stdlib_hashes.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_streams.c -o c_code/2_3/stdlib_streams.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_cpuinfo.c -o c_code/2_3/stdlib_cpuinfo.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_strformat.c -o c_code/2_2/stdlib_strformat.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_unicode.c -o c_code/2_2/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_colors.c -o c_code/2_2/stdlib_colors.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_termios.c -o c_code/2_2/stdlib_termios.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nversion.c -o c_code/2_2/compiler_nversion.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_condsyms.c -o c_code/2_2/compiler_condsyms.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_idents.c -o c_code/2_2/compiler_idents.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_wordrecg.c -o c_code/2_2/compiler_wordrecg.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_extccomp.c -o c_code/2_3/compiler_extccomp.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_securehash.c -o c_code/2_2/stdlib_securehash.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_json.c -o c_code/2_2/stdlib_json.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_sha1.c -o c_code/2_2/stdlib_sha1.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_json.c -o c_code/2_3/stdlib_json.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_lexbase.c -o c_code/2_2/stdlib_lexbase.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_unicode.c -o c_code/2_2/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_options.c -o c_code/2_2/stdlib_options.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_typetraits.c -o c_code/2_2/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/9_2/compiler_nimblecmd.c -o c_code/9_2/compiler_nimblecmd.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_sequtils.c -o c_code/2_2/stdlib_sequtils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_parseopt.c -o c_code/2_2/stdlib_parseopt.o
@@ -8500,7 +9046,7 @@ c_code/9_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_astalgo.c -o c_code/2_2/compiler_astalgo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_syntaxes.c -o c_code/2_2/compiler_syntaxes.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_renderer.c -o c_code/2_2/compiler_renderer.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_rodread.c -o c_code/2_3/compiler_rodread.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodread.c -o c_code/2_2/compiler_rodread.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodwrite.c -o c_code/2_2/compiler_rodwrite.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_sem.c -o c_code/2_3/compiler_sem.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semdata.c -o c_code/2_2/compiler_semdata.o
@@ -8508,7 +9054,7 @@ c_code/9_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_docgen.c -o c_code/2_2/compiler_docgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_cgen.c -o c_code/2_2/compiler_cgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_jsgen.c -o c_code/2_2/compiler_jsgen.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_importer.c -o c_code/2_3/compiler_importer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_importer.c -o c_code/2_2/compiler_importer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_passaux.c -o c_code/2_2/compiler_passaux.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_depends.c -o c_code/2_2/compiler_depends.o
     $CC $COMP_FLAGS -Ic_code -c c_code/9_2/compiler_vm.c -o c_code/9_2/compiler_vm.o
@@ -8522,22 +9068,23 @@ c_code/9_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ccgutils.c -o c_code/2_2/compiler_ccgutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_sigmatch.c -o c_code/2_3/compiler_sigmatch.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_modulegraphs.c -o c_code/2_2/compiler_modulegraphs.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rod.c -o c_code/2_2/compiler_rod.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_intsets.c -o c_code/2_2/stdlib_intsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodutils.c -o c_code/2_2/compiler_rodutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pbraces.c -o c_code/2_2/compiler_pbraces.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_filters.c -o c_code/2_2/compiler_filters.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_filter_tmpl.c -o c_code/2_2/compiler_filter_tmpl.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/3_2/stdlib_memfiles.c -o c_code/3_2/stdlib_memfiles.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_memfiles.c -o c_code/2_2/stdlib_memfiles.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_trees.c -o c_code/2_2/compiler_trees.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_modulepaths.c -o c_code/2_3/compiler_modulepaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_magicsys.c -o c_code/2_2/compiler_magicsys.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nimsets.c -o c_code/2_2/compiler_nimsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_reorder.c -o c_code/2_2/compiler_reorder.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_bitsets.c -o c_code/2_2/compiler_bitsets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lookups.c -o c_code/2_2/compiler_lookups.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_prettybase.c -o c_code/2_3/compiler_prettybase.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_treetab.c -o c_code/2_2/compiler_treetab.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_semfold.c -o c_code/2_3/compiler_semfold.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_procfind.c -o c_code/2_2/compiler_procfind.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lookups.c -o c_code/2_2/compiler_lookups.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_pragmas.c -o c_code/2_3/compiler_pragmas.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semtypinst.c -o c_code/2_2/compiler_semtypinst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_transf.c -o c_code/2_2/compiler_transf.o
@@ -8548,29 +9095,35 @@ c_code/9_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_patterns.c -o c_code/2_2/compiler_patterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_parampatterns.c -o c_code/2_2/compiler_parampatterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_sempass2.c -o c_code/2_2/compiler_sempass2.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pretty.c -o c_code/2_2/compiler_pretty.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semmacrosanity.c -o c_code/2_2/compiler_semmacrosanity.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semparallel.c -o c_code/2_2/compiler_semparallel.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lowerings.c -o c_code/2_2/compiler_lowerings.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pluginsupport.c -o c_code/2_2/compiler_pluginsupport.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_active.c -o c_code/2_2/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_saturate.c -o c_code/2_2/compiler_saturate.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_prettybase.c -o c_code/2_3/compiler_prettybase.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pretty.c -o c_code/2_2/compiler_pretty.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_xmltree.c -o c_code/2_2/stdlib_xmltree.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cgi.c -o c_code/2_2/stdlib_cgi.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_typesrenderer.c -o c_code/2_2/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_rstast.c -o c_code/2_2/docutils_rstast.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_rst.c -o c_code/2_2/docutils_rst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/9_2/docutils_rstgen.c -o c_code/9_2/docutils_rstgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_highlite.c -o c_code/2_2/docutils_highlite.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_xmltree.c -o c_code/2_2/stdlib_xmltree.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cgi.c -o c_code/2_2/stdlib_cgi.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_typesrenderer.c -o c_code/2_2/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_guards.c -o c_code/2_2/compiler_guards.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_writetracking.c -o c_code/2_2/compiler_writetracking.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cookies.c -o c_code/2_2/stdlib_cookies.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_uri.c -o c_code/2_2/stdlib_uri.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_prefixmatches.c -o c_code/2_2/compiler_prefixmatches.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_destroyer.c -o c_code/2_2/compiler_destroyer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_liftlocals.c -o c_code/2_2/compiler_liftlocals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_dfa.c -o c_code/2_2/compiler_dfa.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_vmgen.c -o c_code/2_2/compiler_vmgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_vmdeps.c -o c_code/2_3/compiler_vmdeps.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_vmmarshal.c -o c_code/2_2/compiler_vmmarshal.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_locals.c -o c_code/2_2/compiler_locals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_gorgeimpl.c -o c_code/2_3/compiler_gorgeimpl.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_active.c -o c_code/2_2/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_itersgen.c -o c_code/2_2/compiler_itersgen.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_locals.c -o c_code/2_2/compiler_locals.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_cgendata.c -o c_code/2_2/compiler_cgendata.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ccgmerge.c -o c_code/2_2/compiler_ccgmerge.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ndi.c -o c_code/2_2/compiler_ndi.o
@@ -8579,8 +9132,6 @@ c_code/9_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_dynlib.c -o c_code/2_2/stdlib_dynlib.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_net.c -o c_code/2_2/stdlib_net.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_nativesockets.c -o c_code/2_3/stdlib_nativesockets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_options.c -o c_code/2_2/stdlib_options.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_typetraits.c -o c_code/2_2/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nodejs.c -o c_code/2_2/compiler_nodejs.o
     $CC $COMP_FLAGS -Ic_code -c c_code/9_2/compiler_scriptconfig.c -o c_code/9_2/compiler_scriptconfig.o
     $LINKER -o $binDir/nim  \
@@ -8608,16 +9159,20 @@ c_code/2_2/stdlib_sets.o \
 c_code/2_2/stdlib_hashes.o \
 c_code/2_3/stdlib_streams.o \
 c_code/2_3/stdlib_cpuinfo.o \
+c_code/2_2/stdlib_strformat.o \
+c_code/2_2/stdlib_unicode.o \
+c_code/2_2/stdlib_colors.o \
 c_code/2_2/stdlib_termios.o \
 c_code/2_2/compiler_nversion.o \
 c_code/2_2/compiler_condsyms.o \
 c_code/2_2/compiler_idents.o \
 c_code/2_2/compiler_wordrecg.o \
 c_code/2_3/compiler_extccomp.o \
-c_code/2_2/stdlib_securehash.o \
-c_code/2_2/stdlib_json.o \
+c_code/2_2/stdlib_sha1.o \
+c_code/2_3/stdlib_json.o \
 c_code/2_2/stdlib_lexbase.o \
-c_code/2_2/stdlib_unicode.o \
+c_code/2_2/stdlib_options.o \
+c_code/2_2/stdlib_typetraits.o \
 c_code/9_2/compiler_nimblecmd.o \
 c_code/2_2/stdlib_sequtils.o \
 c_code/2_2/stdlib_parseopt.o \
@@ -8630,7 +9185,7 @@ c_code/2_2/compiler_ast.o \
 c_code/2_2/compiler_astalgo.o \
 c_code/2_2/compiler_syntaxes.o \
 c_code/2_2/compiler_renderer.o \
-c_code/2_3/compiler_rodread.o \
+c_code/2_2/compiler_rodread.o \
 c_code/2_2/compiler_rodwrite.o \
 c_code/2_3/compiler_sem.o \
 c_code/2_2/compiler_semdata.o \
@@ -8638,7 +9193,7 @@ c_code/2_2/compiler_passes.o \
 c_code/2_2/compiler_docgen.o \
 c_code/2_2/compiler_cgen.o \
 c_code/2_2/compiler_jsgen.o \
-c_code/2_3/compiler_importer.o \
+c_code/2_2/compiler_importer.o \
 c_code/2_2/compiler_passaux.o \
 c_code/2_2/compiler_depends.o \
 c_code/9_2/compiler_vm.o \
@@ -8652,22 +9207,23 @@ c_code/2_2/compiler_modules.o \
 c_code/2_2/compiler_ccgutils.o \
 c_code/2_3/compiler_sigmatch.o \
 c_code/2_2/compiler_modulegraphs.o \
+c_code/2_2/compiler_rod.o \
 c_code/2_2/stdlib_intsets.o \
 c_code/2_2/compiler_rodutils.o \
 c_code/2_2/compiler_pbraces.o \
 c_code/2_2/compiler_filters.o \
 c_code/2_2/compiler_filter_tmpl.o \
-c_code/3_2/stdlib_memfiles.o \
+c_code/2_2/stdlib_memfiles.o \
 c_code/2_2/compiler_trees.o \
+c_code/2_3/compiler_modulepaths.o \
 c_code/2_2/compiler_magicsys.o \
 c_code/2_2/compiler_nimsets.o \
 c_code/2_2/compiler_reorder.o \
 c_code/2_2/compiler_bitsets.o \
-c_code/2_2/compiler_lookups.o \
-c_code/2_3/compiler_prettybase.o \
 c_code/2_2/compiler_treetab.o \
 c_code/2_3/compiler_semfold.o \
 c_code/2_2/compiler_procfind.o \
+c_code/2_2/compiler_lookups.o \
 c_code/2_3/compiler_pragmas.o \
 c_code/2_2/compiler_semtypinst.o \
 c_code/2_2/compiler_transf.o \
@@ -8678,29 +9234,35 @@ c_code/2_2/compiler_evaltempl.o \
 c_code/2_2/compiler_patterns.o \
 c_code/2_2/compiler_parampatterns.o \
 c_code/2_2/compiler_sempass2.o \
-c_code/2_2/compiler_pretty.o \
 c_code/2_2/compiler_semmacrosanity.o \
 c_code/2_2/compiler_semparallel.o \
 c_code/2_2/compiler_lowerings.o \
 c_code/2_2/compiler_pluginsupport.o \
-c_code/2_2/compiler_active.o \
 c_code/2_2/compiler_saturate.o \
+c_code/2_3/compiler_prettybase.o \
+c_code/2_2/compiler_pretty.o \
+c_code/2_2/stdlib_xmltree.o \
+c_code/2_2/stdlib_cgi.o \
+c_code/2_2/compiler_typesrenderer.o \
 c_code/2_2/docutils_rstast.o \
 c_code/2_2/docutils_rst.o \
 c_code/9_2/docutils_rstgen.o \
 c_code/2_2/docutils_highlite.o \
-c_code/2_2/stdlib_xmltree.o \
-c_code/2_2/stdlib_cgi.o \
-c_code/2_2/compiler_typesrenderer.o \
 c_code/2_2/compiler_guards.o \
 c_code/2_2/compiler_writetracking.o \
 c_code/2_2/stdlib_cookies.o \
+c_code/2_2/stdlib_uri.o \
 c_code/2_2/compiler_prefixmatches.o \
+c_code/2_2/compiler_destroyer.o \
+c_code/2_2/compiler_liftlocals.o \
+c_code/2_2/compiler_dfa.o \
 c_code/2_2/compiler_vmgen.o \
 c_code/2_3/compiler_vmdeps.o \
 c_code/2_2/compiler_vmmarshal.o \
-c_code/2_2/compiler_locals.o \
+c_code/2_3/compiler_gorgeimpl.o \
+c_code/2_2/compiler_active.o \
 c_code/2_2/compiler_itersgen.o \
+c_code/2_2/compiler_locals.o \
 c_code/2_2/compiler_cgendata.o \
 c_code/2_2/compiler_ccgmerge.o \
 c_code/2_2/compiler_ndi.o \
@@ -8709,8 +9271,6 @@ c_code/2_2/stdlib_md5.o \
 c_code/2_2/stdlib_dynlib.o \
 c_code/2_2/stdlib_net.o \
 c_code/2_3/stdlib_nativesockets.o \
-c_code/2_2/stdlib_options.o \
-c_code/2_2/stdlib_typetraits.o \
 c_code/2_2/compiler_nodejs.o \
 c_code/9_2/compiler_scriptconfig.o $LINK_FLAGS
     ;;
@@ -8769,7 +9329,7 @@ android)
   i386)
     set -x
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nim.c -o c_code/2_1/compiler_nim.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_system.c -o c_code/2_1/stdlib_system.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/10_1/stdlib_system.c -o c_code/10_1/stdlib_system.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_commands.c -o c_code/2_1/compiler_commands.o
     $CC $COMP_FLAGS -Ic_code -c c_code/10_1/stdlib_os.c -o c_code/10_1/stdlib_os.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_strutils.c -o c_code/2_1/stdlib_strutils.o
@@ -8793,16 +9353,20 @@ android)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_streams.c -o c_code/2_1/stdlib_streams.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cpuinfo.c -o c_code/2_1/stdlib_cpuinfo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_linux.c -o c_code/2_1/stdlib_linux.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_strformat.c -o c_code/2_1/stdlib_strformat.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_unicode.c -o c_code/2_1/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_colors.c -o c_code/2_1/stdlib_colors.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_termios.c -o c_code/2_1/stdlib_termios.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nversion.c -o c_code/2_1/compiler_nversion.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_condsyms.c -o c_code/2_1/compiler_condsyms.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_idents.c -o c_code/2_1/compiler_idents.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_wordrecg.c -o c_code/2_1/compiler_wordrecg.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_extccomp.c -o c_code/2_1/compiler_extccomp.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_securehash.c -o c_code/2_1/stdlib_securehash.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_sha1.c -o c_code/2_1/stdlib_sha1.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_json.c -o c_code/2_1/stdlib_json.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_lexbase.c -o c_code/2_1/stdlib_lexbase.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_unicode.c -o c_code/2_1/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_options.c -o c_code/2_1/stdlib_options.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_typetraits.c -o c_code/2_1/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nimblecmd.c -o c_code/2_1/compiler_nimblecmd.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_sequtils.c -o c_code/2_1/stdlib_sequtils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_parseopt.c -o c_code/2_1/stdlib_parseopt.o
@@ -8837,6 +9401,7 @@ android)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ccgutils.c -o c_code/2_1/compiler_ccgutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_sigmatch.c -o c_code/2_1/compiler_sigmatch.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_modulegraphs.c -o c_code/2_1/compiler_modulegraphs.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rod.c -o c_code/2_1/compiler_rod.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_intsets.c -o c_code/2_1/stdlib_intsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rodutils.c -o c_code/2_1/compiler_rodutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pbraces.c -o c_code/2_1/compiler_pbraces.o
@@ -8844,15 +9409,15 @@ android)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_filter_tmpl.c -o c_code/2_1/compiler_filter_tmpl.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_memfiles.c -o c_code/2_1/stdlib_memfiles.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_trees.c -o c_code/2_1/compiler_trees.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_modulepaths.c -o c_code/2_1/compiler_modulepaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_magicsys.c -o c_code/2_1/compiler_magicsys.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nimsets.c -o c_code/2_1/compiler_nimsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_reorder.c -o c_code/2_1/compiler_reorder.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_bitsets.c -o c_code/2_1/compiler_bitsets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lookups.c -o c_code/2_1/compiler_lookups.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_prettybase.c -o c_code/2_1/compiler_prettybase.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_treetab.c -o c_code/2_1/compiler_treetab.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semfold.c -o c_code/2_1/compiler_semfold.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_procfind.c -o c_code/2_1/compiler_procfind.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lookups.c -o c_code/2_1/compiler_lookups.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pragmas.c -o c_code/2_1/compiler_pragmas.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semtypinst.c -o c_code/2_1/compiler_semtypinst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_transf.c -o c_code/2_1/compiler_transf.o
@@ -8863,29 +9428,35 @@ android)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_patterns.c -o c_code/2_1/compiler_patterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_parampatterns.c -o c_code/2_1/compiler_parampatterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_sempass2.c -o c_code/2_1/compiler_sempass2.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pretty.c -o c_code/2_1/compiler_pretty.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semmacrosanity.c -o c_code/2_1/compiler_semmacrosanity.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semparallel.c -o c_code/2_1/compiler_semparallel.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lowerings.c -o c_code/2_1/compiler_lowerings.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pluginsupport.c -o c_code/2_1/compiler_pluginsupport.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_active.c -o c_code/2_1/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_saturate.c -o c_code/2_1/compiler_saturate.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_prettybase.c -o c_code/2_1/compiler_prettybase.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pretty.c -o c_code/2_1/compiler_pretty.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_xmltree.c -o c_code/2_1/stdlib_xmltree.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cgi.c -o c_code/2_1/stdlib_cgi.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_typesrenderer.c -o c_code/2_1/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rstast.c -o c_code/2_1/docutils_rstast.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rst.c -o c_code/2_1/docutils_rst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rstgen.c -o c_code/2_1/docutils_rstgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_highlite.c -o c_code/2_1/docutils_highlite.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_xmltree.c -o c_code/2_1/stdlib_xmltree.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cgi.c -o c_code/2_1/stdlib_cgi.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_typesrenderer.c -o c_code/2_1/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_guards.c -o c_code/2_1/compiler_guards.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_writetracking.c -o c_code/2_1/compiler_writetracking.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cookies.c -o c_code/2_1/stdlib_cookies.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_uri.c -o c_code/2_1/stdlib_uri.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_prefixmatches.c -o c_code/2_1/compiler_prefixmatches.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_destroyer.c -o c_code/2_1/compiler_destroyer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_liftlocals.c -o c_code/2_1/compiler_liftlocals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_dfa.c -o c_code/2_1/compiler_dfa.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmgen.c -o c_code/2_1/compiler_vmgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmdeps.c -o c_code/2_1/compiler_vmdeps.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmmarshal.c -o c_code/2_1/compiler_vmmarshal.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_locals.c -o c_code/2_1/compiler_locals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_gorgeimpl.c -o c_code/2_1/compiler_gorgeimpl.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_active.c -o c_code/2_1/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_itersgen.c -o c_code/2_1/compiler_itersgen.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_locals.c -o c_code/2_1/compiler_locals.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_cgendata.c -o c_code/2_1/compiler_cgendata.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ccgmerge.c -o c_code/2_1/compiler_ccgmerge.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ndi.c -o c_code/2_1/compiler_ndi.o
@@ -8894,13 +9465,11 @@ android)
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_dynlib.c -o c_code/2_1/stdlib_dynlib.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_net.c -o c_code/2_1/stdlib_net.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_nativesockets.c -o c_code/2_1/stdlib_nativesockets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_options.c -o c_code/2_1/stdlib_options.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_typetraits.c -o c_code/2_1/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nodejs.c -o c_code/2_1/compiler_nodejs.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_scriptconfig.c -o c_code/2_1/compiler_scriptconfig.o
     $LINKER -o $binDir/nim  \
 c_code/2_1/compiler_nim.o \
-c_code/2_1/stdlib_system.o \
+c_code/10_1/stdlib_system.o \
 c_code/2_1/compiler_commands.o \
 c_code/10_1/stdlib_os.o \
 c_code/2_1/stdlib_strutils.o \
@@ -8924,16 +9493,20 @@ c_code/2_1/stdlib_hashes.o \
 c_code/2_1/stdlib_streams.o \
 c_code/2_1/stdlib_cpuinfo.o \
 c_code/2_1/stdlib_linux.o \
+c_code/2_1/stdlib_strformat.o \
+c_code/2_1/stdlib_unicode.o \
+c_code/2_1/stdlib_colors.o \
 c_code/2_1/stdlib_termios.o \
 c_code/2_1/compiler_nversion.o \
 c_code/2_1/compiler_condsyms.o \
 c_code/2_1/compiler_idents.o \
 c_code/2_1/compiler_wordrecg.o \
 c_code/2_1/compiler_extccomp.o \
-c_code/2_1/stdlib_securehash.o \
+c_code/2_1/stdlib_sha1.o \
 c_code/2_1/stdlib_json.o \
 c_code/2_1/stdlib_lexbase.o \
-c_code/2_1/stdlib_unicode.o \
+c_code/2_1/stdlib_options.o \
+c_code/2_1/stdlib_typetraits.o \
 c_code/2_1/compiler_nimblecmd.o \
 c_code/2_1/stdlib_sequtils.o \
 c_code/2_1/stdlib_parseopt.o \
@@ -8968,6 +9541,7 @@ c_code/2_1/compiler_modules.o \
 c_code/2_1/compiler_ccgutils.o \
 c_code/2_1/compiler_sigmatch.o \
 c_code/2_1/compiler_modulegraphs.o \
+c_code/2_1/compiler_rod.o \
 c_code/2_1/stdlib_intsets.o \
 c_code/2_1/compiler_rodutils.o \
 c_code/2_1/compiler_pbraces.o \
@@ -8975,15 +9549,15 @@ c_code/2_1/compiler_filters.o \
 c_code/2_1/compiler_filter_tmpl.o \
 c_code/2_1/stdlib_memfiles.o \
 c_code/2_1/compiler_trees.o \
+c_code/2_1/compiler_modulepaths.o \
 c_code/2_1/compiler_magicsys.o \
 c_code/2_1/compiler_nimsets.o \
 c_code/2_1/compiler_reorder.o \
 c_code/2_1/compiler_bitsets.o \
-c_code/2_1/compiler_lookups.o \
-c_code/2_1/compiler_prettybase.o \
 c_code/2_1/compiler_treetab.o \
 c_code/2_1/compiler_semfold.o \
 c_code/2_1/compiler_procfind.o \
+c_code/2_1/compiler_lookups.o \
 c_code/2_1/compiler_pragmas.o \
 c_code/2_1/compiler_semtypinst.o \
 c_code/2_1/compiler_transf.o \
@@ -8994,29 +9568,35 @@ c_code/2_1/compiler_evaltempl.o \
 c_code/2_1/compiler_patterns.o \
 c_code/2_1/compiler_parampatterns.o \
 c_code/2_1/compiler_sempass2.o \
-c_code/2_1/compiler_pretty.o \
 c_code/2_1/compiler_semmacrosanity.o \
 c_code/2_1/compiler_semparallel.o \
 c_code/2_1/compiler_lowerings.o \
 c_code/2_1/compiler_pluginsupport.o \
-c_code/2_1/compiler_active.o \
 c_code/2_1/compiler_saturate.o \
+c_code/2_1/compiler_prettybase.o \
+c_code/2_1/compiler_pretty.o \
+c_code/2_1/stdlib_xmltree.o \
+c_code/2_1/stdlib_cgi.o \
+c_code/2_1/compiler_typesrenderer.o \
 c_code/2_1/docutils_rstast.o \
 c_code/2_1/docutils_rst.o \
 c_code/2_1/docutils_rstgen.o \
 c_code/2_1/docutils_highlite.o \
-c_code/2_1/stdlib_xmltree.o \
-c_code/2_1/stdlib_cgi.o \
-c_code/2_1/compiler_typesrenderer.o \
 c_code/2_1/compiler_guards.o \
 c_code/2_1/compiler_writetracking.o \
 c_code/2_1/stdlib_cookies.o \
+c_code/2_1/stdlib_uri.o \
 c_code/2_1/compiler_prefixmatches.o \
+c_code/2_1/compiler_destroyer.o \
+c_code/2_1/compiler_liftlocals.o \
+c_code/2_1/compiler_dfa.o \
 c_code/2_1/compiler_vmgen.o \
 c_code/2_1/compiler_vmdeps.o \
 c_code/2_1/compiler_vmmarshal.o \
-c_code/2_1/compiler_locals.o \
+c_code/2_1/compiler_gorgeimpl.o \
+c_code/2_1/compiler_active.o \
 c_code/2_1/compiler_itersgen.o \
+c_code/2_1/compiler_locals.o \
 c_code/2_1/compiler_cgendata.o \
 c_code/2_1/compiler_ccgmerge.o \
 c_code/2_1/compiler_ndi.o \
@@ -9025,8 +9605,6 @@ c_code/2_1/stdlib_md5.o \
 c_code/2_1/stdlib_dynlib.o \
 c_code/2_1/stdlib_net.o \
 c_code/2_1/stdlib_nativesockets.o \
-c_code/2_1/stdlib_options.o \
-c_code/2_1/stdlib_typetraits.o \
 c_code/2_1/compiler_nodejs.o \
 c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     ;;
@@ -9041,7 +9619,7 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
   arm)
     set -x
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nim.c -o c_code/2_1/compiler_nim.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_system.c -o c_code/2_1/stdlib_system.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/10_1/stdlib_system.c -o c_code/10_1/stdlib_system.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_commands.c -o c_code/2_1/compiler_commands.o
     $CC $COMP_FLAGS -Ic_code -c c_code/10_1/stdlib_os.c -o c_code/10_1/stdlib_os.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_strutils.c -o c_code/2_1/stdlib_strutils.o
@@ -9065,16 +9643,20 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_streams.c -o c_code/2_1/stdlib_streams.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cpuinfo.c -o c_code/2_1/stdlib_cpuinfo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_linux.c -o c_code/2_1/stdlib_linux.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_strformat.c -o c_code/2_1/stdlib_strformat.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_unicode.c -o c_code/2_1/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_colors.c -o c_code/2_1/stdlib_colors.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_termios.c -o c_code/2_1/stdlib_termios.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nversion.c -o c_code/2_1/compiler_nversion.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_condsyms.c -o c_code/2_1/compiler_condsyms.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_idents.c -o c_code/2_1/compiler_idents.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_wordrecg.c -o c_code/2_1/compiler_wordrecg.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_extccomp.c -o c_code/2_1/compiler_extccomp.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_securehash.c -o c_code/2_1/stdlib_securehash.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_sha1.c -o c_code/2_1/stdlib_sha1.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_json.c -o c_code/2_1/stdlib_json.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_lexbase.c -o c_code/2_1/stdlib_lexbase.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_unicode.c -o c_code/2_1/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_options.c -o c_code/2_1/stdlib_options.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_typetraits.c -o c_code/2_1/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nimblecmd.c -o c_code/2_1/compiler_nimblecmd.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_sequtils.c -o c_code/2_1/stdlib_sequtils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_parseopt.c -o c_code/2_1/stdlib_parseopt.o
@@ -9109,6 +9691,7 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ccgutils.c -o c_code/2_1/compiler_ccgutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_sigmatch.c -o c_code/2_1/compiler_sigmatch.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_modulegraphs.c -o c_code/2_1/compiler_modulegraphs.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rod.c -o c_code/2_1/compiler_rod.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_intsets.c -o c_code/2_1/stdlib_intsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_rodutils.c -o c_code/2_1/compiler_rodutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pbraces.c -o c_code/2_1/compiler_pbraces.o
@@ -9116,15 +9699,15 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_filter_tmpl.c -o c_code/2_1/compiler_filter_tmpl.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_memfiles.c -o c_code/2_1/stdlib_memfiles.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_trees.c -o c_code/2_1/compiler_trees.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_modulepaths.c -o c_code/2_1/compiler_modulepaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_magicsys.c -o c_code/2_1/compiler_magicsys.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nimsets.c -o c_code/2_1/compiler_nimsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_reorder.c -o c_code/2_1/compiler_reorder.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_bitsets.c -o c_code/2_1/compiler_bitsets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lookups.c -o c_code/2_1/compiler_lookups.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_prettybase.c -o c_code/2_1/compiler_prettybase.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_treetab.c -o c_code/2_1/compiler_treetab.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semfold.c -o c_code/2_1/compiler_semfold.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_procfind.c -o c_code/2_1/compiler_procfind.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lookups.c -o c_code/2_1/compiler_lookups.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pragmas.c -o c_code/2_1/compiler_pragmas.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semtypinst.c -o c_code/2_1/compiler_semtypinst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_transf.c -o c_code/2_1/compiler_transf.o
@@ -9135,29 +9718,35 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_patterns.c -o c_code/2_1/compiler_patterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_parampatterns.c -o c_code/2_1/compiler_parampatterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_sempass2.c -o c_code/2_1/compiler_sempass2.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pretty.c -o c_code/2_1/compiler_pretty.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semmacrosanity.c -o c_code/2_1/compiler_semmacrosanity.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_semparallel.c -o c_code/2_1/compiler_semparallel.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_lowerings.c -o c_code/2_1/compiler_lowerings.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pluginsupport.c -o c_code/2_1/compiler_pluginsupport.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_active.c -o c_code/2_1/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_saturate.c -o c_code/2_1/compiler_saturate.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_prettybase.c -o c_code/2_1/compiler_prettybase.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_pretty.c -o c_code/2_1/compiler_pretty.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_xmltree.c -o c_code/2_1/stdlib_xmltree.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cgi.c -o c_code/2_1/stdlib_cgi.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_typesrenderer.c -o c_code/2_1/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rstast.c -o c_code/2_1/docutils_rstast.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rst.c -o c_code/2_1/docutils_rst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_rstgen.c -o c_code/2_1/docutils_rstgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/docutils_highlite.c -o c_code/2_1/docutils_highlite.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_xmltree.c -o c_code/2_1/stdlib_xmltree.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cgi.c -o c_code/2_1/stdlib_cgi.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_typesrenderer.c -o c_code/2_1/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_guards.c -o c_code/2_1/compiler_guards.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_writetracking.c -o c_code/2_1/compiler_writetracking.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_cookies.c -o c_code/2_1/stdlib_cookies.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_uri.c -o c_code/2_1/stdlib_uri.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_prefixmatches.c -o c_code/2_1/compiler_prefixmatches.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_destroyer.c -o c_code/2_1/compiler_destroyer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_liftlocals.c -o c_code/2_1/compiler_liftlocals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_dfa.c -o c_code/2_1/compiler_dfa.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmgen.c -o c_code/2_1/compiler_vmgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmdeps.c -o c_code/2_1/compiler_vmdeps.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_vmmarshal.c -o c_code/2_1/compiler_vmmarshal.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_locals.c -o c_code/2_1/compiler_locals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_gorgeimpl.c -o c_code/2_1/compiler_gorgeimpl.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_active.c -o c_code/2_1/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_itersgen.c -o c_code/2_1/compiler_itersgen.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_locals.c -o c_code/2_1/compiler_locals.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_cgendata.c -o c_code/2_1/compiler_cgendata.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ccgmerge.c -o c_code/2_1/compiler_ccgmerge.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_ndi.c -o c_code/2_1/compiler_ndi.o
@@ -9166,13 +9755,11 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_dynlib.c -o c_code/2_1/stdlib_dynlib.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_net.c -o c_code/2_1/stdlib_net.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_nativesockets.c -o c_code/2_1/stdlib_nativesockets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_options.c -o c_code/2_1/stdlib_options.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_1/stdlib_typetraits.c -o c_code/2_1/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_nodejs.c -o c_code/2_1/compiler_nodejs.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_1/compiler_scriptconfig.c -o c_code/2_1/compiler_scriptconfig.o
     $LINKER -o $binDir/nim  \
 c_code/2_1/compiler_nim.o \
-c_code/2_1/stdlib_system.o \
+c_code/10_1/stdlib_system.o \
 c_code/2_1/compiler_commands.o \
 c_code/10_1/stdlib_os.o \
 c_code/2_1/stdlib_strutils.o \
@@ -9196,16 +9783,20 @@ c_code/2_1/stdlib_hashes.o \
 c_code/2_1/stdlib_streams.o \
 c_code/2_1/stdlib_cpuinfo.o \
 c_code/2_1/stdlib_linux.o \
+c_code/2_1/stdlib_strformat.o \
+c_code/2_1/stdlib_unicode.o \
+c_code/2_1/stdlib_colors.o \
 c_code/2_1/stdlib_termios.o \
 c_code/2_1/compiler_nversion.o \
 c_code/2_1/compiler_condsyms.o \
 c_code/2_1/compiler_idents.o \
 c_code/2_1/compiler_wordrecg.o \
 c_code/2_1/compiler_extccomp.o \
-c_code/2_1/stdlib_securehash.o \
+c_code/2_1/stdlib_sha1.o \
 c_code/2_1/stdlib_json.o \
 c_code/2_1/stdlib_lexbase.o \
-c_code/2_1/stdlib_unicode.o \
+c_code/2_1/stdlib_options.o \
+c_code/2_1/stdlib_typetraits.o \
 c_code/2_1/compiler_nimblecmd.o \
 c_code/2_1/stdlib_sequtils.o \
 c_code/2_1/stdlib_parseopt.o \
@@ -9240,6 +9831,7 @@ c_code/2_1/compiler_modules.o \
 c_code/2_1/compiler_ccgutils.o \
 c_code/2_1/compiler_sigmatch.o \
 c_code/2_1/compiler_modulegraphs.o \
+c_code/2_1/compiler_rod.o \
 c_code/2_1/stdlib_intsets.o \
 c_code/2_1/compiler_rodutils.o \
 c_code/2_1/compiler_pbraces.o \
@@ -9247,15 +9839,15 @@ c_code/2_1/compiler_filters.o \
 c_code/2_1/compiler_filter_tmpl.o \
 c_code/2_1/stdlib_memfiles.o \
 c_code/2_1/compiler_trees.o \
+c_code/2_1/compiler_modulepaths.o \
 c_code/2_1/compiler_magicsys.o \
 c_code/2_1/compiler_nimsets.o \
 c_code/2_1/compiler_reorder.o \
 c_code/2_1/compiler_bitsets.o \
-c_code/2_1/compiler_lookups.o \
-c_code/2_1/compiler_prettybase.o \
 c_code/2_1/compiler_treetab.o \
 c_code/2_1/compiler_semfold.o \
 c_code/2_1/compiler_procfind.o \
+c_code/2_1/compiler_lookups.o \
 c_code/2_1/compiler_pragmas.o \
 c_code/2_1/compiler_semtypinst.o \
 c_code/2_1/compiler_transf.o \
@@ -9266,29 +9858,35 @@ c_code/2_1/compiler_evaltempl.o \
 c_code/2_1/compiler_patterns.o \
 c_code/2_1/compiler_parampatterns.o \
 c_code/2_1/compiler_sempass2.o \
-c_code/2_1/compiler_pretty.o \
 c_code/2_1/compiler_semmacrosanity.o \
 c_code/2_1/compiler_semparallel.o \
 c_code/2_1/compiler_lowerings.o \
 c_code/2_1/compiler_pluginsupport.o \
-c_code/2_1/compiler_active.o \
 c_code/2_1/compiler_saturate.o \
+c_code/2_1/compiler_prettybase.o \
+c_code/2_1/compiler_pretty.o \
+c_code/2_1/stdlib_xmltree.o \
+c_code/2_1/stdlib_cgi.o \
+c_code/2_1/compiler_typesrenderer.o \
 c_code/2_1/docutils_rstast.o \
 c_code/2_1/docutils_rst.o \
 c_code/2_1/docutils_rstgen.o \
 c_code/2_1/docutils_highlite.o \
-c_code/2_1/stdlib_xmltree.o \
-c_code/2_1/stdlib_cgi.o \
-c_code/2_1/compiler_typesrenderer.o \
 c_code/2_1/compiler_guards.o \
 c_code/2_1/compiler_writetracking.o \
 c_code/2_1/stdlib_cookies.o \
+c_code/2_1/stdlib_uri.o \
 c_code/2_1/compiler_prefixmatches.o \
+c_code/2_1/compiler_destroyer.o \
+c_code/2_1/compiler_liftlocals.o \
+c_code/2_1/compiler_dfa.o \
 c_code/2_1/compiler_vmgen.o \
 c_code/2_1/compiler_vmdeps.o \
 c_code/2_1/compiler_vmmarshal.o \
-c_code/2_1/compiler_locals.o \
+c_code/2_1/compiler_gorgeimpl.o \
+c_code/2_1/compiler_active.o \
 c_code/2_1/compiler_itersgen.o \
+c_code/2_1/compiler_locals.o \
 c_code/2_1/compiler_cgendata.o \
 c_code/2_1/compiler_ccgmerge.o \
 c_code/2_1/compiler_ndi.o \
@@ -9297,8 +9895,6 @@ c_code/2_1/stdlib_md5.o \
 c_code/2_1/stdlib_dynlib.o \
 c_code/2_1/stdlib_net.o \
 c_code/2_1/stdlib_nativesockets.o \
-c_code/2_1/stdlib_options.o \
-c_code/2_1/stdlib_typetraits.o \
 c_code/2_1/compiler_nodejs.o \
 c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     ;;
@@ -9333,7 +9929,7 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
   arm64)
     set -x
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_nim.c -o c_code/2_3/compiler_nim.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_system.c -o c_code/2_3/stdlib_system.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/10_12/stdlib_system.c -o c_code/10_12/stdlib_system.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_commands.c -o c_code/2_3/compiler_commands.o
     $CC $COMP_FLAGS -Ic_code -c c_code/10_12/stdlib_os.c -o c_code/10_12/stdlib_os.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_strutils.c -o c_code/2_2/stdlib_strutils.o
@@ -9357,16 +9953,20 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_streams.c -o c_code/2_3/stdlib_streams.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_cpuinfo.c -o c_code/2_3/stdlib_cpuinfo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_linux.c -o c_code/2_2/stdlib_linux.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_strformat.c -o c_code/2_2/stdlib_strformat.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_unicode.c -o c_code/2_2/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_colors.c -o c_code/2_2/stdlib_colors.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_termios.c -o c_code/2_2/stdlib_termios.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nversion.c -o c_code/2_2/compiler_nversion.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_condsyms.c -o c_code/2_2/compiler_condsyms.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_idents.c -o c_code/2_2/compiler_idents.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_wordrecg.c -o c_code/2_2/compiler_wordrecg.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_extccomp.c -o c_code/2_3/compiler_extccomp.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_securehash.c -o c_code/2_2/stdlib_securehash.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_json.c -o c_code/2_2/stdlib_json.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_sha1.c -o c_code/2_2/stdlib_sha1.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_json.c -o c_code/2_3/stdlib_json.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_lexbase.c -o c_code/2_2/stdlib_lexbase.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_unicode.c -o c_code/2_2/stdlib_unicode.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_options.c -o c_code/2_2/stdlib_options.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_typetraits.c -o c_code/2_2/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_nimblecmd.c -o c_code/2_3/compiler_nimblecmd.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_sequtils.c -o c_code/2_2/stdlib_sequtils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_parseopt.c -o c_code/2_2/stdlib_parseopt.o
@@ -9379,7 +9979,7 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_astalgo.c -o c_code/2_2/compiler_astalgo.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_syntaxes.c -o c_code/2_2/compiler_syntaxes.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_renderer.c -o c_code/2_2/compiler_renderer.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_rodread.c -o c_code/2_3/compiler_rodread.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodread.c -o c_code/2_2/compiler_rodread.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodwrite.c -o c_code/2_2/compiler_rodwrite.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_sem.c -o c_code/2_3/compiler_sem.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semdata.c -o c_code/2_2/compiler_semdata.o
@@ -9387,7 +9987,7 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_docgen.c -o c_code/2_2/compiler_docgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_cgen.c -o c_code/2_2/compiler_cgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_jsgen.c -o c_code/2_2/compiler_jsgen.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_importer.c -o c_code/2_3/compiler_importer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_importer.c -o c_code/2_2/compiler_importer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_passaux.c -o c_code/2_2/compiler_passaux.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_depends.c -o c_code/2_2/compiler_depends.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_9/compiler_vm.c -o c_code/2_9/compiler_vm.o
@@ -9401,22 +10001,23 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ccgutils.c -o c_code/2_2/compiler_ccgutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_sigmatch.c -o c_code/2_3/compiler_sigmatch.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_modulegraphs.c -o c_code/2_2/compiler_modulegraphs.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rod.c -o c_code/2_2/compiler_rod.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_intsets.c -o c_code/2_2/stdlib_intsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_rodutils.c -o c_code/2_2/compiler_rodutils.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pbraces.c -o c_code/2_2/compiler_pbraces.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_filters.c -o c_code/2_2/compiler_filters.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_filter_tmpl.c -o c_code/2_2/compiler_filter_tmpl.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_memfiles.c -o c_code/2_3/stdlib_memfiles.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_memfiles.c -o c_code/2_2/stdlib_memfiles.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_trees.c -o c_code/2_2/compiler_trees.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_modulepaths.c -o c_code/2_3/compiler_modulepaths.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_magicsys.c -o c_code/2_2/compiler_magicsys.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nimsets.c -o c_code/2_2/compiler_nimsets.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_reorder.c -o c_code/2_2/compiler_reorder.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_bitsets.c -o c_code/2_2/compiler_bitsets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lookups.c -o c_code/2_2/compiler_lookups.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_prettybase.c -o c_code/2_3/compiler_prettybase.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_treetab.c -o c_code/2_2/compiler_treetab.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_semfold.c -o c_code/2_3/compiler_semfold.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_procfind.c -o c_code/2_2/compiler_procfind.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lookups.c -o c_code/2_2/compiler_lookups.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_pragmas.c -o c_code/2_3/compiler_pragmas.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semtypinst.c -o c_code/2_2/compiler_semtypinst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_transf.c -o c_code/2_2/compiler_transf.o
@@ -9427,29 +10028,35 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_patterns.c -o c_code/2_2/compiler_patterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_parampatterns.c -o c_code/2_2/compiler_parampatterns.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_sempass2.c -o c_code/2_2/compiler_sempass2.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pretty.c -o c_code/2_2/compiler_pretty.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semmacrosanity.c -o c_code/2_2/compiler_semmacrosanity.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_semparallel.c -o c_code/2_2/compiler_semparallel.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_lowerings.c -o c_code/2_2/compiler_lowerings.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pluginsupport.c -o c_code/2_2/compiler_pluginsupport.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_active.c -o c_code/2_2/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_saturate.c -o c_code/2_2/compiler_saturate.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_prettybase.c -o c_code/2_3/compiler_prettybase.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_pretty.c -o c_code/2_2/compiler_pretty.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_xmltree.c -o c_code/2_2/stdlib_xmltree.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cgi.c -o c_code/2_2/stdlib_cgi.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_typesrenderer.c -o c_code/2_2/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_rstast.c -o c_code/2_2/docutils_rstast.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_rst.c -o c_code/2_2/docutils_rst.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/docutils_rstgen.c -o c_code/2_3/docutils_rstgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/docutils_highlite.c -o c_code/2_2/docutils_highlite.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_xmltree.c -o c_code/2_2/stdlib_xmltree.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cgi.c -o c_code/2_2/stdlib_cgi.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_typesrenderer.c -o c_code/2_2/compiler_typesrenderer.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_guards.c -o c_code/2_2/compiler_guards.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_writetracking.c -o c_code/2_2/compiler_writetracking.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_cookies.c -o c_code/2_2/stdlib_cookies.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_uri.c -o c_code/2_2/stdlib_uri.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_prefixmatches.c -o c_code/2_2/compiler_prefixmatches.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_destroyer.c -o c_code/2_2/compiler_destroyer.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_liftlocals.c -o c_code/2_2/compiler_liftlocals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_dfa.c -o c_code/2_2/compiler_dfa.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_vmgen.c -o c_code/2_2/compiler_vmgen.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_vmdeps.c -o c_code/2_3/compiler_vmdeps.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_vmmarshal.c -o c_code/2_2/compiler_vmmarshal.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_locals.c -o c_code/2_2/compiler_locals.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_gorgeimpl.c -o c_code/2_3/compiler_gorgeimpl.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_active.c -o c_code/2_2/compiler_active.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_itersgen.c -o c_code/2_2/compiler_itersgen.o
+    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_locals.c -o c_code/2_2/compiler_locals.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_cgendata.c -o c_code/2_2/compiler_cgendata.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ccgmerge.c -o c_code/2_2/compiler_ccgmerge.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_ndi.c -o c_code/2_2/compiler_ndi.o
@@ -9458,13 +10065,11 @@ c_code/2_1/compiler_scriptconfig.o $LINK_FLAGS
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_dynlib.c -o c_code/2_2/stdlib_dynlib.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_net.c -o c_code/2_2/stdlib_net.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/stdlib_nativesockets.c -o c_code/2_3/stdlib_nativesockets.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_options.c -o c_code/2_2/stdlib_options.o
-    $CC $COMP_FLAGS -Ic_code -c c_code/2_2/stdlib_typetraits.c -o c_code/2_2/stdlib_typetraits.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_2/compiler_nodejs.c -o c_code/2_2/compiler_nodejs.o
     $CC $COMP_FLAGS -Ic_code -c c_code/2_3/compiler_scriptconfig.c -o c_code/2_3/compiler_scriptconfig.o
     $LINKER -o $binDir/nim  \
 c_code/2_3/compiler_nim.o \
-c_code/2_3/stdlib_system.o \
+c_code/10_12/stdlib_system.o \
 c_code/2_3/compiler_commands.o \
 c_code/10_12/stdlib_os.o \
 c_code/2_2/stdlib_strutils.o \
@@ -9488,16 +10093,20 @@ c_code/2_2/stdlib_hashes.o \
 c_code/2_3/stdlib_streams.o \
 c_code/2_3/stdlib_cpuinfo.o \
 c_code/2_2/stdlib_linux.o \
+c_code/2_2/stdlib_strformat.o \
+c_code/2_2/stdlib_unicode.o \
+c_code/2_2/stdlib_colors.o \
 c_code/2_2/stdlib_termios.o \
 c_code/2_2/compiler_nversion.o \
 c_code/2_2/compiler_condsyms.o \
 c_code/2_2/compiler_idents.o \
 c_code/2_2/compiler_wordrecg.o \
 c_code/2_3/compiler_extccomp.o \
-c_code/2_2/stdlib_securehash.o \
-c_code/2_2/stdlib_json.o \
+c_code/2_2/stdlib_sha1.o \
+c_code/2_3/stdlib_json.o \
 c_code/2_2/stdlib_lexbase.o \
-c_code/2_2/stdlib_unicode.o \
+c_code/2_2/stdlib_options.o \
+c_code/2_2/stdlib_typetraits.o \
 c_code/2_3/compiler_nimblecmd.o \
 c_code/2_2/stdlib_sequtils.o \
 c_code/2_2/stdlib_parseopt.o \
@@ -9510,7 +10119,7 @@ c_code/2_2/compiler_ast.o \
 c_code/2_2/compiler_astalgo.o \
 c_code/2_2/compiler_syntaxes.o \
 c_code/2_2/compiler_renderer.o \
-c_code/2_3/compiler_rodread.o \
+c_code/2_2/compiler_rodread.o \
 c_code/2_2/compiler_rodwrite.o \
 c_code/2_3/compiler_sem.o \
 c_code/2_2/compiler_semdata.o \
@@ -9518,7 +10127,7 @@ c_code/2_2/compiler_passes.o \
 c_code/2_2/compiler_docgen.o \
 c_code/2_2/compiler_cgen.o \
 c_code/2_2/compiler_jsgen.o \
-c_code/2_3/compiler_importer.o \
+c_code/2_2/compiler_importer.o \
 c_code/2_2/compiler_passaux.o \
 c_code/2_2/compiler_depends.o \
 c_code/2_9/compiler_vm.o \
@@ -9532,22 +10141,23 @@ c_code/2_2/compiler_modules.o \
 c_code/2_2/compiler_ccgutils.o \
 c_code/2_3/compiler_sigmatch.o \
 c_code/2_2/compiler_modulegraphs.o \
+c_code/2_2/compiler_rod.o \
 c_code/2_2/stdlib_intsets.o \
 c_code/2_2/compiler_rodutils.o \
 c_code/2_2/compiler_pbraces.o \
 c_code/2_2/compiler_filters.o \
 c_code/2_2/compiler_filter_tmpl.o \
-c_code/2_3/stdlib_memfiles.o \
+c_code/2_2/stdlib_memfiles.o \
 c_code/2_2/compiler_trees.o \
+c_code/2_3/compiler_modulepaths.o \
 c_code/2_2/compiler_magicsys.o \
 c_code/2_2/compiler_nimsets.o \
 c_code/2_2/compiler_reorder.o \
 c_code/2_2/compiler_bitsets.o \
-c_code/2_2/compiler_lookups.o \
-c_code/2_3/compiler_prettybase.o \
 c_code/2_2/compiler_treetab.o \
 c_code/2_3/compiler_semfold.o \
 c_code/2_2/compiler_procfind.o \
+c_code/2_2/compiler_lookups.o \
 c_code/2_3/compiler_pragmas.o \
 c_code/2_2/compiler_semtypinst.o \
 c_code/2_2/compiler_transf.o \
@@ -9558,29 +10168,35 @@ c_code/2_2/compiler_evaltempl.o \
 c_code/2_2/compiler_patterns.o \
 c_code/2_2/compiler_parampatterns.o \
 c_code/2_2/compiler_sempass2.o \
-c_code/2_2/compiler_pretty.o \
 c_code/2_2/compiler_semmacrosanity.o \
 c_code/2_2/compiler_semparallel.o \
 c_code/2_2/compiler_lowerings.o \
 c_code/2_2/compiler_pluginsupport.o \
-c_code/2_2/compiler_active.o \
 c_code/2_2/compiler_saturate.o \
+c_code/2_3/compiler_prettybase.o \
+c_code/2_2/compiler_pretty.o \
+c_code/2_2/stdlib_xmltree.o \
+c_code/2_2/stdlib_cgi.o \
+c_code/2_2/compiler_typesrenderer.o \
 c_code/2_2/docutils_rstast.o \
 c_code/2_2/docutils_rst.o \
 c_code/2_3/docutils_rstgen.o \
 c_code/2_2/docutils_highlite.o \
-c_code/2_2/stdlib_xmltree.o \
-c_code/2_2/stdlib_cgi.o \
-c_code/2_2/compiler_typesrenderer.o \
 c_code/2_2/compiler_guards.o \
 c_code/2_2/compiler_writetracking.o \
 c_code/2_2/stdlib_cookies.o \
+c_code/2_2/stdlib_uri.o \
 c_code/2_2/compiler_prefixmatches.o \
+c_code/2_2/compiler_destroyer.o \
+c_code/2_2/compiler_liftlocals.o \
+c_code/2_2/compiler_dfa.o \
 c_code/2_2/compiler_vmgen.o \
 c_code/2_3/compiler_vmdeps.o \
 c_code/2_2/compiler_vmmarshal.o \
-c_code/2_2/compiler_locals.o \
+c_code/2_3/compiler_gorgeimpl.o \
+c_code/2_2/compiler_active.o \
 c_code/2_2/compiler_itersgen.o \
+c_code/2_2/compiler_locals.o \
 c_code/2_2/compiler_cgendata.o \
 c_code/2_2/compiler_ccgmerge.o \
 c_code/2_2/compiler_ndi.o \
@@ -9589,8 +10205,6 @@ c_code/2_2/stdlib_md5.o \
 c_code/2_2/stdlib_dynlib.o \
 c_code/2_2/stdlib_net.o \
 c_code/2_3/stdlib_nativesockets.o \
-c_code/2_2/stdlib_options.o \
-c_code/2_2/stdlib_typetraits.o \
 c_code/2_2/compiler_nodejs.o \
 c_code/2_3/compiler_scriptconfig.o $LINK_FLAGS
     ;;
